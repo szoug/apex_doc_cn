@@ -1,0 +1,651 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Developing the Tasks Page">
+      <meta name="abstract" content="Use the Create Page Wizard to create a new Report with Form for end users to manage their project tasks.">
+      <meta name="description" content="Use the Create Page Wizard to create a new Report with Form for end users to manage their project tasks.">
+      <meta name="DC.subject" content=", Shared Components, Navigation Menu, Dynamic LOV, lookup, interactive report, column heading, Format Mask">
+      <meta name="keywords" content=", Shared Components, Navigation Menu, Dynamic LOV, lookup, interactive report, column heading, Format Mask">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Shakeeb Rahman">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-24F97C42-E33C-4F7D-9B9B-C01A94F339AF">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use the Create Page Wizard to create a new Report with Form for end users to manage their project tasks.">
+      <meta name="description" content="Use the Create Page Wizard to create a new Report with Form for end users to manage their project tasks.">
+      <title>Developing the Tasks Page</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Tutorial: Building an Application">
+      <meta property="og:description" content="Use the Create Page Wizard to create a new Report with Form for end users to manage their project tasks.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Tutorial: Building an Application">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-tutorial-building-application.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-08T10:54:58-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24727-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="milestones-page.html" title="Previous" type="text/html">
+      <link rel="next" href="dashboard-page.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Tutorial: Building an Application">
+    <meta name="dcterms.isVersionOf" content="AETUT">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="milestones-page.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="dashboard-page.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Tutorial: Building an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Developing the Tasks Page</li>
+            </ol>
+            <a id="GUID-24F97C42-E33C-4F7D-9B9B-C01A94F339AF" name="GUID-24F97C42-E33C-4F7D-9B9B-C01A94F339AF"></a>
+            
+            <h2 id="AETUT-GUID-24F97C42-E33C-4F7D-9B9B-C01A94F339AF" class="sect2"><span class="enumeration_chapter">7 </span>Developing the Tasks Page
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use the Create Page Wizard to create a new Report with Form for end users to manage their project tasks.</p>
+               <div class="section">
+                  <p class="subhead1" id="GUID-24F97C42-E33C-4F7D-9B9B-C01A94F339AF__GUID-DD5C492A-506F-41E6-A517-3CC49E0F772E">About This Lesson</p>
+                  <p>In this lesson, you add a new pair of pages to your app: <strong class="term">Report with Form</strong>.
+                  </p>
+                  <p><span class="q">"Report with Form"</span> (or <span class="q">"Report and Form"</span>) is the most common page construct within web applications. End users view the <strong class="term">report</strong> and submit changes with a <strong class="term">form</strong> page.
+                  </p>
+                  <p>In your app, the Tasks report displays details for work to be done toward the associated project (based on the <code class="codeph">EBA_PROJECT_TASKS</code> table). The Update Task form enables users to update the task, such as changing the status or moving the due date.
+                  </p>
+                  <p>Use the Create Page Wizard to generate the pair of pages. Begin with the Report page. Repeat some familiar tasks to develop the report (update Navigation Menu in Shared Components, hide extraneous columns, apply lookups to the report).</p>
+                  <p>Apply a <strong class="term">format mask</strong> for columns with set date and numbering formats.
+                  </p>
+                  <p>Use the <strong class="term">decode</strong> SQL statement to convert all instances of <span class="q">"Y"</span> or <span class="q">"N"</span> in a Yes/No column to display instead as Yes or No.
+                  </p>
+                  <p>For the modal Form page, use Page Designer to refine the fields to mirror their counterparts in the Report. Many of the procedures for the Form are very similar to those for the Report.</p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-69631544-63B6-433C-BA62-F9CD2080B2F8" name="GUID-69631544-63B6-433C-BA62-F9CD2080B2F8"></a><h3 id="AETUT-GUID-69631544-63B6-433C-BA62-F9CD2080B2F8" class="sect3"><span class="enumeration_section">7.1 </span>Creating an Interactive Report Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Use the Create Page Wizard to add a new interactive report with form page to your app. Base it on <code class="codeph">EBA_PROJECTS_TASKS</code>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To add an interactive report with form to the application:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>In the Application home page, click <span class="uicontrol bold">Create Page</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Report</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Report with Form</span>.</span></li>
+                     <li class="stepexpand"><span>For Page Attributes:</span><ol type="a" id="GUID-69631544-63B6-433C-BA62-F9CD2080B2F8__SUBSTEPS_Q42_STB_ZHB">
+                           <li><span>Report Page Number - enter <kbd class="userinput">6</kbd></span></li>
+                           <li><span>Report Page Name - enter <kbd class="userinput">Tasks</kbd></span></li>
+                           <li><span>Form Page Number - enter <kbd class="userinput">7</kbd></span></li>
+                           <li><span>Form Page Name - enter <kbd class="userinput">Update Task</kbd></span></li>
+                           <li><span>Form Page Mode - select <span class="uicontrol bold">Modal Dialog</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Navigation Menu:</span><ol type="a" id="GUID-69631544-63B6-433C-BA62-F9CD2080B2F8__SUBSTEPS_JC4_HB4_ZHB">
+                           <li><span>Navigation Preference - select <span class="uicontrol bold">Create a new navigation menu entry</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Data Source:</span><ol type="a" id="GUID-69631544-63B6-433C-BA62-F9CD2080B2F8__SUBSTEPS_H5Y_MB4_ZHB">
+                           <li class="substepexpand"><span>Table / View Name - click the <span class="uicontrol bold">LOV</span> icon.</span></li>
+                           <li class="substepexpand"><span>Select <span class="uicontrol bold">EBA_PROJECT_TASKS</span></span></li>
+                           <li class="substepexpand"><span>In the list of Columns, double-click <span class="uicontrol bold">ID (Number)</span> to move it to the left column (this removes it from display in the report).</span><div>
+                                 <p>The <code class="codeph">ID</code> column contains the numeric identifier for each row in the table. Users do not need to view or access this information at any time. Since you would hide the columns in both pages later anyway, this step saves you time.
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span><div>
+                                 <p>Note that the wizard removes <code class="codeph">ID</code> from the next section to match the columns in the report in the previous screen.
+                                 </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Create Form - Columns and Primary Key:</span><ol type="a" id="GUID-69631544-63B6-433C-BA62-F9CD2080B2F8__SUBSTEPS_NH2_1V4_ZHB">
+                           <li><span>Primary Key Column - select <span class="uicontrol bold">ID (Number)</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The wizard creates the pages. Page Designer loads the interactive report page (page 6, Tasks).</p>
+                           <p>The page contains the interactive report region Report 1.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To rename a report region:</p>
+                  <p></p>
+                  <ol start="8">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Report 1</span> in Layout tab or Rendering tab.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" class="single-step" id="GUID-69631544-63B6-433C-BA62-F9CD2080B2F8__SUBSTEPS_UGR_LGW_B3B">
+                           <li><span>Identification: Title - enter <kbd class="userinput">Tasks</kbd></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span> to view the interactive report in the runtime.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>In the runtime, note that as you scroll right, the report displays numerical identifiers in several columns as well as audit detail columns.</p>
+                     <p>Perform the same tasks as you did for Milestones to update the Tasks page.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-235B7339-CE9F-4F8F-AB5C-56143D377152" name="GUID-235B7339-CE9F-4F8F-AB5C-56143D377152"></a><h3 id="AETUT-GUID-235B7339-CE9F-4F8F-AB5C-56143D377152" class="sect3"><span class="enumeration_section">7.2 </span>Updating the Tasks Page in the Runtime
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Complete some routine tasks in the runtime to perform an initial update to the Tasks page (similar to those that you performed for the Milestones page, except Tasks uses an interactive report instead of an interactive grid):</p>
+                     <ul style="list-style-type: disc;" id="GUID-235B7339-CE9F-4F8F-AB5C-56143D377152__UL_L1H_C5P_ZHB">
+                        <li>
+                           <p>Update the Navigation Menu in Shared Components</p>
+                        </li>
+                        <li>
+                           <p>Hide the audit columns from the default report in the runtime</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To view the Navigation Menu in Shared Components:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Edit Page 6</span> on the Runtime Developer toolbar to return to Page Designer.</span></li>
+                     <li class="stepexpand"><span>Near the Save button, click the <span class="uicontrol bold">Shared Components</span> icon <img id="GUID-235B7339-CE9F-4F8F-AB5C-56143D377152__IMAGE_YGJ_ZBS_J3B" height="41" width="52" src="img/page_designer_shared_components_icon.png" alt="Shared Components" title="Shared Components">.</span><div></div>
+                     </li>
+                     <li class="stepexpand"><span>Under Navigation, click <span class="uicontrol bold">Navigation Menu</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Desktop Navigation Menu</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>To update the Tasks list entry:</p>
+                  <p></p>
+                  <ol start="5">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Tasks</span>.</span></li>
+                     <li class="stepexpand"><span>For List Entry:</span><ol type="a" id="GUID-235B7339-CE9F-4F8F-AB5C-56143D377152__SUBSTEPS_XGR_TDG_RHB">
+                           <li><span>Image/Class - click the <span class="uicontrol bold">LOV</span> icon and select <span class="uicontrol bold">fa-table</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Run</span> icon (play button) in the top-right corner to run the app. Click the <span class="uicontrol bold">menu</span> icon (top-left) and note the changes to the navigation sidebar.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>Hide the audit columns from displaying in the default report in the runtime.</p>
+                     <p>To hide multiple columns in an interactive report:</p>
+                  <p></p>
+                  <ol start="8">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Actions</span> menu and select <span class="uicontrol bold">Columns</span>.</span></li>
+                     <li class="stepexpand"><span>In the list of columns under Display in Report, double-click the following columns to move them to Do Not Display:</span><div>
+                           <ul style="list-style-type: disc;" id="GUID-235B7339-CE9F-4F8F-AB5C-56143D377152__UL_OHF_NXP_ZHB">
+                              <li>
+                                 <p><span class="uicontrol bold">Created</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Created By</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Updated</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Updated By</span></p>
+                              </li>
+                           </ul><br><div class="imageleft"><img class="imageleft" id="GUID-235B7339-CE9F-4F8F-AB5C-56143D377152__IMAGE_ULS_BL3_K3B" height="359" width="493" src="img/runtime_tasks_columns_dialog.png" alt="Description of runtime_tasks_columns_dialog.png follows" title="Description of runtime_tasks_columns_dialog.png follows" longdesc="img_text/runtime_tasks_columns_dialog.html"><br><a href="img_text/runtime_tasks_columns_dialog.html">Description of the illustration runtime_tasks_columns_dialog.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>To save the report layout as the new default:</p>
+                  <p></p>
+                  <ol start="11">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Actions</span> menu, select <span class="uicontrol bold">Report</span>, and click <span class="uicontrol bold">Save Report</span>.</span></li>
+                     <li class="stepexpand"><span>In Save Report:</span><ol type="a" id="GUID-235B7339-CE9F-4F8F-AB5C-56143D377152__SUBSTEPS_JMV_XXP_ZHB">
+                           <li><span>Save - select <span class="uicontrol bold">As Default Report Settings</span>.</span></li>
+                           <li><span>Default Report Type - select <span class="uicontrol bold">Primary</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Apply</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-4AEA8B0A-DBB1-4260-AD1F-A34747353770" name="GUID-4AEA8B0A-DBB1-4260-AD1F-A34747353770"></a><h3 id="AETUT-GUID-4AEA8B0A-DBB1-4260-AD1F-A34747353770" class="sect3"><span class="enumeration_section">7.3 </span>Applying Lookups to the Tasks Interactive Report
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The dynamic LOV you created earlier is also called a <strong class="term">lookup</strong> (because the query <span class="q">"looks up"</span> a value in another table).
+                     </p>
+                     <p>First, copy the PROJECT NAME Dynamic LOV in Shared Components and configure it to query <code class="codeph">EBA_PROJECT_MILESTONES</code>.
+                     </p>
+                     <p>Then apply the two lookups to the <code class="codeph">PROJECT_ID</code> and <code class="codeph">MILESTONE_ID</code> columns.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To copy an LOV:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Edit Page 6</span> on the Runtime Developer toolbar to return to Page Designer.</span></li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Shared Components</span> icon.</span></li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">List of Values</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Copy</span>.</span></li>
+                     <li class="stepexpand"><span>For Copy List of Values:</span><ol type="a" id="GUID-4AEA8B0A-DBB1-4260-AD1F-A34747353770__SUBSTEPS_CRQ_3DW_B3B">
+                           <li><span>Copy List of Values - select <span class="uicontrol bold">PROJECT NAME - Dynamic</span></span></li>
+                           <li><span>New List of Values Name - enter <kbd class="userinput">Milestone Name</kbd></span></li>
+                           <li><span>Click <span class="uicontrol bold">Copy</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Lists of Values screen redisplays with the <code class="codeph">MILESTONE NAME</code> item.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">MILESTONE NAME</span>.</span></li>
+                     <li class="stepexpand"><span>Under Query, delete the contents then copy and paste the following code:</span><div><pre class="pre codeblock"><code>select NAME d, ID r
+from EBA_PROJECT_MILESTONES
+order by NAME</code></pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Validate</span> icon (checkmark) to confirm the query works.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Edit Page 6</span> icon in the top-right to return to the Tasks page in Page Designer.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>Apply the Project Name dynamic LOV to the <code class="codeph">PROJECT_ID</code> column (similar to the process for the Milestones page). Then apply the Milestone Name dynamic LOV to <code class="codeph">MILESTONE_ID</code>.
+                     </p>
+                     <p>To apply the <code class="codeph">PROJECT NAME</code> LOV to an interactive report:
+                     </p>
+                  <p></p>
+                  <ol start="11">
+                     <li class="stepexpand"><span>In the Rendering tab, under Tasks, expand <span class="uicontrol bold">Columns</span> and select <span class="uicontrol bold">PROJECT_ID</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-4AEA8B0A-DBB1-4260-AD1F-A34747353770__SUBSTEPS_NRY_B3K_VHB">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Plain Text (based on List of Values)</span></span></li>
+                           <li><span>List of Values: List of Values - select <span class="uicontrol bold">PROJECT NAME</span></span></li>
+                           <li><span>Heading: Heading - enter <kbd class="userinput">Project</kbd></span></li>
+                           <li><span>Click the <span class="uicontrol bold">Save</span> button.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To apply the <code class="codeph">MILESTONE NAME</code> LOV to an interactive report:
+                     </p>
+                  <p></p>
+                  <ol start="13">
+                     <li class="stepexpand"><span>In the Rendering tab, under Columns, select <span class="uicontrol bold">MILESTONE_ID</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-4AEA8B0A-DBB1-4260-AD1F-A34747353770__SUBSTEPS_JDY_Y3W_B3B">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Plain Text (based on List of Values)</span></span></li>
+                           <li><span>List of Values: List of Values - select <span class="uicontrol bold">MILESTONE NAME</span></span></li>
+                           <li><span>Heading: Heading - enter <kbd class="userinput">Milestone</kbd></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span></li>
+                     <li class="stepexpand"><span>Scroll down the report to review the Project and Milestone columns in the Runtime. When finished, click <span class="uicontrol bold">Edit Page 6</span> to return to Page Designer.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72" name="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72"></a><h3 id="AETUT-GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72" class="sect3"><span class="enumeration_section">7.4 </span>Updating the Remaining Columns in the Tasks Report
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Update the other remaining columns in the Tasks interactive report from their raw state generated by the Create Page Wizard:</p>
+                     <ul style="list-style-type: disc;" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__UL_W42_CVW_B3B">
+                        <li>
+                           <p><code class="codeph">NAME</code></p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">START_DATE</code></p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">END_DATE</code></p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">COST</code></p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">IS_COMPLETE_YN</code></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To update a column heading in an interactive report:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>In the Rendering tab, under Tasks, expand <span class="uicontrol bold">Columns</span> and select <span class="uicontrol bold">NAME</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" class="single-step" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__SUBSTEPS_ZNS_YWW_B3B">
+                           <li><span>Heading: Heading - enter <kbd class="userinput">Task</kbd></span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To apply a date format mask to multiple columns:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>In the Rendering tab, hold Ctrl and select the two following columns:</span><ol type="a" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__SUBSTEPS_PLT_MXW_B3B">
+                           <li><span><span class="uicontrol bold">START_DATE</span></span></li>
+                           <li><span><span class="uicontrol bold">END_DATE</span></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__SUBSTEPS_HXW_PXW_B3B">
+                           <li class="substepexpand"><span>Appearance: Format Mask - click the <span class="uicontrol bold">LOV</span> icon</span></li>
+                           <li class="substepexpand"><span>Select <span class="uicontrol bold">12-JAN-2004</span>.</span><div>
+                                 <div class="infobox-tip" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__GUID-F6ADBDA1-A6F1-4C36-B9BE-DAAED9E37C78">
+                                    <p class="notep1">Tip:</p>
+                                    <p>You can also enter <code class="codeph">DD-MON-YYYY</code> in the field without opening the list.
+                                    </p>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To apply a dollar amount format mask to a column:</p>
+                  <p></p>
+                  <ol start="5">
+                     <li class="stepexpand"><span>In the Rendering tab, select <span class="uicontrol bold">COST</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__SUBSTEPS_O52_TYW_B3B">
+                           <li><span>Appearance: Format Mask - click the <span class="uicontrol bold">LOV</span> icon</span></li>
+                           <li><span>Scroll down and select <span class="uicontrol bold">$5,234.10</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To configure an interactive report with a <code class="codeph">_YN</code> column to display <span class="q">"Yes"</span> and <span class="q">"No"</span> (instead of Y or N):
+                     </p>
+                  <p></p>
+                  <ol start="7">
+                     <li class="stepexpand"><span>In the Rendering tab, select <span class="uicontrol bold">IS_COMPLETE_YN</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__SUBSTEPS_VTG_ZBX_B3B">
+                           <li><span>Heading: Heading - enter <kbd class="userinput">Complete</kbd></span></li>
+                           <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Tasks</span> report region (under Content Body in the Rendering tab).</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__SUBSTEPS_PQS_SZW_B3B">
+                           <li class="substepexpand"><span>Source: Type - select <span class="uicontrol bold">SQL Query</span>.</span></li>
+                           <li class="substepexpand"><span>Source: SQL Query - delete the contents then copy and paste the following code:</span><div><pre class="pre codeblock"><code>select ID,
+       PROJECT_ID,
+       MILESTONE_ID,
+       NAME,
+       DESCRIPTION,
+       ASSIGNEE,
+       START_DATE,
+       END_DATE,
+       COST,
+       decode(is_complete_yn, 'Y', 'Yes', 'No') IS_COMPLETE_YN,
+       CREATED,
+       CREATED_BY,
+       UPDATED,
+       UPDATED_BY
+  from EBA_PROJECT_TASKS</code></pre></div>
+                           </li>
+                        </ol>
+                        <div>
+                           <p>The <code class="codeph">decode</code> statement is used to compare the column value against the first value (<span class="q">"<code class="codeph">Y</code>"</span>) and replace it with the next value (<span class="q">"<code class="codeph">Yes</code>"</span>), and otherwise replace it with the final value (<span class="q">"<code class="codeph">No</code>"</span>).
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span><div>
+                           <div class="figure" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__FIG_A1W_QL3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-88FE0F18-00CD-4F36-9B2B-5645D1F76B72__IMAGE_B1W_QL3_K3B" height="498" width="958" src="img/runtime_tasks_report_complete.png" alt="Description of runtime_tasks_report_complete.png follows" title="Description of runtime_tasks_report_complete.png follows" longdesc="img_text/runtime_tasks_report_complete.html"><br><a href="img_text/runtime_tasks_report_complete.html">Description of the illustration runtime_tasks_report_complete.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Review your changes to the report in the runtime. When finished, proceed to the next section.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A" name="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A"></a><h3 id="AETUT-GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A" class="sect3"><span class="enumeration_section">7.5 </span>Updating the Project and Milestone Fields in the Update Task Form
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>When you created the Tasks Report with Form in the Create Page Wizard, you chose to make the form <strong class="term">modal</strong>. (If you had left the check box unselected, it would be a separate page in the runtime instead of a pop-up overlay.) To view a modal page in the runtime, you must open it from its associated report.
+                     </p>
+                     <p>Open the Update Task form by clicking one of the Edit icons in the Tasks interactive report.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To view a modal form for an interactive report in the runtime:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Edit</span> icon (pencil) for a row.</span><div>
+                           <div class="figure" id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A__FIG_PD5_KM3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A__IMAGE_QD5_KM3_K3B" height="860" width="734" src="img/runtime_tasks_modal_form.png" alt="Description of runtime_tasks_modal_form.png follows" title="Description of runtime_tasks_modal_form.png follows" longdesc="img_text/runtime_tasks_modal_form.html"><br><a href="img_text/runtime_tasks_modal_form.html">Description of the illustration runtime_tasks_modal_form.png</a></div><br></div>
+                           <!-- class="figure" -->
+                           <p>The Update Task form displays.</p>
+                           <p>Note also that the page number on the Runtime Developer toolbar changed from the report (page 6) to the form (page 7).</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>The form is still in a raw state, but because it is based on <code class="codeph">EBA_PROJECT_TASKS</code>, the development process is very similar to what you did for the report:
+                     </p>
+                     <ul style="list-style-type: disc;" id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A__UL_OBF_BFX_B3B">
+                        <li>
+                           <p>The Milestone and Project name fields use numeric identifiers instead of names.</p>
+                        </li>
+                        <li>
+                           <p>The names of some fields (such as <span class="q">"Project Id"</span>) should be user-friendly.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Some fields are editable text fields instead of restricted select lists or display only.</p>
+                        </li>
+                        <li>
+                           <p>The audit columns do not need to display here (they are present in the report).</p>
+                        </li>
+                     </ul>
+                     <p>Start by applying the <code class="codeph">PROJECT NAME</code> and <code class="codeph">MILESTONE NAME</code> lookups to the appropriate fields.
+                     </p>
+                     <p>To return to Page Designer using Quick Edit:</p>
+                  <p></p>
+                  <ol start="2">
+                     <li class="stepexpand"><span>On the Runtime Developer toolbar, click <span class="uicontrol bold">Quick Edit</span> (<img id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A__IMAGE_FXR_RM3_K3B" height="33" width="92" src="img/quick_edit_button.png" alt="Quick Edit" title="Quick Edit">).</span><div></div>
+                        <div>
+                           <p>You enter Quick Edit mode. The screen darkens and when you mouse over different elements a wrench icon displays.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In Quick Edit mode, click the <span class="uicontrol bold">Project Id</span> field (do not click the wrench icon).</span><div>
+                           <div class="figure" id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A__FIG_YSD_DN3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A__IMAGE_ZSD_DN3_K3B" height="182" width="711" src="img/runtime_tasks_form_project_id_quick_edit.png" alt="Description of runtime_tasks_form_project_id_quick_edit.png follows" title="Description of runtime_tasks_form_project_id_quick_edit.png follows" longdesc="img_text/runtime_tasks_form_project_id_quick_edit.html"><br><a href="img_text/runtime_tasks_form_project_id_quick_edit.html">Description of the illustration runtime_tasks_form_project_id_quick_edit.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                        <div>
+                           <p>Page Designer loads with P7_PROJECT_ID selected.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To apply lookups to the Project and Milestone fields:</p>
+                  <p></p>
+                  <ol start="4">
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A__SUBSTEPS_WBW_H1S_C3B">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Select List</span>.</span></li>
+                           <li><span>Label: Label - enter <kbd class="userinput">Project</kbd></span></li>
+                           <li><span>List of Values: Type - select <span class="uicontrol bold">Shared Component</span>.</span></li>
+                           <li><span>List of Values: List of Values - select <span class="uicontrol bold">PROJECT NAME</span></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">P7_MILESTONE_ID</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-1FEDF7C6-BDDA-4BB6-88B9-1705924B080A__SUBSTEPS_GKP_NDS_C3B">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Select List</span>.</span></li>
+                           <li><span>Label: Label - enter <kbd class="userinput">Milestone</kbd></span></li>
+                           <li><span>List of Values: Type - select <span class="uicontrol bold">Shared Component</span>.</span></li>
+                           <li><span>List of Values: List of Values - select <span class="uicontrol bold">MILESTONE NAME</span></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     <li class="stepexpand"><span>Return to the runtime and refresh the page, then click an <span class="uicontrol bold">Edit</span> icon (pencil) to redisplay the form.</span><div>
+                           <p>Remember that you cannot run a modal page directly from Page Designer. You must run the non-modal page associated with it, then reopen it.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Note the changed Project and Milestone fields. Click each to see how they behave.</span></li>
+                     <li class="stepexpand"><span>When finished, click <span class="uicontrol bold">Edit Page 7</span> on the Runtime Developer toolbar.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C" name="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C"></a><h3 id="AETUT-GUID-88C144CA-0C15-48FC-9699-B70D1212A28C" class="sect3"><span class="enumeration_section">7.6 </span>Updating the Remaining Fields in the Update Task Form
+               </h3>
+               <div>
+                  <div class="section">
+                     <div class="p">Finally, perform a series of small tasks to update the Update Task form's presentation:
+                        <ul style="list-style-type: disc;" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__UL_DZR_2TN_D3B">
+                           <li>Name - change the Name field to a text field and change the label to Task.</li>
+                           <li>Assignee - change to a select list based on SQL query.</li>
+                           <li>Start Date and End Date - change the format mask to DD-MM-YYYY.</li>
+                           <li>Cost - change the alignment and format mask ($5,234.10).</li>
+                           <li>Is Complete Yn - change the label and type to a switch.</li>
+                           <li>Hide the audit columns (Created, Created By, Updated, Updated By).</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To update the P7_NAME field:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">P7_NAME</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__SUBSTEPS_LXZ_KWN_D3B">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Text Field</span>.</span></li>
+                           <li><span>Label: Label - enter <kbd class="userinput">Task</kbd></span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To update the P7_ASSIGNEE field:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">P7_ASSIGNEE</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__SUBSTEPS_D13_2XN_D3B">
+                           <li class="substepexpand"><span>Identification: Type - select <span class="uicontrol bold">Select List</span>.</span></li>
+                           <li class="substepexpand"><span>List of Values: Type - select <span class="uicontrol bold">SQL Query</span>.</span></li>
+                           <li class="substepexpand"><span>List of Values: SQL Query - copy and paste the following code:</span><div><pre class="pre codeblock"><code>select distinct ASSIGNEE as d, 
+       ASSIGNEE as r
+  from EBA_PROJECT_TASKS
+ order by 1</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To update the P7_START_DATE and P7_END_DATE fields:</p>
+                  <p></p>
+                  <ol start="5">
+                     <li class="stepexpand"><span>Hold Shift or Ctrl and click <span class="uicontrol bold">P7_START_DATE</span> and <span class="uicontrol bold">P7_END_DATE</span> to select them both.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__SUBSTEPS_YXC_N24_D3B">
+                           <li><span>Settings: Show - select <span class="uicontrol bold">Both</span>.</span></li>
+                           <li><span>Appearance: Format Mask - click the <span class="uicontrol bold">LOV</span> icon.</span></li>
+                           <li><span>Select <span class="uicontrol bold">12-JAN-2004</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">P7_END_DATE</span> to only select it.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__SUBSTEPS_OFR_DG4_D3B">
+                           <li><span>Layout: Start New Row - click to <span class="uicontrol bold">disable</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To update the P7_COST field:</p>
+                  <p></p>
+                  <ol start="9">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">P7_COST</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__SUBSTEPS_TPR_WG4_D3B">
+                           <li><span>Settings: Number Alignment - select <span class="uicontrol bold">Left</span>.</span></li>
+                           <li><span>Appearance: Format Mask - click the <span class="uicontrol bold">LOV</span> icon.</span></li>
+                           <li><span>Select <span class="uicontrol bold">$5,234.10</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To update the P7_IS_COMPLETE_YN field:</p>
+                  <p></p>
+                  <ol start="11">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">P7_IS_COMPLETE_YN</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__SUBSTEPS_TWR_LJ4_D3B">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Switch</span>.</span></li>
+                           <li><span>Label: Label - enter <kbd class="userinput">Complete</kbd></span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To hide the audit column fields:</p>
+                  <p></p>
+                  <ol start="13">
+                     <li class="stepexpand"><span>Hold Ctrl or Shift and select the four following items:</span><div>
+                           <ul style="list-style-type: disc;" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__UL_ORQ_VJ4_D3B">
+                              <li>
+                                 <p><span class="uicontrol bold">P7_CREATED</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">P7_CREATED_BY</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">P7_UPDATED</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">P7_UPDATED_BY</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__SUBSTEPS_QMY_1K4_D3B">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Hidden</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Return to the runtime and refresh the page.</span></li>
+                     <li class="stepexpand"><span>Click an <span class="uicontrol bold">Edit</span> icon (pencil) to redisplay the form.</span><div>
+                           <div class="figure" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__FIG_DZR_TN3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-88C144CA-0C15-48FC-9699-B70D1212A28C__IMAGE_EZR_TN3_K3B" height="725" width="734" src="img/runtime_tasks_form_complete.png" alt="Description of runtime_tasks_form_complete.png follows" title="Description of runtime_tasks_form_complete.png follows" longdesc="img_text/runtime_tasks_form_complete.html"><br><a href="img_text/runtime_tasks_form_complete.html">Description of the illustration runtime_tasks_form_complete.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Review your changes. Try clicking around the form to explore the new interface. When finished, click <span class="uicontrol bold">Application #####</span> on the Runtime Developer toolbar to return to the Application home page.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>The Tasks report with form is complete. Proceed to the next lesson.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

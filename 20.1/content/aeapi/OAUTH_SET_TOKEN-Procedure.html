@@ -1,0 +1,189 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="OAUTH_SET_TOKEN Procedure">
+      <meta name="DC.subject" content="APEX_WEB_SERVICE, OAUTH_SET_TOKEN Procedure">
+      <meta name="keywords" content="APEX_WEB_SERVICE, OAUTH_SET_TOKEN Procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_WEB_SERVICE.html#GUID-B95EA4B6-950D-419D-A2B0-CDB254E1E9F0">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-C6CB535D-F3D3-4333-A097-F07B8EBC366E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>OAUTH_SET_TOKEN Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="OAUTH_GET_LAST_TOKEN-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="PARSE_RESPONSE-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="OAUTH_GET_LAST_TOKEN-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PARSE_RESPONSE-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_WEB_SERVICE.html" property="item" typeof="WebPage"><span property="name"> APEX_WEB_SERVICE</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">OAUTH_SET_TOKEN Procedure</li>
+            </ol>
+            <a id="GUID-C6CB535D-F3D3-4333-A097-F07B8EBC366E" name="GUID-C6CB535D-F3D3-4333-A097-F07B8EBC366E"></a>
+            
+            <h2 id="AEAPI-GUID-C6CB535D-F3D3-4333-A097-F07B8EBC366E" class="sect2"><span class="enumeration_section">40.16 </span>OAUTH_SET_TOKEN Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  
+                  <p>This procedure sets the OAuth access token to be used in subsequent
+                    <code class="codeph">MAKE_REST_REQUEST</code> calls. This procedure can be used to set a
+                token which has been obtained by other means than with
+                    <code class="codeph">OAUTH_AUTHENTICATE</code> (for instance, custom code).
+                  </p>
+                  
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-C6CB535D-F3D3-4333-A097-F07B8EBC366E__GUID-95299146-19F1-4ABA-887A-8720446D474C">Syntax</p>
+                  
+                  
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <pre class="pre codeblock"><code>PROCEDURE OAUTH_SET_TOKEN(
+    p_token   IN VARCHAR2,
+    p_expires IN DATE DEFAULT NULL );</code></pre>
+                  </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-C6CB535D-F3D3-4333-A097-F07B8EBC366E__GUID-031E0727-4931-45C8-991B-251EB56218EA">Parameters</p>
+                  
+                  
+                  <div class="tblformal" id="GUID-C6CB535D-F3D3-4333-A097-F07B8EBC366E__GUID-6E60556E-1BE9-4820-B2B4-79D4F9223A6E">
+                     <p class="titleintable">Table 40-10 OAUTH_SET_TOKEN Procedure
+                    Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="OAUTH_SET_TOKEN Procedure&#xA;                    Parameters" summary="Parameter descriptions for the OAUTH_SET_TOKEN procedure." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" id="d216181e82">
+                                Parameter
+                            </th>
+                              <th align="left" valign="bottom" id="d216181e87">
+                                Description
+                            </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d216181e94" headers="d216181e82 ">
+                                 
+                                 <p><code class="codeph">p_token</code></p>
+                                 
+                              </td>
+                              <td align="left" valign="top" headers="d216181e94 d216181e87 ">
+                                 
+                                 <p>The OAuth access token to be used by
+                                        <code class="codeph">MAKE_REST_REQUEST</code> calls.
+                                 </p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d216181e109" headers="d216181e82 ">
+                                 
+                                 <p><code class="codeph">p_expires</code></p>
+                                 
+                              </td>
+                              <td align="left" valign="top" headers="d216181e109 d216181e87 ">
+                                 
+                                 <p>Optional: The token expiry date; NULL means: No
+                                    expiration date.</p>
+                                 
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-C6CB535D-F3D3-4333-A097-F07B8EBC366E__GUID-A60CE33B-B05F-44C6-9C28-54F0FE3258D6">Example</p>
+                  
+                  <pre class="pre codeblock"><code> begin
+     apex_web_service.oauth_set_token(
+         p_token =&gt;   '{oauth access token}'
+     );
+ end;</code></pre>
+                  </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_WEB_SERVICE.html#GUID-B95EA4B6-950D-419D-A2B0-CDB254E1E9F0">APEX_WEB_SERVICE</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

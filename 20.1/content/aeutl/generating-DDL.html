@@ -1,0 +1,176 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="task">
+      <meta name="DC.Title" content="Generating DDL">
+      <meta name="abstract" content="With Oracle Application Express, you can generate data definition language (DDL) statements from the Oracle data dictionary.">
+      <meta name="description" content="With Oracle Application Express, you can generate data definition language (DDL) statements from the Oracle data dictionary.">
+      <meta name="DC.subject" content="DDL, about, generating, database definition language, generating DDL statements">
+      <meta name="keywords" content="DDL, about, generating, database definition language, generating DDL statements">
+      <meta name="DC.Relation" scheme="URI" content="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-0AA0AF5C-C9CD-488A-A77D-A12FFE2FE3BB">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="With Oracle Application Express, you can generate data definition language (DDL) statements from the Oracle data dictionary.">
+      <meta name="description" content="With Oracle Application Express, you can generate data definition language (DDL) statements from the Oracle data dictionary.">
+      <title>Generating DDL</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="With Oracle Application Express, you can generate data definition language (DDL) statements from the Oracle data dictionary.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="using-sample-datasets.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-user-interface-defaults.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-sample-datasets.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-user-interface-defaults.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-Oracle-application-express-utilities.html" property="item" typeof="WebPage"><span property="name"> Using Oracle Application Express Utilities</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Generating DDL</li>
+            </ol>
+            <a id="GUID-0AA0AF5C-C9CD-488A-A77D-A12FFE2FE3BB" name="GUID-0AA0AF5C-C9CD-488A-A77D-A12FFE2FE3BB"></a><a id="AEUTL256"></a>
+            
+            <h2 id="AEUTL-GUID-0AA0AF5C-C9CD-488A-A77D-A12FFE2FE3BB" class="sect2"><span class="enumeration_section">5.5 </span>Generating DDL
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>With Oracle Application Express, you can generate data definition language (DDL) statements from the Oracle data dictionary.</p>
+               <div class="section">
+                  <p> You can use these scripts to create or re-create database schema objects. The scripts can be generated to display inline or saved as a script file. You can generate the create scripts for all objects for a specific schema, specific object types, or specific objects.</p>
+                  <p>To generate a DDL statement: </p>
+                  <ol>
+                     <li>
+                        <p>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Click <span class="uicontrol bold">Utilities</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Click <span class="uicontrol bold">Generate DDL</span>.
+                        </p>
+                        <p>The Generate DDL page appears.</p>
+                     </li>
+                     <li>
+                        <p>Click <span class="uicontrol bold">Create Script</span>.
+                        </p>
+                        <p>The Generate DDL Wizard appears.</p>
+                     </li>
+                     <li>
+                        <p>Select a database schema and click <span class="uicontrol bold">Next</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Define the object type:</p>
+                        <ol type="a">
+                           <li>
+                              <p>Output - Specify an output format. Select either <span class="uicontrol bold">Display Inline</span> or <span class="uicontrol bold">Save As Script File</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Check All</span> - Select this option to include all object types for which to generate DDL.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Object Type</span> - Select the object types for which to generate DDL.
+                              </p>
+                           </li>
+                           <li>
+                              <p>To select object names for the selected object types, click <span class="uicontrol bold">Next</span> and follow the on-screen instructions.
+                              </p>
+                           </li>
+                        </ol>
+                     </li>
+                     <li>
+                        <p>Click <span class="uicontrol bold">Generate DDL</span>.
+                        </p>
+                     </li>
+                  </ol>
+                  <div class="infoboxnotealso" id="GUID-0AA0AF5C-C9CD-488A-A77D-A12FFE2FE3BB__GUID-CD01616B-CDA2-4FA9-B4E6-B7E85F80A28E">
+                     <p class="notep1">See Also:</p>
+                     <p></p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=SQLRF-GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC" target="_blank"><span><cite>Oracle Database SQL Language Reference</cite></span></a>"</span> for information about DDL statements
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="q">"The Data Dictionary"</span> in <a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=CNCPT002" target="_blank"><span class="italic">Oracle Database Concepts</span></a> for information about the data dictionary
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5" title="Oracle Application Express provides utilities to build SQL queries, load and unload data from an Oracle database, generate DDL, view object reports, manage User Interface Defaults, restore dropped database objects, compare schemas, monitor the database, and view database details.">Using Oracle Application Express Utilities</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

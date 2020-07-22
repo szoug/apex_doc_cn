@@ -1,0 +1,957 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Data Types Used by APEX_PLUGIN">
+      <meta name="DC.subject" content="APEX_PLUGIN, data types">
+      <meta name="keywords" content="APEX_PLUGIN, data types">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN.html#GUID-E4CF534E-D795-44B6-8C3D-C464A8EF115C">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-FC3E1897-A4FF-4B0C-8DAB-4C5E98A99E86">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-1F256A45-FB02-4C13-B8EF-B9A211F280AE">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-B04840BB-4929-4E3D-83DB-553E8A019B91">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-11E0CBC6-F81F-436C-A22D-577FB532CEB1">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-9658BFF3-06F9-4F21-B338-D3BFE84552FA">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-1A515007-2707-4770-AC34-82FEB109476F">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-FD45C787-BAFB-4FD9-A34E-C614AD532904">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-A33C2444-8425-4998-BF46-5E4CF8EC7BE7">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-540315CE-C74D-45E9-8D96-DE6744EB913C">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-28843ECA-40BC-4E03-9761-BAE18573898A">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-AD63B083-79BF-4414-9436-629BD1AE1EB0">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-7472A92B-6A3E-468C-BDC7-CE7E55119416">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-028E595E-CCC1-4F22-8D6E-7CE38469D404">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-229E987F-467E-4526-A2B7-CD4534B4B9DF">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-515CCE82-E815-4B04-B193-6195A722FA91">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-09D00B71-D918-4DBF-B27B-75E624269E8E">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-C956CFF2-264F-492E-893D-8E432552F676">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-8CBBCAC4-1A0F-4DA9-98C3-569351E9FD9B">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-DCB8EB1D-73DC-48D1-B6BE-B6B5963FCC85">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-576E0B4E-C0BC-444B-87FE-E471141DD66A">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-E5FE9460-F724-4F7F-90A2-952266DA21EA">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-83C7E3F3-7D12-421E-AFC9-69BF40DBE9CB">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-EA9875B7-CF0F-4BD9-B07F-C123B1BCDAE9">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-58B60D33-6C85-4AC9-925F-5754C43D98C7">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-306D4448-450F-40DB-9417-1A7FB6A288CD">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-7D86EF6D-CD14-4AEF-B1E2-208B4A5F4D68">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN-Data-Types.html#GUID-173E95E0-6B67-4D52-8244-178D611AE7A0">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-93D46E76-0813-470A-8177-51E9F67128D7">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Data Types Used by APEX_PLUGIN</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="APEX_PLUGIN.html" title="Previous" type="text/html">
+      <link rel="next" href="GET_AJAX_IDENTIFIER-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="APEX_PLUGIN.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="GET_AJAX_IDENTIFIER-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_PLUGIN.html" property="item" typeof="WebPage"><span property="name"> APEX_PLUGIN</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Data Types Used by APEX_PLUGIN</li>
+            </ol>
+            <a id="GUID-93D46E76-0813-470A-8177-51E9F67128D7" name="GUID-93D46E76-0813-470A-8177-51E9F67128D7"></a>
+            
+            <h2 id="AEAPI-GUID-93D46E76-0813-470A-8177-51E9F67128D7" class="sect2"><span class="enumeration_section">30.1 </span>Data Types Used by APEX_PLUGIN
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This section describes the data types used by the <code class="codeph">APEX_PLUGIN</code> package.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-FC3E1897-A4FF-4B0C-8DAB-4C5E98A99E86">c_inline_with_field</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-1F256A45-FB02-4C13-B8EF-B9A211F280AE">c_inline_with_field_and_notif</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-B04840BB-4929-4E3D-83DB-553E8A019B91">c_inline_in_notification</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-11E0CBC6-F81F-436C-A22D-577FB532CEB1">c_on_error_page</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-9658BFF3-06F9-4F21-B338-D3BFE84552FA">t_authentication</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-1A515007-2707-4770-AC34-82FEB109476F">t_authentication_ajax_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-FD45C787-BAFB-4FD9-A34E-C614AD532904">t_authentication_auth_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-A33C2444-8425-4998-BF46-5E4CF8EC7BE7">t_authentication_inval_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-540315CE-C74D-45E9-8D96-DE6744EB913C">t_authentication_logout_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-28843ECA-40BC-4E03-9761-BAE18573898A">t_authentication_sentry_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-AD63B083-79BF-4414-9436-629BD1AE1EB0">t_authorization</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-7472A92B-6A3E-468C-BDC7-CE7E55119416">t_authorization_exec_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-028E595E-CCC1-4F22-8D6E-7CE38469D404">t_dynamic_action</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-229E987F-467E-4526-A2B7-CD4534B4B9DF">t_dynamic_action_ajax_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-515CCE82-E815-4B04-B193-6195A722FA91">t_dynamic_action_render_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-09D00B71-D918-4DBF-B27B-75E624269E8E">t_item</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-C956CFF2-264F-492E-893D-8E432552F676">t_item_ajax_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-8CBBCAC4-1A0F-4DA9-98C3-569351E9FD9B">t_item_render_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-DCB8EB1D-73DC-48D1-B6BE-B6B5963FCC85">t_item_validation_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-576E0B4E-C0BC-444B-87FE-E471141DD66A">t_plugin</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-E5FE9460-F724-4F7F-90A2-952266DA21EA">t_process</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-83C7E3F3-7D12-421E-AFC9-69BF40DBE9CB">t_process_exec_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-EA9875B7-CF0F-4BD9-B07F-C123B1BCDAE9">t_region_column</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-58B60D33-6C85-4AC9-925F-5754C43D98C7">t_region_columns</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-306D4448-450F-40DB-9417-1A7FB6A288CD">t_region</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-7D86EF6D-CD14-4AEF-B1E2-208B4A5F4D68">t_region_ajax_result</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_PLUGIN-Data-Types.html#GUID-173E95E0-6B67-4D52-8244-178D611AE7A0">t_region_render_result</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN.html#GUID-E4CF534E-D795-44B6-8C3D-C464A8EF115C">APEX_PLUGIN</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-FC3E1897-A4FF-4B0C-8DAB-4C5E98A99E86" name="GUID-FC3E1897-A4FF-4B0C-8DAB-4C5E98A99E86"></a><h3 id="AEAPI-GUID-FC3E1897-A4FF-4B0C-8DAB-4C5E98A99E86" class="sect3"><span class="enumeration_section">30.1.1 </span>c_inline_with_field
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>Use the constant <code class="codeph">c_inline_with_field</code> for
+                    <code class="codeph">display_location</code> in the page item validation function result
+                type <code class="codeph">t_page_item_validation_result</code>.
+                     </p>
+                     <pre class="pre codeblock"><code>c_inline_with_field         constant varchar2(40) := 'INLINE_WITH_FIELD';</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-1F256A45-FB02-4C13-B8EF-B9A211F280AE" name="GUID-1F256A45-FB02-4C13-B8EF-B9A211F280AE"></a><h3 id="AEAPI-GUID-1F256A45-FB02-4C13-B8EF-B9A211F280AE" class="sect3"><span class="enumeration_section">30.1.2 </span>c_inline_with_field_and_notif
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>Use the constant <code class="codeph">c_inline_with_field_and_notif</code>  for
+                    <code class="codeph">display_location</code> in the page item validation function result
+                type <code class="codeph">t_page_item_validation_result</code>.
+                     </p>
+                     <pre class="pre codeblock"><code>
+c_inline_with_field_and_notif   constant varchar2(40) := 'INLINE_WITH_FIELD_AND_NOTIFICATION';</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-B04840BB-4929-4E3D-83DB-553E8A019B91" name="GUID-B04840BB-4929-4E3D-83DB-553E8A019B91"></a><h3 id="AEAPI-GUID-B04840BB-4929-4E3D-83DB-553E8A019B91" class="sect3"><span class="enumeration_section">30.1.3 </span> c_inline_in_notification
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>Use the following constant for <code class="codeph">display_location</code> in the
+                page item validation function result type
+                    <code class="codeph">t_page_item_validation_result</code>.
+                     </p>
+                     <pre class="pre codeblock"><code>
+
+c_inline_in_notification        constant varchar2(40) := 'INLINE_IN_NOTIFICATION';</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-11E0CBC6-F81F-436C-A22D-577FB532CEB1" name="GUID-11E0CBC6-F81F-436C-A22D-577FB532CEB1"></a><h3 id="AEAPI-GUID-11E0CBC6-F81F-436C-A22D-577FB532CEB1" class="sect3"><span class="enumeration_section">30.1.4 </span>c_on_error_page
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>Use the constant <code class="codeph">c_on_error_page</code> for
+                    <code class="codeph">display_location</code> in the page item validation function result
+                type <code class="codeph">t_page_item_validation_result</code>.
+                     </p>
+                     <pre class="pre codeblock"><code>
+c_on_error_page                 constant varchar2(40) := 'ON_ERROR_PAGE';</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-9658BFF3-06F9-4F21-B338-D3BFE84552FA" name="GUID-9658BFF3-06F9-4F21-B338-D3BFE84552FA"></a><h3 id="AEAPI-GUID-9658BFF3-06F9-4F21-B338-D3BFE84552FA" class="sect3"><span class="enumeration_section">30.1.5 </span>t_authentication
+               </h3>
+               <div>
+                  <div class="section">
+                     <pre class="pre codeblock"><code>type t_authentication is record (
+    id                   number,
+    name                 varchar2(255),
+    invalid_session_url  varchar2(4000),
+    logout_url           varchar2(4000),
+    plsql_code           clob,
+    attribute_01         varchar2(32767),
+    attribute_02         varchar2(32767),
+    attribute_03         varchar2(32767),
+    attribute_04         varchar2(32767),
+    attribute_05         varchar2(32767),
+    attribute_06         varchar2(32767),
+    attribute_07         varchar2(32767),
+    attribute_08         varchar2(32767),
+    attribute_09         varchar2(32767),
+    attribute_10         varchar2(32767),
+    attribute_11         varchar2(32767),
+    attribute_12         varchar2(32767),
+    attribute_13         varchar2(32767),
+    attribute_14         varchar2(32767),
+    attribute_15         varchar2(32767),
+    --
+    session_id           number,
+    username             varchar2(255) );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-1A515007-2707-4770-AC34-82FEB109476F" name="GUID-1A515007-2707-4770-AC34-82FEB109476F"></a><h3 id="AEAPI-GUID-1A515007-2707-4770-AC34-82FEB109476F" class="sect3"><span class="enumeration_section">30.1.6 </span>t_authentication_ajax_result
+               </h3>
+               <div>
+                  <div class="section">
+                     <pre class="pre codeblock"><code>type t_authentication_ajax_result is record (
+    dummy                boolean );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-FD45C787-BAFB-4FD9-A34E-C614AD532904" name="GUID-FD45C787-BAFB-4FD9-A34E-C614AD532904"></a><h3 id="AEAPI-GUID-FD45C787-BAFB-4FD9-A34E-C614AD532904" class="sect3"><span class="enumeration_section">30.1.7 </span>t_authentication_auth_result
+               </h3>
+               <div>
+                  <div class="section">
+                     <pre class="pre codeblock"><code>type t_authentication_auth_result is record (
+    is_authenticated     boolean,
+    redirect_url         varchar2(4000),
+    log_code             number,
+    log_text             varchar2(4000),
+    display_text         varchar2(4000) );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-A33C2444-8425-4998-BF46-5E4CF8EC7BE7" name="GUID-A33C2444-8425-4998-BF46-5E4CF8EC7BE7"></a><h3 id="AEAPI-GUID-A33C2444-8425-4998-BF46-5E4CF8EC7BE7" class="sect3"><span class="enumeration_section">30.1.8 </span>t_authentication_inval_result
+               </h3>
+               <div>
+                  <div class="section">
+                     <pre class="pre codeblock"><code>type t_authentication_inval_result is record (
+    redirect_url         varchar2(4000) );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-540315CE-C74D-45E9-8D96-DE6744EB913C" name="GUID-540315CE-C74D-45E9-8D96-DE6744EB913C"></a><h3 id="AEAPI-GUID-540315CE-C74D-45E9-8D96-DE6744EB913C" class="sect3"><span class="enumeration_section">30.1.9 </span>t_authentication_logout_result
+               </h3>
+               <div>
+                  <div class="section">
+                     <pre class="pre codeblock"><code>type t_authentication_logout_result is record (
+    redirect_url         varchar2(4000) );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-28843ECA-40BC-4E03-9761-BAE18573898A" name="GUID-28843ECA-40BC-4E03-9761-BAE18573898A"></a><h3 id="AEAPI-GUID-28843ECA-40BC-4E03-9761-BAE18573898A" class="sect3"><span class="enumeration_section">30.1.10 </span>t_authentication_sentry_result
+               </h3>
+               <div>
+                  <div class="section">
+                     <pre class="pre codeblock"><code>type t_authentication_sentry_result is record (
+    is_valid             boolean );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-AD63B083-79BF-4414-9436-629BD1AE1EB0" name="GUID-AD63B083-79BF-4414-9436-629BD1AE1EB0"></a><h3 id="AEAPI-GUID-AD63B083-79BF-4414-9436-629BD1AE1EB0" class="sect3"><span class="enumeration_section">30.1.11 </span>t_authorization
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The following type is passed to all authorization plug-in functions and
+                contains information about the current authorization.</p>
+                     <pre class="pre codeblock"><code>type t_authorization is record (
+    id                   number,
+    name                 varchar2(255),
+    username             varchar2(255),
+    caching              varchar2(20),
+    component            apex.t_component,
+    attribute_01         varchar2(32767),
+    attribute_02         varchar2(32767),
+    attribute_03         varchar2(32767),
+    attribute_04         varchar2(32767),
+    attribute_05         varchar2(32767),
+    attribute_06         varchar2(32767),
+    attribute_07         varchar2(32767),
+    attribute_08         varchar2(32767),
+    attribute_09         varchar2(32767),
+    attribute_10         varchar2(32767),
+    attribute_11         varchar2(32767),
+    attribute_12         varchar2(32767),
+    attribute_13         varchar2(32767),
+    attribute_14         varchar2(32767),
+    attribute_15         varchar2(32767),</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-7472A92B-6A3E-468C-BDC7-CE7E55119416" name="GUID-7472A92B-6A3E-468C-BDC7-CE7E55119416"></a><h3 id="AEAPI-GUID-7472A92B-6A3E-468C-BDC7-CE7E55119416" class="sect3"><span class="enumeration_section">30.1.12 </span>t_authorization_exec_result
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The <code class="codeph">t_authorization_exec_result</code> data type has
+        been added to the <code class="codeph">APEX_PLUGIN</code>
+      package.
+                     </p><pre class="pre codeblock"><code>type t_authorization_exec_result is record (
+    is_authorized        boolean
+    );</code></pre><code class="codeph"></code></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-028E595E-CCC1-4F22-8D6E-7CE38469D404" name="GUID-028E595E-CCC1-4F22-8D6E-7CE38469D404"></a><h3 id="AEAPI-GUID-028E595E-CCC1-4F22-8D6E-7CE38469D404" class="sect3"><span class="enumeration_section">30.1.13 </span>t_dynamic_action
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_dynamic_action</code> type is passed into all dynamic action
+        plug-in functions and contains information about the current dynamic action.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_dynamic_action is record (
+    id           number,
+    action       varchar2(50),
+    attribute_01 varchar2(32767),
+    attribute_02 varchar2(32767),
+    attribute_03 varchar2(32767),
+    attribute_04 varchar2(32767),
+    attribute_05 varchar2(32767),
+    attribute_06 varchar2(32767),
+    attribute_07 varchar2(32767),
+    attribute_08 varchar2(32767),
+    attribute_09 varchar2(32767),
+    attribute_10 varchar2(32767),
+    attribute_11 varchar2(32767),
+    attribute_12 varchar2(32767),
+    attribute_13 varchar2(32767),
+    attribute_14 varchar2(32767),
+    attribute_15 varchar2(32767) );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-229E987F-467E-4526-A2B7-CD4534B4B9DF" name="GUID-229E987F-467E-4526-A2B7-CD4534B4B9DF"></a><h3 id="AEAPI-GUID-229E987F-467E-4526-A2B7-CD4534B4B9DF" class="sect3"><span class="enumeration_section">30.1.14 </span>t_dynamic_action_ajax_result
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_dynamic_action_ajax_result</code> type is used as the result
+        type for the Ajax function of a dynamic action type plug-in.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_dynamic_action_ajax_result is record (
+    dummy boolean /* not used yet */
+    );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-515CCE82-E815-4B04-B193-6195A722FA91" name="GUID-515CCE82-E815-4B04-B193-6195A722FA91"></a><h3 id="AEAPI-GUID-515CCE82-E815-4B04-B193-6195A722FA91" class="sect3"><span class="enumeration_section">30.1.15 </span>t_dynamic_action_render_result
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_dynamic_action_render_result</code> type is used as the result
+        type for the rendering function of a dynamic action plug-in.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_dynamic_action_render_result is record (
+    javascript_function varchar2(32767),
+    ajax_identifier     varchar2(255),
+    attribute_01        varchar2(32767),
+    attribute_02        varchar2(32767),
+    attribute_03        varchar2(32767),
+    attribute_04        varchar2(32767),
+    attribute_05        varchar2(32767),
+    attribute_06        varchar2(32767),
+    attribute_07        varchar2(32767),
+    attribute_08        varchar2(32767),
+    attribute_09        varchar2(32767),
+    attribute_10        varchar2(32767),
+    attribute_11        varchar2(32767),
+    attribute_12        varchar2(32767),
+    attribute_13        varchar2(32767),
+    attribute_14        varchar2(32767),
+    attribute_15        varchar2(32767) );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-09D00B71-D918-4DBF-B27B-75E624269E8E" name="GUID-09D00B71-D918-4DBF-B27B-75E624269E8E"></a><h3 id="AEAPI-GUID-09D00B71-D918-4DBF-B27B-75E624269E8E" class="sect3"><span class="enumeration_section">30.1.16 </span>t_item
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_item</code> type is passed into all item type plug-in
+                functions and contains information about the current page item.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_item is record (
+	id number,
+	name varchar2(4000),
+	session_state_name varchar2(4000),
+	component_type_id number,
+	region_id number,
+	form_region_id number,
+	data_type varchar2(30),
+	label varchar2(4000),
+	plain_label varchar2(4000),
+	label_id varchar2(4000), /* label id is set if "Standard Form Element" = no and label template uses #LABEL_ID# substitution */
+	placeholder varchar2(4000),
+	format_mask varchar2(4000),
+	is_required boolean,
+	lov_definition varchar2(4000),
+	shared_lov_id number,
+	lov_display_extra boolean,
+	lov_display_null boolean,
+	lov_null_text varchar2(4000),
+	lov_null_value varchar2(4000),
+	lov_cascade_parent_items varchar2(4000),
+	lov_return_column varchar2(128),
+	lov_display_column varchar2(128),
+	lov_icon_column varchar2(128),
+	lov_group_column varchar2(128),
+	lov_group_sort_direction varchar2(16),
+	lov_default_sort_column varchar2(128),
+	lov_default_sort_direction varchar2(16),
+	lov_oracle_text_column varchar2(128),
+	lov_columns t_lov_columns,
+	lov_is_legacy boolean,
+	ajax_items_to_submit varchar2(4000),
+	ajax_optimize_refresh boolean,
+	element_width number,
+	element_max_length number,
+	element_height number,
+	element_css_classes varchar2(4000),
+	element_attributes varchar2(4000),
+	element_option_attributes varchar2(4000),
+	icon_css_classes varchar2(4000),
+	escape_output boolean,
+	ignore_change boolean default true,
+	attribute_01 varchar2(32767),
+	attribute_02 varchar2(32767),
+	attribute_03 varchar2(32767),
+	attribute_04 varchar2(32767),
+	attribute_05 varchar2(32767),
+	attribute_06 varchar2(32767),
+	attribute_07 varchar2(32767),
+	attribute_08 varchar2(32767),
+	attribute_09 varchar2(32767),
+	attribute_10 varchar2(32767),
+	attribute_11 varchar2(32767),
+	attribute_12 varchar2(32767),
+	attribute_13 varchar2(32767),
+	attribute_14 varchar2(32767),
+	attribute_15 varchar2(32767),
+	init_javascript_code varchar2(32767),
+	inline_help_text varchar2(4000)
+);</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-C956CFF2-264F-492E-893D-8E432552F676" name="GUID-C956CFF2-264F-492E-893D-8E432552F676"></a><h3 id="AEAPI-GUID-C956CFF2-264F-492E-893D-8E432552F676" class="sect3"><span class="enumeration_section">30.1.17 </span>t_item_ajax_result
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_item_ajax_result</code> type is used as the result type for the
+        Ajax function of an item type plug-in.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_item_ajax_result is record (
+    dummy boolean /* not used yet */
+    );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-8CBBCAC4-1A0F-4DA9-98C3-569351E9FD9B" name="GUID-8CBBCAC4-1A0F-4DA9-98C3-569351E9FD9B"></a><h3 id="AEAPI-GUID-8CBBCAC4-1A0F-4DA9-98C3-569351E9FD9B" class="sect3"><span class="enumeration_section">30.1.18 </span>t_item_render_result
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_item_render_result</code> type is used as the result type for
+        the rendering function of an item type plug-in.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_item_render_result is record (
+    is_navigable     boolean default false,
+    navigable_dom_id varchar2(255)          /* should only be set if navigable element is not equal to item name */
+    );</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-DCB8EB1D-73DC-48D1-B6BE-B6B5963FCC85" name="GUID-DCB8EB1D-73DC-48D1-B6BE-B6B5963FCC85"></a><h3 id="AEAPI-GUID-DCB8EB1D-73DC-48D1-B6BE-B6B5963FCC85" class="sect3"><span class="enumeration_section">30.1.19 </span>t_item_validation_result
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_item_validation_result</code> type is used as the result type
+        for the validation function of an item type plug-in.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_item_validation_result is record (
+    message          varchar2(32767),
+    display_location varchar2(40),    /* if not set the application default is used */
+    page_item_name   varchar2(255) ); /* if not set the validated page item name is used */</code></pre>
+                     </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-576E0B4E-C0BC-444B-87FE-E471141DD66A" name="GUID-576E0B4E-C0BC-444B-87FE-E471141DD66A"></a><h3 id="AEAPI-GUID-576E0B4E-C0BC-444B-87FE-E471141DD66A" class="sect3"><span class="enumeration_section">30.1.20 </span>t_plugin
+               </h3>
+               <div>
+                  <div class="section">
+                     <div class="p">The<code class="codeph"> t_plugin</code> type is passed into all plug-in functions and contains
+                information about the current
+                plug-in.<pre class="pre codeblock"><code>type t_plugin is record (
+    name         varchar2(45),
+    file_prefix  varchar2(4000),
+    attribute_01 varchar2(32767),
+    attribute_02 varchar2(32767),
+    attribute_03 varchar2(32767),
+    attribute_04 varchar2(32767),
+    attribute_05 varchar2(32767),
+    attribute_06 varchar2(32767),
+    attribute_07 varchar2(32767),
+    attribute_08 varchar2(32767),
+    attribute_09 varchar2(32767),
+    attribute_10 varchar2(32767),
+    attribute_11 varchar2(32767),
+    attribute_12 varchar2(32767),
+    attribute_13 varchar2(32767),
+    attribute_14 varchar2(32767),
+    attribute_15 varchar2(32767) );</code></pre></div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-E5FE9460-F724-4F7F-90A2-952266DA21EA" name="GUID-E5FE9460-F724-4F7F-90A2-952266DA21EA"></a><h3 id="AEAPI-GUID-E5FE9460-F724-4F7F-90A2-952266DA21EA" class="sect3"><span class="enumeration_section">30.1.21 </span>t_process
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The <code class="codeph">t_process</code> type is passed into all process
+                type plug-in functions and contains information about the current
+                process.
+                     </p><code class="codeph">type t_process is record (     id                   number,
+                name                 varchar2(255),     success_message      varchar2(32767),
+                attribute_01         varchar2(32767),     attribute_02         varchar2(32767),
+                attribute_03         varchar2(32767),     attribute_04         varchar2(32767),
+                attribute_05         varchar2(32767),     attribute_06         varchar2(32767),
+                attribute_07         varchar2(32767),     attribute_08         varchar2(32767),
+                attribute_09         varchar2(32767),     attribute_10         varchar2(32767),
+                attribute_11         varchar2(32767),     attribute_12         varchar2(32767),
+                attribute_13         varchar2(32767),     attribute_14         varchar2(32767),
+                attribute_15         varchar2(32767) );</code></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-83C7E3F3-7D12-421E-AFC9-69BF40DBE9CB" name="GUID-83C7E3F3-7D12-421E-AFC9-69BF40DBE9CB"></a><h3 id="AEAPI-GUID-83C7E3F3-7D12-421E-AFC9-69BF40DBE9CB" class="sect3"><span class="enumeration_section">30.1.22 </span>t_process_exec_result
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The <code class="codeph">t_process_exec_result</code> type is used as the result type for the
+                execution function of a process type plug-in.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_process_exec_result is record (
+    success_message varchar2(32767)
+    execution_skipped boolean default false /* set to TRUE if process execution has been skipped by plug-in because of additional condition checks */
+    );</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-EA9875B7-CF0F-4BD9-B07F-C123B1BCDAE9" name="GUID-EA9875B7-CF0F-4BD9-B07F-C123B1BCDAE9"></a><h3 id="AEAPI-GUID-EA9875B7-CF0F-4BD9-B07F-C123B1BCDAE9" class="sect3"><span class="enumeration_section">30.1.23 </span>t_region_column
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The <code class="codeph">t_region_column</code> type is passed into all region type plug-in
+                functions and contains information about the current region.
+                     </p>
+                     <pre class="pre codeblock"><code>type  t_region_column is record (
+    id                   number,
+    name                 t_region_column_name,
+    is_displayed         boolean,
+    heading              apex_region_columns.heading%type,
+    heading_alignment    apex_region_columns.heading_alignment%type,
+    value_alignment      apex_region_columns.value_alignment%type,
+    value_css_classes    apex_region_columns.value_css_classes%type,
+    value_attributes     apex_region_columns.value_attributes%type,
+    format_mask          apex_region_columns.format_mask%type,
+    escape_output        boolean,
+    attribute_01         varchar2(32767),
+    attribute_02         varchar2(32767),
+    attribute_03         varchar2(32767),
+    attribute_04         varchar2(32767),
+    attribute_05         varchar2(32767),
+    attribute_06         varchar2(32767),
+    attribute_07         varchar2(32767),
+    attribute_08         varchar2(32767),
+    attribute_09         varchar2(32767),
+    attribute_10         varchar2(32767),
+    attribute_11         varchar2(32767),
+    attribute_12         varchar2(32767),
+    attribute_13         varchar2(32767),
+    attribute_14         varchar2(32767),
+    attribute_15         varchar2(32767),
+    attribute_16         varchar2(32767),
+    attribute_17         varchar2(32767),
+    attribute_18         varchar2(32767),
+    attribute_19         varchar2(32767),
+    attribute_20         varchar2(32767),
+    attribute_21         varchar2(32767),
+    attribute_22         varchar2(32767),
+    attribute_23         varchar2(32767),
+    attribute_24         varchar2(32767),
+    attribute_25         varchar2(32767);</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-58B60D33-6C85-4AC9-925F-5754C43D98C7" name="GUID-58B60D33-6C85-4AC9-925F-5754C43D98C7"></a><h3 id="AEAPI-GUID-58B60D33-6C85-4AC9-925F-5754C43D98C7" class="sect3"><span class="enumeration_section">30.1.24 </span>t_region_columns
+               </h3>
+               <div>
+                  <div class="section">
+                     <pre class="pre codeblock"><code>type t_region_columns is table of t_region_column index by
+        pls_integer;</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-306D4448-450F-40DB-9417-1A7FB6A288CD" name="GUID-306D4448-450F-40DB-9417-1A7FB6A288CD"></a><h3 id="AEAPI-GUID-306D4448-450F-40DB-9417-1A7FB6A288CD" class="sect3"><span class="enumeration_section">30.1.25 </span>t_region
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_region</code> type is passed into all region type plug-in functions
+                and contains information about the current region.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_region is record (
+    id                          number,
+    static_id                   varchar2(255),
+    name                        varchar2(4000),
+    type                        varchar2(255),
+    source                      varchar2(32767),
+    ajax_items_to_submit        varchar2(32767),
+    fetched_rows                pls_integer,
+    escape_output               boolean,
+    error_message               varchar2(32767), /* obsolete */
+    no_data_found_message       varchar2(32767),
+    attribute_01                varchar2(32767),
+    attribute_02                varchar2(32767),
+    attribute_03                varchar2(32767),
+    attribute_04                varchar2(32767),
+    attribute_05                varchar2(32767),
+    attribute_06                varchar2(32767),
+    attribute_07                varchar2(32767),
+    attribute_08                varchar2(32767),
+    attribute_09                varchar2(32767),
+    attribute_10                varchar2(32767),
+    attribute_11                varchar2(32767),
+    attribute_12                varchar2(32767),
+    attribute_13                varchar2(32767),
+    attribute_14                varchar2(32767),
+    attribute_15                varchar2(32767),
+    attribute_16                varchar2(32767),
+    attribute_17                varchar2(32767),
+    attribute_18                varchar2(32767),
+    attribute_19                varchar2(32767),
+    attribute_20                varchar2(32767),
+    attribute_21                varchar2(32767),
+    attribute_22                varchar2(32767),
+    attribute_23                varchar2(32767),
+    attribute_24                varchar2(32767),
+    attribute_25                varchar2(32767),
+    region_columns              t_region_columns,
+    init_javascript_code        varchar2(32767),
+    );</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-7D86EF6D-CD14-4AEF-B1E2-208B4A5F4D68" name="GUID-7D86EF6D-CD14-4AEF-B1E2-208B4A5F4D68"></a><h3 id="AEAPI-GUID-7D86EF6D-CD14-4AEF-B1E2-208B4A5F4D68" class="sect3"><span class="enumeration_section">30.1.26 </span>t_region_ajax_result
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_region_ajax_result</code> type is used as result type for the Ajax
+                function of a region type plug-in.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_region_ajax_result is record (
+    dummy boolean /* not used yet */
+    );</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-173E95E0-6B67-4D52-8244-178D611AE7A0" name="GUID-173E95E0-6B67-4D52-8244-178D611AE7A0"></a><h3 id="AEAPI-GUID-173E95E0-6B67-4D52-8244-178D611AE7A0" class="sect3"><span class="enumeration_section">30.1.27 </span>t_region_render_result
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The <code class="codeph">t_region_render_result</code> type is used as the result
+                type for the rendering function of a region type plug-in.
+                     </p>
+                     <pre class="pre codeblock"><code>type t_region_render_result is record (
+    navigable_dom_id varchar2(255) /* can be used to put focus to an input field (that is, search field) the region renders as part of the plug-in output */
+    );
+</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN-Data-Types.html#GUID-93D46E76-0813-470A-8177-51E9F67128D7">Data Types Used by APEX_PLUGIN</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Choosing a Web Listener">
+      <meta name="abstract" content="In order to run, Oracle Application Express must have access to a Web listener.">
+      <meta name="description" content="In order to run, Oracle Application Express must have access to a Web listener.">
+      <meta name="DC.subject" content="web listener, choosing, comparing each, Oracle REST Data Services, Oracle REST Data Services, about, embedded PL/SQL gateway, embedded PL/SQL gateway, Oracle HTTP Server, Oracle HTTP Server, using wiht Oracle RAC, Oracle Real Application Clusters (Oracle RAC), selecting an HTTP Server">
+      <meta name="keywords" content="web listener, choosing, comparing each, Oracle REST Data Services, Oracle REST Data Services, about, embedded PL/SQL gateway, embedded PL/SQL gateway, Oracle HTTP Server, Oracle HTTP Server, using wiht Oracle RAC, Oracle Real Application Clusters (Oracle RAC), selecting an HTTP Server">
+      <meta name="DC.Relation" scheme="URI" content="overview.html#GUID-DB8E4B2B-1AEB-4B76-BBA3-31C5876C3F14">
+      <meta name="DC.Relation" scheme="URI" content="choosing-web-listener.html#GUID-960800E1-CFD6-4BC9-AEFB-DE2F0C6B8297">
+      <meta name="DC.Relation" scheme="URI" content="choosing-web-listener.html#GUID-47904ADC-A5FF-4591-98B1-BFB1A38E08E4">
+      <meta name="DC.Relation" scheme="URI" content="choosing-web-listener.html#GUID-2FF90AE3-87AE-42EB-90C7-A79A0A6AA997">
+      <meta name="DC.Relation" scheme="URI" content="choosing-web-listener.html#GUID-570A97EA-1A5E-440C-9D04-21F2D5589454">
+      <meta name="DC.Relation" scheme="URI" content="choosing-web-listener.html#GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C">
+      <meta name="DC.Relation" scheme="URI" content="choosing-web-listener.html#GUID-68676CF7-7975-4F0A-9C33-722C9BAC7C40">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-450226C4-25BF-4124-A900-986DBBEB7406">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="In order to run, Oracle Application Express must have access to a Web listener.">
+      <meta name="description" content="In order to run, Oracle Application Express must have access to a Web listener.">
+      <title>Choosing a Web Listener</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="In order to run, Oracle Application Express must have access to a Web listener.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="upgrading-from-previous-Oracle-application-express-release.html" title="Previous" type="text/html">
+      <link rel="next" href="Oracle-application-express-runtime-environment.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="upgrading-from-previous-Oracle-application-express-release.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="Oracle-application-express-runtime-environment.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="overview.html" property="item" typeof="WebPage"><span property="name"> Oracle Application Express Installation Overview</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Choosing a Web Listener</li>
+            </ol>
+            <a id="GUID-450226C4-25BF-4124-A900-986DBBEB7406" name="GUID-450226C4-25BF-4124-A900-986DBBEB7406"></a><a id="HTMIG367"></a>
+            
+            <h2 id="HTMIG-GUID-450226C4-25BF-4124-A900-986DBBEB7406" class="sect2"><span class="enumeration_section">3.4 </span>Choosing a Web Listener
+            </h2>
+         </header>
+         <div class="ind">
+            <p>In order to run, Oracle Application Express must have access to a Web listener.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="choosing-web-listener.html#GUID-960800E1-CFD6-4BC9-AEFB-DE2F0C6B8297">About Choosing a Web Listener</a><br>Oracle Application Express supports the following Web listeners: Oracle REST                         Data Services, Oracle HTTP Server, and Embedded PL/SQL gateway. 
+                  </li>
+                  <li class="ulchildlink"><a href="choosing-web-listener.html#GUID-47904ADC-A5FF-4591-98B1-BFB1A38E08E4">Comparing Web Listener Options</a><br>Learn about comparing Web listener options for Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="choosing-web-listener.html#GUID-2FF90AE3-87AE-42EB-90C7-A79A0A6AA997">About Oracle REST Data Services</a><br>Oracle REST Data Services (formerly Oracle Application Express Listener) is                 Java-based, can be installed into any supported J2EE compliant Web Server. Oracle                 recommends using Oracle REST Data Services with Oracle Application                 Express.
+                  </li>
+                  <li class="ulchildlink"><a href="choosing-web-listener.html#GUID-570A97EA-1A5E-440C-9D04-21F2D5589454">About the Embedded PL/SQL Gateway (Deprecated)</a><br>Oracle XML DB Protocol Server with the embedded PL/SQL gateway installs with Oracle Database. 
+                  </li>
+                  <li class="ulchildlink"><a href="choosing-web-listener.html#GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C">About Oracle HTTP Server with mod_plsql (Deprecated)</a><br>The Oracle HTTP Server (Apache) with <code class="codeph">mod_plsql</code> can be placed on the same physical machine as the database, or on a separate physical machine.
+                  </li>
+                  <li class="ulchildlink"><a href="choosing-web-listener.html#GUID-68676CF7-7975-4F0A-9C33-722C9BAC7C40">Selecting a Web Listener in an Oracle RAC Environment</a><br>Oracle Application Express is supported in Oracle Real Application Clusters                 (Oracle RAC) environments. Oracle recommends using Oracle REST Data Services when                 running Oracle Application Express in an Oracle RAC environment.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="overview.html#GUID-DB8E4B2B-1AEB-4B76-BBA3-31C5876C3F14" title="Oracle Application Express 安装指南 describes how to install Oracle Application Express in a on-premises (or local) installation.">Oracle Application Express Installation Overview</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29321"></a><div class="props_rev_3"><a id="GUID-960800E1-CFD6-4BC9-AEFB-DE2F0C6B8297" name="GUID-960800E1-CFD6-4BC9-AEFB-DE2F0C6B8297"></a><h3 id="HTMIG-GUID-960800E1-CFD6-4BC9-AEFB-DE2F0C6B8297" class="sect3"><span class="enumeration_section">3.4.1 </span>About Choosing a Web Listener
+               </h3>
+               <div>
+                  <p>Oracle Application Express supports the following Web listeners: Oracle REST
+                        Data Services, Oracle HTTP Server, and Embedded PL/SQL gateway. </p>
+                  <div class="infoboxnote" id="GUID-960800E1-CFD6-4BC9-AEFB-DE2F0C6B8297__GUID-B964009B-AC2F-456A-8C44-4B8A35B08B67">
+                     <p class="notep1">Note:</p>
+                     
+                     <p>Oracle recommends using Oracle REST Data
+                                                Services. Oracle HTTP Server with mod_plsql and
+                                                Embedded PL/SQL gateway have been deprecated and
+                                                will be desupported in a future Oracle Application
+                                                Express release.</p>
+                     
+                  </div>
+                  <p>The Web listener functions as a communications broker
+                                    between the Web browser and the Oracle Application Express
+                                    objects in the Oracle database by mapping browser requests into
+                                    database stored procedure calls. </p>
+                  <p>Oracle Application Express uses a simple architecture where pages are dynamically generated using metadata stored within the Oracle Database. There is no code generation or file based compilation. Once fully installed, a Uniform Resource Locator (URL) is defined for both developers and end users to access Oracle Application Express. Users require only a Web browser and the required URL. No additional client software is required.</p>
+                  <div class="figure" id="GUID-960800E1-CFD6-4BC9-AEFB-DE2F0C6B8297__GUID-A71FB3AA-8C9D-4F45-9AE7-C9BD30E50732"><img src="img/apex-arch-1876607.png" alt="Description of apex-arch-1876607.eps follows" title="Description of apex-arch-1876607.eps follows" longdesc="img_text/apex-arch-1876607.html"><br><a href="img_text/apex-arch-1876607.html">Description of the illustration apex-arch-1876607.eps</a></div>
+                  <!-- class="figure" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="choosing-web-listener.html#GUID-450226C4-25BF-4124-A900-986DBBEB7406" title="In order to run, Oracle Application Express must have access to a Web listener.">Choosing a Web Listener</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29326"></a><a id="HTMIG29325"></a><div class="props_rev_3"><a id="GUID-47904ADC-A5FF-4591-98B1-BFB1A38E08E4" name="GUID-47904ADC-A5FF-4591-98B1-BFB1A38E08E4"></a><h3 id="HTMIG-GUID-47904ADC-A5FF-4591-98B1-BFB1A38E08E4" class="sect3"><span class="enumeration_section">3.4.2 </span>Comparing Web Listener Options
+               </h3>
+               <div>
+                  <p>Learn about comparing Web listener options for Oracle Application Express.</p>
+                  <div class="section">
+                     <p><a href="choosing-web-listener.html#GUID-47904ADC-A5FF-4591-98B1-BFB1A38E08E4__CEGIEEGF" title="This table compares Web Listener options for Oracle Application Express.">Table 3-2</a> compares Web Listener options for Oracle Application Express.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformalwide" id="GUID-47904ADC-A5FF-4591-98B1-BFB1A38E08E4__CEGIEEGF">
+                     <p class="titleintable">Table 3-2 Web Listener Comparisons</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Web Listener Comparisons" summary="This table compares Web Listener options for Oracle Application Express." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="23%" id="d5545e237">Capabilities</th>
+                              <th align="left" valign="bottom" width="25%" id="d5545e240">Oracle REST Data Services</th>
+                              <th align="left" valign="bottom" width="26%" id="d5545e243">Embedded PL/SQL Gateway </th>
+                              <th align="left" valign="bottom" width="26%" id="d5545e246">Oracle HTTP Server with mod_plsql </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d5545e253" headers="d5545e237 ">
+                                 <p>Image location</p>
+                              </td>
+                              <td align="left" valign="top" width="25%" headers="d5545e253 d5545e240 ">
+                                 <p>File system</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e253 d5545e243 ">
+                                 <p>Within the database</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e253 d5545e246 ">
+                                 <p>File system</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d5545e266" headers="d5545e237 ">
+                                 <p>Configuration options</p>
+                              </td>
+                              <td align="left" valign="top" width="25%" headers="d5545e266 d5545e240 ">
+                                 <p>GUI interface (ORDS 3.x); Administration pages</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e266 d5545e243 ">
+                                 <p>Database initialization parameters</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e266 d5545e246 ">
+                                 <p>Database Access Descriptor (DAD)</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d5545e279" headers="d5545e237 ">
+                                 <p>Connection Pool settings</p>
+                              </td>
+                              <td align="left" valign="top" width="25%" headers="d5545e279 d5545e240 ">
+                                 <p>JDBC parameters</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e279 d5545e243 ">
+                                 <p>SHARED_SERVERS; MAX_SHARED_SERVERS</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e279 d5545e246 ">
+                                 <p>Min/MaxSpareServers; MaxClients</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d5545e292" headers="d5545e237 ">
+                                 <p>Emit RESTful Web Services</p>
+                              </td>
+                              <td align="left" valign="top" width="25%" headers="d5545e292 d5545e240 ">
+                                 <p>Yes (ORDS 3.x Release )</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e292 d5545e243 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e292 d5545e246 ">
+                                 <p>No</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d5545e305" headers="d5545e237 ">
+                                 <p>Support multi-databases</p>
+                              </td>
+                              <td align="left" valign="top" width="25%" headers="d5545e305 d5545e240 ">
+                                 <p>Yes, including Oracle RAC</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e305 d5545e243 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e305 d5545e246 ">
+                                 <p>Yes, including Oracle RAC</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d5545e318" headers="d5545e237 ">
+                                 <p>Virus scan files</p>
+                              </td>
+                              <td align="left" valign="top" width="25%" headers="d5545e318 d5545e240 ">
+                                 <p>Yes, with integration of ICAP server</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e318 d5545e243 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e318 d5545e246 ">
+                                 <p>No</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d5545e331" headers="d5545e237 ">
+                                 <p>Environment recommendations</p>
+                              </td>
+                              <td align="left" valign="top" width="25%" headers="d5545e331 d5545e240 ">
+                                 <p>All</p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e331 d5545e243 ">
+                                 <p>Development only</p>
+                                 
+                                 <p><span class="bold">Note</span>: Deprecated in Oracle Application Express
+                                release 20.1. Will be desupported in a future release.
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="26%" headers="d5545e331 d5545e246 ">
+                                 <p>All</p>
+                                 <p><span class="bold">Note</span>: Deprecated as of Oracle HTTP Server 12<span class="italic">c</span> (12.1.3). Will be
+                                desupported in a future release.
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="choosing-web-listener.html#GUID-450226C4-25BF-4124-A900-986DBBEB7406" title="In order to run, Oracle Application Express must have access to a Web listener.">Choosing a Web Listener</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29322"></a><div class="props_rev_3"><a id="GUID-2FF90AE3-87AE-42EB-90C7-A79A0A6AA997" name="GUID-2FF90AE3-87AE-42EB-90C7-A79A0A6AA997"></a><h3 id="HTMIG-GUID-2FF90AE3-87AE-42EB-90C7-A79A0A6AA997" class="sect3"><span class="enumeration_section">3.4.3 </span>About Oracle REST Data Services
+               </h3>
+               <div>
+                  <p>Oracle REST Data Services (formerly Oracle Application Express Listener) is
+                Java-based, can be installed into any supported J2EE compliant Web Server. Oracle
+                recommends using Oracle REST Data Services with Oracle Application
+                Express.</p>
+                  <p>It is a free tool that is fully supported against Oracle WebLogic Server and Apache
+            Tomcat. Oracle REST Data Services is part of the reference architecture used to operate
+            the Oracle Database Cloud Service.</p>
+                  <div class="infoboxnote" id="GUID-2FF90AE3-87AE-42EB-90C7-A79A0A6AA997__GUID-217CDD0D-4451-4764-B9F3-1C3A06E92C60">
+                     <p class="notep1">Note:</p>
+                     <p>There are licensing costs associated with Oracle WebLogic Server.</p>
+                  </div>
+                  <p>Using Oracle REST Data Services creates an architecture which consists of:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>A web browser</p>
+                     </li>
+                     <li>
+                        <p>Oracle REST Data Services</p>
+                     </li>
+                     <li>
+                        <p>Oracle Database containing Oracle Application Express</p>
+                     </li>
+                  </ul>
+                  <p>The major advantage of this architecture is the separation of the mid-tier and the database tier. </p>
+                  <div class="infobox-tip" id="GUID-2FF90AE3-87AE-42EB-90C7-A79A0A6AA997__GUID-69315167-8996-4E10-A0EE-8F96B1A02A8D">
+                     <p class="notep1">Tip:</p>
+                     <p>This architecture is appropriate for Oracle Real Application Clusters (Oracle RAC) environments.</p>
+                  </div>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-2FF90AE3-87AE-42EB-90C7-A79A0A6AA997__GUID-43B77D71-1914-4290-A04A-7B03FD0FE467">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="Oracle-AE-installation-requirements.html#GUID-848EF7A3-07D0-427E-A080-694144570136" title="Oracle Application Express requires access to a Web listener.">Web Listener Requirements</a>"</span></p>
+                           </li>
+                           <li>
+                              
+                              <p><span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>"</span></p>
+                              
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=AELIG-GUID-A16BCCA2-8081-4062-A635-9F7C36FC394F" target="_blank">Installing Oracle REST Data Services</a>"</span>
+                            in <span><cite>Oracle REST Data Services Installation, Configuration, and Development Guide</cite></span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="choosing-web-listener.html#GUID-68676CF7-7975-4F0A-9C33-722C9BAC7C40" title="Oracle Application Express is supported in Oracle Real Application Clusters (Oracle RAC) environments. Oracle recommends using Oracle REST Data Services when running Oracle Application Express in an Oracle RAC environment.">Selecting a Web Listener in an Oracle RAC Environment</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="choosing-web-listener.html#GUID-450226C4-25BF-4124-A900-986DBBEB7406" title="In order to run, Oracle Application Express must have access to a Web listener.">Choosing a Web Listener</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29324"></a><a id="HTMIG369"></a><div class="props_rev_3"><a id="GUID-570A97EA-1A5E-440C-9D04-21F2D5589454" name="GUID-570A97EA-1A5E-440C-9D04-21F2D5589454"></a><h3 id="HTMIG-GUID-570A97EA-1A5E-440C-9D04-21F2D5589454" class="sect3"><span class="enumeration_section">3.4.4 </span>About the Embedded PL/SQL Gateway
+        (Deprecated)
+               </h3>
+               <div>
+                  <p>Oracle XML DB Protocol Server with the embedded PL/SQL gateway installs with Oracle Database. </p>
+                  <div class="infoboxnote" id="GUID-570A97EA-1A5E-440C-9D04-21F2D5589454__GUID-7E434BEB-A02C-414D-A2F7-A3DA0B7B6281">
+                     <p class="notep1">Note:</p>
+                     
+                     <p>Embedded PL/SQL gateway is deprecated and will be desupported in a future
+                release. Oracle recommends using Oracle REST Data Services. See <span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>."</span></p>
+                     
+                  </div>
+                  <p>Embedded PL/SQL gateway provides the Oracle database with a Web server and also the necessary infrastructure to create dynamic applications. The embedded PL/SQL gateway runs in the Oracle XML DB Protocol server in the Oracle database and includes the core features of <code class="codeph">mod_plsql</code>.
+                  </p>
+                  <p>The embedded PL/SQL gateway consists of a simple two tier architecture: a Web browser and an Oracle database containing the embedded PL/SQL gateway and Oracle Application Express.</p>
+                  <p>Advantages of the embedded PL/SQL gateway include:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Ease of configuration</p>
+                     </li>
+                     <li>
+                        <p>Included in the database</p>
+                     </li>
+                     <li>
+                        <p>No separate server installation</p>
+                     </li>
+                  </ul>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-570A97EA-1A5E-440C-9D04-21F2D5589454__GUID-9086DE26-C7FB-4E48-9AEB-FED14F5908DC">Where Images Are Stored When Using the Embedded PL/SQL Gateway</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>When running Oracle Application Express with the Embedded PL/SQL Gateway, images are stored directly in the database within the Oracle XML DB repository. You can access images by using the WebDAV feature of Oracle XML DB or by using FTP. </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-570A97EA-1A5E-440C-9D04-21F2D5589454__GUID-8EDE052B-38D1-424A-AA7B-BDF798FA40E7">Security Considerations When Using
+                the Embedded PL/SQL Gateway</p>
+                     
+                     
+                     <p>Oracle does not recommend the embedded PL/SQL gateway for applications running on the
+                Internet.</p>
+                     
+                     <p>The embedded PL/SQL gateway runs in the database as part of the Oracle
+                XML DB HTTP listener. The Oracle XML DB HTTP listener and embedded PL/SQL gateway
+                provides the equivalent core features of Oracle HTTP Server and
+                    <code class="codeph">mod_plsql</code>. Because the HTTP Listener runs in the same database
+                where Oracle Application Express is installed, it is not possible to separate the
+                HTTP listener from the database. For this reason, Oracle does not recommend the
+                embedded PL/SQL gateway for applications that run on the Internet. Additionally, the
+                embedded PL/SQL gateway does not provide the same flexibility of configuration and
+                detailed logging as Oracle REST Data Services or Oracle HTTP Server.
+                     </p>
+                     
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-570A97EA-1A5E-440C-9D04-21F2D5589454__GUID-EC395B47-2175-46CE-A19F-52FB2A5C758B">
+                     <p class="notep1">See Also:</p>
+                     
+                     <div class="p">
+                        
+                        <ul style="list-style-type: disc;" id="GUID-570A97EA-1A5E-440C-9D04-21F2D5589454__UL_E2J_MCP_NKB">
+                           <li>
+                              
+                              <p><span class="q">"<a href="Oracle-AE-installation-requirements.html#GUID-848EF7A3-07D0-427E-A080-694144570136" title="Oracle Application Express requires access to a Web listener.">Web Listener Requirements</a>"</span></p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p><span class="q">"<a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a>"</span></p>
+                              
+                           </li>
+                           <li><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=ADXDB-GUID-0476309D-E3DF-4C56-BF21-68CD04D00C98" target="_blank">Repository Access
+                                    Using Protocols</a>"</span> in <span><cite>Oracle XML&nbsp;DB Developer’s Guide</cite></span></li>
+                        </ul>
+                        
+                     </div>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="choosing-web-listener.html#GUID-450226C4-25BF-4124-A900-986DBBEB7406" title="In order to run, Oracle Application Express must have access to a Web listener.">Choosing a Web Listener</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29323"></a><a id="HTMIG368"></a><div class="props_rev_3"><a id="GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C" name="GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C"></a><h3 id="HTMIG-GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C" class="sect3"><span class="enumeration_section">3.4.5 </span>About Oracle HTTP Server with mod_plsql
+                                (Deprecated)
+               </h3>
+               <div>
+                  <p>The Oracle HTTP Server (Apache) with <code class="codeph">mod_plsql</code> can be placed on the same physical machine as the database, or on a separate physical machine.
+                  </p>
+                  <div class="infoboxnote" id="GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C__GUID-F0D0F92E-9A4E-4A20-A6C7-81E3B94B6944">
+                     <p class="notep1">Note:</p>
+                     <p><code class="codeph">mod_plsql</code> is deprecated as of Oracle HTTP Server 12<span class="italic">c</span>
+                (12.1.3). For more information, see My Oracle Support Note 1576588.1. Oracle
+                recommends using Oracle REST Data Services. See <span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>."</span></p>
+                  </div>
+                  <p>If Oracle HTTP Server is installed on the same physical machine as the database then the Oracle HTTP Server is included as part of the limited-use license included with the Oracle Database license. Otherwise, you must obtain a separate Oracle HTTP Server license.</p>
+                  <p>Using Oracle HTTP Server (Apache) with <code class="codeph">mod_plsql</code> creates an architecture which consists of:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>a Web browser</p>
+                     </li>
+                     <li>
+                        <p>Oracle HTTP Server with <code class="codeph">mod_plsql</code></p>
+                     </li>
+                     <li>
+                        <p>Oracle Database containing Oracle Application Express</p>
+                     </li>
+                  </ul>
+                  <p>This architecture separates the mid-tier and the database tier. </p>
+                  <div class="infobox-tip" id="GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C__GUID-F74BF3DE-6CF9-444C-962B-3A0A76D827E6">
+                     <p class="notep1">Tip:</p>
+                     <p>This architecture is appropriate for Oracle Real Application Clusters (Oracle RAC) environments. </p>
+                  </div>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C__GUID-67481A96-3744-4B1F-B370-5F63227CFA46">Where Images Are Stored When Using Oracle HTTP Server</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>In an Oracle HTTP Server or Oracle Application Server configuration, images are stored on the file system in the location referenced by the alias <code class="codeph">/i/</code>. If you are upgrading Oracle Application Express from a prior release, you can locate the images directory on the file system, by reviewing the following files and searching for the text alias <code class="codeph">/i/</code>:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle HTTP Server distributed Oracle9<span class="italic">i</span> Release 2—see the <code class="codeph">httpd.conf</code> file.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle Application Server 10<span class="italic">g</span>—see the <code class="codeph">marvel.conf</code> or <code class="codeph">dads.conf</code> files.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle HTTP Server distributed with Oracle Database 11<span class="italic">g</span> or 12<span class="italic">c</span> —see the <code class="codeph">marvel.conf</code> or <code class="codeph">dads.conf</code> files.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>Specific examples for locating the text alias <code class="codeph">/i/</code> can be found in <span>Copying the
+                    Images Directory</span>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-A7A5FA1A-5140-4095-BE27-B8E41D74B16C__GUID-AFA4759C-F1B8-4522-9C17-D9675B4909E7">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="Oracle-AE-installation-requirements.html#GUID-848EF7A3-07D0-427E-A080-694144570136" title="Oracle Application Express requires access to a Web listener.">Web Listener Requirements</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="choosing-web-listener.html#GUID-68676CF7-7975-4F0A-9C33-722C9BAC7C40" title="Oracle Application Express is supported in Oracle Real Application Clusters (Oracle RAC) environments. Oracle recommends using Oracle REST Data Services when running Oracle Application Express in an Oracle RAC environment.">Selecting a Web Listener in an Oracle RAC Environment</a>"</span></p>
+                           </li>
+                           <li>
+                              <p> "<a href="../htmdb/web-listener-security.html#HTMDB-GUID-B6306606-E963-4AF6-9A00-4327FE19015A" target="_blank">About Configuring Oracle HTTP Server with mod_plsql with Oracle Application Express</a>" in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="configuring-Oracle-HTTP-server.html#GUID-11B3AD1B-6FBD-4CDC-A648-ABF380C3375E" title="Learn how to copy images directory.">Copying the Images Directory</a>."</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="choosing-web-listener.html#GUID-450226C4-25BF-4124-A900-986DBBEB7406" title="In order to run, Oracle Application Express must have access to a Web listener.">Choosing a Web Listener</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG370"></a><div class="props_rev_3"><a id="GUID-68676CF7-7975-4F0A-9C33-722C9BAC7C40" name="GUID-68676CF7-7975-4F0A-9C33-722C9BAC7C40"></a><h3 id="HTMIG-GUID-68676CF7-7975-4F0A-9C33-722C9BAC7C40" class="sect3"><span class="enumeration_section">3.4.6 </span>Selecting a Web Listener in an Oracle RAC Environment
+               </h3>
+               <div>
+                  <p>Oracle Application Express is supported in Oracle Real Application Clusters
+                (Oracle RAC) environments. Oracle recommends using Oracle REST Data Services when
+                running Oracle Application Express in an Oracle RAC environment.</p>
+                  <p>Oracle REST Data Services permits you to specify a connection in the service name
+            format, so that one HTTP Server can access all nodes.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="choosing-web-listener.html#GUID-450226C4-25BF-4124-A900-986DBBEB7406" title="In order to run, Oracle Application Express must have access to a Web listener.">Choosing a Web Listener</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

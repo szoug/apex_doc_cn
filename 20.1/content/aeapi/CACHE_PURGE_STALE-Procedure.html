@@ -1,0 +1,152 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="CACHE_PURGE_STALE Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, CACHE_PURGE_STALE procedure">
+      <meta name="keywords" content="APEX_UTIL, CACHE_PURGE_STALE procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>CACHE_PURGE_STALE Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="CACHE_PURGE_BY_PAGE-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="CHANGE_CURRENT_USER_PW-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="CACHE_PURGE_BY_PAGE-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="CHANGE_CURRENT_USER_PW-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">CACHE_PURGE_STALE Procedure</li>
+            </ol>
+            <a id="GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598" name="GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598"></a><a id="AEAPI1496"></a><a id="AEAPI1497"></a><a id="AEAPI1498"></a><a id="AEAPI1499"></a><a id="AEAPI107"></a>
+            
+            <h2 id="AEAPI-GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598" class="sect2"><span class="enumeration_section">39.5 </span>CACHE_PURGE_STALE Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure deletes all cached pages and regions for a specified application that have passed the defined active time period. When you cache a page or region, you specify an active time period (or Cache Timeout). Once that period has passed, the cache is no longer used, thus removing those unusable pages or regions from the cache.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598__GUID-2F75535B-5B55-4C75-8B9D-916506591A98">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.CACHE_PURGE_STALE (
+    p_application  IN NUMBER);
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598__GUID-00CB14CB-D26A-4351-BC19-63334E85AF3D">Parameters</p>
+                  <div class="tblformal" id="GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598__GUID-F1801385-928D-44D9-9548-D6E857C66BA1">
+                     <p class="titleintable">Table 39-5 CACHE_PURGE_STALE Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="CACHE_PURGE_STALE Parameters" summary="Parameter descriptions for the CACHE_PURGE_STALE procedure." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d174648e73">Parameter</th>
+                              <th align="left" valign="bottom" width="69%" id="d174648e76">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d174648e81" headers="d174648e73 ">
+                                 <p><code class="codeph">p_application</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d174648e81 d174648e76 ">
+                                 <p>The identification number (ID) of the application. </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598__GUID-40A0545C-9B06-490B-8AFF-FCB253518670">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example demonstrates how to use the CACHE_PURGE_STALE procedure to purge all the stale pages and regions in the application currently executing.</p><pre class="pre codeblock"><code>BEGIN
+    APEX_UTIL.CACHE_PURGE_STALE(p_application =&gt; :APP_ID);
+END;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

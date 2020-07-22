@@ -1,0 +1,425 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Schemas">
+      <meta name="abstract" content="Manage the schemas within an Oracle Application Express instance.">
+      <meta name="description" content="Manage the schemas within an Oracle Application Express instance.">
+      <meta name="DC.subject" content="schema, determining for Application Express, Application Express engine, determining schema for, Oracle Application Express administrator, Oracle default schemas, Oracle default schemas, removing default restrictions, revoking administrator privileges, determining administrator privilege status">
+      <meta name="keywords" content="schema, determining for Application Express, Application Express engine, determining schema for, Oracle Application Express administrator, Oracle default schemas, Oracle default schemas, removing default restrictions, revoking administrator privileges, determining administrator privilege status">
+      <meta name="DC.Relation" scheme="URI" content="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392">
+      <meta name="DC.Relation" scheme="URI" content="managing-schemas.html#GUID-2A49C0A5-D3A9-4954-8584-9B3F04BE3545">
+      <meta name="DC.Relation" scheme="URI" content="managing-schemas.html#GUID-9490814F-6A63-473D-910C-F38E4EE8362A">
+      <meta name="DC.Relation" scheme="URI" content="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-21F40BBE-BD84-4435-A326-B267D9A21029">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Manage the schemas within an Oracle Application Express instance.">
+      <meta name="description" content="Manage the schemas within an Oracle Application Express instance.">
+      <title>Managing Schemas</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Manage the schemas within an Oracle Application Express instance.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="including-an-agreement-or-survey-when-running-the-signup-wizard.html" title="Previous" type="text/html">
+      <link rel="next" href="creating-workspaces.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="including-an-agreement-or-survey-when-running-the-signup-wizard.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="creating-workspaces.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Schemas</li>
+            </ol>
+            <a id="GUID-21F40BBE-BD84-4435-A326-B267D9A21029" name="GUID-21F40BBE-BD84-4435-A326-B267D9A21029"></a><a id="AEADM230"></a>
+            
+            <h2 id="AEADM-GUID-21F40BBE-BD84-4435-A326-B267D9A21029" class="sect2"><span class="enumeration_section">3.13 </span>Managing Schemas
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Manage the schemas within an Oracle Application Express instance.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-schemas.html#GUID-2A49C0A5-D3A9-4954-8584-9B3F04BE3545">What Is the Oracle Application Express Engine Schema?</a><br>A schema is a logical container for the database objects.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-schemas.html#GUID-9490814F-6A63-473D-910C-F38E4EE8362A">Determining the Oracle Application Express Engine Schema</a><br>Determine the current Application Express engine schema for an instance.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7">Understanding Oracle Default Schema Restrictions</a><br>A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-21F40BBE-BD84-4435-A326-B267D9A21029__GUID-CBD785C6-9241-4292-AAAB-DEBDCE1FFF2D">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="viewing-parsing-schemas-report.html#GUID-3535EBEC-7557-4085-9523-3A8FBFECA721" title="Use the Parsing Schemas report to identify the current parsing schema of each application in any workspace.">Viewing the Parsing Schemas Report</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="managing-workspace-to-schema-assignments.html#GUID-355C08F2-8267-40D1-A8FF-4C7B7BE69981" title="Instance administrators can view, edit, and remove schema and workspace assignment, associate additional schemas with a workspace, and create new schemas.">Managing Workspace to Schema Assignments</a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392" title="Instance administrators manage an entire Oracle Application Express hosted instance using the Oracle Application Express Administration Services (Administration Services) application.">Oracle Application Express Administration Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM29214"></a><div class="props_rev_3"><a id="GUID-2A49C0A5-D3A9-4954-8584-9B3F04BE3545" name="GUID-2A49C0A5-D3A9-4954-8584-9B3F04BE3545"></a><h3 id="AEADM-GUID-2A49C0A5-D3A9-4954-8584-9B3F04BE3545" class="sect3"><span class="enumeration_section">3.13.1 </span>What Is the Oracle Application Express Engine Schema?
+               </h3>
+               <div>
+                  <p>A schema is a logical container for the database objects.</p>
+                  <p>Instance administrators may need to perform certain actions within the Application Express engine schema. For example, in order for an Instance administrator to have the ability to assign Oracle default schemas, the database administrator (DBA) must explicitly grant the privilege by running the <code class="codeph">APEX_SITE_ADMIN.UNRESTRICT_SCHEMA</code> procedure within the Application Express engine.
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-2A49C0A5-D3A9-4954-8584-9B3F04BE3545__GUID-D6562B19-5C69-42F8-9368-7AD8D0EB477D">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7" title="A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.">Understanding Oracle Default Schema Restrictions</a>"</span> for information about the <code class="codeph">APEX_SITE_ADMIN.UNRESTRICT_SCHEMA</code> procedure
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-21F40BBE-BD84-4435-A326-B267D9A21029" title="Manage the schemas within an Oracle Application Express instance.">Managing Schemas</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM231"></a><div class="props_rev_3"><a id="GUID-9490814F-6A63-473D-910C-F38E4EE8362A" name="GUID-9490814F-6A63-473D-910C-F38E4EE8362A"></a><h3 id="AEADM-GUID-9490814F-6A63-473D-910C-F38E4EE8362A" class="sect3"><span class="enumeration_section">3.13.2 </span>Determining the Oracle Application Express Engine Schema
+               </h3>
+               <div>
+                  <p>Determine the current Application Express engine schema for an instance.</p>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-9490814F-6A63-473D-910C-F38E4EE8362A__GUID-57169208-4146-46A4-BD05-46D283658969">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7" title="A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.">Understanding Oracle Default Schema Restrictions</a>"</span> for information about the <code class="codeph">APEX_SITE_ADMIN.UNRESTRICT_SCHEMA</code> procedure
+                        </p>
+                     </div>
+                     <p>To determine the current Application Express engine schema for your Oracle Application Express instance:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code>. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:</span>\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run the following query in a schema with DBA privileges (for example, <code class="codeph">SYSTEM</code>).</span><div><pre class="oac_no_warn" dir="ltr">SELECT DISTINCT TABLE_OWNER FROM all_synonyms
+WHERE SYNONYM_NAME = 'WWV_FLOW' and OWNER = 'PUBLIC'
+</pre></div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-21F40BBE-BD84-4435-A326-B267D9A21029" title="Manage the schemas within an Oracle Application Express instance.">Managing Schemas</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM232"></a><div class="props_rev_3"><a id="GUID-F596758D-0253-47F8-9745-29CD60DA30A7" name="GUID-F596758D-0253-47F8-9745-29CD60DA30A7"></a><h3 id="AEADM-GUID-F596758D-0253-47F8-9745-29CD60DA30A7" class="sect3"><span class="enumeration_section">3.13.3 </span>Understanding Oracle Default Schema Restrictions
+               </h3>
+               <p>A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-schemas.html#GUID-676C97F4-F253-44D8-9D12-EA3D1DD371DB">About Assigning Oracle Default Schemas to Workspaces</a><br>In order for an Instance administrator to assign most Oracle default schemas to workspaces, a DBA must explicitly grant the privilege.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-schemas.html#GUID-3919BE18-0680-4576-86F3-D1727BCD9921">Granting the Privilege to Assign Oracle Default Schemas</a><br>DBAs can grant an Instance administrator the ability to assign Oracle schemas to workspaces.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-schemas.html#GUID-03B19F1F-F5E9-4D69-9863-2487B1F24430">Revoking the Privilege to Assign Oracle Default Schemas</a><br>DBAs can revoke the privilege to assign default schemas.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-schemas.html#GUID-1E5EFAFC-4F5A-4CCA-8F4E-9607EA1F7033">Working with Restricted Schemas</a><br>DBAs can work with restricted schemas by designating specific workspaces as exceptions, remove all workspaces exceptions for a schema, or remove all schema exceptions for a workspace.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-schemas.html#GUID-F6D33204-69D8-400D-9276-E06C3FA732C6">Determining the Privilege Status</a><br>DBAs can determine the current status of the privileges.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-21F40BBE-BD84-4435-A326-B267D9A21029" title="Manage the schemas within an Oracle Application Express instance.">Managing Schemas</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEADM29215"></a><div class="props_rev_3"><a id="GUID-676C97F4-F253-44D8-9D12-EA3D1DD371DB" name="GUID-676C97F4-F253-44D8-9D12-EA3D1DD371DB"></a><h4 id="AEADM-GUID-676C97F4-F253-44D8-9D12-EA3D1DD371DB" class="sect4"><span class="enumeration_section">3.13.3.1 </span>About Assigning Oracle Default Schemas to Workspaces
+                  </h4>
+                  <div>
+                     <p>In order for an Instance administrator to assign most Oracle default schemas to workspaces, a DBA must explicitly grant the privilege.</p>
+                     <p>When Oracle Application Express installs, the Instance administrator does not have the ability to assign Oracle default schemas to workspaces. Default schemas such as <code class="codeph">SYS</code>, <code class="codeph">SYSTEM</code>, and <code class="codeph">RMAN</code> are reserved by Oracle for various product features and for internal use. Access to a default schema can be a very powerful privilege. For example, a workspace with access to the default schema <code class="codeph">SYSTEM</code> can run applications that parse as the <code class="codeph">SYSTEM</code> user. 
+                     </p>
+                     <p>In order for an Instance administrator to have the ability to assign most Oracle default schemas to workspaces, the DBA must explicitly grant the privilege using SQL*Plus to run a procedure within the <code class="codeph">APEX_INSTANCE_ADMIN</code> package.
+                     </p>
+                     <div class="infobox-tip" id="GUID-676C97F4-F253-44D8-9D12-EA3D1DD371DB__GUID-703930BE-5038-414C-B35C-1AC5FE6125EA">
+                        <p class="notep1">Tip:</p>
+                        <p>Beginning with Oracle Application Express release 3.1, the <code class="codeph">SYS</code> and <code class="codeph">SYSTEM</code> schemas may no longer be used by workspaces as parsing schemas.
+                        </p>
+                     </div>
+                     <div class="infoboxnote" id="GUID-676C97F4-F253-44D8-9D12-EA3D1DD371DB__GUID-B5AFA6A6-CDCC-4F47-B8DD-67C389E6E496">
+                        <p class="notep1">Note:</p>
+                        <p>All schema and workspace names used as arguments to procedures in the <code class="codeph">APEX_INSTANCE_ADMIN</code> package are used exactly as they are provided by the caller.
+                        </p>
+                        <p>For example, if you pass an argument value such as <code class="codeph">p_schema =&gt;'system'</code>, the lower-case schema name <code class="codeph">'system'</code> is recorded and referenced. This example could return unexpected results if you really meant to reference the common schema name SYSTEM, which would be referenced using upper case.
+                        </p>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7" title="A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.">Understanding Oracle Default Schema Restrictions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM233"></a><div class="props_rev_3"><a id="GUID-3919BE18-0680-4576-86F3-D1727BCD9921" name="GUID-3919BE18-0680-4576-86F3-D1727BCD9921"></a><h4 id="AEADM-GUID-3919BE18-0680-4576-86F3-D1727BCD9921" class="sect4"><span class="enumeration_section">3.13.3.2 </span>Granting the Privilege to Assign Oracle Default Schemas
+                  </h4>
+                  <div>
+                     <p>DBAs can grant an Instance administrator the ability to assign Oracle schemas to workspaces.</p>
+                     <div class="section">
+                        <p>A DBA grants an Instance administrator the ability to assign Oracle schemas to workspaces by using SQL*Plus to run the <a id="d38413e546" class="indexterm-anchor"></a><code class="codeph">APEX_INSTANCE_ADMIN.UNRESTRICT_SCHEMA</code> procedure from within the Application Express engine schema. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">EXEC APEX_INSTANCE_ADMIN.UNRESTRICT_SCHEMA(p_schema =&gt; 'RMAN');
+COMMIT;
+</pre><p>This example would enable the Instance administrator to assign the <code class="codeph">RMAN</code> schema to any workspace.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-3919BE18-0680-4576-86F3-D1727BCD9921__GUID-F77AB858-0225-43CE-83A2-98DAFC5B3852">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="managing-schemas.html#GUID-9490814F-6A63-473D-910C-F38E4EE8362A" title="Determine the current Application Express engine schema for an instance.">Determining the Oracle Application Express Engine Schema</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7" title="A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.">Understanding Oracle Default Schema Restrictions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM234"></a><div class="props_rev_3"><a id="GUID-03B19F1F-F5E9-4D69-9863-2487B1F24430" name="GUID-03B19F1F-F5E9-4D69-9863-2487B1F24430"></a><h4 id="AEADM-GUID-03B19F1F-F5E9-4D69-9863-2487B1F24430" class="sect4"><span class="enumeration_section">3.13.3.3 </span>Revoking the Privilege to Assign Oracle Default Schemas
+                  </h4>
+                  <div>
+                     <p>DBAs can revoke the privilege to assign default schemas.</p>
+                     <div class="section">
+                        <p>A DBA revokes the privilege to assign default schemas using SQL*Plus to run the <code class="codeph">APEX_INSTANCE_ADMIN.RESTRICT_SCHEMA</code> procedure from within the Application Express engine schema. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">EXEC APEX_190200.APEX_INSTANCE_ADMIN.RESTRICT_SCHEMA(p_schema =&gt; 'RMAN');
+COMMIT;
+</pre><p>This example would prevent the Instance administrator from assigning the <code class="codeph">RMAN</code> schema to any workspace. It does not, however, prevent workspaces that have already had the <code class="codeph">RMAN</code> schema assigned to them from using the <code class="codeph">RMAN</code> schema.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-03B19F1F-F5E9-4D69-9863-2487B1F24430__GUID-A6F0C861-72DA-47FB-AA94-B723781CEF59">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="managing-schemas.html#GUID-9490814F-6A63-473D-910C-F38E4EE8362A" title="Determine the current Application Express engine schema for an instance.">Determining the Oracle Application Express Engine Schema</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7" title="A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.">Understanding Oracle Default Schema Restrictions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM235"></a><div class="props_rev_3"><a id="GUID-1E5EFAFC-4F5A-4CCA-8F4E-9607EA1F7033" name="GUID-1E5EFAFC-4F5A-4CCA-8F4E-9607EA1F7033"></a><h4 id="AEADM-GUID-1E5EFAFC-4F5A-4CCA-8F4E-9607EA1F7033" class="sect4"><span class="enumeration_section">3.13.3.4 </span>Working with Restricted Schemas
+                  </h4>
+                  <p>DBAs can work with restricted schemas by designating specific workspaces as exceptions, remove all workspaces exceptions for a schema, or remove all schema exceptions for a workspace.</p>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="managing-schemas.html#GUID-97598D32-7088-4BBA-BD4C-C6EBD291D1CA">Removing Workspace Exceptions for a Schema</a><br>DBAs can remove all workspace exceptions for a schema.
+                        </li>
+                        <li class="ulchildlink"><a href="managing-schemas.html#GUID-3EEE4564-98D5-4844-B326-090A6F83C7B4">Removing Schema Exceptions for a Workspace</a><br>DBAs can remove all schema exceptions for a workspace.
+                        </li>
+                        <li class="ulchildlink"><a href="managing-schemas.html#GUID-CA7EF1E0-F1F1-42D7-B417-6D52A3964FDB">Designating Specific Workspaces as Exceptions</a><br>DBAs can designate specific workspaces as exceptions.
+                        </li>
+                     </ul>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7" title="A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.">Understanding Oracle Default Schema Restrictions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <a id="AEADM236"></a><div class="props_rev_3"><a id="GUID-97598D32-7088-4BBA-BD4C-C6EBD291D1CA" name="GUID-97598D32-7088-4BBA-BD4C-C6EBD291D1CA"></a><h5 id="AEADM-GUID-97598D32-7088-4BBA-BD4C-C6EBD291D1CA" class="sect5"><span class="enumeration_section">3.13.3.4.1 </span>Removing Workspace Exceptions for a Schema
+                     </h5>
+                     <div>
+                        <p>DBAs can remove all workspace exceptions for a schema.</p>
+                        <div class="section">
+                           <p>A DBA can remove all workspace exceptions for a schema by using SQL*Plus to run the <code class="codeph">APEX_INSTANCE_ADMIN.REMOVE_SCHEMA_EXCEPTIONS</code> procedure from within the Application Express engine schema. For example:
+                           </p><pre class="oac_no_warn" dir="ltr">EXEC APEX_050200.APEX_INSTANCE_ADMIN.REMOVE_SCHEMA_EXCEPTIONS(p_schema =&gt; 'RMAN');
+COMMIT;
+</pre><p>This example would prevent the Instance administrator from assigning the <code class="codeph">RMAN</code> schema to any workspaces if the <code class="codeph">RMAN</code> schema were already restricted, but had one or more exceptions previously created for it.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-1E5EFAFC-4F5A-4CCA-8F4E-9607EA1F7033" title="DBAs can work with restricted schemas by designating specific workspaces as exceptions, remove all workspaces exceptions for a schema, or remove all schema exceptions for a workspace.">Working with Restricted Schemas</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="AEADM237"></a><div class="props_rev_3"><a id="GUID-3EEE4564-98D5-4844-B326-090A6F83C7B4" name="GUID-3EEE4564-98D5-4844-B326-090A6F83C7B4"></a><h5 id="AEADM-GUID-3EEE4564-98D5-4844-B326-090A6F83C7B4" class="sect5"><span class="enumeration_section">3.13.3.4.2 </span>Removing Schema Exceptions for a Workspace
+                     </h5>
+                     <div>
+                        <p>DBAs can remove all schema exceptions for a workspace.</p>
+                        <div class="section">
+                           <p>DBAs can remove all schema exceptions for a workspace by using SQL*Plus to run the
+                    <a id="d38413e855" class="indexterm-anchor"></a><code class="codeph">APEX_INSTANCE_ADMIN.REMOVE_WORKSPACE_EXCEPTIONS</code>
+                procedure from within the Application Express engine schema. For example:
+                           </p><pre class="oac_no_warn" dir="ltr">EXEC APEX_190200.APEX_INSTANCE_ADMIN.REMOVE_WORKSPACE_EXCEPTIONS(p_workspace =&gt; 'AUDITOR_WORKSPACE');
+COMMIT;
+</pre><p>This example would prevent the Instance administrator from assigning any restricted schemas to the workspace named AUDITOR_WORKSPACE if that workspace had exceptions previously created for it for any restricted schemas.</p>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-1E5EFAFC-4F5A-4CCA-8F4E-9607EA1F7033" title="DBAs can work with restricted schemas by designating specific workspaces as exceptions, remove all workspaces exceptions for a schema, or remove all schema exceptions for a workspace.">Working with Restricted Schemas</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="AEADM29216"></a><div class="props_rev_3"><a id="GUID-CA7EF1E0-F1F1-42D7-B417-6D52A3964FDB" name="GUID-CA7EF1E0-F1F1-42D7-B417-6D52A3964FDB"></a><h5 id="AEADM-GUID-CA7EF1E0-F1F1-42D7-B417-6D52A3964FDB" class="sect5"><span class="enumeration_section">3.13.3.4.3 </span>Designating Specific Workspaces as Exceptions
+                     </h5>
+                     <div>
+                        <p>DBAs can designate specific workspaces as exceptions.</p>
+                        <div class="section">
+                           <p>If a schema has been designated as restricted using the <code class="codeph">CREATE_SCHEMA_EXCEPTION</code> procedure, the DBA can designate specific workspaces as exceptions by running the <a id="d38413e924" class="indexterm-anchor"></a><code class="codeph">APEX_INSTANCE_ADMIN.CREATE_SCHEMA_EXCEPTION</code> procedure. For example:
+                           </p><pre class="oac_no_warn" dir="ltr">EXEC APEX_190200.APEX_INSTANCE_ADMIN.CREATE_SCHEMA_EXCEPTION(p_schema =&gt; 'RMAN', p_workspace=&gt; 'DBA_WORKSPACE');
+EXEC APEX_190200.APEX_INSTANCE_ADMIN.CREATE_SCHEMA_EXCEPTION(p_schema =&gt; 'RMAN', p_workspace  =&gt; 'AUDITOR_WORKSPACE');
+COMMIT;
+</pre><p>This example would prevent the Instance administrator from assigning the <code class="codeph">RMAN</code> schema to the workspace named AUDITOR_WORKSPACE. However this restriction only applies to workspace provisioning requests processed after the <code class="codeph">REMOVE_SCHEMA_EXCEPTION</code> procedure has been run. If the AUDITOR_WORKSPACE has the <code class="codeph">RMAN</code> schema assigned to it, this method would not prevent that workspace from continuing to use the schema.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-1E5EFAFC-4F5A-4CCA-8F4E-9607EA1F7033" title="DBAs can work with restricted schemas by designating specific workspaces as exceptions, remove all workspaces exceptions for a schema, or remove all schema exceptions for a workspace.">Working with Restricted Schemas</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div><a id="AEADM238"></a><div class="props_rev_3"><a id="GUID-F6D33204-69D8-400D-9276-E06C3FA732C6" name="GUID-F6D33204-69D8-400D-9276-E06C3FA732C6"></a><h4 id="AEADM-GUID-F6D33204-69D8-400D-9276-E06C3FA732C6" class="sect4"><span class="enumeration_section">3.13.3.5 </span>Determining the Privilege Status
+                  </h4>
+                  <div>
+                     <p>DBAs can determine the current status of the privileges.</p>
+                     <div class="section">
+                        <p>A DBA can determine the current status of the privileges by using SQL*Plus to run the script <code class="codeph">report_instance_configuration.sql</code> in the utilities directory. For example:
+                        </p>
+                        <p>To run the script <code class="codeph">report_instance_configuration.sql</code> in the utilities directory:
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Change to the <code class="codeph">utilities</code> directory.</span><div><pre class="oac_no_warn" dir="ltr">$ cd utilities
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Connect in SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code>, for example:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:</span>\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 <li>
+                                    <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Run the following statement:</span><div><pre class="oac_no_warn" dir="ltr">SQL&gt; @report_instance_configuration.sql
+</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <p>The resulting report displays general information about the Application Express instance, including restricted schemas and schema exceptions.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-schemas.html#GUID-F596758D-0253-47F8-9745-29CD60DA30A7" title="A database administrator (DBA) grants and revokes privileges within an Oracle Application Express instance.">Understanding Oracle Default Schema Restrictions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

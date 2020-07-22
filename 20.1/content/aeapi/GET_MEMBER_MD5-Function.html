@@ -1,0 +1,184 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="GET_MEMBER_MD5 Function">
+      <meta name="DC.subject" content="APEX_COLLECTION, GET_MEMBER_MD5 function">
+      <meta name="keywords" content="APEX_COLLECTION, GET_MEMBER_MD5 function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_COLLECTION.html#GUID-859B488C-2628-44D7-969F-50872C685B76">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>GET_MEMBER_MD5 Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="DELETE_MEMBERS-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="MERGE_MEMBERS-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DELETE_MEMBERS-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="MERGE_MEMBERS-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_COLLECTION.html" property="item" typeof="WebPage"><span property="name"> APEX_COLLECTION </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">GET_MEMBER_MD5 Function</li>
+            </ol>
+            <a id="GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD" name="GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD"></a><a id="AEAPI764"></a><a id="AEAPI765"></a><a id="AEAPI766"></a><a id="AEAPI767"></a><a id="AEAPI763"></a>
+            
+            <h2 id="AEAPI-GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD" class="sect2"><span class="enumeration_section">8.41 </span>GET_MEMBER_MD5 Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Use this function to compute and return the message digest of the attributes for the
+                member specified by the sequence ID. This computation of message digest is equal to
+                the computation performed natively by collections. Thus, the result of this function
+                could be compared to the <code class="codeph">MD5_ORIGINAL</code> column of the view
+                    <code class="codeph">apex_collections</code>.
+                  </p>
+                  <p>If a collection does not exist with the specified name for the current user in the same session and for the current Application ID, an application error is raised. If the member specified by sequence ID p_seq does not exist, an application error is raised.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD__GUID-8C8CDDF1-F06B-424C-A2B8-CAECABEFB85B">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_COLLECTION.GET_MEMBER_MD5 (
+    p_collection_name IN VARCHAR2,
+    p_seq             IN NUMBER)
+RETURN VARCHAR2;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD__GUID-BFAE58E5-526F-434A-B56F-FF1B41827C86">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD__CJADEHDF">
+                  <p class="titleintable">Table 8-18 GET_MEMBER_MD5 Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="GET_MEMBER_MD5 Parameters" summary="Parameter descriptions for the GET_MEMBER_MD5 function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d33297e81">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d33297e84">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d33297e89" headers="d33297e81 ">
+                              <p><code class="codeph">p_collection_name</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d33297e89 d33297e84 ">
+                              <p>The name of the collection to add this array of members to. An error is returned if this collection does not exist with the specified name of the current user and in the same session.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d33297e97" headers="d33297e81 ">
+                              <p>p_seq</p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d33297e97 d33297e84 ">
+                              <p>Sequence ID of the collection member.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD__GUID-3BB44B2F-8478-4512-91B3-EF2683D65C50">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example computes the MD5 for the 5th member of the GROCERIES collection.</p><pre class="pre codeblock"><code>declare
+    l_md5 varchar2(4000);
+begin
+    l_md5 := apex_collection.get_member_md5( 
+        p_collection_name =&gt; 'GROCERIES'
+        p_seq             =&gt; 10 );
+end;</code></pre><div class="infoboxnotealso" id="GUID-A456F18D-10D5-48F6-B75F-FD9534FD91FD__GUID-45BF170C-DDF3-479B-97AF-5C1E19085CBD">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="COLLECTION_HAS_CHANGED-Function.html#GUID-1DC33627-7413-4D71-88DF-60731B6CE8A4">COLLECTION_HAS_CHANGED Function</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="RESET_COLLECTION_CHANGED-Procedure.html#GUID-B63E77BD-479A-4B79-84AA-05CC6BA2F698">RESET_COLLECTION_CHANGED Procedure</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="RESET_COLLECTION_CHANGED_ALL-Procedure.html#GUID-9660DD2F-FC08-489D-8205-AF9F22B16549">RESET_COLLECTION_CHANGED_ALL Procedure</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_COLLECTION.html#GUID-859B488C-2628-44D7-969F-50872C685B76">APEX_COLLECTION</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

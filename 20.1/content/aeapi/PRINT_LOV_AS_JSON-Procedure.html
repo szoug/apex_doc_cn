@@ -1,0 +1,184 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="PRINT_LOV_AS_JSON Procedure">
+      <meta name="DC.subject" content="APEX_PLUGIN_UTIL, PRINT_LOV_AS_JSON procedure">
+      <meta name="keywords" content="APEX_PLUGIN_UTIL, PRINT_LOV_AS_JSON procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_PLUGIN_UTIL.html#GUID-E1FE05BA-E290-4446-82DC-5271B75FDD4C">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>PRINT_LOV_AS_JSON Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="PRINT_JSON_HTTP_HEADER-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="PRINT_OPTION-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="PRINT_JSON_HTTP_HEADER-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PRINT_OPTION-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_PLUGIN_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_PLUGIN_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">PRINT_LOV_AS_JSON Procedure</li>
+            </ol>
+            <a id="GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5" name="GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5"></a><a id="AEAPI1375"></a><a id="AEAPI1376"></a><a id="AEAPI1377"></a><a id="AEAPI1378"></a><a id="AEAPI1374"></a>
+            
+            <h2 id="AEAPI-GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5" class="sect2"><span class="enumeration_section">31.29 </span>PRINT_LOV_AS_JSON Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure outputs a JSON response based on the result of a two column LOV in the format: </p><pre class="oac_no_warn" dir="ltr">[{"d:"display","r":"return"},{"d":....,"r":....},....]</pre><div class="infoboxnote" id="GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5__GUID-7813A1EB-A26E-4803-964F-C528808931F8">
+                     <p class="notep1">Note:</p>
+                     <p>The HTTP header is initialized with MIME type "application/json" as well.</p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5__GUID-727A929D-FEC5-4DA3-9C82-6C2EADFB424F">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_PLUGIN_UTIL.PRINT_LOV_AS_JSON (
+    p_sql_statement         IN VARCHAR2,
+    p_component_name        IN VARCHAR2,
+    p_escape                IN BOOLEAN,
+    p_replace_substitutions IN BOOLEAN DEFAULT FALSE);
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5__GUID-17AE8278-0398-49E1-934A-D5AA8997E6EE">Parameters</p>
+                  <div class="tblformal" id="GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5__BABECCIF">
+                     <p class="titleintable">Table 31-39 PRINT_LOV_AS_JSON Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="PRINT_LOV_AS_JSON Parameters" summary="Parameter descriptions for the PRINT_LOV_AS_JSON procedure." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="38%" id="d147990e78">Parameter</th>
+                              <th align="left" valign="bottom" width="62%" id="d147990e81">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d147990e86" headers="d147990e78 ">
+                                 <p><code class="codeph">p_sql_statement</code></p>
+                              </td>
+                              <td align="left" valign="top" width="62%" headers="d147990e86 d147990e81 ">
+                                 <p>A SQL statement which returns two columns from the SELECT.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d147990e94" headers="d147990e78 ">
+                                 <p><code class="codeph">p_component_name</code></p>
+                              </td>
+                              <td align="left" valign="top" width="62%" headers="d147990e94 d147990e81 ">
+                                 <p>The name of the page item or report column that is used in case an error is displayed.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d147990e102" headers="d147990e78 ">
+                                 <p><code class="codeph">p_escape</code></p>
+                              </td>
+                              <td align="left" valign="top" width="62%" headers="d147990e102 d147990e81 ">
+                                 <p>If set to <code class="codeph">TRUE</code> the value of the display column is escaped, otherwise it is output as is.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d147990e113" headers="d147990e78 ">
+                                 <p><code class="codeph">p_replace_substitutions</code></p>
+                              </td>
+                              <td align="left" valign="top" width="62%" headers="d147990e113 d147990e81 ">
+                                 <p>If set to TRUE, <code class="codeph">apex_plugin_util.replace_substitutions</code> is called for the value of the display column, otherwise, it is output as is.
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5__GUID-9E086458-1447-4F37-B4B0-A61562173917">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>This example shows how to use the procedure in an Ajax callback function of an item type plug-in. The following call writes the LOV result as a JSON array to the HTTP output.</p><pre class="pre codeblock"><code>apex_plugin_util.print_lov_as_json (
+    p_sql_statement  =&gt; p_item.lov_definition,
+    p_component_name =&gt; p_item.name,
+    p_escape         =&gt; true );</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_PLUGIN_UTIL.html#GUID-E1FE05BA-E290-4446-82DC-5271B75FDD4C">APEX_PLUGIN_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

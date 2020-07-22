@@ -1,0 +1,199 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="Import Script Examples">
+      <meta name="DC.subject" content="APEX_APPLICATION_INSTALL, import script examples, examples, import application without modification, import application with specified app ID, example, import application with generated app ID, import application into different workspaces, import into training instance">
+      <meta name="keywords" content="APEX_APPLICATION_INSTALL, import script examples, examples, import application without modification, import application with specified app ID, example, import application with generated app ID, import application into different workspaces, import into training instance">
+      <meta name="DC.Relation" scheme="URI" content="APEX_APPLICATION_INSTALL.html#GUID-64D43160-E4F9-44CF-96A4-42D3190102BE">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Import Script Examples</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="APEX_APPLICATION_INSTALL-Data-Types.html" title="Previous" type="text/html">
+      <link rel="next" href="CLEAR_ALL-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="APEX_APPLICATION_INSTALL-Data-Types.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="CLEAR_ALL-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_APPLICATION_INSTALL.html" property="item" typeof="WebPage"><span property="name"> APEX_APPLICATION_INSTALL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Import Script Examples</li>
+            </ol>
+            <a id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2" name="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2"></a><a id="AEAPI561"></a><a id="AEAPI562"></a><a id="AEAPI563"></a><a id="AEAPI564"></a><a id="AEAPI565"></a><a id="AEAPI560"></a>
+            
+            <h2 id="AEAPI-GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2" class="sect2"><span class="enumeration_section">4.4 </span>Import Script Examples
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Using the workspace FRED_DEV on the development instance, you generate an application export of application 645 and save it as file f645.sql. All examples in this section assume you are connected to SQL*Plus.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__GUID-82234CD7-879D-41E1-8451-E4CB00A7B6BF">Import Application without Modification</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>To import this application back into the FRED_DEV workspace on the same development instance using the same application ID:</p>
+                  <p>@f645.sql</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__CHDHJFAJ">
+                  <p class="subhead1" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__GUID-95D5FC49-D00D-457D-9203-B625D844A62D">Import Application with Specified Application ID</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>To import this application back into the FRED_DEV workspace on the same development instance, but using application ID 702:</p><pre class="pre codeblock"><code>begin
+  apex_application_install.set_application_id( 702);
+  apex_application_install.generate_offset;
+  apex_application_install.set_application_alias( 'F' || apex_application_install.get_application_id );
+end;
+/
+ 
+@645.sql</code></pre></div>
+               <!-- class="section" -->
+               <div class="section" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__CHDBDADD">
+                  <p class="subhead1" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__GUID-BBFAA842-875B-4BE0-BDC1-173FDB5AD5EB">Import Application with Generated Application ID</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>To import this application back into the FRED_DEV workspace on the same development instance, but using an available application ID generated by Application Express:</p><pre class="pre codeblock"><code>begin
+  apex_application_install.generate_application_id;
+  apex_application_install.generate_offset;
+  apex_application_install.set_application_alias( 'F' || apex_application_install.get_application_id );
+end;
+/
+ 
+@f645.sql
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__CHDHICCE">
+                  <p class="subhead1" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__GUID-407C77B4-0A00-4509-A000-69056F318F8F">Import Application into Different Workspace using Different Schema</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>To import this application into the FRED_PROD workspace on the production instance, using schema FREDDY, and the workspace ID of FRED_DEV and FRED_PROD are different:</p><pre class="pre codeblock"><code>begin
+    apex_application_install.set_workspace('FRED_PROD');
+    apex_application_install.generate_offset;
+    apex_application_install.set_schema( 'FREDDY' );
+    apex_application_install.set_application_alias( 'FREDPROD_APP' );
+end;
+/
+ 
+@f645.sql</code></pre></div>
+               <!-- class="section" -->
+               <div class="section" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__CHDFGAIF">
+                  <p class="subhead1" id="GUID-3FA670B9-823F-4630-9E0E-29F3A61666F2__GUID-1167F529-1E6B-4A50-844B-61A7B596C6B4">Import into Training Instance for Three Different Workspaces</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>To import this application into the Training instance for 3 different workspaces:</p><pre class="pre codeblock"><code>begin
+    apex_application_install.set_workspace('TRAINING1');
+    apex_application_install.generate_application_id;
+    apex_application_install.generate_offset;
+    apex_application_install.set_schema( 'STUDENT1' );
+    apex_application_install.set_application_alias( 'F' || apex_application_install.get_application_id );
+end;
+/
+ 
+@f645.sql
+ 
+begin
+    apex_application_install.set_workspace('TRAINING2');
+    apex_application_install.generate_application_id;
+    apex_application_install.generate_offset;
+    apex_application_install.set_schema( 'STUDENT2' );
+    apex_application_install.set_application_alias( 'F' || apex_application_install.get_application_id );
+end;
+/
+ 
+@f645.sql
+ 
+begin
+    apex_application_install.set_workspace('TRAINING3');
+    apex_application_install.generate_application_id;
+    apex_application_install.generate_offset;
+    apex_application_install.set_schema( 'STUDENT3' );
+    apex_application_install.set_application_alias( 'F' || apex_application_install.get_application_id );
+    end;
+/
+
+@f645.sql</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_APPLICATION_INSTALL.html#GUID-64D43160-E4F9-44CF-96A4-42D3190102BE">APEX_APPLICATION_INSTALL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

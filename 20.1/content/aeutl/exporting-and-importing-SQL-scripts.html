@@ -1,0 +1,214 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Exporting and Importing SQL Scripts">
+      <meta name="abstract" content="Move scripts from your current Script Repository by exporting them and then importing SQL Script Export into a Script Repository in a different workspace.">
+      <meta name="description" content="Move scripts from your current Script Repository by exporting them and then importing SQL Script Export into a Script Repository in a different workspace.">
+      <meta name="DC.subject" content="SQL Scripts, exporting scripts, importing scripts, scripts, exporting, importing">
+      <meta name="keywords" content="SQL Scripts, exporting scripts, importing scripts, scripts, exporting, importing">
+      <meta name="DC.Relation" scheme="URI" content="using-SQL-scripts.html#GUID-7288B4B4-E00C-4DC4-89EA-5FA52623A1EF">
+      <meta name="DC.Relation" scheme="URI" content="exporting-and-importing-SQL-scripts.html#GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234">
+      <meta name="DC.Relation" scheme="URI" content="exporting-and-importing-SQL-scripts.html#GUID-E43A37A3-B4EF-400A-BA43-731A549893BB">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B4B44422-A910-4E14-B6F7-B0CB1E848B52">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Move scripts from your current Script Repository by exporting them and then importing SQL Script Export into a Script Repository in a different workspace.">
+      <meta name="description" content="Move scripts from your current Script Repository by exporting them and then importing SQL Script Export into a Script Repository in a different workspace.">
+      <title>Exporting and Importing SQL Scripts</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Move scripts from your current Script Repository by exporting them and then importing SQL Script Export into a Script Repository in a different workspace.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="viewing-SQL-script-results.html" title="Previous" type="text/html">
+      <link rel="next" href="viewing-script-and-result-quotas.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="viewing-SQL-script-results.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="viewing-script-and-result-quotas.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-SQL-scripts.html" property="item" typeof="WebPage"><span property="name"> Using SQL Scripts </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Exporting and Importing SQL Scripts</li>
+            </ol>
+            <a id="GUID-B4B44422-A910-4E14-B6F7-B0CB1E848B52" name="GUID-B4B44422-A910-4E14-B6F7-B0CB1E848B52"></a><a id="AEUTL212"></a>
+            
+            <h2 id="AEUTL-GUID-B4B44422-A910-4E14-B6F7-B0CB1E848B52" class="sect2"><span class="enumeration_section">6.12 </span>Exporting and Importing SQL Scripts
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Move scripts from your current Script Repository by exporting them and then
+        importing SQL Script Export into a Script Repository in a different workspace.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="exporting-and-importing-SQL-scripts.html#GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234">Exporting SQL Scripts</a><br>Move scripts from your current Script Repository by exporting         them.
+                  </li>
+                  <li class="ulchildlink"><a href="exporting-and-importing-SQL-scripts.html#GUID-E43A37A3-B4EF-400A-BA43-731A549893BB">Importing Scripts</a><br>Import a Script Export into the Script Repository.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-SQL-scripts.html#GUID-7288B4B4-E00C-4DC4-89EA-5FA52623A1EF" title="Use SQL scripts to create, edit, view, run, and delete script files.">Using SQL Scripts</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL213"></a><div class="props_rev_3"><a id="GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234" name="GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234"></a><h3 id="AEUTL-GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234" class="sect3"><span class="enumeration_section">6.12.1 </span>Exporting SQL Scripts
+               </h3>
+               <div>
+                  <p>Move scripts from your current Script Repository by exporting
+        them.</p>
+                  <div class="section">By default, the Export SQL Scripts page lists all scripts in the
+            Script Repository created by the current user. Export SQL Scripts features two regions:
+                <strong class="term">Scripts</strong> and <strong class="term">Scripts to Export</strong>.
+            Use <strong class="term">Scripts</strong> to select the scripts to export. Then, review <strong class="term">Scripts to Export</strong> to finalize the scripts to export and choose a
+            name for the Script Export.
+                  </div>
+                  <!-- class="section" -->
+                  <p>To export script files:</p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then
+                        <span class="uicontrol bold">SQL Scripts</span>.</span><div>
+                           
+                           <p>The SQL Scripts page appears.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Tasks list, click <span class="uicontrol bold">Export</span>.</span><div>The Export SQL Scripts page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Under Scripts:</span><ol type="a" id="GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234__SUBSTEPS_ZFW_JZF_KKB">
+                           <li><span>Select the scripts you want to export. To select all displayed scripts,
+                            click the column head check box.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Add to Export</span>.</span></li>
+                        </ol>
+                        <div>
+                           
+                           <div class="figure" id="GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234__FIG_SGV_GFG_KKB"><img id="GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234__IMAGE_TGV_GFG_KKB" height="451" width="929" src="img/sql_s_pane.png" alt="Description of sql_s_pane.png follows" title="Description of sql_s_pane.png follows" longdesc="img_text/sql_s_pane.html"><br><a href="img_text/sql_s_pane.html">Description of the illustration sql_s_pane.png</a></div>
+                           <!-- class="figure" -->
+                           
+                           <p>The selected scripts display under <span class="uicontrol bold">Scripts to
+                            Export</span>.
+                           </p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under <span class="uicontrol bold">Scripts to Export</span>:</span><ol type="a" id="GUID-963AA4E0-C45F-4EE6-9CAA-051FF0C0E234__SUBSTEPS_DGV_VFG_KKB">
+                           <li><span><span class="uicontrol bold">File Name</span> - Enter a name for the export script.
+                            The default script name is
+                                <span class="italic"><code class="codeph">workspace_name</code></span><code class="codeph">_script.sql</code>.</span></li>
+                           <li><span> To remove a script, deselect it and click <span class="uicontrol bold">Remove
+                                Checked</span>. </span></li>
+                           <li><span>Click <span class="uicontrol bold">Export All</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Import the Script Export.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="exporting-and-importing-SQL-scripts.html#GUID-B4B44422-A910-4E14-B6F7-B0CB1E848B52" title="Move scripts from your current Script Repository by exporting them and then importing SQL Script Export into a Script Repository in a different workspace.">Exporting and Importing SQL Scripts</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL216"></a><div class="props_rev_3"><a id="GUID-E43A37A3-B4EF-400A-BA43-731A549893BB" name="GUID-E43A37A3-B4EF-400A-BA43-731A549893BB"></a><h3 id="AEUTL-GUID-E43A37A3-B4EF-400A-BA43-731A549893BB" class="sect3"><span class="enumeration_section">6.12.2 </span>Importing Scripts
+               </h3>
+               <div>
+                  <p>Import a Script Export into the Script Repository.</p>
+                  <p>To import scripts:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to the target workspace.</span></li>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then
+                        <span class="uicontrol bold">SQL Scripts</span>.</span><div>
+                           
+                           <p>The SQL Scripts page appears.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Tasks list, click <span class="uicontrol bold">Import</span>.</span><div>The Export SQL Scripts page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>On Import Scripts:</span><ol type="a" id="GUID-E43A37A3-B4EF-400A-BA43-731A549893BB__SUBSTEPS_KSH_TQG_KKB">
+                           <li><span><span class="uicontrol bold">Import file</span> - Browse to the Script Export you
+                            want to import.</span></li>
+                           <li><span><span class="uicontrol bold">File Character Set</span> - Indicate the character set
+                            encoding of the file to be imported.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                        <div>The Import Scripts page appears. The Action column indicates whether the
+                    imported script is new, or whether it replaces an existing script of the same
+                    name. </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Import Script(s)</span> to import the listed scripts into
+                    the current Script Repository.</span><div>The SQL Scripts page appears listing the imported scripts.</div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="exporting-and-importing-SQL-scripts.html#GUID-B4B44422-A910-4E14-B6F7-B0CB1E848B52" title="Move scripts from your current Script Repository by exporting them and then importing SQL Script Export into a Script Repository in a different workspace.">Exporting and Importing SQL Scripts</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Workspace Management">
+      <meta name="abstract" content="Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.">
+      <meta name="description" content="Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.">
+      <meta name="DC.subject" content="security best practices, managing workspaces, workspaces, managing, managing workspace to schema assignments, workspace to schema assignments, managing, managing users, users, about managing, managing component availability, components, managing availability">
+      <meta name="keywords" content="security best practices, managing workspaces, workspaces, managing, managing workspace to schema assignments, workspace to schema assignments, managing, managing users, users, about managing, managing component availability, components, managing availability">
+      <meta name="DC.Relation" scheme="URI" content="understanding-administrator-security-best-practices.html#GUID-F7EF538E-D12A-4623-A68C-6F8E6523B6B8">
+      <meta name="DC.Relation" scheme="URI" content="understanding-workspace-management.html#GUID-D2BD6727-57E5-407D-9F39-EDCE26FB658C">
+      <meta name="DC.Relation" scheme="URI" content="understanding-workspace-management.html#GUID-51D4B8BE-11C2-41A7-890F-21C646D4CC8B">
+      <meta name="DC.Relation" scheme="URI" content="understanding-workspace-management.html#GUID-1FC708F2-EBB5-4A06-B726-C2EDDB87918D">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-05BA697E-2C9C-4FCB-89FF-B7A6AECD0CD3">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.">
+      <meta name="description" content="Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.">
+      <title>Understanding Workspace Management</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="configuring-workspace-purge-settings.html" title="Previous" type="text/html">
+      <link rel="next" href="integrating-with-oracle-bi-publisher.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="configuring-workspace-purge-settings.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="integrating-with-oracle-bi-publisher.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-security.html" property="item" typeof="WebPage"><span property="name">Managing Application Security</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-administrator-security-best-practices.html" property="item" typeof="WebPage"><span property="name">Understanding Administrator Security Best Practices</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Workspace Management</li>
+            </ol>
+            <a id="GUID-05BA697E-2C9C-4FCB-89FF-B7A6AECD0CD3" name="GUID-05BA697E-2C9C-4FCB-89FF-B7A6AECD0CD3"></a><a id="HTMDB29407"></a>
+            
+            <h2 id="HTMDB-GUID-05BA697E-2C9C-4FCB-89FF-B7A6AECD0CD3" class="sect2"><span class="enumeration_section">21.1.6 </span>Understanding Workspace Management
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.</p>
+               <p></p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-workspace-management.html#GUID-D2BD6727-57E5-407D-9F39-EDCE26FB658C">About Managing Workspace to Schema Assignments</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-workspace-management.html#GUID-51D4B8BE-11C2-41A7-890F-21C646D4CC8B">About Managing Developers and Users</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-workspace-management.html#GUID-1FC708F2-EBB5-4A06-B726-C2EDDB87918D">About Managing Component Availability</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-05BA697E-2C9C-4FCB-89FF-B7A6AECD0CD3__GUID-E080BC59-8F35-4A5A-8827-32759DA18D00">
+                  <p class="notep1">See Also:</p>
+                  <p>"Managing Existing Workspaces" in <a href="../aeadm/managing-existing-workspaces.html#AEADM-GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-administrator-security-best-practices.html#GUID-F7EF538E-D12A-4623-A68C-6F8E6523B6B8" title="Learn about security best practices for Oracle Application Express administrators.">Understanding Administrator Security Best Practices</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29408"></a><div class="props_rev_3"><a id="GUID-D2BD6727-57E5-407D-9F39-EDCE26FB658C" name="GUID-D2BD6727-57E5-407D-9F39-EDCE26FB658C"></a><h3 id="HTMDB-GUID-D2BD6727-57E5-407D-9F39-EDCE26FB658C" class="sect3"><span class="enumeration_section">21.1.6.1 </span>About Managing Workspace to Schema Assignments
+               </h3>
+               <div>
+                  <p>When users sign in to Oracle Application Express, they sign in to a shared work area
+            called a workspace. Each workspace can have multiple associated (or mapped) schemas.
+            Instance administrators can define associations between workspaces and schemas as
+            appropriate. By associating a workspace with a schema, developers in that workspace can
+            create new database objects in that schema and build applications that interact with the
+            database objects in that schema. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D2BD6727-57E5-407D-9F39-EDCE26FB658C__GUID-E4525E70-089F-4663-808D-16AFFD1C2BCD">
+                     <p class="notep1">See Also:</p>
+                     <p>"Managing Workspace to Schema Assignments" in <a href="../aeadm/managing-workspace-to-schema-assignments.html#AEADM-GUID-355C08F2-8267-40D1-A8FF-4C7B7BE69981" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-workspace-management.html#GUID-05BA697E-2C9C-4FCB-89FF-B7A6AECD0CD3" title="Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.">Understanding Workspace Management</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29409"></a><div class="props_rev_3"><a id="GUID-51D4B8BE-11C2-41A7-890F-21C646D4CC8B" name="GUID-51D4B8BE-11C2-41A7-890F-21C646D4CC8B"></a><h3 id="HTMDB-GUID-51D4B8BE-11C2-41A7-890F-21C646D4CC8B" class="sect3"><span class="enumeration_section">21.1.6.2 </span>About Managing Developers and Users
+               </h3>
+               <div>
+                  <p>Administrators can define what schemas specific users have access to and also their user role, that is if they are a workspace administrator, a developer, or an end user. Administrators can also limit developer access to specific Application Express components and lock accounts. Oracle Application Express includes two separate interfaces for managing developers and users. Workspace administrators manage user accounts within their workspace and Instance administrators manage all user accounts across an Application Express development instance.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-51D4B8BE-11C2-41A7-890F-21C646D4CC8B__GUID-B44FADE1-9E15-4D45-B9BC-B9779A232908">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>"管理用户 Across an Application Express Instance" in <a href="../aeadm/managing-users-across-an-application-express-instance.html#AEADM-GUID-AC77C488-E9CC-4279-9D5F-C4C864EF3683" target="_blank"><span><cite>Oracle Application Express Administration Guide</cite></span></a></p>
+                        </li>
+                        <li>
+                           <p>"管理用户 in a Workspace” in <a href="../aeadm/managing-users-in-a-workspace.html#AEADM-GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" target="_blank"><span><cite>Oracle Application Express Administration Guide</cite></span></a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-workspace-management.html#GUID-05BA697E-2C9C-4FCB-89FF-B7A6AECD0CD3" title="Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.">Understanding Workspace Management</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29410"></a><div class="props_rev_3"><a id="GUID-1FC708F2-EBB5-4A06-B726-C2EDDB87918D" name="GUID-1FC708F2-EBB5-4A06-B726-C2EDDB87918D"></a><h3 id="HTMDB-GUID-1FC708F2-EBB5-4A06-B726-C2EDDB87918D" class="sect3"><span class="enumeration_section">21.1.6.3 </span>About Managing Component Availability
+               </h3>
+               <div>
+                  <p>Workspace administrators can control user access to key components such as <span>App Builder</span>, Team Development, SQL Workshop, and PL/SQL editing, which determines whether developers have the ability to edit and compile PL/SQL program units from Object Browser. For example, suppose an administrator wants users to be able to build database components, run SQL statements, but not create applications, he or she could define a workspace with rights to a specific schema and then configure the users as developers using the options on the Set Workspace Preferences page. 
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1FC708F2-EBB5-4A06-B726-C2EDDB87918D__GUID-0E46D337-BFBD-4364-826E-B877338E1DC7">
+                     <p class="notep1">See Also:</p>
+                     <p>"Configuring Workspace Preferences" in <a href="../aeadm/configuring-workspace-preferences.html#AEADM-GUID-C40D781E-BB6F-45DC-BF7A-C04C0D207972" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-workspace-management.html#GUID-05BA697E-2C9C-4FCB-89FF-B7A6AECD0CD3" title="Instance administrators can define associations between workspaces and schemas. Administrators can manage developers and users at the workspace or instance-level and control user access to key components such App Builder, Team Development, and SQL Workshop, and PL/SQL editing.">Understanding Workspace Management</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

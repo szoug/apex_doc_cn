@@ -1,0 +1,134 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="concept">
+      <meta name="DC.Title" content="About Securing File Uploads">
+      <meta name="abstract" content="Learn about developer best practices for securing file uploads.">
+      <meta name="description" content="Learn about developer best practices for securing file uploads.">
+      <meta name="DC.subject" content="file upload table, security risks, security risks, file upload table">
+      <meta name="keywords" content="file upload table, security risks, security risks, file upload table">
+      <meta name="DC.Relation" scheme="URI" content="understanding-developer-security-best-practices.html#GUID-CC6B3716-C74D-4769-AA14-CE92D1E2B841">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B2DA0D6D-563E-4512-8D91-B792F0F04CC1">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about developer best practices for securing file uploads.">
+      <meta name="description" content="Learn about developer best practices for securing file uploads.">
+      <title>About Securing File Uploads</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Learn about developer best practices for securing file uploads.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="preventing-url-tampering.html" title="Previous" type="text/html">
+      <link rel="next" href="controlling-access-to-applications-pages-and-page-components.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="preventing-url-tampering.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="controlling-access-to-applications-pages-and-page-components.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-security.html" property="item" typeof="WebPage"><span property="name">Managing Application Security</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-developer-security-best-practices.html" property="item" typeof="WebPage"><span property="name">Understanding Developer Security Best Practices</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">About Securing File Uploads</li>
+            </ol>
+            <a id="GUID-B2DA0D6D-563E-4512-8D91-B792F0F04CC1" name="GUID-B2DA0D6D-563E-4512-8D91-B792F0F04CC1"></a><a id="HTMDB29891"></a>
+            
+            <h2 id="HTMDB-GUID-B2DA0D6D-563E-4512-8D91-B792F0F04CC1" class="sect2"><span class="enumeration_section">21.2.6 </span>About Securing File Uploads
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about developer best practices for securing file uploads.</p>
+               <p>Oracle Application Express enables you to easily build an application that can be
+            used to upload files and to access uploaded files. These files are uploaded into a
+            common file storage table. Although the database view
+                <code class="codeph">APEX_APPLICATION_FILES</code> shows those files associated with your
+            database account (or workspace), programmatic access to the common file storage table
+            does not always require authentication, enabling other users to see your uploaded files.
+            For this reason, Oracle recommends that developers use the methods described in <span class="q">"<a href="understanding-blob-support-in-forms-and-reports.html#GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB" title="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">Understanding BLOB Support in Forms and Reports</a>,"</span> with the files being uploaded directly to a table in your workspace schema,
+            or if you need programmatic access, uploaded to
+                <code class="codeph">APEX_APPLICATION_TEMP_FILES</code>. When you use the built-in methods of
+            files access, the authorization checks on the page also apply to file access.
+               </p>
+            </div>
+            <div>
+               <div class="infoboxnotealso" id="GUID-B2DA0D6D-563E-4512-8D91-B792F0F04CC1__GUID-C38952E7-1624-4AA7-8202-0715E842015D">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="understanding-page-level-items.html#GUID-DBE765CA-96D0-4062-A3BC-B402D167A305" title="Page items are placed on a page and have associated user interface properties and Application items are not associated with a page.">About the Differences Between Page Items and Application Items</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="about-item-types.html#GUID-81BF829A-B26C-484D-A321-6A3F47C9192B" title="Learn about key attributes that control item functionality.">About Item Types</a>"</span> to learn more about creating a File Browse page-level item
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-developer-security-best-practices.html#GUID-CC6B3716-C74D-4769-AA14-CE92D1E2B841" title="Learn about security best practices for Oracle Application Express developer.">Understanding Developer Security Best Practices</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

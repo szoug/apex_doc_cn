@@ -1,0 +1,424 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Reviewing Forms Modules">
+      <meta name="DC.subject" content="Oracle Forms conversion, reviewing Forms objects, viewing FormModules, FormModules, viewing, viewing object metadata, selecting specific objects, viewing blocks, reviewing blocks, viewing items, reviewing items, selecting items">
+      <meta name="keywords" content="Oracle Forms conversion, reviewing Forms objects, viewing FormModules, FormModules, viewing, viewing object metadata, selecting specific objects, viewing blocks, reviewing blocks, viewing items, reviewing items, selecting items">
+      <meta name="DC.Relation" scheme="URI" content="reviewing-and-editing-forms-metadata.html#GUID-133A7E05-DC2B-438C-B564-113870EE450C">
+      <meta name="DC.Relation" scheme="URI" content="reviewing-forms-modules.html#GUID-8B887F71-9849-4777-BD49-6D02B56756D3">
+      <meta name="DC.Relation" scheme="URI" content="reviewing-forms-modules.html#GUID-D128A98D-4C67-4B09-811B-EBFBF6741D1D">
+      <meta name="DC.Relation" scheme="URI" content="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">
+      <meta name="DC.Relation" scheme="URI" content="reviewing-forms-modules.html#GUID-96F2F749-C03E-495E-A958-1616FFBA73A1">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-0DE22D4B-8E35-4FC5-B43C-21BC1C153E8A">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Reviewing Forms Modules</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Application Migration Guide ">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Application Migration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-application-migration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-07T14:07:47-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2012, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24721-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="editing-project-details.html" title="Previous" type="text/html">
+      <link rel="next" href="reviewing-oracle-reports.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Application Migration Guide">
+    <meta name="dcterms.isVersionOf" content="AEMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="editing-project-details.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="reviewing-oracle-reports.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Application Migration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="converting-Oracle-forms-application.html" property="item" typeof="WebPage"><span property="name">    Converting an Oracle Forms Application</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="reviewing-and-editing-forms-metadata.html" property="item" typeof="WebPage"><span property="name">Reviewing and Editing Forms Metadata</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Reviewing Forms Modules</li>
+            </ol>
+            <a id="GUID-0DE22D4B-8E35-4FC5-B43C-21BC1C153E8A" name="GUID-0DE22D4B-8E35-4FC5-B43C-21BC1C153E8A"></a><a id="AEMIG197"></a>
+            
+            <h2 id="AEMIG-GUID-0DE22D4B-8E35-4FC5-B43C-21BC1C153E8A" class="sect2"><span class="enumeration_section">4.7.3 </span>Reviewing Forms Modules
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>From the Project page you can browse the objects included in your uploaded Oracle FormModule XML file (for example, <span class="italic"><code class="codeph">myForm</code></span><code class="codeph">_fmb.xml</code>).
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-8B887F71-9849-4777-BD49-6D02B56756D3">Viewing an Imported FormModule</a><br></li>
+                  <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-D128A98D-4C67-4B09-811B-EBFBF6741D1D">Viewing Object Metadata and Selecting Specific Objects</a><br></li>
+                  <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">Understanding Viewing and Selecting Blocks</a><br></li>
+                  <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-96F2F749-C03E-495E-A958-1616FFBA73A1">Viewing and Selecting Items</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="reviewing-and-editing-forms-metadata.html#GUID-133A7E05-DC2B-438C-B564-113870EE450C">Reviewing and Editing Forms Metadata</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEMIG29144"></a><a id="AEMIG199"></a><div class="props_rev_3"><a id="GUID-8B887F71-9849-4777-BD49-6D02B56756D3" name="GUID-8B887F71-9849-4777-BD49-6D02B56756D3"></a><h3 id="AEMIG-GUID-8B887F71-9849-4777-BD49-6D02B56756D3" class="sect3"><span class="enumeration_section">4.7.3.1 </span>Viewing an Imported FormModule 
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To view an imported FormModule:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>From the Application Migrations page, click the project name.</span></li>
+                     <li class="stepexpand"><span>Click the Edit icon to the left of the <code class="codeph">XML</code> file name (for example, <span class="italic"><code class="codeph">myForm</code></span><code class="codeph">_fmb.xml</code>).</span><div>
+                           <p>The Form Details page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To delete an imported FormModule, click <span class="uicontrol bold">Delete</span>.</span></li>
+                     <li class="stepexpand"><span>To download the files associated with this project, click <span class="uicontrol bold">Download</span>. </span></li>
+                  </ol>
+                  <div class="example" id="GUID-8B887F71-9849-4777-BD49-6D02B56756D3__GUID-56C183E7-CE27-494D-A17C-868DBF853A07">
+                     <p class="titleinexample">Example 4-1 About Annotations</p>
+                     <p>Use Annotations to track the overall status of form components within the conversion process. </p>
+                  </div>
+                  <!-- class="example" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-8B887F71-9849-4777-BD49-6D02B56756D3__GUID-36339016-DD06-4670-A0FE-3BBFFBC8347F">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="using-annotations-to-track-conversion.html#GUID-2DDE9A4A-73A3-415C-917D-57E2CB1C6D66">Using Annotations to Track the Conversion Process</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-0DE22D4B-8E35-4FC5-B43C-21BC1C153E8A">Reviewing Forms Modules</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEMIG201"></a><div class="props_rev_3"><a id="GUID-D128A98D-4C67-4B09-811B-EBFBF6741D1D" name="GUID-D128A98D-4C67-4B09-811B-EBFBF6741D1D"></a><h3 id="AEMIG-GUID-D128A98D-4C67-4B09-811B-EBFBF6741D1D" class="sect3"><span class="enumeration_section">4.7.3.2 </span>Viewing Object Metadata and Selecting Specific Objects
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To review object metadata:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>From the Application Migrations page, click the project name.</span></li>
+                     <li class="stepexpand"><span>Click the number under the column for the appropriate object type. Alternately, click the File Name to view a report describing the component.</span><div>
+                           <p>Clicking a number displays a listing of the object type. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To include blocks, items, and LOVs select the <span class="uicontrol bold">Include</span> check box adjacent to the object name and click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     <li class="stepexpand"><span>To view details about a specific object, click the <span class="uicontrol bold">object name</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-0DE22D4B-8E35-4FC5-B43C-21BC1C153E8A">Reviewing Forms Modules</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-026A902F-477C-4165-A4ED-8420CA9C5915" name="GUID-026A902F-477C-4165-A4ED-8420CA9C5915"></a><h3 id="AEMIG-GUID-026A902F-477C-4165-A4ED-8420CA9C5915" class="sect3"><span class="enumeration_section">4.7.3.3 </span>Understanding Viewing and Selecting Blocks
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To review blocks:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>From the Application Migrations page, select the project name.</span></li>
+                     <li class="stepexpand"><span>Click the link under the Blocks column.</span><div>
+                           <p>A listing of blocks appears. </p>
+                        </div>
+                        <div>
+                           <div class="infobox-tip" id="GUID-026A902F-477C-4165-A4ED-8420CA9C5915__GUID-3BBDD388-67E5-41E2-A3BC-7F499DD56B23">
+                              <p class="notep1">Tip:</p>
+                              <p>To displays columns not displayed by default, click the <span class="uicontrol bold">Actions</span> menu and select <span class="uicontrol bold">Select Columns</span>. 
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To edit a block name, enter a new name in the Title field and click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     <li class="stepexpand"><span>To include a specific object in your conversion select the <span class="uicontrol bold">Include</span> check box adjacent to the object name and click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     <li class="stepexpand"><span>To view details about a specific object, click the <span class="uicontrol bold">Name</span> link.</span><div>
+                           <p>The Block Details page appears. The sections that follow describe each section of the Block Details page.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-29772BB3-BD6D-4163-A50B-11FBF997CDA8">About Block Details</a><br></li>
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-10D88E0F-5177-4119-9CC3-64D4088622A5">About Annotations</a><br></li>
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-0D692118-B439-4DBD-A5B0-8C58BEBBD157">About Application Express Page Query</a><br></li>
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-CD7A5202-2615-4DC6-8C36-CE1C72DD3CCF">Relation Details</a><br></li>
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-67B40D64-7CF8-40A8-A4DB-1F1F70E92359">Block Items</a><br></li>
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-F57A8705-7C4A-431D-B6A3-31CF91A3FB27">Block Triggers</a><br></li>
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-E9B3E17E-B946-4A5F-ADC8-3B74634542CB">About Audit</a><br></li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-026A902F-477C-4165-A4ED-8420CA9C5915__GUID-191FB212-C80E-4481-BA75-04209D2E20CC">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"Using Interactive Reports"</span> in <a href="../aeeug/using-interactive-reports.html#AEEUG453" target="_blank"><span class="italic">Oracle Application Express End User's Guide</span></a>.
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-0DE22D4B-8E35-4FC5-B43C-21BC1C153E8A">Reviewing Forms Modules</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEMIG203"></a><div class="props_rev_3"><a id="GUID-29772BB3-BD6D-4163-A50B-11FBF997CDA8" name="GUID-29772BB3-BD6D-4163-A50B-11FBF997CDA8"></a><h4 id="AEMIG-GUID-29772BB3-BD6D-4163-A50B-11FBF997CDA8" class="sect4"><span class="enumeration_section">4.7.3.3.1 </span>About Block Details
+                  </h4>
+                  <div>
+                     <p>Lists the details about the block.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">Understanding Viewing and Selecting Blocks</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEMIG218"></a><div class="props_rev_3"><a id="GUID-10D88E0F-5177-4119-9CC3-64D4088622A5" name="GUID-10D88E0F-5177-4119-9CC3-64D4088622A5"></a><h4 id="AEMIG-GUID-10D88E0F-5177-4119-9CC3-64D4088622A5" class="sect4"><span class="enumeration_section">4.7.3.3.2 </span>About Annotations
+                  </h4>
+                  <div>
+                     <p>Use Annotations to track the overall status of the object within the conversion process. </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-10D88E0F-5177-4119-9CC3-64D4088622A5__GUID-60873DC3-64E1-4D5E-8372-F87F54861C6B">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-annotations-to-track-conversion.html#GUID-2DDE9A4A-73A3-415C-917D-57E2CB1C6D66">Using Annotations to Track the Conversion Process</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">Understanding Viewing and Selecting Blocks</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEMIG205"></a><div class="props_rev_3"><a id="GUID-0D692118-B439-4DBD-A5B0-8C58BEBBD157" name="GUID-0D692118-B439-4DBD-A5B0-8C58BEBBD157"></a><h4 id="AEMIG-GUID-0D692118-B439-4DBD-A5B0-8C58BEBBD157" class="sect4"><span class="enumeration_section">4.7.3.3.3 </span>About Application Express Page Query
+                  </h4>
+                  <div>
+                     <p>Oracle Forms can be based on database blocks which correspond to database tables or views. The enhanced query builds a query based on the database block and database item metadata, and extends it with block level post-query trigger source to show derived columns</p>
+                     <p><span class="uicontrol bold">Enhanced Query</span> is the original query with the <code class="codeph">POST-QUERY</code> logic included. <span class="uicontrol bold">Original Query</span> is generated from the data source item (table) underlying the block and the columns that are referenced on that block
+                     </p>
+                     <p>To specify the type of query to use:</p>
+                     <ol>
+                        <li>
+                           <p>Select one of the following from the User Query list:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Custom Query</p>
+                              </li>
+                              <li>
+                                 <p>Enhanced Query</p>
+                              </li>
+                              <li>
+                                 <p>Original Query</p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>If you select <span class="uicontrol bold">Custom Query</span>, enter the appropriate syntax in the Custom Query field.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click <span class="uicontrol bold">Apply Changes</span>.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">Understanding Viewing and Selecting Blocks</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEMIG206"></a><div class="props_rev_3"><a id="GUID-CD7A5202-2615-4DC6-8C36-CE1C72DD3CCF" name="GUID-CD7A5202-2615-4DC6-8C36-CE1C72DD3CCF"></a><h4 id="AEMIG-GUID-CD7A5202-2615-4DC6-8C36-CE1C72DD3CCF" class="sect4"><span class="enumeration_section">4.7.3.3.4 </span>Relation Details 
+                  </h4>
+                  <div>
+                     <p>Only displays if a relationship was identified for the block in the <code class="codeph">XML</code> file. This section displays the information on that relationship.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">Understanding Viewing and Selecting Blocks</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEMIG207"></a><div class="props_rev_3"><a id="GUID-67B40D64-7CF8-40A8-A4DB-1F1F70E92359" name="GUID-67B40D64-7CF8-40A8-A4DB-1F1F70E92359"></a><h4 id="AEMIG-GUID-67B40D64-7CF8-40A8-A4DB-1F1F70E92359" class="sect4"><span class="enumeration_section">4.7.3.3.5 </span>Block Items 
+                  </h4>
+                  <div>
+                     <p> Displays the items in the block. Click the <span class="uicontrol bold">Edit</span> icon associated with the item to view item details.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">Understanding Viewing and Selecting Blocks</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEMIG208"></a><div class="props_rev_3"><a id="GUID-F57A8705-7C4A-431D-B6A3-31CF91A3FB27" name="GUID-F57A8705-7C4A-431D-B6A3-31CF91A3FB27"></a><h4 id="AEMIG-GUID-F57A8705-7C4A-431D-B6A3-31CF91A3FB27" class="sect4"><span class="enumeration_section">4.7.3.3.6 </span>Block Triggers 
+                  </h4>
+                  <div>
+                     <p>Lists the block-level and item-level triggers associated with the block. Click <span class="uicontrol bold">Edit</span> icon to view additional trigger details.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">Understanding Viewing and Selecting Blocks</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEMIG209"></a><div class="props_rev_3"><a id="GUID-E9B3E17E-B946-4A5F-ADC8-3B74634542CB" name="GUID-E9B3E17E-B946-4A5F-ADC8-3B74634542CB"></a><h4 id="AEMIG-GUID-E9B3E17E-B946-4A5F-ADC8-3B74634542CB" class="sect4"><span class="enumeration_section">4.7.3.3.7 </span>About Audit
+                  </h4>
+                  <div>
+                     <p>Display or hide the Audit section at the bottom of the page to view details about the object creation and last update dates.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-026A902F-477C-4165-A4ED-8420CA9C5915">Understanding Viewing and Selecting Blocks</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEMIG210"></a><div class="props_rev_3"><a id="GUID-96F2F749-C03E-495E-A958-1616FFBA73A1" name="GUID-96F2F749-C03E-495E-A958-1616FFBA73A1"></a><h3 id="AEMIG-GUID-96F2F749-C03E-495E-A958-1616FFBA73A1" class="sect3"><span class="enumeration_section">4.7.3.4 </span>Viewing and Selecting Items
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To review items:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>From the Application Migrations page, click the project name.</span></li>
+                     <li class="stepexpand"><span>Click the link under the Items column.</span><div>
+                           <p>A listing of items appears. Click the <span class="uicontrol bold">Actions</span> icon on the Search bar to view additional information which is not visible in the default report.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To edit an item label, enter a new name in the Item Prompt field and click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     <li class="stepexpand"><span>To include a specific object in your conversion select the <span class="uicontrol bold">Include</span> check box adjacent to the object name and click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     <li class="stepexpand"><span>To view details about a specific item, click the Item <span class="uicontrol bold">Name</span> link.</span><div>
+                           <p>The Item Details page appears. The sections that follow describe each section of the Item Details page.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-BEF8A74B-9274-44EF-910C-FAD7A1E265F1">About Item Details</a><br></li>
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#unique_1236478397">About Annotations</a><br></li>
+                     <li class="ulchildlink"><a href="reviewing-forms-modules.html#GUID-0F65E516-B626-4A25-94CE-BC9BB50C8E99">About Audit</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-0DE22D4B-8E35-4FC5-B43C-21BC1C153E8A">Reviewing Forms Modules</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEMIG211"></a><div class="props_rev_3"><a id="GUID-BEF8A74B-9274-44EF-910C-FAD7A1E265F1" name="GUID-BEF8A74B-9274-44EF-910C-FAD7A1E265F1"></a><h4 id="AEMIG-GUID-BEF8A74B-9274-44EF-910C-FAD7A1E265F1" class="sect4"><span class="enumeration_section">4.7.3.4.1 </span>About Item Details
+                  </h4>
+                  <div>
+                     <p>Lists the details about the item.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-96F2F749-C03E-495E-A958-1616FFBA73A1">Viewing and Selecting Items</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEMIG218"></a><div class="props_rev_3"><a id="unique_1236478397" name="unique_1236478397"></a><h4 id="AEMIG-unique_1236478397" class="sect4"><span class="enumeration_section">4.7.3.4.2 </span>About Annotations
+                  </h4>
+                  <div>
+                     <p>Use Annotations to track the overall status of the object within the conversion process. </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="unique_1236478397__GUID-60873DC3-64E1-4D5E-8372-F87F54861C6B">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-annotations-to-track-conversion.html#GUID-2DDE9A4A-73A3-415C-917D-57E2CB1C6D66">Using Annotations to Track the Conversion Process</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-96F2F749-C03E-495E-A958-1616FFBA73A1">Viewing and Selecting Items</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEMIG213"></a><div class="props_rev_3"><a id="GUID-0F65E516-B626-4A25-94CE-BC9BB50C8E99" name="GUID-0F65E516-B626-4A25-94CE-BC9BB50C8E99"></a><h4 id="AEMIG-GUID-0F65E516-B626-4A25-94CE-BC9BB50C8E99" class="sect4"><span class="enumeration_section">4.7.3.4.3 </span>About Audit
+                  </h4>
+                  <div>
+                     <p>Display or hide the Audit section at the bottom of the page to view details about the object creation and last update dates.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="reviewing-forms-modules.html#GUID-96F2F749-C03E-495E-A958-1616FFBA73A1">Viewing and Selecting Items</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

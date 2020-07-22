@@ -1,0 +1,399 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Page Computations">
+      <meta name="abstract" content="Use computations to assign a value to an identified item when a page is submitted or displayed.">
+      <meta name="description" content="Use computations to assign a value to an identified item when a page is submitted or displayed.">
+      <meta name="DC.subject" content="wizards, creating a page computation, Create Page Computation Wizard, page computation, creating, editing attributes, defining computation point, defining computation source, computation point, syntax">
+      <meta name="keywords" content="wizards, creating a page computation, Create Page Computation Wizard, page computation, creating, editing attributes, defining computation point, defining computation source, computation point, syntax">
+      <meta name="DC.Relation" scheme="URI" content="managing-computations-validations-and-processes.html#GUID-ADF401B9-95A6-45E9-9971-5BC1751F151E">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-computations.html#GUID-E46E1465-76C8-4BD7-9021-AF1F77DCA904">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-computations.html#GUID-1277732F-481B-47F0-BAAC-7044A59C07B3">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-computations.html#GUID-C54F6058-296D-4EA8-8E3C-CC06C303DEDE">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-computations.html#GUID-F70FEB80-A7C5-464E-8560-722B7CA004D9">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-computations.html#GUID-578F7BBF-AA07-4A63-B312-C33A4AA6DB94">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use computations to assign a value to an identified item when a page is submitted or displayed.">
+      <meta name="description" content="Use computations to assign a value to an identified item when a page is submitted or displayed.">
+      <title>Understanding Page Computations</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Use computations to assign a value to an identified item when a page is submitted or displayed.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-computations-validations-and-processes.html" title="Previous" type="text/html">
+      <link rel="next" href="understanding-validations.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-computations-validations-and-processes.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="understanding-validations.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-computations-validations-and-processes.html" property="item" typeof="WebPage"><span property="name">Managing Computations, Validations, and Processes</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Page Computations</li>
+            </ol>
+            <a id="GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31" name="GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31"></a><a id="HTMDB29812"></a>
+            
+            <h2 id="HTMDB-GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31" class="sect2"><span class="enumeration_section">17.1 </span>Understanding Page Computations
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use computations to assign a value to an identified item when a page is submitted or displayed.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-page-computations.html#GUID-E46E1465-76C8-4BD7-9021-AF1F77DCA904">About Page Computations</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-computations.html#GUID-1277732F-481B-47F0-BAAC-7044A59C07B3">Creating a Page Computation</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-computations.html#GUID-C54F6058-296D-4EA8-8E3C-CC06C303DEDE">Editing Page Computation Attributes</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-computations.html#GUID-F70FEB80-A7C5-464E-8560-722B7CA004D9">Editing the Computation Point and Source</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-computations.html#GUID-578F7BBF-AA07-4A63-B312-C33A4AA6DB94">Computation Points and Computation Syntax Example</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31__GUID-BBCF535B-4ADC-440D-892E-B6C8B256E15B">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="understanding-application-computations.html#GUID-878AE4EE-0CF2-43BD-93E9-877F9B349F10" title="Create an application computation to set the value of a single page or application-level item. Application computations run at the same point across multiple pages in an application.">Understanding Application Computations</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-computations-validations-and-processes.html#GUID-ADF401B9-95A6-45E9-9971-5BC1751F151E" title="Enhance your application by including computations, validations, and processes.">Managing Computations, Validations, and Processes</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29813"></a><div class="props_rev_3"><a id="GUID-E46E1465-76C8-4BD7-9021-AF1F77DCA904" name="GUID-E46E1465-76C8-4BD7-9021-AF1F77DCA904"></a><h3 id="HTMDB-GUID-E46E1465-76C8-4BD7-9021-AF1F77DCA904" class="sect3"><span class="enumeration_section">17.1.1 </span>About Page Computations
+               </h3>
+               <div>
+                  <p>A page computation assigns a value to an identified item when a page is displayed or submitted (rendered and processed). You create a page computation by running the Create Page Computation Wizard. For each computation, specify the item for which you are creating the computation and a computation type. </p>
+                  <p>You can also use application-level computations to assign values to items. Most page-level computations populate page items. In contrast, most application-level computations populate application items.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-computations.html#GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31" title="Use computations to assign a value to an identified item when a page is submitted or displayed.">Understanding Page Computations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29815"></a><div class="props_rev_3"><a id="GUID-1277732F-481B-47F0-BAAC-7044A59C07B3" name="GUID-1277732F-481B-47F0-BAAC-7044A59C07B3"></a><h3 id="HTMDB-GUID-1277732F-481B-47F0-BAAC-7044A59C07B3" class="sect3"><span class="enumeration_section">17.1.2 </span>Creating a Page Computation
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To create a page computation:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the appropriate page in Page Designer.</span></li>
+                     <li class="stepexpand"><span>In the Rendering tab, expand the <span class="uicontrol bold">Pre-Rendering</span> or <span class="uicontrol bold">Post-Rendering</span> node and locate where the computation should be.</span></li>
+                     <li class="stepexpand"><span>Right-click the location and select <span class="uicontrol bold">Create Computation</span>.</span><div>
+                           <p>Page Designer appears.</p>
+                           <p>In the Property Editor, attributes are organized into groups. To find a group or attribute, enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;Or, you can click <span class="uicontrol bold">Go to Group</span> and select the group.
+                           </p>
+                           <div class="infobox-tip" id="GUID-1277732F-481B-47F0-BAAC-7044A59C07B3__GUID-D3424C8A-3DD7-4026-BC90-205ED827DA32">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Edit the following attributes:</span><ol type="a">
+                           <li><span>Identification, Item Name - Enter the page or application item populated by this computation.</span></li>
+                           <li><span>Execution Options, Sequence - Specify the sequence for this computation. The sequence determines the order of execution.</span></li>
+                           <li><span>Execution Options, Point - Select at what point in page rendering or processing this computation is executed. The most typical computation point is <span class="uicontrol bold">After Submit</span>.</span></li>
+                           <li><span>Computation, Type - Select a computation type. To view a list of options, see Help.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1277732F-481B-47F0-BAAC-7044A59C07B3__GUID-5DFC646A-D77E-46C4-8A93-495E286BE330">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="using-page-designer.html#GUID-D96934D4-BDA6-40D9-9FCD-00573D158249">Viewing a Page in Page Designer</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="using-page-designer.html#GUID-7D9EA456-F9AA-4722-A5FF-CA4C3671D0BF">Creating Pre-Rendering Branches, Computations, and Processes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="using-page-designer.html#GUID-6CA4911D-93CC-45DE-9C29-3F949994F2EF">Creating Page Submission Branches, Validations, Computations, and Processes</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-computations.html#GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31" title="Use computations to assign a value to an identified item when a page is submitted or displayed.">Understanding Page Computations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29817"></a><div class="props_rev_3"><a id="GUID-C54F6058-296D-4EA8-8E3C-CC06C303DEDE" name="GUID-C54F6058-296D-4EA8-8E3C-CC06C303DEDE"></a><h3 id="HTMDB-GUID-C54F6058-296D-4EA8-8E3C-CC06C303DEDE" class="sect3"><span class="enumeration_section">17.1.3 </span>Editing Page Computation Attributes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Once you create a computation, you can edit it on the Edit Page Computation page.</p>
+                     <p>To edit a page computation:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer. </span></li>
+                     <li class="stepexpand"><span>In the Rendering tab, expand the Pre-Rendering or Post-Rendering node and select the computation.</span><div>
+                           <p>Page Designer appears.</p>
+                           <p>In the Property Editor, attributes are organized into groups. To find a group or attribute, enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;Or, you can click <span class="uicontrol bold">Go to Group</span> and select the group.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor, edit the appropriate attributes.</span><div>
+                           <div class="infobox-tip" id="GUID-C54F6058-296D-4EA8-8E3C-CC06C303DEDE__TOLEARNMOREABOUTANATTRIBUTESELECTTH-826F1F8A">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the center pane.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C54F6058-296D-4EA8-8E3C-CC06C303DEDE__GUID-325C09DB-C97C-4D49-BD6A-A388852D3834">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="using-page-designer.html#GUID-D96934D4-BDA6-40D9-9FCD-00573D158249">Viewing a Page in Page Designer</a>."</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-computations.html#GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31" title="Use computations to assign a value to an identified item when a page is submitted or displayed.">Understanding Page Computations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-F70FEB80-A7C5-464E-8560-722B7CA004D9" name="GUID-F70FEB80-A7C5-464E-8560-722B7CA004D9"></a><h3 id="HTMDB-GUID-F70FEB80-A7C5-464E-8560-722B7CA004D9" class="sect3"><span class="enumeration_section">17.1.4 </span>Editing the Computation Point and Source
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You control when a computation executes by editing the <span class="uicontrol bold">Sequence</span> and <span class="uicontrol bold">Point</span> attributes. The <span class="uicontrol bold">Sequence</span> attribute determines the order of evaluation. The <span class="uicontrol bold">Point</span> attribute determines the point in page rendering or processing at which the computation executes. The most typical computation point is After Submit. 
+                     </p>
+                     <p>To edit a computation point and source:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer. </span></li>
+                     <li class="stepexpand"><span>In the Rendering tab, expand the Pre-Rendering or Post-Rendering node and select the computation.</span><div>
+                           <p>Page Designer appears.</p>
+                           <p>In the Property Editor, attributes are organized into groups. To find a group or attribute, enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;Or, you can click <span class="uicontrol bold">Go to Group</span> and select the group.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor, edit the following attributes.</span><ol type="a">
+                           <li class="substepexpand"><span>Execution Options, Sequence - Specify the sequence for this component. The sequence determines the order of execution. If two components have the same sequence value, then they may be executed in a different order when the application is exported and imported into another environment.</span></li>
+                           <li class="substepexpand"><span>Execution Options, Point - Select at what point in page rendering or processing this computation is executed. </span><div>For example, selecting<span class="uicontrol bold"> On New Instance</span> executes the computation when a new session (or instance) is generated. The most typical computation point is <span class="uicontrol bold">After Submit.</span></div>
+                           </li>
+                           <li class="substepexpand"><span>Computation - Define expression or query to compute an item's value.</span></li>
+                           <li class="substepexpand"><span>Error, Error Message - Enter an error message that displays if this computation fails.</span></li>
+                        </ol>
+                        <div>
+                           <div class="infobox-tip" id="GUID-F70FEB80-A7C5-464E-8560-722B7CA004D9__GUID-91752375-3CA6-4B93-8957-0EA024A786E0">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the center pane.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F70FEB80-A7C5-464E-8560-722B7CA004D9__GUID-325C09DB-C97C-4D49-BD6A-A388852D3834">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="using-page-designer.html#GUID-D96934D4-BDA6-40D9-9FCD-00573D158249">Viewing a Page in Page Designer</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-computations.html#GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31" title="Use computations to assign a value to an identified item when a page is submitted or displayed.">Understanding Page Computations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-578F7BBF-AA07-4A63-B312-C33A4AA6DB94" name="GUID-578F7BBF-AA07-4A63-B312-C33A4AA6DB94"></a><h3 id="HTMDB-GUID-578F7BBF-AA07-4A63-B312-C33A4AA6DB94" class="sect3"><span class="enumeration_section">17.1.5 </span>Computation Points and Computation Syntax Example
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>A good example of using computations can be illustrated by a page containing form fields for entering phone numbers. In this example, the phone number is stored in one database column; however, the data entry form breaks the phone number into three components: area code, prefix, and line number. In this example, the page items are called <code class="codeph">P10_AREA_CODE</code>, <code class="codeph">P10_PREFIX</code>, and <code class="codeph">P10_LINE_NUMBER</code>. 
+                     </p>
+                     <p>Next, suppose you need to combine the values stored in these items into a single string. You could accomplish this by using an After Submit computation and store the combined values in an item called <code class="codeph">P10_PHONE_NUMBER</code>. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To create a computation to store the combined values of <code class="codeph">P10_AREA_CODE</code>, <code class="codeph">P10_PREFIX</code>, and <code class="codeph">P10_LINE_NUMBER</code> in new items:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Navigate to the appropriate page.</span></li>
+                     <li><span>Create an item named <code class="codeph">P10_PHONE_NUMBER</code> to store the combined values of <code class="codeph">P10_AREA_CODE</code>, <code class="codeph">P10_PREFIX</code>, and <code class="codeph">P10_LINE_NUMBER</code>.</span></li>
+                     <li><span>Create the computation:</span><ol type="a">
+                           <li class="substepexpand"><span>In the Rendering tab, expand the <span class="uicontrol bold">Pre-Rendering</span>.</span></li>
+                           <li class="substepexpand"><span>Select a location, and then right-click and select <span class="uicontrol bold">Create Computation</span>.</span><div>
+                                 <p>Page Designer appears.</p>
+                                 <p>In the Property Editor, attributes are organized into groups. To find a group or attribute, enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;Or, you can click <span class="uicontrol bold">Go to Group</span> and select the group.
+                                 </p>
+                                 <div class="infobox-tip" id="GUID-578F7BBF-AA07-4A63-B312-C33A4AA6DB94__GUID-D3424C8A-3DD7-4026-BC90-205ED827DA32">
+                                    <p class="notep1">Tip:</p>
+                                    <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                                    </p>
+                                 </div>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li><span>In the Property Editor, edit the following attributes:</span><ol type="a">
+                           <li><span>Identification, Item Name - Select <code class="codeph">P10_PHONE_NUMBER</code>.</span></li>
+                           <li><span>Execution Options, Sequence - Specify the sequence for this computation. The sequence determines the order of execution.</span></li>
+                           <li><span>Execution Options, Point - Select at what point in page rendering or processing this computation is executed. The most typical computation point is <span class="uicontrol bold">After Submit</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>For Computation Type, you can create the following computation types:</span><ol type="a">
+                           <li class="substepexpand"><span>Static Value:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Computation, Type - Select <span class="uicontrol bold">Static Value</span> .
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Computation, Static Value - Enter the following computation:</p><pre class="pre codeblock"><code>(&amp;P10_AREA_CODE.) &amp;P10_PREFIX.-&amp;P10_LINE_NUMBER.
+</code></pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>PL/SQL Function Body:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Computation, Type - Select <span class="uicontrol bold">PL/SQL Function Body</span> .
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Computation, PL/SQL Function Body - Enter the computation:</p><pre class="pre codeblock"><code>DECLARE
+l_return_value  VARCHAR2(300) DEFAULT NULL;
+BEGIN
+    l_return_value :=
+'('||:P10_AREA_CODE||')'||:P10_PREFIX||'-'||:P10_LINE_NUMBER;
+RETURN l_return_value;
+END;</code></pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>SQL Query (return colon separated value):</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Computation, Type - Select <span class="uicontrol bold">SQL Query (return colon separated value)</span> .
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Computation Type, SQL Query - Enter the computation:</p><pre class="pre codeblock"><code>SELECT '('||:P10_AREA_CODE||')'||:P10_PREFIX||'-'||:P10_LINE_NUMBER FROM DUAL
+</code></pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>PLSQL Expression:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Computation, Type - Select <span class="uicontrol bold">PLSQL Expression</span> .
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Computation Type, PLSQL Expression - Enter the computation:</p><pre class="pre codeblock"><code>'('||:P10_AREA_CODE||')'||:P10_PREFIX||'-'||:P10_LINE_NUMBER
+</code></pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-578F7BBF-AA07-4A63-B312-C33A4AA6DB94__GUID-0C0BE619-5084-4013-97D3-93EF9AEAC6A0">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-page-level-items.html#GUID-DBE765CA-96D0-4062-A3BC-B402D167A305" title="Page items are placed on a page and have associated user interface properties and Application items are not associated with a page.">About the Differences Between Page Items and Application Items</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-computations.html#GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31" title="Use computations to assign a value to an identified item when a page is submitted or displayed.">Understanding Page Computations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

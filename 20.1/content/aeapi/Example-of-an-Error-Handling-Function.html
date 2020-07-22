@@ -1,0 +1,203 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="Example of an Error Handling Function">
+      <meta name="DC.subject" content="APEX_ERROR, example, error handling function">
+      <meta name="keywords" content="APEX_ERROR, example, error handling function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_ERROR.html#GUID-F9353D6E-85FB-48EE-B493-3A0C0F596436">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-2CD75881-1A59-4787-B04B-9AAEC14E1A82">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Example of an Error Handling Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="Constants-and-Attributes-used-for-Result-Types.html" title="Previous" type="text/html">
+      <link rel="next" href="ADD_ERROR-Procedure-Signature-1.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="Constants-and-Attributes-used-for-Result-Types.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ADD_ERROR-Procedure-Signature-1.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_ERROR.html" property="item" typeof="WebPage"><span property="name"> APEX_ERROR</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Example of an Error Handling Function</li>
+            </ol>
+            <a id="GUID-2CD75881-1A59-4787-B04B-9AAEC14E1A82" name="GUID-2CD75881-1A59-4787-B04B-9AAEC14E1A82"></a><a id="AEAPI2216"></a>
+            
+            <h2 id="AEAPI-GUID-2CD75881-1A59-4787-B04B-9AAEC14E1A82" class="sect2"><span class="enumeration_section">15.2 </span>Example of an Error Handling Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>The following is an example of an error handling function.</p><pre class="pre codeblock"><code>create or replace function apex_error_handling_example (
+    p_error in apex_error.t_error )
+    return apex_error.t_error_result
+is
+    l_result          apex_error.t_error_result;
+    l_reference_id    number;
+    l_constraint_name varchar2(255);
+begin
+    l_result := apex_error.init_error_result (
+                    p_error =&gt; p_error );
+
+    -- If it's an internal error raised by APEX, like an invalid statement or
+    -- code which can't be executed, the error text might contain security sensitive
+    -- information. To avoid this security problem we can rewrite the error to
+    -- a generic error message and log the original error message for further
+    -- investigation by the help desk.
+    if p_error.is_internal_error then
+        -- mask all errors that are not common runtime errors (Access Denied
+        -- errors raised by application / page authorization and all errors
+        -- regarding session and session state)
+        if not p_error.is_common_runtime_error then
+            -- log error for example with an autonomous transaction and return
+            -- l_reference_id as reference#
+            -- l_reference_id := log_error (
+            --                       p_error =&gt; p_error );
+            --
+
+            -- Change the message to the generic error message which doesn't expose
+            -- any sensitive information.
+            l_result.message         := 'An unexpected internal application error has occurred. '||
+                                        'Please get in contact with XXX and provide '||
+                                        'reference# '||to_char(l_reference_id, '999G999G999G990')||
+                                        ' for further investigation.';
+            l_result.additional_info := null;
+        end if;
+    else
+        -- Always show the error as inline error
+        -- Note: If you have created manual tabular forms (using the package
+        --       apex_item/htmldb_item in the SQL statement) you should still
+        --       use "On error page" on that pages to avoid loosing entered data
+        l_result.display_location := case
+                                       when l_result.display_location = apex_error.c_on_error_page then apex_error.c_inline_in_notification
+                                       else l_result.display_location
+                                     end;
+
+        --
+        -- Note: If you want to have friendlier ORA error messages, you can also define
+        --       a text message with the name pattern APEX.ERROR.ORA-number
+        --       There is no need to implement custom code for that.
+        --
+
+        -- If it's a constraint violation like
+        --
+        --   -) ORA-00001: unique constraint violated
+        --   -) ORA-02091: transaction rolled back (-&gt; can hide a deferred constraint)
+        --   -) ORA-02290: check constraint violated
+        --   -) ORA-02291: integrity constraint violated - parent key not found
+        --   -) ORA-02292: integrity constraint violated - child record found
+        --
+        -- we try to get a friendly error message from our constraint lookup configuration.
+        -- If we don't find the constraint in our lookup table we fallback to
+        -- the original ORA error message.
+        if p_error.ora_sqlcode in (-1, -2091, -2290, -2291, -2292) then
+            l_constraint_name := apex_error.extract_constraint_name (
+                                     p_error =&gt; p_error );
+
+            begin
+                select message
+                  into l_result.message
+                  from constraint_lookup
+                 where constraint_name = l_constraint_name;
+            exception when no_data_found then null; -- not every constraint has to be in our lookup table
+            end;
+        end if;
+
+        -- If an ORA error has been raised, for example a raise_application_error(-20xxx, '...')
+        -- in a table trigger or in a PL/SQL package called by a process and we
+        -- haven't found the error in our lookup table, then we just want to see
+        -- the actual error text and not the full error stack with all the ORA error numbers.
+        if p_error.ora_sqlcode is not null and l_result.message = p_error.message then
+            l_result.message := apex_error.get_first_ora_error_text (
+                                    p_error =&gt; p_error );
+        end if;
+
+        -- If no associated page item/tabular form column has been set, we can use
+        -- apex_error.auto_set_associated_item to automatically guess the affected
+        -- error field by examine the ORA error for constraint names or column names.
+        if l_result.page_item_name is null and l_result.column_alias is null then
+            apex_error.auto_set_associated_item (
+                p_error        =&gt; p_error,
+                p_error_result =&gt; l_result );
+        end if;
+    end if;
+
+    return l_result;
+end apex_error_handling_example;
+</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_ERROR.html#GUID-F9353D6E-85FB-48EE-B493-3A0C0F596436">APEX_ERROR</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,6587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Interface: treeNodeAdapter</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.created" content="2020-03-24T20:11:56+00:00">
+    <meta name="dcterms.title" content="Oracle Application Express JavaScript API Reference">
+    <meta name="dcterms.category" content="database">
+    <meta name="dcterms.isVersionOf" content="AEXJS">
+    <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+    <meta name="dcterms.identifier" content="F24723-01">
+    <meta name="dcterms.release" content="Release 20.1">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}} </script>
+    </head>
+
+<body>
+<a href="#main-content" id="skipToContent">Skip to Main Content</a>
+
+<nav id="nav" data-current-item="nav_36">
+    <h2 id="navIndex"><a href="index.html">Index</a></h2><h3>Widgets</h3><ul><li id="nav_0"><a href="grid.html">grid</a></li><li id="nav_1"><a href="iconList.html">iconList</a></li><li id="nav_2"><a href="interactiveGrid.html">interactiveGrid</a></li><li id="nav_3"><a href="menu.html">menu</a></li><li id="nav_4"><a href="menuButton.html">menuButton</a></li><li id="nav_5"><a href="recordView.html">recordView</a></li><li id="nav_6"><a href="tableModelView.html">tableModelView</a></li><li id="nav_7"><a href="tableModelViewBase.html">tableModelViewBase</a></li><li id="nav_8"><a href="treeView.html">treeView</a></li></ul><h3>Namespaces</h3><ul><li id="nav_9"><a href="apex.html">apex</a></li><li id="nav_10"><a href="apex.actions.html">apex.actions</a></li><li id="nav_11"><a href="apex.da.html">apex.da</a></li><li id="nav_12"><a href="apex.debug.html">apex.debug</a></li><li id="nav_13"><a href="apex.event.html">apex.event</a></li><li id="nav_14"><a href="apex.item.html">apex.item</a></li><li id="nav_15"><a href="apex.lang.html">apex.lang</a></li><li id="nav_16"><a href="apex.locale.html">apex.locale</a></li><li id="nav_17"><a href="apex.message.html">apex.message</a></li><li id="nav_18"><a href="apex.model.html">apex.model</a></li><li id="nav_19"><a href="apex.navigation.html">apex.navigation</a></li><li id="nav_20"><a href="apex.navigation.dialog.html">apex.navigation.dialog</a></li><li id="nav_21"><a href="apex.navigation.popup.html">apex.navigation.popup</a></li><li id="nav_22"><a href="apex.page.html">apex.page</a></li><li id="nav_23"><a href="apex.region.html">apex.region</a></li><li id="nav_24"><a href="apex.server.html">apex.server</a></li><li id="nav_25"><a href="apex.storage.html">apex.storage</a></li><li id="nav_26"><a href="apex.theme.html">apex.theme</a></li><li id="nav_27"><a href="apex.util.html">apex.util</a></li><li id="nav_28"><a href="apex.util.delayLinger.html">apex.util.delayLinger</a></li><li id="nav_29"><a href="apex.widget.html">apex.widget</a></li></ul><h3>Interfaces</h3><ul><li id="nav_30"><a href="actions.html">actions</a></li><li id="nav_31"><a href="htmlBuilder.html">htmlBuilder</a></li><li id="nav_32"><a href="interactiveGridView.html">interactiveGridView</a></li><li id="nav_33"><a href="item.html">item</a></li><li id="nav_34"><a href="model.html">model</a></li><li id="nav_35"><a href="region.html">region</a></li><li id="nav_36"><a href="treeNodeAdapter.html">treeNodeAdapter</a></li></ul><h3><a href="global.html">Non-namespace APIs</a></h3>
+</nav>
+
+<div id="main">
+
+
+
+    <h1 class="page-title">Interface: treeNodeAdapter</h1>
+
+    
+
+
+
+
+<section id="quick-nav">
+    <header><h2>QuickNav</h2></header>
+    
+    
+
+    
+    <div class="quick-nav-section">
+        <h3><a href="#methods-section">Methods</a></h3>
+        <ul class="subList">
+            
+                <li><a href="#addNode">addNode</a></li>
+            
+                <li><a href="#allowAdd">allowAdd</a></li>
+            
+                <li><a href="#allowDelete">allowDelete</a></li>
+            
+                <li><a href="#allowDrag">allowDrag</a></li>
+            
+                <li><a href="#allowRename">allowRename</a></li>
+            
+                <li><a href="#child">child</a></li>
+            
+                <li><a href="#childCount">childCount</a></li>
+            
+                <li><a href="#clearViewId">clearViewId</a></li>
+            
+                <li><a href="#copyNodes">copyNodes</a></li>
+            
+                <li><a href="#deleteNode">deleteNode</a></li>
+            
+                <li><a href="#dragOperations">dragOperations</a></li>
+            
+                <li><a href="#fetchChildNodes">fetchChildNodes</a></li>
+            
+                <li><a href="#getClasses">getClasses</a></li>
+            
+                <li><a href="#getExpandedNodeIds">getExpandedNodeIds</a></li>
+            
+                <li><a href="#getExpandedState">getExpandedState</a></li>
+            
+                <li><a href="#getIcon">getIcon</a></li>
+            
+                <li><a href="#getLabel">getLabel</a></li>
+            
+                <li><a href="#getLink">getLink</a></li>
+            
+                <li><a href="#getLinkTarget">getLinkTarget</a></li>
+            
+                <li><a href="#getViewId">getViewId</a></li>
+            
+                <li><a href="#hasChildren">hasChildren</a></li>
+            
+                <li><a href="#isDisabled">isDisabled</a></li>
+            
+                <li><a href="#isExpanded">isExpanded</a></li>
+            
+                <li><a href="#moveNodes">moveNodes</a></li>
+            
+                <li><a href="#renameNode">renameNode</a></li>
+            
+                <li><a href="#renderNodeContent">renderNodeContent</a></li>
+            
+                <li><a href="#root">root</a></li>
+            
+                <li><a href="#setExpanded">setExpanded</a></li>
+            
+                <li><a href="#setViewId">setViewId</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+    <div class="quick-nav-section">
+        <h3><a href="#typedefs-section">Type Definitions</a></h3>
+        <ul class="subList">
+            
+                <li><a href="#.defaultNode">defaultNode</a></li>
+            
+                <li><a href="#.node">node</a></li>
+            
+                <li><a href="#.typeInfo">typeInfo</a></li>
+            
+        </ul>
+    </div>
+    
+</section>
+
+
+<section id="main-content">
+
+<header>
+    
+    
+        <h2>treeNodeAdapter</h2>
+        
+            <div class="class-description"><p>A treeNodeAdapter is an interface used by the <a href="treeView.html">treeView</a> widget for all access to the underlying tree
+data structure. The <code class="prettyprint">treeView</code> has no direct access to the nodes of the tree or any
+properties of nodes such as label or icon. It is possible to create a
+<code class="prettyprint">treeNodeAdapter</code> interface for any hierarchical data structure.
+The tree data structure must be singly rooted. If the data doesn't have a single
+root then the adapter must generate a virtual one where the multiple roots are its children.</p>
+<p>The adapter provides the following areas of functionality:</p>
+<ul>
+    <li>Access to the hierarchical structure through methods such as <a href="treeNodeAdapter.html#root">treeNodeAdapter#root</a>
+      and <a href="treeNodeAdapter.html#child">treeNodeAdapter#child</a>. The adapter supports lazy loading with the
+      <a href="treeNodeAdapter.html#fetchChildNodes">treeNodeAdapter#fetchChildNodes</a> method.</li>
+    <li>Access to node properties such as label, link, and icon that the <a href="treeView.html">treeView</a> uses for
+      display purposes. For example <a href="treeNodeAdapter.html#getLabel">treeNodeAdapter#getLabel</a>. This includes an optional advanced
+      presentation layer function <a href="treeNodeAdapter.html#renderNodeContent">treeNodeAdapter#renderNodeContent</a> that gives full control
+      over how the node content is rendered.
+      </li>
+    <li>Tree modification methods such as <a href="treeNodeAdapter.html#deleteNode">treeNodeAdapter#deleteNode</a> and <a href="treeNodeAdapter.html#addNode">treeNodeAdapter#addNode</a>.
+      These methods are only required when the tree is editable.</li>
+    <li>Modification access control methods to determine what modifications are allowed. For example
+      <a href="treeNodeAdapter.html#allowDelete">treeNodeAdapter#allowDelete</a>. These methods are only required when the tree is editable.</li>
+    <li>Optional methods to persist, in the adapter's data model, view state such as which nodes are expanded.
+      For example <a href="treeNodeAdapter.html#setExpanded">treeNodeAdapter#setExpanded</a></li>
+</ul>
+<p>A default treeNodeAdapter implementation is provided by calling <a href="treeView.html#.makeDefaultNodeAdapter">treeView.makeDefaultNodeAdapter</a>.
+</p><p>The adapter interface is provided to the treeView with the <a href="treeView.html#getNodeAdapter1">treeView#getNodeAdapter(1)</a> option.</p>
+<p>This interface is used by the <a href="treeView.html">treeView</a>. Rarely does a developer need to call these methods. This
+interface is documented to allow developers to create a custom <code class="prettyprint">treeNodeAdapter</code>
+implementation for their own data.</p></div>
+        
+    
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+        <div class="hw">
+        <h3 id="methods-section" class="subsection-title">
+            Methods
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Methods" href="#methods-section"></a>
+        </div>
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="addNode"><span class="type-signature"></span>addNode<span class="signature">(pParent, pIndex, pLabel<span class="signature-attributes">opt</span>, pContext<span class="signature-attributes">opt</span>, pCallback)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark addNode(pParent, pIndex, pLabel, pContext, pCallback)" href="#addNode"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Adds a new node as a child of the given parent node with the given label (optional)
+and at the given index.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for addNode">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pParent</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The parent node to add the new node to.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pIndex</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The index among the existing children at which to add the new node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pLabel</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The label for the new node. If not given the label may have been given a
+  default by the adapter.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pContext</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Arbitrary additional information that can be used in creating the new node.
+  It is up to the adapter how to use this parameter. It could be the new node itself.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pCallback</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">A function to call when the new node has been added. The function takes
+  two parameters. The first is the new child node that was added. If the child node is false the treeView
+  may try again to add a node. If the child node is null then the add failed and the treeView will remove
+  the node. The second parameter is the index the node was actually inserted at which could differ from
+  <code class="prettyprint">pIndex</code>.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="allowAdd"><span class="type-signature"></span>allowAdd<span class="signature">(pNode, pOperation, pChildren<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark allowAdd(pNode, pOperation, pChildren) returns {boolean}" href="#allowAdd"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Check if the node allows adding children to it.
+Returns true if the node allows children to be added to it.
+If the children parameter is passed in return true if each of those children
+(or ones just like them) can be added. Children is an array of nodes.
+Operation is "add" when adding a new node (<a href="treeNodeAdapter.html#addNode">treeNodeAdapter#addNode</a> will be called),
+"move" when the node comes from elsewhere in the tree and is being moved (<a href="treeNodeAdapter.html#moveNodes">treeNodeAdapter#moveNodes</a> will be called),
+and "copy" when the node is a copy of a node from elsewhere in the tree (<a href="treeNodeAdapter.html#copyNodes">treeNodeAdapter#copyNodes</a> will be called).
+Additional operation values are possible if the adapter supports custom drag operations.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for allowAdd">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The node to check if adding children is allowed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pOperation</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Specifies how the node would be added. One of "add", "move", "copy" or a custom value.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pChildren</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a>></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The children to be added.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if children can be added and false otherwise.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="allowDelete"><span class="type-signature"></span>allowDelete<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark allowDelete(pNode) returns {boolean}" href="#allowDelete"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Return true if the given node can be deleted.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for allowDelete">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node to check if deleting is allowed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if the node can be deleted and false otherwise.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="allowDrag"><span class="type-signature"></span>allowDrag<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark allowDrag(pNode) returns {boolean}" href="#allowDrag"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Return true if the given node can be dragged.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for allowDrag">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node to check if dragging is allowed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if the node can be dragged and false otherwise.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="allowRename"><span class="type-signature"></span>allowRename<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark allowRename(pNode) returns {boolean}" href="#allowRename"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Return true if the given node can be renamed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for allowRename">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node to check if renaming is allowed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if the node can be renamed and false otherwise.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="child"><span class="type-signature"></span>child<span class="signature">(pNode, pIndex)</span><span class="type-signature"> &rarr; {<a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a>}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark child(pNode, pIndex) returns {treeNodeAdapter.node}" href="#child"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Return the i<sup>th</sup> child of the given node.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for child">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the child node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pIndex</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The index of the child to return.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The child node. If the node has no children or no child at index i then
+  undefined is returned.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="childCount"><span class="type-signature"></span>childCount<span class="signature">(pNode)</span><span class="type-signature"> &rarr; (nullable) {number}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark childCount(pNode) returns (nullable) {number}" href="#childCount"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns the number of children that the given node has or null if the answer is not yet known, which
+can happen for lazy loaded nodes.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for childCount">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the number of children.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The number of children or null if unknown.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="clearViewId"><span class="type-signature"></span>clearViewId<span class="signature">(pTreeId, pNode<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark clearViewId(pTreeId, pNode)" href="#clearViewId"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Remove the view id mapping for node <code class="prettyprint">pNode</code>.
+If the node is null then all previous view id mappings should be removed.
+See also <a href="treeNodeAdapter.html#setViewId">treeNodeAdapter#setViewId</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for clearViewId">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pTreeId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">This is a unique opaque identifier supplied by the treeView.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The node to clear the view id for.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="copyNodes"><span class="type-signature"></span>copyNodes<span class="signature">(pParent, pIndex, pNodes, pCallback)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark copyNodes(pParent, pIndex, pNodes, pCallback)" href="#copyNodes"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Copies one or more nodes from elsewhere in the tree to be children of the given parent starting at
+the given index among the existing children of the parent.
+A copy of each node and all its descendants is made.
+The copies are the same except for identity and parentage.
+When the nodes have been copied the callback function is called.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for copyNodes">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pParent</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The parent node to copy nodes to. The copied nodes
+  (<code class="prettyprint">pNodes</code>) become children of this node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pIndex</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The index at which to insert the copied nodes.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNodes</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of nodes from this tree to copy.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pCallback</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function must be called when the nodes have been copied. The function
+  takes one parameter which is a places array of indexes where the children nodes ended up.
+  If the tree nodes are sorted then even though they were copied starting at the
+  given index they could end up at any position. If the tree nodes are not sorted then places will consist
+  of integers index ... index + n - 1 where n is the number of nodes copied. If the copy fails
+  call with the places parameter equal to false.
+  If some of the nodes can't be copied return -1 for its index in the places array.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="deleteNode"><span class="type-signature"></span>deleteNode<span class="signature">(pNode, pCallback, pMore)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark deleteNode(pNode, pCallback, pMore)" href="#deleteNode"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Deletes the given node. When the node has been deleted the callback is called.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for deleteNode">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node to delete.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pCallback</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The callback function must be called when the node is deleted. It takes one
+  parameter, status, that is true if the delete was successful and false otherwise.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pMore</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">If this is true another <code class="prettyprint">deleteNode</code> call will be
+  made right away. This parameter can be ignored or can be used to batch up deletes.
+  In either case each call to <code class="prettyprint">pCallback</code> must be made.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="dragOperations"><span class="type-signature"></span>dragOperations<span class="signature">(pNodes)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark dragOperations(pNodes) returns {Object}" href="#dragOperations"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Determine which operations are allowed while dragging the given array of nodes.
+Return an object with allowed drag operations.
+The properties are: "normal", "ctrl", "alt", "shift", "meta".
+The standard values are "move", "copy" or "add". Other values are allowed.
+The normal property is required.
+The default should be:<br><code class="prettyprint">{ normal: "move", ctrl: "copy" }</code><br>
+or if nodes is null:<br>
+<code class="prettyprint">{ normal: "add" }</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for dragOperations">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNodes</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of nodes being dragged or null when dragging from an external source.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Allowed drag operations as described above.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="fetchChildNodes"><span class="type-signature"></span>fetchChildNodes<span class="signature">(pNode, pCallback)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark fetchChildNodes(pNode, pCallback)" href="#fetchChildNodes"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Fetch child nodes for the given node from a server (or by any other asynchronous means).
+This method is optional. This is used for asynchronous/lazy tree construction. The root and first level of nodes
+should not be lazy loaded. May be called after <a href="treeNodeAdapter.html#childCount">treeNodeAdapter#childCount</a> returns null.</p><p>
+</p></div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for fetchChildNodes">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node for which to fetch children.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pCallback</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><em>function(status)</em> This function must be called when the
+  asynchronous operation has completed and nodes have been added to <code class="prettyprint">pNode</code>.
+  The status value is:
+  <ul>
+  <li>&gt; 0 (or true) if 1 or more children were fetched.</li>
+  <li>0 if the node has 0 children.</li>
+  <li>false if there was an error fetching the children.</li>
+  </ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getClasses"><span class="type-signature"></span>getClasses<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getClasses(pNode) returns {string}" href="#getClasses"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns one or more CSS classes to add to the node content container or null if none. Multiple
+classes are separated by a space. This is an optional method.
+If the method doesn't exist then no nodes will have classes added to the node content container.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getClasses">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the CSS classes.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The node's CSS Classes.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getExpandedNodeIds"><span class="type-signature"></span>getExpandedNodeIds<span class="signature">(pTreeId)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getExpandedNodeIds(pTreeId) returns {Array}" href="#getExpandedNodeIds"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Returns an array of each of the expanded node's id. Can be used to persist the expansion state.
+参见 <a href="treeView.html#getExpandedNodeIds">treeView#getExpandedNodeIds</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getExpandedNodeIds">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pTreeId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is a unique opaque identifier supplied by the treeView.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getExpandedState"><span class="type-signature"></span>getExpandedState<span class="signature">(pTreeId)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getExpandedState(pTreeId)" href="#getExpandedState"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Returns map of node id to expansion state. 参见 <a href="treeView.html#getExpandedState">treeView#getExpandedState</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getExpandedState">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pTreeId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is a unique opaque identifier supplied by the treeView.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getIcon"><span class="type-signature"></span>getIcon<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getIcon(pNode) returns {string}" href="#getIcon"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns the icon of the node or null if none. The icon is a CSS class name.
+The icon is used by node content rendering. This is an optional method.
+If the method doesn't exist then no nodes will have icons.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getIcon">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the icon.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The node's icon.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getLabel"><span class="type-signature"></span>getLabel<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getLabel(pNode) returns {string}" href="#getLabel"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns the label of the given node. The label is used for node content rendering (if
+<a href="treeNodeAdapter.html#renderNodeContent">treeNodeAdapter#renderNodeContent</a> not implemented) and for editing during rename.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getLabel">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the label.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The node's label.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getLink"><span class="type-signature"></span>getLink<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getLink(pNode) returns {string}" href="#getLink"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns the URL to navigate to when the node is activated.
+This is an optional method. It is only needed for navigation trees.
+If defined it is called during activation if <a href="treeView.html#navigation">treeView#navigation</a> option is true.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getLink">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the link URL.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The node's link URL.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getLinkTarget"><span class="type-signature"></span>getLinkTarget<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getLinkTarget(pNode) returns {string}" href="#getLinkTarget"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns the window target to open the link in when the node is activated.
+This is an optional method. It is only needed for navigation trees and
+is only used when there is a link.
+If defined it is called during activation if <a href="treeView.html#navigation">treeView#navigation</a> option is true.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getLinkTarget">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the link target.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>20.1</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The node's link target.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getViewId"><span class="type-signature"></span>getViewId<span class="signature">(pTreeId, pNode)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getViewId(pTreeId, pNode) returns {string}" href="#getViewId"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Return the view id for the given <code class="prettyprint">pTreeId</code>
+and <code class="prettyprint">pNode</code>.
+This is used by the treeView to map from nodes to DOM elements.
+See also <a href="treeNodeAdapter.html#setViewId">treeNodeAdapter#setViewId</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getViewId">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pTreeId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is a unique opaque identifier supplied by the treeView.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node to get the view id for.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The view id for this node that was assigned with <a href="treeNodeAdapter.html#setViewId">treeNodeAdapter#setViewId</a>.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="hasChildren"><span class="type-signature"></span>hasChildren<span class="signature">(pNode)</span><span class="type-signature"> &rarr; (nullable) {boolean}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark hasChildren(pNode) returns (nullable) {boolean}" href="#hasChildren"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns true if the node has children, false if it does not and null if not yet known, which
+can happen for lazy loaded nodes.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for hasChildren">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node for which to determine if it has children.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if the node has children, false if it does not and null if not yet known.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="isDisabled"><span class="type-signature"></span>isDisabled<span class="signature">(pNode)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark isDisabled(pNode) returns {boolean}" href="#isDisabled"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns the disabled state of a node.
+A disabled node cannot be selected or activated but it can be focused.
+This is an optional method. If not defined no nodes are ever disabled.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for isDisabled">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the disabled state.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if the node is disabled and false otherwise.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="isExpanded"><span class="type-signature"></span>isExpanded<span class="signature">(pTreeId, pNode)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark isExpanded(pTreeId, pNode) returns {boolean}" href="#isExpanded"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Return true if the given node is or should be expanded and false otherwise.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for isExpanded">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pTreeId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is a unique opaque identifier supplied by the treeView.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node to check if it is expanded.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="moveNodes"><span class="type-signature"></span>moveNodes<span class="signature">(pParent, pIndex, pNodes, pCallback)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark moveNodes(pParent, pIndex, pNodes, pCallback)" href="#moveNodes"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Moves one or more nodes from elsewhere in the tree to be children of the given parent starting at
+the given index among the existing children of parent.
+The move includes all the descendants of the moved nodes.
+Only the parents and/or positions of the moved nodes should change.
+When the nodes have been moved the callback function is called.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for moveNodes">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pParent</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The parent node to move nodes to. The moved nodes
+  (<code class="prettyprint">pNodes</code>) become children of this node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pIndex</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The index at which to insert the moved nodes.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNodes</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of nodes from this tree to move.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pCallback</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function must be called when the nodes have been moved. The function
+  takes one parameter which is a places array of indexes where the children nodes ended up.
+  If the tree nodes are sorted then even though they were moved starting at the
+  given index they could end up at any position. If the tree nodes are not sorted then places will consist
+  of integers index ... index + n - 1 where n is the number of nodes moved. If the move fails
+  call with the places parameter equal to false.
+  If some of the nodes can't be moved return -1 for its index in the places array.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="renameNode"><span class="type-signature"></span>renameNode<span class="signature">(pNode, pNewLabel, pCallback)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark renameNode(pNode, pNewLabel, pCallback)" href="#renameNode"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Rename the given node.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for renameNode">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node to rename.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNewLabel</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The new label to rename the node to.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pCallback</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function must be called once the node is renamed. It takes two
+  parameters. The first is node which is likely the same as <code class="prettyprint">pNode</code>
+  or false if the rename can be tried again or null if the rename failed.
+  The second parameter is the index of the node after the rename. If the nodes are sorted
+  then renaming the node can change its position.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="renderNodeContent"><span class="type-signature"></span>renderNodeContent<span class="signature">(pNode, pOut, pOptions, pState)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark renderNodeContent(pNode, pOut, pOptions, pState)" href="#renderNodeContent"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>This is an optional function used to render the node content.
+It is used for advanced cases where more control over the node markup is needed.</p>
+
+<p>The content must include an element with <code class="prettyprint">tabindex='-1'</code> and that
+element must have a class that matches the <a href="treeView.html#labelClass">treeView#labelClass</a> option.
+The custom rendering is responsible for setting the <code class="prettyprint">aria-level</code>,
+<code class="prettyprint">aria-disabled</code>, <code class="prettyprint">aria-selected</code>, and
+<code class="prettyprint">aria-expanded</code> attributes for proper accessibility.</p>
+
+<p>The options and state arguments provide additional information to determine how to render the node.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for renderNodeContent">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node from which to get the disabled state.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pOut</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="apex.util.html#.htmlBuilder">apex.util.htmlBuilder</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Call methods on this interface to render the node content.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pOptions</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">View options.
+                <h6>Properties</h6>
+                
+
+<table class="params" aria-label="Parameters for pOptions">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>iconType</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">CSS class used in creating an icon. The <a href="treeView.html#iconType">treeView#iconType</a> option value.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>labelClass</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">CSS classes to use for the content label. The <a href="treeView.html#labelClass">treeView#labelClass</a> option.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>useLinks</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Used to determine how to render nodes that have a link. The <a href="treeView.html#useLinks">treeView#useLinks</a> option value.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pState</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Node state information.
+                <h6>Properties</h6>
+                
+
+<table class="params" aria-label="Parameters for pState">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>selected</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">If true the node is selected.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>level</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is the level of the node. Used for the <code class="prettyprint">aria-level</code> attribute.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>disabled</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is true if the node is disabled.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>hasChildren</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is true if the node has children.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>expanded</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is true if the node is expanded.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">See treeView#makeDefaultNodeAdapter for an example.</p>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="root"><span class="type-signature"></span>root<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a>}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark root() returns {treeNodeAdapter.node}" href="#root"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns the root node of the tree. All trees must have a single root node even if it is not
+shown/used.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The root node.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="setExpanded"><span class="type-signature"></span>setExpanded<span class="signature">(pTreeId, pNode, pExpanded)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark setExpanded(pTreeId, pNode, pExpanded)" href="#setExpanded"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Called when the expansion state of the tree node changes.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for setExpanded">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pTreeId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is a unique opaque identifier supplied by the treeView.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node that has been expanded or collapsed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pExpanded</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">true if the node is expanded and false if it is collapsed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="setViewId"><span class="type-signature"></span>setViewId<span class="signature">(pTreeId, pNode, pViewId)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark setViewId(pTreeId, pNode, pViewId)" href="#setViewId"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Set the view id for the given <code class="prettyprint">pTreeId</code>
+and <code class="prettyprint">pNode</code>.
+This is used by the treeView to map from nodes to DOM elements.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for setViewId">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pTreeId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is a unique opaque identifier supplied by the treeView.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNode</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The node to set the view id for.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pViewId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The view id to associate with the given node.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <div class="hw">
+        <h3 id="typedefs-section" class="subsection-title">
+            Type Definitions
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Type Definitions" href="#typedefs-section"></a>
+        </div>
+
+        
+                
+<div class="hw">
+<h4 class="name" id=".defaultNode">defaultNode</h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark defaultNode" href="#.defaultNode"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>This is the specific object structure for nodes used by the default <a href="treeNodeAdapter.html">treeNodeAdapter</a> returned by
+<a href="treeView.html#.makeDefaultNodeAdapter">treeView.makeDefaultNodeAdapter</a>. It is possible for nodes to have additional properties. For example
+the APEX Tree region adds a <code class="prettyprint">tooltip</code> property</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="treeNodeAdapter.html#.node">treeNodeAdapter.node</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>label</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The node label returned by treeNodeAdpater#getLabel.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>id</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The unique node identity. This property is required if the
+  <code class="prettyprint">hasIdentity</code> argument to <a href="treeView.html#.makeDefaultNodeAdapter">treeView.makeDefaultNodeAdapter</a> is true.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>type</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The type name of the node. The node type can determine some default aspects of the
+  node such as CSS classes or icon. For editable treeViews it can determine what edit operations are allowed.
+  See treeView.typeInfo for details.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>link</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The URL returned by treeNodeAdpater#getLink.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>linkTarget</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The target window used to open a link returned by treeNodeAdpater#getLinkTarget.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>children</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="treeNodeAdapter.html#.defaultNode">treeNodeAdapter.defaultNode</a>></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The nodes children. Empty array means that
+  it could have children but doesn't. Omit for leaf nodes. The treeNodeAdpater#child method is used to
+  access the node's children.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>icon</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The icon CSS class returned by treeNodeAdpater#getIcon.
+  This overrides any icon based on the node type.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>classes</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The classes returned by treeNodeAdpater#getClasses.
+  These are added to any classes based on node type.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>isDisabled</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The disabled state returned by treeNodeAdpater#isDisabled.
+  This overrides any disabled state based on node type.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>operations</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Overrides any operations defined for the node type.
+  See treeView.typeInfo for details.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>_parent</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="treeNodeAdapter.html#.defaultNode">treeNodeAdapter.defaultNode</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">This is a reference to the parent node.
+  This is added automatically when the default adapter is created and should not be present in the
+  initial data.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<div class="hw">
+<h4 class="name" id=".node">node</h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark node" href="#.node"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>An object that represents a node in a tree data structure. There are no requirements for and no assumptions
+are made about the specific properties of the object as all access to the node is through the
+<a href="treeNodeAdapter.html">treeNodeAdapter</a> interface.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<div class="hw">
+<h4 class="name" id=".typeInfo">typeInfo</h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark typeInfo" href="#.typeInfo"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>The default <a href="treeNodeAdapter.html">treeNodeAdapter</a> returned by <a href="treeView.html#.makeDefaultNodeAdapter">treeView.makeDefaultNodeAdapter</a> uses this type
+information to provide default settings and control over allowed edit operations for nodes based on their
+type.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>*</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The property names are the type names and the value is information about the type.
+  There is one reserved type name call "default" that provides default settings for any nodes that
+  don't have a type or if there is specific information for that type.
+                <h6>Properties</h6>
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>icon</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The icon to use for nodes of this type.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>classes</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Classes to add for nodes of this type.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>isDisabled</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true nodes of this type are disabled by default.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>defaultLabel</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The default label for new nodes.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>validChildren</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">true</span>
+|
+
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">An array of valid children types for this type. If true
+  then children of any type can be added to nodes of this type.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>operations</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Specifies what edit operations can be done on nodes of this type.
+                <h6>Properties</h6>
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>canAdd</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true nodes of this type allow adding.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>canDelete</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true nodes of this type allow being deleted.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>canRename</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true nodes of this type allow being renamed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>canDrag</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true nodes of this type allow being dragged.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>drag</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">An object that defines the operation to perform during a drop
+  based on the modifier key pressed. The properties are the modifier keys and can containe any one
+  of: "normal", "ctrl", "alt", "shift" and the values are the the operation to perform and can be
+  anyone of "move", "copy", or "add". The value can also be a custom operation that is handled
+  in the beforeStop event.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>externalDrag</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">An object that defines the operation to perform during a drop
+  from an external draggable based on the modifier key pressed. The properties and values are the same as
+  for the operations drag property. This property can only be used on the "default" type.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+    
+
+</article>
+
+</section>
+
+
+
+
+
+    <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Feb 27 2020 23:50:22 GMT-0800 (Pacific Standard Time)
+      <br>
+      <span class="product-docs-footer">Oracle Application Express Release 20.1, JavaScript API Reference</span>
+      <br>
+      <span class="product-docs-footer">Copyright &copy; 2003, 2020, Oracle and/or its affiliates. All rights reserved.</span>
+    </footer>
+</div>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+<script>
+(function() {
+    // make skip link work for mobile browsers
+    document.getElementById("skipToContent").addEventListener("click", function(e) {
+        var target = document.getElementById("main-content");
+        e.preventDefault();
+        target.setAttribute("tabindex", "-1");
+        target.addEventListener("blur", function(e) {
+            target.removeAttribute("tabindex");
+        });
+        target.focus();
+    });
+
+    var nav = document.getElementById("nav");
+    var currentId = nav.getAttribute("data-current-item");
+    if (!currentId) {
+        return;
+    }
+    var link = document.getElementById(currentId);
+    if (!link) {
+        return;
+    }
+    link.className = link.className ? link.className + " current-nav-item" : "current-nav-item";
+    nav.scrollTop = link.offsetTop + (link.offsetHeight - nav.offsetHeight)/2;
+})();
+</script>
+
+</body>
+</html>

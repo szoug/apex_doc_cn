@@ -1,0 +1,261 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="OPEN_QUERY_CONTEXT Function">
+      <meta name="DC.subject" content="APEX_REGION, OPEN_QUERY_CONTEXT function">
+      <meta name="keywords" content="APEX_REGION, OPEN_QUERY_CONTEXT function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_REGION.html#GUID-63EFEB48-D5B9-42F6-9313-85C3984D42B8">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-BDB9F4B7-D1A7-4C9A-B4C7-45A57AD76427">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>OPEN_QUERY_CONTEXT Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="IS_READ_ONLY-Function-2.html" title="Previous" type="text/html">
+      <link rel="next" href="PURGE_CACHE-Procedure-2.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="IS_READ_ONLY-Function-2.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PURGE_CACHE-Procedure-2.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_REGION.html" property="item" typeof="WebPage"><span property="name"> APEX_REGION</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">OPEN_QUERY_CONTEXT Function</li>
+            </ol>
+            <a id="GUID-BDB9F4B7-D1A7-4C9A-B4C7-45A57AD76427" name="GUID-BDB9F4B7-D1A7-4C9A-B4C7-45A57AD76427"></a>
+            
+            <h2 id="AEAPI-GUID-BDB9F4B7-D1A7-4C9A-B4C7-45A57AD76427" class="sect2"><span class="enumeration_section">32.3 </span>OPEN_QUERY_CONTEXT Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This function returns an APEX_EXEC query context returning current region data. Only
+                native regions are supported at this time.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BDB9F4B7-D1A7-4C9A-B4C7-45A57AD76427__TITLE_NH1_YPX_GJB">Syntax</p>
+                  <pre class="pre codeblock"><code>FUNCTION OPEN_QUERY_CONTEXT (
+  p_page_id                IN NUMBER,
+  p_region_id              IN NUMBER,
+  p_component_id           IN NUMBER    DEFAULT NULL,
+  p_view_mode              IN VARCHAR2  DEFAULT NULL,
+  --
+  p_additional_filters     IN APEX_EXEC.T_FILTERS DEFAULT APEX_EXEC.C_EMPTY_FILTERS,
+  --    
+  p_first_row              IN NUMBER  DEFAULT NULL,
+  p_max_rows               IN NUMBER  DEFAULT NULL,
+  p_total_row_count        IN BOOLEAN,  DEFAULT FALSE,
+  p_total_row_count_limit  IN NUMBER  DEFAULT NULL,
+  return apex_exec.t_context;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BDB9F4B7-D1A7-4C9A-B4C7-45A57AD76427__TITLE_GFN_5RX_GJB">Parameters</p>
+                  
+                  
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-BDB9F4B7-D1A7-4C9A-B4C7-45A57AD76427__TABLE_KRN_15X_GJB">
+                  <p class="titleintable">Table 32-2 OPEN_QUERY_CONTEXT Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="OPEN_QUERY_CONTEXT Parameters" summary="Parameter descriptions for the OPEN_QUERY_CONTEXT function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="42%" id="d149513e70">
+                            Parameter
+                        </th>
+                           <th align="left" valign="bottom" width="58%" id="d149513e75">
+                            Description
+                        </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e82" headers="d149513e70 ">
+                              
+                              <p><code class="codeph">p_page_id</code></p>
+                              
+                           </td>
+                           <td align="left" valign="top" width="58%" headers="d149513e82 d149513e75 ">
+                              
+                              <p>ID of the page where the region is on.</p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e94" headers="d149513e70 ">
+                              
+                              <p><code class="codeph">p_region_id</code></p>
+                              
+                           </td>
+                           <td align="left" valign="top" width="58%" headers="d149513e94 d149513e75 ">
+                              
+                              <p>ID of a specific region to open the query context
+                                for.</p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e106" headers="d149513e70 "><code class="codeph">p_component_id</code></td>
+                           <td align="left" valign="top" width="58%" headers="d149513e106 d149513e75 ">
+                              
+                              <p>Region component ID to use. For interactive reports and
+                                interactive grids this is the saved report ID within the current
+                                application page. For JET charts, use the chart series ID.  </p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e115" headers="d149513e70 "><code class="codeph">p_view_mode</code></td>
+                           <td align="left" valign="top" width="58%" headers="d149513e115 d149513e75 ">
+                              
+                              <p>The view type available for the report. The values can
+                                be <code class="codeph">APEX_IR.C_VIEW_REPORT</code>,
+                                    <code class="codeph">APEX_IR.C_VIEW_GROUPBY</code>, or
+                                    <code class="codeph">APEX_IR.C_VIEW_PIVOT</code>.
+                              </p>
+                              
+                              <p>If<code class="codeph"> p_view</code> is null, it gets the view
+                                currently used by the report. If the <code class="codeph">p_view</code> passed
+                                does not exist for the current report, an error is raised.
+                              </p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e142" headers="d149513e70 "><code class="codeph">p_additional_filters</code></td>
+                           <td align="left" valign="top" width="58%" headers="d149513e142 d149513e75 ">
+                              
+                              <p>Additional filters to apply to the context.</p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e151" headers="d149513e70 "><code class="codeph">p_first_row</code></td>
+                           <td align="left" valign="top" width="58%" headers="d149513e151 d149513e75 ">
+                              
+                              <p>Row index to start fetching at. Defaults to 1.</p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e160" headers="d149513e70 "><code class="codeph">p_max_rows</code></td>
+                           <td align="left" valign="top" width="58%" headers="d149513e160 d149513e75 ">
+                              
+                              <p>Maximum amount of rows to get. Default unlimited.</p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e169" headers="d149513e70 "><code class="codeph">p_total_row_count</code></td>
+                           <td align="left" valign="top" width="58%" headers="d149513e169 d149513e75 ">
+                              
+                              <p>Determines whether to retrieve the total row count.
+                                Defaults to false.</p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="42%" id="d149513e178" headers="d149513e70 "><code class="codeph">p_total_row_count_limit</code></td>
+                           <td align="left" valign="top" width="58%" headers="d149513e178 d149513e75 ">
+                              
+                              <p>Upper limit of rows to process the query on. This
+                                applies to interactive report aggregations or ordering. Default is
+                                no limit.</p>
+                              
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BDB9F4B7-D1A7-4C9A-B4C7-45A57AD76427__TITLE_MHW_VTX_GJB">Example</p>
+                  
+                  <p>The following example demonstrates how to get the query context for a given saved
+                interactive report on page 1 and print the data out as JSON.</p><pre class="pre codeblock"><code> declare
+       l_context apex_exec.t_context;
+   begin
+       l_context := apex_region.open_query_context (
+                        p_page_id =&gt; 1,
+                        p_region_id =&gt; 2505704029884282,
+                        p_component_id =&gt; 880629800374638220 );
+
+       apex_json.open_object;
+       apex_json.write_context( 'data', l_context );
+       apex_json.close_object;
+   end;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_REGION.html#GUID-63EFEB48-D5B9-42F6-9313-85C3984D42B8">APEX_REGION</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

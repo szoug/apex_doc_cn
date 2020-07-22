@@ -1,0 +1,494 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating a Workspace and Adding Oracle Application Express Users">
+      <meta name="abstract" content="Learn about creating workspace and adding Oracle Application Express users.">
+      <meta name="description" content="Learn about creating workspace and adding Oracle Application Express users.">
+      <meta name="DC.subject" content="Application Express, getting started, getting started, Application Express, installation, signing in, about workspaces, about users, Administration Services, Administration Services, accessing with Oracle HTTP Server, creating workspace manually, workspace, creating, Oracle Application Express, creating users, user accounts, signing in to workspace, Oracle HTTP Server">
+      <meta name="keywords" content="Application Express, getting started, getting started, Application Express, installation, signing in, about workspaces, about users, Administration Services, Administration Services, accessing with Oracle HTTP Server, creating workspace manually, workspace, creating, Oracle Application Express, creating users, user accounts, signing in to workspace, Oracle HTTP Server">
+      <meta name="DC.Relation" scheme="URI" content="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaceadding-Oracle-AE-users.html#GUID-1040F145-452A-49D4-BCF6-A80851AFFA74">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaceadding-Oracle-AE-users.html#GUID-B940C155-86C4-4FD7-8380-E7254F160EBB">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaceadding-Oracle-AE-users.html#GUID-5CC1AEA8-F216-4C2F-B1C0-E0EB3C55CFEB">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaceadding-Oracle-AE-users.html#GUID-ACA9217C-1239-41DA-AB05-0E6E792B6E97">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about creating workspace and adding Oracle Application Express users.">
+      <meta name="description" content="Learn about creating workspace and adding Oracle Application Express users.">
+      <title>Creating a Workspace and Adding Oracle Application Express Users</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about creating workspace and adding Oracle Application Express users.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="installing-translatedversions-of-Oracle-AE.html" title="Previous" type="text/html">
+      <link rel="next" href="post-installation-tasksfor-upgrade-installations.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-translatedversions-of-Oracle-AE.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="post-installation-tasksfor-upgrade-installations.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html" property="item" typeof="WebPage"><span property="name"> Installing Application Express and
+    Configuring Legacy Web Listener &#x2013; Oracle HTTP Server  (Deprecated)</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating a Workspace and Adding Oracle Application Express Users</li>
+            </ol>
+            <a id="GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B" name="GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B"></a><a id="HTMIG29410"></a>
+            
+            <h2 id="HTMIG-GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B" class="sect2"><span class="enumeration_section">B.10 </span>Creating a Workspace and Adding Oracle Application Express Users
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about creating workspace and adding Oracle Application Express users.</p>
+               <p>Before you can develop or install applications, you must create a workspace, add Oracle Application Express users and sign in to your workspace.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="creating-workspaceadding-Oracle-AE-users.html#GUID-1040F145-452A-49D4-BCF6-A80851AFFA74">About Workspaces and Users</a><br>A workspace enables multiple users to work within the same Oracle Application Express installation while keeping their objects, data, and applications private.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaceadding-Oracle-AE-users.html#GUID-B940C155-86C4-4FD7-8380-E7254F160EBB">Accessing Administration Services Using Oracle HTTP Server</a><br>Learn how to access Oracle Application Express administration services.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaceadding-Oracle-AE-users.html#GUID-5CC1AEA8-F216-4C2F-B1C0-E0EB3C55CFEB">Creating Oracle Application Express Users</a><br>Create new users in Oracle Application Express Administration         Services..
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaceadding-Oracle-AE-users.html#GUID-ACA9217C-1239-41DA-AB05-0E6E792B6E97">Signing into a Workspace Using the Oracle HTTP Server</a><br>Learn how to sign in to a workspace using the Oracle HTTP Server.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29177"></a><div class="props_rev_3"><a id="GUID-1040F145-452A-49D4-BCF6-A80851AFFA74" name="GUID-1040F145-452A-49D4-BCF6-A80851AFFA74"></a><h3 id="HTMIG-GUID-1040F145-452A-49D4-BCF6-A80851AFFA74" class="sect3"><span class="enumeration_section">B.10.1 </span>About Workspaces and Users
+               </h3>
+               <div>
+                  <p>A workspace enables multiple users to work within the same Oracle Application Express installation while keeping their objects, data, and applications private.</p>
+                  <p>You access the Oracle Application Express home page by logging in to a workspace using a JavaScript enabled Web browser. </p>
+                  <p> Each workspace has a unique ID and name. An instance administrator can create a
+            workspace manually within Oracle Application Express Administration Services or have
+            users submit requests. Oracle Application Express Administration Services is a separate
+            application for managing an entire Oracle Application Express instance. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1040F145-452A-49D4-BCF6-A80851AFFA74__GUID-ECD9E154-7970-47FC-80BA-CFE9B0254FA4">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="Oracle-AE-installation-requirements.html#GUID-6E817104-6C58-4FA8-861D-F884AA3369B0" title="Oracle Application Express requires a JavaScript-enabled browser and supports the current and prior major release of Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Internet Explorer, and Microsoft Edge.">Browser Requirements</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="../aeadm/creating-workspaces.html#AEADM-GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" target="_blank">Creating Workspaces
+                                                  in Administration Services</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="../aeadm/managing-existing-workspaces.html#AEADM-GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9" target="_blank">Managing Existing
+                                                  Workspaces</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaceadding-Oracle-AE-users.html#GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B" title="Learn about creating workspace and adding Oracle Application Express users.">Creating a Workspace and Adding Oracle Application Express Users</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-B940C155-86C4-4FD7-8380-E7254F160EBB" name="GUID-B940C155-86C4-4FD7-8380-E7254F160EBB"></a><h3 id="HTMIG-GUID-B940C155-86C4-4FD7-8380-E7254F160EBB" class="sect3"><span class="enumeration_section">B.10.2 </span>Accessing Administration Services Using Oracle HTTP Server
+               </h3>
+               <div>
+                  <p>Learn how to access Oracle Application Express administration services.</p>
+                  <div class="section">
+                     <p>To manually create a workspace and user accounts, you sign in to a separate application for managing an entire Oracle Application Express instance called Oracle Application Express Administration Services. You sign in to Oracle Application Express Administration Services using the <code class="codeph">ADMIN</code> account and password created or reset during the installation process.
+                     </p>
+                     <p>To access Oracle Application Express Administration Services:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>In a Web browser, navigate to the Oracle Application Express Administration Services application. </span><div>
+                           <p>Because your setup uses Oracle HTTP Server with <code class="codeph">mod_plsql</code> go to:
+                           </p><pre class="oac_no_warn" dir="ltr">http://<span class="italic">hostname</span>:<span class="italic">port</span>/pls/apex/apex_admin
+</pre><p>Where:</p>
+                           <p><span class="italic"><code class="codeph">hostname</code></span>is the name of the system where Oracle HTTP Server is installed.
+                           </p>
+                           <p><span class="italic"><code class="codeph">port</code></span> is the port number assigned to HTTP on the Oracle HTTP Server. In a default installation, this number is 7777.
+                           </p>
+                           <p><span class="italic"><code class="codeph">pls</code></span>is the indicator to use the mod_plsql cartridge.
+                           </p>
+                           <p><span class="italic"><code class="codeph">apex</code></span>is the database access descriptor (DAD) defined in the <code class="codeph">mod_plsql</code> configuration file.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Sign In page:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Username - Enter <code class="codeph">admin</code>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Password - Enter the Oracle Application Express administrator account password you specified in your instance administration account.</p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="uicontrol bold">Sign In to Administration</span>.
+                                 </p>
+                              </li>
+                           </ul>
+                           <p>Note that, depending on your setup, you might be required to change your password when you log in for the first time.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="creating-workspaceadding-Oracle-AE-users.html#GUID-C4C7C3E9-B3F3-42E6-AC85-4380489B82AA">Creating a Workspace Manually</a><br> Sign in to Oracle Application Express Administration Services to create workspace manually.
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-B940C155-86C4-4FD7-8380-E7254F160EBB__GUID-56E2BFD8-F023-413E-B097-AACE9D24BD68">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="downloading-installing-Oracle-AE.html#GUID-4062E1F0-2772-48FC-A4AA-436F326CF751" title="Learn how to create or update Instance Administrator account.">Creating or Updating Your Instance Administration Account</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="../aeadm/oracle-application-express-administration-services.html#AEADM-GUID-3E40D63B-D9C4-42B9-87D7-88A015762392" target="_blank">Oracle Application Express Administration Services</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaceadding-Oracle-AE-users.html#GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B" title="Learn about creating workspace and adding Oracle Application Express users.">Creating a Workspace and Adding Oracle Application Express Users</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMIG29178"></a><div class="props_rev_3"><a id="GUID-C4C7C3E9-B3F3-42E6-AC85-4380489B82AA" name="GUID-C4C7C3E9-B3F3-42E6-AC85-4380489B82AA"></a><h4 id="HTMIG-GUID-C4C7C3E9-B3F3-42E6-AC85-4380489B82AA" class="sect4"><span class="enumeration_section">B.10.2.1 </span>Creating a Workspace Manually
+                  </h4>
+                  <div>
+                     <p> Sign in to Oracle Application Express Administration Services to create workspace manually.</p>
+                     <div class="section">
+                        <p>To manually create a workspace you sign in to a separate application called Oracle Application Express Administration Services. You sign in to Oracle Application Express Administration Services using the <code class="codeph">ADMIN</code> account and password created or reset during the installation process.
+                        </p>
+                        <p>To create an Oracle Application Express workspace manually:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Access <a id="d28016e502" class="indexterm-anchor"></a>Oracle Application Express Administration Services.</span><div>
+                              <p>Oracle Application Express Administration Services appears. Next, create a workspace. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Workspaces</span>.</span></li>
+                        <li class="stepexpand"><span>Under Workspace Actions, click <span class="uicontrol bold">Create Workspace</span>. </span><div>
+                              <p>The Create Workspace Wizard appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>For Identify Workspace, enter the following:</span><ol type="a">
+                              <li><span>Workspace Name - Enter a unique workspace name. </span></li>
+                              <li><span>Workspace ID - Leave Workspace ID blank to have the new Workspace ID automatically generated. A Workspace ID must be a positive integer greater than 100000. </span></li>
+                              <li><span>Workspace Description - Enter a workspace description.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Identify Schema, specify whether you are re-using an existing schema or creating a new one.</span><div>
+                              <p>If you are using an existing schema:</p>
+                           </div>
+                           <ol type="a">
+                              <li><span>For Re-use existing schema, select <span class="uicontrol bold">Yes</span>.</span></li>
+                              <li><span>Select a schema from the list.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                           <div>
+                              <p>If you are creating a new schema:</p>
+                           </div>
+                           <ol type="a">
+                              <li><span>For Re-use existing schema, select <span class="uicontrol bold">No</span>.</span></li>
+                              <li><span>Enter a schema name and password.</span></li>
+                              <li><span>Specify a space quota.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Identify Administrator, enter the Workspace administrator information and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Confirm your selections and click <span class="uicontrol bold">Create Workspace</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-C4C7C3E9-B3F3-42E6-AC85-4380489B82AA__GUID-F46D6E47-895F-40C8-BAEE-C628C24E9913">
+                        <p class="notep1">See Also:</p>
+                        <div class="p">
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="creating-workspace-and-adding-Oracle-AE-users.html#GUID-D6619391-0A90-433C-BFB7-3A20A6E6DCB9" title="Sign in to Oracle Application Express Administration Services using the Instance administrator account and password created or reset during the installation process.">Accessing Administration Services Using Oracle REST Data Services</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="../aeadm/oracle-application-express-administration-services.html#AEADM-GUID-3E40D63B-D9C4-42B9-87D7-88A015762392" target="_blank">Oracle Application Express Administration Services</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="creating-workspaceadding-Oracle-AE-users.html#GUID-B940C155-86C4-4FD7-8380-E7254F160EBB" title="Learn how to access Oracle Application Express administration services.">Accessing Administration Services Using Oracle HTTP Server</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMIG29179"></a><div class="props_rev_3"><a id="GUID-5CC1AEA8-F216-4C2F-B1C0-E0EB3C55CFEB" name="GUID-5CC1AEA8-F216-4C2F-B1C0-E0EB3C55CFEB"></a><h3 id="HTMIG-GUID-5CC1AEA8-F216-4C2F-B1C0-E0EB3C55CFEB" class="sect3"><span class="enumeration_section">B.10.3 </span>Creating Oracle Application Express Users
+               </h3>
+               <div>
+                  <p>Create new users in Oracle Application Express Administration
+        Services..</p>
+                  <div class="section">Create new users by signing into Oracle Application Express Administration Services
+            using your administrator password.</div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To create an Oracle Application Express user account:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign into Oracle Application Express Administration Services.</span><div>
+                           
+                           <p>Oracle Application Express Administration Services appears.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Workspaces</span>.</span></li>
+                     <li class="stepexpand"><span>Under Workspace Actions, click <span class="uicontrol bold">Manage Developers and
+                        Users</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create User</span>. </span></li>
+                     <li class="stepexpand"><span>Under User Attributes, enter the appropriate information. Fields marked with an asterisk are required.</span><div>
+                           <div class="infobox-tip" id="GUID-5CC1AEA8-F216-4C2F-B1C0-E0EB3C55CFEB__GUID-6213EDCA-6326-42DF-834D-62DC5DA77981">
+                              <p class="notep1">Tip:</p>
+                              <p>Most attributes in Oracle Application Express include field-level Help. Attributes
+                            with field-level Help, have light gray icon that resembles a question
+                            mark (?). To view field-level Help, click the Help icon. </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Account Privileges:</span><div>
+                           <ol type="a">
+                              <li>
+                                 <p><span class="uicontrol bold">Workspace</span> - Select a workspace from the list.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Default Schemas</span> - Specify the default schema used for data browsing, application creation, and SQL script execution. 
+                                 </p>
+                                 <p>When using workspaces that have more than one schema available, this schema is the default. This setting does not control security, only the user's preference.</p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">User is an administrator</span> - Specify if this user should have workspace administrator privileges. 
+                                 </p>
+                                 <p>Administrators are given access to all components. Additionally, they can manage user accounts, groups, and development services. Components may not be available if they are switched off by Instance Administrators.</p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">User is a developer</span> - Specify if this user should have developer privileges. 
+                                 </p>
+                                 <p>Developers must have access to either <span>App Builder</span>, SQL Workshop, or both. These components may not be available if they are switched off by the Instance Administrator. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold"><span><span class="uicontrol bold">App
+                                        Builder</span></span> Access</span> - Determines whether a developer has access to the <span>App Builder</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">SQL Workshop Access</span> - Determines whether a developer has access to the SQL Workshop.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Team Development Access</span> - Determines whether a developer has access to the Team Development.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Set Account Availability</span> - Select <span class="bold">Locked</span> to prevent the account from being used. Select <span class="bold">Unlocked</span> to allow the account to be used. 
+                                 </p>
+                                 <p>If the user has exceeded the maximum log in failures allowed, specified in Workspace Preferences, then their account will be locked automatically.</p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Password:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Password</span> - Enter a case sensitive password.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Confirm Password</span> - Enter the password again.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Require Change of Password On First Use</span> - Select <span class="uicontrol bold">No</span> to allow the user to use the same password until it expires. Select <span class="uicontrol bold">Yes</span> to require the user to change the password immediately when logging in the first time.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create User</span> or <span class="uicontrol bold">Create and Create Another</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5CC1AEA8-F216-4C2F-B1C0-E0EB3C55CFEB__GUID-D2C9B5C2-C1CA-4BC2-B798-BFAB4CFBA200">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="creating-workspace-and-adding-Oracle-AE-users.html#GUID-D6619391-0A90-433C-BFB7-3A20A6E6DCB9" title="Sign in to Oracle Application Express Administration Services using the Instance administrator account and password created or reset during the installation process.">Accessing Administration Services Using Oracle REST Data Services</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaceadding-Oracle-AE-users.html#GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B" title="Learn about creating workspace and adding Oracle Application Express users.">Creating a Workspace and Adding Oracle Application Express Users</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29415"></a><div class="props_rev_3"><a id="GUID-ACA9217C-1239-41DA-AB05-0E6E792B6E97" name="GUID-ACA9217C-1239-41DA-AB05-0E6E792B6E97"></a><h3 id="HTMIG-GUID-ACA9217C-1239-41DA-AB05-0E6E792B6E97" class="sect3"><span class="enumeration_section">B.10.4 </span>Signing into a Workspace Using the Oracle HTTP Server
+               </h3>
+               <div>
+                  <p>Learn how to sign in to a workspace using the Oracle HTTP Server.</p>
+                  <div class="section">
+                     <p>Use your credentials (that is, your workspace name, user name and password) to sign in to the workspace.</p>
+                     <p>To sign in to your workspace:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>In a Web browser, navigate to the Oracle Application Express Sign In page. </span><div>
+                           <p>Because your setup uses Oracle HTTP Server (Apache) and <code class="codeph">mod_plsql</code>, go to:
+                           </p><pre class="oac_no_warn" dir="ltr">http://<span class="italic">hostname</span>:<span class="italic">port</span>/pls/apex
+</pre><p>Where:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="italic"><code class="codeph">hostname</code></span> is the name of the system where Oracle HTTP Server is installed.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="italic"><code class="codeph">port</code></span> is the port number assigned to HTTP on the Oracle HTTP Server. In a default installation, this number is 7777. You can find information about your Oracle HTTP Server installation's port number from either of the following files: 
+                                 </p><pre class="oac_no_warn" dir="ltr">ORACLE_BASE\ORACLE_HOME\install\portlist.ini
+ORACLE_BASE\ORACLE_HTTPSERVER_HOME\Apache\Apache\conf\httpd.conf
+</pre><p>Be aware that if you change a port number, it is not updated in the portlist.ini file. You can only rely on this file immediately after installation.</p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">pls</code> is the indicator to use the mod_plsql cartridge.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">apex</code> is the database access descriptor (DAD) defined in the mod_plsql configuration file.
+                                 </p>
+                              </li>
+                           </ul>
+                           <p>The Sign In page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Sign In page, enter:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Workspace - Enter the name of your workspace.</p>
+                              </li>
+                              <li>
+                                 <p>Username - Enter your user name.</p>
+                              </li>
+                              <li>
+                                 <p>Password - Enter your case-sensitive password.</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Sign In</span>.</span><div>
+                           <p>Note that, depending on your setup, you might be required to change your password when you log in for the first time.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-ACA9217C-1239-41DA-AB05-0E6E792B6E97__GUID-D1F8D0F2-963C-429A-B9FB-DC0E8070ECC6">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              
+                              <p><span class="q">"<a href="../aeadm/creating-workspaces.html#AEADM-GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" target="_blank">Creating
+                                        Workspaces in Administration Services</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p><span class="q">"<a href="../aeadm/managing-workspace-and-change-requests.html#AEADM-GUID-622172B3-CDAA-48C2-9F0C-A9A23B9E938A" target="_blank">Managing Requests</a>"</span>
+                                in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                              
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaceadding-Oracle-AE-users.html#GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B" title="Learn about creating workspace and adding Oracle Application Express users.">Creating a Workspace and Adding Oracle Application Express Users</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

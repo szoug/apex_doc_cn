@@ -1,0 +1,541 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Plugging in a PDB When Application Express is Installed in the Root Container">
+      <meta name="abstract" content="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">
+      <meta name="description" content="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">
+      <meta name="DC.subject" content="plugging in PDBs, Application Express in root, non-CDB with Application Express, Application Express from another CDB, Application Express root another CDB, Plug-in non-CDB, Plug-in PDB, Application Express, incompatible versions, CDBs, patching Application Express, patching in CDBs, PDBs, patching in PDBs">
+      <meta name="keywords" content="plugging in PDBs, Application Express in root, non-CDB with Application Express, Application Express from another CDB, Application Express root another CDB, Plug-in non-CDB, Plug-in PDB, Application Express, incompatible versions, CDBs, patching Application Express, patching in CDBs, PDBs, patching in PDBs">
+      <meta name="DC.Relation" scheme="URI" content="multitenant-architecture-in-Oracle-db-12c.html#GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F">
+      <meta name="DC.Relation" scheme="URI" content="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-33505E7E-22E6-4649-A1CF-601A9A4CAD42">
+      <meta name="DC.Relation" scheme="URI" content="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F278C6B4-0035-4558-89E9-A9A3891E5152">
+      <meta name="DC.Relation" scheme="URI" content="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F7EFB09A-66D1-4E78-92F6-038BA7159257">
+      <meta name="DC.Relation" scheme="URI" content="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-E0DA6DE1-E299-4CAF-BC50-0C7F4E56B2D0">
+      <meta name="DC.Relation" scheme="URI" content="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-F1D9485F-F21F-4194-A995-0F17547A664D">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">
+      <meta name="description" content="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">
+      <title>Plugging in a PDB When Application Express is Installed in the Root Container</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="installing-AE-into-different-PDBs.html" title="Previous" type="text/html">
+      <link rel="next" href="plugging-in-PDB-when-AE-is-not-in-root-container-of-target-CDB.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-AE-into-different-PDBs.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="plugging-in-PDB-when-AE-is-not-in-root-container-of-target-CDB.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="multitenant-architecture-in-Oracle-db-12c.html" property="item" typeof="WebPage"><span property="name">Utilizing the Multitenant Architecture in
+        Oracle Database 12c or Later</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Plugging in a PDB When Application Express is Installed in the Root Container</li>
+            </ol>
+            <a id="GUID-F1D9485F-F21F-4194-A995-0F17547A664D" name="GUID-F1D9485F-F21F-4194-A995-0F17547A664D"></a><a id="HTMIG29437"></a>
+            
+            <h2 id="HTMIG-GUID-F1D9485F-F21F-4194-A995-0F17547A664D" class="sect2"><span class="enumeration_section">4.4 </span>Plugging in a PDB When Application Express is Installed in the Root Container
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about scenarios in which the target database has Application Express installed into the root container, <code class="codeph">CDB$ROOT</code> - the default installation option.
+               </p>
+               <p>This section describes scenarios in which the target database has Application Express installed into the root container, <code class="codeph">CDB$ROOT</code> - the default installation option. Note there are multiple scenarios related to where the database being plugged in originated from and how Application Express was configured in the originating database. 
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-33505E7E-22E6-4649-A1CF-601A9A4CAD42">Scenario 1: Plug-in Non-CDB with Application Express</a><br>Plug-in a Non-CDB with Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F278C6B4-0035-4558-89E9-A9A3891E5152">Scenario 2: Plug-in PDB with a Common Application Express from Another CDB</a><br>Plug-in a PDB with Application Express from another CDB.
+                  </li>
+                  <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F7EFB09A-66D1-4E78-92F6-038BA7159257">Scenario 3: Plug-in PDB with a Local Application Express from Another CDB</a><br>Plug-in a PDB with a local Application Express from another CDB.
+                  </li>
+                  <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-E0DA6DE1-E299-4CAF-BC50-0C7F4E56B2D0">Scenario 4: Plug-in Non-CDB or PDB with No Application Express</a><br>Plug-in a Non-CDB or PDB if the Application Express is not installed.
+                  </li>
+                  <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB">Working with Incompatible Application Express Versions</a><br>Learn how to work with the incompatible versions of Application Express.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="multitenant-architecture-in-Oracle-db-12c.html#GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F" title="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">Utilizing the Multitenant Architecture in Oracle Database 12c or Later</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29438"></a><div class="props_rev_3"><a id="GUID-33505E7E-22E6-4649-A1CF-601A9A4CAD42" name="GUID-33505E7E-22E6-4649-A1CF-601A9A4CAD42"></a><h3 id="HTMIG-GUID-33505E7E-22E6-4649-A1CF-601A9A4CAD42" class="sect3"><span class="enumeration_section">4.4.1 </span>Scenario 1: Plug-in Non-CDB with Application Express
+               </h3>
+               <div>
+                  <p>Plug-in a Non-CDB with Application Express.</p>
+                  <div class="section">
+                     <p>If you are upgrading from a previous Oracle Database release, then you first need to
+                                                  upgrade to a Oracle Database 12<span class="italic">c</span> non-CDB
+                                                  (or standalone database) or later and then plug
+                                                  the database into your CDB. Alternatively, if you
+                                                  have configured a non-CDB Oracle Database 12c or
+                                                  later , you may now want to plug this database
+                                                  into a CDB. In both cases, the originating
+                                                  database has Application Express installed and was
+                                                  not formerly a PDB.
+                     </p>
+                     <p>As described in the <a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=GINST" target="_blank"><span class="italic">Oracle Database Installation Guide</span></a> for your operating system, when plugging in a standalone database you need to run the <code class="codeph">$ORACLE_HOME/rdbms/admin/noncdb_to_pdb.sql script</code>. This script creates the necessary metadata linked objects, instead of local objects and recompiles the database objects for all common database options, including Application Express. 
+                     </p>
+                     <p>After installing Application Express, you need to configure the Web listener for the
+                PDB. </p>
+                     <p>If the version of Application Express installed in the originating database (which is
+                                                  now a PDB) is different from what is installed
+                                                  into the root container of the target, an error
+                                                  will be raised when trying to open the PDB.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-33505E7E-22E6-4649-A1CF-601A9A4CAD42__GUID-E27A62EE-2770-4F69-AF91-C7F69852F93F">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB" title="Learn how to work with the incompatible versions of Application Express.">Working with Incompatible Application Express Versions</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F1D9485F-F21F-4194-A995-0F17547A664D" title="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">Plugging in a PDB When Application Express is Installed in the Root Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29439"></a><div class="props_rev_3"><a id="GUID-F278C6B4-0035-4558-89E9-A9A3891E5152" name="GUID-F278C6B4-0035-4558-89E9-A9A3891E5152"></a><h3 id="HTMIG-GUID-F278C6B4-0035-4558-89E9-A9A3891E5152" class="sect3"><span class="enumeration_section">4.4.2 </span>Scenario 2: Plug-in PDB with a Common Application Express from Another CDB
+               </h3>
+               <div>
+                  <p>Plug-in a PDB with Application Express from another CDB.</p>
+                  <div class="section">
+                     <p>If you are copying or moving a PDB from an existing Oracle Database 12c or later
+                where the originating CDB had Application Express installed in the root container,
+                you will not need to perform any additional steps, other than configuring the Web
+                listener for the PDB.</p>
+                     <p>This scenario assumes Oracle Application Express release 20.1 is installed and the
+                    <code class="codeph">APEX_200100</code> schema within the PDB being plugged in already has
+                the metadata linked objects defined and will compile without error against the
+                metadata linked objects within the target CDB.
+                     </p>
+                     <p>If the version of Application Express installed in the originating database is different from what is installed in the root container of the target an error is raised when trying to open the PDB. </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F278C6B4-0035-4558-89E9-A9A3891E5152__GUID-1B2AE7FA-C88F-49B7-A39A-2391603F1E4B">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB" title="Learn how to work with the incompatible versions of Application Express.">Working with Incompatible Application Express Versions</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F1D9485F-F21F-4194-A995-0F17547A664D" title="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">Plugging in a PDB When Application Express is Installed in the Root Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29440"></a><div class="props_rev_3"><a id="GUID-F7EFB09A-66D1-4E78-92F6-038BA7159257" name="GUID-F7EFB09A-66D1-4E78-92F6-038BA7159257"></a><h3 id="HTMIG-GUID-F7EFB09A-66D1-4E78-92F6-038BA7159257" class="sect3"><span class="enumeration_section">4.4.3 </span>Scenario 3: Plug-in PDB with a Local Application Express from Another CDB 
+               </h3>
+               <div>
+                  <p>Plug-in a PDB with a local Application Express from another CDB.</p>
+                  <div class="section">
+                     <p>If you are copying or moving a PDB from an existing Oracle Database 12c or later
+                where Application Express was not installed in the root container but is installed
+                locally, then you need to perform additional steps before the PDB can be opened
+                without errors.</p>
+                     <p>This scenario assumes Oracle Application Express release 20.1 is installed and the
+                    <code class="codeph">APEX_200100</code> schema within the PDB being plugged in contains all
+                of the Application Express database objects and has no metadata linked objects.
+                Therefore, you need to run
+                    <code class="codeph">$ORACLE_HOME/rdbms/admin/apex_to_common.sql</code> to remove the
+                common objects and create the metadata links for the packages, views and so
+                forth.
+                     </p>
+                     <p>To replace local objects with metadata links in the PDB:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ol>
+                        <li>
+                           <p>Change your working directory to <code class="codeph">$ORACLE_HOME/rdbms/admin</code>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Start SQL*Plus and connect to the database where Application Express is installed as SYS specifying the SYSDBA role. For example:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic"><code class="codeph">SYS_password</code></span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Set the container to the PDB to be configured:</p><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CONTAINER = &lt;<code class="codeph">PDB_name</code>&gt;;
+</pre></li>
+                        <li>
+                           <p>Run <code class="codeph">apex_to_common.sql</code>. For example:
+                           </p><pre class="oac_no_warn" dir="ltr">@apex_to_common.sql 
+
+</pre></li>
+                     </ol>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>If the version of Application Express installed in the originating database is
+                different from what is installed in the root container of the target an error is
+                raised when trying to open the PDB. </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F7EFB09A-66D1-4E78-92F6-038BA7159257__GUID-D69BF244-5C76-4ECB-90FD-F105D0609598">
+                     <p class="notep1">See Also:</p><span class="q">"<a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB" title="Learn how to work with the incompatible versions of Application Express.">Working with Incompatible Application Express Versions</a>."</span></div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F1D9485F-F21F-4194-A995-0F17547A664D" title="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">Plugging in a PDB When Application Express is Installed in the Root Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29444"></a><div class="props_rev_3"><a id="GUID-E0DA6DE1-E299-4CAF-BC50-0C7F4E56B2D0" name="GUID-E0DA6DE1-E299-4CAF-BC50-0C7F4E56B2D0"></a><h3 id="HTMIG-GUID-E0DA6DE1-E299-4CAF-BC50-0C7F4E56B2D0" class="sect3"><span class="enumeration_section">4.4.4 </span>Scenario 4: Plug-in Non-CDB or PDB with No Application Express
+               </h3>
+               <div>
+                  <p>Plug-in a Non-CDB or PDB if the Application Express is not installed.</p>
+                  <div class="section">
+                     <p>If you are plugging in a non-CDB, or copying or moving a PDB from another CDB, and Application Express is not installed in the originating database or PDB then a warning is raised in the alert log when opening the PDB in the target database. </p>
+                     <p>In this scenario, the Application Express schema, such as
+                    <code class="codeph">APEX_200100</code> for Oracle Application Express release 20.1, will
+                not be present in the originating database or the PDB being plugged in. In order to
+                open the PDB without issue and be able to run Application Express within the new
+                PDB, you must install Application Express into the originating database or PDB
+                before attempting to plug in to the target database. You should install the same
+                version of Application Express into the originating database or PDB as the version
+                installed into the target database.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F1D9485F-F21F-4194-A995-0F17547A664D" title="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">Plugging in a PDB When Application Express is Installed in the Root Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29441"></a><div class="props_rev_3"><a id="GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB" name="GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB"></a><h3 id="HTMIG-GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB" class="sect3"><span class="enumeration_section">4.4.5 </span>Working with Incompatible Application Express Versions
+               </h3>
+               <div>
+                  <p>Learn how to work with the incompatible versions of Application Express.</p>
+                  <p>If the version of Application Express in the root container, <code class="codeph">CDB$ROOT</code>, is not the same as the Application Express version in the PDB then an error is raised every time the PDB is opened preventing normal database operations within the PDB. The PDB can only be opened in restricted mode by users with RESTRICTED SESSION privilege, until the versions are compatible.
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-E7BB8412-0A26-4C62-A220-21CC5D551B8A">Patching or Upgrading Application Express in the CDB</a><br>Learn how to patch or upgrade Application Express in the root container.
+                     </li>
+                     <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-4594B8A4-806E-401D-8D5D-82050EFF00E6">Patching or Upgrading Application Express in a PDB</a><br>Learn how to patch or upgrade Application Express in a PDB.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F1D9485F-F21F-4194-A995-0F17547A664D" title="Learn about scenarios in which the target database has Application Express installed into the root container, CDB$ROOT - the default installation option.">Plugging in a PDB When Application Express is Installed in the Root Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMIG29445"></a><div class="props_rev_3"><a id="GUID-E7BB8412-0A26-4C62-A220-21CC5D551B8A" name="GUID-E7BB8412-0A26-4C62-A220-21CC5D551B8A"></a><h4 id="HTMIG-GUID-E7BB8412-0A26-4C62-A220-21CC5D551B8A" class="sect4"><span class="enumeration_section">4.4.5.1 </span>Patching or Upgrading Application Express in the CDB
+                  </h4>
+                  <div>
+                     <p>Learn how to patch or upgrade Application Express in the root container.</p>
+                     <div class="section">
+                        <p>If the version of Application Express in the PDB is a later minor release version
+                than the version of Application Express in the root container (for example, the PDB
+                contains Application Express release 5.1.4 and the CDB contains Application Express
+                release 5.1.3) then you must patch the version of Application Express in the root
+                container to be able to open the PDB without error. If the major version of
+                Application Express in the PDB is higher than the version in the CDB (for example
+                the PDB has Application Express release 19.2 and the CDB has Application Express
+                release 18.1) then you must upgrade the version of Application Express in the CDB to
+                be able to open the PDB without error.</p>
+                        <p>To patch Application Express in the root container:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Download the appropriate patch from My Oracle Support.</span></li>
+                        <li class="stepexpand"><span>Unzip and extract the installation files.</span></li>
+                        <li class="stepexpand"><span>Change your working directory to where the installation files were extracted</span></li>
+                        <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Application Express is installed as SYS specifying the SYSDBA role. For example:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic"><code class="codeph">SYS_password</code></span>
+</pre></li>
+                                 <li>
+                                    <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Run <code class="codeph">apxpatch_con.sql</code> for example:</span><div><pre class="oac_no_warn" dir="ltr">@apxpatch_con.sql
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Follow the instructions outlined in the Patch Set Notes for updating the images directory based on the Web Server you are using. If you are using the Embedded PL/SQL Gateway, run <code class="codeph">apxldimg_con.sql</code> for example:</span><div><pre class="oac_no_warn" dir="ltr">@apxldimg_con.sql
+</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <div class="infobox-tip" id="GUID-E7BB8412-0A26-4C62-A220-21CC5D551B8A__GUID-3EC14E64-32A8-45DC-AA3D-55A3062A555E">
+                           <p class="notep1">Tip:</p>
+                           <p>To upgrade Application Express in the root container, see <span>Reinstalling
+                    Application Express into a CDB</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-E7BB8412-0A26-4C62-A220-21CC5D551B8A__GUID-237E0760-E190-48C9-B4D4-42FAB6223854">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="installing-AE-into-different-PDBs.html#GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD">Installing Application Express into a CDB</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB" title="Learn how to work with the incompatible versions of Application Express.">Working with Incompatible Application Express Versions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29446"></a><div class="props_rev_3"><a id="GUID-4594B8A4-806E-401D-8D5D-82050EFF00E6" name="GUID-4594B8A4-806E-401D-8D5D-82050EFF00E6"></a><h4 id="HTMIG-GUID-4594B8A4-806E-401D-8D5D-82050EFF00E6" class="sect4"><span class="enumeration_section">4.4.5.2 </span>Patching or Upgrading Application Express in a PDB
+                  </h4>
+                  <div>
+                     <p>Learn how to patch or upgrade Application Express in a PDB.</p>
+                     <div class="section">
+                        <p>If the minor version of Application Express in the PDB is lower than the version of
+                Application Express in the root container (for example the PDB has Application
+                Express release 4.2.0 and the CDB has Application Express release 4.2.6) then it
+                will be necessary to patch the version of Application Express in the PDB. If the
+                major version of Application Express in the PDB is lower than the version in the
+                root container (for example, the PDB has Application Express release 4.2 and the CDB
+                has Application Express release 19.2) then the version of Application Express in the
+                PDB will need to be upgraded.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-44A0C0A6-DC9E-4249-9576-C3173FD7EF44">Patching Application Express in a PDB</a><br>Learn how to patch Application Express in a PDB.
+                        </li>
+                        <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-AF760833-F3F6-4C59-922E-E17AD37D6B18">Upgrading Application Express in a PDB</a><br>Learn how to upgrade Application Express in a PDB.
+                        </li>
+                     </ul>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-00F2ABEE-FD90-4787-93A7-FD18B3459FEB" title="Learn how to work with the incompatible versions of Application Express.">Working with Incompatible Application Express Versions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <a id="HTMIG29328"></a><div class="props_rev_3"><a id="GUID-44A0C0A6-DC9E-4249-9576-C3173FD7EF44" name="GUID-44A0C0A6-DC9E-4249-9576-C3173FD7EF44"></a><h5 id="HTMIG-GUID-44A0C0A6-DC9E-4249-9576-C3173FD7EF44" class="sect5"><span class="enumeration_section">4.4.5.2.1 </span>Patching Application Express in a PDB
+                     </h5>
+                     <div>
+                        <p>Learn how to patch Application Express in a PDB.</p>
+                        <div class="section">
+                           <p>To patch Application Express in a PDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Download the appropriate patch from My Oracle Support.</span></li>
+                           <li class="stepexpand"><span>Unzip and extract the installation files.</span></li>
+                           <li class="stepexpand"><span>Change your working directory to where the installation files were extracted</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Application Express is installed as SYS specifying the SYSDBA role. For example:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic"><code class="codeph">SYS_password</code></span>
+</pre></li>
+                                    <li>
+                                       <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Run apxpatch.sql using catcon.pl like the following example:</span><div><pre class="oac_no_warn" dir="ltr">host &amp;OH_HOME/perl/bin/perl -I 
+
+&amp;OH_HOME/rdbms/admin <span class="italic">&amp;OH_HOME</span>/rdbms/admin/catcon.pl -b apxpatch -c '&lt;<span class="italic">PDB_name</span>&gt;'  apxpatch.sql  
+</pre><p>Where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">&amp;OH_HOME</code></span> represents the full path to the Oracle home
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>&lt;<span class="italic"><code class="codeph">PDB_name</code></span>&gt; is the name of the PDB you are patching
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Follow the instructions outlined in the patch set notes for updating the images directory based on the Web Server you are using. If you are using the Embedded PL/SQL Gateway, run <code class="codeph">apex_epg_config.sql</code> for example:</span><div><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CONTAINER = &lt;<span class="italic">PDB_name</span>&gt;;
+@apex_epg_config.sql
+</pre></div>
+                           </li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-4594B8A4-806E-401D-8D5D-82050EFF00E6" title="Learn how to patch or upgrade Application Express in a PDB.">Patching or Upgrading Application Express in a PDB</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29329"></a><div class="props_rev_3"><a id="GUID-AF760833-F3F6-4C59-922E-E17AD37D6B18" name="GUID-AF760833-F3F6-4C59-922E-E17AD37D6B18"></a><h5 id="HTMIG-GUID-AF760833-F3F6-4C59-922E-E17AD37D6B18" class="sect5"><span class="enumeration_section">4.4.5.2.2 </span>Upgrading Application Express in a PDB
+                     </h5>
+                     <div>
+                        <p>Learn how to upgrade Application Express in a PDB.</p>
+                        <div class="section">
+                           <p>To upgrade Application Express in a PDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Unzip and extract the installation files.</span></li>
+                           <li class="stepexpand"><span>Change your working directory to where the installation files were extracted</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Application Express is installed as SYS specifying the SYSDBA role. For example:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic"><code class="codeph">SYS_password</code></span>
+</pre></li>
+                                    <li>
+                                       <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Run <code class="codeph">apexins_nocdb.sql</code> or <code class="codeph">apxrtins_nocdb.sql</code> using catcon.pl like the following example:</span><div><pre class="oac_no_warn" dir="ltr">host &amp;OH_HOME/perl/bin/perl -I 
+
+<span class="italic">&amp;OH_HOME</span>/rdbms/admin &amp;OH_HOME/rdbms/admin/catcon.pl -b apexins -c '<span class="italic">&lt;PDB_name&gt;</span>'  apexins_nocdb.sql --pSYSAUX --pSYSAUX --pTEMP --p/i/ --p1,2,3   
+</pre><p>Where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">&amp;OH_HOME</code></span> represents the full path to the Oracle home
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>&lt;<span class="italic"><code class="codeph">PDB_name</code></span>&gt; is the name of the PDB you are patching
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Follow the instructions outlined in the patch set notes for updating the images directory based on the Web Server you are using. </span></li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-4594B8A4-806E-401D-8D5D-82050EFF00E6" title="Learn how to patch or upgrade Application Express in a PDB.">Patching or Upgrading Application Express in a PDB</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

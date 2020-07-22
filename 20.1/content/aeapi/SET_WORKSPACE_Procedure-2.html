@@ -1,0 +1,147 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="SET_WORKSPACE Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, SET_WORKSPACE Procedure">
+      <meta name="keywords" content="APEX_UTIL, SET_WORKSPACE Procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SET_WORKSPACE Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="SET_USERNAME-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="SHOW_HIGH_CONTRAST_MODE_TOGGLE-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SET_USERNAME-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SHOW_HIGH_CONTRAST_MODE_TOGGLE-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SET_WORKSPACE Procedure</li>
+            </ol>
+            <a id="GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F" name="GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F"></a>
+            
+            <h2 id="AEAPI-GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F" class="sect2"><span class="enumeration_section">39.133 </span>SET_WORKSPACE Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure sets the current workspace.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F__GUID-1927772A-B35D-4FE8-9A79-9798791809A5">Syntax</p><pre class="pre codeblock"><code>PROCEDURE SET_WORKSPACE (
+    p_workspace IN VARCHAR2 ); </code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F__GUID-C758F74F-402F-4B85-AD9B-2B3E338AA426">Parameters</p>
+                  <p><a href="SET_WORKSPACE_Procedure-2.html#GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F__GUID-E3153F37-BFF8-42F0-BE0E-125F806F88EE" title="Parameter descriptions for the SET_WORKSPACE procedure.">Table 39-113</a> describes the parameters available in <code class="codeph">SET_WORKSPACE</code>
+                procedure.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F__GUID-E3153F37-BFF8-42F0-BE0E-125F806F88EE">
+                  <p class="titleintable">Table 39-113 SET_WORKSPACE Procedure Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="SET_WORKSPACE Procedure Parameters" summary="Parameter descriptions for the SET_WORKSPACE procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" id="d205980e76">Parameters</th>
+                           <th align="left" valign="bottom" id="d205980e79">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" id="d205980e84" headers="d205980e76 ">
+                              <p><code class="codeph">p_workspace</code></p>
+                           </td>
+                           <td align="left" valign="top" headers="d205980e84 d205980e79 ">
+                              <p>The workspace's short name.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F__GUID-AD3F52DD-28C7-473A-92E7-F948AECA50F0">Example</p>
+                  <p>This example shows how to set the workspace <code class="codeph">MY_WORKSPACE</code>.
+                  </p><pre class="pre codeblock"><code>apex_util.set_workspace (
+    p_workspace =&gt; 'MY_WORKSPACE' );</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

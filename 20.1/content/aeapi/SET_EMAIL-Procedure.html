@@ -1,0 +1,175 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="SET_EMAIL Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, SET_EMAIL procedure, user account, update email address">
+      <meta name="keywords" content="APEX_UTIL, SET_EMAIL procedure, user account, update email address">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-02386891-586E-49E2-847A-A5504E65095E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SET_EMAIL Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="SET_EDITION-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="SET_FIRST_NAME-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SET_EDITION-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SET_FIRST_NAME-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SET_EMAIL Procedure</li>
+            </ol>
+            <a id="GUID-02386891-586E-49E2-847A-A5504E65095E" name="GUID-02386891-586E-49E2-847A-A5504E65095E"></a><a id="AEAPI1826"></a><a id="AEAPI1827"></a><a id="AEAPI1828"></a><a id="AEAPI1829"></a><a id="AEAPI177"></a>
+            
+            <h2 id="AEAPI-GUID-02386891-586E-49E2-847A-A5504E65095E" class="sect2"><span class="enumeration_section">39.113 </span>SET_EMAIL Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure updates a user account with a new email address. To execute this procedure, the current user must have administrative privileges in the workspace.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-02386891-586E-49E2-847A-A5504E65095E__GUID-666FB98A-1D42-4366-86F1-3406EB2314B6">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.SET_EMAIL(
+    p_userid IN NUMBER,
+    p_email  IN VARCHAR2);
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-02386891-586E-49E2-847A-A5504E65095E__GUID-F0E29306-B6AE-4BC0-A653-C2E00C12C968">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-02386891-586E-49E2-847A-A5504E65095E__GUID-9786426F-4394-45A5-83D1-2526B2CDAD69">
+                  <p class="titleintable">Table 39-97 SET_EMAIL Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="SET_EMAIL Parameters" summary="Parameter descriptions for the SET_EMAIL procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d202216e77">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d202216e80">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d202216e85" headers="d202216e77 ">
+                              <p><code class="codeph">p_userid</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d202216e85 d202216e80 ">
+                              <p>The numeric ID of the user account.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d202216e93" headers="d202216e77 ">
+                              <p><code class="codeph">p_email</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d202216e93 d202216e80 ">
+                              <p>The email address to be saved in user account.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-02386891-586E-49E2-847A-A5504E65095E__GUID-EC5736A1-4C67-466F-9CFD-5AB0222346F2">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example shows how to use the <code class="codeph">SET_EMAIL</code> procedure to set the value of <code class="codeph">EMAIL</code> to 'frank.scott@somewhere.com' for the user 'FRANK'.
+                  </p><pre class="pre codeblock"><code>BEGIN
+    APEX_UTIL.SET_EMAIL(
+        p_userid  =&gt; APEX_UTIL.GET_USER_ID('FRANK'),
+        p_email   =&gt; 'frank.scott@somewhere.com');
+END;
+</code></pre><div class="infoboxnotealso" id="GUID-02386891-586E-49E2-847A-A5504E65095E__GUID-45A1EE12-F306-4A16-ADAA-8F86B99957B9">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="GET_EMAIL-Function.html#GUID-4C914173-426C-4D40-A11F-FA51EF63C0DA">GET_EMAIL Function</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="GET_USER_ID-Function.html#GUID-26B8E977-A356-4A79-B35A-6C61C8C7A054">GET_USER_ID Function</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

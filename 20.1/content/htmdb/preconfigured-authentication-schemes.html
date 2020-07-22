@@ -1,0 +1,871 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Preconfigured Authentication Schemes">
+      <meta name="abstract" content="Learn about the preconfigured authentication schemes.">
+      <meta name="description" content="Learn about the preconfigured authentication schemes.">
+      <meta name="DC.subject" content="authentication, preconfigured authentication schemes, preconfigured authentication schemes, authentication schemes, Application Express Accounts, cookie user accounts, Application Express Accounts authentication, setting up, Custom authentication, Custom Authentication, Database Account Credentials, Database Account Credentials authentication, setting up, HTTP Header Variable, HTTP Header Variable authentication, LDAP Directory, LDAP Directory Verification, DAD Credentials, DAD Credentials Verification, Open Door Credentials, Open Door Credentials, Single Sign-On verification, Single Sign-On, Social Sign-In, Social Sign-In Authentication">
+      <meta name="keywords" content="authentication, preconfigured authentication schemes, preconfigured authentication schemes, authentication schemes, Application Express Accounts, cookie user accounts, Application Express Accounts authentication, setting up, Custom authentication, Custom Authentication, Database Account Credentials, Database Account Credentials authentication, setting up, HTTP Header Variable, HTTP Header Variable authentication, LDAP Directory, LDAP Directory Verification, DAD Credentials, DAD Credentials Verification, Open Door Credentials, Open Door Credentials, Single Sign-On verification, Single Sign-On, Social Sign-In, Social Sign-In Authentication">
+      <meta name="DC.Relation" scheme="URI" content="establishing-user-identity-through-authentication.html#GUID-45C4B1CD-4231-4FE9-8B5B-C90611F5F57B">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-CCB71436-57AC-40BD-B8D9-7B5B6C128D12">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-27D42A6E-8BF5-44CB-BDB3-E7F544CDE267">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-0F531ADC-AEB3-43BE-9F16-BAD871A12B01">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-05061E24-672C-4E8E-870B-A4E8D0251523">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-7EA9D101-971E-4FA4-8C4B-ED25554CABC7">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-2CC60B63-5627-460C-9E39-0E79A64456BC">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-A49D0C0F-79D6-484C-908E-BEFF80910645">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-00A28D2C-6EE2-4042-988A-9E701C6C26F3">
+      <meta name="DC.Relation" scheme="URI" content="preconfigured-authentication-schemes.html#GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about the preconfigured authentication schemes.">
+      <meta name="description" content="Learn about the preconfigured authentication schemes.">
+      <title>Understanding Preconfigured Authentication Schemes</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Learn about the preconfigured authentication schemes.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="creating-an-authentication-scheme.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-existing-authentication-schemes.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="creating-an-authentication-scheme.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-existing-authentication-schemes.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-security.html" property="item" typeof="WebPage"><span property="name">Managing Application Security</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="establishing-user-identity-through-authentication.html" property="item" typeof="WebPage"><span property="name">Establishing User Identity Through Authentication</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Preconfigured Authentication Schemes</li>
+            </ol>
+            <a id="GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" name="GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B"></a><a id="HTMDB25767"></a>
+            
+            <h2 id="HTMDB-GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" class="sect2"><span class="enumeration_section">21.4.3 </span>Understanding Preconfigured Authentication Schemes
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about the preconfigured authentication schemes.</p>
+               <p>When you create an authentication scheme from the gallery you can select a preconfigured authentication scheme which follows a standard behavior for authentication and session management. Note that if you create a new authentication scheme, it automatically becomes the current authentication scheme for the selected application. This section describes all preconfigured authentication schemes that ship with Oracle Application Express.</p>
+               <div class="infobox-tip" id="GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B__GUID-E7652C21-41FF-446E-933B-203F597D1C80">
+                  <p class="notep1">Tip:</p>
+                  <p>Authentication schemes support plug-ins. To learn more, see <span class="q">"<a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a>."</span></p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-CCB71436-57AC-40BD-B8D9-7B5B6C128D12">Application Express Accounts</a><br>Application Express Accounts are user accounts that are created within and managed in the Oracle Application Express user repository. When you use this method, your application is authenticated against these accounts.
+                  </li>
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-27D42A6E-8BF5-44CB-BDB3-E7F544CDE267">Custom Authentication</a><br>Creating a Custom Authentication scheme from scratch to have complete control over your authentication interface.
+                  </li>
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-0F531ADC-AEB3-43BE-9F16-BAD871A12B01">Database Accounts</a><br>Database Account Credentials authentication utilizes database schema accounts to authenticate users.
+                  </li>
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-05061E24-672C-4E8E-870B-A4E8D0251523">HTTP Header Variable</a><br>Authenticate users externally by storing the username in a HTTP Header variable set by the web server.
+                  </li>
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-7EA9D101-971E-4FA4-8C4B-ED25554CABC7">LDAP Directory</a><br>Authenticate a user and password with an authentication request to a LDAP server.
+                  </li>
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-2CC60B63-5627-460C-9E39-0E79A64456BC">No Authentication (using DAD)</a><br>Adopts the current database user. This approach can be used in combination with a mod_plsql Database Access Descriptor (DAD) configuration that uses basic authentication to set the database session user.
+                  </li>
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-A49D0C0F-79D6-484C-908E-BEFF80910645">Open Door Credentials</a><br>Enable anyone to access your application using a built-in login page that captures a user name.
+                  </li>
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-00A28D2C-6EE2-4042-988A-9E701C6C26F3">Oracle Application Server Single Sign-On Server</a><br>Delegates authentication to the Oracle AS Single Sign-On (SSO) Server. To use this authentication scheme, your site must have been registered as a partner application with the SSO server.
+                  </li>
+                  <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8">Social Sign-In</a><br>Social Sign-In supports authentication with Google, Facebook, and other         social network that supports <code class="codeph">OpenID Connect</code> or <code class="codeph">OAuth2</code>         standards.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="establishing-user-identity-through-authentication.html#GUID-45C4B1CD-4231-4FE9-8B5B-C90611F5F57B" title="Use authentication to establish a user's identity to control access to an application. Authentication may require a user identify a user name and password or could involve the use of digital certificates or a secure key.">Establishing User Identity Through Authentication</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25768"></a><div class="props_rev_3"><a id="GUID-CCB71436-57AC-40BD-B8D9-7B5B6C128D12" name="GUID-CCB71436-57AC-40BD-B8D9-7B5B6C128D12"></a><h3 id="HTMDB-GUID-CCB71436-57AC-40BD-B8D9-7B5B6C128D12" class="sect3"><span class="enumeration_section">21.4.3.1 </span>Application Express Accounts
+               </h3>
+               <p>Application Express Accounts are user accounts that are created within and managed in the Oracle Application Express user repository. When you use this method, your application is authenticated against these accounts.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-F99944A9-BEEB-4E87-9BA2-C5AF9D51F408">About Application Express Accounts</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-30DF236B-24E7-4FA8-8A4A-266BD65BB493">Setting Up Application Express Accounts Authentication</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29415"></a><div class="props_rev_3"><a id="GUID-F99944A9-BEEB-4E87-9BA2-C5AF9D51F408" name="GUID-F99944A9-BEEB-4E87-9BA2-C5AF9D51F408"></a><h4 id="HTMDB-GUID-F99944A9-BEEB-4E87-9BA2-C5AF9D51F408" class="sect4"><span class="enumeration_section">21.4.3.1.1 </span>About Application Express Accounts
+                  </h4>
+                  <div>
+                     <p>Application Express Accounts authentication requires that a database user (schema) exists
+            in the local database. When using this method, the user name and password of the
+            database account is used to authenticate the user.</p>
+                     <p>Application Express Accounts is a good solution when:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>You want control of the user account repository.</p>
+                        </li>
+                        <li>
+                           <p>User name and password-based approach to security is sufficient.</p>
+                        </li>
+                        <li>
+                           <p>You do not need to integrate into a single sign-on framework.</p>
+                        </li>
+                     </ul>
+                     <p>Application Express Accounts is an especially good approach when you must get a group of users up and running on a new application quickly. </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-F99944A9-BEEB-4E87-9BA2-C5AF9D51F408__GUID-CAF33F0E-3B14-4D68-A7A7-6BE8CE7B7D76">
+                        <p class="notep1">See Also:</p>
+                        <p>"Managing Application Express Users" in <a href="../aeadm/managing-users-in-a-workspace.html#AEADM149" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CCB71436-57AC-40BD-B8D9-7B5B6C128D12" title="Application Express Accounts are user accounts that are created within and managed in the Oracle Application Express user repository. When you use this method, your application is authenticated against these accounts.">Application Express Accounts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25952"></a><div class="props_rev_3"><a id="GUID-30DF236B-24E7-4FA8-8A4A-266BD65BB493" name="GUID-30DF236B-24E7-4FA8-8A4A-266BD65BB493"></a><h4 id="HTMDB-GUID-30DF236B-24E7-4FA8-8A4A-266BD65BB493" class="sect4"><span class="enumeration_section">21.4.3.1.2 </span>Setting Up Application Express Accounts Authentication
+                  </h4>
+                  <div>
+                     <p>To set up Application Express Accounts:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name: </span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">Application Express Accounts</span>.</span></li>
+                              <li><span>Click <span class="bold">Create Authentication Scheme</span>.</span></li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CCB71436-57AC-40BD-B8D9-7B5B6C128D12" title="Application Express Accounts are user accounts that are created within and managed in the Oracle Application Express user repository. When you use this method, your application is authenticated against these accounts.">Application Express Accounts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25778"></a><div class="props_rev_3"><a id="GUID-27D42A6E-8BF5-44CB-BDB3-E7F544CDE267" name="GUID-27D42A6E-8BF5-44CB-BDB3-E7F544CDE267"></a><h3 id="HTMDB-GUID-27D42A6E-8BF5-44CB-BDB3-E7F544CDE267" class="sect3"><span class="enumeration_section">21.4.3.2 </span>Custom Authentication
+               </h3>
+               <p>Creating a Custom Authentication scheme from scratch to have complete control over your authentication interface.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-FD8526CE-0CFC-42CA-A1CF-0E656A889C6A">About Custom Authentication</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-21FB6C0E-1921-4E53-BE3C-195A5050CEDA">Setting Up Custom Authentication</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-84997769-B5A5-423F-9821-AFF2898C4C4D">About Session Management Security</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29416"></a><div class="props_rev_3"><a id="GUID-FD8526CE-0CFC-42CA-A1CF-0E656A889C6A" name="GUID-FD8526CE-0CFC-42CA-A1CF-0E656A889C6A"></a><h4 id="HTMDB-GUID-FD8526CE-0CFC-42CA-A1CF-0E656A889C6A" class="sect4"><span class="enumeration_section">21.4.3.2.1 </span>About Custom Authentication
+                  </h4>
+                  <div>
+                     <p>Custom Authentication is the best approach for applications when any of the following is true: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Database authentication or other methods are not adequate. </p>
+                        </li>
+                        <li>
+                           <p>You want to develop your own login form and associated methods. </p>
+                        </li>
+                        <li>
+                           <p>You want to control security aspects of session management. </p>
+                        </li>
+                        <li>
+                           <p>You want to record or audit activity at the user or session level. </p>
+                        </li>
+                        <li>
+                           <p>You want to enforce session activity or expiry limits. </p>
+                        </li>
+                        <li>
+                           <p>You want to program conditional one-way redirection logic before Oracle Application Express page processing. </p>
+                        </li>
+                        <li>
+                           <p>You want to integrate your application with non-Oracle Application Express applications using a common session management framework. </p>
+                        </li>
+                        <li>
+                           <p>Your application consists of multiple applications that operate seamlessly (for example, more than one application ID). </p>
+                        </li>
+                     </ul>
+                     <div class="infobox-tip" id="GUID-FD8526CE-0CFC-42CA-A1CF-0E656A889C6A__GUID-DF1FF601-1722-45BB-8CE0-1BFD9016CD43">
+                        <p class="notep1">Tip:</p>
+                        <p>If you are planning on using the same authentication scheme for multiple applications, consider writing a custom authentication plug-in. See <span class="q">"<a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a>."</span> 
+                        </p>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-27D42A6E-8BF5-44CB-BDB3-E7F544CDE267" title="Creating a Custom Authentication scheme from scratch to have complete control over your authentication interface.">Custom Authentication</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB28966"></a><div class="props_rev_3"><a id="GUID-21FB6C0E-1921-4E53-BE3C-195A5050CEDA" name="GUID-21FB6C0E-1921-4E53-BE3C-195A5050CEDA"></a><h4 id="HTMDB-GUID-21FB6C0E-1921-4E53-BE3C-195A5050CEDA" class="sect4"><span class="enumeration_section">21.4.3.2.2 </span>Setting Up Custom Authentication
+                  </h4>
+                  <div>
+                     <p>To create a custom authentication scheme:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application. </span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name: </span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">Custom</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Fill in the appropriate fields. </span><div>
+                              <p>To learn more about a specific field, see field-level Help.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="bold">Create Authentication Scheme</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-21FB6C0E-1921-4E53-BE3C-195A5050CEDA__GUID-183940AB-D732-494A-B409-192C8C7FA55C">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-oracle-application-express-documentation.html#GUID-86D5F514-0613-4A96-9400-B320B03699C9">Viewing Help</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-27D42A6E-8BF5-44CB-BDB3-E7F544CDE267" title="Creating a Custom Authentication scheme from scratch to have complete control over your authentication interface.">Custom Authentication</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25779"></a><div class="props_rev_3"><a id="GUID-84997769-B5A5-423F-9821-AFF2898C4C4D" name="GUID-84997769-B5A5-423F-9821-AFF2898C4C4D"></a><h4 id="HTMDB-GUID-84997769-B5A5-423F-9821-AFF2898C4C4D" class="sect4"><span class="enumeration_section">21.4.3.2.3 </span>About Session Management Security
+                  </h4>
+                  <div>
+                     <p>When running custom authentication, Oracle Application Express attempts to prevent two improper situations: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Intentional attempts by a user to access session state belonging to someone else. However, users can still type in an arbitrary application session ID into the URL. </p>
+                        </li>
+                        <li>
+                           <p>Inadvertent access to a stale session state (probably belonging to the same user from an earlier time). This would commonly result from using bookmarks to application pages. </p>
+                        </li>
+                     </ul>
+                     <p>Oracle Application Express checks that the user identity token set by the custom authentication function matches the user identity recorded when the application session was first created. If the user has not yet been authenticated and the user identity is not yet known, the session state being accessed does not belong to someone else. These checks determine whether the session ID in the request can be used. If not, the Application Express engine redirects back the same page using an appropriate session ID. </p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-27D42A6E-8BF5-44CB-BDB3-E7F544CDE267" title="Creating a Custom Authentication scheme from scratch to have complete control over your authentication interface.">Custom Authentication</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25953"></a><div class="props_rev_3"><a id="GUID-0F531ADC-AEB3-43BE-9F16-BAD871A12B01" name="GUID-0F531ADC-AEB3-43BE-9F16-BAD871A12B01"></a><h3 id="HTMDB-GUID-0F531ADC-AEB3-43BE-9F16-BAD871A12B01" class="sect3"><span class="enumeration_section">21.4.3.3 </span>Database Accounts
+               </h3>
+               <p>Database Account Credentials authentication utilizes database schema accounts to authenticate users.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-C08B40AF-C174-4191-9339-02E1C785C38F">About Database Account Credentials</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-466ECF35-A08F-49E2-A70A-9343C27E649F">Setting Up Database Account Credentials</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29417"></a><div class="props_rev_3"><a id="GUID-C08B40AF-C174-4191-9339-02E1C785C38F" name="GUID-C08B40AF-C174-4191-9339-02E1C785C38F"></a><h4 id="HTMDB-GUID-C08B40AF-C174-4191-9339-02E1C785C38F" class="sect4"><span class="enumeration_section">21.4.3.3.1 </span>About Database Account Credentials
+                  </h4>
+                  <div>
+                     <p>Database Account Credentials requires that a database user (schema) exist in the local database. This authentication method uses the database account user name and password to authenticate the user. Choose Database Account Credentials if having one database account for each named user of your application is feasible and account maintenance using database tools meets your needs.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-0F531ADC-AEB3-43BE-9F16-BAD871A12B01" title="Database Account Credentials authentication utilizes database schema accounts to authenticate users.">Database Accounts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25954"></a><div class="props_rev_3"><a id="GUID-466ECF35-A08F-49E2-A70A-9343C27E649F" name="GUID-466ECF35-A08F-49E2-A70A-9343C27E649F"></a><h4 id="HTMDB-GUID-466ECF35-A08F-49E2-A70A-9343C27E649F" class="sect4"><span class="enumeration_section">21.4.3.3.2 </span>Setting Up Database Account Credentials
+                  </h4>
+                  <div>
+                     <p>To set up Database Account Credentials:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name: </span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">Database Accounts</span>.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Create Authentication Scheme</span>.</span></li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-0F531ADC-AEB3-43BE-9F16-BAD871A12B01" title="Database Account Credentials authentication utilizes database schema accounts to authenticate users.">Database Accounts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB28967"></a><div class="props_rev_3"><a id="GUID-05061E24-672C-4E8E-870B-A4E8D0251523" name="GUID-05061E24-672C-4E8E-870B-A4E8D0251523"></a><h3 id="HTMDB-GUID-05061E24-672C-4E8E-870B-A4E8D0251523" class="sect3"><span class="enumeration_section">21.4.3.4 </span>HTTP Header Variable
+               </h3>
+               <p>Authenticate users externally by storing the username in a HTTP Header variable set by the web server.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-D28ABD45-EC7C-4BA7-BA54-41824D03D77E">About HTTP Header Variable</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-DCF33CEF-0996-4AAF-89A3-D7E2589E5585">Setting Up HTTP Header Variable</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29418"></a><div class="props_rev_3"><a id="GUID-D28ABD45-EC7C-4BA7-BA54-41824D03D77E" name="GUID-D28ABD45-EC7C-4BA7-BA54-41824D03D77E"></a><h4 id="HTMDB-GUID-D28ABD45-EC7C-4BA7-BA54-41824D03D77E" class="sect4"><span class="enumeration_section">21.4.3.4.1 </span>About HTTP Header Variable
+                  </h4>
+                  <div>
+                     <p>HTTP Header Variable supports the use of header variables to identify a user and to create an Application Express user session. Use HTTP Header Variable authentication scheme if your company employs a centralized web authentication solution like Oracle Access Manager which provides single sign-on across applications and technologies. User credential verification is performed by these systems and they pass the user's name to Oracle Application Express using a HTTP header variable such as "REMOTE_USER" (which is the default).</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-05061E24-672C-4E8E-870B-A4E8D0251523" title="Authenticate users externally by storing the username in a HTTP Header variable set by the web server.">HTTP Header Variable</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB28968"></a><div class="props_rev_3"><a id="GUID-DCF33CEF-0996-4AAF-89A3-D7E2589E5585" name="GUID-DCF33CEF-0996-4AAF-89A3-D7E2589E5585"></a><h4 id="HTMDB-GUID-DCF33CEF-0996-4AAF-89A3-D7E2589E5585" class="sect4"><span class="enumeration_section">21.4.3.4.2 </span>Setting Up HTTP Header Variable
+                  </h4>
+                  <div>
+                     <p>To set up HTTP Header Variable:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name: </span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">HTTP Header Variable</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Fill in the appropriate fields.</span><div>
+                              <p>To learn more about a specific field, see field-level Help.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Authentication Scheme</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-DCF33CEF-0996-4AAF-89A3-D7E2589E5585__GUID-35D4DFB4-8B85-4A84-8C3E-0752DD8E1B9D">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-oracle-application-express-documentation.html#GUID-86D5F514-0613-4A96-9400-B320B03699C9">Viewing Help</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-05061E24-672C-4E8E-870B-A4E8D0251523" title="Authenticate users externally by storing the username in a HTTP Header variable set by the web server.">HTTP Header Variable</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25955"></a><div class="props_rev_3"><a id="GUID-7EA9D101-971E-4FA4-8C4B-ED25554CABC7" name="GUID-7EA9D101-971E-4FA4-8C4B-ED25554CABC7"></a><h3 id="HTMDB-GUID-7EA9D101-971E-4FA4-8C4B-ED25554CABC7" class="sect3"><span class="enumeration_section">21.4.3.5 </span>LDAP Directory
+               </h3>
+               <p>Authenticate a user and password with an authentication request to a LDAP server.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-AFE8D459-0D0F-41C2-97B0-379FFC2E409D">About LDAP Directory Verification</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-10CE9416-DC04-449A-A734-72C7E069264D">Setting Up LDAP Directory Verification</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29419"></a><div class="props_rev_3"><a id="GUID-AFE8D459-0D0F-41C2-97B0-379FFC2E409D" name="GUID-AFE8D459-0D0F-41C2-97B0-379FFC2E409D"></a><h4 id="HTMDB-GUID-AFE8D459-0D0F-41C2-97B0-379FFC2E409D" class="sect4"><span class="enumeration_section">21.4.3.5.1 </span>About LDAP Directory Verification
+                  </h4>
+                  <div>
+                     <p>You can configure any authentication scheme that uses a login page to use Lightweight Directory Access Protocol (LDAP) to verify the user name and password submitted on the login page. </p>
+                     <p><span>App Builder</span> includes wizards and edit pages that explain how to configure this option. These wizards assume that an LDAP directory accessible to your application for this purpose already exists and that it can respond to a <code class="codeph">SIMPLE_BIND_S</code> call for credentials verification. When you create an LDAP Credentials authentication scheme, the wizard requests and saves the LDAP host name, LDAP port, DN string, and determines whether to use SSL, exact DN, and optionally a search filter if not using exact DN. An optional preprocessing function can be specified to adjust formatting of the user name passed to the API.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-7EA9D101-971E-4FA4-8C4B-ED25554CABC7" title="Authenticate a user and password with an authentication request to a LDAP server.">LDAP Directory</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25956"></a><div class="props_rev_3"><a id="GUID-10CE9416-DC04-449A-A734-72C7E069264D" name="GUID-10CE9416-DC04-449A-A734-72C7E069264D"></a><h4 id="HTMDB-GUID-10CE9416-DC04-449A-A734-72C7E069264D" class="sect4"><span class="enumeration_section">21.4.3.5.2 </span>Setting Up LDAP Directory Verification
+                  </h4>
+                  <div>
+                     <p>To set up LDAP Directory:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application. </span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name: </span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">LDAP Directory</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Settings:</span><ol type="a">
+                              <li class="substepexpand"><span>Host - Enter the hostname of your LDAP directory server.</span></li>
+                              <li class="substepexpand"><span>Port - Enter the port number of your LDAP directory host. The default is 389.</span></li>
+                              <li class="substepexpand"><span>Use SSL - Choose whether to use SSL to bind to the LDAP directory. If SSL with Authentication is chosen, a wallet must be configured for the Application Express instance.</span></li>
+                              <li class="substepexpand"><span>Distinguished Name (DN) String - Enter the pattern used to construct the fully qualified distinguished name (DN) string to <code class="codeph">DBMS_LDAP.SIMPLE_BIND_S</code> if using exact DN or the search base if using non-exact DN. Use <code class="codeph">%LDAP_USER%</code> as a placeholder for the username. For example:</span><div>
+                                    <p><span class="uicontrol bold">Exact DN:</span></p><pre class="oac_no_warn" dir="ltr">cn=%LDAP_USER%,l=amer,dc=yourdomain,dc=com
+</pre><p><span class="uicontrol bold">Non-Exact DN (Search Base):</span></p><pre class="oac_no_warn" dir="ltr">Non-Exact DN (Search Base)
+</pre></div>
+                              </li>
+                              <li class="substepexpand"><span>Use Distinguished Name (DN) - Choose whether the LDAP Distinguished Name (DN) String is exact or non-exact. If non-exact, LDAP Distinguished Name (DN) is the search base and you must supply a Search Filter.</span></li>
+                              <li class="substepexpand"><span>LDAP Username Edit Function - You may provide additional code to be executed to transform the username into a format perfectly suited to the LDAP directory entry or LDAP username. The bind variable <code class="codeph">:USERNAME</code> contains the name the end user specified. For example, the following code calls a function which replaces all periods (<code class="codeph">.</code>) with underscores (_) in the DN string:</span><div><pre class="oac_no_warn" dir="ltr">return apex_custom_auth.ldap_dnprep(p_username =&gt; :USERNAME);
+</pre></div>
+                              </li>
+                              <li class="substepexpand"><span>Username Escaping - Choose how Oracle Application Express escapes special characters in <code class="codeph">%LDAP_USER%</code>. The correct value for this attribute depends on the used LDAP server and whether a LDAP Username Edit Function already escapes special characters.</span></li>
+                           </ol>
+                           <div>
+                              <p>To learn more about a specific field, see field-level Help.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Authentication Scheme</span>.</span><div>
+                              <div class="infoboxnote" id="GUID-10CE9416-DC04-449A-A734-72C7E069264D__GUID-921FE5C1-4B12-4483-AD90-A0846C65A7DA">
+                                 <p class="notep1">Note:</p>
+                                 <p>If you choose SSL with Authentication as the SSL mode, a wallet must be set up using the Oracle Application Express instance settings. Additionally, the root certification of the LDAP server must be imported into that wallet as a trusted certificate. </p>
+                              </div>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-10CE9416-DC04-449A-A734-72C7E069264D__GUID-74DD7C77-0560-439D-A694-6456FBAF8CF1">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="../aeadm/configuring-instance-settings.html#AEADM-GUID-BBE43F61-DA0B-4517-AC5E-D06C4C69D526" target="_blank">Configuring Wallet
+                                                  Information</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmdb&amp;id=DBSEG-GUID-22ED8DAB-6DB2-44F1-9FFF-C3B805E47C35" target="_blank">About Oracle Wallet
+                                                  Manager</a>"</span> in <span><cite>Oracle Database Security Guide</cite></span></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-7EA9D101-971E-4FA4-8C4B-ED25554CABC7" title="Authenticate a user and password with an authentication request to a LDAP server.">LDAP Directory</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25957"></a><div class="props_rev_3"><a id="GUID-2CC60B63-5627-460C-9E39-0E79A64456BC" name="GUID-2CC60B63-5627-460C-9E39-0E79A64456BC"></a><h3 id="HTMDB-GUID-2CC60B63-5627-460C-9E39-0E79A64456BC" class="sect3"><span class="enumeration_section">21.4.3.6 </span>No Authentication (using DAD)
+               </h3>
+               <p>Adopts the current database user. This approach can be used in combination with a mod_plsql Database Access Descriptor (DAD) configuration that uses basic authentication to set the database session user.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-0F3B0D00-3E94-4D1C-8D50-61F122E987B1">About DAD Credentials Verification</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-3088937D-6ACE-4820-A72D-EEAF414EE375">Setting Up DAD Credentials Verification</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29420"></a><div class="props_rev_3"><a id="GUID-0F3B0D00-3E94-4D1C-8D50-61F122E987B1" name="GUID-0F3B0D00-3E94-4D1C-8D50-61F122E987B1"></a><h4 id="HTMDB-GUID-0F3B0D00-3E94-4D1C-8D50-61F122E987B1" class="sect4"><span class="enumeration_section">21.4.3.6.1 </span>About DAD Credentials Verification
+                  </h4>
+                  <div>
+                     <p>DAD credentials verification uses the Oracle database native authentication and user mechanisms to authenticate users using a basic authentication scheme. This authentication scheme gets the user name from the DAD either as the value stored in the DAD configuration or, if the account information is not stored in the DAD configuration, as the user name captured using the basic authentication challenge. </p>
+                     <p>To use DAD credentials verification:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Each application user must have a user account in the Oracle database.</p>
+                        </li>
+                        <li>
+                           <p>You must configure a PL/SQL DAD for basic authentication (without account information).</p>
+                           <p>This results in one user name/password challenge for browser session for your application users. The user identity token is then made available in the <code class="codeph">APP_USER</code> item.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>DAD database authentication is useful when you must implement an authentication method that requires minimal setup for a manageable number of users. Ideally these users would have self-managed accounts in the database and your use of this authentication method would be short lived (for example, during the demonstration or prototyping stages of development). </p>
+                     <p>The main drawback of this approach is burdensome account maintenance, especially if users do not administer their own passwords, or if their database accounts exist only to facilitate authentication to your application.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-2CC60B63-5627-460C-9E39-0E79A64456BC" title="Adopts the current database user. This approach can be used in combination with a mod_plsql Database Access Descriptor (DAD) configuration that uses basic authentication to set the database session user.">No Authentication (using DAD)</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25958"></a><div class="props_rev_3"><a id="GUID-3088937D-6ACE-4820-A72D-EEAF414EE375" name="GUID-3088937D-6ACE-4820-A72D-EEAF414EE375"></a><h4 id="HTMDB-GUID-3088937D-6ACE-4820-A72D-EEAF414EE375" class="sect4"><span class="enumeration_section">21.4.3.6.2 </span>Setting Up DAD Credentials Verification
+                  </h4>
+                  <div>
+                     <p>To set up DAD Credentials Verification:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name:</span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">No Authentication</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Authentication Scheme</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-2CC60B63-5627-460C-9E39-0E79A64456BC" title="Adopts the current database user. This approach can be used in combination with a mod_plsql Database Access Descriptor (DAD) configuration that uses basic authentication to set the database session user.">No Authentication (using DAD)</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB26008"></a><div class="props_rev_3"><a id="GUID-A49D0C0F-79D6-484C-908E-BEFF80910645" name="GUID-A49D0C0F-79D6-484C-908E-BEFF80910645"></a><h3 id="HTMDB-GUID-A49D0C0F-79D6-484C-908E-BEFF80910645" class="sect3"><span class="enumeration_section">21.4.3.7 </span>Open Door Credentials
+               </h3>
+               <div>
+                  <p>Enable anyone to access your application using a built-in login page that captures a user name.</p>
+                  <p>Open Door Credentials enables anyone to access your application using a login page
+            that captures a user name. This authentication scheme is useful during application
+            development.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-FCEFAA7A-C8A7-4A35-BE03-4B888DDD5F02">Setting Up Open Door Credentials</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB25951"></a><div class="props_rev_3"><a id="GUID-FCEFAA7A-C8A7-4A35-BE03-4B888DDD5F02" name="GUID-FCEFAA7A-C8A7-4A35-BE03-4B888DDD5F02"></a><h4 id="HTMDB-GUID-FCEFAA7A-C8A7-4A35-BE03-4B888DDD5F02" class="sect4"><span class="enumeration_section">21.4.3.7.1 </span>Setting Up Open Door Credentials
+                  </h4>
+                  <div>
+                     <p>To set up Open Door Credentials:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application. </span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name: </span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">Open Door Credentials</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Authentication Scheme</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-A49D0C0F-79D6-484C-908E-BEFF80910645" title="Enable anyone to access your application using a built-in login page that captures a user name.">Open Door Credentials</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25959"></a><div class="props_rev_3"><a id="GUID-00A28D2C-6EE2-4042-988A-9E701C6C26F3" name="GUID-00A28D2C-6EE2-4042-988A-9E701C6C26F3"></a><h3 id="HTMDB-GUID-00A28D2C-6EE2-4042-988A-9E701C6C26F3" class="sect3"><span class="enumeration_section">21.4.3.8 </span>Oracle Application Server Single Sign-On Server
+               </h3>
+               <p>Delegates authentication to the Oracle AS Single Sign-On (SSO) Server. To use this authentication scheme, your site must have been registered as a partner application with the SSO server.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-F0A0BA9F-27FB-48C2-85AB-13E627906BA9">About Application Server Single Sign-On Server</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-48EFE9F8-C2AA-4AF2-B558-472306F80EBB">Setting Up Oracle Application Server Single Sign-On</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29422"></a><div class="props_rev_3"><a id="GUID-F0A0BA9F-27FB-48C2-85AB-13E627906BA9" name="GUID-F0A0BA9F-27FB-48C2-85AB-13E627906BA9"></a><h4 id="HTMDB-GUID-F0A0BA9F-27FB-48C2-85AB-13E627906BA9" class="sect4"><span class="enumeration_section">21.4.3.8.1 </span>About Application Server Single Sign-On Server
+                  </h4>
+                  <div>
+                     <p>Oracle Application Express applications can operate as partner applications with Oracle Application Server's Single Sign-On (SSO) infrastructure. You must register your application (or register the Application Express engine) as the partner application by following the Oracle Application Server instructions for registering partner applications and install the Oracle 9iAS SSO Software Developer Kit (SDK).</p>
+                     <p>If you choose this approach, your application will not use an integrated login page. Instead, when a user accesses your application in a new browser session, the Application Express engine redirects to the Single Sign-On login page. After the user is authenticated by SSO, the SSO components redirect back to your application, passing the user identity and other information to the Application Express engine. The user can then continue to use the application until they log off, terminate their browser session, or until some other session-terminating event occurs.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-00A28D2C-6EE2-4042-988A-9E701C6C26F3" title="Delegates authentication to the Oracle AS Single Sign-On (SSO) Server. To use this authentication scheme, your site must have been registered as a partner application with the SSO server.">Oracle Application Server Single Sign-On Server</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25960"></a><div class="props_rev_3"><a id="GUID-48EFE9F8-C2AA-4AF2-B558-472306F80EBB" name="GUID-48EFE9F8-C2AA-4AF2-B558-472306F80EBB"></a><h4 id="HTMDB-GUID-48EFE9F8-C2AA-4AF2-B558-472306F80EBB" class="sect4"><span class="enumeration_section">21.4.3.8.2 </span>Setting Up Oracle Application Server Single Sign-On
+                  </h4>
+                  <div>
+                     <p>To set up Oracle Application Server Single Sign-On:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name: </span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">Oracle Application Server Single Sign-On</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Fill in the appropriate fields.</span><div>
+                              <p>To learn more about a specific field, see field-level Help.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Authentication Scheme</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-48EFE9F8-C2AA-4AF2-B558-472306F80EBB__GUID-B7996151-EF27-4120-A232-B2917CF3363F">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-oracle-application-express-documentation.html#GUID-86D5F514-0613-4A96-9400-B320B03699C9">Viewing Help</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-00A28D2C-6EE2-4042-988A-9E701C6C26F3" title="Delegates authentication to the Oracle AS Single Sign-On (SSO) Server. To use this authentication scheme, your site must have been registered as a partner application with the SSO server.">Oracle Application Server Single Sign-On Server</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8" name="GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8"></a><h3 id="HTMDB-GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8" class="sect3"><span class="enumeration_section">21.4.3.9 </span>Social Sign-In
+               </h3>
+               <p>Social Sign-In supports authentication with Google, Facebook, and other
+        social network that supports <code class="codeph">OpenID Connect</code> or <code class="codeph">OAuth2</code>
+        standards.
+               </p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-8E0C259E-EE05-4497-A00E-8542730876CB">About Social Sign-In</a><br></li>
+                     <li class="ulchildlink"><a href="preconfigured-authentication-schemes.html#GUID-592A3256-F94B-40D8-9DBB-91CA5E4A6D9D">Setting Up Social Sign-In Authentication</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CD382D4A-AC00-4185-B37F-9A5BC9417A7B" title="Learn about the preconfigured authentication schemes.">Understanding Preconfigured Authentication Schemes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-8E0C259E-EE05-4497-A00E-8542730876CB" name="GUID-8E0C259E-EE05-4497-A00E-8542730876CB"></a><h4 id="HTMDB-GUID-8E0C259E-EE05-4497-A00E-8542730876CB" class="sect4"><span class="enumeration_section">21.4.3.9.1 </span>About Social Sign-In
+                  </h4>
+                  <div>
+                     <p>Social Sign-In authentication is primarily useful for the following use cases:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Your application is internet facing and you expect an unknown number of users from social networks to use your application.</p>
+                        </li>
+                        <li>
+                           <p>Your company has standardized on one of these identity providers for authentication:
+                        <code class="codeph">Oracle Identity Cloud Service</code>, an internal <code class="codeph">OpenID
+                        Connect</code> or <code class="codeph">OAuth2</code>.
+                           </p>
+                           
+                           <p>Since these identity providers perform user credential verification,
+                    be aware that anyone who registers with the provider can use your application,
+                    unless you use authorization schemes for protection.</p>
+                        </li>
+                     </ul>
+                     <div class="p"> When registering your application with the identity provider, you need to use the full
+            URI for one of the predefined Oracle Application Express callback URLs. For example,
+            suppose your application URI
+            is:<pre class="pre codeblock"><code>https://www.example.com/apex/f?p=100</code></pre></div>
+                     <p>Then, you can register one of the following:</p><pre class="pre codeblock"><code>https://www.example.com/apex/apex_authentication.callback</code></pre><p>or </p><pre class="pre codeblock"><code>https://www.example.com/apex/apex_authentication.callback2</code></pre><p>Social network authentication providers store a multitude of information about users. You can configure the Social Login authentication scheme to request this information, using the Scope attribute (see Item Help). In the authentication scheme's Post-Authentication procedure, you can access this information using <code class="codeph">APEX_JSON.GET_%</code> function calls.
+                     </p>
+                     <p>You can use multiple authentication schemes in your application, to support more than one Social Login provider and other schemes. </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-8E0C259E-EE05-4497-A00E-8542730876CB__GUID-7C9B9F8D-56AD-444D-BEF4-5331177DFB4D">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="configuring-security-attributes.html#GUID-69485470-823B-4CC0-9E11-1CF144054F53">Authorization</a>"</span> for the authentication scheme attribute <code class="codeph">Switch in Session</code> for details.
+                        </p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8" title="Social Sign-In supports authentication with Google, Facebook, and other social network that supports OpenID Connect or OAuth2 standards.">Social Sign-In</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-592A3256-F94B-40D8-9DBB-91CA5E4A6D9D" name="GUID-592A3256-F94B-40D8-9DBB-91CA5E4A6D9D"></a><h4 id="HTMDB-GUID-592A3256-F94B-40D8-9DBB-91CA5E4A6D9D" class="sect4"><span class="enumeration_section">21.4.3.9.2 </span>Setting Up Social Sign-In Authentication
+                  </h4>
+                  <div>
+                     <div class="p">
+                        <div class="infoboxnote" id="GUID-592A3256-F94B-40D8-9DBB-91CA5E4A6D9D__GUID-55AA39DA-26B4-467C-A497-72C935A6C4F7">
+                           <p class="notep1">Note:</p>
+                           <p>As a prerequisite for creating the Social Sign-In Authentication , you have to request <code class="codeph">OAuth2</code> credentials from the authentication provider and configure your account to support redirects to your application. Check your authentication provider's documentation for the details. The steps below assume that this has been done and that you saved the <code class="codeph">OAuth2</code> credentials in the application's shared components.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <p>To set up Social Sign-In Authentication:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                              <p>The Shared Components page appears. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Security, select <span class="uicontrol bold">Authentication Schemes</span>.</span></li>
+                        <li class="stepexpand"><span>On the Authentication Schemes page, click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>Select <span class="uicontrol bold">Based on a pre-configured scheme from the gallery</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Under Name: </span><ol type="a">
+                              <li><span>Name - Enter the name used to reference the authentication scheme by other application developers.</span></li>
+                              <li><span>Scheme Type - Select <span class="uicontrol bold">Social Sign-In</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Fill in the appropriate fields.</span><div>
+                              <p>To learn more about a specific field, see field-level Help.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="bold">Create Authentication Scheme</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="preconfigured-authentication-schemes.html#GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8" title="Social Sign-In supports authentication with Google, Facebook, and other social network that supports OpenID Connect or OAuth2 standards.">Social Sign-In</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

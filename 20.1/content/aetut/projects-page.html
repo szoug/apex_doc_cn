@@ -1,0 +1,600 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Developing the Projects Page">
+      <meta name="abstract" content="Use the Create Page Wizard and Page Designer to add a sophisticated form page for the Projects report.">
+      <meta name="description" content="Use the Create Page Wizard and Page Designer to add a sophisticated form page for the Projects report.">
+      <meta name="DC.subject" content="Developer Toolbar, runtime, form page, projects page, link (SQL), alias (SQL), region, sub region, Template Options, list of values (LOV), hidden column, dynamic action, opposite action, validation, Processing tab">
+      <meta name="keywords" content="Developer Toolbar, runtime, form page, projects page, link (SQL), alias (SQL), region, sub region, Template Options, list of values (LOV), hidden column, dynamic action, opposite action, validation, Processing tab">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Shakeeb Rahman">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-0BD5F29F-5BA7-4D94-9C5F-038868CF49CC">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use the Create Page Wizard and Page Designer to add a sophisticated form page for the Projects report.">
+      <meta name="description" content="Use the Create Page Wizard and Page Designer to add a sophisticated form page for the Projects report.">
+      <title>Developing the Projects Page</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Tutorial: Building an Application">
+      <meta property="og:description" content="Use the Create Page Wizard and Page Designer to add a sophisticated form page for the Projects report.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Tutorial: Building an Application">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-tutorial-building-application.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-08T10:54:58-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24727-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="creating-initial-application.html" title="Previous" type="text/html">
+      <link rel="next" href="milestones-page.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Tutorial: Building an Application">
+    <meta name="dcterms.isVersionOf" content="AETUT">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="creating-initial-application.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="milestones-page.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Tutorial: Building an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Developing the Projects Page</li>
+            </ol>
+            <a id="GUID-0BD5F29F-5BA7-4D94-9C5F-038868CF49CC" name="GUID-0BD5F29F-5BA7-4D94-9C5F-038868CF49CC"></a>
+            
+            <h2 id="AETUT-GUID-0BD5F29F-5BA7-4D94-9C5F-038868CF49CC" class="sect2"><span class="enumeration_chapter">5 </span>Developing the Projects Page
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use the Create Page Wizard and Page Designer to add a sophisticated form page for the Projects report.</p>
+               <div class="section">
+                  <p class="subhead1" id="GUID-0BD5F29F-5BA7-4D94-9C5F-038868CF49CC__GUID-DD4D1775-ACC6-422E-8F06-16C03FC91BB0">About This Lesson</p>
+                  <p>In this lesson, you are introduced to the two primary means of development: <strong class="term">Page Designer</strong> and the <strong class="term">Application Runtime</strong> (<span class="q">"runtime"</span> for short).
+                  </p>
+                  <p>In Page Designer, use the <strong class="term">Rendering tab</strong> and <strong class="term">Layout tab</strong> to add new <strong class="term">regions</strong> to the Projects page. Then, use the <strong class="term">Property Editor</strong> to edit a wide array of attributes for region and page components, including SQL statements and appearance options.
+                  </p>
+                  <p>In the runtime, you use the <strong class="term">Runtime Developer toolbar</strong> to make changes on the page immediately and to quickly shift back to Page Designer.
+                  </p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F" name="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F"></a><h3 id="AETUT-GUID-29C2C013-BD99-4C0D-B729-415A6464D18F" class="sect3"><span class="enumeration_section">5.1 </span>Navigating to Page Designer from the Application Runtime
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>At the end of the previous lesson, you ran the application from the Application home page in App Builder and opened the Home page of the application.</p>
+                     <p>Running an application from App Builder also displays the <strong class="term">Runtime Developer toolbar</strong> at the bottom of the window.
+                     </p>
+                     <div class="figure" id="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F__FIG_DZT_Q5L_FHB"><br><div class="imageleft"><img class="imageleft" id="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F__IMAGE_EZT_Q5L_FHB" height="34" width="1026" src="img/runtime_developer_toolbar.png" alt="Runtime Developer Toolbar" title="Runtime Developer Toolbar"><br><a href="img_text/runtime_developer_toolbar.html">Description of the illustration runtime_developer_toolbar.png</a></div><br></div>
+                     <!-- class="figure" -->
+                     <p>You can use the Runtime Developer toolbar to quickly edit the page (and some aspects of the entire application). This toolbar only displays for users with developer or administrator privileges.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To view the Home page in Page Designer using the Runtime Developer toolbar:</p>
+                  <ol id="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F__STEPS_MMH_H4W_5LB">
+                     <li class="stepexpand"><span>In the top-left of the application runtime, do one of the following:</span><ul id="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F__CHOICES_NMH_H4W_5LB">
+                           <li>Click the name of the app <span class="uicontrol bold">Demo Projects</span>.
+                           </li>
+                           <li>Expand the navigation menu (click the <span class="uicontrol bold">menu</span> icon) and click <span class="uicontrol bold">Home</span>. (Do not click Home on the Developer Toolbar.)
+                           </li>
+                        </ul>
+                        <div>The runtime Home page displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>On the Runtime Developer toolbar, click <span class="uicontrol bold">Edit Page 1</span>.</span><div>
+                           <p>Page Designer displays page 1.</p>
+                           <div class="infobox-tip" id="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F__GUID-081F5651-8282-426A-B082-50813593FBE4">
+                              <p class="notep1">Tip:</p>The number in the <span class="uicontrol bold">Edit Page <span class="variable" translate="no">#</span></span> button corresponds to its assigned page number in Page Designer.
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F__GUID-C5A7052D-7CE7-414F-B8A8-B502FD754E54">
+                        <p class="notep1">Tip:</p>
+                        <p>Page Designer is the primary asset for <span>Application Express</span> developers. It's a powerful IDE (integrated development environment) with a robust array of tools for building, maintaining, and enhancing applications. Up to this point, you have mainly experienced the Create Application Wizard and SQL Workshop.
+                        </p><br><div class="imageleft"><img class="imageleft" id="GUID-29C2C013-BD99-4C0D-B729-415A6464D18F__IMAGE_W4P_KBM_FHB" height="549" width="966" src="img/page_designer_annotated.png" alt="Page Designer" title="Page Designer"><br><a href="img_text/page_designer_annotated.html">Description of the illustration page_designer_annotated.png</a></div><br><p>You rely primarily on Page Designer for the rest of this tutorial.</p>
+                        <p>You can always learn more about Page Designer with the official <a href="../htmdb/editing-pages-page-designer.html#HTMDB-GUID-EFD04B51-9114-466C-9CCA-9BF43BE4F571" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a>.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4" name="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4"></a><h3 id="AETUT-GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4" class="sect3"><span class="enumeration_section">5.2 </span>Creating a Form Page Using the Create Page Wizard
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Use the Create Page Wizard to add new pages to an app. It has a more robust interface for adding new pages than the Create Application Wizard.</p>
+                     <p>Add a form to the Projects report to give your users a way to edit the information themselves.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To open the Create Page Wizard in Page Designer:</p>
+                  <ol id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4__STEPS_PR2_J4S_4LB">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Create</span> menu icon <img id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4__IMAGE_KFY_1FM_FHB" height="29" width="39" src="img/page_designer_create_icon.png" alt="Create" title="Create"> (top-right) and select <span class="uicontrol bold">Page</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4__IMAGE_VFN_1WN_K3B" height="111" width="302" src="img/page_designer_create_icon_context.png" alt="Description of page_designer_create_icon_context.png follows" title="Description of page_designer_create_icon_context.png follows" longdesc="img_text/page_designer_create_icon_context.html"><br><a href="img_text/page_designer_create_icon_context.html">Description of the illustration page_designer_create_icon_context.png</a></div><br></div>
+                        <div>The Create Page Wizard appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Select <span class="uicontrol bold">Form</span>.</span></li>
+                     <li class="stepexpand"><span>Select <span class="uicontrol bold">Form</span> (again).</span></li>
+                     <li class="stepexpand"><span>Enter the following:</span><ol type="a" id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4__SUBSTEPS_QR2_J4S_4LB">
+                           <li><span>Page Number - enter <kbd class="userinput">4</kbd></span></li>
+                           <li><span>Page Name - enter <kbd class="userinput">Maintain Project</kbd></span></li>
+                           <li><span>Page Mode - select <span class="uicontrol bold">Modal Dialog</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Navigation Preference, enter the following:</span><ol type="a" id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4__SUBSTEPS_INN_SD2_ZGB">
+                           <li><span>Select <span class="uicontrol bold">Do not associate this page with a navigation menu entry</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Data Source, enter the following:</span><ol type="a" id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4__SUBSTEPS_RR2_J4S_4LB">
+                           <li><span>Table / View name - click the <span class="uicontrol bold">List of Values</span> icon <img id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4__IMAGE_W4X_P3M_FHB" height="26" width="34" src="img/lov_icon.png" alt="LOV icon" title="LOV icon"> and select <span class="uicontrol bold">EBA_PROJECTS (table)</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Create Form - Columns and Primary Key, enter the following:</span><ol type="a" id="GUID-5F2F352F-F614-49CE-B061-36DAECF6CDE4__SUBSTEPS_SR2_J4S_4LB">
+                           <li><span>Primary Key Type - select <span class="uicontrol bold">Managed by Database (ROWID)</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <p>Page Designer reloads displaying Page 4: Maintain Project.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC" name="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC"></a><h3 id="AETUT-GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC" class="sect3"><span class="enumeration_section">5.3 </span>Linking Project Cards to Maintain Project Form
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can now update the SQL queries on the Projects report to call the Maintain Project form.</p>
+                     <p>Reconfigure the cards on the Projects page to display Maintain Project form when clicked.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To navigate to the Projects page (page 3) in Page Designer:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>On the toolbar, locate the Page Finder area.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_U1Y_KKM_FHB" height="43" width="166" src="img/page_designer_page_finder_area.png" alt="Page Finder area" title="Page Finder area"><br><a href="img_text/page_designer_page_finder_area.html">Description of the illustration page_designer_page_finder_area.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Do one of the following:</span><ul id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__CHOICES_CC2_YR2_ZGB">
+                           <li>Click the <span class="uicontrol bold">Page Finder</span> icon <img id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_H1W_NJM_FHB" height="25" width="37" src="img/page_finder_icon.png" alt="Page Finder" title="Page Finder"> and select <span class="uicontrol bold">3</span> from the list.
+                           </li>
+                           <li>Change the page number to <code class="codeph">3</code> and press Enter.
+                           </li>
+                           <li>Click the <span class="uicontrol bold">Navigate to Previous Page</span> icon (down arrow).
+                           </li>
+                        </ul>
+                        <div>Page Designer loads Page 3: Projects.</div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To update the SQL of the Projects region:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>Do one of the following to select the Projects region:</span><ul id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__CHOICES_WSS_ST2_ZGB">
+                           <li>In the Rendering tab (left pane), under Regions - Content Body, select <span class="uicontrol bold">Projects</span>.
+                           </li>
+                           <li>In the Layout tab (center pane), scroll down and click the <span class="uicontrol bold">Projects</span> region.
+                           </li>
+                        </ul>
+                        <div><br><div class="imageleft"><img class="imageleft" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_IHY_LLM_FHB" height="485" width="850" src="img/page_designer_projects_region.png" alt="Projects region" title="Projects region"><br><a href="img_text/page_designer_projects_region.html">Description of the illustration page_designer_projects_region.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>In Property Editor (right pane), in the Source group, locate the SQL Query field.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_WT2_BNM_FHB" height="546" width="278" src="img/property_editor_projects_sql.png" alt="Source group" title="Source group"><br><a href="img_text/property_editor_projects_sql.html">Description of the illustration property_editor_projects_sql.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Code Editor: SQL Query</span> icon <img id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_WFB_WNM_FHB" height="19" width="20" src="img/sql_query_icon.png" alt="SQL Query" title="SQL Query"> to read the code more easily.</span><div>
+                           <p> Reviewing the SQL Query, you can see that the SQL uses alias names, such as CARD_MODIFIERS and CARD_LINK. These specific aliases are required by the Cards region to produce the correct output. The alias <code class="codeph">CARD_LINK</code> can be updated to link to the new page you just created.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the SQL Query field, replace the contents with the following code:</span><div><pre class="pre codeblock"><code>select ' ' card_modifiers
+  , apex_page.get_url( p_page =&gt; '4', p_clear_cache =&gt; '4', p_items =&gt; 'P4_ROWID', p_values =&gt; rowid ) card_link
+  , ' ' card_color
+  , ' ' card_icon
+  , apex_string.get_initials(name) card_initials
+  , name card_title
+  , description card_text
+  , 'Budget '|| to_char(budget,'L99G999') card_subtext
+from EBA_PROJECTS</code></pre><img id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_LQN_HPM_FHB" height="269" width="840" src="img/code_editor_projects_sql.png" alt="Code Editor" title="Code Editor"><br><a href="img_text/code_editor_projects_sql.html">Description of the illustration code_editor_projects_sql.png</a></div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Validate</span> icon <img id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_ONV_TPM_FHB" height="30" width="31" src="img/validate_icon.png" alt="Validate icon" title="Validate icon"> to verify.</span><div>
+                           <p>The message <code class="codeph">Validation successful</code> displays at the top of the window.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">OK</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span> <img id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_O3N_KQM_FHB" height="32" width="54" src="img/save_and_run_page_button.png" alt="Save and Run Page" title="Save and Run Page">.</span><ol type="a" class="single-step" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__SUBSTEPS_JY1_QPP_ZGB">
+                           <li class="substepexpand"><span>If you receive a warning dialog, click <span class="uicontrol bold">Try Again</span>.</span><div>
+                                 <div class="infobox-tip" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__GUID-177C54B7-748F-4593-8F13-0BF5B7AABF21">
+                                    <p class="notep1">Tip:</p>
+                                    <p>You can also click the Save button and then Save and Run Page to avoid this warning.</p>
+                                 </div>
+                              </div>
+                           </li>
+                        </ol>
+                        <div>
+                           <p>The Projects page loads in the runtime.</p>
+                           <div class="figure" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__FIG_WDP_LCL_WLB"><br><div class="imageleft"><img class="imageleft" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_XDP_LCL_WLB" height="601" width="1059" src="img/runtime_projects_report.png" alt="Description of runtime_projects_report.png follows" title="Description of runtime_projects_report.png follows" longdesc="img_text/runtime_projects_report.html"><br><a href="img_text/runtime_projects_report.html">Description of the illustration runtime_projects_report.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click a project to view the Maintain Project form for that project.</span><div>
+                           <div class="figure" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__FIG_ESG_RCL_WLB"><br><div class="imageleft"><img class="imageleft" id="GUID-E7BB5315-18EF-4C90-9E71-B23D71F77CCC__IMAGE_FSG_RCL_WLB" height="601" width="1059" src="img/runtime_projects_form.png" alt="Description of runtime_projects_form.png follows" title="Description of runtime_projects_form.png follows" longdesc="img_text/runtime_projects_form.html"><br><a href="img_text/runtime_projects_form.html">Description of the illustration runtime_projects_form.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                        <div>
+                           <p>Your users should not have unlimited access to several fields, either because the field does not pertain to the task of updating project details (such as IDs) or the access compromises data integrity and security (various timestamps).</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To quickly return to Maintain Project form in Page Designer:</p>
+                  <p></p>
+                  <ol start="11">
+                     <li class="stepexpand"><span>On the Runtime Developer toolbar at the bottom of the screen, click <span class="uicontrol bold">Edit Page 4</span>.</span><div>
+                           <p>Page Designer loads Page 4: Maintain Project.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241" name="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241"></a><h3 id="AETUT-GUID-95E600DB-68E9-495E-AF4E-E440BC14F241" class="sect3"><span class="enumeration_section">5.4 </span>Updating the Maintain Project Form in Page Designer
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Use Page Designer to make the following updates to the Maintain Project form (page 4) to improve usability and security:</p>
+                     <ul style="list-style-type: disc;" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__UL_N4N_5DQ_ZGB">
+                        <li>Hide a column by changing the type to hidden</li>
+                        <li>Move an item within an existing region</li>
+                        <li>Change an item to a select list</li>
+                        <li>Change multiple items to text fields</li>
+                        <li>Create a sub region to organize items into a read-only, expandable group</li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>End users do not need to see the ID column in the form. Change P4_ID to a hidden column to keep it from rendering in the app at all.</p>
+                     <p>To hide a column in Page Designer:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>In the Layout tab, click the <span class="uicontrol bold">P4_ID</span> item.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" class="single-step" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__SUBSTEPS_RPX_CJY_2HB">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Hidden</span>.</span></li>
+                        </ol>
+                        <div>
+                           <div class="figure" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__FIG_LPQ_L1L_WLB"><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_MPQ_L1L_WLB" height="391" width="755" src="img/page_designer_maintain_project_form_p4_id.png" alt="Description of page_designer_maintain_project_form_p4_id.png follows" title="Description of page_designer_maintain_project_form_p4_id.png follows" longdesc="img_text/page_designer_maintain_project_form_p4_id.html"><br><a href="img_text/page_designer_maintain_project_form_p4_id.html">Description of the illustration page_designer_maintain_project_form_p4_id.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To move an item in a region:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>In the Layout tab:</span><ol type="a" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__SUBSTEPS_BLS_2JQ_ZGB">
+                           <li class="substepexpand"><span>Right-click the <span class="uicontrol bold">P4_STATUS_ID</span> item.</span></li>
+                           <li class="substepexpand"><span>Select <span class="uicontrol bold">Move To</span>, <span class="uicontrol bold">Maintain Project</span>, <span class="uicontrol bold">Items</span>, <span class="uicontrol bold">P4_BUDGET</span>, and <span class="uicontrol bold">After</span>.</span><div>
+                                 <div class="infobox-tip" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__GUID-2E995D3E-50FE-4984-8FB2-028A4DB7BE62">
+                                    <p class="notep1">Tip:</p>You can also use the mouse to drag and drop elements in the Rendering tab and Layout tab.
+                                 </div>
+                              </div>
+                           </li>
+                        </ol>
+                        <div><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_OGD_WSN_FHB" height="480" width="586" src="img/page_designer_moved_status.png" alt="Moved P4_STATUS_ID" title="Moved P4_STATUS_ID"><br><a href="img_text/page_designer_moved_status.html">Description of the illustration page_designer_moved_status.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>:</span><div>
+                           <p><img id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_SQ3_VRM_FHB" height="32" width="54" src="img/save_button.png" alt="Save" title="Save"></p>
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To convert an item to a select list:</p>
+                  <p></p>
+                  <ol start="5">
+                     <li class="stepexpand"><span>Ensure <span class="uicontrol bold">P4_STATUS_ID</span> is still selected.</span></li>
+                     <li class="stepexpand"><span>In the Property Editor:</span><ol type="a" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__SUBSTEPS_NJ2_QJQ_ZGB">
+                           <li class="substepexpand"><span>Identification: Type - select <span class="uicontrol bold">Select List</span>. (Ignore the warning icons that display.)</span></li>
+                           <li class="substepexpand"><span>Label: Label - enter <code class="codeph">Status</code></span></li>
+                           <li class="substepexpand"><span>List of Values: Type - select <span class="uicontrol bold">SQL Query</span>.</span></li>
+                           <li class="substepexpand"><span>List of Values: SQL Query - enter the following:</span><div><pre class="pre codeblock"><code>select description d, id r
+from EBA_PROJECT_STATUS
+order by display_order</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>List of Values: Display Extra Values - click to <span class="uicontrol bold">disable</span>.</span></li>
+                           <li class="substepexpand"><span>List of Values: Null Display Value - enter the following:</span><div><pre class="pre codeblock"><code>- Select Status -</code></pre></div>
+                           </li>
+                        </ol>
+                        <div><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_FHP_JTN_FHB" height="675" width="293" src="img/page_designer_status_id_property_editor.png" alt="Property Editor" title="Property Editor"><br><a href="img_text/page_designer_status_id_property_editor.html">Description of the illustration page_designer_status_id_property_editor.png</a></div><br></div>
+                        <div>The above SQL uses the base table <code class="codeph">EBA_PROJECT_STATUS</code> which includes a column called <code class="codeph">display_order</code> to ensure the records display in the correct order.
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>To change multiple items simultaneously:</p>
+                  <p></p>
+                  <ol start="8">
+                     <li class="stepexpand"><span>Press and hold the <span class="uicontrol bold">Ctrl</span> key and click the following items to select both of them:</span><ol type="a" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__SUBSTEPS_BZQ_NMQ_ZGB">
+                           <li><span><span class="uicontrol bold">P4_NAME</span></span></li>
+                           <li><span><span class="uicontrol bold">P4_PROJECT_LEAD</span></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor:</span><ol type="a" class="single-step" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__SUBSTEPS_LR3_B4S_4LB">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Text Field</span>.</span></li>
+                        </ol>
+                        <div><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_KCP_XTN_FHB" height="310" width="603" src="img/page_designer_multiple_regions.png" alt="Multiple Items" title="Multiple Items"><br><a href="img_text/page_designer_multiple_regions.html">Description of the illustration page_designer_multiple_regions.png</a></div><br></div>
+                        <div>
+                           <p>When selecting multiple elements, the Property Editor only displays the attributes that all the selected elements have in common.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To create a collapsible sub region:</p>
+                  <p></p>
+                  <ol start="10">
+                     <li class="stepexpand"><span>In the Rendering tab, right-click the <span class="uicontrol bold">Maintain Project</span> region and select <span class="uicontrol bold">Create Sub Region</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_PCN_XZK_WLB" height="398" width="335" src="img/page_designer_create_sub_region.png" alt="Description of page_designer_create_sub_region.png follows" title="Description of page_designer_create_sub_region.png follows" longdesc="img_text/page_designer_create_sub_region.html"><br><a href="img_text/page_designer_create_sub_region.html">Description of the illustration page_designer_create_sub_region.png</a></div><br><p>The New sub region appears within the Sub Regions folder.</p><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_NKF_K5N_FHB" height="341" width="694" src="img/page_designer_new_subregion.png" alt="New Subregion" title="New Subregion"><br><a href="img_text/page_designer_new_subregion.html">Description of the illustration page_designer_new_subregion.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor:</span><ol type="a" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__SUBSTEPS_MR3_B4S_4LB">
+                           <li><span>Identification: Title - enter <kbd class="userinput">Audit Details</kbd></span></li>
+                           <li><span>Appearance: Template - select <span class="uicontrol bold">Collapsible</span>.</span></li>
+                           <li><span>Server-side Condition: Type - select <span class="uicontrol bold">Item is NOT NULL</span>.</span></li>
+                           <li><span>Server-side Condition: Item - enter <kbd class="userinput">P4_ROWID</kbd> (you can also select the page from a pop-up list).</span></li>
+                        </ol>
+                        <div>
+                           <p>Setting the Server-side Condition checks that the Rowid is not null and only displays the region when a user updates the record.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Locate and click the Appearance: Template Options button (<span class="uicontrol bold">Use Template Defaults, Expanded, Scroll - Default</span>).</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_LBL_S5N_FHB" height="470" width="209" src="img/property_editor_maintain_project_subregion_template_options_button_initial.png" alt="Template Options button" title="Template Options button"><br><a href="img_text/property_editor_maintain_project_subregion_template_options_button_initial.html">Description of the illustration property_editor_maintain_project_subregion_template_options_button_initial.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>In Template Options:</span><ol type="a" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__SUBSTEPS_NR3_B4S_4LB">
+                           <li class="substepexpand"><span>General: Remember Collapsible State - select the check box</span></li>
+                           <li class="substepexpand"><span>Default State - select <span class="uicontrol bold">Collapsed</span></span></li>
+                           <li class="substepexpand"><span>Style - select <span class="uicontrol bold">Remove Borders</span></span><div><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_IHF_Z5N_FHB" height="517" width="531" src="img/property_editor_maintain_project_subregion_template_options_button_window.png" alt="Template Options" title="Template Options"><br><a href="img_text/property_editor_maintain_project_subregion_template_options_button_window.html">Description of the illustration property_editor_maintain_project_subregion_template_options_button_window.png</a></div><br></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">OK</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Template Options button reflects the current configuration: <span class="q">"Use Template Defaults, Remember Collapsible State, Collapsed, Remove Borders, Scroll - Default"</span>.
+                           </p><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_ETJ_FVN_FHB" height="60" width="211" src="img/property_editor_maintain_project_subregion_template_options_button_changed.png" alt="Template Options button" title="Template Options button"></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>Rather than using drag and drop, you can use Property Editor to move multiple items into the Audit Details sub region, convert them to Display Only, and switch their appearance template all at once.</p>
+                     <p>To move items into a sub region with the Property Editor:</p>
+                  <p></p>
+                  <ol start="15">
+                     <li class="stepexpand"><span>Hold the <span class="uicontrol bold">Ctrl</span> key and select the following items:</span><div>
+                           <ul style="list-style-type: disc;" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__UL_OR3_B4S_4LB">
+                              <li>
+                                 <p><span class="uicontrol bold">P4_CREATED</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">P4_CREATED_BY</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">P4_UPDATED</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">P4_UPDATED_BY</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor:</span><ol type="a" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__SUBSTEPS_PR3_B4S_4LB">
+                           <li class="substepexpand"><span>Identification: Type - select <span class="uicontrol bold">Display Only</span></span></li>
+                           <li class="substepexpand"><span>Layout: Region - select <span class="uicontrol bold">..Audit Details</span></span></li>
+                           <li class="substepexpand"><span>Appearance: Template - select <span class="uicontrol bold">Optional - Floating</span></span><div>
+                                 <div class="infoboxnote" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__GUID-0C10509F-B098-47BC-A68F-52DC68645379">
+                                    <p class="notep1">Note:</p>
+                                    <p>The double periods are a shortening device for the names of sub regions in the interface. Think of it as actually reading <span class="q">"the sub region <span class="italic">Audit Details</span>."</span></p>
+                                 </div>
+                              </div>
+                           </li>
+                        </ol>
+                        <div>The items move into the sub region.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>The Maintain Project form is a modal page. You cannot run a modal page directly from Page Designer the way you can other pages. You must navigate to the associated non-modal page in the runtime (in this case, page 3 - Projects), then open the modal page from there.</p>
+                     <p>To run the modal Maintain Project page:</p>
+                  <p></p>
+                  <ol start="18">
+                     <li class="stepexpand"><span>Switch back to the runtime tab in your browser and reload the Projects page. (Click your browser's refresh or reload button.)</span></li>
+                     <li class="stepexpand"><span>Click a project card. Note the changed Status field and expandable Audit Details region.</span><div>
+                           <div class="figure" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__FIG_OBH_WVN_FHB"><br><div class="imageleft"><img class="imageleft" id="GUID-95E600DB-68E9-495E-AF4E-E440BC14F241__IMAGE_PBH_WVN_FHB" height="665" width="524" src="img/runtime_maintain_project_form_collapsed_subregion.png" alt="Maintain Project Form" title="Maintain Project Form"><br><a href="img_text/runtime_maintain_project_form_collapsed_subregion.html">Description of the illustration runtime_maintain_project_form_collapsed_subregion.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                        <div>
+                           <p>Trying clicking each and observe how the page responds.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>When finished, click <span class="uicontrol bold">Edit Page 4</span> on the toolbar to return to Maintain Project in Page Designer.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD" name="GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD"></a><h3 id="AETUT-GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD" class="sect3"><span class="enumeration_section">5.5 </span>Creating a Dynamic Action
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Add a Dynamic Action to the P4_STATUS_ID item select lists so that when the user changes the project Status to <span class="q">"Completed,"</span> the completion date displays.
+                     </p>
+                     <p>Dynamic Actions within <span>Application Express</span> are used to declaratively define client-side behaviors without writing JavaScript or AJAX. Instead, the <span>Application Express</span> engine implements the necessary code based on your declaration.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To create a Dynamic Action:</p>
+                  <ol>
+                     <li class="stepexpand"><span>In the Rendering tab, right-click the <span class="uicontrol bold">P4_STATUS_ID</span> item and select <span class="uicontrol bold">Create Dynamic Action</span>.</span><div>
+                           <p>A Dynamic Actions element populates as a child to P4_STATUS.</p><br><div class="imageleft"><img class="imageleft" id="GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD__IMAGE_O1B_DD4_FHB" height="227" width="260" src="img/page_designer_dynamic_action_new.png" alt="New Validation" title="New Validation"><br><a href="img_text/page_designer_dynamic_action_new.html">Description of the illustration page_designer_dynamic_action_new.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor:</span><ol type="a" id="GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD__SUBSTEPS_W5G_KSS_VLB">
+                           <li class="substepexpand"><span>Identification: Name - enter <kbd class="userinput">Show Completed Date</kbd></span></li>
+                           <li class="substepexpand"><span>Client-side Condition: Type - select <span class="uicontrol bold">Item = Value</span></span></li>
+                           <li class="substepexpand"><span>Client-side Condition: Value - enter <kbd class="userinput">3</kbd></span><div>
+                                 <div class="infoboxnote" id="GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD__GUID-11A5F70D-5F63-4EA9-83C2-8343EA45769E">
+                                    <p class="notep1">Note:</p>
+                                    <p>Entering <code class="codeph">3</code> in the Value field (<code class="codeph">status_ID=3)</code> targets the third item in the select list, which in this case is the <span class="q">"Completed"</span> status.
+                                    </p>
+                                 </div>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In the Rendering tab, under the Show Completed Date dynamic action, select the <span class="uicontrol bold">Show</span> element.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD__IMAGE_P5H_SD4_FHB" height="511" width="326" src="img/page_designer_dynamic_action_show.png" alt="Show Dynamic Action" title="Show Dynamic Action"><br><a href="img_text/page_designer_dynamic_action_show.html">Description of the illustration page_designer_dynamic_action_show.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor:</span><ol type="a" class="single-step" id="GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD__SUBSTEPS_X5G_KSS_VLB">
+                           <li><span>Affected Elements: Items(s) - click the <span class="uicontrol bold">LOV</span> icon and select <span class="uicontrol bold">P4_COMPLETED_DATE</span> (you can also enter <code class="codeph">P4_COMPLETED_DATE</code>).</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>For some types of Dynamic Actions (such as Show, Enable, and Expand Tree), you must also create the corresponding opposite action. With an opposite action, if the True When Condition affects elements one way, then the False When Condition affects elements the opposite way. </p>
+                     <p>To add an opposite action:</p>
+                  <p></p>
+                  <ol start="5">
+                     <li class="stepexpand"><span>In the Rendering tab, under Show Completed Date, right-click <span class="uicontrol bold">Show</span> and select <span class="uicontrol bold">Create Opposite Action</span>.</span><div>
+                           <p>The Hide dynamic action populates (Hide is the opposite of Show).</p><br><div class="imageleft"><img class="imageleft" id="GUID-B39F43E5-7381-4DE3-8663-B4025F2A29DD__IMAGE_Q3M_H24_FHB" height="504" width="330" src="img/page_designer_dynamic_action_hide.png" alt="Hide Dynamic Action" title="Hide Dynamic Action"><br><a href="img_text/page_designer_dynamic_action_hide.html">Description of the illustration page_designer_dynamic_action_hide.png</a></div><br></div>
+                        <div>
+                           <p>Here, the P4_COMPLETED_DATE item displays when P4_STATUS_ID equals Completed. When any other status is selected, P4_COMPLETED_DATE is hidden.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E" name="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E"></a><h3 id="AETUT-GUID-9A8A4283-5648-4685-89B3-3F560DA2779E" class="sect3"><span class="enumeration_section">5.6 </span>Adding Validations to Completed Date
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Page validations ensure the data entered by end users is correct. If a validation fails, then an error message is raised, and the values are not saved to the database.</p>
+                     <p>Add two validations to the Completed Date item so that:</p>
+                     <ul style="list-style-type: disc;" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__UL_T3C_SX2_1HB">
+                        <li>When a user changes the status to Completed, they must also add the date.</li>
+                        <li>A user cannot enter a date in the future.</li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To create a new validation:</p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Maintain Project page in Page Designer, click the <span class="uicontrol bold">Processing</span> tab (rotating arrows) at the top of the Rendering tab.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__IMAGE_NML_LG4_FHB" height="401" width="379" src="img/page_designer_processing_tab.png" alt="Processing tab" title="Processing tab"><br><a href="img_text/page_designer_processing_tab.html">Description of the illustration page_designer_processing_tab.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Right-click the <span class="uicontrol bold">Validations</span> element and select <span class="uicontrol bold">Create Validation</span>.</span><div>
+                           <p>New validation populates.</p><br><div class="imageleft"><img class="imageleft" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__IMAGE_QD3_RG4_FHB" height="320" width="349" src="img/page_designer_validation_new.png" alt="New Validation" title="New Validation"><br><a href="img_text/page_designer_validation_new.html">Description of the illustration page_designer_validation_new.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor:</span><ol type="a">
+                           <li class="substepexpand"><span>Identification: Name - enter <kbd class="userinput">Completed Date is Not Null</kbd></span></li>
+                           <li class="substepexpand"><span>Validation: Type - select <span class="uicontrol bold">Item is NOT NULL</span></span></li>
+                           <li class="substepexpand"><span>Validation: Item - enter <kbd class="userinput">P4_COMPLETED_DATE</kbd></span></li>
+                           <li class="substepexpand"><span>Error: Error Message - enter <kbd class="userinput">#LABEL# must have some value.</kbd></span></li>
+                           <li class="substepexpand"><span>Error: Associated Item - select <span class="uicontrol bold">P4_COMPLETED_DATE</span></span></li>
+                           <li class="substepexpand"><span>Server-side Condition: Type - select <span class="uicontrol bold">Item = Value</span></span></li>
+                           <li class="substepexpand"><span>Server-side Condition: Item - enter <kbd class="userinput">P4_STATUS_ID</kbd></span></li>
+                           <li class="substepexpand"><span>Server-side Condition: Value - enter <kbd class="userinput">3</kbd></span><div>
+                                 <p>This condition ensures that the validation only fires when the Status item is Completed.</p>
+                              </div>
+                              <div>
+                                 <div class="p">
+                                    <div class="infoboxnote" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__GUID-EFE705F4-9B88-4265-BA7A-8287ED399116">
+                                       <p class="notep1">Note:</p>The label from the associated item replaces the #LABEL# text within the Error Message. If you update the item label, the error message also updates automatically. This improves consistency and ensures that messages have current label references.
+                                    </div>
+                                 </div>
+                                 <div class="p">
+                                    <div class="infobox-tip" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__GUID-5958970F-BDB4-4E84-B0F0-2C97A3E2A9BD">
+                                       <p class="notep1">Tip:</p>When you click within an attribute in Property Editor, you can view examples of content (such as error messages) for that attribute by clicking the Help tab at the top of the Layout tab.
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>To copy a validation:</p>
+                  <ol start="4">
+                     <li class="stepexpand"><span>In the Processing tab, right-click <span class="uicontrol bold">Completed Date is NOT NULL</span> and select <span class="uicontrol bold">Duplicate</span>.</span><div>
+                           <p>The item <span class="q">"Completed Date is NOT NULL_1"</span> populates, selected.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor:</span><ol type="a">
+                           <li class="substepexpand"><span>Identification: Name - enter <kbd class="userinput">Completed Date is not Forward Dated</kbd></span></li>
+                           <li class="substepexpand"><span>Validation: Type - select <span class="uicontrol bold">PL/SQL Expression</span></span></li>
+                           <li class="substepexpand"><span>Validation: PL/SQL Expression - enter <kbd class="userinput">:P4_COMPLETED_DATE &lt;= SYSDATE</kbd></span><div>
+                                 <div class="infobox-tip" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__GUID-1A4B9D41-4EDE-4DB8-8048-C16CE2D77FC0">
+                                    <p class="notep1">Tip:</p>
+                                    <p>Ensure you include the colon ( <code class="codeph">:</code> ) . To reference a page item in PL/SQL, you use the <code class="codeph">:ITEM_NAME</code> syntax. <code class="codeph">SYSDATE</code> returns the current date from the Oracle Database.
+                                    </p>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Error: Error Message - enter <kbd class="userinput">#LABEL# cannot be forward dated</kbd></span></li>
+                           <li class="substepexpand"><span>Server-side Condition: Type - select <span class="uicontrol bold">Item is NOT NULL</span></span></li>
+                           <li class="substepexpand"><span>Server-side Condition: Item - enter <kbd class="userinput">P4_COMPLETED_DATE</kbd></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     <li class="stepexpand"><span>In the runtime, reload the Projects page (reload the browser tab) and click a project card to display Maintain Project.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>The form is complete.</p>
+                     <div class="figure" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__FIG_FNP_XG4_FHB"><br><div class="imageleft"><img class="imageleft" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__IMAGE_GNP_XG4_FHB" height="896" width="731" src="img/runtime_maintain_project_form_validations.png" alt="Maintain Project form" title="Maintain Project form"><br><a href="img_text/runtime_maintain_project_form_validations.html">Description of the illustration runtime_maintain_project_form_validations.png</a></div><br></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Try the following tasks to see how the application behaves:</p>
+                     <ul style="list-style-type: disc;" id="GUID-9A8A4283-5648-4685-89B3-3F560DA2779E__UL_UNK_MCF_1HB">
+                        <li>Change the Status and see how the Completed Date displays or vanishes.</li>
+                        <li>Find an In-Progress project, change the status to Completed but leave the Completion Date empty, and click <span class="uicontrol bold">Apply Changes</span>. (An error message should display.)
+                        </li>
+                        <li>Enter a Completion Date in the future and click <span class="uicontrol bold">Apply Changes</span>. (An error message should be displayed.)
+                        </li>
+                     </ul>
+                     <p>When finished, click <span class="uicontrol bold">Application #####</span> on the Developer Toolbar to return to the Application home page. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

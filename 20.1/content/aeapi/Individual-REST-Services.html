@@ -1,0 +1,766 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="Individual REST Services">
+      <meta name="DC.subject" content="REST Services, Individual REST Services, Fetch Instance-Level Statistics, Fetch Workspace-Level Statistics, Application-Level Statistics, Instance Overview, REST Service Version Information">
+      <meta name="keywords" content="REST Services, Individual REST Services, Fetch Instance-Level Statistics, Fetch Workspace-Level Statistics, Application-Level Statistics, Instance Overview, REST Service Version Information">
+      <meta name="DC.Relation" scheme="URI" content="Using-REST-Administration-Interface-API.html#GUID-9C4E35A9-E312-4242-BC76-C3D38956BD10">
+      <meta name="DC.Relation" scheme="URI" content="Individual-REST-Services.html#GUID-5369634B-4CBB-4121-849B-627B068BE2B7">
+      <meta name="DC.Relation" scheme="URI" content="Individual-REST-Services.html#GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6">
+      <meta name="DC.Relation" scheme="URI" content="Individual-REST-Services.html#GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259">
+      <meta name="DC.Relation" scheme="URI" content="Individual-REST-Services.html#GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3">
+      <meta name="DC.Relation" scheme="URI" content="Individual-REST-Services.html#GUID-078CB0E9-9888-4878-9122-037D5B2BB177">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Individual REST Services</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="Authentication.html" title="Previous" type="text/html">
+      <link rel="next" href="book-index.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="Authentication.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="book-index.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Using-REST-Administration-Interface-API.html" property="item" typeof="WebPage"><span property="name"> Using REST Administration Interface API</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Individual REST Services</li>
+            </ol>
+            <a id="GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927" name="GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927"></a>
+            
+            <h2 id="AEAPI-GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927" class="sect2"><span class="enumeration_section">43.2 </span>Individual REST Services
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Individual REST Services have the following services:</p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="Individual-REST-Services.html#GUID-5369634B-4CBB-4121-849B-627B068BE2B7">Fetch Instance-Level Statistics</a><br></li>
+                  <li class="ulchildlink"><a href="Individual-REST-Services.html#GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6">Fetch Workspace-Level Statistics</a><br></li>
+                  <li class="ulchildlink"><a href="Individual-REST-Services.html#GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259">Application-Level Statistics</a><br></li>
+                  <li class="ulchildlink"><a href="Individual-REST-Services.html#GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3">Instance Overview</a><br></li>
+                  <li class="ulchildlink"><a href="Individual-REST-Services.html#GUID-078CB0E9-9888-4878-9122-037D5B2BB177">REST Service Version Information</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="Using-REST-Administration-Interface-API.html#GUID-9C4E35A9-E312-4242-BC76-C3D38956BD10">Using REST Administration Interface API</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7" name="GUID-5369634B-4CBB-4121-849B-627B068BE2B7"></a><h3 id="AEAPI-GUID-5369634B-4CBB-4121-849B-627B068BE2B7" class="sect3"><span class="enumeration_section">43.2.1 </span>Fetch Instance-Level Statistics
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This service returns usage statistics for the whole Oracle Application Express instance.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7__GUID-14846703-EE06-46E9-8496-8E1E6B13F2AA">HTTP Request Syntax Parameter</p>
+                     <div class="tblformal" id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7__GUID-E791361B-FE25-4531-A166-6DFC7DD8337C">
+                        <p class="titleintable">Table 43-2 HTTP Request Syntax</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="HTTP Request Syntax" summary="Parameter descriptions for the HTTP Request Syntax." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="20%" id="d219117e153">Parameter</th>
+                                 <th align="left" valign="bottom" width="20%" id="d219117e156">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d219117e161" headers="d219117e153 ">
+                                    <p>HTTP Method</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d219117e161 d219117e156 ">
+                                    <p><code class="codeph">GET</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d219117e169" headers="d219117e153 ">
+                                    <p>URL</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d219117e169 d219117e156 ">
+                                    <p><code class="codeph">http://<span class="codeinlineitalic">application-express-host</span>:<span class="codeinlineitalic">port</span>/ords/apex_instance_admin_user/stats/latest/instance</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d219117e183" headers="d219117e153 ">
+                                    <p>HTTP Request Headers</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d219117e183 d219117e156 ">
+                                    <p><code class="codeph">"authorization": "Bearer: <span class="codeinlineitalic">OAuth access token aquired with Authentication</span></code></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7__GUID-CDB6915F-F7B8-462A-A7F7-756EC637F210">Returns</p><pre class="pre codeblock"><code>{
+    "items": [
+        {
+            "log_day": "2016-09-15T00:00:00Z",
+            "workspace_id": 1809074264671554,
+            "workspace_name": "SOMEWORKSPACE",
+            "workspace_link": {
+                "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/workspace/someworkspace"
+            },
+            "application_id": 4750,
+            "application_name": "Oracle APEX Packaged Applications",
+            "application_link": {
+</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7__GUID-2703BBFC-2A40-482E-8FBD-67F998648BF3">Parameters</p>
+                     <p>Filtering is possible for each of the JSON attributes by appending a query to the request URL as follows:</p><pre class="pre codeblock"><code>http://<span class="italic">application-express-host</span>.../latest/instance?q=<span class="italic">query</span></code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7__GUID-F4E5479E-15AE-46F4-A48D-8CCD8093BCFC">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><span class="bold">Get All Instance Statistics</span></p>
+                     <p>The example displays the following output when you execute command line utility <code class="codeph">curl</code>:
+                     </p><pre class="pre codeblock"><code>  $ curl -H"Authorization: Bearer LfXJilIBdzj5JPRn4xb5QQ..
+          -i http://localhost:8081/ords/restauth/emp/list/ 
+          http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/instance
+</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>The example displays the following output when you use the <code class="codeph">APEX_WEB_SERVICE</code> package in another Application Express instance:
+                     </p>
+                     <div class="infoboxnote" id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7__GUID-94C442AB-751B-4173-8967-CD40D41557BF">
+                        <p class="notep1">Note:</p>
+                        <p>The example assumes that the <code class="codeph">OAUTH_AUTHENTICATE</code> procedure is successful.
+                        </p>
+                     </div><pre class="pre codeblock"><code>   select apex_web_service.make_rest_request(
+           p_url =&gt;         'http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/instance'
+           p_http_method =&gt; 'GET' )
+   from dual;</code></pre><p>The following is a JSON-Document response: </p><pre class="pre codeblock"><code>   {
+       "items": [
+           {
+               "log_day": "2016-09-15T00:00:00Z",
+               "workspace_id": 267781782378434879,
+               "workspace_name": "SOMEWORKSPACE",
+               "workspace_link": {
+                   "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/workspace/someworkspace"
+</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><span class="bold">Get Instance Statistics Since August 1st, 2016</span></p>
+                     <p>The example displays the following output when you execute command line utility <code class="codeph">curl</code>:
+                     </p><pre class="pre codeblock"><code>  $ curl -H"Authorization: Bearer LfXJilIBdzj5JPRn4xb5QQ..
+          -i http://localhost:8081/ords/restauth/emp/list/ 
+          http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/instance?q=%7B%22log_day%22:%7B%22$gt%22:%7B%22$date%22:%222016-08-01T00:00:00Z%22%7D%7D%7D</code></pre><p>The example displays the following output when you use the <code class="codeph">APEX_WEB_SERVICE</code> package in another Application Express instance:
+                     </p>
+                     <div class="infoboxnote" id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7__GUID-D0161D43-5348-439F-978A-27F481CEFF52">
+                        <p class="notep1">Note:</p>
+                        <p>The example assumes that the <code class="codeph">OAUTH_AUTHENTICATE</code> procedure is successful.
+                        </p>
+                     </div><pre class="pre codeblock"><code> select apex_web_service.make_rest_request(
+           p_url =&gt;         'http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/instance?q=' || 
+                            utl_url.escape('{"log_day": {"$gt": {"$date": "2016-08-01T00:00:00Z"}}}'),
+           p_http_method =&gt; 'GET',
+           p_scheme =&gt;      'OAUTH_CLIENT_CRED' )
+   from dual;</code></pre><p>The following is a JSON-Document response:</p><pre class="pre codeblock"><code>  {
+       "items": [
+           {
+               "log_day": "2016-09-15T00:00:00Z",
+               "workspace_id": 267781782378434879,
+               "workspace_name": "SOMEWORKSPACE",
+               "workspace_link": {
+                   "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/workspace/someworkspace"
+</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5369634B-4CBB-4121-849B-627B068BE2B7__GUID-FE0115FE-B489-430E-9D6C-92974F73F16F">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeapi&amp;id=AELIG-GUID-6FDB9F47-EAB9-409B-9CB1-79D79B46AC28" target="_blank"><span><cite>Oracle REST Data Services Installation, Configuration, and Development Guide</cite></span></a> for more information on how to build a query.
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Individual-REST-Services.html#GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927">Individual REST Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6" name="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6"></a><h3 id="AEAPI-GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6" class="sect3"><span class="enumeration_section">43.2.2 </span>Fetch Workspace-Level Statistics
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This service returns usage statistics for a specific Application Express workspace.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6__GUID-F25D2941-8E7B-490D-B864-1AC3AEE85D3D">HTTP Request Syntax Parameter</p>
+                     <div class="tblformal" id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6__GUID-9EE63134-2913-4F5B-BCAB-968C9BD31297">
+                        <p class="titleintable">Table 43-3 HTTP Request Syntax</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="HTTP Request Syntax" summary="Parameter descriptions for the HTTP Request Syntax." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" id="d219117e394">Parameter</th>
+                                 <th align="left" valign="bottom" id="d219117e397">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e402" headers="d219117e394 ">
+                                    <p>HTTP Method</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e402 d219117e397 ">
+                                    <p><code class="codeph">GET</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e410" headers="d219117e394 ">
+                                    <p>URL</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e410 d219117e397 ">
+                                    <p><code class="codeph">http://<span class="codeinlineitalic">application-express-host</span>:<span class="codeinlineitalic">port</span>/ords/apex_instance_admin_user/stats/latest/workspace/<span class="codeinlineitalic">workspace-name</span></code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e426" headers="d219117e394 ">
+                                    <p>HTTP Request Headers</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e426 d219117e397 ">
+                                    <p><code class="codeph">"authorization": "Bearer: <span class="codeinlineitalic">OAuth access token aquired with Authentication</span></code></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6__GUID-917D31CA-5906-4682-904F-2CDFFD1FE8C4">Returns</p><pre class="pre codeblock"><code>{
+    "items": [
+        {
+            "log_day": "2016-09-15T00:00:00Z",
+            "workspace_id": 1809919633676005,
+            "application_id": 106,
+            "application_name": "Sample Calendar",
+            "application_link": {
+                "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106"
+            },
+            "page_events": 94,
+    :</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6__GUID-0E5C5905-553C-4633-8846-E792EE6E04AC">Parameters</p>
+                     <p>Filtering is possible for each of the JSON attributes by appending a query to the request URL as follows:</p><pre class="pre codeblock"><code>http://<span class="italic">application-express-host</span>.../latest/instance?q=<span class="italic">query</span></code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6__GUID-F7A74A0D-714C-46E8-87DE-F77C7568F6BB">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><span class="bold">Get All Statistics For Workspace "MYWORKSPACE"</span></p>
+                     <p>The example displays the following output when you execute command line utility <code class="codeph">curl</code>:
+                     </p><pre class="pre codeblock"><code>   $ curl -H"Authorization: Bearer LfXJilIBdzj5JPRn4xb5QQ..
+          -i http://localhost:8081/ords/restauth/emp/list/ 
+          http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/workspace/myworkspace</code></pre><p>The example displays the following output when you use the <code class="codeph">APEX_WEB_SERVICE</code> package in another Application Express instance:
+                     </p>
+                     <div class="infoboxnote" id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6__GUID-DEC95310-0DCA-4D09-BD8C-9755F083969A">
+                        <p class="notep1">Note:</p>
+                        <p>The example assumes that the <code class="codeph">OAUTH_AUTHENTICATE</code> procedure is successful.
+                        </p>
+                     </div><pre class="pre codeblock"><code>   select apex_web_service.make_rest_request(
+           p_url =&gt;         'http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/workspace/myworkspace'
+           p_http_method =&gt; 'GET',
+           p_scheme =&gt;      'OAUTH_CLIENT_CRED' )
+   from dual;</code></pre><p>The following is a JSON-Document response:</p><pre class="pre codeblock"><code>   {
+     "items": [
+        {
+           "log_day": "2016-09-15T00:00:00Z",
+           "workspace_id": 1809919633676005,
+           "application_id": 106,
+           "application_name": "Sample Calendar",
+           "application_link": {
+              "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106"
+           },
+           "page_events": 94,
+   :
+</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><span class="bold">Get Workspace Statistics For "MYWORKSPACE" Since August 1st, 2016</span></p>
+                     <p>The example displays the following output when you execute command line utility <code class="codeph">curl</code>:
+                     </p><pre class="pre codeblock"><code>   $ curl -H"Authorization: Bearer LfXJilIBdzj5JPRn4xb5QQ..
+          -i http://localhost:8081/ords/restauth/emp/list/ 
+          http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/workspace/myworkspace?q=%7B%22log_day%22:%7B%22$gt%22:%7B%22$date%22:%222016-08-01T00:00:00Z%22%7D%7D%7D
+</code></pre><p>The example displays the following output when you use the <code class="codeph">APEX_WEB_SERVICE</code> package in another Application Express instance:
+                     </p>
+                     <div class="infoboxnote" id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6__GUID-1641AF42-2EC8-4758-A41E-DD28B97142FC">
+                        <p class="notep1">Note:</p>
+                        <p>The example assumes that the <code class="codeph">OAUTH_AUTHENTICATE</code> procedure is successful.
+                        </p>
+                     </div><pre class="pre codeblock"><code>    select apex_web_service.make_rest_request(
+           p_url =&gt;      'http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/workspace/myworkspace?q='||
+                          utl_url.escape(' <span class="italic">"log_day"</span>: <span class="italic">"$gt"</span>:<span class="italic">"$date": "2016-08-01T00:00:00Z"</span> '),
+           p_http_method =&gt; 'GET' )
+   from dual;</code></pre><p>The following is a JSON-Document response:</p><pre class="pre codeblock"><code>  {
+     "items": [
+        {
+           "log_day": "2016-09-15T00:00:00Z",
+           "workspace_id": 1809919633676005,
+           "application_id": 106,
+           "application_name": "Sample Calendar",
+           "application_link": {
+              "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106"
+           },
+           "page_events": 94,
+   : </code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-7F0F3326-7BE1-4D27-AD38-D06E68AAEFF6__GUID-FE0115FE-B489-430E-9D6C-92974F73F16F">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeapi&amp;id=AELIG-GUID-6FDB9F47-EAB9-409B-9CB1-79D79B46AC28" target="_blank"><span><cite>Oracle REST Data Services Installation, Configuration, and Development Guide</cite></span></a> for more information on how to build a query.
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Individual-REST-Services.html#GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927">Individual REST Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259" name="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259"></a><h3 id="AEAPI-GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259" class="sect3"><span class="enumeration_section">43.2.3 </span>Application-Level Statistics
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This service returns usage statistics for a specific application.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259__GUID-0FB19A12-6E89-4B23-8CE1-4BB25F96F4F2">HTTP Request Syntax Parameter</p>
+                     <div class="tblformal" id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259__GUID-21BD379D-8158-472D-A1FA-05F9A502BAAF">
+                        <p class="titleintable">Table 43-4 HTTP Request Syntax</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="HTTP Request Syntax" summary="Parameter descriptions for the HTTP Request Syntax." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" id="d219117e644">Parameter</th>
+                                 <th align="left" valign="bottom" id="d219117e647">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e652" headers="d219117e644 ">
+                                    <p>HTTP Method</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e652 d219117e647 ">
+                                    <p><code class="codeph">GET</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e660" headers="d219117e644 ">
+                                    <p>URL</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e660 d219117e647 ">
+                                    <p><code class="codeph">http://<span class="codeinlineitalic">application-express-host</span>:<span class="codeinlineitalic">port</span>/ords/apex_instance_admin_user/stats/latest/application/<span class="codeinlineitalic">application-id</span></code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e676" headers="d219117e644 ">
+                                    <p>HTTP Request Headers</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e676 d219117e647 ">
+                                    <p><code class="codeph">"authorization": "Bearer: <span class="codeinlineitalic">OAuth access token aquired with Authentication</span></code></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259__GUID-158345AB-86D7-47A2-8AB9-F1463227093E">Returns</p><pre class="pre codeblock"><code>{
+    "items": [
+        {
+            "log_day": "2016-09-15T00:00:00Z",
+            "workspace_id": 1809919633676005,
+            "application_id": 106,
+            "application_name": "Sample Calendar",
+            "application_link": {
+                "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106"
+            },
+            "page_events": 94,
+    :</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259__GUID-2D73881C-A7F6-4D35-BEB1-462D6D12A743">Parameters</p>
+                     <p>Filtering is possible for each of the JSON attributes by appending a query to the request URL as follows:</p><pre class="pre codeblock"><code>http://<span class="italic">application-express-host</span>.../stats/latest/application/<span class="italic">application-id</span>?q=<span class="italic">query</span></code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259__GUID-F8B6576F-1D76-4BEB-868F-D8694E6DD116">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><span class="bold">Get All Statistics For Application "106"</span></p>
+                     <p>The example displays the following output when you execute command line utility <code class="codeph">curl</code>:
+                     </p><pre class="pre codeblock"><code>   $ curl -H"Authorization: Bearer LfXJilIBdzj5JPRn4xb5QQ..
+          -i http://localhost:8081/ords/restauth/emp/list/ 
+          http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106   </code></pre><p>The example displays the following output when you use the <code class="codeph">APEX_WEB_SERVICE</code> package in another Application Express instance:
+                     </p>
+                     <div class="infoboxnote" id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259__GUID-564D13D5-8EB6-4718-A170-F1389EFED38C">
+                        <p class="notep1">Note:</p>
+                        <p>The example assumes that the <code class="codeph">OAUTH_AUTHENTICATE</code> procedure is successful.
+                        </p>
+                     </div><pre class="pre codeblock"><code> select apex_web_service.make_rest_request(
+           p_url =&gt;         'http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106'
+           p_http_method =&gt; 'GET',
+           p_scheme =&gt;      'OAUTH_CLIENT_CRED' )
+   from dual;  </code></pre><p>The following is a JSON-Document response:</p><pre class="pre codeblock"><code>  {
+     "items": [
+        {
+           "log_day": "2016-09-15T00:00:00Z",
+           "workspace_id": 1809919633676005,
+           "application_id": 106,
+           "application_name": "Sample Calendar",
+           "application_link": {
+              "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106"
+           },
+           "page_events": 94,
+   :
+</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><span class="bold">Get Statistics For Application "106" Since August 1st, 2016</span></p>
+                     <p>The example displays the following output when you execute command line utility <code class="codeph">curl</code>:
+                     </p><pre class="pre codeblock"><code>    $ curl -H"Authorization: Bearer LfXJilIBdzj5JPRn4xb5QQ..
+          -i http://localhost:8081/ords/restauth/emp/list/ 
+          http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106?q=%7B%22log_day%22:%7B%22$gt%22:%7B%22$date%22:%222016-08-01T00:00:00Z%22%7D%7D%7D</code></pre><p>The example displays the following output when you use the <code class="codeph">APEX_WEB_SERVICE</code> package in another Application Express instance:
+                     </p>
+                     <div class="infoboxnote" id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259__GUID-B4B903CA-2F06-42A7-8ACA-46B8E175EB46">
+                        <p class="notep1">Note:</p>
+                        <p>The example assumes that the <code class="codeph">OAUTH_AUTHENTICATE</code> procedure is successful.
+                        </p>
+                     </div><pre class="pre codeblock"><code>    select apex_web_service.make_rest_request(
+           p_url =&gt;         'http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106?q=' || 
+                            utl_url.escape(' <span class="italic">"log_day"</span>: <span class="italic">"$gt"</span>: <span class="italic">"$date"</span>: <span class="italic">"2016-08-01T00:00:00Z"</span> '),
+           p_http_method =&gt; 'GET' )
+   from dual;</code></pre><p>The following is a JSON-Document response:</p><pre class="pre codeblock"><code>  {
+     "items": [
+        {
+           "log_day": "2016-09-15T00:00:00Z",
+           "workspace_id": 1809919633676005,
+           "application_id": 106,
+           "application_name": "Sample Calendar",
+           "application_link": {
+              "$ref": "http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/stats/latest/application/106"
+           },
+           "page_events": 94,
+   :
+</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-CFDD7FB7-01E7-40DA-80D5-949C33C16259__GUID-FE0115FE-B489-430E-9D6C-92974F73F16F">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeapi&amp;id=AELIG-GUID-6FDB9F47-EAB9-409B-9CB1-79D79B46AC28" target="_blank"><span><cite>Oracle REST Data Services Installation, Configuration, and Development Guide</cite></span></a> for more information on how to a build query.
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Individual-REST-Services.html#GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927">Individual REST Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3" name="GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3"></a><h3 id="AEAPI-GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3" class="sect3"><span class="enumeration_section">43.2.4 </span>Instance Overview
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This service returns aggregated overview data for an Application Express instance.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3__GUID-49D1DF32-B6FE-4214-AD27-9BD6761B547A">HTTP Request Syntax Parameter</p>
+                     <div class="tblformal" id="GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3__GUID-2014FAE1-60BF-4707-9BF1-04A8C44DE10C">
+                        <p class="titleintable">Table 43-5 HTTP Request Syntax</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="HTTP Request Syntax" summary="Parameter descriptions for the HTTP Request Syntax." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" id="d219117e901">Parameter</th>
+                                 <th align="left" valign="bottom" id="d219117e904">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e909" headers="d219117e901 ">
+                                    <p>HTTP Method</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e909 d219117e904 ">
+                                    <p><code class="codeph">GET</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e917" headers="d219117e901 ">
+                                    <p>URL</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e917 d219117e904 ">
+                                    <p><code class="codeph">http://<span class="codeinlineitalic">application-express-host</span>:<span class="codeinlineitalic">port</span>/ords/apex_instance_admin_user/info/latest/instance/<span class="codeinlineitalic">number-of-days</span></code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e933" headers="d219117e901 ">
+                                    <p>HTTP Request Headers</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e933 d219117e904 ">
+                                    <p><code class="codeph">"authorization": "Bearer: <span class="codeinlineitalic">OAuth access token aquired with Authentication</span></code></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3__GUID-A6678163-E1DB-483E-AE48-749C1F5BB980">Returns</p><pre class="pre codeblock"><code>{
+    "items": [
+        {
+            "workspaces_total": 1074,
+            "apps_total": 2827,
+            "schemas_total": 1065,
+            "reporting_timeframe_since": "2016-07-16T13:30:40Z",
+            "reporting_timeframe_to": "2016-10-14T13:30:40Z",
+            "active_apps_timeframe": 2827,
+            "active_developers_timeframe": 731,
+            "workspaces_timeframe": 1074
+        }
+    ],
+    "first": {
+        "$ref": "https://apexea.oracle.com/pls/apex/apex_instance_admin_user/info/latest/instance/90"
+    }
+}</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3__GUID-65CD35BF-83B7-4F2B-B0BD-74DD64A22BB4">Parameters</p>
+                     <p><code class="codeph">number-of-days</code>: Return the aggregated values from today to the given number of days into the past.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3__GUID-941A63D4-C8D5-48E4-AB03-A686CCEE4E91">Example</p>
+                     <p>The example displays the following output when you execute command line utility <code class="codeph">curl</code>:
+                     </p><pre class="pre codeblock"><code>   $ curl -H"Authorization: Bearer LfXJilIBdzj5JPRn4xb5QQ..
+          -i http://localhost:8081/ords/restauth/emp/list/ 
+          http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/info/latest/instance/90
+</code></pre><p>The example displays the following output when you use the <code class="codeph">APEX_WEB_SERVICE</code> package in another Application Express instance:
+                     </p>
+                     <div class="infoboxnote" id="GUID-D76DB434-2EA6-40CA-AD71-651EE46F12B3__GUID-00E16D94-E26B-48D3-9323-704562459727">
+                        <p class="notep1">Note:</p>
+                        <p>The example assumes that the <code class="codeph">OAUTH_AUTHENTICATE</code> procedure is successful.
+                        </p>
+                     </div><pre class="pre codeblock"><code>   select apex_web_service.make_rest_request(
+           p_url =&gt;         'http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/info/latest/instance/90',
+           p_http_method =&gt; 'GET' )
+   from dual;  </code></pre><p>The following is a JSON-Document response:</p><pre class="pre codeblock"><code>{
+    "items": [
+        {
+            "workspaces_total": 1074,
+            "apps_total": 2827,
+            "schemas_total": 1065,
+            "reporting_timeframe_since": "2016-07-16T13:30:40Z",
+            "reporting_timeframe_to": "2016-10-14T13:30:40Z",
+            "active_apps_timeframe": 2827,
+            "active_developers_timeframe": 731,
+            "workspaces_timeframe": 1074
+        }
+    ],
+    "first": {
+        "$ref": "https://apexea.oracle.com/pls/apex/apex_instance_admin_user/info/latest/instance/90"
+    }
+}  </code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Individual-REST-Services.html#GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927">Individual REST Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-078CB0E9-9888-4878-9122-037D5B2BB177" name="GUID-078CB0E9-9888-4878-9122-037D5B2BB177"></a><h3 id="AEAPI-GUID-078CB0E9-9888-4878-9122-037D5B2BB177" class="sect3"><span class="enumeration_section">43.2.5 </span>REST Service Version Information
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This service returns version information for the REST Administrative Interface.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-078CB0E9-9888-4878-9122-037D5B2BB177__GUID-BA007FE1-1FF8-42CD-B190-DD7EB81500F0">HTTP Request Syntax Parameter</p>
+                     <div class="tblformal" id="GUID-078CB0E9-9888-4878-9122-037D5B2BB177__GUID-048F8860-6916-403D-BA63-D5BA45E534A6">
+                        <p class="titleintable">Table 43-6 HTTP Request Syntax</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="HTTP Request Syntax" summary="Parameter descriptions for the HTTP Request Syntax." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" id="d219117e1067">Parameter</th>
+                                 <th align="left" valign="bottom" id="d219117e1070">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e1075" headers="d219117e1067 ">
+                                    <p>HTTP Method</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e1075 d219117e1070 ">
+                                    <p><code class="codeph">GET</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e1083" headers="d219117e1067 ">
+                                    <p>URL</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e1083 d219117e1070 ">
+                                    <p><code class="codeph">http://<span class="codeinlineitalic">application-express-host</span>:<span class="codeinlineitalic">port</span>/ords/apex_instance_admin_user/info/latest/</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" id="d219117e1097" headers="d219117e1067 ">
+                                    <p>HTTP Request Headers</p>
+                                 </td>
+                                 <td align="left" valign="top" headers="d219117e1097 d219117e1070 ">
+                                    <p><code class="codeph">"authorization": "Bearer: <span class="codeinlineitalic">OAuth access token aquired with Authentication</span></code></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-078CB0E9-9888-4878-9122-037D5B2BB177__GUID-0E7A86D9-BFB9-4E95-9B86-A4FB5D6A4550">Returns</p><pre class="pre codeblock"><code>{
+    "items": [
+        {
+            "version": "5.1.0"
+        }
+    ]
+}
+</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-078CB0E9-9888-4878-9122-037D5B2BB177__GUID-1621C53A-B1E0-47D3-86C1-FEBF4219114F">Example</p>
+                     <p>The example displays the following output when you execute command line utility <code class="codeph">curl</code>:
+                     </p><pre class="pre codeblock"><code> $ curl -H"Authorization: Bearer LfXJilIBdzj5JPRn4xb5QQ..
+          -i http://localhost:8081/ords/restauth/emp/list/ 
+          http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/info/rest-service-version
+</code></pre><p>The example displays the following output when you use the <code class="codeph">APEX_WEB_SERVICE</code> package in another Application Express instance:
+                     </p>
+                     <div class="infoboxnote" id="GUID-078CB0E9-9888-4878-9122-037D5B2BB177__GUID-59182A17-EBE6-4F7E-BEB7-7105E1554151">
+                        <p class="notep1">Note:</p>
+                        <p>The example assumes that the <code class="codeph">OAUTH_AUTHENTICATE</code> procedure is successful.
+                        </p>
+                     </div><pre class="pre codeblock"><code>      select apex_web_service.make_rest_request(
+           p_url =&gt;         'http://<span class="italic">application-express-host</span>:<span class="italic">port</span>/ords/apex_instance_admin_user/info/latest/rest-service-version',
+           p_http_method =&gt; 'GET' )
+   from dual;
+</code></pre><p>The following is a JSON-Document response:</p><pre class="pre codeblock"><code>{
+    "items": [
+        {
+            "version": "5.1.0"
+        }
+    ]
+}
+</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Individual-REST-Services.html#GUID-1AF13E83-BCE6-4F7D-A0BB-C0E90C31F927">Individual REST Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

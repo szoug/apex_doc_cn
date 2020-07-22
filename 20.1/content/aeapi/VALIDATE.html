@@ -1,0 +1,195 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="VALIDATE Procedure">
+      <meta name="DC.subject" content="APEX_JWT, VALIDATE Procedure">
+      <meta name="keywords" content="APEX_JWT, VALIDATE Procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_JWT.html#GUID-D44A3F15-75BE-41DC-A557-17FA70D466B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-2EB85906-34C3-432A-90FD-EE9201857CFE">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>VALIDATE Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="DECODE.html" title="Previous" type="text/html">
+      <link rel="next" href="APEX_LANG.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DECODE.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="APEX_LANG.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_JWT.html" property="item" typeof="WebPage"><span property="name"> APEX_JWT</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">VALIDATE Procedure </li>
+            </ol>
+            <a id="GUID-2EB85906-34C3-432A-90FD-EE9201857CFE" name="GUID-2EB85906-34C3-432A-90FD-EE9201857CFE"></a>
+            
+            <h2 id="AEAPI-GUID-2EB85906-34C3-432A-90FD-EE9201857CFE" class="sect2"><span class="enumeration_section">24.4 </span>VALIDATE Procedure 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure validates the given token.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-2EB85906-34C3-432A-90FD-EE9201857CFE__TITLE-1321-F94BDADF">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>PROCEDURE VALIDATE (
+     p_token          IN t_token,
+     p_iss            IN VARCHAR2    DEFAULT NULL,
+     p_aud            IN VARCHAR2    DEFAULT NULL,
+     p_leeway_seconds IN PLS_INTEGER DEFAULT 0 );</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-2EB85906-34C3-432A-90FD-EE9201857CFE__TITLE-1341-F94C107A">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-2EB85906-34C3-432A-90FD-EE9201857CFE__WRITEPROCEDUREPARAMETERS-F94C1E2F">
+                  <p class="titleintable">Table 24-4 VALIDATE Procedure Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="VALIDATE Procedure Parameters" summary="Parameter descriptions for the VALIDATE procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d124244e68">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d124244e71">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d124244e76" headers="d124244e68 ">
+                              <p><code class="codeph">p_token</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d124244e76 d124244e71 ">
+                              <p>The JWT.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d124244e84" headers="d124244e68 ">
+                              <p><code class="codeph">p_iss</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d124244e84 d124244e71 ">
+                              <p>If not null, verify that the <code class="codeph">"iss"</code> claim equals<code class="codeph"> p_iss</code>.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d124244e98" headers="d124244e68 ">
+                              <p><code class="codeph">p_aud</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d124244e98 d124244e71 ">
+                              <p>If not null, verify that the single <code class="codeph">"aud"</code> value equals<code class="codeph"> p_aud</code>. If <code class="codeph">"aud"</code> is an array, verify that the <code class="codeph">"azp"</code> (Authorized Party) claim equals <code class="codeph">p_aud</code>. This is an OpenID extension.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d124244e121" headers="d124244e68 ">
+                              <p><code class="codeph">p_leeway_seconds</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d124244e121 d124244e71 ">
+                              <p>Fudge factor (in seconds) for comparing <code class="codeph">"exp"</code> (Expiration Time),<code class="codeph"> "nbf"</code> (Not Before) and <code class="codeph">"iat"</code> (Issued At) claims.
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-2EB85906-34C3-432A-90FD-EE9201857CFE__GUID-81F1C1C3-CB73-40F9-B418-CBF466F30FAC">Raises</p>
+                  <p><code class="codeph">APEX.ERROR.INTERNAL</code>: Validation failed, check debug log for details.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-2EB85906-34C3-432A-90FD-EE9201857CFE__TITLE-1361-F94C98D8">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>Verify that <code class="codeph">l_value</code> is a valid <code class="codeph">OpenID</code> ID token.
+                  </p><pre class="pre codeblock"><code>declare
+     l_value varchar2(4000) := 'eyJ0 ... NiJ9.eyJ1c ... I6IjIifX0.DeWt4Qu ... ZXso';
+     l_oauth2_client_id varchar2(30) := '...';
+     l_token apex_jwt.t_token;
+begin
+     l_token := apex_jwt.decode (
+                    p_value =&gt; l_value );
+     apex_jwt.validate (
+         p_token =&gt; l_token,
+         p_aud =&gt; l_oauth2_client_id );
+end;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_JWT.html#GUID-D44A3F15-75BE-41DC-A557-17FA70D466B9">APEX_JWT</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

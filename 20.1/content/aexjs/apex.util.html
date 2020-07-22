@@ -1,0 +1,3080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: util</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.created" content="2020-03-24T20:11:56+00:00">
+    <meta name="dcterms.title" content="Oracle Application Express JavaScript API Reference">
+    <meta name="dcterms.category" content="database">
+    <meta name="dcterms.isVersionOf" content="AEXJS">
+    <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+    <meta name="dcterms.identifier" content="F24723-01">
+    <meta name="dcterms.release" content="Release 20.1">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}} </script>
+    </head>
+
+<body>
+<a href="#main-content" id="skipToContent">Skip to Main Content</a>
+
+<nav id="nav" data-current-item="nav_27">
+    <h2 id="navIndex"><a href="index.html">Index</a></h2><h3>Widgets</h3><ul><li id="nav_0"><a href="grid.html">grid</a></li><li id="nav_1"><a href="iconList.html">iconList</a></li><li id="nav_2"><a href="interactiveGrid.html">interactiveGrid</a></li><li id="nav_3"><a href="menu.html">menu</a></li><li id="nav_4"><a href="menuButton.html">menuButton</a></li><li id="nav_5"><a href="recordView.html">recordView</a></li><li id="nav_6"><a href="tableModelView.html">tableModelView</a></li><li id="nav_7"><a href="tableModelViewBase.html">tableModelViewBase</a></li><li id="nav_8"><a href="treeView.html">treeView</a></li></ul><h3>Namespaces</h3><ul><li id="nav_9"><a href="apex.html">apex</a></li><li id="nav_10"><a href="apex.actions.html">apex.actions</a></li><li id="nav_11"><a href="apex.da.html">apex.da</a></li><li id="nav_12"><a href="apex.debug.html">apex.debug</a></li><li id="nav_13"><a href="apex.event.html">apex.event</a></li><li id="nav_14"><a href="apex.item.html">apex.item</a></li><li id="nav_15"><a href="apex.lang.html">apex.lang</a></li><li id="nav_16"><a href="apex.locale.html">apex.locale</a></li><li id="nav_17"><a href="apex.message.html">apex.message</a></li><li id="nav_18"><a href="apex.model.html">apex.model</a></li><li id="nav_19"><a href="apex.navigation.html">apex.navigation</a></li><li id="nav_20"><a href="apex.navigation.dialog.html">apex.navigation.dialog</a></li><li id="nav_21"><a href="apex.navigation.popup.html">apex.navigation.popup</a></li><li id="nav_22"><a href="apex.page.html">apex.page</a></li><li id="nav_23"><a href="apex.region.html">apex.region</a></li><li id="nav_24"><a href="apex.server.html">apex.server</a></li><li id="nav_25"><a href="apex.storage.html">apex.storage</a></li><li id="nav_26"><a href="apex.theme.html">apex.theme</a></li><li id="nav_27"><a href="apex.util.html">apex.util</a></li><li id="nav_28"><a href="apex.util.delayLinger.html">apex.util.delayLinger</a></li><li id="nav_29"><a href="apex.widget.html">apex.widget</a></li></ul><h3>Interfaces</h3><ul><li id="nav_30"><a href="actions.html">actions</a></li><li id="nav_31"><a href="htmlBuilder.html">htmlBuilder</a></li><li id="nav_32"><a href="interactiveGridView.html">interactiveGridView</a></li><li id="nav_33"><a href="item.html">item</a></li><li id="nav_34"><a href="model.html">model</a></li><li id="nav_35"><a href="region.html">region</a></li><li id="nav_36"><a href="treeNodeAdapter.html">treeNodeAdapter</a></li></ul><h3><a href="global.html">Non-namespace APIs</a></h3>
+</nav>
+
+<div id="main">
+
+
+
+    <h1 class="page-title">Namespace: util</h1>
+
+    
+
+
+
+
+<section id="quick-nav">
+    <header><h2>QuickNav</h2></header>
+    
+    
+
+    
+    <div class="quick-nav-section">
+        <h3><a href="#methods-section">Functions</a></h3>
+        <ul class="subList">
+            
+                <li><a href="#.applyTemplate">applyTemplate</a></li>
+            
+                <li><a href="#.arrayEqual">arrayEqual</a></li>
+            
+                <li><a href="#.cancelInvokeAfterPaint">cancelInvokeAfterPaint</a></li>
+            
+                <li><a href="#.debounce">debounce</a></li>
+            
+                <li><a href="#.escapeCSS">escapeCSS</a></li>
+            
+                <li><a href="#.escapeHTML">escapeHTML</a></li>
+            
+                <li><a href="#.getDateFromISO8601String">getDateFromISO8601String</a></li>
+            
+                <li><a href="#.getNestedObject">getNestedObject</a></li>
+            
+                <li><a href="#.getScrollbarSize">getScrollbarSize</a></li>
+            
+                <li><a href="#.htmlBuilder">htmlBuilder</a></li>
+            
+                <li><a href="#.invokeAfterPaint">invokeAfterPaint</a></li>
+            
+                <li><a href="#.showSpinner">showSpinner</a></li>
+            
+                <li><a href="#.stripHTML">stripHTML</a></li>
+            
+                <li><a href="#.toArray">toArray</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+</section>
+
+
+<section id="main-content">
+
+<header>
+    
+    
+        <h2>
+            <span class="ancestors"><a href="apex.html">apex</a>.</span>util</h2>
+        
+    
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>The apex.util namespace contains general utility functions of Oracle Application Express.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+        <div class="hw">
+        <h3 id="namespaces-section" class="subsection-title">
+            Namespaces
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Namespaces" href="#namespaces-section"></a>
+        </div>
+
+        <dl>
+            <dt><a href="apex.util.delayLinger.html">delayLinger</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+        <div class="hw">
+        <h3 id="methods-section" class="subsection-title">
+            Functions
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Functions" href="#methods-section"></a>
+        </div>
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".applyTemplate"><span class="type-signature">(static) </span>applyTemplate<span class="signature">(pTemplate, pOptions<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark applyTemplate(pTemplate, pOptions) returns {string}" href="#.applyTemplate"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>This function applies data to a template. It processes the template string given in
+<code class="prettyprint">pTemplate</code> by substituting
+values according to the options in <code class="prettyprint">pOptions</code>.
+The template supports Application Express server style placeholder and item substitution syntax.</p>
+
+<p>This function is intended to process Application Express style templates in the browser.
+However it doesn't have access to all the data that the server has. When substituting page items and column
+items it uses the current value stored in the browser not what is in session state on the server.
+It does not support the old non-exact substitutions (with no trailing dot e.g. &ITEM). It does not support
+the old column reference syntax that uses #COLUMN_NAME#. It cannot call
+<code class="prettyprint">PREPARE_URL</code> (this must be done on the server).
+Using a template to insert JavaScript into the DOM is not supported.
+After processing the template all script tags are removed.</p>
+
+<p>The format of a template string is any text intermixed with any number of replacement tokens.
+Two kinds of replacement tokens are supported: placeholders and substitutions.
+Placeholders are processed first.</p>
+
+<p>Placeholder syntax is:</p>
+<pre class="prettyprint"><code>#&lt;placeholder-name>#
+</code></pre>
+<p>The &lt;placeholder-name> is an uppercase alpha numeric plus "_", and "$" string that must be a property
+name in option object <code class="prettyprint">placeholders</code> that gets replaced with the property value.
+Any placeholder tokens that don't match anything in the placeholders object are left as is (searching for the
+next placeholder begins with the trailing # character).</p>
+
+<p>Substitution syntax is (any of):</p>
+<pre class="prettyprint"><code>&&lt;item-name>.
+&&lt;item-name>!&lt;escape-filter>.
+&"&lt;quoted-item-name>".
+&"&lt;quoted-item-name>"!&lt;escape-filter>.
+&APP_TEXT$&lt;message-key>.
+&APP_TEXT$&lt;message-key>!&lt;escape-filter>.
+&"APP_TEXT$&lt;message-key>".
+&"APP_TEXT$&lt;message-key>"!&lt;escape-filter>.
+</code></pre>
+
+<p>The &lt;item-name> is an uppercase alpha numeric plus "_", "$", and "#" string. The &lt;quoted-item-name>
+is a string of any characters except "&", carriage return, line feed, and double quote.
+In both cases the item name is the name of a page item (unless option includePageItems is false),
+a column item (if model and record options are given), a built-in substitution
+(unless option includeBuiltinSubstitutions is false), or an extra substitution if option extraSubstitutions
+is given.</p>
+
+<p>The &lt;message-key> is a message key suitable for use in <a href="apex.lang.html#.getMessage">apex.lang.getMessage</a> and
+is replaced with the localized message text for the given key. The message must already be loaded on the
+client by setting the Text Message attribute Used in JavaScript to Yes or otherwise adding it such as with
+<a href="apex.lang.html#.addMessages">apex.lang.addMessages</a>.
+If no replacement for a substitution can be found it is replaced with the message key. The language specifier
+that is supported for server side message substitutions is not supported by the client and will be ignored
+if present.</p>
+
+<p>When substituting a column item the given record of the given model is used to find a matching column name.
+If not found and if the model has a parent model then the parent model's columns are checked.
+This continues as long as there is a parent model. The order to resolve an item name is: page item,
+column item, column item from ancestor models, built-in substitutions, and finally extra substitutions.
+Column items support the "_LABEL" suffix to access the defined column label. For example if there is a
+column item named NOTE the substitution &NOTE_LABEL. will return the label string for column NOTE.</p>
+
+<p>The built-in substitution names are:</p>
+<ul>
+<li>&APP_ID.</li>
+<li>&APP_PAGE_ID.</li>
+<li>&APP_SESSION.</li>
+<li>&REQUEST.</li>
+<li>&DEBUG.</li>
+<li>&IMAGE_PREFIX.</li>
+</ul>
+
+<p>The escape-filter controls how the replacement value is escaped or filtered. It can be one of the following
+values:</p>
+<ul>
+<li>HTML the value will have HTML characters escaped using <a href="apex.util.html#.escapeHTML">apex.util.escapeHTML</a>.</li>
+<li>ATTR the value will be escaped for an HTML attribute context (currently the same as HTML)</li>
+<li>RAW does not change the value at all.</li>
+<li>STRIPHTML the value will have HTML tags removed and HTML characters escaped.</li>
+</ul>
+<p>This will override any default escape filter set with option <code class="prettyprint">defaultEscapeFilter</code>
+or from the column definition <code class="prettyprint">escape</code> property.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for applyTemplate">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pTemplate</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">A template string with any number of replacement tokens as described above.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pOptions</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">An options object with the following properties that specifies how the template
+    is to be processed:
+                <h6>Properties</h6>
+                
+
+<table class="params" aria-label="Parameters for pOptions">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>placeholders</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">An object map of placeholder names to values.  The default is null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>defaultEscapeFilter</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">One of the above escape-filter values. The default is HTML.
+   This is the escaping/filtering that is done if the substitution token doesn't
+   specify an escape-filter. If a model column definition has an <code class="prettyprint">escape</code> property
+   then it will override the default escaping.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>includePageItems</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true the current value of page items are substituted.
+    The default is true.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>model</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="model.html">model</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The model interface used to get column item values. The default is null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>record</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="model.html#.Record">model.Record</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The record in the model to get column item values from.
+    Option <code class="prettyprint">model</code> must also be provided. The default is null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>extraSubstitutions</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">An object map of extra substitutions. The default is null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>includeBuiltinSubstitutions</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true built-in substitutions such as APP_ID are done.
+    The default is true.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The template string with replacement tokens substituted with data values.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">This example inserts an image tag where the path to the image comes from the built-in
+IMAGE_PREFIX substitution and a page item called P1_PROFILE_IMAGE_FILE.</p>
+    
+        <pre class="prettyprint"><code>apex.jQuery( "#photo" ).html(
+    apex.util.applyTemplate(
+        "&lt;img src='&amp;IMAGE_PREFIX.people/&amp;P1_PROFILE_IMAGE_FILE.'>" ) );</code></pre>
+    
+        <p class="code-caption">This example inserts a div with a message where the message text comes from a
+    placeholder called MESSAGE.</p>
+    
+        <pre class="prettyprint"><code>var options = { placeholders: { MESSAGE: "All is well." } };
+apex.jQuery( "#notification" ).html( apex.util.applyTemplate( "&lt;div>#MESSAGE#&lt;/div>", options ) );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".arrayEqual"><span class="type-signature">(static) </span>arrayEqual<span class="signature">(pArray1, pArray2)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark arrayEqual(pArray1, pArray2) returns {boolean}" href="#.arrayEqual"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Compare two arrays and return true if they have the same number of elements and
+each element of the arrays is strictly equal to each other. Returns false otherwise.
+This is a shallow comparison.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for arrayEqual">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pArray1</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The first array.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pArray2</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The second array.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if a shallow comparison of the array items are equal
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">This example returns true.</p>
+    
+        <pre class="prettyprint"><code>apex.util.arrayEqual( [1,"two",3], [1, "two", 3] );</code></pre>
+    
+        <p class="code-caption">This example returns false.</p>
+    
+        <pre class="prettyprint"><code>apex.util.arrayEqual( [1,"two",3], [1, "two", "3"] );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".cancelInvokeAfterPaint"><span class="type-signature">(static) </span>cancelInvokeAfterPaint<span class="signature">(pId)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark cancelInvokeAfterPaint(pId)" href="#.cancelInvokeAfterPaint"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Wrapper around cancelAnimationFrame that can fallback to <code class="prettyprint">clearTimeout</code>.
+Cancels the callback using the id returned from <a href="apex.util.html#.invokeAfterPaint">apex.util.invokeAfterPaint</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for cancelInvokeAfterPaint">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pId</code></th>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The id returned from <a href="apex.util.html#.invokeAfterPaint">apex.util.invokeAfterPaint</a>.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">See example for function <a href="apex.util.html#.invokeAfterPaint">apex.util.invokeAfterPaint</a></p>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".debounce"><span class="type-signature">(static) </span>debounce<span class="signature">(pFunction, pDelay)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark debounce(pFunction, pDelay) returns {function}" href="#.debounce"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns a new function that calls <code class="prettyprint">pFunction</code> but not until
+<code class="prettyprint">pDelay</code> milliseconds after the last time the returned function is called.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for debounce">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pFunction</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The function to call.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pDelay</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The time to wait before calling the function in milliseconds.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The debounced version of <code class="prettyprint">pFunction</code>.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example calls the function formatValue in response to the user typing characters but only
+after the user pauses typing. In a case like this formatValue would also be called from the blur event on the same item.</p>
+    
+        <pre class="prettyprint"><code>function formatValue() {
+    var value = $v("P1_PHONE_NUMBER");
+    // code to format value as a phone number
+    $s("P1_PHONE_NUMBER_DISPLAY", value);
+}
+apex.jQuery( "#P1_PHONE_NUMBER" ).on( "keypress", apex.util.debounce( formatValue, 100 ) );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".escapeCSS"><span class="type-signature">(static) </span>escapeCSS<span class="signature">(pValue)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark escapeCSS(pValue) returns {string}" href="#.escapeCSS"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns string <code class="prettyprint">pValue</code> with any CSS meta-characters escaped.
+Use this function when the value is used in a CSS selector.
+Whenever possible if a value is going to be used as a selector, constrain the value so
+that it cannot contain CSS meta-characters making it unnecessary to use this function.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for escapeCSS">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pValue</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The string that may contain CSS meta-characters to be escaped.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The escaped string, or an empty string if pValue is null or undefined.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example escapes an element id that contains a (.) period character so that it finds the
+    element with id = "my.id". Without using this function the selector would have a completely
+    different meaning.</p>
+    
+        <pre class="prettyprint"><code>apex.jQuery( "#" + apex.util.escapeCSS( "my.id" ) );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".escapeHTML"><span class="type-signature">(static) </span>escapeHTML<span class="signature">(pValue)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark escapeHTML(pValue) returns {string}" href="#.escapeHTML"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns string <code class="prettyprint">pValue</code> with any special HTML characters (&<>"'/)
+escaped to prevent cross site scripting (XSS) attacks.
+It provides the same functionality as <code class="prettyprint">sys.htf.escape_sc</code> in PL/SQL.</p>
+
+<p>This function should always be used when inserting untrusted data into the DOM.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for escapeHTML">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pValue</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The string that may contain HTML characters to be escaped.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The escaped string.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example appends text to a DOM element where the text comes from a page item called
+    P1_UNTRUSTED_NAME. Data entered by the user cannot be trusted to not contain malicious markup.</p>
+    
+        <pre class="prettyprint"><code>apex.jQuery( "#show_user" ).append( apex.util.escapeHTML( $v("P1_UNTRUSTED_NAME") ) );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".getDateFromISO8601String"><span class="type-signature">(static) </span>getDateFromISO8601String<span class="signature">(pDateStr)</span><span class="type-signature"> &rarr; {Date}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getDateFromISO8601String(pDateStr) returns {Date}" href="#.getDateFromISO8601String"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Get a JavaScript Date object corresponding to the input date string which must be in simplified ISO 8601 format.
+In the future Date.parse could be used but currently there are browsers we support that don't yet support the ISO 8601 format.
+This implementation is a little stricter about what parts of the date and time can be defaulted. The year, month, and day are
+always required. The whole time including the T can be omitted but if there is a time it must contain at least the hours
+and minutes. The only supported time zone is "Z".
+
+This function is useful for turning the date strings returned by the
+<code class="prettyprint">APEX_JSON.STRINGIFY</code> and <code class="prettyprint">APEX_JSON.WRITE</code>
+procedures that take a DATE value into Date objects that the client can use.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getDateFromISO8601String">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pDateStr</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">String representation of a date in simplified ISO 8601 format</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Date object corresponding to the input date string.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Date</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example returns a date object from the date string in result.dateString. For example
+"1987-01-23T13:05:09.040Z"</p>
+    
+        <pre class="prettyprint"><code>var date1 getDateFromISO8601String( result.dateString );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".getNestedObject"><span class="type-signature">(static) </span>getNestedObject<span class="signature">(pRootObject, pPath)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getNestedObject(pRootObject, pPath) returns {Object}" href="#.getNestedObject"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns the nested object at the given path <code class="prettyprint">pPath</code> within the nested object structure in
+<code class="prettyprint">pRootObject</code> creating any missing objects along the path as needed.
+This function is useful when you want to set the value of a property in a deeply
+nested object structure and one or more of the nested objects may or may not exist.
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getNestedObject">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pRootObject</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The root object of a nested object structure.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pPath</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A dot ('.') separated list of properties leading from the root object to the desired object
+  to return.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example sets the value of <code class="prettyprint">options.views.grid.features.cellRangeActions</code>
+to <code class="prettyprint">false</code>.
+It works even when the options object does not contain a views.grid.features object or a views.grid object
+or even a views object.</p>
+    
+        <pre class="prettyprint"><code>var o = apex.util.getNestedObject( options, "views.grid.features" );
+o.cellRangeActions = false; // now options.views.grid.features.cellRangeActions === false</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".getScrollbarSize"><span class="type-signature">(static) </span>getScrollbarSize<span class="signature">()</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getScrollbarSize()" href="#.getScrollbarSize"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Gets the system scrollbar size for cases in which the addition or subtraction of a scrollbar
+height or width would effect the layout of elements on the page. The page need not have a scrollbar on it
+at the time of this call.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    An object with height and width properties that describe any scrollbar on the page.
+</div>
+
+
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">The following example returns an object such as <code class="prettyprint">{ width: 17, height: 17 }</code>. Note
+the actual height and width depends on the Operating System and its various display settings.</p>
+    
+        <pre class="prettyprint"><code>var size = apex.util.getScrollbarSize();</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".htmlBuilder"><span class="type-signature">(static) </span>htmlBuilder<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="htmlBuilder.html">htmlBuilder</a>}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark htmlBuilder() returns {htmlBuilder}" href="#.htmlBuilder"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Return an <a href="htmlBuilder.html">htmlBuilder</a> interface.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="htmlBuilder.html">htmlBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".invokeAfterPaint"><span class="type-signature">(static) </span>invokeAfterPaint<span class="signature">(pFunction)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark invokeAfterPaint(pFunction) returns {*}" href="#.invokeAfterPaint"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Wrapper around requestAnimationFrame that can fallback to <code class="prettyprint">setTimeout</code>.
+Calls the given function before next browser paint. See also <a href="apex.util.html#.cancelInvokeAfterPaint">apex.util.cancelInvokeAfterPaint</a>.</p>
+<p>See HTML documentation for <code class="prettyprint">window.requestAnimationFrame</code> for details.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for invokeAfterPaint">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pFunction</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">function to call after paint</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    id An id that can be passed to <a href="apex.util.html#.cancelInvokeAfterPaint">apex.util.cancelInvokeAfterPaint</a>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example will call the function myAnimationFunction before the next browser repaint.</p>
+    
+        <pre class="prettyprint"><code>var id = apex.util.invokeAfterPaint( myAnimationFunction );
+// ... if needed it can be canceled
+apex.util.cancelInvokeAfterPaint( id );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".showSpinner"><span class="type-signature">(static) </span>showSpinner<span class="signature">(pContainer<span class="signature-attributes">opt</span>, pOptions<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {jQuery}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark showSpinner(pContainer, pOptions) returns {jQuery}" href="#.showSpinner"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Function that renders a spinning alert to show the user that processing is taking place. Note that the alert is
+defined as an ARIA alert so that assistive technologies such as screen readers are alerted to the processing status.<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for showSpinner">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pContainer</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">jQuery</span>
+|
+
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Optional jQuery selector, jQuery, or DOM element identifying the
+    container within which you want to center the spinner. If not passed, the spinner will be centered on
+    the whole page. The default is $("body").</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pOptions</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Optional object with the following properties:
+                <h6>Properties</h6>
+                
+
+<table class="params" aria-label="Parameters for pOptions">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>alert</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Alert text visually hidden, but available to Assistive Technologies.
+    Defaults to "Processing".</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>spinnerClass</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Adds a custom class to the outer SPAN for custom styling.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>fixed</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">if true the spinner will be fixed and will not scroll.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A jQuery object for the spinner. Use the jQuery remove method when processing is complete.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">jQuery</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">To show the spinner when processing starts.</p>
+    
+        <pre class="prettyprint"><code>var lSpinner$ = apex.util.showSpinner( $( "#container_id" ) );</code></pre>
+    
+        <p class="code-caption">To remove the spinner when processing ends.</p>
+    
+        <pre class="prettyprint"><code>lSpinner$.remove();</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".stripHTML"><span class="type-signature">(static) </span>stripHTML<span class="signature">(pText)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark stripHTML(pText) returns {string}" href="#.stripHTML"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns string <code class="prettyprint">pText</code> with all HTML tags removed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for stripHTML">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pText</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The string that may contain HTML markup that you want removed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The input string with all HTML tags removed.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example removes HTML tags from a text string.</p>
+    
+        <pre class="prettyprint"><code>apex.util.stripHTML( "Please &lt;a href='www.example.com/ad'>click here&lt;/a>" );
+// result: "Please click here"</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".toArray"><span class="type-signature">(static) </span>toArray<span class="signature">(pValue, pSeparator<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark toArray(pValue, pSeparator) returns {Array}" href="#.toArray"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Function that returns an array based on the value passed in <code class="prettyprint">pValue</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for toArray">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+        <th scope="col">Default</th>
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pValue</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">If this is a string, then the string will be split into an array using the
+                         <code class="prettyprint">pSeparator</code> parameter.
+                         If it's not a string, then we try to convert the value with
+                         <code class="prettyprint">apex.jQuery.makeArray</code> to an array.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pSeparator</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    ":"
+                
+                </td>
+            
+
+            <td class="description last">Separator used to split a string passed in <code class="prettyprint">pValue</code>,
+  defaults to colon if not specified. Only needed when <code class="prettyprint">pValue</code> is a string.
+  It is ignored otherwise.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">This example splits the string into an array with 3 items:
+<code class="prettyprint">["Bags","Shoes","Shirts"]</code>.</p>
+    
+        <pre class="prettyprint"><code>lProducts = apex.util.toArray( "Bags:Shoes:Shirts" );</code></pre>
+    
+        <p class="code-caption">This example splits the string into an array just like in the previous example. The only
+difference is the separator character is ",".</p>
+    
+        <pre class="prettyprint"><code>lProducts = apex.util.toArray( "Bags,Shoes,Shirts", "," );</code></pre>
+    
+        <p class="code-caption">This example returns the jQuery object as an array.</p>
+    
+        <pre class="prettyprint"><code>lTextFields = apex.util.toArray( jQuery("input[type=text]") );</code></pre>
+    
+
+
+        
+    
+
+    
+
+</article>
+
+</section>
+
+
+
+
+
+    <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Feb 27 2020 23:50:22 GMT-0800 (Pacific Standard Time)
+      <br>
+      <span class="product-docs-footer">Oracle Application Express Release 20.1, JavaScript API Reference</span>
+      <br>
+      <span class="product-docs-footer">Copyright &copy; 2003, 2020, Oracle and/or its affiliates. All rights reserved.</span>
+    </footer>
+</div>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+<script>
+(function() {
+    // make skip link work for mobile browsers
+    document.getElementById("skipToContent").addEventListener("click", function(e) {
+        var target = document.getElementById("main-content");
+        e.preventDefault();
+        target.setAttribute("tabindex", "-1");
+        target.addEventListener("blur", function(e) {
+            target.removeAttribute("tabindex");
+        });
+        target.focus();
+    });
+
+    var nav = document.getElementById("nav");
+    var currentId = nav.getAttribute("data-current-item");
+    if (!currentId) {
+        return;
+    }
+    var link = document.getElementById(currentId);
+    if (!link) {
+        return;
+    }
+    link.className = link.className ? link.className + " current-nav-item" : "current-nav-item";
+    nav.scrollTop = link.offsetTop + (link.offsetHeight - nav.offsetHeight)/2;
+})();
+</script>
+
+</body>
+</html>

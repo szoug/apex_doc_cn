@@ -1,0 +1,169 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="SET_HTML_ESCAPING_MODE Procedure">
+      <meta name="DC.subject" content="APEX_ESCAPE, SET_HTML_ESCAPING_MODE Procedure">
+      <meta name="keywords" content="APEX_ESCAPE, SET_HTML_ESCAPING_MODE Procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_ESCAPE.html#GUID-889DE8EF-ED8C-4E52-A3CE-7DA9A9A79B88">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SET_HTML_ESCAPING_MODE Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="REGEXP-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="APEX_ERROR.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="REGEXP-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="APEX_ERROR.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_ESCAPE.html" property="item" typeof="WebPage"><span property="name"> APEX_ESCAPE</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SET_HTML_ESCAPING_MODE Procedure</li>
+            </ol>
+            <a id="GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA" name="GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA"></a><a id="AEAPI29313"></a><a id="AEAPI29314"></a><a id="AEAPI29315"></a><a id="AEAPI29316"></a><a id="AEAPI29312"></a>
+            
+            <h2 id="AEAPI-GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA" class="sect2"><span class="enumeration_section">14.12 </span>SET_HTML_ESCAPING_MODE Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>The <code class="codeph">SET_HTML_ESCAPING_MODE</code> procedure configures HTML escaping mode
+                for <code class="codeph">apex_escape.html</code>.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA__GUID-EA6D7E89-6671-433E-A0A7-4FC959561CD1">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_ESCAPE.SET_HTML_ESCAPING_MODE (
+    p_mode IN VARCHAR2);</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA__GUID-4C767042-AD11-4B25-99F2-300A20845E4F">Parameters</p>
+                  <div class="tblformal" id="GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA__BABEIHBD">
+                     <p class="titleintable">Table 14-13 APEX_ESCAPE.SET_HTML_ESCAPING_MODE Procedure Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="APEX_ESCAPE.SET_HTML_ESCAPING_MODE Procedure Parameters" summary="Parameter descriptions for the APEX_ESCAPE.SET_HTML_ESCAPING_MODE procedure." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d55948e79">Parameter</th>
+                              <th align="left" valign="bottom" width="69%" id="d55948e82">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d55948e87" headers="d55948e79 ">
+                                 <p><code class="codeph">p_mode</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d55948e87 d55948e82 ">
+                                 <p>If equal to <code class="codeph">B</code>, then do basic escaping, like <code class="codeph">sys.htf.escape_sc</code>. If equal to <code class="codeph">E</code>, then do extended escaping. 
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA__GUID-770F3407-D9E6-4CB4-BFFC-40AF07F01BAD">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>For an example, see “ HTML Function”.</p>
+                  <div class="infoboxnotealso" id="GUID-29152A21-03A9-4607-A03E-2D6F8BEBFFFA__GUID-FD5DD6D9-E785-4DC6-800F-B3389E5B7119">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="HTML_WHITELIST-Function.html#GUID-F4454FB8-FC1C-4781-943E-BC5FBBA94A74">HTML_WHITELIST Function</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="HTML-Function.html#GUID-E52EBEB9-048F-49CA-8A98-C3A92AA696A1">HTML Function</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="HTML_TRUNC-Function.html#GUID-924FA21F-9AB6-4C84-A7A7-CAEEB50F8FD8">HTML_TRUNC Function</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="HTML_ATTRIBUTE-Function.html#GUID-25DC5007-BE1A-41F2-9664-DC7145C33CB0">HTML_ATTRIBUTE Function</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_ESCAPE.html#GUID-889DE8EF-ED8C-4E52-A3CE-7DA9A9A79B88">APEX_ESCAPE</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

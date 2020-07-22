@@ -1,0 +1,391 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="APEX_UTIL">
+      <meta name="DC.Relation" scheme="URI" content="CACHE_GET_DATE_OF_PAGE_CACHE-Function.html#GUID-C79A76BB-E2D2-4A5F-AA52-FD015B0B6087">
+      <meta name="DC.Relation" scheme="URI" content="CACHE_GET_DATE_OF_REGION_CACHE-Function.html#GUID-BA251335-AE89-40CA-ACAD-D42D0D3442B5">
+      <meta name="DC.Relation" scheme="URI" content="CACHE_PURGE_BY_APPLICATION-Procedure.html#GUID-05004DCB-CE65-41F6-905F-31A6AB84510E">
+      <meta name="DC.Relation" scheme="URI" content="CACHE_PURGE_BY_PAGE-Procedure.html#GUID-DA79E21A-64C8-4FDC-869C-546972B63188">
+      <meta name="DC.Relation" scheme="URI" content="CACHE_PURGE_STALE-Procedure.html#GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598">
+      <meta name="DC.Relation" scheme="URI" content="CHANGE_CURRENT_USER_PW-Procedure.html#GUID-3B5A7DD8-6301-440D-B879-70E2A7770796">
+      <meta name="DC.Relation" scheme="URI" content="CHANGE_PASSWORD_ON_FIRST_USE-Function.html#GUID-72EDA90E-BF49-454E-BF79-B5DAE19D35E7">
+      <meta name="DC.Relation" scheme="URI" content="CLOSE_OPEN_DB_LINKS-Procedure.html#GUID-2B1F4574-F249-43A5-9C7E-B5F2A0FA6522">
+      <meta name="DC.Relation" scheme="URI" content="CLEAR_APP_CACHE-Procedure.html#GUID-174C5EA5-43C1-4DBE-8C28-14E162CF59E8">
+      <meta name="DC.Relation" scheme="URI" content="CLEAR_PAGE_CACHE-Procedure.html#GUID-BFD48CCC-DC58-4B83-A8E1-3A49A5133C42">
+      <meta name="DC.Relation" scheme="URI" content="CLEAR_USER_CACHE-Procedure.html#GUID-53630F55-27D0-421F-B2D9-CDD940463E2C">
+      <meta name="DC.Relation" scheme="URI" content="COUNT_CLICK-Procedure.html#GUID-EAC385E4-B686-481C-B95E-2FD6BB997388">
+      <meta name="DC.Relation" scheme="URI" content="CREATE_USER-Procedure.html#GUID-95721E36-4DAB-4BCA-A6F3-AC2BACC52A66">
+      <meta name="DC.Relation" scheme="URI" content="CREATE_USER_GROUP-Procedure.html#GUID-A61F8280-8B18-430A-9CCA-8E59FC01EDF5">
+      <meta name="DC.Relation" scheme="URI" content="CURRENT_USER_IN_GROUP-Function.html#GUID-0EEC4210-DD10-42FD-862C-5B67E284E961">
+      <meta name="DC.Relation" scheme="URI" content="CUSTOM_CALENDAR-Procedure.html#GUID-12FB982F-C021-4E1C-87CF-EC7668F97562">
+      <meta name="DC.Relation" scheme="URI" content="DELETE_USER_GROUP-Procedure-Signature-1.html#GUID-061B00E4-6E45-410A-BE64-3DB8C1294CAA">
+      <meta name="DC.Relation" scheme="URI" content="DELETE_USER_GROUP-Procedure-Signature-2.html#GUID-CE1E0E86-5D42-4D77-AB43-47760E71AB70">
+      <meta name="DC.Relation" scheme="URI" content="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-1.html#GUID-5CB9D495-8AD1-4449-A4D4-A418F929B3A7">
+      <meta name="DC.Relation" scheme="URI" content="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-2.html#GUID-34D5BE72-BD31-4B35-92E6-A82C7455C6A1">
+      <meta name="DC.Relation" scheme="URI" content="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-3.html#GUID-36376CDF-15D0-46A7-87B8-54A5EF4C7088">
+      <meta name="DC.Relation" scheme="URI" content="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-4.html#GUID-EF83167E-E860-4998-AD04-C1C9ABBB3218">
+      <meta name="DC.Relation" scheme="URI" content="EDIT_USER-Procedure.html#GUID-4AD804FC-F209-489F-9F46-A79327F3632E">
+      <meta name="DC.Relation" scheme="URI" content="END_USER_ACCOUNT_DAYS_LEFT-Function.html#GUID-FA687E3D-D1B1-4FBA-9921-89E8F25FF11C">
+      <meta name="DC.Relation" scheme="URI" content="EXPIRE_END_USER_ACCOUNT-Procedure.html#GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947">
+      <meta name="DC.Relation" scheme="URI" content="EXPIRE_WORKSPACE_ACCOUNT-Procedure.html#GUID-BEF1EE02-CCE0-431D-8189-12439FC9F508">
+      <meta name="DC.Relation" scheme="URI" content="EXPORT_USERS-Procedure.html#GUID-2BC13E3E-6093-4C01-9238-E9223C0EAD50">
+      <meta name="DC.Relation" scheme="URI" content="FETCH_APP_ITEM-Function.html#GUID-308BAC59-9DAA-44A6-9227-3996B07AD6D0">
+      <meta name="DC.Relation" scheme="URI" content="FETCH_USER-Procedure-Signature-1.html#GUID-573FAD5B-59AB-47D2-B68C-EC92E313D5BD">
+      <meta name="DC.Relation" scheme="URI" content="FETCH_USER-Procedure-Signature-2.html#GUID-58B47D6B-ED40-425D-9E1A-E9990A01C56B">
+      <meta name="DC.Relation" scheme="URI" content="FETCH_USER-Procedure-Signature-3.html#GUID-C7483EF7-D7B7-4476-8DF4-FCEDFCE4CA9F">
+      <meta name="DC.Relation" scheme="URI" content="FIND_SECURITY_GROUP_ID-Function.html#GUID-F8532F5E-BB69-4E5F-8D7C-3115ED59323B">
+      <meta name="DC.Relation" scheme="URI" content="FIND_WORKSPACE-Function.html#GUID-A492D35F-649C-4211-8F13-02B3030989AC">
+      <meta name="DC.Relation" scheme="URI" content="GET_ACCOUNT_LOCKED_STATUS-Function.html#GUID-4164E9A2-26B5-49B3-90CB-84C3EC7CE844">
+      <meta name="DC.Relation" scheme="URI" content="GET_APPLICATION_STATUS-Function.html#GUID-7BFE4603-753C-40C7-BBCA-0ED3D4E0AD46">
+      <meta name="DC.Relation" scheme="URI" content="GET_ATTRIBUTE-Function.html#GUID-273A7F20-CE4C-42B7-BFF0-EE0E52C66F11">
+      <meta name="DC.Relation" scheme="URI" content="GET_AUTHENTICATION_RESULT-Function.html#GUID-1E45FC0F-3634-4D33-93B9-12560854F388">
+      <meta name="DC.Relation" scheme="URI" content="GET_BLOB_FILE_SRC-Function.html#GUID-21F2D33A-A616-48B5-BAF5-A85C0EDC998F">
+      <meta name="DC.Relation" scheme="URI" content="GET_BUILD_OPTION_STATUS-Function-Signature-1.html#GUID-02BC68A0-BA3B-4504-88F7-F234CD3C8A12">
+      <meta name="DC.Relation" scheme="URI" content="GET_BUILD_OPTION_STATUS-Function-Signature-2.html#GUID-37AB01D1-83C9-4F9E-B78F-64DB9C676B7F">
+      <meta name="DC.Relation" scheme="URI" content="GET_CURRENT_USER_ID-Function.html#GUID-CC815022-6F30-4692-93E8-8B4272B692C9">
+      <meta name="DC.Relation" scheme="URI" content="GET_DEFAULT_SCHEMA-Function.html#GUID-C2C83251-D4EE-4A5F-BFA6-28BF27ECB600">
+      <meta name="DC.Relation" scheme="URI" content="GET_EDITION-Function.html#GUID-1D3811CC-F5A4-4C60-9964-8B99B0F2D5AB">
+      <meta name="DC.Relation" scheme="URI" content="GET_EMAIL-Function.html#GUID-4C914173-426C-4D40-A11F-FA51EF63C0DA">
+      <meta name="DC.Relation" scheme="URI" content="GET_FEEDBACK_FOLLOW_UP-Function.html#GUID-C31A7C32-1C79-4E38-9DED-AF0D4C46120C">
+      <meta name="DC.Relation" scheme="URI" content="GET_FILE-Procedure.html#GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB">
+      <meta name="DC.Relation" scheme="URI" content="GET_FILE_ID-Function.html#GUID-52743094-E09D-47E3-83F8-8571093636A9">
+      <meta name="DC.Relation" scheme="URI" content="GET_FIRST_NAME-Function.html#GUID-9497A80C-69CE-4BE7-9BB0-E44B9A746482">
+      <meta name="DC.Relation" scheme="URI" content="GET_GROUPS_USER_BELONGS_TO-Function.html#GUID-CEEAD6F1-C2F0-41D7-A4B4-A3784CB6662F">
+      <meta name="DC.Relation" scheme="URI" content="GET_GROUP_ID-Function.html#GUID-656F9C2E-AA62-42DF-B253-884FD89B6C9B">
+      <meta name="DC.Relation" scheme="URI" content="GET_GROUP_NAME-Function.html#GUID-C2AD3804-5434-48E2-9B48-E33B8491F379">
+      <meta name="DC.Relation" scheme="URI" content="GET_HASH-Function.html#GUID-AEDCFDF9-94D7-4428-9B51-D3FE0248CEE2">
+      <meta name="DC.Relation" scheme="URI" content="GET_HIGH_CONTRAST_MODE_TOGGLE-Function.html#GUID-0B25D1BF-8B95-4E51-BDFB-E0A0F51DB100">
+      <meta name="DC.Relation" scheme="URI" content="GET_LAST_NAME-Function.html#GUID-144B5C5A-ADD1-428B-A1D2-329C42A84C16">
+      <meta name="DC.Relation" scheme="URI" content="GET_NUMERIC_SESSION_STATE-Function.html#GUID-98F76BFB-F2A2-47B5-A024-081DC6CD094A">
+      <meta name="DC.Relation" scheme="URI" content="GET_PREFERENCE-Function.html#GUID-538B55DF-96D8-4F9C-8011-8B7ACAAFAF59">
+      <meta name="DC.Relation" scheme="URI" content="GET_GLOBAL_NOTIFICATION-Function.html#GUID-11D82B35-AC47-4124-A1F5-F72B6441CA29">
+      <meta name="DC.Relation" scheme="URI" content="GET_PRINT_DOCUMENT-Function-Signature-1.html#GUID-4E7A883F-BD0E-454F-9C25-4089AD7C9AA6">
+      <meta name="DC.Relation" scheme="URI" content="GET_PRINT_DOCUMENT-Function-Signature-2.html#GUID-DCD48A1D-9F26-4727-9BE9-EBD990F2BD8D">
+      <meta name="DC.Relation" scheme="URI" content="GET_PRINT_DOCUMENT-Function-Signature-3.html#GUID-2352DD40-BB65-47DB-8134-E2471C2A36C1">
+      <meta name="DC.Relation" scheme="URI" content="GET_PRINT_DOCUMENT-Function-Signature-4.html#GUID-E14791E8-21F6-4C1A-B413-0786344BFD2F">
+      <meta name="DC.Relation" scheme="URI" content="GET_SCREEN_READER_MODE_TOGGLE-Function.html#GUID-8AC37F7A-5B2A-4FE0-9C2F-10D9C037122F">
+      <meta name="DC.Relation" scheme="URI" content="GET_SESSION_LANG-Function.html#GUID-C4B2CBE1-BC6C-4F5C-90FA-8BE3A84A91C4">
+      <meta name="DC.Relation" scheme="URI" content="GET_SESSION_STATE-Function.html#GUID-8BB0C252-C4DB-4300-AA34-9E1FF3B2DAA7">
+      <meta name="DC.Relation" scheme="URI" content="GET_SESSION_TERRITORY-Function.html#GUID-B6956201-1B69-4951-9F09-DE6311856ECD">
+      <meta name="DC.Relation" scheme="URI" content="GET_SESSION_TIME_ZONE-Function.html#GUID-20CD19C7-832B-4BE9-9042-DFC002EB4539">
+      <meta name="DC.Relation" scheme="URI" content="GET_SINCE-Function.html#GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E">
+      <meta name="DC.Relation" scheme="URI" content="GET_SUPPORTING_OBJECT_SCRIPT-Function.html#GUID-4D1BCDB8-8CB0-4709-9ACE-09109D6D083F">
+      <meta name="DC.Relation" scheme="URI" content="GET_SUPPORTING_OBJECT_SCRIPT-Procedure.html#GUID-6CB69835-1A81-4865-855D-07E322A9C401">
+      <meta name="DC.Relation" scheme="URI" content="GET_USER_ID-Function.html#GUID-26B8E977-A356-4A79-B35A-6C61C8C7A054">
+      <meta name="DC.Relation" scheme="URI" content="GET_USER_ROLES-Function.html#GUID-A2DB0D79-3FD4-4297-93D4-92836E426175">
+      <meta name="DC.Relation" scheme="URI" content="GET_USERNAME-Function-2.html#GUID-08CC3815-F8B4-4E12-ACC3-6DCCAA482CDF">
+      <meta name="DC.Relation" scheme="URI" content="HOST_URL-Function.html#GUID-6E9330B4-B748-4DFB-AD48-B32678608666">
+      <meta name="DC.Relation" scheme="URI" content="HTML_PCT_GRAPH_MASK-Function.html#GUID-0E81A607-DEA7-430E-93F6-F930B2729171">
+      <meta name="DC.Relation" scheme="URI" content="INCREMENT_CALENDAR-Procedure.html#GUID-66E26416-17E6-4C2C-A3C8-76748D30E536">
+      <meta name="DC.Relation" scheme="URI" content="IR_CLEAR-Procedure-DEPRECATED.html#GUID-F8F9A729-5111-41C3-9582-E3EAD765EEB1">
+      <meta name="DC.Relation" scheme="URI" content="IR_DELETE_REPORT-Procedure-DEPRECATED.html#GUID-88628785-C58C-4ABF-BBCF-548F0341276C">
+      <meta name="DC.Relation" scheme="URI" content="IR_DELETE_SUBSCRIPTION-Procedure-DEPRECATED.html#GUID-EC8D1BF3-95A2-40F7-ADFE-DBDE1A1F626B">
+      <meta name="DC.Relation" scheme="URI" content="IR_FILTER-Procedure-DEPRECATED.html#GUID-B4DB3E46-D950-484C-87AC-9910C7D107B9">
+      <meta name="DC.Relation" scheme="URI" content="IR_RESET-Procedure-DEPRECATED.html#GUID-BF75E659-1C82-443F-AD3E-2A36B9283426">
+      <meta name="DC.Relation" scheme="URI" content="IS_HIGH_CONTRAST_SESSION-Function.html#GUID-E24A9BCE-F745-4C34-B9A0-7297644A3A74">
+      <meta name="DC.Relation" scheme="URI" content="IS_HIGH_CONTRAST_SESSION_YN-Function.html#GUID-17EEDC70-B8A2-48C7-8564-55A4C3A579AB">
+      <meta name="DC.Relation" scheme="URI" content="IS_LOGIN_PASSWORD_VALID-Function.html#GUID-A8E23B74-22C6-4786-8DF6-E666FD3A0F1D">
+      <meta name="DC.Relation" scheme="URI" content="IS_SCREEN_READER_SESSION-Function.html#GUID-96F41F29-8EAF-445E-B0E6-4455D0250D45">
+      <meta name="DC.Relation" scheme="URI" content="IS_SCREEN_READER_SESSION_YN-Function.html#GUID-5A1FB0B2-ABBA-43A1-9B2B-F9F3803CF99A">
+      <meta name="DC.Relation" scheme="URI" content="IS_USERNAME_UNIQUE-Function.html#GUID-75E32B2D-DE30-4AB4-B7D8-5E8580D0671E">
+      <meta name="DC.Relation" scheme="URI" content="KEYVAL_NUM-Function.html#GUID-6698ACC2-13C1-4392-9927-5770A135D274">
+      <meta name="DC.Relation" scheme="URI" content="KEYVAL_VC2-Function.html#GUID-F51D5026-9BB3-4BD5-96F7-8B21B6C04670">
+      <meta name="DC.Relation" scheme="URI" content="LOCK_ACCOUNT-Procedure.html#GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E">
+      <meta name="DC.Relation" scheme="URI" content="PASSWORD_FIRST_USE_OCCURRED-Function.html#GUID-5BC0A4F7-1C06-4DA3-A394-684A828DFC79">
+      <meta name="DC.Relation" scheme="URI" content="PREPARE_URL-Function.html#GUID-A61DFF37-2211-43E4-B7FE-B89C31E151FF">
+      <meta name="DC.Relation" scheme="URI" content="PUBLIC_CHECK_AUTHORIZATION-Function-DEPRECATED.html#GUID-77BDCD4A-3677-49A3-A3F4-EB77B7EE3A54">
+      <meta name="DC.Relation" scheme="URI" content="PURGE_REGIONS_BY_APP-Procedure.html#GUID-BDCA1761-5E9C-482F-B337-715FC5D441C5">
+      <meta name="DC.Relation" scheme="URI" content="PURGE_REGIONS_BY_NAME-Procedure.html#GUID-27B5662C-DB73-40BB-BEFB-5EB22BA16484">
+      <meta name="DC.Relation" scheme="URI" content="PURGE_REGIONS_BY_PAGE-Procedure.html#GUID-AFD748BC-5C3F-4F4C-AF2D-B98B8410319E">
+      <meta name="DC.Relation" scheme="URI" content="REDIRECT_URL-Procedure.html#GUID-79186327-F301-4F71-8E05-B5A7E0CFB6E3">
+      <meta name="DC.Relation" scheme="URI" content="REMOVE_PREFERENCE-Procedure.html#GUID-79BB456C-A6EA-40D3-8F54-F0667CC17D39">
+      <meta name="DC.Relation" scheme="URI" content="REMOVE_SORT_PREFERENCES-Procedure.html#GUID-E7EEC658-2A2D-47ED-84D6-1C30F4C29E6C">
+      <meta name="DC.Relation" scheme="URI" content="REMOVE_USER-Procedure.html#GUID-BC7FB468-AC36-49E2-A36A-E594751B9468">
+      <meta name="DC.Relation" scheme="URI" content="RESET_AUTHORIZATIONS-Procedure-DEPRECATED.html#GUID-2FA75372-AB9A-417B-A4C4-EDE7E98DF15D">
+      <meta name="DC.Relation" scheme="URI" content="RESET_PASSWORD-Procedure.html#GUID-D7416D24-1DBB-4784-960A-86E0EEC6F801">
+      <meta name="DC.Relation" scheme="URI" content="RESET_PW-Procedure.html#GUID-42CC5310-81A2-41B3-BC2F-2653B0DA8EE1">
+      <meta name="DC.Relation" scheme="URI" content="SAVEKEY_NUM-Function.html#GUID-55E57A86-708A-4B00-AAE4-5D8549432914">
+      <meta name="DC.Relation" scheme="URI" content="SAVEKEY_VC2-Function.html#GUID-20EDB17C-2E8B-456D-AB98-7201BA8F27A8">
+      <meta name="DC.Relation" scheme="URI" content="SET_APP_BUILD_STATUS_Procedure.html#GUID-A0D47557-5870-444C-A06A-55C167370F52">
+      <meta name="DC.Relation" scheme="URI" content="SET_APPLICATION_STATUS-Procedure.html#GUID-59E0FE99-8911-41B3-823A-36D4C705ACA4">
+      <meta name="DC.Relation" scheme="URI" content="SET_ATTRIBUTE-Procedure.html#GUID-9EF508D0-1518-4CAB-9BE2-E07174441CA3">
+      <meta name="DC.Relation" scheme="URI" content="SET_AUTHENTICATION_RESULT-Procedure.html#GUID-971E9C8A-17D1-4D7C-B885-28F47402AD06">
+      <meta name="DC.Relation" scheme="URI" content="SET_BUILD_OPTION_STATUS-Procedure.html#GUID-98403494-2FDD-4C72-BA59-886F03C1A9A3">
+      <meta name="DC.Relation" scheme="URI" content="SET_CURRENT_THEME_STYLE-Procedure.html#GUID-0480BC8D-0C88-4800-911F-162DD6E0ACB3">
+      <meta name="DC.Relation" scheme="URI" content="SET_CUSTOM_AUTH_STATUS-Procedure.html#GUID-1374CDB1-7E13-49B0-823D-2999F9366C79">
+      <meta name="DC.Relation" scheme="URI" content="SET_EDITION-Procedure.html#GUID-11FD0711-2503-48CB-97A2-4FF5A5271D3E">
+      <meta name="DC.Relation" scheme="URI" content="SET_EMAIL-Procedure.html#GUID-02386891-586E-49E2-847A-A5504E65095E">
+      <meta name="DC.Relation" scheme="URI" content="SET_FIRST_NAME-Procedure.html#GUID-BC4570FB-1201-490B-8D8A-4651D613D856">
+      <meta name="DC.Relation" scheme="URI" content="SET_GLOBAL_NOTIFICATION-Procedure.html#GUID-9EA87E45-8B07-4A72-B628-7DB023E6489C">
+      <meta name="DC.Relation" scheme="URI" content="SET_GROUP_GROUP_GRANTS-Procedure.html#GUID-3B063E08-1B35-4955-B4C1-4845CBF7655F">
+      <meta name="DC.Relation" scheme="URI" content="SET_GROUP_USER_GRANTS-Procedure.html#GUID-A4997FF4-D807-498C-8AA4-4590E60CA6B5">
+      <meta name="DC.Relation" scheme="URI" content="SET_LAST_NAME-Procedure.html#GUID-E892B650-A885-4D73-84D2-344BC62C5F85">
+      <meta name="DC.Relation" scheme="URI" content="SET_PARSING_SCHEMA_FOR_REQUEST-Procedure.html#GUID-2DB16C9E-6238-4DF9-A920-20D8E8FA93C0">
+      <meta name="DC.Relation" scheme="URI" content="SET_PREFERENCE-Procedure.html#GUID-7B4C2BED-93BA-477D-82AA-23493B7B0549">
+      <meta name="DC.Relation" scheme="URI" content="SET_SECURITY_GROUP_ID-Procedure.html#GUID-8A6265B5-BDC6-4178-A550-260CCA5216F3">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_HIGH_CONTRAST_OFF-Procedure.html#GUID-17620028-285E-425C-AE63-76597B432216">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_HIGH_CONTRAST_ON-Procedure.html#GUID-BE4DA7E2-F572-479D-8A0C-12BF6D4F47F3">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_LANG-Procedure.html#GUID-CCF94B9A-4903-4AC5-8142-62D51A8777DC">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_LIFETIME_SECONDS-Procedure.html#GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_MAX_IDLE_SECONDS-Procedure.html#GUID-5E334713-706C-4AA1-A856-4711271C0929">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_SCREEN_READER_OFF-Procedure.html#GUID-8057B11D-67C4-4F02-A70B-F0CFAB7FADA0">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_SCREEN_READER_ON-Procedure.html#GUID-3D6F7B4B-091B-49AF-941D-52EA8C8F2FCC">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_STATE-Procedure.html#GUID-ECF66FA6-91DF-4463-A7DC-EFFB3E49A5D1">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_TERRITORY-Procedure.html#GUID-AE1B8888-CBE5-4447-9263-74E63FDC462F">
+      <meta name="DC.Relation" scheme="URI" content="SET_SESSION_TIME_ZONE-Procedure.html#GUID-B3BCA991-3799-41C6-840F-1A57CADC39AC">
+      <meta name="DC.Relation" scheme="URI" content="SET_USERNAME-Procedure.html#GUID-011204BC-D14B-4F1B-BF89-EB5AA454D5D9">
+      <meta name="DC.Relation" scheme="URI" content="SET_WORKSPACE_Procedure-2.html#GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F">
+      <meta name="DC.Relation" scheme="URI" content="SHOW_HIGH_CONTRAST_MODE_TOGGLE-Procedure.html#GUID-B75336A2-FE32-4BB2-B73D-2C5DE0DB4DEA">
+      <meta name="DC.Relation" scheme="URI" content="SHOW_SCREEN_READER_MODE_TOGGLE-Procedure.html#GUID-9744AC5C-3782-4B40-B091-33EAA6C117BB">
+      <meta name="DC.Relation" scheme="URI" content="STRING_TO_TABLE-Function.html#GUID-67FBC2AB-5E0A-447D-8FF6-0512512210AC">
+      <meta name="DC.Relation" scheme="URI" content="STRONG_PASSWORD_CHECK-Procedure.html#GUID-5EECBD3D-C82E-49A3-985D-2DC32DE9C642">
+      <meta name="DC.Relation" scheme="URI" content="STRONG_PASSWORD_VALIDATION-Function.html#GUID-9E1EB5D3-DEB4-4C11-8233-E7589CA561F7">
+      <meta name="DC.Relation" scheme="URI" content="SUBMIT_FEEDBACK-Procedure.html#GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE">
+      <meta name="DC.Relation" scheme="URI" content="SUBMIT_FEEDBACK_FOLLOWUP-Procedure.html#GUID-C6F4E4A8-7E40-498F-8E8F-7D99D98527B0">
+      <meta name="DC.Relation" scheme="URI" content="TABLE_TO_STRING-Function.html#GUID-4F4C59D1-E8B7-4CC1-87C7-DCFD5AF4DCC0">
+      <meta name="DC.Relation" scheme="URI" content="UNEXPIRE_END_USER_ACCOUNT-Procedure.html#GUID-ABF5D38E-5156-436D-814A-B38A13DA8FA8">
+      <meta name="DC.Relation" scheme="URI" content="UNEXPIRE_WORKSPACE_ACCOUNT-Procedure.html#GUID-8CAD70A4-B7D7-4431-80E3-17195986258B">
+      <meta name="DC.Relation" scheme="URI" content="UNLOCK_ACCOUNT-Procedure.html#GUID-0867626D-9B3B-49AA-97C9-2C45443188BC">
+      <meta name="DC.Relation" scheme="URI" content="URL_ENCODE-Function.html#GUID-47DB18F3-133B-43F0-B045-F19C09190357">
+      <meta name="DC.Relation" scheme="URI" content="WORKSPACE_ACCOUNT_DAYS_LEFT-Function.html#GUID-E536CBC4-8FEC-4644-B1E1-19E4E0BBF327">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>APEX_UTIL</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="UPD_TABLE-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="CACHE_GET_DATE_OF_PAGE_CACHE-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="UPD_TABLE-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="CACHE_GET_DATE_OF_PAGE_CACHE-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> APEX_UTIL</li>
+            </ol>
+            <a id="GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9" name="GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9"></a><a id="AEAPI101"></a>
+            
+            <h2 id="AEAPI-GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9" class="sect2"><span class="enumeration_chapter">39 </span> APEX_UTIL
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <a id="d172888e43" class="indexterm-anchor"></a><a id="d172888e45" class="indexterm-anchor"></a><code class="codeph">APEX_UTIL</code> package provides utilities you can use when programming in the Oracle Application Express environment. You can use the <code class="codeph">APEX_UTIL</code> package to get and set session state, get files, check authorizations for users, reset different states for users, get and purge cache information and also to get and set preferences for users.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="CACHE_GET_DATE_OF_PAGE_CACHE-Function.html#GUID-C79A76BB-E2D2-4A5F-AA52-FD015B0B6087">CACHE_GET_DATE_OF_PAGE_CACHE Function</a><br></li>
+                  <li class="ulchildlink"><a href="CACHE_GET_DATE_OF_REGION_CACHE-Function.html#GUID-BA251335-AE89-40CA-ACAD-D42D0D3442B5">CACHE_GET_DATE_OF_REGION_CACHE Function</a><br></li>
+                  <li class="ulchildlink"><a href="CACHE_PURGE_BY_APPLICATION-Procedure.html#GUID-05004DCB-CE65-41F6-905F-31A6AB84510E">CACHE_PURGE_BY_APPLICATION Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CACHE_PURGE_BY_PAGE-Procedure.html#GUID-DA79E21A-64C8-4FDC-869C-546972B63188">CACHE_PURGE_BY_PAGE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CACHE_PURGE_STALE-Procedure.html#GUID-87590490-1EFB-412E-AFC4-A3D44DEA4598">CACHE_PURGE_STALE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CHANGE_CURRENT_USER_PW-Procedure.html#GUID-3B5A7DD8-6301-440D-B879-70E2A7770796">CHANGE_CURRENT_USER_PW Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CHANGE_PASSWORD_ON_FIRST_USE-Function.html#GUID-72EDA90E-BF49-454E-BF79-B5DAE19D35E7">CHANGE_PASSWORD_ON_FIRST_USE Function</a><br></li>
+                  <li class="ulchildlink"><a href="CLOSE_OPEN_DB_LINKS-Procedure.html#GUID-2B1F4574-F249-43A5-9C7E-B5F2A0FA6522">CLOSE_OPEN_DB_LINKS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CLEAR_APP_CACHE-Procedure.html#GUID-174C5EA5-43C1-4DBE-8C28-14E162CF59E8">CLEAR_APP_CACHE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CLEAR_PAGE_CACHE-Procedure.html#GUID-BFD48CCC-DC58-4B83-A8E1-3A49A5133C42">CLEAR_PAGE_CACHE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CLEAR_USER_CACHE-Procedure.html#GUID-53630F55-27D0-421F-B2D9-CDD940463E2C">CLEAR_USER_CACHE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="COUNT_CLICK-Procedure.html#GUID-EAC385E4-B686-481C-B95E-2FD6BB997388">COUNT_CLICK Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CREATE_USER-Procedure.html#GUID-95721E36-4DAB-4BCA-A6F3-AC2BACC52A66">CREATE_USER Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CREATE_USER_GROUP-Procedure.html#GUID-A61F8280-8B18-430A-9CCA-8E59FC01EDF5">CREATE_USER_GROUP Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CURRENT_USER_IN_GROUP-Function.html#GUID-0EEC4210-DD10-42FD-862C-5B67E284E961">CURRENT_USER_IN_GROUP Function</a><br></li>
+                  <li class="ulchildlink"><a href="CUSTOM_CALENDAR-Procedure.html#GUID-12FB982F-C021-4E1C-87CF-EC7668F97562">CUSTOM_CALENDAR Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="DELETE_USER_GROUP-Procedure-Signature-1.html#GUID-061B00E4-6E45-410A-BE64-3DB8C1294CAA">DELETE_USER_GROUP Procedure Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="DELETE_USER_GROUP-Procedure-Signature-2.html#GUID-CE1E0E86-5D42-4D77-AB43-47760E71AB70">DELETE_USER_GROUP Procedure Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-1.html#GUID-5CB9D495-8AD1-4449-A4D4-A418F929B3A7">DOWNLOAD_PRINT_DOCUMENT Procedure Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-2.html#GUID-34D5BE72-BD31-4B35-92E6-A82C7455C6A1">DOWNLOAD_PRINT_DOCUMENT Procedure Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-3.html#GUID-36376CDF-15D0-46A7-87B8-54A5EF4C7088">DOWNLOAD_PRINT_DOCUMENT Procedure Signature 3</a><br></li>
+                  <li class="ulchildlink"><a href="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-4.html#GUID-EF83167E-E860-4998-AD04-C1C9ABBB3218">DOWNLOAD_PRINT_DOCUMENT Procedure Signature 4</a><br></li>
+                  <li class="ulchildlink"><a href="EDIT_USER-Procedure.html#GUID-4AD804FC-F209-489F-9F46-A79327F3632E">EDIT_USER Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="END_USER_ACCOUNT_DAYS_LEFT-Function.html#GUID-FA687E3D-D1B1-4FBA-9921-89E8F25FF11C">END_USER_ACCOUNT_DAYS_LEFT Function</a><br></li>
+                  <li class="ulchildlink"><a href="EXPIRE_END_USER_ACCOUNT-Procedure.html#GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947">EXPIRE_END_USER_ACCOUNT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="EXPIRE_WORKSPACE_ACCOUNT-Procedure.html#GUID-BEF1EE02-CCE0-431D-8189-12439FC9F508">EXPIRE_WORKSPACE_ACCOUNT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="EXPORT_USERS-Procedure.html#GUID-2BC13E3E-6093-4C01-9238-E9223C0EAD50">EXPORT_USERS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="FETCH_APP_ITEM-Function.html#GUID-308BAC59-9DAA-44A6-9227-3996B07AD6D0">FETCH_APP_ITEM Function</a><br></li>
+                  <li class="ulchildlink"><a href="FETCH_USER-Procedure-Signature-1.html#GUID-573FAD5B-59AB-47D2-B68C-EC92E313D5BD">FETCH_USER Procedure Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="FETCH_USER-Procedure-Signature-2.html#GUID-58B47D6B-ED40-425D-9E1A-E9990A01C56B">FETCH_USER Procedure Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="FETCH_USER-Procedure-Signature-3.html#GUID-C7483EF7-D7B7-4476-8DF4-FCEDFCE4CA9F">FETCH_USER Procedure Signature 3</a><br></li>
+                  <li class="ulchildlink"><a href="FIND_SECURITY_GROUP_ID-Function.html#GUID-F8532F5E-BB69-4E5F-8D7C-3115ED59323B">FIND_SECURITY_GROUP_ID Function</a><br></li>
+                  <li class="ulchildlink"><a href="FIND_WORKSPACE-Function.html#GUID-A492D35F-649C-4211-8F13-02B3030989AC">FIND_WORKSPACE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_ACCOUNT_LOCKED_STATUS-Function.html#GUID-4164E9A2-26B5-49B3-90CB-84C3EC7CE844">GET_ACCOUNT_LOCKED_STATUS Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_APPLICATION_STATUS-Function.html#GUID-7BFE4603-753C-40C7-BBCA-0ED3D4E0AD46">GET_APPLICATION_STATUS Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_ATTRIBUTE-Function.html#GUID-273A7F20-CE4C-42B7-BFF0-EE0E52C66F11">GET_ATTRIBUTE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_AUTHENTICATION_RESULT-Function.html#GUID-1E45FC0F-3634-4D33-93B9-12560854F388">GET_AUTHENTICATION_RESULT Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_BLOB_FILE_SRC-Function.html#GUID-21F2D33A-A616-48B5-BAF5-A85C0EDC998F">GET_BLOB_FILE_SRC Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_BUILD_OPTION_STATUS-Function-Signature-1.html#GUID-02BC68A0-BA3B-4504-88F7-F234CD3C8A12">GET_BUILD_OPTION_STATUS Function Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="GET_BUILD_OPTION_STATUS-Function-Signature-2.html#GUID-37AB01D1-83C9-4F9E-B78F-64DB9C676B7F">GET_BUILD_OPTION_STATUS Function Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="GET_CURRENT_USER_ID-Function.html#GUID-CC815022-6F30-4692-93E8-8B4272B692C9">GET_CURRENT_USER_ID Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DEFAULT_SCHEMA-Function.html#GUID-C2C83251-D4EE-4A5F-BFA6-28BF27ECB600">GET_DEFAULT_SCHEMA Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_EDITION-Function.html#GUID-1D3811CC-F5A4-4C60-9964-8B99B0F2D5AB">GET_EDITION Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_EMAIL-Function.html#GUID-4C914173-426C-4D40-A11F-FA51EF63C0DA">GET_EMAIL Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_FEEDBACK_FOLLOW_UP-Function.html#GUID-C31A7C32-1C79-4E38-9DED-AF0D4C46120C">GET_FEEDBACK_FOLLOW_UP Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_FILE-Procedure.html#GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB">GET_FILE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="GET_FILE_ID-Function.html#GUID-52743094-E09D-47E3-83F8-8571093636A9">GET_FILE_ID Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_FIRST_NAME-Function.html#GUID-9497A80C-69CE-4BE7-9BB0-E44B9A746482">GET_FIRST_NAME Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_GROUPS_USER_BELONGS_TO-Function.html#GUID-CEEAD6F1-C2F0-41D7-A4B4-A3784CB6662F">GET_GROUPS_USER_BELONGS_TO Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_GROUP_ID-Function.html#GUID-656F9C2E-AA62-42DF-B253-884FD89B6C9B">GET_GROUP_ID Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_GROUP_NAME-Function.html#GUID-C2AD3804-5434-48E2-9B48-E33B8491F379">GET_GROUP_NAME Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_HASH-Function.html#GUID-AEDCFDF9-94D7-4428-9B51-D3FE0248CEE2">GET_HASH Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_HIGH_CONTRAST_MODE_TOGGLE-Function.html#GUID-0B25D1BF-8B95-4E51-BDFB-E0A0F51DB100">GET_HIGH_CONTRAST_MODE_TOGGLE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_LAST_NAME-Function.html#GUID-144B5C5A-ADD1-428B-A1D2-329C42A84C16">GET_LAST_NAME Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_NUMERIC_SESSION_STATE-Function.html#GUID-98F76BFB-F2A2-47B5-A024-081DC6CD094A">GET_NUMERIC_SESSION_STATE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_PREFERENCE-Function.html#GUID-538B55DF-96D8-4F9C-8011-8B7ACAAFAF59">GET_PREFERENCE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_GLOBAL_NOTIFICATION-Function.html#GUID-11D82B35-AC47-4124-A1F5-F72B6441CA29">GET_GLOBAL_NOTIFICATION Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_PRINT_DOCUMENT-Function-Signature-1.html#GUID-4E7A883F-BD0E-454F-9C25-4089AD7C9AA6">GET_PRINT_DOCUMENT Function Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="GET_PRINT_DOCUMENT-Function-Signature-2.html#GUID-DCD48A1D-9F26-4727-9BE9-EBD990F2BD8D">GET_PRINT_DOCUMENT Function Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="GET_PRINT_DOCUMENT-Function-Signature-3.html#GUID-2352DD40-BB65-47DB-8134-E2471C2A36C1">GET_PRINT_DOCUMENT Function Signature 3</a><br></li>
+                  <li class="ulchildlink"><a href="GET_PRINT_DOCUMENT-Function-Signature-4.html#GUID-E14791E8-21F6-4C1A-B413-0786344BFD2F">GET_PRINT_DOCUMENT Function Signature 4</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SCREEN_READER_MODE_TOGGLE-Function.html#GUID-8AC37F7A-5B2A-4FE0-9C2F-10D9C037122F">GET_SCREEN_READER_MODE_TOGGLE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SESSION_LANG-Function.html#GUID-C4B2CBE1-BC6C-4F5C-90FA-8BE3A84A91C4">GET_SESSION_LANG Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SESSION_STATE-Function.html#GUID-8BB0C252-C4DB-4300-AA34-9E1FF3B2DAA7">GET_SESSION_STATE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SESSION_TERRITORY-Function.html#GUID-B6956201-1B69-4951-9F09-DE6311856ECD">GET_SESSION_TERRITORY Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SESSION_TIME_ZONE-Function.html#GUID-20CD19C7-832B-4BE9-9042-DFC002EB4539">GET_SESSION_TIME_ZONE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SINCE-Function.html#GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E">GET_SINCE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SUPPORTING_OBJECT_SCRIPT-Function.html#GUID-4D1BCDB8-8CB0-4709-9ACE-09109D6D083F">GET_SUPPORTING_OBJECT_SCRIPT Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SUPPORTING_OBJECT_SCRIPT-Procedure.html#GUID-6CB69835-1A81-4865-855D-07E322A9C401">GET_SUPPORTING_OBJECT_SCRIPT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="GET_USER_ID-Function.html#GUID-26B8E977-A356-4A79-B35A-6C61C8C7A054">GET_USER_ID Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_USER_ROLES-Function.html#GUID-A2DB0D79-3FD4-4297-93D4-92836E426175">GET_USER_ROLES Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_USERNAME-Function-2.html#GUID-08CC3815-F8B4-4E12-ACC3-6DCCAA482CDF">GET_USERNAME Function</a><br></li>
+                  <li class="ulchildlink"><a href="HOST_URL-Function.html#GUID-6E9330B4-B748-4DFB-AD48-B32678608666">HOST_URL Function</a><br></li>
+                  <li class="ulchildlink"><a href="HTML_PCT_GRAPH_MASK-Function.html#GUID-0E81A607-DEA7-430E-93F6-F930B2729171">HTML_PCT_GRAPH_MASK Function</a><br></li>
+                  <li class="ulchildlink"><a href="INCREMENT_CALENDAR-Procedure.html#GUID-66E26416-17E6-4C2C-A3C8-76748D30E536">INCREMENT_CALENDAR Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="IR_CLEAR-Procedure-DEPRECATED.html#GUID-F8F9A729-5111-41C3-9582-E3EAD765EEB1">IR_CLEAR Procedure [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="IR_DELETE_REPORT-Procedure-DEPRECATED.html#GUID-88628785-C58C-4ABF-BBCF-548F0341276C">IR_DELETE_REPORT Procedure [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="IR_DELETE_SUBSCRIPTION-Procedure-DEPRECATED.html#GUID-EC8D1BF3-95A2-40F7-ADFE-DBDE1A1F626B">IR_DELETE_SUBSCRIPTION Procedure [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="IR_FILTER-Procedure-DEPRECATED.html#GUID-B4DB3E46-D950-484C-87AC-9910C7D107B9">IR_FILTER Procedure [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="IR_RESET-Procedure-DEPRECATED.html#GUID-BF75E659-1C82-443F-AD3E-2A36B9283426">IR_RESET Procedure [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="IS_HIGH_CONTRAST_SESSION-Function.html#GUID-E24A9BCE-F745-4C34-B9A0-7297644A3A74">IS_HIGH_CONTRAST_SESSION Function</a><br></li>
+                  <li class="ulchildlink"><a href="IS_HIGH_CONTRAST_SESSION_YN-Function.html#GUID-17EEDC70-B8A2-48C7-8564-55A4C3A579AB">IS_HIGH_CONTRAST_SESSION_YN Function</a><br></li>
+                  <li class="ulchildlink"><a href="IS_LOGIN_PASSWORD_VALID-Function.html#GUID-A8E23B74-22C6-4786-8DF6-E666FD3A0F1D">IS_LOGIN_PASSWORD_VALID Function</a><br></li>
+                  <li class="ulchildlink"><a href="IS_SCREEN_READER_SESSION-Function.html#GUID-96F41F29-8EAF-445E-B0E6-4455D0250D45">IS_SCREEN_READER_SESSION Function</a><br></li>
+                  <li class="ulchildlink"><a href="IS_SCREEN_READER_SESSION_YN-Function.html#GUID-5A1FB0B2-ABBA-43A1-9B2B-F9F3803CF99A">IS_SCREEN_READER_SESSION_YN Function</a><br></li>
+                  <li class="ulchildlink"><a href="IS_USERNAME_UNIQUE-Function.html#GUID-75E32B2D-DE30-4AB4-B7D8-5E8580D0671E">IS_USERNAME_UNIQUE Function</a><br></li>
+                  <li class="ulchildlink"><a href="KEYVAL_NUM-Function.html#GUID-6698ACC2-13C1-4392-9927-5770A135D274">KEYVAL_NUM Function</a><br></li>
+                  <li class="ulchildlink"><a href="KEYVAL_VC2-Function.html#GUID-F51D5026-9BB3-4BD5-96F7-8B21B6C04670">KEYVAL_VC2 Function</a><br></li>
+                  <li class="ulchildlink"><a href="LOCK_ACCOUNT-Procedure.html#GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E">LOCK_ACCOUNT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PASSWORD_FIRST_USE_OCCURRED-Function.html#GUID-5BC0A4F7-1C06-4DA3-A394-684A828DFC79">PASSWORD_FIRST_USE_OCCURRED Function</a><br></li>
+                  <li class="ulchildlink"><a href="PREPARE_URL-Function.html#GUID-A61DFF37-2211-43E4-B7FE-B89C31E151FF">PREPARE_URL Function</a><br></li>
+                  <li class="ulchildlink"><a href="PUBLIC_CHECK_AUTHORIZATION-Function-DEPRECATED.html#GUID-77BDCD4A-3677-49A3-A3F4-EB77B7EE3A54">PUBLIC_CHECK_AUTHORIZATION Function [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="PURGE_REGIONS_BY_APP-Procedure.html#GUID-BDCA1761-5E9C-482F-B337-715FC5D441C5">PURGE_REGIONS_BY_APP Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PURGE_REGIONS_BY_NAME-Procedure.html#GUID-27B5662C-DB73-40BB-BEFB-5EB22BA16484">PURGE_REGIONS_BY_NAME Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PURGE_REGIONS_BY_PAGE-Procedure.html#GUID-AFD748BC-5C3F-4F4C-AF2D-B98B8410319E">PURGE_REGIONS_BY_PAGE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="REDIRECT_URL-Procedure.html#GUID-79186327-F301-4F71-8E05-B5A7E0CFB6E3">REDIRECT_URL Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="REMOVE_PREFERENCE-Procedure.html#GUID-79BB456C-A6EA-40D3-8F54-F0667CC17D39">REMOVE_PREFERENCE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="REMOVE_SORT_PREFERENCES-Procedure.html#GUID-E7EEC658-2A2D-47ED-84D6-1C30F4C29E6C">REMOVE_SORT_PREFERENCES Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="REMOVE_USER-Procedure.html#GUID-BC7FB468-AC36-49E2-A36A-E594751B9468">REMOVE_USER Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="RESET_AUTHORIZATIONS-Procedure-DEPRECATED.html#GUID-2FA75372-AB9A-417B-A4C4-EDE7E98DF15D">RESET_AUTHORIZATIONS Procedure [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="RESET_PASSWORD-Procedure.html#GUID-D7416D24-1DBB-4784-960A-86E0EEC6F801">RESET_PASSWORD Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="RESET_PW-Procedure.html#GUID-42CC5310-81A2-41B3-BC2F-2653B0DA8EE1">RESET_PW Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SAVEKEY_NUM-Function.html#GUID-55E57A86-708A-4B00-AAE4-5D8549432914">SAVEKEY_NUM Function</a><br></li>
+                  <li class="ulchildlink"><a href="SAVEKEY_VC2-Function.html#GUID-20EDB17C-2E8B-456D-AB98-7201BA8F27A8">SAVEKEY_VC2 Function</a><br></li>
+                  <li class="ulchildlink"><a href="SET_APP_BUILD_STATUS_Procedure.html#GUID-A0D47557-5870-444C-A06A-55C167370F52">SET_APP_BUILD_STATUS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_APPLICATION_STATUS-Procedure.html#GUID-59E0FE99-8911-41B3-823A-36D4C705ACA4">SET_APPLICATION_STATUS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_ATTRIBUTE-Procedure.html#GUID-9EF508D0-1518-4CAB-9BE2-E07174441CA3">SET_ATTRIBUTE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_AUTHENTICATION_RESULT-Procedure.html#GUID-971E9C8A-17D1-4D7C-B885-28F47402AD06">SET_AUTHENTICATION_RESULT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_BUILD_OPTION_STATUS-Procedure.html#GUID-98403494-2FDD-4C72-BA59-886F03C1A9A3">SET_BUILD_OPTION_STATUS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_CURRENT_THEME_STYLE-Procedure.html#GUID-0480BC8D-0C88-4800-911F-162DD6E0ACB3">SET_CURRENT_THEME_STYLE Procedure [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="SET_CUSTOM_AUTH_STATUS-Procedure.html#GUID-1374CDB1-7E13-49B0-823D-2999F9366C79">SET_CUSTOM_AUTH_STATUS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_EDITION-Procedure.html#GUID-11FD0711-2503-48CB-97A2-4FF5A5271D3E">SET_EDITION Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_EMAIL-Procedure.html#GUID-02386891-586E-49E2-847A-A5504E65095E">SET_EMAIL Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_FIRST_NAME-Procedure.html#GUID-BC4570FB-1201-490B-8D8A-4651D613D856">SET_FIRST_NAME Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_GLOBAL_NOTIFICATION-Procedure.html#GUID-9EA87E45-8B07-4A72-B628-7DB023E6489C">SET_GLOBAL_NOTIFICATION Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_GROUP_GROUP_GRANTS-Procedure.html#GUID-3B063E08-1B35-4955-B4C1-4845CBF7655F">SET_GROUP_GROUP_GRANTS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_GROUP_USER_GRANTS-Procedure.html#GUID-A4997FF4-D807-498C-8AA4-4590E60CA6B5">SET_GROUP_USER_GRANTS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_LAST_NAME-Procedure.html#GUID-E892B650-A885-4D73-84D2-344BC62C5F85">SET_LAST_NAME Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_PARSING_SCHEMA_FOR_REQUEST-Procedure.html#GUID-2DB16C9E-6238-4DF9-A920-20D8E8FA93C0">SET_PARSING_SCHEMA_FOR _REQUEST Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_PREFERENCE-Procedure.html#GUID-7B4C2BED-93BA-477D-82AA-23493B7B0549">SET_PREFERENCE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SECURITY_GROUP_ID-Procedure.html#GUID-8A6265B5-BDC6-4178-A550-260CCA5216F3">SET_SECURITY_GROUP_ID Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_HIGH_CONTRAST_OFF-Procedure.html#GUID-17620028-285E-425C-AE63-76597B432216">SET_SESSION_HIGH_CONTRAST_OFF Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_HIGH_CONTRAST_ON-Procedure.html#GUID-BE4DA7E2-F572-479D-8A0C-12BF6D4F47F3">SET_SESSION_HIGH_CONTRAST_ON Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_LANG-Procedure.html#GUID-CCF94B9A-4903-4AC5-8142-62D51A8777DC">SET_SESSION_LANG Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_LIFETIME_SECONDS-Procedure.html#GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E">SET_SESSION_LIFETIME_SECONDS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_MAX_IDLE_SECONDS-Procedure.html#GUID-5E334713-706C-4AA1-A856-4711271C0929">SET_SESSION_MAX_IDLE_SECONDS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_SCREEN_READER_OFF-Procedure.html#GUID-8057B11D-67C4-4F02-A70B-F0CFAB7FADA0">SET_SESSION_SCREEN_READER_OFF Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_SCREEN_READER_ON-Procedure.html#GUID-3D6F7B4B-091B-49AF-941D-52EA8C8F2FCC">SET_SESSION_SCREEN_READER_ON Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_STATE-Procedure.html#GUID-ECF66FA6-91DF-4463-A7DC-EFFB3E49A5D1">SET_SESSION_STATE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_TERRITORY-Procedure.html#GUID-AE1B8888-CBE5-4447-9263-74E63FDC462F">SET_SESSION_TERRITORY Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_SESSION_TIME_ZONE-Procedure.html#GUID-B3BCA991-3799-41C6-840F-1A57CADC39AC">SET_SESSION_TIME_ZONE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_USERNAME-Procedure.html#GUID-011204BC-D14B-4F1B-BF89-EB5AA454D5D9">SET_USERNAME Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_WORKSPACE_Procedure-2.html#GUID-20B79E1B-6F00-4E07-9278-9E5A45586D1F">SET_WORKSPACE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SHOW_HIGH_CONTRAST_MODE_TOGGLE-Procedure.html#GUID-B75336A2-FE32-4BB2-B73D-2C5DE0DB4DEA">SHOW_HIGH_CONTRAST_MODE_TOGGLE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SHOW_SCREEN_READER_MODE_TOGGLE-Procedure.html#GUID-9744AC5C-3782-4B40-B091-33EAA6C117BB">SHOW_SCREEN_READER_MODE_TOGGLE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="STRING_TO_TABLE-Function.html#GUID-67FBC2AB-5E0A-447D-8FF6-0512512210AC">STRING_TO_TABLE Function [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="STRONG_PASSWORD_CHECK-Procedure.html#GUID-5EECBD3D-C82E-49A3-985D-2DC32DE9C642">STRONG_PASSWORD_CHECK Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="STRONG_PASSWORD_VALIDATION-Function.html#GUID-9E1EB5D3-DEB4-4C11-8233-E7589CA561F7">STRONG_PASSWORD_VALIDATION Function</a><br></li>
+                  <li class="ulchildlink"><a href="SUBMIT_FEEDBACK-Procedure.html#GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE">SUBMIT_FEEDBACK Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SUBMIT_FEEDBACK_FOLLOWUP-Procedure.html#GUID-C6F4E4A8-7E40-498F-8E8F-7D99D98527B0">SUBMIT_FEEDBACK_FOLLOWUP Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="TABLE_TO_STRING-Function.html#GUID-4F4C59D1-E8B7-4CC1-87C7-DCFD5AF4DCC0">TABLE_TO_STRING Function [DEPRECATED]</a><br></li>
+                  <li class="ulchildlink"><a href="UNEXPIRE_END_USER_ACCOUNT-Procedure.html#GUID-ABF5D38E-5156-436D-814A-B38A13DA8FA8">UNEXPIRE_END_USER_ACCOUNT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="UNEXPIRE_WORKSPACE_ACCOUNT-Procedure.html#GUID-8CAD70A4-B7D7-4431-80E3-17195986258B">UNEXPIRE_WORKSPACE_ACCOUNT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="UNLOCK_ACCOUNT-Procedure.html#GUID-0867626D-9B3B-49AA-97C9-2C45443188BC">UNLOCK_ACCOUNT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="URL_ENCODE-Function.html#GUID-47DB18F3-133B-43F0-B045-F19C09190357">URL_ENCODE Function</a><br></li>
+                  <li class="ulchildlink"><a href="WORKSPACE_ACCOUNT_DAYS_LEFT-Function.html#GUID-E536CBC4-8FEC-4644-B1E1-19E4E0BBF327">WORKSPACE_ACCOUNT_DAYS_LEFT Function</a><br></li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

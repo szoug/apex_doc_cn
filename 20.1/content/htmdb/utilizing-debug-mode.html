@@ -1,0 +1,455 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="task">
+      <meta name="DC.Title" content="Utilizing Debug Mode">
+      <meta name="abstract" content="Use Debug mode to track down unexpected application behavior.">
+      <meta name="description" content="Use Debug mode to track down unexpected application behavior.">
+      <meta name="DC.subject" content="debugging, using debug mode, enabling and disabling, running with application, viewing reports in development mode, using f?p to access, viewing reports at runtime, viewing reports from Component View">
+      <meta name="keywords" content="debugging, using debug mode, enabling and disabling, running with application, viewing reports in development mode, using f?p to access, viewing reports at runtime, viewing reports from Component View">
+      <meta name="DC.Relation" scheme="URI" content="debugging-an-application.html#GUID-2A0361B3-56AC-41F0-9FF3-C3DF15432762">
+      <meta name="DC.Relation" scheme="URI" content="utilizing-debug-mode.html#GUID-A342EEB2-6805-48C4-8818-DDEE10C11361">
+      <meta name="DC.Relation" scheme="URI" content="utilizing-debug-mode.html#GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71">
+      <meta name="DC.Relation" scheme="URI" content="utilizing-debug-mode.html#GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900">
+      <meta name="DC.Relation" scheme="URI" content="utilizing-debug-mode.html#GUID-1035354C-AEA9-45CB-B5A6-7079D9824857">
+      <meta name="DC.Relation" scheme="URI" content="utilizing-debug-mode.html#GUID-82FEB3F8-2FE7-4751-AAA9-63FF820EB2C9">
+      <meta name="DC.Relation" scheme="URI" content="utilizing-debug-mode.html#GUID-8ABE52AE-5CDA-44B3-870A-8BEA10CDC5F0">
+      <meta name="DC.Relation" scheme="URI" content="utilizing-debug-mode.html#GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use Debug mode to track down unexpected application behavior.">
+      <meta name="description" content="Use Debug mode to track down unexpected application behavior.">
+      <title>Utilizing Debug Mode</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Use Debug mode to track down unexpected application behavior.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="enabling-sql-tracing-and-using-tkprof.html" title="Previous" type="text/html">
+      <link rel="next" href="removing-controls-to-isolate-a-problem.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="enabling-sql-tracing-and-using-tkprof.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="removing-controls-to-isolate-a-problem.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="debugging-an-application.html" property="item" typeof="WebPage"><span property="name">Debugging an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Utilizing Debug Mode</li>
+            </ol>
+            <a id="GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" name="GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C"></a><a id="HTMDB10003"></a>
+            
+            <h2 id="HTMDB-GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" class="sect2"><span class="enumeration_section">24.5 </span>Utilizing Debug Mode
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use Debug mode to track down unexpected application behavior.</p>
+               <div class="section">
+                  <div class="infoboxnotealso" id="GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C__GUID-BF346295-BDBE-4672-A09E-89991DF0CF05">
+                     <p class="notep1">See Also:</p>
+                     <p>"APEX_DEBUG" in <a href="../aeapi/APEX_DEBUG.html#AEAPI29182" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="utilizing-debug-mode.html#GUID-A342EEB2-6805-48C4-8818-DDEE10C11361">About Debug Mode</a><br></li>
+                  <li class="ulchildlink"><a href="utilizing-debug-mode.html#GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71">Enabling and Disabling Debug Mode for an Application</a><br></li>
+                  <li class="ulchildlink"><a href="utilizing-debug-mode.html#GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900">Running an Application in Debug Mode</a><br></li>
+                  <li class="ulchildlink"><a href="utilizing-debug-mode.html#GUID-1035354C-AEA9-45CB-B5A6-7079D9824857">Viewing Debug Reports in Development Mode</a><br></li>
+                  <li class="ulchildlink"><a href="utilizing-debug-mode.html#GUID-82FEB3F8-2FE7-4751-AAA9-63FF820EB2C9">About Using f?p Syntax to Access Debug Mode</a><br></li>
+                  <li class="ulchildlink"><a href="utilizing-debug-mode.html#GUID-8ABE52AE-5CDA-44B3-870A-8BEA10CDC5F0">Viewing Debug Reports from a Running Application</a><br></li>
+                  <li class="ulchildlink"><a href="utilizing-debug-mode.html#GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785">Viewing Debug Reports</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="debugging-an-application.html#GUID-2A0361B3-56AC-41F0-9FF3-C3DF15432762" title="Learn about best practices for debugging an Oracle Application Express application.">Debugging an Application</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29389"></a><div class="props_rev_3"><a id="GUID-A342EEB2-6805-48C4-8818-DDEE10C11361" name="GUID-A342EEB2-6805-48C4-8818-DDEE10C11361"></a><h3 id="HTMDB-GUID-A342EEB2-6805-48C4-8818-DDEE10C11361" class="sect3"><span class="enumeration_section">24.5.1 </span>About Debug Mode
+               </h3>
+               <div>
+                  <p>The Debug mode is a built in mechanism used to track down unexpected application behavior. You enable and disable debug mode for the current page and session by clicking the <span class="bold">Debug</span> and <span class="bold">No Debug</span> links in the Runtime Developer Toolbar. To view Debug reports, click the <span class="bold">View Debug</span> link in the Runtime Developer Toolbar.
+                  </p>
+                  <div class="figure" id="GUID-A342EEB2-6805-48C4-8818-DDEE10C11361__GUID-5C13412E-F0D8-46F9-AE3B-0C0CD3347E6F"><img height="33" width="862" src="img/toolbar.png" alt="Description of toolbar.png follows" title="Description of toolbar.png follows" longdesc="img_text/toolbar.html"><br><a href="img_text/toolbar.html">Description of the illustration toolbar.png</a></div>
+                  <!-- class="figure" -->
+                  <p>If you run an application in debug mode, Oracle Application Express writes
+            information about how it processes each page request to a log table. You can control the
+            logging level of detail, add debug calls in your own code, and analyze the written log
+            information.</p>
+                  <p>When debug is enabled, Oracle Application Express also uses its non-minified JavaScript files to better isolate where possible issues may be coming from with client-side-code.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-A342EEB2-6805-48C4-8818-DDEE10C11361__GUID-554C40F1-B223-446A-9CB7-66F0AD39A2B3">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="runtime-developer-toolbar.html#GUID-1BD4C50E-C1F4-4797-B66B-2D35132A0D76" title="Use the Developer toolbar to quickly edit the current application or currently running page, or view session state.">Runtime Developer Toolbar</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"APEX_DEBUG"</span> in <a href="../aeapi/APEX_DEBUG.html#AEAPI29182" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="utilizing-debug-mode.html#GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" title="Use Debug mode to track down unexpected application behavior.">Utilizing Debug Mode</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28543"></a><div class="props_rev_3"><a id="GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71" name="GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71"></a><h3 id="HTMDB-GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71" class="sect3"><span class="enumeration_section">24.5.2 </span>Enabling and Disabling Debug Mode for an Application
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can configure whether end users can run the application in debug mode by using the Debugging attribute on the Edit Application Definition page. A developer who is logged into workspace where the application resides can always run the application in debug mode.</p>
+                     <p>To enable or disable debug mode: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select an application.</span></li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Edit Application Properties</span> button to the right of the application name.</span><div>
+                           <p>The Edit Application page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Scroll down to Properties.</span></li>
+                     <li class="stepexpand"><span>For Debugging:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Yes</span>. Enables the application debug mode using the browser at runtime.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">No</span>. Disables the application debug mode using the browser at runtime.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71__GUID-68DA6427-7881-4F71-BBDD-1A09E67D1670">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-application-attributes.html#GUID-257F4773-0F0E-4E50-A00E-9D71D9319EAC" title="Application attributes (also known as the Application Definition) control the behavior of an entire application and are divided into the categories: Definition, Security, Globalization, and User Interface.">Managing Application Attributes</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="utilizing-debug-mode.html#GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" title="Use Debug mode to track down unexpected application behavior.">Utilizing Debug Mode</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28544"></a><div class="props_rev_3"><a id="GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900" name="GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900"></a><h3 id="HTMDB-GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900" class="sect3"><span class="enumeration_section">24.5.3 </span>Running an Application in Debug Mode
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You run and disable debug mode at runtime by clicking <span class="uicontrol bold">Debug</span> and <span class="uicontrol bold">No Debug</span> on the Runtime Developer Toolbar. By default, Debugging mode is disabled, unless you are logged into the application's workspace as a developer. 
+                     </p>
+                     <p>To enable or disable Debug mode at runtime: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select the desired application.</span></li>
+                     <li class="stepexpand"><span>Run the application.</span></li>
+                     <li class="stepexpand"><span>On the Runtime Developer Toolbar, click <span class="uicontrol bold">Debug</span>.</span><div>
+                           
+                           <p>The debugging mode is enabled. Debug data is captured in the
+                        background. As long as the browser tab or window stays open, when you run a
+                        page from App Builder, it will use the current debug mode and level.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>You can also specify a Debug Level:</span><ol type="a" id="GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900__SUBSTEPS_HCJ_QCZ_2JB">
+                           <li class="substepexpand"><span>On the Runtime Developer Toolbar, click <span class="uicontrol bold">Developer Toolbar
+                                Options</span> and then <span class="uicontrol bold">Default Debug
+                                Level</span>.</span></li>
+                           <li class="substepexpand"><span>From the submenu, select one of the following:</span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900__UL_ZLN_5CZ_2JB">
+                                    <li><span class="uicontrol bold">Info (default)</span> - The debug
+                                    log contains the default or normal amount of information. This
+                                    corresponds with a log level of 4 and a Debug URL argument of
+                                        <code class="codeph">YES</code>.
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">App Trace</span> - The debug log
+                                        contains messages up to level 6. This corresponds with a
+                                        Debug URL argument of <code class="codeph">LEVEL6</code>.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Full Trace</span> - The log will
+                                        contain the maximum amount of information. This corresponds
+                                        with a Debug URL argument of <code class="codeph">LEVEL9</code>.
+                                            <span class="uicontrol bold">Full Trace</span> can slow request
+                                        processing but provides the most amount of detail.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To disable debug mode, on the Runtime Developer Toolbar, click <span class="uicontrol bold">No Debug</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900__GUID-230611AC-9647-485A-9D22-42E24F5C85FE">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="utilizing-debug-mode.html#GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71">Enabling and Disabling Debug Mode for an Application</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="utilizing-debug-mode.html#GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" title="Use Debug mode to track down unexpected application behavior.">Utilizing Debug Mode</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30035"></a><div class="props_rev_3"><a id="GUID-1035354C-AEA9-45CB-B5A6-7079D9824857" name="GUID-1035354C-AEA9-45CB-B5A6-7079D9824857"></a><h3 id="HTMDB-GUID-1035354C-AEA9-45CB-B5A6-7079D9824857" class="sect3"><span class="enumeration_section">24.5.4 </span>Viewing Debug Reports in Development Mode
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To view debug reports in development mode:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select the desired application.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>On the Utilities page, click <span class="uicontrol bold">Debug Messages</span>. </span><div>
+                           <p>The Debug page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">View Identifier</span> to the left of the session you
+                    want to view.</span><div>
+                           
+                           <p>The Debug Message Data page appears.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To view steps that took the longest, hover over that step on the graph above the report.</span><div>
+                           <p>The step details display.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To go to that step in the report, click the bar.</span><div>
+                           <div class="infoboxnote" id="GUID-1035354C-AEA9-45CB-B5A6-7079D9824857__GUID-3CD196D4-3175-4E96-8B24-357AFC75F10D">
+                              <p class="notep1">Note:</p>
+                              <p>Debug sessions listed in the report live for at least 2 weeks and age out along with the activity log. This is usually more than adequate for debugging purposes.</p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1035354C-AEA9-45CB-B5A6-7079D9824857__GUID-F8798EAB-B8A5-4CF7-B200-E4B0DCBF1413">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="utilizing-debug-mode.html#GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71">Enabling and Disabling Debug Mode for an Application</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="utilizing-debug-mode.html#GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" title="Use Debug mode to track down unexpected application behavior.">Utilizing Debug Mode</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28545"></a><div class="props_rev_3"><a id="GUID-82FEB3F8-2FE7-4751-AAA9-63FF820EB2C9" name="GUID-82FEB3F8-2FE7-4751-AAA9-63FF820EB2C9"></a><h3 id="HTMDB-GUID-82FEB3F8-2FE7-4751-AAA9-63FF820EB2C9" class="sect3"><span class="enumeration_section">24.5.5 </span>About Using f?p Syntax to Access Debug Mode
+               </h3>
+               <div>
+                  <p>You can also use <code class="codeph">f?p</code> syntax to run an application in Debugging mode. Simply call the page and set the Debug argument to <code class="codeph">YES</code> or <code class="codeph">LEVEL</code><span class="italic"><code class="codeph">n</code></span>, where <span class="italic">n</span> is between 1 (least detailed) and 9 (most detailed). For example: 
+                  </p><pre class="oac_no_warn" dir="ltr">f?p=100:1:&amp;APP_SESSION.::YES
+</pre></div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-82FEB3F8-2FE7-4751-AAA9-63FF820EB2C9__GUID-8B3B53A3-0ECF-40C1-BC16-2DA8E443B324">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-legacy-url-syntax.html#GUID-D5510BFC-AF94-4AAD-8B82-FF780A47601D" title="Create links between application page using f?p syntax.">关于使用f?p 格式来链接到其他页</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="utilizing-debug-mode.html#GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" title="Use Debug mode to track down unexpected application behavior.">Utilizing Debug Mode</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30195"></a><div class="props_rev_3"><a id="GUID-8ABE52AE-5CDA-44B3-870A-8BEA10CDC5F0" name="GUID-8ABE52AE-5CDA-44B3-870A-8BEA10CDC5F0"></a><h3 id="HTMDB-GUID-8ABE52AE-5CDA-44B3-870A-8BEA10CDC5F0" class="sect3"><span class="enumeration_section">24.5.6 </span>Viewing Debug Reports from a Running Application
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To view debug report from a running application:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Locate and run the application in Debug mode. </span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">View Debug</span> on the Runtime Developer Toolbar.</span><div>
+                           <p>A list of Debug reports displays.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">View Identifier</span> to the left of the session you
+                    want to view.</span><div>
+                           
+                           <p>The Debug Message Data page appears.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To view steps that took the longest, hover over that step on the graph above the report.</span><div>
+                           <p>The step details display.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To go to that step in the report, click the bar.</span><div>
+                           <div class="infoboxnote" id="GUID-8ABE52AE-5CDA-44B3-870A-8BEA10CDC5F0__GUID-560FFFC5-10CA-47A2-A8D3-33E1D20ACAF0">
+                              <p class="notep1">Note:</p>
+                              <p>Debug sessions listed in the report live for at least 2 weeks and age out along with the activity log. This is usually more than adequate for debugging purposes.</p>
+                              <div class="p">
+                                 <div class="infoboxnotealso" id="GUID-8ABE52AE-5CDA-44B3-870A-8BEA10CDC5F0__GUID-8C026462-609C-4E8D-8872-0349529DBAEF">
+                                    <p class="notep1">See Also:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="q">"<a href="utilizing-debug-mode.html#GUID-C62783BD-FD6D-479A-9885-EFAFF7F9D900">Running an Application in Debug Mode</a>"</span></p>
+                                       </li>
+                                       <li>
+                                          <p><span class="q">"<a href="utilizing-debug-mode.html#GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71">Enabling and Disabling Debug Mode for an Application</a>"</span></p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="utilizing-debug-mode.html#GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" title="Use Debug mode to track down unexpected application behavior.">Utilizing Debug Mode</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28546"></a><div class="props_rev_3"><a id="GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785" name="GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785"></a><h3 id="HTMDB-GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785" class="sect3"><span class="enumeration_section">24.5.7 </span>Viewing Debug Reports
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To view debug reports:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Find</span> icon. </span><div>
+                           
+                           <div class="figure" id="GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785__FIG_SXQ_QQH_D3B"><img id="GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785__IMAGE_TXQ_QQH_D3B" height="285" width="844" src="img/find_icon.png" alt="Description of find_icon.png follows" title="Description of find_icon.png follows" longdesc="img_text/find_icon.html"><br><a href="img_text/find_icon.html">Description of the illustration find_icon.png</a></div>
+                           <!-- class="figure" -->
+                           
+                           <p>The Items Finder appears. </p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Debug</span> tab.</span></li>
+                     <li class="stepexpand"><span>Click the View Identifier to the left of the session you want to view.</span><div>
+                           <p>The Debug report appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To view steps that took the longest, hover over that step on the graph above the report.</span><div>
+                           <p>The step details display.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To go to that step in the report, click the bar.</span><div>
+                           <div class="infoboxnote" id="GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785__GUID-609824B4-0846-4984-B331-AB2C5803B34F">
+                              <p class="notep1">Note:</p>
+                              <p>Debug sessions listed in the report live for at least 2 weeks and age out along with the activity log. This is usually more than adequate for debugging purposes.</p>
+                           </div>
+                           <div class="infoboxnotealso" id="GUID-8E84B8CE-A816-402E-AF78-06D7C1D54785__GUID-D0098969-296F-4977-AF20-931AE84A3388">
+                              <p class="notep1">See Also:</p>
+                              <p><span class="q">"<a href="utilizing-debug-mode.html#GUID-890BEBB4-062A-42AE-BED8-F8CD1A033D71">Enabling and Disabling Debug Mode for an Application</a>"</span></p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="utilizing-debug-mode.html#GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" title="Use Debug mode to track down unexpected application behavior.">Utilizing Debug Mode</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,906 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Implementing Plug-ins">
+      <meta name="abstract" content="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">
+      <meta name="description" content="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">
+      <meta name="DC.subject" content="plug-ins, implementing, about, examples, accessing, creating, editing, custom attributes, uploading associated files, adding events, deleting, viewing Plug-in Repository, exporting, importing, resetting, utilization, viewing history">
+      <meta name="keywords" content="plug-ins, implementing, about, examples, accessing, creating, editing, custom attributes, uploading associated files, adding events, deleting, viewing Plug-in Repository, exporting, importing, resetting, utilization, viewing history">
+      <meta name="DC.Relation" scheme="URI" content="extending-application-capabilities.html#GUID-1EDC0CA6-A063-406C-AE6E-12746C885E22">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-C0C1AE54-F51A-4AE0-9D28-B80E108B3153">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-198E01E8-43F5-421A-9F81-A72CFCC32148">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-52164B12-47C0-4713-B7D7-63433BA9EB60">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-E7CEF4E6-175B-466C-9068-EDB99941F909">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-65C13D98-F9A6-492B-B8C9-77E2024B2D1C">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-E48C9A44-FFF3-4741-BA23-263CF22FE980">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-7221383C-C9A2-45A2-A548-1880519FDA29">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-F5261C13-F001-4985-B5DB-C54F5E7AC45E">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-E40A0054-ABAE-4D9E-9F24-1DC33863B4C1">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-026EF048-9FDD-49A1-B17E-BA8051967B86">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-8F70986B-FAC5-4182-ABE4-9CBC3A47AA24">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-A3A94237-4E32-40C2-A74C-4045C879B160">
+      <meta name="DC.Relation" scheme="URI" content="implementing-plug-ins.html#GUID-09C1CC30-E15F-4CF4-B3CC-A4A47161ED96">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B158814B-C3FC-4030-AF25-D14208DB1E27">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">
+      <meta name="description" content="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">
+      <title>Implementing Plug-ins</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="sending-email-from-an-application.html" title="Previous" type="text/html">
+      <link rel="next" href="understanding-jquery-and-jquery-ui-support.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="sending-email-from-an-application.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="understanding-jquery-and-jquery-ui-support.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="extending-application-capabilities.html" property="item" typeof="WebPage"><span property="name">Extending Application Capabilities</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Implementing Plug-ins</li>
+            </ol>
+            <a id="GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" name="GUID-B158814B-C3FC-4030-AF25-D14208DB1E27"></a><a id="HTMDB27001"></a>
+            
+            <h2 id="HTMDB-GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" class="sect2"><span class="enumeration_section">20.2 </span>Implementing Plug-ins
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express. </p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-C0C1AE54-F51A-4AE0-9D28-B80E108B3153">About Plug-ins</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-198E01E8-43F5-421A-9F81-A72CFCC32148">Accessing the Plug-ins Page</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D">Creating a Plug-in</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-52164B12-47C0-4713-B7D7-63433BA9EB60">Editing a Plug-in</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-E7CEF4E6-175B-466C-9068-EDB99941F909">Adding Custom Attributes to a Plug-in</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-65C13D98-F9A6-492B-B8C9-77E2024B2D1C">Uploading Files Associated with a Plug-in</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-E48C9A44-FFF3-4741-BA23-263CF22FE980">Adding Events to a Plug-in</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-7221383C-C9A2-45A2-A548-1880519FDA29">Deleting a Plug-in</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-F5261C13-F001-4985-B5DB-C54F5E7AC45E">Viewing the Plug-in Repository</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-E40A0054-ABAE-4D9E-9F24-1DC33863B4C1">Exporting a Plug-in from the Plug-in Page</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-026EF048-9FDD-49A1-B17E-BA8051967B86">Importing a Plug-in from the Plug-in Page</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-8F70986B-FAC5-4182-ABE4-9CBC3A47AA24">Resetting the Plug-in Interactive Report</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-A3A94237-4E32-40C2-A74C-4045C879B160">Viewing Plug-in Utilization Page</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-09C1CC30-E15F-4CF4-B3CC-A4A47161ED96">Viewing Plug-in History</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="extending-application-capabilities.html#GUID-1EDC0CA6-A063-406C-AE6E-12746C885E22" title="Learn about how to extend application capabilities including managing email, running background PL/SQL, utilizing plug-ins, and understanding jQuery support.">Extending Application Capabilities</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB27002"></a><div class="props_rev_3"><a id="GUID-C0C1AE54-F51A-4AE0-9D28-B80E108B3153" name="GUID-C0C1AE54-F51A-4AE0-9D28-B80E108B3153"></a><h3 id="HTMDB-GUID-C0C1AE54-F51A-4AE0-9D28-B80E108B3153" class="sect3"><span class="enumeration_section">20.2.1 </span>About Plug-ins
+               </h3>
+               <div>
+                  <p>Oracle Application Express supports a set group of authentication scheme, authorization scheme, item, region, dynamic action, and process types. Plug-ins offer a means of augmenting these built-in types by declaratively creating and using new types in your application. Because plug-ins are designed for reuse, developers can export and import them to other workspaces and also share them with the Oracle Application Express Plug-in community by using the Plug-in Repository. </p>
+                  <p>The process of implementing a plug-in involves the following steps:</p>
+                  <ol>
+                     <li>
+                        <p>Create a plug-in or import a plug-in into your application workspace.</p>
+                     </li>
+                     <li>
+                        <p>Edit or create an authorization scheme, item, region, process, or dynamic action type to use the plug-in.</p>
+                     </li>
+                     <li>
+                        <p>Run your application to test the plug-in.</p>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-C0C1AE54-F51A-4AE0-9D28-B80E108B3153__GUID-8D35BFEA-6063-4CAA-B908-7C9463008419">Viewing Plug-in Examples</p>
+                     <p>You can view plug-in implementation examples in the following locations:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Go to the Oracle Plug-in Repository. </p>
+                           <p>See <span class="q">"<a href="implementing-plug-ins.html#GUID-F5261C13-F001-4985-B5DB-C54F5E7AC45E">Viewing the Plug-in Repository</a>."</span></p>
+                        </li>
+                        <li>
+                           <p>Install the sample application, <span class="italic">Sample Database Application</span>. 
+                           </p>
+                           <p>See <span class="q">"<a href="managing-packaged-applications-in-a-full-development-environment.html#GUID-E2E28ED4-CC0D-4D8A-974E-A62FFAD1A112" title="In a full development environment, developers can view, install, run, remove, unlock, export, change authentication, and update productivity and sample apps.">在完整开发环境内管理生产力和示例应用</a>"</span> and <span class="q">"<a href="installing-and-running-sample-database-application.html#GUID-548D7CEA-AD39-46C8-BAFE-9707292FB3B2" title="Install sample applications such as Sample Database Application on the App Gallery page.">安装和运行数据库应用示例</a>."</span></p>
+                        </li>
+                        <li>
+                           <p>Go to the Oracle Learning Library at <a href="http://www.oracle.com/oll/apex" target="_blank">http://www.oracle.com/oll/apex</a>. Enter search criteria in the field provided and click <span class="uicontrol bold">Search</span>.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27007"></a><div class="props_rev_3"><a id="GUID-198E01E8-43F5-421A-9F81-A72CFCC32148" name="GUID-198E01E8-43F5-421A-9F81-A72CFCC32148"></a><h3 id="HTMDB-GUID-198E01E8-43F5-421A-9F81-A72CFCC32148" class="sect3"><span class="enumeration_section">20.2.2 </span>Accessing the Plug-ins Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To access the Plug-ins page</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span><div>
+                           <p>The Plug-ins page displays with the Plug-ins tab selected by default. All available plug-ins appear.</p>
+                           <p>You can customize the appearance of the page using the Search bar at the top of the page.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27009"></a><div class="props_rev_3"><a id="GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D" name="GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D"></a><h3 id="HTMDB-GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D" class="sect3"><span class="enumeration_section">20.2.3 </span>Creating a Plug-in
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To create a plug-in:</p>
+                     <div class="infobox-tip" id="GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D__GUID-7DEBEA3B-DA45-4F13-BF01-7264133BFC42">
+                        <p class="notep1">Tip:</p>
+                        <p>To learn more about an attributes described in this section see field-level Help. See <span class="q">"<a href="using-oracle-application-express-documentation.html#GUID-D0E5F806-8901-4423-8E07-F9A89BEB8BE2">Viewing Field-level Help in Oracle Application Express</a>."</span></p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span><div>
+                           <p>The Create Plug-in wizard appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For Create Plug-in, select the method by which you would like to create a plug-in and click <span class="uicontrol bold">Next</span>. </span></li>
+                     <li class="stepexpand"><span>Under Name:</span><ol type="a">
+                           <li class="substepexpand"><span>Name (Required) - Enter name of the plug-in.</span></li>
+                           <li class="substepexpand"><span>Internal Name (Required) - Enter the internal name of the plug-in. This name must be unique within the current application.</span><div>
+                                 <div class="infoboxnote" id="GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D__GUID-AE7E77C4-21F4-4F76-88F5-ACAC89274974">
+                                    <p class="notep1">Note:</p>
+                                    <p>To insure the internal name is a globally unique name worldwide, Oracle recommends that your organization domain name be used as a prefix to internal plug-in names. For example, a domain name of <code class="codeph">example.com.com</code> prefixed to a plug-in named <code class="codeph">Slider</code>, would result in an internal name of <code class="codeph">COM.EXAMPLE.SLIDER</code>.
+                                    </p>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Type (Required) - Select the type of component that can use this plug-in. Depending upon the plug-in type you select, the options  under Callbacks and Standard Attributes differ. To learn more, see field-level Help.</span></li>
+                           <li class="substepexpand"><span>Category - Only displays if the selected type is Dynamic Action. Select the category the plug-in is displayed under on the user interface.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Subscription:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Reference Master Plug-in From - To base this plug-in on another plug-in in this workspace, select the plug-in from the list. Otherwise, leave the field blank to make this the master copy of this plug-in.</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Source:</span><ol type="a">
+                           <li><span>PL/SQL Code - Enter a PL/SQL anonymous block of code that contains the procedures for rendering, validating, executing, and performing Ajax callbacks for this plug-in. For performance reasons you can also store this code in a PL/SQL package in the database.</span></li>
+                           <li><span>Do not validate PL/SQL code (parse PL/SQL code at runtime only) - Select this option to parse the PL/SQL code at runtime only. Otherwise, the code is parsed when the plug-in is created.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Callbacks, configure that appropriate attributes. The attributes that display depend upon the plug-in type. To learn more about an attribute and view examples, see field-level Help.</span><div>
+                           <div class="infobox-tip" id="GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D__GUID-CE9F2B15-3AF3-4E8C-9734-B3F35AF40BC6">
+                              <p class="notep1">Tip:</p>
+                              <p>All Callback function names can reference a function of the anonymous PL/SQL code block, a function within a package or a standalone function in the database.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under User Interfaces, select the display devices the <span>App Builder</span> must support for this plug-in. Options include:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Desktop</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Mobile</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For Standard Attributes, select the attributes that apply to this plug-in. Standard Attributes do not display for some plug-ins. To learn more, see field-level Help.</span></li>
+                     <li class="stepexpand"><span>Under Information:</span><ol type="a">
+                           <li><span>Version - Enter a string to identify the plug-in version.</span></li>
+                           <li><span>About URL - Enter a URL to the plug-in authors home page or to additional information about the plug-in.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Help Text, enter help text used by the user to understand how the plug-in works.</span></li>
+                     <li class="stepexpand"><span>For Comments, enter comments and notes that never display when the application is running.</span><div>
+                           <p>To learn more about each option, see field-level Help.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create. Plug-in</span>.</span><div>
+                           <p>Now that the plug-in is created, you can specify additional custom attributes, upload files such as image, CSS and JavaScript files to associate with your plug-in and add events.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-2025E2A8-53E8-4101-86A6-D73DA1579A0D__GUID-E9D9766A-02CD-4324-9976-F4BB402199A5">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="implementing-plug-ins.html#GUID-E7CEF4E6-175B-466C-9068-EDB99941F909">Adding Custom Attributes to a Plug-in</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="implementing-plug-ins.html#GUID-65C13D98-F9A6-492B-B8C9-77E2024B2D1C">Uploading Files Associated with a Plug-in</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="implementing-plug-ins.html#GUID-E48C9A44-FFF3-4741-BA23-263CF22FE980">Adding Events to a Plug-in</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27008"></a><div class="props_rev_3"><a id="GUID-52164B12-47C0-4713-B7D7-63433BA9EB60" name="GUID-52164B12-47C0-4713-B7D7-63433BA9EB60"></a><h3 id="HTMDB-GUID-52164B12-47C0-4713-B7D7-63433BA9EB60" class="sect3"><span class="enumeration_section">20.2.4 </span>Editing a Plug-in
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To edit a plug-in:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click the plug-in you want to edit or view. </span><div>
+                           <p>The Plug-in Create/Edit page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Make modifications.</span><div>
+                           <p>To learn more about each option, see field-level Help.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>. </span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27010"></a><div class="props_rev_3"><a id="GUID-E7CEF4E6-175B-466C-9068-EDB99941F909" name="GUID-E7CEF4E6-175B-466C-9068-EDB99941F909"></a><h3 id="HTMDB-GUID-E7CEF4E6-175B-466C-9068-EDB99941F909" class="sect3"><span class="enumeration_section">20.2.5 </span>Adding Custom Attributes to a Plug-in
+               </h3>
+               <div>
+                  <div class="p">Custom Attributes specified by the developer might contain items referenced with substitution syntax.</div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To add custom attributes to the plug-in:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click the plug-in you want to modify. </span><div>
+                           <p>The Plug-in Create/Edit page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Custom Attributes, enable or disable the substitution of attribute values.</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Substitute Attribute Values - Custom attribute values specified by the developer might contain items referenced with substitution syntax, for example <code class="codeph">&amp;P1_DNAME</code>. 
+                                 </p>
+                                 <p>If set to <span class="uicontrol bold">On</span>, Application Express automatically replaces
+                                substitution syntax with their actual values. 
+                                 </p>
+                                 <p>If set to <span class="uicontrol bold">Off</span>, substitution syntax is written unchanged into
+                                the <code class="codeph">attribute_01</code> through
+                                    <code class="codeph">attribute_15</code> record type attributes of
+                                    <code class="codeph">p_plugin</code>, <code class="codeph">p_item</code>,
+                                    <code class="codeph">p_region</code>, and so on. The plug-in developer is
+                                responsible for replacing those substitution syntax references with
+                                a call to <code class="codeph">apex_plugin_util.replace_substitutions</code> or
+                                perform similar replacements. See item help for further details. 
+                                 </p>
+                                 <p>To learn more, see field-level Help.</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To add an attribute click <span class="uicontrol bold">Add Attribute</span>.</span><div>
+                           <p>The Edit Attribute page appears. Edit the appropriate attributes.</p>
+                           <p>To learn more about a specific attribute, see field-level Help. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span> to create the attribute and go back to the Edit page, or click <span class="bold">Create and Create Another</span> to create the attribute and continue to create another attribute. </span></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-E7CEF4E6-175B-466C-9068-EDB99941F909__GUID-7098164D-B2E4-4507-8BC4-B7C1394ED49D">
+                        <p class="notep1">Note:</p>
+                        <p>If you click <span class="uicontrol bold">Create</span> or <span class="uicontrol bold">Create and Create Another</span> and the <span class="uicontrol bold">Return To Page</span> check box on the right panel under Plug-ins is checked, this same Edit Attribute page displays.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27011"></a><div class="props_rev_3"><a id="GUID-65C13D98-F9A6-492B-B8C9-77E2024B2D1C" name="GUID-65C13D98-F9A6-492B-B8C9-77E2024B2D1C"></a><h3 id="HTMDB-GUID-65C13D98-F9A6-492B-B8C9-77E2024B2D1C" class="sect3"><span class="enumeration_section">20.2.6 </span>Uploading Files Associated with a Plug-in
+               </h3>
+               <div>
+                  <p>Learns how to upload the files associated with a plug-in.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-72DC54C0-442F-4877-845A-79A5AF51AE65">Uploading a File to Associate with a Plug-in</a><br></li>
+                     <li class="ulchildlink"><a href="implementing-plug-ins.html#GUID-2DA3665A-42DF-4880-8A3D-D06AD1F9CAF2">Automatically Loading CSS and JavaScript Files</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29461"></a><div class="props_rev_3"><a id="GUID-72DC54C0-442F-4877-845A-79A5AF51AE65" name="GUID-72DC54C0-442F-4877-845A-79A5AF51AE65"></a><h4 id="HTMDB-GUID-72DC54C0-442F-4877-845A-79A5AF51AE65" class="sect4"><span class="enumeration_section">20.2.6.1 </span>Uploading a File to Associate with a Plug-in
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To upload a file:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                    <p>The Shared Components page appears. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                        <li class="stepexpand"><span>Select the plug-in.</span><div>
+                              <p>The Plug-in Create/Edit page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Locate the <span class="uicontrol bold">Files</span> section. </span><div>
+                              <p><span class="uicontrol bold">File Prefix</span> determines the virtual path the Web server uses to point to the files of the plug-in. Do not specify anything to reference files which are stored with your plug-in definition in the database.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To upload a file:</span><ol type="a">
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Upload File</span>.</span></li>
+                              <li class="substepexpand"><span>Browse to and select the file you want to upload.</span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Upload</span>.</span><div>
+                                    <p>The Create/Edit page appears. The name of the uploaded file appears under Files.</p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-65C13D98-F9A6-492B-B8C9-77E2024B2D1C">Uploading Files Associated with a Plug-in</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29460"></a><div class="props_rev_3"><a id="GUID-2DA3665A-42DF-4880-8A3D-D06AD1F9CAF2" name="GUID-2DA3665A-42DF-4880-8A3D-D06AD1F9CAF2"></a><h4 id="HTMDB-GUID-2DA3665A-42DF-4880-8A3D-D06AD1F9CAF2" class="sect4"><span class="enumeration_section">20.2.6.2 </span>Automatically Loading CSS and JavaScript Files
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>You can have Oracle Application Express automatically load CSS and JavaScript files when a plug-in is used on a page by configuring the File URLs to Load attributes. To specify which of the uploaded files should be loaded and in what order. </p>
+                        <p>To automatically load a CSS or JavaScript file:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                    <p>The Shared Components page appears. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                        <li class="stepexpand"><span>Select the plug-in.</span><div>
+                              <p>The Plug-in Create/Edit page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under File URLs to Load:</span><ol type="a">
+                              <li><span>Cascading Style Sheet - Enter Cascading Style Sheet file URLs to be loaded with this plug-in.</span></li>
+                              <li><span>JavaScript - Enter JavaScript file URLs for code to be loaded with this plug-in.</span></li>
+                           </ol>
+                           <div>
+                              <p>You can substitute with the value of the plug-in's file prefix by using substitution string <code class="codeph">#PLUGIN_FILES#</code>. For example:
+                              </p><pre class="oac_no_warn" dir="ltr">#PLUGIN_FILES#my_plugin.css
+</pre><p>To learn more and view examples, see field-level Help.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-65C13D98-F9A6-492B-B8C9-77E2024B2D1C">Uploading Files Associated with a Plug-in</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB27012"></a><div class="props_rev_3"><a id="GUID-E48C9A44-FFF3-4741-BA23-263CF22FE980" name="GUID-E48C9A44-FFF3-4741-BA23-263CF22FE980"></a><h3 id="HTMDB-GUID-E48C9A44-FFF3-4741-BA23-263CF22FE980" class="sect3"><span class="enumeration_section">20.2.7 </span>Adding Events to a Plug-in
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This section describes how to add events to an item, region, or dynamic action type plug-in, enables them to be exposed to dynamic actions. For example, a Slider plug-in that exposes events such as Start Slide, Sliding, and Stop Slide, allows the creation of dynamic actions that can react when these events occur.</p>
+                     <p>To add events to a plug-in:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click the plug-in you want to edit.</span><div>
+                           <p>The Plug-in Create/Edit page appears</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Events and click <span class="uicontrol bold">Add Event</span>.</span><div>
+                           <p>A new row displays under Events.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Events:</span><ol type="a">
+                           <li><span>Name - The display name under which the plug-in event appears in the dynamic action, for example: <code class="codeph">Start Slide</code>.</span></li>
+                           <li><span>Internal Name - The name of the assigned JavaScript event that triggers the dynamic action, for example: <code class="codeph">slidestart</code>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Add Event</span>.</span></li>
+                     <li class="stepexpand"><span>Repeat steps 3 through 4 to add another event.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E48C9A44-FFF3-4741-BA23-263CF22FE980__GUID-89547265-5FD7-46C6-81A2-53E0B1AD5E44">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="implementing-plug-ins.html#GUID-198E01E8-43F5-421A-9F81-A72CFCC32148">Accessing the Plug-ins Page</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27013"></a><div class="props_rev_3"><a id="GUID-7221383C-C9A2-45A2-A548-1880519FDA29" name="GUID-7221383C-C9A2-45A2-A548-1880519FDA29"></a><h3 id="HTMDB-GUID-7221383C-C9A2-45A2-A548-1880519FDA29" class="sect3"><span class="enumeration_section">20.2.8 </span>Deleting a Plug-in
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can delete a plug-in if it is not in use. If it is in use, the Delete button does not display.</p>
+                     <p>To delete a plug-in:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click the plug-in you want to delete. </span><div>
+                           <p>The Plug-in Create/Edit page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Delete</span>.</span></li>
+                     <li class="stepexpand"><span>To confirm, click <span class="uicontrol bold">OK</span>. </span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27014"></a><div class="props_rev_3"><a id="GUID-F5261C13-F001-4985-B5DB-C54F5E7AC45E" name="GUID-F5261C13-F001-4985-B5DB-C54F5E7AC45E"></a><h3 id="HTMDB-GUID-F5261C13-F001-4985-B5DB-C54F5E7AC45E" class="sect3"><span class="enumeration_section">20.2.9 </span>Viewing the Plug-in Repository
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The Plug-in Repository provides a central location where developers can share and download plug-ins. The repository is located on the Oracle Technology Network.</p>
+                     <p>To view the Plug-in repository:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">View Plug-in Repository</span>. </span><div>
+                           <p>The Oracle Application Express Plug-in Repository displays.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27016"></a><div class="props_rev_3"><a id="GUID-E40A0054-ABAE-4D9E-9F24-1DC33863B4C1" name="GUID-E40A0054-ABAE-4D9E-9F24-1DC33863B4C1"></a><h3 id="HTMDB-GUID-E40A0054-ABAE-4D9E-9F24-1DC33863B4C1" class="sect3"><span class="enumeration_section">20.2.10 </span>Exporting a Plug-in from the Plug-in Page
+               </h3>
+               <div>
+                  <div class="section">Use this option to export a plug-in definition to a file. This file can be imported
+            into any <span>Oracle Application
+                                        Express</span> application. You can access the Export page from the Shared Components, Plug-ins
+            page, as described here, or from the Export page. 
+                  </div>
+                  <!-- class="section" -->
+                  <p>To export a plug-in from the Plug-in page:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Under Tasks, click <span class="uicontrol bold">Export Plug-in</span>. </span><div>
+                           <p>The Export Plug-in page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the <span class="uicontrol bold">Export Plug-in</span> page:</span><ol type="a" id="GUID-E40A0054-ABAE-4D9E-9F24-1DC33863B4C1__SUBSTEPS_U5D_KF1_KKB">
+                           <li><span><span class="uicontrol bold">Choose Application</span> - Select an application</span></li>
+                           <li><span><span class="uicontrol bold">Plug-in</span> - Select the plug-in to export.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Export</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Export</span>. </span><div>
+                           <p>A downloads complete message appears.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E40A0054-ABAE-4D9E-9F24-1DC33863B4C1__GUID-38B824C8-C97D-420C-BD6F-B5D542F641EE">
+                     <p class="notep1">See Also:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-E40A0054-ABAE-4D9E-9F24-1DC33863B4C1__UL_GKT_SBQ_LKB">
+                        <li><span class="q">"<a href="implementing-plug-ins.html#GUID-026EF048-9FDD-49A1-B17E-BA8051967B86">Importing a Plug-in from the Plug-in Page</a>"</span></li>
+                        <li>
+                           
+                           <p><span class="q">"<a href="exporting-plug-ins.html#GUID-48F158B5-96B5-4751-9499-7780DA6D8D06" title="Move or copy plug-ins by exporting them.">Exporting Plug-ins</a>"</span></p>
+                           
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27015"></a><div class="props_rev_3"><a id="GUID-026EF048-9FDD-49A1-B17E-BA8051967B86" name="GUID-026EF048-9FDD-49A1-B17E-BA8051967B86"></a><h3 id="HTMDB-GUID-026EF048-9FDD-49A1-B17E-BA8051967B86" class="sect3"><span class="enumeration_section">20.2.11 </span>Importing a Plug-in from the Plug-in Page
+               </h3>
+               <div>
+                  <div class="p">Use this option to import an Plug-in Export-in to your application. Importing a
+            plug-in can be done from the Shared Components, Plug-ins page, as described here, or
+            from the Import home page.</div>
+                  <!-- class="section" -->
+                  <p>To import a plug-in from the Plug-in page:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Import</span>. </span><div>
+                           <p>The import Plug-in page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On Import:</span><ol type="a" id="GUID-026EF048-9FDD-49A1-B17E-BA8051967B86__SUBSTEPS_VLX_N2Q_LKB">
+                           <li class="substepexpand"><span>Drag and drop, or navigate to the file.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Type</span> - Select
+                                <span class="uicontrol bold">Plug-in</span>.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Character Set</span> - Verify that File Character
+                            Set is correct.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span><div>
+                                 
+                                 <p>Once you import a file, you have the option to install
+                                it. You can also install this file at a later time by navigating to
+                                the Export Repository.</p>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To install an imported file, click <span class="uicontrol bold">Next</span>. </span></li>
+                     <li class="stepexpand"><span>On Install:</span><ol type="a" id="GUID-026EF048-9FDD-49A1-B17E-BA8051967B86__SUBSTEPS_M5W_LDP_KKB">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Install Into Application</span> - Select the target
+                            application. You can install the plug-in into the same application or
+                            into a different application.</span><div>
+                                 
+                                 <div class="infobox-tip" id="GUID-026EF048-9FDD-49A1-B17E-BA8051967B86__GUID-5BA51DCC-7E2F-4365-A3C0-642EBF27DFB9">
+                                    <p class="notep1">Tip:</p>When you
+                                install a plug-in into the current application, the new plug-in will
+                                overwrite an existing plug-in having the same plug-in name. If the
+                                installation succeeds, the installation of the plug-in becomes
+                                permanent. If any errors are encountered, the actions are rolled
+                                back, resulting in no permanent changes.
+                                 </div>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Install Plug-in</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-026EF048-9FDD-49A1-B17E-BA8051967B86__GUID-0FF3C472-95DF-4982-9F7D-812658402246">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="importing-export-files.html#GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2" title="Import the Plug-in Export on the Import page.">Importing Plug-ins</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27017"></a><div class="props_rev_3"><a id="GUID-8F70986B-FAC5-4182-ABE4-9CBC3A47AA24" name="GUID-8F70986B-FAC5-4182-ABE4-9CBC3A47AA24"></a><h3 id="HTMDB-GUID-8F70986B-FAC5-4182-ABE4-9CBC3A47AA24" class="sect3"><span class="enumeration_section">20.2.12 </span>Resetting the Plug-in Interactive Report
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can reset the plug-in interactive report to clear all current filters applied to the report.</p>
+                     <p>To reset the interactive report:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li><span>On the Plug-ins page, click <span class="uicontrol bold">Reset</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27018"></a><div class="props_rev_3"><a id="GUID-A3A94237-4E32-40C2-A74C-4045C879B160" name="GUID-A3A94237-4E32-40C2-A74C-4045C879B160"></a><h3 id="HTMDB-GUID-A3A94237-4E32-40C2-A74C-4045C879B160" class="sect3"><span class="enumeration_section">20.2.13 </span>Viewing Plug-in Utilization Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The Plug-in Utilization page displays which pages, components, and regions use each plug-in. </p>
+                     <p>To view plug-in utilization:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilization</span>. </span><div>
+                           <p>The Utilization page appears.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB27019"></a><div class="props_rev_3"><a id="GUID-09C1CC30-E15F-4CF4-B3CC-A4A47161ED96" name="GUID-09C1CC30-E15F-4CF4-B3CC-A4A47161ED96"></a><h3 id="HTMDB-GUID-09C1CC30-E15F-4CF4-B3CC-A4A47161ED96" class="sect3"><span class="enumeration_section">20.2.14 </span>Viewing Plug-in History
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The Plug-in History page shows the actions taken on each plug-in, the developer that performed the action and the date of each action. </p>
+                     <p>To view plug-in history:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">Plug-ins</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">History</span>. </span><div>
+                           <p>The History page appears.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-plug-ins.html#GUID-B158814B-C3FC-4030-AF25-D14208DB1E27" title="Create plug-ins to declaratively extend, share, and reuse the built-in types available with Oracle Application Express.">Implementing Plug-ins</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

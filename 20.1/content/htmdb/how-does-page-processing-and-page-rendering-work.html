@@ -1,0 +1,335 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="页面呈现和处理是如何工作的?">
+      <meta name="abstract" content="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">
+      <meta name="description" content="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">
+      <meta name="DC.subject" content="page processing, understanding, page rendering, Show Page, Accept Page, commit points, conditions, using, conditional, rendering, processing, user identity, verifying, authentication, authorization, components, controlling access to, controls, controlling access to">
+      <meta name="keywords" content="page processing, understanding, page rendering, Show Page, Accept Page, commit points, conditions, using, conditional, rendering, processing, user identity, verifying, authentication, authorization, components, controlling access to, controls, controlling access to">
+      <meta name="DC.Relation" scheme="URI" content="application-builder-concepts.html#GUID-6D22E307-6D48-49BC-9FDC-A7D8B037E46A">
+      <meta name="DC.Relation" scheme="URI" content="how-does-page-processing-and-page-rendering-work.html#GUID-0ED6E5D2-12E1-4A97-9A48-28206CE01F7E">
+      <meta name="DC.Relation" scheme="URI" content="how-does-page-processing-and-page-rendering-work.html#GUID-8D079606-6445-49B9-88D5-9CE3AD677E7E">
+      <meta name="DC.Relation" scheme="URI" content="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">
+      <meta name="DC.Relation" scheme="URI" content="how-does-page-processing-and-page-rendering-work.html#GUID-9C19869D-66D7-4176-B41F-3F7D653E91E3">
+      <meta name="DC.Relation" scheme="URI" content="how-does-page-processing-and-page-rendering-work.html#GUID-F9D492AD-DC51-46BA-883B-1E22A100D6E8">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">
+      <meta name="description" content="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">
+      <title>页面呈现和处理是如何工作的?</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="running-an-application-or-page.html" title="Previous" type="text/html">
+      <link rel="next" href="about-enabling-support-for-bookmarks.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="running-an-application-or-page.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-enabling-support-for-bookmarks.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="application-builder-concepts.html" property="item" typeof="WebPage"><span property="name"> 应用构建器（App Builder）概念</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">页面呈现和处理是如何工作的?</li>
+            </ol>
+            <a id="GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A" name="GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A"></a><a id="HTMDB03002"></a>
+            
+            <h2 id="HTMDB-GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A" class="sect2"><span class="enumeration_section">3.3 </span>页面呈现和处理是如何工作的?
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-0ED6E5D2-12E1-4A97-9A48-28206CE01F7E">How the Application Express Engine Renders and Processes Pages</a><br></li>
+                  <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-8D079606-6445-49B9-88D5-9CE3AD677E7E">About Implicit Commit Points</a><br></li>
+                  <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">Understanding Conditional Rendering and Processing</a><br></li>
+                  <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-9C19869D-66D7-4176-B41F-3F7D653E91E3">关于验证用户身份</a><br></li>
+                  <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-F9D492AD-DC51-46BA-883B-1E22A100D6E8">关于控制对控件和组件的访问</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="application-builder-concepts.html#GUID-6D22E307-6D48-49BC-9FDC-A7D8B037E46A" title="To efficiently use App Builder, developers must understand some key concepts including managing user interface design, viewing rendered application page, understanding page processing and rendering, managing session state, understanding URL syntax, managing session state values, and using built-in substitution strings.">应用构建器（App Builder）概念</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB03003"></a><div class="props_rev_3"><a id="GUID-0ED6E5D2-12E1-4A97-9A48-28206CE01F7E" name="GUID-0ED6E5D2-12E1-4A97-9A48-28206CE01F7E"></a><h3 id="HTMDB-GUID-0ED6E5D2-12E1-4A97-9A48-28206CE01F7E" class="sect3"><span class="enumeration_section">3.3.1 </span>How the Application Express Engine Renders and Processes Pages
+               </h3>
+               <div>
+                  <p>The Application Express engine dynamically renders and processes pages based on data stored in Oracle database tables. To view a rendered version of your application, you request it from the Application Express engine with a URL. When you run an application, the Application Express engine relies on two processes:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Show Page</span> - Show Page is a page rendering process that assembles all the page attributes (including regions, items, and buttons) into a viewable HTML page. When you request a page using a URL, the engine is running <span class="bold">Show Page</span>. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Accept Page</span>  - Accept Page performs forms page processing, including computations, validations, processes, and branching. When you submit a page, the Application Express engine is running <span class="bold">Accept Page</span> or performing page processing during which it saves the submitted values in the session cache and then performs any computations, validations, or processes.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A" title="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">页面呈现和处理是如何工作的?</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-8D079606-6445-49B9-88D5-9CE3AD677E7E" name="GUID-8D079606-6445-49B9-88D5-9CE3AD677E7E"></a><h3 id="HTMDB-GUID-8D079606-6445-49B9-88D5-9CE3AD677E7E" class="sect3"><span class="enumeration_section">3.3.2 </span>About Implicit Commit Points
+               </h3>
+               <div>
+                  <p>Oracle Application Express issues implicit commits at the following points:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>On load, after a page finishes rendering&nbsp;</p>
+                     </li>
+                     <li>
+                        <p>On submit, before branching to another page</p>
+                     </li>
+                     <li>
+                        <p>On submit, if one or more validations fail, before re-rendering the page</p>
+                     </li>
+                     <li>
+                        <p>After a computation</p>
+                     </li>
+                     <li>
+                        <p>After changing the value of an item, for example after a PL/SQL process that&nbsp;modifies a bind variable value or when <code class="codeph">APEX_UTIL.SET_SESSION_STATE</code> is&nbsp;called.
+                        </p>
+                     </li>
+                     <li>
+                        <p>When <code class="codeph">APEX_MAIL.PUSH_QUEUE</code> is called
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-8D079606-6445-49B9-88D5-9CE3AD677E7E__GUID-DFC2A10D-BFFA-4E32-8178-409C3DADA35D">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="../aeapi/SET_SESSION_STATE-Procedure.html#AEAPI-GUID-ECF66FA6-91DF-4463-A7DC-EFFB3E49A5D1" target="_blank">SET_SESSION_STATE Procedure</a>"</span> and <span class="q">"<a href="../aeapi/PUSH_QUEUE-Procedure.html#AEAPI-GUID-A17CEA4E-B667-4657-AC0E-F2C0833010EC" target="_blank">PUSH_QUEUE Procedure</a>"</span> in <span><cite>Oracle Application Express API Reference</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A" title="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">页面呈现和处理是如何工作的?</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB03004"></a><div class="props_rev_3"><a id="GUID-A904BFBC-5E83-48BD-A409-D5256970BF42" name="GUID-A904BFBC-5E83-48BD-A409-D5256970BF42"></a><h3 id="HTMDB-GUID-A904BFBC-5E83-48BD-A409-D5256970BF42" class="sect3"><span class="enumeration_section">3.3.3 </span>Understanding Conditional Rendering and Processing
+               </h3>
+               <div>
+                  <p>Developers can use conditions in an application to control how pages and page components display and when processes, computations, and validations execute.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-29C1DDB8-03D1-46C6-A315-52772D4407C6">What is a Condition?</a><br></li>
+                     <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-5254BF03-316C-43CD-9765-76A8B8A01409">Selecting a Condition</a><br></li>
+                     <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-E8DD3006-F912-4A52-9E86-C1C2B295DD16">Condition Example: Current Page in Expression 1</a><br></li>
+                     <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-8D1E3185-A7F5-42E1-B821-2708F3FDEB6D">Condition Example: Exists</a><br></li>
+                     <li class="ulchildlink"><a href="how-does-page-processing-and-page-rendering-work.html#GUID-B0D58BB3-1569-4808-9B1A-519B66F3E3DB">Condition Example: PL/SQL Expression</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A" title="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">页面呈现和处理是如何工作的?</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29184"></a><div class="props_rev_3"><a id="GUID-29C1DDB8-03D1-46C6-A315-52772D4407C6" name="GUID-29C1DDB8-03D1-46C6-A315-52772D4407C6"></a><h4 id="HTMDB-GUID-29C1DDB8-03D1-46C6-A315-52772D4407C6" class="sect4"><span class="enumeration_section">3.3.3.1 </span>What is a Condition?
+                  </h4>
+                  <div>
+                     <p>A condition is a small unit of logic that helps you control the display of regions, items, buttons, and tabs and the execution of processes, computations, and validations. For example, when you apply a condition to a button, the rendering engine evaluates the condition during the rendering (or Show Page) process. Whether the condition passes or fails determines if the button displays.</p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-29C1DDB8-03D1-46C6-A315-52772D4407C6__GUID-69B54D62-A001-490A-811F-56F838B3A878">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="available-conditions.html#GUID-7FDEBB2E-8A43-4F98-9EE0-056C789EFE1B">Available Conditions</a>"</span> for a detailed listing of available condition types
+                        </p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">Understanding Conditional Rendering and Processing</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29185"></a><div class="props_rev_3"><a id="GUID-5254BF03-316C-43CD-9765-76A8B8A01409" name="GUID-5254BF03-316C-43CD-9765-76A8B8A01409"></a><h4 id="HTMDB-GUID-5254BF03-316C-43CD-9765-76A8B8A01409" class="sect4"><span class="enumeration_section">3.3.3.2 </span>Selecting a Condition
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>You specify a condition by selecting a <a id="d17999e512" class="indexterm-anchor"></a>condition type. You can select a condition type when you first create the control or component, or later when editing the control or component.
+                        </p>
+                        <p>Depending upon the type of condition you select, you enter the appropriate values in the fields provided. The condition evaluates to true or false based on the values you enter. Click the select list to view a complete list of all available conditions for a given component or control.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">Understanding Conditional Rendering and Processing</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25019"></a><div class="props_rev_3"><a id="GUID-E8DD3006-F912-4A52-9E86-C1C2B295DD16" name="GUID-E8DD3006-F912-4A52-9E86-C1C2B295DD16"></a><h4 id="HTMDB-GUID-E8DD3006-F912-4A52-9E86-C1C2B295DD16" class="sect4"><span class="enumeration_section">3.3.3.3 </span>Condition Example: Current Page in Expression 1
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p><span class="bold">Current page in Expression 1</span> evaluates to true if the current page number is contained within the comma-delimited list of pages provided. For example: 
+                        </p><pre class="oac_no_warn" dir="ltr">3,100,203
+</pre><p>If the current page is 100, then this condition evaluates to true and the condition passes.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">Understanding Conditional Rendering and Processing</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25020"></a><div class="props_rev_3"><a id="GUID-8D1E3185-A7F5-42E1-B821-2708F3FDEB6D" name="GUID-8D1E3185-A7F5-42E1-B821-2708F3FDEB6D"></a><h4 id="HTMDB-GUID-8D1E3185-A7F5-42E1-B821-2708F3FDEB6D" class="sect4"><span class="enumeration_section">3.3.3.4 </span>Condition Example: Exists
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p><span class="bold">Exists (SQL query returns at least one row)</span> is expressed as a SQL query. If the query returns at least one row, then the condition evaluates as true. For example: 
+                        </p><pre class="oac_no_warn" dir="ltr">SELECT 1 FROM employees WHERE department_id = :P101_DEPTNO
+</pre><p>This example references item <code class="codeph">P101_DEPTNO</code> as a bind variable. You can use bind variables within application processes and SQL query regions to reference items from session state. If one or more employees are in the department identified by the value of <code class="codeph">P101_DEPTNO</code>, then the condition evaluates as true.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-8D1E3185-A7F5-42E1-B821-2708F3FDEB6D__GUID-B27B3A28-3D57-4662-9BDF-1FEB1E81F4EA">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="managing-session-state-values.html#GUID-A052DC04-0D04-4DEA-BDEF-4DCBFF489E07" title="Use bind variable syntax anywhere where you are using SQL or PL/SQL to reference session state of a specified item.&nbsp;">用绑定变量语法来引用会话状态</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">Understanding Conditional Rendering and Processing</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25021"></a><div class="props_rev_3"><a id="GUID-B0D58BB3-1569-4808-9B1A-519B66F3E3DB" name="GUID-B0D58BB3-1569-4808-9B1A-519B66F3E3DB"></a><h4 id="HTMDB-GUID-B0D58BB3-1569-4808-9B1A-519B66F3E3DB" class="sect4"><span class="enumeration_section">3.3.3.5 </span>Condition Example: PL/SQL Expression
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use <span class="bold">PL/SQL Expression</span> to specify an expression in valid PL/SQL syntax that evaluates to true or false. For example: 
+                        </p><pre class="oac_no_warn" dir="ltr">NVL(:MY_ITEM,'NO') = 'YES'
+</pre><p>If the value of <code class="codeph">:MY_ITEM</code> is YES, as in the previous example, then the condition evaluates as true. If the value of :MY_ITEM is anything other than YES, then the condition evaluates as false.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">Understanding Conditional Rendering and Processing</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB03005"></a><div class="props_rev_3"><a id="GUID-9C19869D-66D7-4176-B41F-3F7D653E91E3" name="GUID-9C19869D-66D7-4176-B41F-3F7D653E91E3"></a><h3 id="HTMDB-GUID-9C19869D-66D7-4176-B41F-3F7D653E91E3" class="sect3"><span class="enumeration_section">3.3.4 </span>关于验证用户身份
+               </h3>
+               <div>
+                  <p>Authentication is the process of establishing users' identities before they can access an application. Authentication may require a user to enter a user name and password, or may involve the use of a digital certificate or a secure key. </p>
+                  <p>Oracle Application Express supports modular authentication, making it easy to switch authentication methods when needed. You can establish a user's identity by selecting from several built-in authentication methods, or by using a wizard to create your own custom authentication approach.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-9C19869D-66D7-4176-B41F-3F7D653E91E3__GUID-3275D2FE-9675-4075-87B4-21A4299D0517">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="establishing-user-identity-through-authentication.html#GUID-45C4B1CD-4231-4FE9-8B5B-C90611F5F57B" title="Use authentication to establish a user's identity to control access to an application. Authentication may require a user identify a user name and password or could involve the use of digital certificates or a secure key.">Establishing User Identity Through Authentication</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A" title="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">页面呈现和处理是如何工作的?</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB03006"></a><div class="props_rev_3"><a id="GUID-F9D492AD-DC51-46BA-883B-1E22A100D6E8" name="GUID-F9D492AD-DC51-46BA-883B-1E22A100D6E8"></a><h3 id="HTMDB-GUID-F9D492AD-DC51-46BA-883B-1E22A100D6E8" class="sect3"><span class="enumeration_section">3.3.5 </span>关于控制对控件和组件的访问
+               </h3>
+               <div>
+                  <p>While conditions control the rendering and processing of specific controls or components on a page, authorization schemes control user access. Authorization is a broad term for controlling access to resources based on user privileges. </p>
+                  <p>Authorization schemes use the identities established by authentication to grant privileges on applications and objects within them. You can specify an authorization scheme for an entire application, a page, or a specific page control such as a region, item, or button. For example, you could use an authorization scheme to selectively determine which tabs, regions, or navigation bar entries a user sees.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F9D492AD-DC51-46BA-883B-1E22A100D6E8__GUID-1D2C4A2F-B036-429B-A8C9-DA31044FA87E">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="providing-security-through-authorization.html#GUID-8FBF5F46-0541-4859-8470-D10E333DD271" title="Extend the security of your application by creating an authorization scheme.">Providing Security Through Authorization</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-does-page-processing-and-page-rendering-work.html#GUID-570F6C98-8AEA-433B-A83C-3139C7214E1A" title="Learn how the Application Express engine renders and processes pages, when Oracle Application Express issues implicit commits, how conditional rendering and processing works, and how to verify user identify or control access to controls and components.">页面呈现和处理是如何工作的?</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

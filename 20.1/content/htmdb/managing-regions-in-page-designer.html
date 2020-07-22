@@ -1,0 +1,751 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Regions">
+      <meta name="abstract" content="Developers create regions to function as containers for content.">
+      <meta name="description" content="Developers create regions to function as containers for content.">
+      <meta name="DC.subject" content="region, understanding, creating, editing region attributes, editing attributes, controlling positioning, specifying header and footer, footer, substitution strings, substitution strings, supported in region footer, enabling users to customize a page, enabling customization, pages, enabling user customization, region attributes, Cache, caching regions, Static ID, specifying a static region ID, adding an image, creating region display selector, region display selector, creating, copying, deleting">
+      <meta name="keywords" content="region, understanding, creating, editing region attributes, editing attributes, controlling positioning, specifying header and footer, footer, substitution strings, substitution strings, supported in region footer, enabling users to customize a page, enabling customization, pages, enabling user customization, region attributes, Cache, caching regions, Static ID, specifying a static region ID, adding an image, creating region display selector, region display selector, creating, copying, deleting">
+      <meta name="DC.Relation" scheme="URI" content="controlling-page-layout.html#GUID-2A096B0F-FAB4-4D9A-962B-3406A2F5CFBF">
+      <meta name="DC.Relation" scheme="URI" content="managing-regions-in-page-designer.html#GUID-D137BFE6-2F3A-4C63-9083-56D862B8C556">
+      <meta name="DC.Relation" scheme="URI" content="managing-regions-in-page-designer.html#GUID-7A5C8F2C-288C-426A-B8B6-21E95EDB5FB9">
+      <meta name="DC.Relation" scheme="URI" content="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">
+      <meta name="DC.Relation" scheme="URI" content="managing-regions-in-page-designer.html#GUID-B16D47B0-E639-4FD2-86CB-BFA213F0D355">
+      <meta name="DC.Relation" scheme="URI" content="managing-regions-in-page-designer.html#GUID-AB837BE5-5817-435A-AC8E-6C8E1DA44F44">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Developers create regions to function as containers for content.">
+      <meta name="description" content="Developers create regions to function as containers for content.">
+      <title>Managing Regions</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Developers create regions to function as containers for content.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="creating-a-global-page-to-display-components-on-every-page.html" title="Previous" type="text/html">
+      <link rel="next" href="about-incorporating-content-from-other-web-sites.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="creating-a-global-page-to-display-components-on-every-page.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-incorporating-content-from-other-web-sites.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="controlling-page-layout.html" property="item" typeof="WebPage"><span property="name">Controlling Page Layout</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Regions </li>
+            </ol>
+            <a id="GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D" name="GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D"></a><a id="HTMDB29673"></a>
+            
+            <h2 id="HTMDB-GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D" class="sect2"><span class="enumeration_section">14.4 </span>Managing Regions 
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Developers create regions to function as containers for content.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-D137BFE6-2F3A-4C63-9083-56D862B8C556">About Regions</a><br></li>
+                  <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-7A5C8F2C-288C-426A-B8B6-21E95EDB5FB9">Creating a Region</a><br></li>
+                  <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a><br></li>
+                  <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-B16D47B0-E639-4FD2-86CB-BFA213F0D355">Copying a Region</a><br></li>
+                  <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-AB837BE5-5817-435A-AC8E-6C8E1DA44F44">Deleting Regions</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="controlling-page-layout.html#GUID-2A096B0F-FAB4-4D9A-962B-3406A2F5CFBF" title="Developers can customize their database application's page layout by using a global page, customizing regions, and editing item attributes.">Controlling Page Layout</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29344"></a><div class="props_rev_3"><a id="GUID-D137BFE6-2F3A-4C63-9083-56D862B8C556" name="GUID-D137BFE6-2F3A-4C63-9083-56D862B8C556"></a><h3 id="HTMDB-GUID-D137BFE6-2F3A-4C63-9083-56D862B8C556" class="sect3"><span class="enumeration_section">14.4.1 </span>About Regions
+               </h3>
+               <div>
+                  <p>Each page in an Oracle Application Express application contains one or more regions. A region is a area on a page that serves as a container for content. Each page can have any number of regions. You control the appearance of a region through a specific region template. The region template controls the look of the region, the size, determines whether there is a border or a background color, and what type of fonts display. A region template also determines the standard placement for any buttons placed in region positions.</p>
+                  <p>You can use regions to group page controls (such as items or buttons). You can create simple regions that do not generate additional HTML, or create elaborate regions that frame content within HTML tables or images.</p>
+                  <p>Regions display in sequence in the page template body or can be placed explicitly into region positions. The page structure can be defined using HTML tables or more commonly today using <code class="codeph">DIV</code> tags. 
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D137BFE6-2F3A-4C63-9083-56D862B8C556__GUID-1D0E0D63-F44E-4747-9235-77A04E97B3DF">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="managing-regions-in-page-designer.html#GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D" title="Developers create regions to function as containers for content.">Managing Regions</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="accessing-application-utilities.html#GUID-08369FB1-451F-4A53-8185-11C39B83BBEA" title="Use the links in the Page Specific Utilities region to access Cross Page Utilities and Page Groups as well as access handy utilities for regions, buttons, items, computations, validations, process, dynamic actions, and branches.">Accessing Page Specific Utilities</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D" title="Developers create regions to function as containers for content.">Managing Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29674"></a><div class="props_rev_3"><a id="GUID-7A5C8F2C-288C-426A-B8B6-21E95EDB5FB9" name="GUID-7A5C8F2C-288C-426A-B8B6-21E95EDB5FB9"></a><h3 id="HTMDB-GUID-7A5C8F2C-288C-426A-B8B6-21E95EDB5FB9" class="sect3"><span class="enumeration_section">14.4.2 </span>Creating a Region 
+               </h3>
+               <div>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-7A5C8F2C-288C-426A-B8B6-21E95EDB5FB9__GUID-FB00EAD1-5E36-4004-A136-0445F74AA5BA">
+                        <p class="notep1">Tip:</p>
+                        <p>You can also create a form or breadcrumb region from the Page Designer toolbar. On the Page Designer toolbar, click the <span class="uicontrol bold">Create</span> menu and then selecting <span class="uicontrol bold">Form Region</span> or <span class="uicontrol bold">Breadcrumb Region</span>.
+                        </p>
+                     </div>
+                     <p>To create a region in Page Designer:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Gallery at the bottom of the central pane, locate the type of region you want to create. Pass the cursor over a control or component to view a tooltip that describes it.</span><div>
+                           <div class="infobox-tip" id="GUID-7A5C8F2C-288C-426A-B8B6-21E95EDB5FB9__GUID-7910195C-855C-408A-9B33-ADD98A99A45C">
+                              <p class="notep1">Tip:</p>
+                              <p>In addition to dragging and dropping components from the Gallery, you can also right-click a component in the Gallery to view a context menu. Select <span class="uicontrol bold">Add To</span> and then the location where you want to add the component.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click and hold the mouse on the region to be created and drag it the desired location in the Layout tab.</span><div>
+                           <p>When the mouse is over the appropriate location, the Layout tab displays as a darkened yellow tile. Release the mouse to drop the component. You can only drop components into appropriate drop positions, as determined by the component type.</p>
+                           
+                           <p>Page Designer indicates what actions are required next. If there
+                        is an error, a <span class="uicontrol bold">Messages</span> icon displays next to the
+                            <span class="uicontrol bold">Save</span> button. Click the
+                            <span class="uicontrol bold">Messages</span> icon to view a dialog listing all the
+                        errors. Select an error to highlight the associated attribute in the
+                        Property Editor.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Edit the appropriate attributes in the Property Editor. </span><div>
+                           <div class="infobox-tip" id="GUID-7A5C8F2C-288C-426A-B8B6-21E95EDB5FB9__GUID-29C06BA7-5315-4492-A15E-86C5DF0B7420">
+                              <p class="notep1">Tip:</p>
+                              <p>To view help for an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Save</span> or <span class="bold">Save and Run Page</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D" title="Developers create regions to function as containers for content.">Managing Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29675"></a><div class="props_rev_3"><a id="GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82" name="GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82"></a><h3 id="HTMDB-GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82" class="sect3"><span class="enumeration_section">14.4.3 </span> Editing Regions 
+               </h3>
+               <div>
+                  <p>A region is an area of a page that serves as a container for content. You can alter the appearance of a page by editing region attributes.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-3AC8F07B-97FF-4BF7-A8B6-0D1719BB0E10">Editing Region Attributes</a><br></li>
+                     <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-B73C3097-B4F2-4DC7-9A30-43B07EC0DB12">Controlling Region Positioning</a><br></li>
+                     <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-6EF14767-E05A-439A-858B-BC18BE3234A4">Specifying a Region Header and Footer</a><br></li>
+                     <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-1087FA2F-5BE6-4588-9516-298020BEF1CD">Enabling Users to Customize a Page</a><br></li>
+                     <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-8874E9C4-FF3B-4E48-AC23-6D69D4B139D9">Utilizing Region Caching in Page Designer</a><br></li>
+                     <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-B6C7AD51-6C5D-49D5-B82B-BB505587D115">Specifying a Static Region ID</a><br></li>
+                     <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-3D388EA7-995B-4630-B67C-4AF74F31B5BB">Adding a Region Image</a><br></li>
+                     <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-3E5DF709-54A2-4289-8EA2-F3F1985BC4E3">Creating a Region Display Selector</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D" title="Developers create regions to function as containers for content.">Managing Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29676"></a><div class="props_rev_3"><a id="GUID-3AC8F07B-97FF-4BF7-A8B6-0D1719BB0E10" name="GUID-3AC8F07B-97FF-4BF7-A8B6-0D1719BB0E10"></a><h4 id="HTMDB-GUID-3AC8F07B-97FF-4BF7-A8B6-0D1719BB0E10" class="sect4"><span class="enumeration_section">14.4.3.1 </span>Editing Region Attributes 
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To edit region attributes:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                              <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li><span>Select an application.</span></li>
+                              <li><span>Select a page.</span></li>
+                           </ol>
+                           <div>Page Designer appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>In the Rendering tab, select the region.</span><div>
+                              <p>The Property Editor displays the region attributes in the right pane. </p>
+                              <div class="figure" id="GUID-3AC8F07B-97FF-4BF7-A8B6-0D1719BB0E10__GUID-AEE7553E-FA5A-46B3-9112-EFE455D6B799"><img height="398" width="845" src="img/pg_edit_region.png" alt="Description of pg_edit_region.png follows" title="Description of pg_edit_region.png follows" longdesc="img_text/pg_edit_region.html"><br><a href="img_text/pg_edit_region.html">Description of the illustration pg_edit_region.png</a></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To find a group or attribute:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="bold">Search for the group or attribute</span> -&nbsp;Enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;To return to the default display, delete the keywords.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Use Go to Group</span>&nbsp;- Click <span class="uicontrol bold">Go to Group</span>&nbsp;and select the group. To return the default display, click <span class="uicontrol bold">Go to Group</span> again and select <span class="uicontrol bold">Expand All</span>.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Edit the appropriate attributes in the Property Editor. </span><div>
+                              <p>To learn more about an attribute, see field-level Help.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To save your changes click <span class="uicontrol bold">Save</span>. To save and run the page, click <span class="uicontrol bold">Save and Run Page</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-3AC8F07B-97FF-4BF7-A8B6-0D1719BB0E10__GUID-B773895D-8544-4B5E-A730-7AABACA781D7">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="right-pane-page-designer.html#GUID-CDCB9B74-8BE1-4ABE-93AB-099AEF3742BD" title="The right pane in Page Designer contains the Property Editor. Use the Property Editor to edit the attributes of the currently selected component.">Right Pane of Page Designer (Property Editor)</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25571"></a><div class="props_rev_3"><a id="GUID-B73C3097-B4F2-4DC7-9A30-43B07EC0DB12" name="GUID-B73C3097-B4F2-4DC7-9A30-43B07EC0DB12"></a><h4 id="HTMDB-GUID-B73C3097-B4F2-4DC7-9A30-43B07EC0DB12" class="sect4"><span class="enumeration_section">14.4.3.2 </span>Controlling Region Positioning
+                  </h4>
+                  <div>
+                     <p>When you create a region, you can specify its position in the Property Editor by editing the Layout, Position attribute. The template positions defined within the current theme for the page's user interface determine the available selections.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29682"></a><div class="props_rev_3"><a id="GUID-6EF14767-E05A-439A-858B-BC18BE3234A4" name="GUID-6EF14767-E05A-439A-858B-BC18BE3234A4"></a><h4 id="HTMDB-GUID-6EF14767-E05A-439A-858B-BC18BE3234A4" class="sect4"><span class="enumeration_section">14.4.3.3 </span>Specifying a Region Header and Footer
+                  </h4>
+                  <div>
+                     <p>In addition to the body content of a region, you can specify additional HTML to be placed above and below a region by editing the Header and Footer attributes in the Property Editor. </p>
+                     <p>For all report regions, the substitution string <code class="codeph">#TIMING#</code> shows the elapsed time in seconds used when rendering a region. You can use this substitution string for debugging purposes.
+                     </p>
+                     <p>For classic report regions, the region footer supports the following substitution strings:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">#ROWS_FETCHED#</code> shows the number of rows fetched by the Oracle Application Express reporting engine (the page size). You can use these substitution strings to display customized messages to the user. For example:
+                           </p><pre class="oac_no_warn" dir="ltr">Fetched #ROWS_FETCHED# rows in #TIMING# seconds.
+</pre></li>
+                        <li>
+                           <p><code class="codeph">#TOTAL_ROWS#</code> displays the total number of rows that satisfy a SQL query used for a report.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">#FIRST_ROW_FETCHED#</code> and <code class="codeph">#LAST_ROW_FETCHED#</code> display the range of rows displayed. For example:
+                           </p><pre class="oac_no_warn" dir="ltr">Row(s) #FIRST_ROW_FETCHED# through #LAST_ROW_FETCHED# of #ROWS_FETCHED# displayed
+</pre></li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29683"></a><div class="props_rev_3"><a id="GUID-1087FA2F-5BE6-4588-9516-298020BEF1CD" name="GUID-1087FA2F-5BE6-4588-9516-298020BEF1CD"></a><h4 id="HTMDB-GUID-1087FA2F-5BE6-4588-9516-298020BEF1CD" class="sect4"><span class="enumeration_section">14.4.3.4 </span>Enabling Users to Customize a Page
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>You can use the Customization attribute to control whether display attributes in a region can be customized by users. To use this feature, you must include the <code class="codeph">#CUSTOMIZE#</code> substitution string in the Header, Body, or Footer section of the page template.
+                        </p>
+                        <p>If at least one region supports end-user customization, a <span class="uicontrol bold">Customize</span> link appears wherever you include the <code class="codeph">#CUSTOMIZE#</code> substitution string in the page template. When users click this link, a window appears, enabling them to display or hide regions on the page.
+                        </p>
+                        <p>To enable end user customization:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                              <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li><span>Select an application.</span></li>
+                              <li><span>Select a page.</span></li>
+                           </ol>
+                           <div>Page Designer appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the region in the Rendering tab or the Layout tab.</span><div>
+                              <p>The Property Editor displays attributes for the page. Attributes are organized in groups.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To find a group or attribute:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="bold">Search for the group or attribute</span> -&nbsp;Enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;To return to the default display, delete the keywords.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Use Go to Group</span> - Click <span class="uicontrol bold">Go to Group</span> and select the group. To return the default display, click <span class="uicontrol bold">Go to Group</span> again and select <span class="uicontrol bold">Expand All</span>.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Find <span class="uicontrol bold">Customization</span>. For Customizable, select one of the following:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="uicontrol bold">Not Customizable By End Users</span></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="uicontrol bold">Customizable and Not Shown By Default</span></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="uicontrol bold">Customizable and Shown By Default</span></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="bold">Save</span>.</span><div></div>
+                        </li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-1087FA2F-5BE6-4588-9516-298020BEF1CD__GUID-D945B0FA-CDE0-45EE-83AD-2D58328A5058">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="creating-custom-themes.html#GUID-CB755CDA-67EA-4CF8-943D-80E2CDCC2E3E" title="Create a custom theme by modifying existing templates.">Creating Custom Themes</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29684"></a><div class="props_rev_3"><a id="GUID-8874E9C4-FF3B-4E48-AC23-6D69D4B139D9" name="GUID-8874E9C4-FF3B-4E48-AC23-6D69D4B139D9"></a><h4 id="HTMDB-GUID-8874E9C4-FF3B-4E48-AC23-6D69D4B139D9" class="sect4"><span class="enumeration_section">14.4.3.5 </span>Utilizing Region Caching in Page Designer
+                  </h4>
+                  <div>
+                     <p>Enabling region caching is an effective way to improve the performance of static regions such as regions containing lists that do not use conditions or regions containing static HTML.</p>
+                     <div class="infobox-tip" id="GUID-8874E9C4-FF3B-4E48-AC23-6D69D4B139D9__GUID-021A05C3-28B9-422F-98C5-5FF8DB4C94D4">
+                        <p class="notep1">Tip:</p>
+                        <p>Region caching is not available for interactive report regions.</p>
+                     </div>
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-7FDEB5DF-872A-435A-B121-58E56A29282F">About Region Caching</a><br></li>
+                        <li class="ulchildlink"><a href="managing-regions-in-page-designer.html#GUID-6E58E42D-0EB9-4E6F-BA3B-9FB6C8F5AFF1">Enabling Region Caching in Page Designer</a><br></li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-8874E9C4-FF3B-4E48-AC23-6D69D4B139D9__GUID-96A6A6B0-1172-4D00-ADFD-0271268488B5">
+                        <p class="notep1">See Also:</p>
+                        <p>"Managing Page and Region Caching" in <a href="../aeadm/managing-page-and-region-caching.html#AEADM126" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <a id="HTMDB29685"></a><div class="props_rev_3"><a id="GUID-7FDEB5DF-872A-435A-B121-58E56A29282F" name="GUID-7FDEB5DF-872A-435A-B121-58E56A29282F"></a><h5 id="HTMDB-GUID-7FDEB5DF-872A-435A-B121-58E56A29282F" class="sect5"><span class="enumeration_section">14.4.3.5.1 </span>About Region Caching
+                     </h5>
+                     <div>
+                        <p>Enabling region caching is an effective way to improve the performance of static regions such as regions containing lists that do not use conditions or regions containing static HTML.</p>
+                        <p>When you enable region caching, the Application Express engine renders a region from a cached (or stored) repository instead of rendering it dynamically. Keep in mind that the actual session identifiers are not cached. Instead, the Application Express engine caches a <code class="codeph">&amp;SESSION.</code> substitution string and the current session rendering the cached region is substituted on display. For example, if a region contains a link and the link includes a session, the exact session is not cached to ensure that the links works for all sessions.
+                        </p>
+                        <p>The Application Express engine only renders a region from cache if it meets the defined condition. Additionally, regions can be cached specific to a user or cached independent of a user.</p>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-8874E9C4-FF3B-4E48-AC23-6D69D4B139D9">Utilizing Region Caching in Page Designer</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMDB29686"></a><div class="props_rev_3"><a id="GUID-6E58E42D-0EB9-4E6F-BA3B-9FB6C8F5AFF1" name="GUID-6E58E42D-0EB9-4E6F-BA3B-9FB6C8F5AFF1"></a><h5 id="HTMDB-GUID-6E58E42D-0EB9-4E6F-BA3B-9FB6C8F5AFF1" class="sect5"><span class="enumeration_section">14.4.3.5.2 </span>Enabling Region Caching in Page Designer
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To enable region caching:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                                 <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                                 <li><span>Select an application.</span></li>
+                                 <li><span>Select a page.</span></li>
+                              </ol>
+                              <div>Page Designer appears. </div>
+                           </li>
+                           <li class="stepexpand"><span>Select the region in the Rendering tab or the Layout tab.</span><div>
+                                 <p>The Property Editor displays attributes for the page. Attributes are organized in groups.</p>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>To find a group or attribute:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="bold">Search for the group or attribute</span> -&nbsp;Enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;To return to the default display, delete the keywords.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="bold">Use Go to Group</span> - Click <span class="uicontrol bold">Go to Group</span> and select the group. To return the default display, click <span class="uicontrol bold">Go to Group</span> again and select <span class="uicontrol bold">Expand All</span>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Find <span class="uicontrol bold">Server Cache</span>. For <span class="uicontrol bold">Caching</span>, select one of the following:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">Disabled</span> - Content is not cached and computed for each request.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Enabled</span> - Content is cached and utilized by all users.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Cached by User</span> - Content is cached specifically for each user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Cache by Session</span> - Content is cached specifically for each session.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Click <span class="bold">Save</span>.</span></li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-8874E9C4-FF3B-4E48-AC23-6D69D4B139D9">Utilizing Region Caching in Page Designer</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div><a id="HTMDB29688"></a><div class="props_rev_3"><a id="GUID-B6C7AD51-6C5D-49D5-B82B-BB505587D115" name="GUID-B6C7AD51-6C5D-49D5-B82B-BB505587D115"></a><h4 id="HTMDB-GUID-B6C7AD51-6C5D-49D5-B82B-BB505587D115" class="sect4"><span class="enumeration_section">14.4.3.6 </span>Specifying a Static Region ID
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Specifying a static region ID is useful when creating custom JavaScript or cascading style sheets. You can use the Static ID attribute on the Edit Region page to uniquely identify a region. You can then reference the region using the <code class="codeph">#REGION_STATIC_ID#</code> substitution string in a region templates, the header, the footer, or the body.
+                        </p>
+                        <p>A static region ID is included by assigning it as an HTML element ID to the region container object (that is, the table or DIV). The ID of an HTML element must be unique for the entire page. For example, to keep the page HTML valid you cannot have a button and region with the same ID.</p>
+                        <p>To specify a static region ID:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                              <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li><span>Select an application.</span></li>
+                              <li><span>Select a page.</span></li>
+                           </ol>
+                           <div>Page Designer appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the region in the Rendering tab or the Layout tab.</span><div>
+                              <p>The Property Editor displays attributes for the page. Attributes are organized in groups.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To find a group or attribute:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="bold">Search for the group or attribute</span> -&nbsp;Enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;To return to the default display, delete the keywords.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Use Go to Group</span> - Click <span class="uicontrol bold">Go to Group</span> and select the group. To return the default display, click <span class="uicontrol bold">Go to Group</span> again and select <span class="uicontrol bold">Expand All</span>.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Find <span class="uicontrol bold">Advanced</span>. Edit the <span class="uicontrol bold">Static ID</span> attribute:</span><div>
+                              <ol type="a">
+                                 <li>
+                                    <p>Find <span class="uicontrol bold">Advanced</span> and then <span class="uicontrol bold">Static ID</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>In Static ID, enter the static ID for this region. If defined, this is used as the ID for the region, using the substitution string <code class="codeph">#REGION_STATIC_ID#</code>, which can be useful if developing custom JavaScript behavior for the region. If this is not defined, the region generates an internal ID.
+                                    </p>
+                                 </li>
+                              </ol>
+                              <div class="infobox-tip" id="GUID-B6C7AD51-6C5D-49D5-B82B-BB505587D115__GUID-1254FEAB-8C7B-4C48-AE68-0FE8C56604F0">
+                                 <p class="notep1">Tip:</p>
+                                 <p>The template must include the <code class="codeph">#REGION_STATIC_ID#</code> substitution string, in order for the region to utilize the static ID entered.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="bold">Save</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29689"></a><div class="props_rev_3"><a id="GUID-3D388EA7-995B-4630-B67C-4AF74F31B5BB" name="GUID-3D388EA7-995B-4630-B67C-4AF74F31B5BB"></a><h4 id="HTMDB-GUID-3D388EA7-995B-4630-B67C-4AF74F31B5BB" class="sect4"><span class="enumeration_section">14.4.3.7 </span>Adding a Region Image
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use the Region Image and Image tag attributes to add an image to the upper left side of a region. </p>
+                        <p>To add a region image:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                              <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li><span>Select an application.</span></li>
+                              <li><span>Select a page.</span></li>
+                           </ol>
+                           <div>Page Designer appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the region in the Rendering tab or the Layout tab.</span><div>
+                              <p>The Property Editor displays Region attributes. Attributes are organized in groups.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To find a group or attribute:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="bold">Search for the group or attribute</span> -&nbsp;Enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;To return to the default display, delete the keywords.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Use Go to Group</span> - Click <span class="uicontrol bold">Go to Group</span> and select the group. To return the default display, click <span class="uicontrol bold">Go to Group</span> again and select <span class="uicontrol bold">Expand All</span>.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Find <span class="uicontrol bold">Advanced</span>. Edit the following attributes:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="uicontrol bold">Region Image</span> - Enter a reference to an image that displays in the upper left of the region. There is no control over the table tag used to display this image.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="uicontrol bold">Image Tag Attributes</span> - Enter image tag attributes included in the image HTML. This can be used for attributes such as height, width or image ALT text (if the image is non-decorative). 
+                                    </p>
+                                    <p>If no ALT is defined in the image tag attributes, Application Express defaults to rendering the image as a decorative image, for example with an empty ALT tag.</p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29697"></a><div class="props_rev_3"><a id="GUID-3E5DF709-54A2-4289-8EA2-F3F1985BC4E3" name="GUID-3E5DF709-54A2-4289-8EA2-F3F1985BC4E3"></a><h4 id="HTMDB-GUID-3E5DF709-54A2-4289-8EA2-F3F1985BC4E3" class="sect4"><span class="enumeration_section">14.4.3.8 </span>Creating a Region Display Selector
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Region Display Selector region enables you to include show and hide controls for each region on a page.</p>
+                        <p>To create a Region Display Selector:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Create the page and regions to be included in the Region Page Selector.</span></li>
+                        <li class="stepexpand"><span>For each region to be included in the selector, set the Region Display Selector
+                    attribute to <span class="uicontrol bold">On</span>. </span></li>
+                        <li class="stepexpand"><span>In the Gallery, right-click <span class="uicontrol bold">Region Display Selector</span> region, select <span class="uicontrol bold">Add To</span>, and select the appropriate location. </span><div>
+                              <div class="infobox-tip" id="GUID-3E5DF709-54A2-4289-8EA2-F3F1985BC4E3__GUID-04638739-62E3-43B5-BE92-53E01B6296E7">
+                                 <p class="notep1">Tip:</p>
+                                 <p>You can also drag and drop from the Gallery. From the Gallery select the <span class="uicontrol bold">Region Display Selector</span> region and drag it to the appropriate location in the Layout tab.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Edit the region attributes in the Property Editor:</span><ol type="a">
+                              <li class="substepexpand"><span><span class="uicontrol bold">Identification</span>, <span class="uicontrol bold">Title</span> - Enter a region title. The region title only displays when it is defined in the region template.</span></li>
+                              <li class="substepexpand"><span><span class="uicontrol bold">Advanced</span>, <span class="uicontrol bold">Region Display
+                                Selector</span> - Select <span class="uicontrol bold">On</span> if you want
+                            this region included in the Region Display Selector. This attribute is
+                            only utilized if a region type of&nbsp;Region Display Selector&nbsp;is defined and
+                            viewable on the page.</span><div>
+                                    
+                                    <div class="infobox-tip" id="GUID-3E5DF709-54A2-4289-8EA2-F3F1985BC4E3__TOLEARNMOREABOUTANATTRIBUTESELECTTH-673394F8">
+                                       <p class="notep1">Tip:</p>
+                                       
+                                       <p>To learn more about an attribute, select the
+                                    attribute in the Property Editor and click the
+                                        <span class="uicontrol bold">Help</span> tab in the central pane.
+                                       </p>
+                                       
+                                    </div>
+                                    
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-AFD25D42-3FD7-4BF6-AAE8-D52BF8484F82">Editing Regions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB29698"></a><div class="props_rev_3"><a id="GUID-B16D47B0-E639-4FD2-86CB-BFA213F0D355" name="GUID-B16D47B0-E639-4FD2-86CB-BFA213F0D355"></a><h3 id="HTMDB-GUID-B16D47B0-E639-4FD2-86CB-BFA213F0D355" class="sect3"><span class="enumeration_section">14.4.4 </span>Copying a Region 
+               </h3>
+               <div>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-B16D47B0-E639-4FD2-86CB-BFA213F0D355__GUID-DBC22681-9A75-47A9-8EC8-53E80C7BFF9C">
+                        <p class="notep1">Note:</p>
+                        <p>You cannot copy a Tree region since this type of region encompasses more than one region.</p>
+                     </div>
+                     <p>To copy a region:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Right-click the region in Layout tab, select <span class="uicontrol bold">Copy To</span>, and select a destination from the submenu. </span></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-B16D47B0-E639-4FD2-86CB-BFA213F0D355__GUID-81AAC924-4D27-4997-8E8A-693E7F5CCB90">
+                        <p class="notep1">Tip:</p>
+                        <p>To copy a region to another page, select the region in the Rendering tab, right-click, and select <span class="uicontrol bold">Copy to Other Page</span>. Follow the on-screen instructions.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D" title="Developers create regions to function as containers for content.">Managing Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29699"></a><div class="props_rev_3"><a id="GUID-AB837BE5-5817-435A-AC8E-6C8E1DA44F44" name="GUID-AB837BE5-5817-435A-AC8E-6C8E1DA44F44"></a><h3 id="HTMDB-GUID-AB837BE5-5817-435A-AC8E-6C8E1DA44F44" class="sect3"><span class="enumeration_section">14.4.5 </span>Deleting Regions 
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To delete regions:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Select one or more regions in the Rendering tab.</span></li>
+                     <li class="stepexpand"><span>Right-click and select <span class="uicontrol bold">Delete</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-regions-in-page-designer.html#GUID-6AD21C62-3F13-422A-A5BC-91BFC898419D" title="Developers create regions to function as containers for content.">Managing Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

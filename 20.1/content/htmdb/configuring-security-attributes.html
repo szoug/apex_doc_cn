@@ -1,0 +1,986 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Configuring Security Attributes">
+      <meta name="abstract" content="Configure security for all pages in an application on the Security page. Security attributes are divided into the categories: Authentication, Authorization, Session Management, Session State Protection, Browser Security, and Database Session.">
+      <meta name="description" content="Configure security for all pages in an application on the Security page. Security attributes are divided into the categories: Authentication, Authorization, Session Management, Session State Protection, Browser Security, and Database Session.">
+      <meta name="DC.subject" content="Edit Security Attributes, security, attributes, accessing, Authentication, authentication, security attributes, security attributes, authentication, Authorization, Authorization attributes, Authorization Scheme, authorization scheme, specifying, of an application, Security attributes, Session Management, Session Management, Session State Protection, Session State Protection attribute, session state, enabling projection, Browser Security, Edit Application page, Database Session, Database Session attribute, application attributes">
+      <meta name="keywords" content="Edit Security Attributes, security, attributes, accessing, Authentication, authentication, security attributes, security attributes, authentication, Authorization, Authorization attributes, Authorization Scheme, authorization scheme, specifying, of an application, Security attributes, Session Management, Session Management, Session State Protection, Session State Protection attribute, session state, enabling projection, Browser Security, Edit Application page, Database Session, Database Session attribute, application attributes">
+      <meta name="DC.Relation" scheme="URI" content="managing-application-attributes.html#GUID-257F4773-0F0E-4E50-A00E-9D71D9319EAC">
+      <meta name="DC.Relation" scheme="URI" content="configuring-security-attributes.html#GUID-BBD573CB-68B6-4EC2-BCCC-DBB27D39BDC3">
+      <meta name="DC.Relation" scheme="URI" content="configuring-security-attributes.html#GUID-FDB41857-C144-4AB0-A85C-A33A26259A47">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-5AEB6EEF-A89B-41B6-B8D5-00A0FD926E8F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Configure security for all pages in an application on the Security page. Security attributes are divided into the categories: Authentication, Authorization, Session Management, Session State Protection, Browser Security, and Database Session.">
+      <meta name="description" content="Configure security for all pages in an application on the Security page. Security attributes are divided into the categories: Authentication, Authorization, Session Management, Session State Protection, Browser Security, and Database Session.">
+      <title>Configuring Security Attributes</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Configure security for all pages in an application on the Security page. Security attributes are divided into the categories: Authentication, Authorization, Session Management, Session State Protection, Browser Security, and Database Session.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="editing-application-attributes.html" title="Previous" type="text/html">
+      <link rel="next" href="configuring-globalization-attributes.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="editing-application-attributes.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="configuring-globalization-attributes.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="creating-database-applications.html" property="item" typeof="WebPage"><span property="name">Creating Database Applications</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-attributes.html" property="item" typeof="WebPage"><span property="name">Managing Application Attributes</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Configuring Security Attributes</li>
+            </ol>
+            <a id="GUID-5AEB6EEF-A89B-41B6-B8D5-00A0FD926E8F" name="GUID-5AEB6EEF-A89B-41B6-B8D5-00A0FD926E8F"></a><a id="HTMDB28916"></a>
+            
+            <h2 id="HTMDB-GUID-5AEB6EEF-A89B-41B6-B8D5-00A0FD926E8F" class="sect2"><span class="enumeration_section">7.9.2 </span>Configuring Security Attributes
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Configure security for all pages in an application on the Security page.
+        Security attributes are divided into the categories: Authentication, Authorization, Session
+        Management, Session State Protection, Browser Security, and Database Session.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="configuring-security-attributes.html#GUID-BBD573CB-68B6-4EC2-BCCC-DBB27D39BDC3">Accessing the Security Page</a><br></li>
+                  <li class="ulchildlink"><a href="configuring-security-attributes.html#GUID-FDB41857-C144-4AB0-A85C-A33A26259A47">Security Page</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-5AEB6EEF-A89B-41B6-B8D5-00A0FD926E8F__GUID-B4361BC1-5593-481B-A2A5-625485EA8295">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="managing-application-security.html#GUID-417EAE67-7A36-4AE0-816B-D28716829F96" title="Administrators are primarily responsible for ensuring the security of the Oracle Application Express installation and developers are responsible for building secure applications. Learn about how to implement best practices for Oracle Application Express application security.">Managing Application Security</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-application-attributes.html#GUID-257F4773-0F0E-4E50-A00E-9D71D9319EAC" title="Application attributes (also known as the Application Definition) control the behavior of an entire application and are divided into the categories: Definition, Security, Globalization, and User Interface.">Managing Application Attributes</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB28918"></a><div class="props_rev_3"><a id="GUID-BBD573CB-68B6-4EC2-BCCC-DBB27D39BDC3" name="GUID-BBD573CB-68B6-4EC2-BCCC-DBB27D39BDC3"></a><h3 id="HTMDB-GUID-BBD573CB-68B6-4EC2-BCCC-DBB27D39BDC3" class="sect3"><span class="enumeration_section">7.9.2.1 </span>Accessing the Security Page
+               </h3>
+               <div>
+                  <p>To access the Security page: </p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select an application.</span><div>The Application home page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>From the Application home page, you can access the Security page in two
+                    ways:</span><ul>
+                           <li>From Shared Components:
+                              <ol type="a">
+                                 <li>
+                                    
+                                    <p>Click <span class="uicontrol bold">Shared Components</span>.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p>Under Security, click <span class="uicontrol bold">Security
+                                        Attributes</span>.
+                                    </p>
+                                    
+                                 </li>
+                              </ol>
+                           </li>
+                           <li><span class="uicontrol bold">Edit Application Properties</span>
+                            button:
+                              <ol type="a">
+                                 <li>
+                                    
+                                    <p>Click <span class="uicontrol bold">Edit Application
+                                        Properties</span> to the right of the application
+                                    name.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p>Click the <span class="uicontrol bold">Security</span> tab.
+                                    </p>
+                                    
+                                 </li>
+                              </ol>
+                           </li>
+                        </ul>
+                        <div>
+                           
+                           <p>The Edit Security Attributes page appears.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Edit the appropriate attributes.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span> to save your changes.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-security-attributes.html#GUID-5AEB6EEF-A89B-41B6-B8D5-00A0FD926E8F" title="Configure security for all pages in an application on the Security page. Security attributes are divided into the categories: Authentication, Authorization, Session Management, Session State Protection, Browser Security, and Database Session.">Configuring Security Attributes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28920"></a><div class="props_rev_3"><a id="GUID-FDB41857-C144-4AB0-A85C-A33A26259A47" name="GUID-FDB41857-C144-4AB0-A85C-A33A26259A47"></a><h3 id="HTMDB-GUID-FDB41857-C144-4AB0-A85C-A33A26259A47" class="sect3"><span class="enumeration_section">7.9.2.2 </span>Security Page
+               </h3>
+               <div>
+                  <p>Use the Security page to set application-wide security settings. Edit application
+            components directly to manage more granular settings.</p>
+                  <div class="infoboxnote" id="GUID-FDB41857-C144-4AB0-A85C-A33A26259A47__GUID-0C887D06-E5C7-492A-8ABD-BCBB04A0FB59">
+                     <p class="notep1">Note:</p>
+                     <p>Required values are marked with a red asterisk (*). </p>
+                  </div>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="configuring-security-attributes.html#GUID-9DFB08E7-0CA4-4C00-B05F-A0678FAAD326">Authentication</a><br></li>
+                     <li class="ulchildlink"><a href="configuring-security-attributes.html#GUID-69485470-823B-4CC0-9E11-1CF144054F53">Authorization</a><br></li>
+                     <li class="ulchildlink"><a href="configuring-security-attributes.html#GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783">Session Management</a><br></li>
+                     <li class="ulchildlink"><a href="configuring-security-attributes.html#GUID-D3ECB171-681E-4452-BB33-5E74EC0EE13E">Session State Protection</a><br></li>
+                     <li class="ulchildlink"><a href="configuring-security-attributes.html#GUID-8DEEFEE2-0BB6-4882-BC84-8549A6497248">Browser Security</a><br></li>
+                     <li class="ulchildlink"><a href="configuring-security-attributes.html#GUID-F2324900-0AD3-4C0A-8B86-AE4B9C25F991">Database Session</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-security-attributes.html#GUID-5AEB6EEF-A89B-41B6-B8D5-00A0FD926E8F" title="Configure security for all pages in an application on the Security page. Security attributes are divided into the categories: Authentication, Authorization, Session Management, Session State Protection, Browser Security, and Database Session.">Configuring Security Attributes</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29918"></a><a id="HTMDB28922"></a><div class="props_rev_3"><a id="GUID-9DFB08E7-0CA4-4C00-B05F-A0678FAAD326" name="GUID-9DFB08E7-0CA4-4C00-B05F-A0678FAAD326"></a><h4 id="HTMDB-GUID-9DFB08E7-0CA4-4C00-B05F-A0678FAAD326" class="sect4"><span class="enumeration_section">7.9.2.2.1 </span>Authentication
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p><span class="bold">Authentication</span> is the process of establishing users' identities before they can access an application. Although you can define multiple authentication schemes for your application, only one scheme can be current at a time.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-9DFB08E7-0CA4-4C00-B05F-A0678FAAD326__CHDCBCHD">
+                        <p class="titleintable">Table 7-8 Authentication Attributes</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Authentication Attributes" summary="This table describes the attributes available under Authentication on the Edit Security Attributes page." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="19%" id="d63362e403">Attribute</th>
+                                 <th align="left" valign="bottom" width="41%" id="d63362e406">Descriptions</th>
+                                 <th align="left" valign="bottom" width="41%" id="d63362e409">To Learn More</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="19%" id="d63362e414" headers="d63362e403 ">
+                                    <p>Public User<a id="d63362e417" class="indexterm-anchor"></a><a id="d63362e421" class="indexterm-anchor"></a></p>
+                                 </td>
+                                 <td align="left" valign="top" width="41%" headers="d63362e414 d63362e406 ">
+                                    <p>Identifies the Oracle schema &nbsp;(or user)&nbsp;used to connect to the database through the Database Access Descriptor (DAD). Once a user has been identified, the Application Express engine keeps track of each user by setting the value of the built-in substitution string&nbsp;<code class="codeph">APP_USER</code>.
+                                    </p>
+                                    <p>When <code class="codeph">APP_USER</code> equals this value, the Application Express engine considers the current session to be a&nbsp;"public user" sessionsession. The Application Express engine supports the following built-in display conditions: 
+                                    </p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><code class="codeph">USER_IS_PUBLIC_USER</code></p>
+                                       </li>
+                                       <li>
+                                          <p><code class="codeph">USER_IS_NOT_PUBLIC_USER</code></p>
+                                       </li>
+                                    </ul>
+                                    <p>If the current application user (<code class="codeph">APP_USER</code>) equals the value of this attribute, then the user is logged on as a public user. Some applications have public (not logged in) and private (logged in) modes. By determining if the user is the public user, you can conditionally display or hide information.
+                                    </p>
+                                    <p>For example, you can show a login button if the user is the public user and a logout link if the user is not a public user. Reference this value using <code class="codeph">APEX_APPLICATION.G_PUBLIC_USER</code>.
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="41%" headers="d63362e414 d63362e409 ">
+                                    <p>See <span class="q">"<a href="understanding-substitution-strings.html#GUID-12645D22-6C8F-43E2-898F-A80844EC905D">HOME_LINK</a>"</span> and <span class="q">"<a href="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">Understanding Conditional Rendering and Processing</a>"</span></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="19%" id="d63362e464" headers="d63362e403 ">
+                                    <p>Authentication Scheme<a id="d63362e467" class="indexterm-anchor"></a><a id="d63362e471" class="indexterm-anchor"></a></p>
+                                 </td>
+                                 <td align="left" valign="top" width="41%" headers="d63362e464 d63362e406 ">
+                                    <p>identifies the current authentication method used by this application. The purpose of authentication is to determine the application users identity.To create an authentication scheme, click <span class="uicontrol bold">Define Authentication Schemes</span>.
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="41%" headers="d63362e464 d63362e409 ">
+                                    <p>See <span class="q">"<a href="understanding-authentication.html#GUID-6DE1B6DC-6C44-4DC8-B7C5-62959E381D3D">How Authentication Works</a>"</span> and <span class="q">"<a href="creating-an-authentication-scheme.html#GUID-093A9521-FDEB-432A-891D-791ED402C333" title="Create an authentication scheme on the Shared Components page.">Creating an Authentication Scheme</a>"</span></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="configuring-security-attributes.html#GUID-FDB41857-C144-4AB0-A85C-A33A26259A47">Security Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29919"></a><a id="HTMDB28924"></a><div class="props_rev_3"><a id="GUID-69485470-823B-4CC0-9E11-1CF144054F53" name="GUID-69485470-823B-4CC0-9E11-1CF144054F53"></a><h4 id="HTMDB-GUID-69485470-823B-4CC0-9E11-1CF144054F53" class="sect4"><span class="enumeration_section">7.9.2.2.2 </span>Authorization
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Application authorization schemes control access to all pages within an application. Unauthorized access to the application, regardless of which page is requested, causes an error page to display. </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-69485470-823B-4CC0-9E11-1CF144054F53__CHDDHGCH">
+                        <p class="titleintable">Table 7-9 Authorization Attributes</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Authorization Attributes" summary="This table describes the attributes available under Authorization on the Edit Security Attributes page." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="26%" id="d63362e583">
+                            Attribute
+                        </th>
+                                 <th align="left" valign="bottom" width="74%" id="d63362e588">
+                            Descriptions
+                        </th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="26%" id="d63362e595" headers="d63362e583 ">
+                                    <p>Define Authorization
+                                Schemes</p><a id="d63362e598" class="indexterm-anchor"></a><a id="d63362e602" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="74%" headers="d63362e595 d63362e588 ">
+                                    
+                                    <p>Click the <span class="uicontrol bold">Define Authorization
+                                    Schemes</span>button to create an authorization scheme.
+                                    </p>
+                                    
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="26%" id="d63362e613" headers="d63362e583 ">
+                                    <p>Authorization
+                                Scheme</p><a id="d63362e616" class="indexterm-anchor"></a><a id="d63362e620" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="74%" headers="d63362e613 d63362e588 ">
+                                    
+                                    <p>Specify an authorization scheme for your application.
+                                Application authorization schemes are defined for an application for
+                                the purpose of controlling access. Setting a required authorization
+                                scheme here at the application level will require all pages of the
+                                application to pass the defined authorization check.</p>
+                                    
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="26%" id="d63362e628" headers="d63362e583 ">
+                                    <p>Run on Public
+                                Pages</p><a id="d63362e631" class="indexterm-anchor"></a><a id="d63362e635" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="74%" headers="d63362e628 d63362e588 ">
+                                    
+                                    <p>Controls whether the application-level authorization
+                                scheme is checked on public pages (that is, pages that do not
+                                require authorization).&nbsp;Options include:</p>
+                                    
+                                    <ul style="list-style-type: disc;" id="GUID-69485470-823B-4CC0-9E11-1CF144054F53__UL_O5P_PQR_XGB">
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">On</span> - If you select
+                                            <span class="uicontrol bold">On</span> and the page is public, the
+                                        application authorization is checked.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Off</span> - If you select
+                                            <span class="uicontrol bold">Off</span> and the page is public, the
+                                        application authorization is ignored.
+                                          </p>
+                                          
+                                       </li>
+                                    </ul>
+                                    
+                                    <p>Note: This attribute is ignored if you
+                                    select&nbsp;<span class="uicontrol bold">Must Not Be Public User</span>&nbsp;as
+                                Authorization Scheme.
+                                    </p>
+                                    
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="26%" id="d63362e671" headers="d63362e583 ">
+                                    <p>Source for Role or Group
+                                Schemes</p><a id="d63362e674" class="indexterm-anchor"></a><a id="d63362e678" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="74%" headers="d63362e671 d63362e588 ">
+                                    
+                                    <p>Define what Application Express should use as the source
+                                for authorization schemes of type <span class="italic">Is In Role or Group</span>. The
+                                available values are:
+                                    </p>
+                                    
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Access Control User Role
+                                            Assignments</span> - Enable the user's assigned
+                                        roles (under Shared Components / Application Access
+                                        Control).
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Authentication Scheme</span> -
+                                        If the application's authentication scheme is Application
+                                        Express Accounts, enable the workspace user's assigned
+                                        groups. If the application's authentication scheme is
+                                        Database Accounts, database roles are checked when the
+                                        authorization scheme is enabled. If the authentication
+                                        scheme uses Real Application Security, enable RAS Dynamic
+                                        Roles.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Custom Code</span> -  Call the procedure
+                                        apex_authentication.enable_dynamic_groups in a
+                                        Post-Authentication process, to populate dynamic groups.
+                                          </p>
+                                          
+                                       </li>
+                                    </ul>
+                                    
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-69485470-823B-4CC0-9E11-1CF144054F53__GUID-53F9DEC9-F92E-4723-A94E-B7168FD687A8">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="attaching-an-authorization-scheme.html#GUID-84B6EB45-768F-4BA7-A20A-6A7EA3513A50">Attaching an Authorization Scheme to an Application</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="configuring-security-attributes.html#GUID-FDB41857-C144-4AB0-A85C-A33A26259A47">Security Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29920"></a><a id="HTMDB28926"></a><div class="props_rev_3"><a id="GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783" name="GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783"></a><h4 id="HTMDB-GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783" class="sect4"><span class="enumeration_section">7.9.2.2.3 </span>Session Management
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use Session Management attributes to reduce exposure at the application-level for
+                abandoned computers with an open web browser.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783__CHDGEIDD">
+                        <p class="titleintable">Table 7-10 Session Management</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Session Management" summary="This table describes the attributes available under Session Management on the Edit Security Attributes page." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="31%" id="d63362e803">Attribute</th>
+                                 <th align="left" valign="bottom" width="69%" id="d63362e806">Descriptions</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e811" headers="d63362e803 ">
+                                    <p>Rejoin Sessions</p><a id="d63362e814" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e811 d63362e806 ">
+                                    <p>Use this attribute to control at the application-level whether URLs in this
+                                application contain session IDs. When Rejoin Sessions is enabled,
+                                Application Express attempts to use the session cookie to join an
+                                existing session, when a URL does not contain a session ID.</p>
+                                    <p>To use Rejoin Sessions at the applicaion-level, administrators must enable
+                                    <span class="uicontrol bold">Rejoin Sessions</span> at the instance-level. A
+                                more restrictive instance-level setting overrides application and
+                                page settings.
+                                    </p>
+                                    <p>Rejoin Sessions options include:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="bold">Application Default</span> - The application-level setting applies.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="bold">Disabled</span> - If the URL does not contain a session ID Application Express creates a new session.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="bold">Enabled for Public Sessions</span> - If the URL goes to a public page and does not contain a session ID, Application Express attempts to utilize the existing session cookie established for that application. Application Express only joins using the cookie when the session is not yet authenticated.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <div class="p"><span class="bold">Enabled for All Sessions</span> - If the URL does not contain a session ID,
+                                        Application Express attempts to utilize the existing session
+                                        cookie established for that application, providing the
+                                        following conditions are met:
+                                             <ul style="list-style-type: disc;" id="GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783__UL_BVR_DWD_SKB">
+                                                <li>
+                                                   
+                                                   <p>Session State Protection is enabled
+                                                  for the application and the URL includes a valid
+                                                  checksum. For public bookmarks, the most
+                                                  restrictive item level protection must be either
+                                                  <span class="bold">Unrestricted</span> or <span class="bold">Checksum Required -
+                                                  Application Level</span>. 
+                                                   </p>
+                                                   
+                                                </li>
+                                                <li>
+                                                   
+                                                   <p>OR, the URL does not contain payload
+                                                  (a request parameter, clear cache or data value
+                                                  pairs).</p>
+                                                   
+                                                </li>
+                                             </ul>
+                                             
+                                          </div>
+                                          <p>This option requires you set Embed In Frames to <span class="bold">Allow from same origin</span> or <span class="bold">Deny</span>. This is not tied to a condition about the URL payload, but also applies to session state protected URLs.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                    
+                                    <p><span class="bold">Warning</span>: Enabling rejoin sessions may expose your
+                                application to possible security breaches, as it can enable
+                                attackers to take over existing end user sessions. To learn more,
+                                see <span class="q">"<a href="manging-instance-security.html#GUID-C676EF2F-2939-4EC3-9385-8FAEA99C8971" title="Use the Rejoin Sessions attribute to control if Oracle Application Express supports application URLs that do not contain session IDs.">About Rejoin Sessions</a>."</span></p>
+                                    
+                                    <p><span class="bold">See Also</span>:
+                                    </p>
+                                    
+                                    <ul style="list-style-type: disc;" id="GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783__UL_MYP_QVD_SKB">
+                                       <li>
+                                          
+                                          <p><span class="q">"<a href="configuring-security-attributes.html#GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783">Session Management</a>"</span> to configure Rejoin Sessions at the
+                                        application-level.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="q">"<a href="../aeadm/configuring-security.html#AEADM-GUID-6AB636A0-7DDE-4D7E-99AA-244C77D72776" target="_blank">Configuring Rejoin
+                                                Sessions for an Instance</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                                          
+                                       </li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e915" headers="d63362e803 ">
+                                    <p>Deep Linking<a id="d63362e918" class="indexterm-anchor"></a></p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e915 d63362e806 ">
+                                    <p>Enable or prevents deep linking to an application. Options include:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="bold">Enabled</span> - The URL to a specific page ultimately redirects there, possibly after the user has logged in.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="bold">Disabled</span> - If the URL does not contain a valid session ID, Application Express starts a new session and redirects to the application's home page.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                    <p>For example, browsers often save the URLs of opened tabs and try to restore the sessions after a restart, causing a deep link. This behavior may be undesirable (for example if a URL points to a page in the middle of a multi-step wizard). By selecting <span class="bold">Disable</span>, Application Express starts a new session and redirects to the application's home page.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e942" headers="d63362e803 ">
+                                    <p>Maximum Session Length in Seconds</p><a id="d63362e945" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e942 d63362e806 ">
+                                    <p>Defines how long (in seconds) sessions can exist and be used by this application.</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p>Enter a positive integer to control how long a session can exist.</p>
+                                       </li>
+                                       <li>
+                                          <p>Enter 0 to have sessions exist indefinitely.</p>
+                                       </li>
+                                       <li>
+                                          <p>Leave the value empty in order to use the session duration defined at the workspace-level or the instance level.</p>
+                                       </li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e963" headers="d63362e803 ">
+                                    <p>Session Timeout URL</p><a id="d63362e966" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e963 d63362e806 ">
+                                    <p>Enter an optional URL to redirect to when the
+                                maximum session lifetime has been exceeded. The target page in this
+                                URL, if implemented in Application Express, should be a public page.
+                            </p>A common use for this page would be to inform the user of the
+                            session expiration and to present a login link or other options. If you
+                            do not enter a URL, users will see the message "Your session has timed
+                            out" and a link to the application home page. If you enter
+                                <code class="codeph">#LOGOUT_URL#</code>, Application Express will execute a
+                            logout, just like when the user clicked on the application's logout
+                                link.
+                                    <p>Only three substitution items are
+                                supported:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          
+                                          <p><code class="codeph">&amp;APP_SESSION.</code></p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><code class="codeph">&amp;SESSION.</code></p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><code class="codeph">&amp;APP_ID.</code></p>
+                                          
+                                       </li>
+                                    </ul>
+                                    <p>Because of the particular purpose of this URL. it
+                                is not necessary to include either
+                                    <code class="codeph">&amp;APP_SESSION.</code> or
+                                    <code class="codeph">&amp;SESSION.</code> in the link.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1007" headers="d63362e803 ">
+                                    <p>Maximum Session Idle Time in Seconds</p><a id="d63362e1010" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1007 d63362e806 ">
+                                    <p>The Session Idle Time is the time between the last page request and the next page request. Options include:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p>Enter a positive integer to control the idle time for sessions used by this application.</p>
+                                       </li>
+                                       <li>
+                                          <p>Leave the value empty in order to use the idle time defined at the workspace level or the instance level.</p>
+                                       </li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1025" headers="d63362e803 ">
+                                    <p>Session Idle Timeout URL</p><a id="d63362e1028" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1025 d63362e806 ">
+                                    <p>Enter an optional URL to be redirected to when the maximum session idle time has been exceeded. The target page in this URL, if implemented in Application Express, should be a public page. A common use for this page would be to inform the user of the session expiration and to present a login link or other options. If you do not enter a URL, users will see the message "Your session has timed out" and a link to the application home page. If you enter <code class="codeph">#LOGOUT_URL#</code>, Application Express will execute a logout, just like when the user clicked on the application's logout link..
+                                    </p>
+                                    <p>Only three substitution items are supported in this URL:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><code class="codeph">&amp;APP_SESSION.</code></p>
+                                       </li>
+                                       <li>
+                                          <p><code class="codeph">&amp;SESSION.</code></p>
+                                       </li>
+                                       <li>
+                                          <p><code class="codeph">&amp;APP_ID.</code></p>
+                                       </li>
+                                    </ul>
+                                    <p>Because of the particular purpose of this URL, it is not necessary to include either <code class="codeph">&amp;APP_SESSION.</code> or <code class="codeph">&amp;SESSION</code>. in the link.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1062" headers="d63362e803 ">
+                                    <p>Session Timeout Warning in
+                                Seconds</p><a id="d63362e1065" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1062 d63362e806 ">
+                                    
+                                    <p>The session timeout warning time defines (in seconds) how long before
+                                a session times out (either maximum session length, or maximum
+                                session idle time), to warn the user. For the maximum session idle
+                                time warning, the user will have the opportunity to extend the
+                                session. For maximum session length warning, the user will be
+                                prompted to save any work, to avoid loss of data when the session
+                                maximum time is reached.</p>
+                                    
+                                    <ul style="list-style-type: disc;" id="GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783__UL_HXF_MXN_RKB">
+                                       <li>
+                                          
+                                          <p>Enter a positive integer to control the session timeout
+                                        warning time for sessions used by this application.</p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p>Enter <code class="codeph">0</code> to switch off session timeout
+                                        warnings for sessions used by this application.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p>Leave the value empty in order to use the warning time
+                                        defined at the workspace-level or the instance-level.</p>
+                                          
+                                       </li>
+                                    </ul>
+                                    
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783__GUID-5FAF95EF-52B0-4EBE-BE8D-CB6807A672D2">
+                        <p class="notep1">See Also:</p>
+                        
+                        <ul style="list-style-type: disc;" id="GUID-33A67D5E-1128-4D23-9C5C-15FC9BE1B783__UL_WSM_HQN_RKB">
+                           <li><span class="q">"<a href="manging-instance-security.html#GUID-701E333D-0CFA-4FCD-869E-4678A4ABAF06" title="Configure Session Timeout attributes to reduce your application's exposure.">About Utilizing Session Timeout</a>"</span></li>
+                           <li><span class="q">"<a href="../aeadm/configuring-workspace-preferences.html#AEADM-GUID-5908DB3B-9348-4195-AB8F-3B426166C94A" target="_blank">Configuring Session
+                                Timeout for a Workspace</a>"</span> and <span class="q">"<a href="../aeadm/configuring-security.html#AEADM-GUID-FCFC6DC3-FC8B-4053-BE69-033F7F51BFD0" target="_blank">Configuring Session
+                                Timeout for an Instance</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></li>
+                        </ul>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="configuring-security-attributes.html#GUID-FDB41857-C144-4AB0-A85C-A33A26259A47">Security Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29921"></a><a id="HTMDB28927"></a><div class="props_rev_3"><a id="GUID-D3ECB171-681E-4452-BB33-5E74EC0EE13E" name="GUID-D3ECB171-681E-4452-BB33-5E74EC0EE13E"></a><h4 id="HTMDB-GUID-D3ECB171-681E-4452-BB33-5E74EC0EE13E" class="sect4"><span class="enumeration_section">7.9.2.2.4 </span>Session State Protection
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Enabling Session State Protection can prevent hackers from tampering with URLs within your application. URL tampering can adversely affect program logic, session state contents, and information privacy. This table describes the attributes available under Session State Protection.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-D3ECB171-681E-4452-BB33-5E74EC0EE13E__CHDJCIFE">
+                        <p class="titleintable">Table 7-11 Session State Protection</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Session State Protection" summary="This table describes the attributes available under Session State Protection on the Edit Security Attributes page." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="31%" id="d63362e1205">Attribute</th>
+                                 <th align="left" valign="bottom" width="69%" id="d63362e1208">Descriptions</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1213" headers="d63362e1205 ">
+                                    <p>Expire
+                                Bookmarks</p><a id="d63362e1216" class="indexterm-anchor"></a><a id="d63362e1220" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1213 d63362e1208 ">
+                                    
+                                    <p>Click <span class="uicontrol bold">Expire Bookmarks</span> to reset
+                                this hidden application attribute (a checksum salt) salt attribute
+                                at any time. Clicking this button causes any bookmarked URLs that
+                                contain previously generated checksums to fail when they are
+                                subsequently used to access the application. 
+                                    </p>
+                                    
+                                    <p><span class="bold">Tip</span>: You can also click <span class="uicontrol bold">Expire
+                                    Bookmarks</span> to change the Bookmark Hash Function to
+                                switch to a different algorithm for computing checksums.
+                                    </p>
+                                    
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1239" headers="d63362e1205 ">
+                                    <p>Manage Session State
+                                Protection</p><a id="d63362e1242" class="indexterm-anchor"></a><a id="d63362e1246" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1239 d63362e1208 ">
+                                    
+                                    <p>Click <span class="uicontrol bold">Manage Session State
+                                    Protection</span> to configure Session State
+                                Protection.
+                                    </p>
+                                    
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1257" headers="d63362e1205 ">
+                                    <p>Session State Protection</p><a id="d63362e1260" class="indexterm-anchor"></a><a id="d63362e1264" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1257 d63362e1208 ">
+                                    <p>Make a selection from the Session State Protection list, to enable or disable Session State Protection for your application. Selecting <span class="uicontrol bold">Enabled</span> turns on session state protection controls defined at the page and item-level. To learn more, see field-level Help.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1273" headers="d63362e1205 ">
+                                    <p>Allows URLS Created After</p><a id="d63362e1276" class="indexterm-anchor"></a><a id="d63362e1280" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1273 d63362e1208 ">
+                                    <p>Lists the date and time after which bookmarked links are usable to access pages in this application if the bookmarked link contains a checksum and Session State Protection is enabled for the application.</p>
+                                    <p>Bookmarks created before this date and time are not usable to access this application if the bookmarked link contains a checksum and Session State Protection is enabled for the application. Bookmarks that do not contain checksums or bookmarks that contain checksums that are unnecessary are not affected by this attribute. Their usability is determined using other criteria. A hidden application attribute (a checksum salt) is used during the computation and later verification of checksums included in f?p= URLs generated during page rendering. Checksums are included when Session State Protection is enabled for the application. You can reset this checksum salt attribute at any time by clicking the <span class="uicontrol bold">Expire Bookmarks</span> button. 
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1291" headers="d63362e1205 ">
+                                    <p>Bookmark Hash Function</p><a id="d63362e1294" class="indexterm-anchor"></a><a id="d63362e1298" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1291 d63362e1208 ">
+                                    <p>Used to create checksums for application-level and user-level checksums in bookmarkable URLs.</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-D3ECB171-681E-4452-BB33-5E74EC0EE13E__GUID-719C2FFB-9491-4B9A-BEFE-B5DDFBE81591">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="preventing-url-tampering.html#GUID-C47B5B4C-FA49-47C7-BAAE-6D5A06DE029C" title="Session State Protection is a built-in functionality that prevents hackers from tampering with the URLs within your application. URL tampering can adversely affect program logic, session state contents, and information privacy.">Preventing URL Tampering</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="configuring-security-attributes.html#GUID-FDB41857-C144-4AB0-A85C-A33A26259A47">Security Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29922"></a><a id="HTMDB28928"></a><div class="props_rev_3"><a id="GUID-8DEEFEE2-0BB6-4882-BC84-8549A6497248" name="GUID-8DEEFEE2-0BB6-4882-BC84-8549A6497248"></a><h4 id="HTMDB-GUID-8DEEFEE2-0BB6-4882-BC84-8549A6497248" class="sect4"><span class="enumeration_section">7.9.2.2.5 </span>Browser Security 
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>This table describes the attributes available under Browser Security.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-8DEEFEE2-0BB6-4882-BC84-8549A6497248__CHDFBIAE">
+                        <p class="titleintable">Table 7-12 Browser Security</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Browser Security" summary="This table describes the attributes available under Browser Security on the Edit Security Attributes page." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="31%" id="d63362e1389">Attribute</th>
+                                 <th align="left" valign="bottom" width="69%" id="d63362e1392">Descriptions</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1397" headers="d63362e1389 ">
+                                    <p>Cache</p><a id="d63362e1400" class="indexterm-anchor"></a><a id="d63362e1404" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1397 d63362e1392 ">
+                                    <p>Use <span class="uicontrol bold">Cache</span> to enable or disable browser caching of application page contents. If enabled, the browser saves the contents of pages for this application in its cache, both in memory and on disk. Typically when caching is enabled and the browser back button is clicked, the page is loaded from the cache instead of from the server. If disabled, the browser is instructed not to save application page contents and requests the latest page content from the server whenever the URL changes. 
+                                    </p>
+                                    <p>To avoid the possibility of saving sensitive data, Oracle recommends that this attribute be disabled. Otherwise, it is possible to go back in the browser history after a logout and see cached content from a previous session. Disabling the browser cache also prevents issues with pages that use partial page refreshes, such as is the case with interactive reports.</p>
+                                    <p>If this attribute is set to <span class="uicontrol bold">Disabled</span>, Application Express sends the HTTP header <code class="codeph">cache-control: no-store</code> which instructs the browser to not cache the page contents on disk or in memory. Note that this feature requires modern browsers that support the HTTP header response variable cache-control.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1423" headers="d63362e1389 ">
+                                    <p>Embed in Frames</p><a id="d63362e1426" class="indexterm-anchor"></a><a id="d63362e1430" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1423 d63362e1392 ">
+                                    <p>Controls if a browser may display your application's pages within a frame. Available options include:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="uicontrol bold">Deny</span> - The page cannot be displayed in a frame, regardless of the site attempting to do so.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="uicontrol bold">Allow from same origin</span> - The page can only be displayed in a frame on the same origin as the page itself.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="uicontrol bold">Allow</span> - The page can be displayed in any frame.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                    <p>Displaying pages within frames can be misused with "clickjacking" attacks. In a “clickjacking” attack, the attacker uses multiple layers to trick a user into clicking a button or link on another page when they were intending to click the top level page. Thus, the attacker is hijacking clicks (or keystrokes) meant for their page and routing them to another page.</p>
+                                    <p>To learn more, see field-level Help.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1456" headers="d63362e1389 ">
+                                    <p>HTML Escaping Mode</p><a id="d63362e1459" class="indexterm-anchor"></a><a id="d63362e1463" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1456 d63362e1392 ">
+                                    <p>Defines how Oracle Application Express escapes special characters. Options include:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="uicontrol bold">Basic</span>: Escape <code class="codeph">&amp;</code>, <code class="codeph">"</code>, <code class="codeph">&lt;</code> and <code class="codeph">&gt;</code></p>
+                                       </li>
+                                       <li>
+                                          <p><span class="uicontrol bold">Extended</span>: Escape <code class="codeph">&amp;</code>, <code class="codeph">"</code>, <code class="codeph">&lt;</code>, <code class="codeph">&gt;</code>, <code class="codeph">'</code>, <code class="codeph">/</code> and non-ASCII characters if the database character set is not <code class="codeph">AL32UTF8</code></p>
+                                       </li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d63362e1512" headers="d63362e1389 ">
+                                    <p>HTTP Response Headers</p><a id="d63362e1515" class="indexterm-anchor"></a><a id="d63362e1519" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="69%" headers="d63362e1512 d63362e1392 ">
+                                    <p>Enter additional application specific HTTP headers that Oracle Application Express should send on each response and that it does not support in another way (for example, <code class="codeph">X-Frame-Options</code> using the Embed in Frames attribute).
+                                    </p>
+                                    <p>Example:</p>
+                                    <p> <code class="codeph">X-XSS-Protection: 1; mode=block</code></p>
+                                    <p> <code class="codeph">X-Content-Type-Options: nosniff</code></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="section">
+                        <div class="infobox-tip" id="GUID-8DEEFEE2-0BB6-4882-BC84-8549A6497248__GUID-1E92D1A9-3052-4AAB-BC32-F3DB0F9EE7F4">
+                           <p class="notep1">Tip:</p>
+                           <p>Both <span class="bold">Cache</span> and <span class="bold">Embed in Frames</span> require modern browsers that support the HTTP header response variable X-Frame-Options.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="configuring-security-attributes.html#GUID-FDB41857-C144-4AB0-A85C-A33A26259A47">Security Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB30042"></a><a id="HTMDB28929"></a><div class="props_rev_3"><a id="GUID-F2324900-0AD3-4C0A-8B86-AE4B9C25F991" name="GUID-F2324900-0AD3-4C0A-8B86-AE4B9C25F991"></a><h4 id="HTMDB-GUID-F2324900-0AD3-4C0A-8B86-AE4B9C25F991" class="sect4"><span class="enumeration_section">7.9.2.2.6 </span>Database Session
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>This table describes the attributes available under Database Session.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-F2324900-0AD3-4C0A-8B86-AE4B9C25F991__BABIHFFF">
+                        <p class="titleintable">Table 7-13 Database Session</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Database Session" summary="This table describes the attributes available under Database Session the Edit Security Attributes page." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="34%" id="d63362e1629">Attribute</th>
+                                 <th align="left" valign="bottom" width="66%" id="d63362e1632">Descriptions</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="34%" id="d63362e1637" headers="d63362e1629 ">
+                                    <p>Parsing Schema </p><a id="d63362e1640" class="indexterm-anchor"></a><a id="d63362e1644" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="66%" headers="d63362e1637 d63362e1632 ">
+                                    <p>Specifies the schema that all SQL and PL/SQL in the application will be parsed as. You may use <code class="codeph">#OWNER#</code> to reference this value in SQL queries and PL/SQL (for example, in a region or a process).
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="34%" id="d63362e1653" headers="d63362e1629 ">
+                                    <p>Initialization PL/SQL Code</p><a id="d63362e1656" class="indexterm-anchor"></a><a id="d63362e1658" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="66%" headers="d63362e1653 d63362e1632 ">
+                                    <p>Use this attribute to enter a PL/SQL block that sets a context for the database session associated with the current "show page" or "accept page" request. The block you enter here is executed at a very early point during the page request, immediately after the <code class="codeph">APP_USER</code> value is established. The value of <code class="codeph">APP_USER</code> (using :<code class="codeph">APP_USER</code> or <code class="codeph">v</code>('<code class="codeph">APP_USER</code>')) may be used within the block. Values of other items in session state may be referenced as well, but any such items must have been established in session state before the initiation of the current page request. To view examples, see field-level Help.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="34%" id="d63362e1681" headers="d63362e1629 ">
+                                    <p><a id="d63362e1683" class="indexterm-anchor"></a><a id="d63362e1685" class="indexterm-anchor"></a>Cleanup PL/SQL Code
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="66%" headers="d63362e1681 d63362e1632 ">
+                                    <p>Use this attribute to enter a PL/SQL block that runs at the end of page processing. It can be used to free or clean up resources that were used, like VPD contexts or database links. To view examples, see field-level Help.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="34%" id="d63362e1694" headers="d63362e1629 ">
+                                    <p>Runtime API Usage</p><a id="d63362e1697" class="indexterm-anchor"></a><a id="d63362e1699" class="indexterm-anchor"></a></td>
+                                 <td align="left" valign="top" width="66%" headers="d63362e1694 d63362e1632 ">
+                                    <p>Control how this application can access Oracle Application Express APIs that modify applications and workspace data, while it is running. Options include:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="bold">Modify This Application</span>: The application can modify itself.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="bold">Modify Other Applications</span>: The application can change other applications in the workspace.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="bold">Modify Workspace Repository</span>: The application can change workspace users and groups.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-F2324900-0AD3-4C0A-8B86-AE4B9C25F991__GUID-2FDAFECC-6214-484B-89A5-957A592B77A5">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="providing-security-through-authorization.html#GUID-8FBF5F46-0541-4859-8470-D10E333DD271" title="Extend the security of your application by creating an authorization scheme.">Providing Security Through Authorization</a>"</span> and <a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmdb&amp;id=OLSAG-GUID-B9DF2150-F995-45F7-B1E5-CD7C7B20E107" target="_blank"><span><cite>Oracle Label Security Administrator’s Guide</cite></span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="configuring-security-attributes.html#GUID-FDB41857-C144-4AB0-A85C-A33A26259A47">Security Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

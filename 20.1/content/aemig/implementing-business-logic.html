@@ -1,0 +1,223 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Implementing Business Logic">
+      <meta name="DC.subject" content="business logic, implementing, Oracle Application Express, about processes, computations, about validations">
+      <meta name="keywords" content="business logic, implementing, Oracle Application Express, about processes, computations, about validations">
+      <meta name="DC.Relation" scheme="URI" content="understanding-Oracle-forms-modules.html#GUID-5B18910F-0F3B-4833-A19B-A3D0FFBA61D2">
+      <meta name="DC.Relation" scheme="URI" content="implementing-business-logic.html#GUID-B45A5F6C-6A48-4CF9-AEA9-6BE70A6C83EC">
+      <meta name="DC.Relation" scheme="URI" content="implementing-business-logic.html#GUID-89D0FB25-D2D9-4173-B0BC-CCF958157D13">
+      <meta name="DC.Relation" scheme="URI" content="implementing-business-logic.html#GUID-5C179670-0AA3-4750-8FFE-0D0920C09AE8">
+      <meta name="DC.Relation" scheme="URI" content="implementing-business-logic.html#GUID-C2AF692C-8409-4892-8985-1FB1CF318F86">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-603E0B49-94EB-4C78-AB06-4B7AAF0D6A2F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Implementing Business Logic</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Application Migration Guide ">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Application Migration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-application-migration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-07T14:07:47-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2012, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24721-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-list-of-values-implementation.html" title="Previous" type="text/html">
+      <link rel="next" href="about-Oracle-reports.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Application Migration Guide">
+    <meta name="dcterms.isVersionOf" content="AEMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-list-of-values-implementation.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-Oracle-reports.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Application Migration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="comparing-Oracle-forms-to-Oracle-application-express-components.html" property="item" typeof="WebPage"><span property="name">Comparing Oracle Forms to Oracle Application Express Components</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-Oracle-forms-modules.html" property="item" typeof="WebPage"><span property="name">Understanding Oracle Forms Modules</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Implementing Business Logic</li>
+            </ol>
+            <a id="GUID-603E0B49-94EB-4C78-AB06-4B7AAF0D6A2F" name="GUID-603E0B49-94EB-4C78-AB06-4B7AAF0D6A2F"></a>
+            
+            <h2 id="AEMIG-GUID-603E0B49-94EB-4C78-AB06-4B7AAF0D6A2F" class="sect2"><span class="enumeration_section">A.1.4 </span>Implementing Business Logic
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The differences between how business logic works in Oracle Forms and how similar functionality works in an Oracle Application Express application is explained in the following section.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="implementing-business-logic.html#GUID-B45A5F6C-6A48-4CF9-AEA9-6BE70A6C83EC">About Implementing Business Logic</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-business-logic.html#GUID-89D0FB25-D2D9-4173-B0BC-CCF958157D13">About Processes</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-business-logic.html#GUID-5C179670-0AA3-4750-8FFE-0D0920C09AE8">About Computations</a><br></li>
+                  <li class="ulchildlink"><a href="implementing-business-logic.html#GUID-C2AF692C-8409-4892-8985-1FB1CF318F86">About Validations</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-Oracle-forms-modules.html#GUID-5B18910F-0F3B-4833-A19B-A3D0FFBA61D2">Understanding Oracle Forms Modules</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-B45A5F6C-6A48-4CF9-AEA9-6BE70A6C83EC" name="GUID-B45A5F6C-6A48-4CF9-AEA9-6BE70A6C83EC"></a><h3 id="AEMIG-GUID-B45A5F6C-6A48-4CF9-AEA9-6BE70A6C83EC" class="sect3"><span class="enumeration_section">A.1.4.1 </span>About Implementing Business Logic
+               </h3>
+               <div>
+                  <p>Within Oracle Forms applications, business logic is often interspersed with Oracle Forms user interface functionality. The Oracle Forms user interface functionality used to manipulate the screen (for example, <code class="codeph">go_block</code>, <code class="codeph">go_item</code>, <code class="codeph">set_item_property</code> and so on) are often not appropriate within Oracle Application Express due to the inherent differences in the user interface. 
+                  </p>
+                  <p>Business logic can be found in Oracle Forms triggers and program units, or in PL/SQL libraries. The business logic can be written directly into the objects as SQL or PL/SQL. This code may in turn call database packages, procedures, or functions. The underlying tables may also have database triggers defined which implement business logic.</p>
+                  <p>Because database triggers operate on the underlying tables regardless of the user interface, they do not need to be altered when converting an application to Oracle Application Express. You can call database packages, procedures, or functions from Oracle Application Express because it also uses SQL and PL/SQL. These database objects do not need to be altered when used within the Oracle Application Express development environment.</p>
+                  <p>To re-implement the business logic defined within Oracle Forms you must analyze the triggers, program units, and PL/SQL libraries and manually write corresponding logic within Oracle Application Express.</p>
+                  <p>Oracle Application Express uses processes, computations, and validations to implement such business logic. Before creating the initial application task of re-implementing business logic, it is important to understand how and when to invoke the various types of processes, computations, and validations. It is also important to understand how conditional processing can be applied to these types of components to customize the circumstances under which they execute. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-B45A5F6C-6A48-4CF9-AEA9-6BE70A6C83EC__GUID-607E0E62-E730-47C6-AA50-0166CFF81D1D">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../htmdb/quick-start.html#HTMDB-GUID-3D645140-7A61-4853-B975-218F3B99F687" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-business-logic.html#GUID-603E0B49-94EB-4C78-AB06-4B7AAF0D6A2F">Implementing Business Logic</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-89D0FB25-D2D9-4173-B0BC-CCF958157D13" name="GUID-89D0FB25-D2D9-4173-B0BC-CCF958157D13"></a><h3 id="AEMIG-GUID-89D0FB25-D2D9-4173-B0BC-CCF958157D13" class="sect3"><span class="enumeration_section">A.1.4.2 </span>About Processes
+               </h3>
+               <div>
+                  <p>Processes are logic controls used to execute data manipulation language (DML) or PL/SQL. A process performs an action at a specified point during the rendering or submission of the page. For example, you can create a process to execute logic or to make a call to the Application Express engine. A process is a unit of logic that runs when a specific event occurs, such as loading or submitting a page. </p>
+                  <p>Processes can be defined as either an application-level process or a page-level process. From a functional perspective, there is no difference between page-level and application-level processes. You can call application-level processes form any page within the application. Calling them On Demand is especially useful when you have PL/SQL logic that you would like to run from different execution points across multiple pages. Page-level processes can only be called from the page on which they are defined.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-89D0FB25-D2D9-4173-B0BC-CCF958157D13__GUID-309B56C6-47F0-414D-BCC1-BF4755E74D7A">
+                     <p class="notep1">See Also:</p>
+                     <p> <a href="../htmdb/understanding-page-processes.html#HTMDB-GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" target="_blank"><span class="q">"Understanding Page Processes"</span></a> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span> 
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-business-logic.html#GUID-603E0B49-94EB-4C78-AB06-4B7AAF0D6A2F">Implementing Business Logic</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-5C179670-0AA3-4750-8FFE-0D0920C09AE8" name="GUID-5C179670-0AA3-4750-8FFE-0D0920C09AE8"></a><h3 id="AEMIG-GUID-5C179670-0AA3-4750-8FFE-0D0920C09AE8" class="sect3"><span class="enumeration_section">A.1.4.3 </span>About Computations
+               </h3>
+               <div>
+                  <p>Computations are units of logic used to assign a value to an identified item when a page is submitted or displayed. </p>
+                  <p>Computations can be defined as either an application-level computation or a page-level computation. Most application-level computations are performed for every page in an application. In contrast, computations created at the page-level only execute when that page is rendered or processed. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5C179670-0AA3-4750-8FFE-0D0920C09AE8__GUID-6C0EBDD2-2BAE-4ADE-B489-EAE1394CC49E">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="../htmdb/understanding-page-computations.html#HTMDB-GUID-9EF283E4-0FE1-4CA5-A5BA-0A8A8CC9BA31" target="_blank">Understanding Page Computations</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="../htmdb/understanding-application-computations.html#HTMDB-GUID-878AE4EE-0CF2-43BD-93E9-877F9B349F10" target="_blank">Understanding Application Computations</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-business-logic.html#GUID-603E0B49-94EB-4C78-AB06-4B7AAF0D6A2F">Implementing Business Logic</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-C2AF692C-8409-4892-8985-1FB1CF318F86" name="GUID-C2AF692C-8409-4892-8985-1FB1CF318F86"></a><h3 id="AEMIG-GUID-C2AF692C-8409-4892-8985-1FB1CF318F86" class="sect3"><span class="enumeration_section">A.1.4.4 </span>About Validations
+               </h3>
+               <div>
+                  <p>Validations enable you to create logic controls to verify whether user input is valid. For example, a validation can check whether a value has been entered into a mandatory field. When a validation fails then an error message displays and subsequent page processes and computations do not occur. </p>
+                  <p>There are two distinct types of validations:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Item-level validations which are specific to a single item.</p>
+                     </li>
+                     <li>
+                        <p>Page-level validations which do not apply to any single item, but apply to an entire page.</p>
+                     </li>
+                  </ul>
+                  <p>There are several validation methods:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>SQL - Compares item values to data in the database.</p>
+                     </li>
+                     <li>
+                        <p>PL/SQL - Enables you to enter complex logic to validate entered data.</p>
+                     </li>
+                     <li>
+                        <p>Item Level Null - Checks if an item's value in session state is <code class="codeph">NULL</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Item String Comparison - Compares the value of an item to a specific string.</p>
+                     </li>
+                     <li>
+                        <p>Regular Expression - Provides a method to describe text patterns.</p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C2AF692C-8409-4892-8985-1FB1CF318F86__GUID-F4E1665E-8A9E-4057-AE6E-0A877A97B65C">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="../htmdb/understanding-validations.html#HTMDB-GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" target="_blank">Understanding Validations</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="implementing-business-logic.html#GUID-603E0B49-94EB-4C78-AB06-4B7AAF0D6A2F">Implementing Business Logic</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

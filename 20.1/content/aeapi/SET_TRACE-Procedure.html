@@ -1,0 +1,172 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="SET_TRACE Procedure">
+      <meta name="DC.subject" content="APEX_SESSION, SET_TRACE_Procedure">
+      <meta name="keywords" content="APEX_SESSION, SET_TRACE_Procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_SESSION.html#GUID-710E9F4F-157C-4EBA-BBA9-3E0B9EE4002A">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SET_TRACE Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="SET_TENANT_ID.html" title="Previous" type="text/html">
+      <link rel="next" href="APEX_SPATIAL.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SET_TENANT_ID.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="APEX_SPATIAL.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_SESSION.html" property="item" typeof="WebPage"><span property="name">APEX_SESSION</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SET_TRACE Procedure</li>
+            </ol>
+            <a id="GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962" name="GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962"></a>
+            
+            <h2 id="AEAPI-GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962" class="sect2"><span class="enumeration_section">33.7 </span>SET_TRACE Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure sets trace mode in all future requests of a session.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962__GUID-89AAD172-B272-4AEE-B151-6576DDDC5964">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>PROCEDURE SET_TRACE (
+   p_session_id IN NUMBER DEFAULT apex.g_instance,
+   p_mode IN VARCHAR2 );</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962__GUID-2772D92D-22F8-45D0-85E1-DDE16C770DFF">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962__GUID-2BDC6A76-18EF-466C-9D11-5B51D3538E46">
+                  <p class="titleintable">Table 33-6 SET_TRACE Procedure Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="SET_TRACE Procedure Parameters" summary="Parameter descriptions for the SET_TRACE Procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" id="d152161e68">Parameters</th>
+                           <th align="left" valign="bottom" id="d152161e71">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" id="d152161e76" headers="d152161e68 ">
+                              <p><code class="codeph">p_session_id</code></p>
+                           </td>
+                           <td align="left" valign="top" headers="d152161e76 d152161e71 ">
+                              <p>The session id. </p>
+                              <p><span class="bold">Note</span> : The session must belong to the current workspace or the caller must be able to set the session's workspace.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" id="d152161e88" headers="d152161e68 ">
+                              <p><code class="codeph">p_level</code></p>
+                           </td>
+                           <td align="left" valign="top" headers="d152161e88 d152161e71 ">
+                              <p>The trace mode. NULL disables trace, SQL enables SQL trace.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962__GUID-7DB0E0B6-7349-481E-A457-7A09D9D3D6FD">Example 1</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>This example shows how to enable trace in requests for session 1234.</p><pre class="pre codeblock"><code>apex_session.set_trace (
+    p_session_id =&gt; 1234,
+          p_mode =&gt; 'SQL' );
+commit;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-5C2CADBE-A9A4-4B67-9863-D655CEA0E962__GUID-41B2790B-C4DE-4029-839E-D63BF6EEF451">Example 2</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>This example shows how to disable trace in requests for session 1234.</p><pre class="pre codeblock"><code>apex_session.set_trace (
+    p_session_id =&gt; 1234,
+          p_mode =&gt; null );
+commit;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_SESSION.html#GUID-710E9F4F-157C-4EBA-BBA9-3E0B9EE4002A">APEX_SESSION</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

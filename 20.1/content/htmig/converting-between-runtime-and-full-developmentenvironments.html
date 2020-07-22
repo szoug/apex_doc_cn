@@ -1,0 +1,365 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Converting Between Runtime and Full Development Environments">
+      <meta name="abstract" content="Learn how to convert between runtime and full development environments.">
+      <meta name="description" content="Learn how to convert between runtime and full development environments.">
+      <meta name="DC.subject" content="runtime environment, about, full development environment, converting to development environment, converting to runtime, development environment, changing to runtime">
+      <meta name="keywords" content="runtime environment, about, full development environment, converting to development environment, converting to runtime, development environment, changing to runtime">
+      <meta name="DC.Relation" scheme="URI" content="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81">
+      <meta name="DC.Relation" scheme="URI" content="converting-between-runtime-and-full-developmentenvironments.html#GUID-BAC65AC6-6A1F-413D-B65C-DA6BE21F98B4">
+      <meta name="DC.Relation" scheme="URI" content="converting-between-runtime-and-full-developmentenvironments.html#GUID-5561F106-8C68-49F3-8ABD-C53C3C637B31">
+      <meta name="DC.Relation" scheme="URI" content="converting-between-runtime-and-full-developmentenvironments.html#GUID-B8B56D88-C557-4DF1-9A1A-C0AF9533D781">
+      <meta name="DC.Relation" scheme="URI" content="converting-between-runtime-and-full-developmentenvironments.html#GUID-BD881707-8D89-4DFA-9187-A77AD940B510">
+      <meta name="DC.Relation" scheme="URI" content="converting-between-runtime-and-full-developmentenvironments.html#GUID-762FC7A6-4A89-4AA1-84D1-F18349CD16FC">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn how to convert between runtime and full development environments.">
+      <meta name="description" content="Learn how to convert between runtime and full development environments.">
+      <title>Converting Between Runtime and Full Development Environments</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn how to convert between runtime and full development environments.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-performanceoptimization-tasks.html" title="Previous" type="text/html">
+      <link rel="next" href="automating-the-Oracle-Application-Express-installation-process.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-performanceoptimization-tasks.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="automating-the-Oracle-Application-Express-installation-process.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html" property="item" typeof="WebPage"><span property="name"> Installing Application Express and
+    Configuring Legacy Web Listener &#x2013; Oracle HTTP Server  (Deprecated)</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Converting Between Runtime and Full Development Environments</li>
+            </ol>
+            <a id="GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3" name="GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3"></a><a id="HTMIG29422"></a>
+            
+            <h2 id="HTMIG-GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3" class="sect2"><span class="enumeration_section">B.13 </span>Converting Between Runtime and Full Development Environments
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn how to convert between runtime and full development environments.</p>
+               <p>This section describes how to convert between runtime and full development environments.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-BAC65AC6-6A1F-413D-B65C-DA6BE21F98B4">About Runtime and Full Development Environments</a><br>An Oracle Application Express runtime environment enables users to run a production application without supporting the ability to change or edit the application. 
+                  </li>
+                  <li class="ulchildlink"><a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-5561F106-8C68-49F3-8ABD-C53C3C637B31">Converting a Runtime Environment to a Full Development Environment in a non-CDB or locally in a PDB</a><br>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">apxdvins.sql</code>.
+                  </li>
+                  <li class="ulchildlink"><a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-B8B56D88-C557-4DF1-9A1A-C0AF9533D781">Converting a Full Development Environment to a Runtime Environment in a non-CDB or locally in a PDB</a><br>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">apxdevrm.sql</code>.
+                  </li>
+                  <li class="ulchildlink"><a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-BD881707-8D89-4DFA-9187-A77AD940B510">Converting a Runtime Environment to a Full Development Environment in a CDB</a><br>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">apxdvins_con.sql</code>.
+                  </li>
+                  <li class="ulchildlink"><a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-762FC7A6-4A89-4AA1-84D1-F18349CD16FC">Converting a Full Development Environment to a Runtime Environment in a CDB</a><br>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">apxdevrm_con.sql</code>.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29456"></a><div class="props_rev_3"><a id="GUID-BAC65AC6-6A1F-413D-B65C-DA6BE21F98B4" name="GUID-BAC65AC6-6A1F-413D-B65C-DA6BE21F98B4"></a><h3 id="HTMIG-GUID-BAC65AC6-6A1F-413D-B65C-DA6BE21F98B4" class="sect3"><span class="enumeration_section">B.13.1 </span>About Runtime and Full Development Environments
+               </h3>
+               <div>
+                  <p>An Oracle Application Express runtime environment enables users to run a production application without supporting the ability to change or edit the application. </p>
+                  <p> A runtime environment includes only the packages necessary to run your
+            applications, making it a more hardened environment. It does not provide a web interface
+            for administration.</p>
+                  <p>You administer an Oracle Application Express runtime environment using SQL*Plus or SQL Developer and the <code class="codeph">APEX_INSTANCE_ADMIN</code> API.
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-BAC65AC6-6A1F-413D-B65C-DA6BE21F98B4__GUID-EA1F6018-7280-4B4E-89A9-9995B7CAA393">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="Oracle-application-express-runtime-environment.html#GUID-BEB2F250-40B7-4022-9B05-3B1199386020" title="Learn about the Oracle Application Express runtime environment.">About the Oracle Application Express Runtime Environment</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="../aeadm/installing-exported-applications-in-a-runtime-environment.html#AEADM-GUID-C29240A9-08A4-4F90-A9C9-738146F9CAB5" target="_blank">Installing Exported Applications into a Runtime Environment</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                           </li>
+                        </ul> 
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3" title="Learn how to convert between runtime and full development environments.">Converting Between Runtime and Full Development Environments</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29424"></a><div class="props_rev_3"><a id="GUID-5561F106-8C68-49F3-8ABD-C53C3C637B31" name="GUID-5561F106-8C68-49F3-8ABD-C53C3C637B31"></a><h3 id="HTMIG-GUID-5561F106-8C68-49F3-8ABD-C53C3C637B31" class="sect3"><span class="enumeration_section">B.13.2 </span>Converting a Runtime Environment to a Full Development Environment in a non-CDB or locally in a PDB
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">apxdvins.sql</code>.
+                  </p>
+                  <div class="section">
+                     <p>To convert an Oracle Application Express runtime environment to a full development environment in a non-CDB or locally in a PDB:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the installation software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run <a id="d29715e357" class="indexterm-anchor"></a><a id="d29715e359" class="indexterm-anchor"></a><code class="codeph">apxdvins.sql</code>. For example:</span><div><pre class="oac_no_warn" dir="ltr">@apxdvins.sql
+</pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Follow the instructions in <span>Creating or Updating Your Instance
+                    Administration Account</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5561F106-8C68-49F3-8ABD-C53C3C637B31__GUID-F1C43C58-FF12-4388-B647-B5FF34FFF17C">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="downloading-and-installing-OracleAE.html#GUID-4F52EB12-EAE3-4DB7-AD7F-7F5FFB018EB9" title="Learn how to create or update your instance administrator account.">Creating or Updating Your Instance Administration Account</a>."</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=SQPUG-GUID-2AA5AAC7-6027-4B2F-8442-C1EA79D9956B" target="_blank"><span><cite>SQL*Plus User's Guide and Reference</cite></span></a>"</span> for more information about SQL*Plus
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3" title="Learn how to convert between runtime and full development environments.">Converting Between Runtime and Full Development Environments</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29425"></a><div class="props_rev_3"><a id="GUID-B8B56D88-C557-4DF1-9A1A-C0AF9533D781" name="GUID-B8B56D88-C557-4DF1-9A1A-C0AF9533D781"></a><h3 id="HTMIG-GUID-B8B56D88-C557-4DF1-9A1A-C0AF9533D781" class="sect3"><span class="enumeration_section">B.13.3 </span>Converting a Full Development Environment to a Runtime Environment in a non-CDB or locally in a PDB
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">apxdevrm.sql</code>.
+                  </p>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-B8B56D88-C557-4DF1-9A1A-C0AF9533D781__GUID-3FAA21DF-6384-4E7A-8DD1-3A6DCF9481F8">
+                        <p class="notep1">Tip:</p>
+                        <p>Before converting a full development environment to a runtime environment, export all Websheet applications. When you convert a development environment to runtime, existing Websheet data grids and reports will be deleted from all workspaces. Converting the environment back to a full development environment will not restore these Websheet data grids or reports.</p>
+                     </div>
+                     <p>To convert an Oracle Application Express full development environment to a runtime environment in a non-CDB or locally in a PDB:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the installation software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run <a id="d29715e510" class="indexterm-anchor"></a><a id="d29715e512" class="indexterm-anchor"></a><code class="codeph">apxdevrm.sql</code>. For example:</span><div><pre class="oac_no_warn" dir="ltr">@apxdevrm.sql
+</pre></div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-B8B56D88-C557-4DF1-9A1A-C0AF9533D781__GUID-7599DC70-952E-497B-9E87-F027FE998837">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=SQPUG-GUID-2AA5AAC7-6027-4B2F-8442-C1EA79D9956B" target="_blank"><span><cite>SQL*Plus User's Guide and Reference</cite></span></a> for more information about SQL*Plus
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3" title="Learn how to convert between runtime and full development environments.">Converting Between Runtime and Full Development Environments</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29426"></a><div class="props_rev_3"><a id="GUID-BD881707-8D89-4DFA-9187-A77AD940B510" name="GUID-BD881707-8D89-4DFA-9187-A77AD940B510"></a><h3 id="HTMIG-GUID-BD881707-8D89-4DFA-9187-A77AD940B510" class="sect3"><span class="enumeration_section">B.13.4 </span>Converting a Runtime Environment to a Full Development Environment in a CDB
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">apxdvins_con.sql</code>.
+                  </p>
+                  <div class="section">
+                     <p>To convert an Oracle Application Express runtime environment to a full development environment in a CDB:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the installation software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run <a id="d29715e638" class="indexterm-anchor"></a><a id="d29715e640" class="indexterm-anchor"></a><code class="codeph">apxdvins_con.sql</code>. For example:</span><div><pre class="oac_no_warn" dir="ltr">@apxdvins_con.sql
+</pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Follow the instructions in <span>Creating or Updating Your Instance
+                    Administration Account</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-BD881707-8D89-4DFA-9187-A77AD940B510__GUID-351CA401-4016-465D-9D66-89623CC505A5">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="downloading-and-installing-OracleAE.html#GUID-4F52EB12-EAE3-4DB7-AD7F-7F5FFB018EB9" title="Learn how to create or update your instance administrator account.">Creating or Updating Your Instance Administration Account</a>."</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=SQPUG-GUID-2AA5AAC7-6027-4B2F-8442-C1EA79D9956B" target="_blank"><span><cite>SQL*Plus User's Guide and Reference</cite></span></a>"</span> for more information about SQL*Plus
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3" title="Learn how to convert between runtime and full development environments.">Converting Between Runtime and Full Development Environments</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29427"></a><div class="props_rev_3"><a id="GUID-762FC7A6-4A89-4AA1-84D1-F18349CD16FC" name="GUID-762FC7A6-4A89-4AA1-84D1-F18349CD16FC"></a><h3 id="HTMIG-GUID-762FC7A6-4A89-4AA1-84D1-F18349CD16FC" class="sect3"><span class="enumeration_section">B.13.5 </span>Converting a Full Development Environment to a Runtime Environment in a CDB
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">apxdevrm_con.sql</code>.
+                  </p>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-762FC7A6-4A89-4AA1-84D1-F18349CD16FC__GUID-A2386900-214A-4371-9939-2DEB72A741B6">
+                        <p class="notep1">Tip:</p>
+                        <p>Before converting a full development environment to a runtime environment, export all Websheet applications. When you convert a development environment to runtime, existing Websheet data grids and reports will be deleted from all workspaces. Converting the environment back to a full development environment will not restore these Websheet data grids or reports.</p>
+                     </div>
+                     <p>To convert an Oracle Application Express full development environment to a runtime environment in a CDB:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the installation software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run <a id="d29715e792" class="indexterm-anchor"></a><a id="d29715e794" class="indexterm-anchor"></a><code class="codeph">apxdevrm_con.sql</code>. For example:</span><div><pre class="oac_no_warn" dir="ltr">@apxdevrm_con.sql
+</pre></div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-762FC7A6-4A89-4AA1-84D1-F18349CD16FC__GUID-38817058-C2E7-409C-8BF1-6BF6433EA20D">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=SQPUG-GUID-2AA5AAC7-6027-4B2F-8442-C1EA79D9956B" target="_blank"><span><cite>SQL*Plus User's Guide and Reference</cite></span></a> for more information about SQL*Plus
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3" title="Learn how to convert between runtime and full development environments.">Converting Between Runtime and Full Development Environments</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

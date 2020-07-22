@@ -1,0 +1,232 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="IS_MEMBER Function">
+      <meta name="DC.subject" content="APEX_LDAP, IS_MEMBER">
+      <meta name="keywords" content="APEX_LDAP, IS_MEMBER">
+      <meta name="DC.Relation" scheme="URI" content="APEX_LDAP.html#GUID-0BE5C87B-BF08-4B80-BA42-5A08CE5923AC">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-5F12A2CD-805F-4DC6-8382-9BF9F3E9AE32">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>IS_MEMBER Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="GET_USER_ATTRIBUTES-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="MEMBER_OF-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="GET_USER_ATTRIBUTES-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="MEMBER_OF-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_LDAP.html" property="item" typeof="WebPage"><span property="name"> APEX_LDAP</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">IS_MEMBER Function</li>
+            </ol>
+            <a id="GUID-5F12A2CD-805F-4DC6-8382-9BF9F3E9AE32" name="GUID-5F12A2CD-805F-4DC6-8382-9BF9F3E9AE32"></a><a id="AEAPI1173"></a><a id="AEAPI1174"></a><a id="AEAPI1175"></a><a id="AEAPI1176"></a><a id="AEAPI240"></a>
+            
+            <h2 id="AEAPI-GUID-5F12A2CD-805F-4DC6-8382-9BF9F3E9AE32" class="sect2"><span class="enumeration_section">26.4 </span>IS_MEMBER Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>The <code class="codeph">IS_MEMBER</code> function returns a boolean TRUE if the user named by <code class="codeph">p_username</code> (with password if required) is a member of the group specified by the <code class="codeph">p_group</code> and <code class="codeph">p_group_base</code> parameters using the provided auth base, host, and port.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-5F12A2CD-805F-4DC6-8382-9BF9F3E9AE32__GUID-9C92ABB7-8929-4163-8D31-7D71B8859C86">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_LDAP.IS_MEMBER(
+    p_username     IN VARCHAR2,
+    p_pass         IN VARCHAR2 DEFAULT NULL,
+    p_auth_base    IN VARCHAR2,
+    p_host         IN VARCHAR2,
+    p_port         IN VARCHAR2 DEFAULT 389,
+    p_use_ssl      IN VARCHAR2 DEFAULT 'N',
+    p_group        IN VARCHAR2,
+    p_group_base   IN VARCHAR2)
+RETURN BOOLEAN;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-5F12A2CD-805F-4DC6-8382-9BF9F3E9AE32__GUID-3FC877D8-5692-4D81-ADAB-BC72886D6BB7">Parameters</p>
+                  <div class="tblformal" id="GUID-5F12A2CD-805F-4DC6-8382-9BF9F3E9AE32__CDEGDACD">
+                     <p class="titleintable">Table 26-4 IS_MEMBER Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="IS_MEMBER Parameters" summary="Parameter descriptions for the IS_MEMBER function." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="19%" id="d128807e85">Parameter</th>
+                              <th align="left" valign="bottom" width="81%" id="d128807e88">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="19%" id="d128807e93" headers="d128807e85 ">
+                                 <p><code class="codeph">p_username</code></p>
+                              </td>
+                              <td align="left" valign="top" width="81%" headers="d128807e93 d128807e88 ">
+                                 <p>Login name of the user.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="19%" id="d128807e101" headers="d128807e85 ">
+                                 <p><code class="codeph">p_pass</code></p>
+                              </td>
+                              <td align="left" valign="top" width="81%" headers="d128807e101 d128807e88 ">
+                                 <p>Password for <code class="codeph">p_username</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="19%" id="d128807e112" headers="d128807e85 ">
+                                 <p><code class="codeph">p_auth_base</code></p>
+                              </td>
+                              <td align="left" valign="top" width="81%" headers="d128807e112 d128807e88 ">
+                                 <p>LDAP search base, for example, <code class="codeph">dc=users,dc=my,dc=org</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="19%" id="d128807e123" headers="d128807e85 ">
+                                 <p><code class="codeph">p_host</code></p>
+                              </td>
+                              <td align="left" valign="top" width="81%" headers="d128807e123 d128807e88 ">
+                                 <p>LDAP server host name.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="19%" id="d128807e131" headers="d128807e85 ">
+                                 <p><code class="codeph">p_port</code></p>
+                              </td>
+                              <td align="left" valign="top" width="81%" headers="d128807e131 d128807e88 ">
+                                 <p>LDAP server port number.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="19%" id="d128807e139" headers="d128807e85 ">
+                                 <p><code class="codeph">p_use_ssl</code></p>
+                              </td>
+                              <td align="left" valign="top" width="81%" headers="d128807e139 d128807e88 ">
+                                 <p>Set to 'Y' to use SSL in bind to LDAP server. Set to 'A' to use SSL with one way authentication (requires LDAP server certificate configured in an Oracle wallet). Set to 'N' to not use SSL.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="19%" id="d128807e147" headers="d128807e85 ">
+                                 <p><code class="codeph">p_group</code></p>
+                              </td>
+                              <td align="left" valign="top" width="81%" headers="d128807e147 d128807e88 ">
+                                 <p>Name of the group to be search for membership.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="19%" id="d128807e155" headers="d128807e85 ">
+                                 <p><code class="codeph">p_group_base</code></p>
+                              </td>
+                              <td align="left" valign="top" width="81%" headers="d128807e155 d128807e88 ">
+                                 <p>The base from which the search should be started.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-5F12A2CD-805F-4DC6-8382-9BF9F3E9AE32__GUID-5ED3EF47-F37E-43D3-935C-09DA14F23FD5">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example demonstrates how to use the <code class="codeph">APEX_LDAP.IS_MEMBER</code> function to verify whether a user is a member of a group against an LDAP server.
+                  </p><pre class="pre codeblock"><code>DECLARE
+    L_VAL boolean;
+BEGIN
+    L_VAL := APEX_LDAP.IS_MEMBER(
+        p_username =&gt;'firstname.lastname',
+        p_pass =&gt;'abcdef',
+        p_auth_base =&gt; 'cn=user,l=amer,dc=my_company,dc=com',
+        p_host =&gt; 'our_ldap_sever.my_company.com',
+        p_port =&gt; 389,
+        p_group =&gt; 'group_name',
+        p_group_base =&gt; 'group_base');
+    IF L_VAL THEN
+        htp.p('Is a member.');
+    ELSE
+        htp.p('Not a member.');
+    END IF;
+END;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_LDAP.html#GUID-0BE5C87B-BF08-4B80-BA42-5A08CE5923AC">APEX_LDAP</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

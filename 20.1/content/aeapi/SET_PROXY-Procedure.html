@@ -1,0 +1,160 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="SET_PROXY Procedure">
+      <meta name="DC.subject" content="APEX_APPLICATION_INSTALL, SET_PROXY procedure">
+      <meta name="keywords" content="APEX_APPLICATION_INSTALL, SET_PROXY procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_APPLICATION_INSTALL.html#GUID-64D43160-E4F9-44CF-96A4-42D3190102BE">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-E880E9BC-1068-4382-9153-7951EC7AB018">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SET_PROXY Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="SET_OFFSET-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="SET_REMOTE_SERVER-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SET_OFFSET-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SET_REMOTE_SERVER-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_APPLICATION_INSTALL.html" property="item" typeof="WebPage"><span property="name"> APEX_APPLICATION_INSTALL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SET_PROXY Procedure</li>
+            </ol>
+            <a id="GUID-E880E9BC-1068-4382-9153-7951EC7AB018" name="GUID-E880E9BC-1068-4382-9153-7951EC7AB018"></a><a id="AEAPI636"></a><a id="AEAPI637"></a><a id="AEAPI638"></a><a id="AEAPI639"></a><a id="AEAPI635"></a>
+            
+            <h2 id="AEAPI-GUID-E880E9BC-1068-4382-9153-7951EC7AB018" class="sect2"><span class="enumeration_section">4.35 </span>SET_PROXY Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use this procedure to set the proxy server attributes of an application to be imported.</p>
+               <div class="section">
+                  <p class="subhead1" id="GUID-E880E9BC-1068-4382-9153-7951EC7AB018__GUID-72AD5215-32DD-475C-8B3E-ED488E4E9A0C">Syntax</p>
+               </div>
+               <!-- class="section" --><pre class="pre codeblock"><code>APEX_APPLICATION_INSTALL.SET_PROXY (
+    p_proxy            IN VARCHAR2,
+    p_no_proxy_domains IN VARCHAR2 DEFAULT NULL );</code></pre><div class="section">
+                  <p class="subhead1" id="GUID-E880E9BC-1068-4382-9153-7951EC7AB018__GUID-62E5F26E-8902-4B8A-8730-C7E52C02A266">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-E880E9BC-1068-4382-9153-7951EC7AB018__CHDBFEAF">
+                  <p class="titleintable">Table 4-16 SET_PROXY Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="SET_PROXY Parameters" summary="Parameter descriptions for the SET_PROXY procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="33%" id="d19874e71">Parameter</th>
+                           <th align="left" valign="bottom" width="67%" id="d19874e74">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="33%" id="d19874e79" headers="d19874e71 ">
+                              <p><code class="codeph">p_proxy</code></p>
+                           </td>
+                           <td align="left" valign="top" width="67%" headers="d19874e79 d19874e74 ">
+                              <p>The proxy server. There is no default value. The proxy server cannot be more than
+                                255 characters and should not include any protocol prefix such as
+                                http://. A sample value might be:
+                                    <code class="codeph">www-proxy.example.com</code></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="33%" id="d19874e89" headers="d19874e71 ">
+                              <p><code class="codeph">p_no_proxy_domains</code></p>
+                           </td>
+                           <td align="left" valign="top" width="67%" headers="d19874e89 d19874e74 ">
+                              <p>The list of domains for which the proxy server should not be used. There is no default value.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-E880E9BC-1068-4382-9153-7951EC7AB018__GUID-801C21A9-259E-4092-B17B-3DCE73FF174A">Example</p>
+               </div>
+               <!-- class="section" -->
+               <p>The following example sets the value of the proxy variable in <code class="codeph">APEX_APPLICATION_INSTALL</code>.
+               </p><pre class="pre codeblock"><code>declare
+    l_proxy varchar2(255) := 'www-proxy.example.com'
+begin
+    apex_application_install.set_proxy( p_proxy =&gt; l_proxy );
+end;</code></pre></div>
+            <div>
+               <div class="infoboxnotealso" id="GUID-E880E9BC-1068-4382-9153-7951EC7AB018__GUID-5C9FE215-0158-4979-8F54-53499DD7D2E0">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="SET_PROXY-Procedure.html#GUID-E880E9BC-1068-4382-9153-7951EC7AB018">SET_PROXY Procedure</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_APPLICATION_INSTALL.html#GUID-64D43160-E4F9-44CF-96A4-42D3190102BE">APEX_APPLICATION_INSTALL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

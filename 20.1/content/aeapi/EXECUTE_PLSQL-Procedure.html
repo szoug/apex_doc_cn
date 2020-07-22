@@ -1,0 +1,190 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="EXECUTE_PLSQL Procedure">
+      <meta name="DC.subject" content="APEX_EXEC, EXECUTE_PLSQL Procedure">
+      <meta name="keywords" content="APEX_EXEC, EXECUTE_PLSQL Procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>EXECUTE_PLSQL Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="EXECUTE_DML-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="EXECUTE_REMOTE_PLSQL-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="EXECUTE_DML-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="EXECUTE_REMOTE_PLSQL-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_EXEC.html" property="item" typeof="WebPage"><span property="name"> APEX_EXEC</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">EXECUTE_PLSQL Procedure </li>
+            </ol>
+            <a id="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06" name="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06"></a>
+            
+            <h2 id="AEAPI-GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06" class="sect2"><span class="enumeration_section">16.12 </span>EXECUTE_PLSQL Procedure 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure executes PL/SQL code based on the current process or plug-in location settings.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06__TITLE-1321-F94BDADF">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>PROCEDURE EXECUTE_PLSQL (
+    p_plsql_code      IN     VARCHAR2,
+    p_auto_bind_items IN     BOOLEAN      DEFAULT TRUE,
+    p_sql_parameters  IN OUT t_parameters );</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06__TITLE-1341-F94C107A">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06__WRITEPROCEDUREPARAMETERS-F94C1E2F">
+                  <p class="titleintable">Table 16-10 EXECUTE_PLSQL Procedure Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="EXECUTE_PLSQL Procedure Parameters" summary="Parameter descriptions for the EXECUTE_PLSQL procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="34%" id="d62983e68">Parameter</th>
+                           <th align="left" valign="bottom" width="66%" id="d62983e71">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d62983e76" headers="d62983e68 ">
+                              <p><code class="codeph">p_plsql_code</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d62983e76 d62983e71 ">
+                              <p>PL/SQL code to be executed. Based on the settings of the current process or process-type plug-in, the code is executed locally or remote.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d62983e84" headers="d62983e68 ">
+                              <p><code class="codeph">p_auto_bind_items </code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d62983e84 d62983e71 ">
+                              <p>Whether to automatically bind page item values for IN <span class="bold">and</span> OUT direction. If the PL/SQL code references bind variables which are not page items, this must be set to <code class="codeph">false</code>. Default: <code class="codeph">true</code></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d62983e100" headers="d62983e68 ">
+                              <p><code class="codeph">p_sql_parameters</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d62983e100 d62983e71 ">
+                              <p>Additional bind variables; if needed.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06__TITLE-1361-F94C98D8">Examples</p>
+                  <p class="subhead1" id="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06__GUID-6783FFB8-1BAE-470F-91E6-60DDBE61468A">Example 1</p>
+                  <p class="subhead1" id="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06__GUID-D7BEA4B5-87BA-4285-BEED-529331ECE993"></p>
+                  <p>Executes a PL/SQL block with arbitrary bind variables, so any bind can be used to pass values and to get values back.</p><pre class="pre codeblock"><code>declare
+    l_sql_parameters apex_exec.t_parameters;
+    l_out_value      varchar2(32767);
+begin
+    apex_exec.add_parameter( l_sql_parameters, 'MY_BIND_IN_VAR',  '{some value}' );
+    apex_exec.add_parameter( l_sql_parameters, 'MY_BIND_OUT_VAR', ''             );
+
+    apex_exec.execute_plsql(
+        p_plsql_code      =&gt; q'#begin :MY_BIND_OUT_VAR := some_plsql( p_parameter =&gt; :MY_BIND_IN_VAR ); end;#',
+        p_auto_bind_items =&gt; false,
+        p_sql_parameters  =&gt; l_sql_parameters );
+
+    l_out_value := apex_exec.get_parameter_varchar2( 
+        p_parameters =&gt; l_sql_parameters,
+        p_name       =&gt; 'MY_BIND_OUT_VAR');
+
+    -- further processing of l_out_value        
+end;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06__GUID-B8910B84-F93D-4E18-A93C-4BA7D315BD26">Example 2 </p>
+                  <p>Executes a PL/SQL block. </p><pre class="pre codeblock"><code>begin
+    apex_exec.execute_plsql(
+        p_plsql_code =&gt; q'#begin :P10_NEW_SAL := salary_pkg.raise_sal( p_empno =&gt; :P10_EMPNO ); end;#' );
+end;
+</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">APEX_EXEC</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

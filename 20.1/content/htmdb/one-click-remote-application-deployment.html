@@ -1,0 +1,474 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding One-click Remote Application Deployment">
+      <meta name="abstract" content="Deploy an application to remote Oracle Application Express instances using REST Enabled SQL references.">
+      <meta name="description" content="Deploy an application to remote Oracle Application Express instances using REST Enabled SQL references.">
+      <meta name="DC.subject" content="remote deployment, one-click remote deployment, application, remotely deploying, deployment, to remote instance, REST Enabled SQL Reference, in remote deployment, using REST Enabled SQL references, about, remotely deploying">
+      <meta name="keywords" content="remote deployment, one-click remote deployment, application, remotely deploying, deployment, to remote instance, REST Enabled SQL Reference, in remote deployment, using REST Enabled SQL references, about, remotely deploying">
+      <meta name="DC.Relation" scheme="URI" content="deploying-an-application.html#GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD">
+      <meta name="DC.Relation" scheme="URI" content="one-click-remote-application-deployment.html#GUID-FDFD841C-148E-4D11-86FA-E2F3B0CC0C66">
+      <meta name="DC.Relation" scheme="URI" content="one-click-remote-application-deployment.html#GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-90AF8CC0-5023-4F26-992E-C15D294C3B00">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Deploy an application to remote Oracle Application Express instances using REST Enabled SQL references.">
+      <meta name="description" content="Deploy an application to remote Oracle Application Express instances using REST Enabled SQL references.">
+      <title>Understanding One-click Remote Application Deployment</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Deploy an application to remote Oracle Application Express instances using REST Enabled SQL references.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="installing-export-files.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-app-legacy-components.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-export-files.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-app-legacy-components.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="deploying-an-application.html" property="item" typeof="WebPage"><span property="name">Deploying an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding One-click Remote Application
+        Deployment</li>
+            </ol>
+            <a id="GUID-90AF8CC0-5023-4F26-992E-C15D294C3B00" name="GUID-90AF8CC0-5023-4F26-992E-C15D294C3B00"></a>
+            
+            <h2 id="HTMDB-GUID-90AF8CC0-5023-4F26-992E-C15D294C3B00" class="sect2"><span class="enumeration_section">25.11 </span>Understanding One-click Remote Application
+        Deployment
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Deploy an application to remote Oracle Application Express instances using
+                REST Enabled SQL references.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="one-click-remote-application-deployment.html#GUID-FDFD841C-148E-4D11-86FA-E2F3B0CC0C66">About One-click Remote Application Deployment</a><br>One-click remote application deployment leverages the existing REST Enabled     SQL references that works with a Oracle REST Data Services (ORDS) REST Enabled SQL Service. 
+                  </li>
+                  <li class="ulchildlink"><a href="one-click-remote-application-deployment.html#GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F">Remotely Deploying an Application</a><br>Access the Remote Deployment option from the Export/Import option in <span>App Builder</span>.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-90AF8CC0-5023-4F26-992E-C15D294C3B00__GUID-55FDDB92-9317-4094-9082-BD5B020E6A24">
+                  <p class="notep1">See Also:</p>
+                  
+                  <p><span class="q">"<a href="accessing-data-remotely-using-rest-enabled-sql.html#GUID-94515117-40F3-42FC-BBB2-EE77315DF434" title="Execute SQL queries or PL/SQL defined at the component-level on a remote database using REST Enabled SQL references.">Managing REST Enabled SQL References</a>"</span></p>
+                  
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="deploying-an-application.html#GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD" title="Learn about best practices for deploying an application. Deployment is the process of moving an application from the testing phase to the production phase.">Deploying an Application</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-FDFD841C-148E-4D11-86FA-E2F3B0CC0C66" name="GUID-FDFD841C-148E-4D11-86FA-E2F3B0CC0C66"></a><h3 id="HTMDB-GUID-FDFD841C-148E-4D11-86FA-E2F3B0CC0C66" class="sect3"><span class="enumeration_section">25.11.1 </span>About One-click Remote Application
+    Deployment
+               </h3>
+               <div>
+                  <p>One-click remote application deployment leverages the existing REST Enabled
+    SQL references that works with a Oracle REST Data Services (ORDS) REST Enabled SQL Service. </p>
+                  <p>One-click remote application deployment is authenticated through first party
+      authentication (Basic Authentication), Schema Authentication (database username and password),
+      or OAuth 2 Client Credentials. When you create a REST Enabled SQL reference in Shared
+      Components, you either specify an existing credential, or create a new credential. Optionally
+      create the credentials as empty credentials to prompt for client ID and client secret each
+      time the REST Enabled SQL reference is used.</p>
+                  <div class="infoboxnote" id="GUID-FDFD841C-148E-4D11-86FA-E2F3B0CC0C66__GUID-19CECCD7-7742-480B-B916-62CFE51C46A1">
+                     <p class="notep1">Note:</p>
+                     
+                     <p>Oracle recommends always using empty credentials for remote application deployment in
+        shared development environments so only those with the knowledge of those credentials can
+        deploy applications or run SQL or PL/SQL on the REST Enabled SQL reference.</p>
+                     
+                  </div>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="one-click-remote-application-deployment.html#GUID-90AF8CC0-5023-4F26-992E-C15D294C3B00" title="Deploy an application to remote Oracle Application Express instances using REST Enabled SQL references.">Understanding One-click Remote Application Deployment</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F" name="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F"></a><h3 id="HTMDB-GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F" class="sect3"><span class="enumeration_section">25.11.2 </span>Remotely Deploying an Application
+               </h3>
+               <div>
+                  <p>Access the Remote Deployment option from the Export/Import option in <span>App Builder</span>.
+                  </p>
+                  <p>To remotely deploy an application:</p>
+                  <ol id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__STEPS_B2Z_M5R_XKB">
+                     <li class="stepexpand"><span>Create an application.</span></li>
+                     <li class="stepexpand"><span>Optional: Create supporting object installation scripts to create the
+                    underlying table and insert the rows.</span></li>
+                     <li class="stepexpand"><span>Navigate to the Remote Deployment page:</span><ol type="a" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__SUBSTEPS_U4P_CCW_KKB">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>On the Application home page, click
+                                <span class="uicontrol bold">Export/Import</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Remote Deployment</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>On Deployment Server, select an existing REST Enable SQL Service or click the
+                    plus (+) icon to create a new one.</span></li>
+                     <li class="stepexpand"><span>To create a new REST Enable SQL Service:</span><ol type="a" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__SUBSTEPS_IT1_BGS_XKB">
+                           <li class="substepexpand"><span>Click the  plus (+) icon.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Name</span> - Enter a descriptive name for this REST
+                            Enabled SQL Service.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Endpoint URL</span> - Enter the base URL for this REST
+                            Enabled SQL Service. Include the ORDS context root and schema URL
+                            prefix, (for example,<code class="codeph">
+                                    https://<span class="codeinlineitalic">host</span>:<span class="codeinlineitalic">port</span>/<span class="codeinlineitalic">ords</span>/<span class="codeinlineitalic">schema</span></code>,
+                            but do not add<code class="codeph"> /_/sql</code>.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Credentials</span> - Select the credential to
+                            authenticate against. To edit an existing credential, navigate to
+                            Credentials in Shared Components.</span><div>To create new credentials, enter a Credential Name and select an
+                            Authentication Type.</div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>On Remote Deployment:</span><ol type="a" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__SUBSTEPS_BQQ_PFS_XKB">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Deployment Server</span> - Select an existing REST
+                            Enable SQL Service.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Client ID</span> - For Basic Authentication, enter the
+                            database user name. For OAuth2, enter the client ID. </span><div>This information will not be encrypted. User names for Basic
+                            Authentication are converted to upper case. To include a case-sensitive
+                            user name, prefix it with the exclamation mark (!).</div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Client Secret</span> - Enter the password or OAuth2
+                            Client Secret. This information is stored encrypted and cannot be
+                            retrieved in clear text.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                        <div>The Remote Deployment Options page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Under Deploy Application:</span><ol type="a" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__SUBSTEPS_TVX_LMS_XKB">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Build Status</span> - Set the build status of the
+                            application. Options include:</span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_UVX_LMS_XKB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Run Application Only</span> -
+                                        Users can only run an application. This option is an
+                                        effective way to protect an application from modifications
+                                        from other developers. 
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Run and Build Application</span>
+                                        - Developers and users can both run and develop the
+                                        application.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                              <div>This setting can be changed when importing using the Application
+                            Express Web interface but not the command line interface.</div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">As of</span> - Specify a time in minutes to go to back
+                            to for your export. This option enables you to go back in time in your
+                            application, perhaps to get back a deleted object.</span><div>This utility uses the <code class="codeph">DBMS_FLASHBACK</code> package.
+                            Because the timestamp to System Change Number (SCN) mapping is refreshed
+                            approximately every five minutes, you may have to wait that amount of
+                            time to locate the version for which you are looking. The time undo
+                            information is retained and influenced by the startup parameter
+                                <code class="codeph">UNDO_RETENTION</code> (the default is three hours).
+                            However, this only influences the size of the undo tablespace. While two
+                            databases can have the same <code class="codeph">UNDO_RETENTION</code> parameter,
+                            you are able to go back further in time on a database with fewer
+                            transactions because it is not filling the undo tablespace, forcing
+                            older data to be archived.
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Export Preferences:</span><ol type="a" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__SUBSTEPS_LGH_JJS_XKB">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Export Supporting Object Definitions</span> -
+                            Supporting object definitions include all configuration options and
+                            scripts and enable an application export to include database object
+                            definitions, image definitions, and seed data SQL statements
+                            encapsulated in a single file. Options include: </span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_E4V_QLS_XKB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Yes</span> - Includes supporting object
+                                        definitions in the application export. Does not
+                                        automatically load supporting objects when invoked from a
+                                        command line.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">No</span> - Does not include the supporting
+                                        object definitions in the export.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Yes and Install on Import
+                                            Automatically</span> - Includes supporting object
+                                        definitions and a call to install supporting objects in the
+                                        application export.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Export Public Reports</span> - Specify whether to
+                            include public reports with your application. Public reports are the
+                            public shared report settings saved by users from an interactive report
+                            or interactive grid.</span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_IRP_MLS_XKB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">On</span> - Include public reports in the
+                                        application export.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Off</span> - Do not include public reports in
+                                        the application export.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Export Private Reports</span> - Specify whether to
+                            include private reports with your application. Private reports are the
+                            private customized settings saved by users from an interactive report or
+                            interactive grid.</span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_PNY_5LS_XKB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">On</span> - Include private reports in the
+                                        application export.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Off</span> - Do not private public reports in
+                                        the application export.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Export Report Subscriptions</span> - Specify whether to
+                            include interactive report or interactive grid subscription settings
+                            with your application. This will be limited to the unexpired
+                            subscription settings of all users for all interactive reports or
+                            interactive grids in the application.</span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_O3M_YLS_XKB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">On</span> - Include report subscriptions for
+                                        the reports you are exporting in the application export.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Off</span> - Do not include report
+                                        subscriptions for the reports in the application export.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Export Developer Comments</span> - Specify whether to
+                            include Developer Comments in your application export.</span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_A4F_DMS_XKB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">On</span> - Include Developer Comments in the
+                                        application export.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Off</span> - Do not include Developer
+                                        Comments in the export.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Export Translations</span> - Specify whether to include
+                            translations with your application export. Translation Text Messages and
+                            Dynamic Translations are always included in the application export.
+                            .</span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_HKK_GMS_XKB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">On</span> - Include the translation mappings
+                                        and all text from the translation repository.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Off</span> - Do not include translation
+                                        mappings or the translation repository.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>On Deployment Overrides:</span><ol type="a" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__SUBSTEPS_MM3_TMS_XKB">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Owner Override</span> - Use this attribute to import
+                            this application into the available schemas defined by your REST Enabled
+                            SQL connection. If there are no entries to select, then this connection
+                            is not mapped to any workspaces, and you will not be able to deploy the
+                            application.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Workspace Override</span> - Select the workspace where
+                            the application should be deployed from the list. If there are no
+                            entries in the list, then the database user associated with the REST
+                            Enabled SQL connection is not mapped to any workspaces.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Overwrite Existing Application</span> - Specify whether
+                            to overwrite the application on the target system. Available options
+                            include:</span><div>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_YYJ_YMS_XKB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">On</span>- The application will be deployed
+                                        with the same application ID as this application and the
+                                        application will be overwritten on the target system.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Off</span> - You must specify the application
+                                        ID for the target system.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Application ID Override</span> - Specify a new
+                            application ID for the application on the target system.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Application Alias Override</span> - Specify a new
+                            alternate alphanumeric application identifier. You can use this
+                            identifier in place of the application ID. The value is defaulted to the
+                            application alias of the current application.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Deploy</span>.</span></li>
+                  </ol>
+                  <div class="section">
+                     
+                     <div class="infoboxnote" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__GUID-EB78F596-93E1-4C5C-A6CA-55BAB62C5146">
+                        <p class="notep1">Note:</p>
+                        
+                        <ul style="list-style-type: disc;" id="GUID-8EBC0B57-5A23-4445-957A-08423FA6D24F__UL_BLJ_BPS_XKB">
+                           <li>
+                              
+                              <p><span class="q">"<a href="creating-database-applications.html#GUID-F09AF2EB-F452-4CC1-A3B7-8B0DA9FF94B0" title="A database application is a collection of pages linked together using navigation menus, tabs, buttons, or hypertext links. Application pages share a common session state and authentication.">Creating Database Applications</a>"</span></p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-0EB94EF2-9D80-4E49-AFB7-F513F4D3D092">Installing Supporting Objects</a>"</span></p>
+                              
+                           </li>
+                        </ul>
+                        
+                     </div>
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="one-click-remote-application-deployment.html#GUID-90AF8CC0-5023-4F26-992E-C15D294C3B00" title="Deploy an application to remote Oracle Application Express instances using REST Enabled SQL references.">Understanding One-click Remote Application Deployment</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

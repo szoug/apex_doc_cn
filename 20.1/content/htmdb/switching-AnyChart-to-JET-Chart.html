@@ -1,0 +1,227 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Switching from AnyChart to JET Chart">
+      <meta name="abstract" content="Convert chart pages from the legacy AnyChart format (which may no longer render in apps) to Oracle JET Chart. Oracle recommends upgrading to JET Chart wherever possible.">
+      <meta name="description" content="Convert chart pages from the legacy AnyChart format (which may no longer render in apps) to Oracle JET Chart. Oracle recommends upgrading to JET Chart wherever possible.">
+      <meta name="DC.subject" content="charts, upgrading AnyChart to JET Chart, AnyGantt, AnyChart, JET Chart">
+      <meta name="keywords" content="charts, upgrading AnyChart to JET Chart, AnyGantt, AnyChart, JET Chart">
+      <meta name="DC.Relation" scheme="URI" content="managing-database-application-components.html#GUID-E7598ABE-5077-4A1F-A3F9-1C89EE2B2CE8">
+      <meta name="DC.Relation" scheme="URI" content="switching-AnyChart-to-JET-Chart.html#GUID-182F6DCF-3AEF-43E2-A526-6DC2E26C74FF">
+      <meta name="DC.Relation" scheme="URI" content="switching-AnyChart-to-JET-Chart.html#GUID-6FA7F2A2-D20B-4093-96B4-665239BA5114">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-C8B2A012-C351-429C-B4F2-BFC77DCCD7A8">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Convert chart pages from the legacy AnyChart format (which may no longer render in apps) to Oracle JET Chart. Oracle recommends upgrading to JET Chart wherever possible.">
+      <meta name="description" content="Convert chart pages from the legacy AnyChart format (which may no longer render in apps) to Oracle JET Chart. Oracle recommends upgrading to JET Chart wherever possible.">
+      <title>Switching from AnyChart to JET Chart</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Convert chart pages from the legacy AnyChart format (which may no longer render in apps) to Oracle JET Chart. Oracle recommends upgrading to JET Chart wherever possible.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="Understanding-Oracle-JET-Integration-with-Oracle-Application-Express.html" title="Previous" type="text/html">
+      <link rel="next" href="creating-calendars.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="Understanding-Oracle-JET-Integration-with-Oracle-Application-Express.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="creating-calendars.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-database-application-components.html" property="item" typeof="WebPage"><span property="name">Managing Database Application Components</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Switching from AnyChart to JET Chart</li>
+            </ol>
+            <a id="GUID-C8B2A012-C351-429C-B4F2-BFC77DCCD7A8" name="GUID-C8B2A012-C351-429C-B4F2-BFC77DCCD7A8"></a>
+            
+            <h2 id="HTMDB-GUID-C8B2A012-C351-429C-B4F2-BFC77DCCD7A8" class="sect2"><span class="enumeration_section">12.2 </span>Switching from AnyChart to JET Chart
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Convert chart pages from the legacy AnyChart format (which may no longer render in apps) to Oracle JET Chart. Oracle recommends upgrading to JET Chart wherever possible.</p>
+               <p>In a previous release, the AnyChart Flash <code class="codeph">.swf</code> files were removed from the <code class="codeph">/images</code> folder. This results in your charts no longer rendering. No error message displays and the region is blank.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="switching-AnyChart-to-JET-Chart.html#GUID-182F6DCF-3AEF-43E2-A526-6DC2E26C74FF">Upgrading to JET Chart Using Application Upgrade Utility</a><br>Use the Application Upgrade utility to quickly upgrade AnyChart components in an application to JET Chart.
+                  </li>
+                  <li class="ulchildlink"><a href="switching-AnyChart-to-JET-Chart.html#GUID-6FA7F2A2-D20B-4093-96B4-665239BA5114">Searching a Workspace for AnyChart Using SQL Commands</a><br>Use SQL Commands in SQL Workshop to search a workspace for AnyChart components. Upgrade them to JET Chart or implement a workaround by manually installing a .zip file.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-database-application-components.html#GUID-E7598ABE-5077-4A1F-A3F9-1C89EE2B2CE8" title="Oracle Application Express supports the creation the following database application components: calendars, maps, charts, and application Help.">Managing Database Application Components</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-182F6DCF-3AEF-43E2-A526-6DC2E26C74FF" name="GUID-182F6DCF-3AEF-43E2-A526-6DC2E26C74FF"></a><h3 id="HTMDB-GUID-182F6DCF-3AEF-43E2-A526-6DC2E26C74FF" class="sect3"><span class="enumeration_section">12.2.1 </span>Upgrading to JET Chart Using Application Upgrade Utility
+               </h3>
+               <div>
+                  <p>Use the Application Upgrade utility to quickly upgrade AnyChart components in an application to JET Chart.</p>
+                  <p>To use the Application Upgrade utility:</p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">App Builder</span> icon.</span><div>The App Builder home page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Select an application.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Upgrade Application</span>.</span></li>
+                     <li class="stepexpand"><span>Under Upgrade Type, review the list for one of the following messages:</span><ul>
+                           <li><span class="q">"Upgrade AnyChart Charts to Oracle JET Charts"</span></li>
+                           <li><span class="q">"Upgrade Flash Charts to HTML5 Charts"</span></li>
+                        </ul>
+                     </li>
+                     <li class="stepexpand"><span>If either message appears, click the adjacent number in the Candidate Objects column to view pages containing these components.</span></li>
+                     <li class="stepexpand"><span>Select objects to convert using the check box column and click the <span class="uicontrol bold">Upgrade</span> button (top-right).</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>A success message appears, and the selected objects update and disappear from the list.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="switching-AnyChart-to-JET-Chart.html#GUID-C8B2A012-C351-429C-B4F2-BFC77DCCD7A8" title="Convert chart pages from the legacy AnyChart format (which may no longer render in apps) to Oracle JET Chart. Oracle recommends upgrading to JET Chart wherever possible.">Switching from AnyChart to JET Chart</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-6FA7F2A2-D20B-4093-96B4-665239BA5114" name="GUID-6FA7F2A2-D20B-4093-96B4-665239BA5114"></a><h3 id="HTMDB-GUID-6FA7F2A2-D20B-4093-96B4-665239BA5114" class="sect3"><span class="enumeration_section">12.2.2 </span>Searching a Workspace for AnyChart Using SQL Commands
+               </h3>
+               <div>
+                  <p>Use SQL Commands in SQL Workshop to search a workspace for AnyChart components. Upgrade them to JET Chart or implement a workaround by manually installing a .zip file.</p>
+                  <p>To locate legacy AnyChart components using SQL Commands:</p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span> icon.</span><div>The SQL Workshop home page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">SQL Commands</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>Proceed through one or more of the following steps to scan your workspace for AnyChart content:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>(Optional) To identify pages that have <span class="bold">AnyGantt charts</span>:</span><ol type="a">
+                           <li class="substepexpand"><span>Input the following SQL statement:</span><div><pre class="pre codeblock"><code>select application_id,
+   application_name,
+   page_id,
+   region_name,
+   region_id
+from apex_application_page_flash5
+where chart_type in ('Project Gantt','Resource Gantt')</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Run</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>(Optional) To identify pages that have <span class="bold">AnyChart maps</span>:</span><ol type="a">
+                           <li class="substepexpand"><span>Input the following SQL statement:</span><div><pre class="pre codeblock"><code>select application_id,
+   application_name,
+   page_id,
+   region_name,
+   region_id
+from apex_application_page_flash5
+where chart_type = 'Map'</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Run</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>(Optional) To identify pages that have <span class="bold">Flash-based AnyChart components</span>:</span><ol type="a">
+                           <li class="substepexpand"><span>Input the following SQL statement:</span><div><pre class="pre codeblock"><code>select application_id,
+   application_name,
+   page_id,
+   region_name,
+   region_id
+from apex_application_page_flash5
+where chart_rendering = 'Flash Chart'
+and chart_type not in ('Map','Project Gantt','Resource Gantt')</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Run</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>If your searches find no results, no further action is required.</p>
+                  <p></p>
+                  <ol start="6">
+                     <li class="stepexpand"><span>If you locate pages with AnyChart content, do one of the following:</span><ul>
+                           <li>(Recommended) Convert Flash-based AnyChart charts to Oracle JET (see <span class="q">"<a href="switching-AnyChart-to-JET-Chart.html#GUID-182F6DCF-3AEF-43E2-A526-6DC2E26C74FF" title="Use the Application Upgrade utility to quickly upgrade AnyChart components in an application to JET Chart.">Upgrading to JET Chart Using Application Upgrade Utility</a>"</span>).
+                           </li>
+                           <li>As a workaround, manually install AnyChart Flash content to your instance by downloading the <a href="http://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-anychart-flash-content-4214936.zip" target="_blank">AnyChart Flash .zip file</a> and following the contained <code class="codeph">README.txt</code>. This populates the files necessary to render legacy AnyChart content in your apps. Note that this workaround may not be an option in future releases. Upgrade to Oracle JET Chart to avoid further issues.
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="switching-AnyChart-to-JET-Chart.html#GUID-C8B2A012-C351-429C-B4F2-BFC77DCCD7A8" title="Convert chart pages from the legacy AnyChart format (which may no longer render in apps) to Oracle JET Chart. Oracle recommends upgrading to JET Chart wherever possible.">Switching from AnyChart to JET Chart</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

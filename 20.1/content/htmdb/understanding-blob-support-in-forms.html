@@ -1,0 +1,212 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding BLOB Support in Forms">
+      <meta name="abstract" content="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">
+      <meta name="description" content="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">
+      <meta name="DC.subject" content="BLOBs, support in forms, BLOB support in forms, about, populating, download support, uploading files, downloading files, displaying the BLOB, removing the image reference">
+      <meta name="keywords" content="BLOBs, support in forms, BLOB support in forms, about, populating, download support, uploading files, downloading files, displaying the BLOB, removing the image reference">
+      <meta name="DC.Relation" scheme="URI" content="developing-forms.html#GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms.html#GUID-451C8FE3-147D-4878-A2D6-33F3CD62896B">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms.html#GUID-0197BAEA-6F98-4A52-B747-22BBFD3F9150">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms.html#GUID-CD06A440-6864-401F-8709-DC69DEBE45EB">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms.html#GUID-1AFBAD9D-B6FD-4333-8534-7D6EEC94EECE">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-206633B5-F761-4CCB-AE71-2CF8539B482E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">
+      <meta name="description" content="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">
+      <title>Understanding BLOB Support in Forms</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="validating-user-input-in-forms.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-database-application-components.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="validating-user-input-in-forms.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-database-application-components.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="developing-forms.html" property="item" typeof="WebPage"><span property="name">Developing Forms</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding BLOB Support in Forms</li>
+            </ol>
+            <a id="GUID-206633B5-F761-4CCB-AE71-2CF8539B482E" name="GUID-206633B5-F761-4CCB-AE71-2CF8539B482E"></a><a id="HTMDB30075"></a>
+            
+            <h2 id="HTMDB-GUID-206633B5-F761-4CCB-AE71-2CF8539B482E" class="sect2"><span class="enumeration_section">11.7 </span>Understanding BLOB Support in Forms
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms.html#GUID-451C8FE3-147D-4878-A2D6-33F3CD62896B">About BLOB Support in Forms</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms.html#GUID-0197BAEA-6F98-4A52-B747-22BBFD3F9150">About Uploading and Downloading Files into a BLOB</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms.html#GUID-CD06A440-6864-401F-8709-DC69DEBE45EB">About Displaying the BLOB</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms.html#GUID-1AFBAD9D-B6FD-4333-8534-7D6EEC94EECE">About Removing the Image Reference</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="developing-forms.html#GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E" title="Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.">Developing Forms</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB30076"></a><div class="props_rev_3"><a id="GUID-451C8FE3-147D-4878-A2D6-33F3CD62896B" name="GUID-451C8FE3-147D-4878-A2D6-33F3CD62896B"></a><h3 id="HTMDB-GUID-451C8FE3-147D-4878-A2D6-33F3CD62896B" class="sect3"><span class="enumeration_section">11.7.1 </span>About BLOB Support in Forms
+               </h3>
+               <div>
+                  <p>If you create a form using the Create Application Wizard, create a page of type of <span class="uicontrol bold">Form</span> or <span class="uicontrol bold">Report and Form</span>, create a region of type <span class="uicontrol bold">Form</span>, or add an item to an existing form, any item whose source is a database column of type <code class="codeph">BLOB</code> results in an item of type <span class="uicontrol bold">File Browse</span>. When the form is called for <code class="codeph">INSERT</code>, the file selected by the user is loaded into the <code class="codeph">BLOB</code> column. When the form is called for update, a download link is displayed to the right of the Browse button. Users can use this link to download the file.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-blob-support-in-forms.html#GUID-206633B5-F761-4CCB-AE71-2CF8539B482E" title="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">Understanding BLOB Support in Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30077"></a><div class="props_rev_3"><a id="GUID-0197BAEA-6F98-4A52-B747-22BBFD3F9150" name="GUID-0197BAEA-6F98-4A52-B747-22BBFD3F9150"></a><h3 id="HTMDB-GUID-0197BAEA-6F98-4A52-B747-22BBFD3F9150" class="sect3"><span class="enumeration_section">11.7.2 </span>About Uploading and Downloading Files into a BLOB
+               </h3>
+               <div>
+                  <p>The defaulted <code class="codeph">BLOB</code> support does not give you all the information a typical application needs to effectively manage a <code class="codeph">BLOB</code>. In addition to knowing that the column is a <code class="codeph">BLOB</code>, more information about the file provides a better experience for the end-user. The File Browse page item has additional settings to facilitate managing this additional information completely declaratively. 
+                  </p>
+                  <div class="infobox-tip" id="GUID-0197BAEA-6F98-4A52-B747-22BBFD3F9150__GUID-A8869D35-B616-4B59-BDB7-5012EF14C1C9">
+                     <p class="notep1">Tip:</p>
+                     <p>For more information on File Browse settings, see <span class="uicontrol bold">File Browse</span> in <span class="q">"<a href="about-item-types.html#GUID-81BF829A-B26C-484D-A321-6A3F47C9192B" title="Learn about key attributes that control item functionality.">About Item Types</a>."</span></p>
+                  </div>
+                  <p>There are two different types of storage types available within the File Browse item type:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">BLOB</code> column specific in Item Source Attribute - Completely declarative approach that supports configuration of the additional settings discussed here. This references a <code class="codeph">BLOB</code> in your own database table.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Table <code class="codeph">WWV_FLOW_FILES</code> - Available for backwards compatibility. Oracle does not recommend using this in new applications.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Table <code class="codeph">APEX_APPLICATION_TEMP_FILES</code> - Store the uploaded file in a temporary location that you can access with the view <code class="codeph">APEX_APPLICATION_TEMP_FILES</code>. Oracle Application Express automatically deletes the file at the end of the session or at the end of the upload request, depending on what you choose for Purge File At.
+                        </p>
+                     </li>
+                  </ul>
+                  <p>To provide this additional information, it is recommended that you add additional columns to your base table to store and track the MIME type, file name, last updated date and character set settings. You can accomplish this by extending your table. For example:</p><pre class="oac_no_warn" dir="ltr">ALTER TABLE emp ADD 
+   (ATTACH_MIMETYPE     VARCHAR2(255),
+    ATTACH_FILENAME     VARCHAR2(255),
+    ATTACH_LAST_UPDATE  DATE,
+    ATTACH_CHARSET      VARCHAR2(128));
+</pre><div class="infoboxnote" id="GUID-0197BAEA-6F98-4A52-B747-22BBFD3F9150__GUID-62C5E2C2-EEFB-4C5D-A199-83A6FF3F923D">
+                     <p class="notep1">Note:</p>
+                     <p>The character set of the <code class="codeph">BLOB</code> is not automatically set on upload. To store the character set value for your <code class="codeph">BLOB</code>, you must provide an additional page item on your page which is bound to the column you use to store the character set, and where the user will be able to specify the character set for the document they are uploading.
+                     </p>
+                  </div>
+                  <p>If you manually create a form on a custom table, you can still take advantage of this feature. To do so, use the File Browse item type with a Storage Type setting of <code class="codeph">BLOB</code> column specified in Item Source Attribute, on a page with a DML Process type of <code class="codeph">DML_PROCESS_ROW</code>. This process determines the table name and primary key columns.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-blob-support-in-forms.html#GUID-206633B5-F761-4CCB-AE71-2CF8539B482E" title="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">Understanding BLOB Support in Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30078"></a><div class="props_rev_3"><a id="GUID-CD06A440-6864-401F-8709-DC69DEBE45EB" name="GUID-CD06A440-6864-401F-8709-DC69DEBE45EB"></a><h3 id="HTMDB-GUID-CD06A440-6864-401F-8709-DC69DEBE45EB" class="sect3"><span class="enumeration_section">11.7.3 </span>About Displaying the BLOB
+               </h3>
+               <div>
+                  <p>If the BLOB you are working with is an image, you can display it in a form. To handle it declaratively, use the Display Image item type as described in <span class="q">"<a href="about-item-types.html#GUID-81BF829A-B26C-484D-A321-6A3F47C9192B" title="Learn about key attributes that control item functionality.">About Item Types</a>."</span> To handle it procedurally, see <span class="q">"<a href="understanding-blob-support-in-forms-and-reports.html#GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB" title="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">Understanding BLOB Support in Forms and Reports</a>."</span></p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-blob-support-in-forms.html#GUID-206633B5-F761-4CCB-AE71-2CF8539B482E" title="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">Understanding BLOB Support in Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30079"></a><div class="props_rev_3"><a id="GUID-1AFBAD9D-B6FD-4333-8534-7D6EEC94EECE" name="GUID-1AFBAD9D-B6FD-4333-8534-7D6EEC94EECE"></a><h3 id="HTMDB-GUID-1AFBAD9D-B6FD-4333-8534-7D6EEC94EECE" class="sect3"><span class="enumeration_section">11.7.4 </span>About Removing the Image Reference
+               </h3>
+               <div>
+                  <p>Because there is no set to <code class="codeph">NULL</code> when using File Browse, if you need to provide a mechanism to remove an image reference, you must include a special Remove Image button to nullify the necessary columns. Consider the following example:
+                  </p><pre class="oac_no_warn" dir="ltr">UPDATE demo_product_info
+   SET product_image = NULL,
+       MIMETYPE = NULL,
+       FILENAME = NULL,
+       IMAGE_LAST_UPDATE = NULL,
+       CHARSET = NULL
+ WHERE product_id = :P6_PRODUCT_ID;
+</pre></div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-blob-support-in-forms.html#GUID-206633B5-F761-4CCB-AE71-2CF8539B482E" title="Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.">Understanding BLOB Support in Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

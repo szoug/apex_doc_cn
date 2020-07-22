@@ -1,0 +1,166 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="SET_REMOTE_SERVER Procedure">
+      <meta name="DC.subject" content="APEX_APPLICATION_INSTALL, SET_REMOTE_SERVER procedure">
+      <meta name="keywords" content="APEX_APPLICATION_INSTALL, SET_REMOTE_SERVER procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_APPLICATION_INSTALL.html#GUID-64D43160-E4F9-44CF-96A4-42D3190102BE">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SET_REMOTE_SERVER Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="SET_PROXY-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="SET_SCHEMA-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SET_PROXY-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SET_SCHEMA-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_APPLICATION_INSTALL.html" property="item" typeof="WebPage"><span property="name"> APEX_APPLICATION_INSTALL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SET_REMOTE_SERVER Procedure</li>
+            </ol>
+            <a id="GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA" name="GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA"></a>
+            
+            <h2 id="AEAPI-GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA" class="sect2"><span class="enumeration_section">4.36 </span>SET_REMOTE_SERVER Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use this procedure to set the Base URL and the HTTPS Host attributes for remote servers of the imported application. Remote Servers are identified by their Static ID.</p>
+               <div class="section">
+                  <p class="subhead1" id="GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA__GUID-72AD5215-32DD-475C-8B3E-ED488E4E9A0C">Syntax</p>
+               </div>
+               <!-- class="section" --><pre class="pre codeblock"><code>APEX_APPLICATION_INSTALL.SET_REMOTE_SERVER(
+    p_static_id IN VARCHAR2,
+    p_base_url IN VARCHAR2,
+    p_https_host IN VARCHAR2 DEFAULT NULL );
+</code></pre><div class="section">
+                  <p class="subhead1" id="GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA__GUID-62E5F26E-8902-4B8A-8730-C7E52C02A266">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA__CHDBFEAF">
+                  <p class="titleintable">Table 4-17 SET_REMOTE_SERVER Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="SET_REMOTE_SERVER Parameters" summary="Parameter descriptions for the SET_REMOTE_SERVER procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="33%" id="d20087e66">Parameter</th>
+                           <th align="left" valign="bottom" width="67%" id="d20087e69">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="33%" id="d20087e74" headers="d20087e66 ">
+                              <p><code class="codeph">p_static_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="67%" headers="d20087e74 d20087e69 ">
+                              <p>Static ID to reference the remote server object.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="33%" id="d20087e82" headers="d20087e66 ">
+                              <p><code class="codeph">p_base_url</code></p>
+                           </td>
+                           <td align="left" valign="top" width="67%" headers="d20087e82 d20087e69 ">
+                              <p>New Base URL to use for this remote server object.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="33%" id="d20087e90" headers="d20087e66 ">
+                              <p><code class="codeph">p_https_host</code></p>
+                           </td>
+                           <td align="left" valign="top" width="67%" headers="d20087e90 d20087e69 ">
+                              <p>New HTTPS Host Property to use for this remote server object. Only relevant when the base URL is https:// and the database version is 12.2 or greater.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA__GUID-801C21A9-259E-4092-B17B-3DCE73FF174A">Example</p>
+               </div>
+               <!-- class="section" --><pre class="pre codeblock"><code>begin
+    apex_application_install.set_remote_server(
+        p_static_id =&gt; 'MY_REMOTE_SERVER',
+        p_base_url =&gt; 'http://production.example.com' );
+end;
+</code></pre></div>
+            <div>
+               <div class="infoboxnotealso" id="GUID-B71B95DF-2362-4E79-9E95-F4CE68D95ACA__GUID-5C9FE215-0158-4979-8F54-53499DD7D2E0">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="GET_REMOTE_SERVER_BASE_URL-Function.html#GUID-67EA8C5D-2B06-4F6A-8719-64D5BCA9D171">GET_REMOTE_SERVER_BASE_URL Function</a>"</span>,<span class="q">"<a href="GET_REMOTE_SERVER_HTTPS_HOST-Function.html#GUID-3AC608E6-898F-440A-B6CA-7F12A49CC468">GET_REMOTE_SERVER_HTTPS_HOST Function</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_APPLICATION_INSTALL.html#GUID-64D43160-E4F9-44CF-96A4-42D3190102BE">APEX_APPLICATION_INSTALL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

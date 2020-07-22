@@ -1,0 +1,524 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Installing Application Express into Different PDBs">
+      <meta name="abstract" content="You can install different versions of Oracle Application Express into different PDBs.">
+      <meta name="description" content="You can install different versions of Oracle Application Express into different PDBs.">
+      <meta name="DC.subject" content="CDBs, uninstalling Application Express, Application Express, uninstalling in CDBs, CDBs reinstalling Application Express, reinstalling in CDBs">
+      <meta name="keywords" content="CDBs, uninstalling Application Express, Application Express, uninstalling in CDBs, CDBs reinstalling Application Express, reinstalling in CDBs">
+      <meta name="DC.Relation" scheme="URI" content="multitenant-architecture-in-Oracle-db-12c.html#GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F">
+      <meta name="DC.Relation" scheme="URI" content="installing-AE-into-different-PDBs.html#GUID-EECD19AD-34C6-4DC4-A9E2-48F747F5A182">
+      <meta name="DC.Relation" scheme="URI" content="installing-AE-into-different-PDBs.html#GUID-1BD78FA9-CA7C-47CF-A5A9-30CA3084315B">
+      <meta name="DC.Relation" scheme="URI" content="installing-AE-into-different-PDBs.html#GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can install different versions of Oracle Application Express into different PDBs.">
+      <meta name="description" content="You can install different versions of Oracle Application Express into different PDBs.">
+      <title>Installing Application Express into Different PDBs</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="You can install different versions of Oracle Application Express into different PDBs.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="installing-application-express-into-application-container.html" title="Previous" type="text/html">
+      <link rel="next" href="plugging-in-PDB-when-AE-installed-in-root-container.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-application-express-into-application-container.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="plugging-in-PDB-when-AE-installed-in-root-container.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="multitenant-architecture-in-Oracle-db-12c.html" property="item" typeof="WebPage"><span property="name">Utilizing the Multitenant Architecture in
+        Oracle Database 12c or Later</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Installing Application Express into Different PDBs</li>
+            </ol>
+            <a id="GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F" name="GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F"></a><a id="HTMIG29327"></a>
+            
+            <h2 id="HTMIG-GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F" class="sect2"><span class="enumeration_section">4.3 </span>Installing Application Express into Different PDBs
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can install different versions of Oracle Application Express into different PDBs.</p>
+               <p>Providing Application Express is not installed in the container database, you can
+                                    install a local Application Express within each PDB as required.
+                                    When Application Express is installed locally there are no
+                                    Application Express metadata linked objects and all packages,
+                                    views, and tables are created within the
+                                                <code class="codeph">APEX_200100</code> schema, within each PDB
+                                    where Application Express is installed.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="installing-AE-into-different-PDBs.html#GUID-EECD19AD-34C6-4DC4-A9E2-48F747F5A182">Uninstalling Application Express from a CDB</a><br>Learn how to uninstall Application Express from a CDB.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-AE-into-different-PDBs.html#GUID-1BD78FA9-CA7C-47CF-A5A9-30CA3084315B">Installing Application Express Locally in a PDB</a><br>Learn how to install Application Express locally in a PDB.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-AE-into-different-PDBs.html#GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD">Installing Application Express into a CDB</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="multitenant-architecture-in-Oracle-db-12c.html#GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F" title="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">Utilizing the Multitenant Architecture in Oracle Database 12c or Later</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29436"></a><div class="props_rev_3"><a id="GUID-EECD19AD-34C6-4DC4-A9E2-48F747F5A182" name="GUID-EECD19AD-34C6-4DC4-A9E2-48F747F5A182"></a><h3 id="HTMIG-GUID-EECD19AD-34C6-4DC4-A9E2-48F747F5A182" class="sect3"><span class="enumeration_section">4.3.1 </span>Uninstalling Application Express from a
+        CDB
+               </h3>
+               <div>
+                  <p>Learn how to uninstall Application Express from a CDB.</p>
+                  <div class="section">
+                     <p>To uninstall Oracle Application Express from a CDB:</p>
+                     <div class="infoboxnote" id="GUID-EECD19AD-34C6-4DC4-A9E2-48F747F5A182__GUID-AB1FBAB4-215D-4335-80DF-AF59C97607E2">
+                        <p class="notep1">Note:</p>
+                        <p>&nbsp;Installing or removing Application Express from a CDB requires a local connection to the database.</p>
+                        <p>This section describes removing Application Express from a CDB. If you wish to remove
+                    Oracle Application Express from the CDB that shipped with Oracle Database 12.1,
+                    you should use <code class="codeph">apxremov_con.sql</code>from either
+                        <code class="codeph">$ORACLE_HOME/apex</code> , or from a 4.2.6 APEX distribution. 
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change to the <code class="codeph">apex</code> directory in the location where you unzipped the distribution.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic"><code class="codeph">SYS_password</code></span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run <code class="codeph">apxremov.sql</code>. </span><div>
+                           <p>For example:</p><pre class="oac_no_warn" dir="ltr">@apxremov.sql
+</pre><div class="infoboxnote" id="GUID-EECD19AD-34C6-4DC4-A9E2-48F747F5A182__GUID-EB9A3ADB-65DA-4CBE-8258-DDF227324553">
+                              <p class="notep1">Note:</p>
+                              <p>If you run <code class="codeph">apexremov.sql</code> after PDBs have been added to the CDB, then
+                            Application Express uninstalls from all of the PDBs, as well as
+                                <code class="codeph">CDB$ROOT</code> and <code class="codeph">PDB$SEED</code>. Therefore,
+                            any applications defined in any of the PDBs will be removed. 
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-AE-into-different-PDBs.html#GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F" title="You can install different versions of Oracle Application Express into different PDBs.">Installing Application Express into Different PDBs</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29442"></a><div class="props_rev_3"><a id="GUID-1BD78FA9-CA7C-47CF-A5A9-30CA3084315B" name="GUID-1BD78FA9-CA7C-47CF-A5A9-30CA3084315B"></a><h3 id="HTMIG-GUID-1BD78FA9-CA7C-47CF-A5A9-30CA3084315B" class="sect3"><span class="enumeration_section">4.3.2 </span>Installing Application Express Locally in a PDB
+               </h3>
+               <div>
+                  <p>Learn how to install Application Express locally in a PDB.</p>
+                  <div class="p">
+                     <p>Once you have removed Application Express from the container database by following the instructions in <span class="q">"<a href="installing-AE-into-different-PDBs.html#GUID-EECD19AD-34C6-4DC4-A9E2-48F747F5A182" title="Learn how to uninstall Application Express from a CDB.">Uninstalling Application Express from a CDB</a>,"</span> you can install Application Express locally in a PDB.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To install Application Express locally in a PDB:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change the <code class="codeph">apex</code> directory in the location where you unzipped the distribution.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Application Express is installed as SYS specifying the SYSDBA role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic"><code class="codeph">SYS_password</code></span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Set the container to the PDB you want to install Application Express locally:</span><div><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CONTAINER = &lt;<span class="italic">PDB_name</span>&gt;;
+</pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Select the appropriate installation option. </span><div>
+                           <p><span class="bold">Full development environment</span> provides complete access to the <span>App Builder</span> environment to develop applications. A <span class="bold">Runtime environment</span> enables users to run applications that cannot be modified. 
+                           </p>
+                           <p>Available installation options include:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Full development environment</span> - Run <code class="codeph">apexins.sql</code> passing the following four arguments in the order shown:
+                                 </p><pre class="pre codeblock"><code>@apexins.sql <span class="italic">tablespace_apex</span> <span class="italic">tablespace_files</span> <span class="italic">tablespace_temp</span> <span class="italic">images</span></code></pre><p>Where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_apex</code></span> is the name of the tablespace for the Application Express application user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_files</code></span> is the name of the tablespace for the Application Express files user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_temp</code></span> is the name of the temporary tablespace or tablespace group.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">images</code></span> is the virtual directory for Application Express images. To support future Application Express upgrades, define the virtual image directory as <code class="codeph">/i/</code>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>For example:</p><pre class="oac_no_warn" dir="ltr">@apexins.sql SYSAUX SYSAUX TEMP /i/
+</pre></li>
+                              <li>
+                                 <p><span class="bold">Runtime environment</span> - Run <code class="codeph">apxrtins.sql</code> passing the following four arguments in the order shown:
+                                 </p><pre class="oac_no_warn" dir="ltr">@apxrtins.sql <span class="italic">tablespace_apex</span> <span class="italic">tablespace_files</span> <span class="italic">tablespace_temp</span> <span class="italic">images</span>
+</pre><p>Where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_apex</code></span> is the name of the tablespace for the Application Express application user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_files</code></span> is the name of the tablespace for the Application Express files user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_temp</code></span> is the name of the temporary tablespace or tablespace group.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">images</code></span> is the virtual directory for Application Express images. To support future Application Express upgrades, define the virtual image directory as <code class="codeph">/i/</code>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>For example:</p><pre class="oac_no_warn" dir="ltr">@apxrtins.sql SYSAUX SYSAUX TEMP /i/
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>If you are using Oracle REST Data Services, complete the appropriate steps in <span>Installing Application Express and
+                    Configuring Oracle REST Data Services</span>. </span></li>
+                     <li class="stepexpand"><span>If you are using Oracle HTTP Server, complete the appropriate steps in <span>Installing Application
+                    Express and Configuring Embedded PL/SQL Gateway</span>. </span></li>
+                     <li class="stepexpand"><span>If you are using Embedded PL/SQL Gateway, run <code class="codeph">apex_epg_config.sql</code> passing the path to the Oracle home and then complete the appropriate steps in <span>Installing Application Express and
+                    Configuring Oracle HTTP Server</span>.</span></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-1BD78FA9-CA7C-47CF-A5A9-30CA3084315B__GUID-F7BA5691-95E1-4759-AF96-9FF1B085897F">
+                        <p class="notep1">Note:</p>
+                        <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=SQLRF-GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC" target="_blank"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for more information about SQL*Plus
+                        </p>
+                     </div>
+                     <p>When Application Express installs, it creates the following database accounts:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">APEX_200100</code> - This account owns the Application Express schema and
+                        metadata.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">FLOWS_FILES</code> - This account owns the Application Express uploaded
+                        files.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">APEX_PUBLIC_USER</code> - This minimally privileged account is used for
+                        Application Express configuration with Oracle REST Data Services or Oracle
+                        HTTP Server and <code class="codeph">mod_plsql</code>.
+                           </p>
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">APEX_INSTANCE_ADMIN_USER</code> - A minimally
+                        privileged account used for the REST Administration Interface.
+                           </p>
+                           
+                           <div class="infobox-tip" id="GUID-1BD78FA9-CA7C-47CF-A5A9-30CA3084315B__GUID-079897A5-6213-48CE-8413-2CF2BDBF65E6">
+                              <p class="notep1">Tip:</p>To learn more about the REST Administration Interface, see
+                                <span class="q">"<a href="../aeadm/viewing-rest-usage.html#AEADM-GUID-9B37A1E5-9BB1-4B4B-9DEA-5258192E8C19" target="_blank">About the REST Administration
+                                Interface</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></div>
+                           
+                        </li>
+                     </ul>
+                     <p>If you configured RESTful Web services, then these additional accounts are created:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">APEX_REST_PUBLIC_USER</code> - The account used when invoking RESTful Services definitions stored in Application Express.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">APEX_LISTENER</code> - The account used to query RESTful Services definitions stored in Application Express.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1BD78FA9-CA7C-47CF-A5A9-30CA3084315B__GUID-6606DF8D-C5D9-478F-87E5-E58023708BF6">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-AE-into-different-PDBs.html#GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F" title="You can install different versions of Oracle Application Express into different PDBs.">Installing Application Express into Different PDBs</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29443"></a><div class="props_rev_3"><a id="GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD" name="GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD"></a><h3 id="HTMIG-GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD" class="sect3"><span class="enumeration_section">4.3.3 </span>Installing Application Express into a
+        CDB
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To install Application Express into a CDB:</p>
+                     <div class="infoboxnote" id="GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD__GUID-CEDB2D04-69B6-456C-9C79-6C6DFDBE4FCD">
+                        <p class="notep1">Note:</p>
+                        <p>&nbsp;Installing or removing Application Express from a CDB requires a local connection to the database.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory in the location where you unzipped the distribution.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to <code class="codeph">CDB$ROOT</code> of the database where Application Express is installed as <code class="codeph">SYS</code> specifying the<code class="codeph"> SYSDBA</code> role.For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span></code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select the appropriate installation option.</span><div>
+                           <p><span class="bold">Full development environment</span> provides complete access to the <span>App Builder</span> environment to develop applications. A <span class="bold">Runtime environment</span> enables users to run applications that cannot be modified.
+                           </p>
+                           <p>Available installation options include:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Full development environment</span>. Run <code class="codeph">apexins.sql</code> passing the following four arguments in the order shown:
+                                 </p><pre class="pre codeblock"><code>@apexins.sql tablespace_apex tablespace_files tablespace_temp images</code></pre><p>Where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>	<code class="codeph">tablespace_apex</code> is the name of the tablespace for the Oracle Application Express application user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><code class="codeph">	tablespace_files</code> is the name of the tablespace for the Application Express files user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>	<code class="codeph">tablespace_temp</code> is the name of the temporary tablespace or tablespace group.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>	<code class="codeph">images</code> is the virtual directory for Application Express images. To support future Application Express upgrades, define the virtual image directory as<code class="codeph"> /i/</code>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>Example:</p><pre class="pre codeblock"><code>@apexins.sql SYSAUX SYSAUX TEMP /i/
+</code></pre></li>
+                              <li>
+                                 <p><span class="bold">Runtime environment</span>. Run <code class="codeph">apxrtins.sql</code> passing the following arguments in the order shown:
+                                 </p><pre class="pre codeblock"><code>@apxrtins.sql tablespace_apex tablespace_files tablespace_temp images</code></pre><p>Where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><code class="codeph">	tablespace_apex</code> is the name of the tablespace for the Application Express application user.	
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><code class="codeph">	tablespace_files</code> is the name of the tablespace for the Application Express files user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><code class="codeph">	tablespace_temp</code> is the name of the temporary tablespace or tablespace group.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>	<code class="codeph">images</code> is the virtual directory for Application Express images. To support future Application Express upgrades, define the virtual image directory as <code class="codeph">/i/</code>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>Example:</p><pre class="pre codeblock"><code>@apxrtins.sql SYSAUX SYSAUX TEMP /i/
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>If using Oracle REST Data Services, complete appropriate steps in <span>Installing Application Express and
+                    Configuring Oracle REST Data Services</span>. </span></li>
+                     <li class="stepexpand"><span>If using the Embedded PL/SQL Gateway, complete appropriate steps in <span>Installing Application
+                    Express and Configuring Embedded PL/SQL Gateway</span>. </span></li>
+                     <li class="stepexpand"><span>If using the Oracle HTTP Server, complete appropriate steps in <span>Installing Application Express and
+                    Configuring Oracle HTTP Server</span>. </span></li>
+                  </ol>
+                  <div class="section">
+                     
+                     <p>When Application Express installs, it creates the following database
+                accounts:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD__UL_H54_ZM5_RHB">
+                        <li>
+                           
+                           <p><code class="codeph">APEX_200100</code> - This account owns the Application
+                        Express schema and metadata.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">FLOWS_FILES</code> - This account owns the Application
+                        Express uploaded files.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">APEX_PUBLIC_USER</code> - This minimally privileged
+                        account is used for Application Express configuration with Oracle REST Data
+                        Services or Oracle HTTP Server and <code class="codeph">mod_plsql</code>.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">APEX_INSTANCE_ADMIN_USER</code> - A minimally
+                        privileged account used for the REST Administration Interface.
+                           </p>
+                           
+                           <div class="infobox-tip" id="GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD__GUID-F2113AA3-071D-4E9D-825E-A7F4372ACE27">
+                              <p class="notep1">Tip:</p>To learn more about the REST Administration Interface, see
+                                <span class="q">"<a href="../aeadm/viewing-rest-usage.html#AEADM-GUID-9B37A1E5-9BB1-4B4B-9DEA-5258192E8C19" target="_blank">About the REST Administration
+                                Interface</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></div>
+                           
+                        </li>
+                     </ul>
+                     <p>If you configured RESTful Web services, then these additional accounts are created:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">APEX_REST_PUBLIC_USER</code> - The account used when invoking RESTful Services definitions stored in Application Express.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">APEX_LISTENER</code> - The account used to query RESTful Services definitions stored in Application Express.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-711396F6-DC1C-4EF8-8CA5-4C36E8615DFD__GUID-720D670D-5F89-4580-B1FD-B7243D30C8B6">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=SQPUG-GUID-2A2C72F4-2B92-4432-92A2-C1B642451F66" target="_blank">Using SQL*Plus</a>"</span> in <span><cite>SQL*Plus User's Guide and Reference</cite></span></li>
+                           <li>
+                              <p><span class="q">"<a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-E7BB8412-0A26-4C62-A220-21CC5D551B8A" title="Learn how to patch or upgrade Application Express in the root container.">Patching or Upgrading Application Express in the CDB</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="Oracle-application-express-runtime-environment.html#GUID-BEB2F250-40B7-4022-9B05-3B1199386020" title="Learn about the Oracle Application Express runtime environment.">About the Oracle Application Express Runtime Environment</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-AE-into-different-PDBs.html#GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F" title="You can install different versions of Oracle Application Express into different PDBs.">Installing Application Express into Different PDBs</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

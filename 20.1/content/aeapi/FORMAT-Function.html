@@ -1,0 +1,215 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="FORMAT Function">
+      <meta name="DC.subject" content="APEX_STRING, FORMAT Function">
+      <meta name="keywords" content="APEX_STRING, FORMAT Function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_STRING.html#GUID-CAFD987C-7382-4F0F-8CB9-1D3BD05F054A">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-77E01643-C482-476C-9404-F3AEDDACCD22">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>FORMAT Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="APEX_STRING.html" title="Previous" type="text/html">
+      <link rel="next" href="GET_INITIALS-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="APEX_STRING.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="GET_INITIALS-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_STRING.html" property="item" typeof="WebPage"><span property="name"> APEX_STRING</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">FORMAT Function</li>
+            </ol>
+            <a id="GUID-77E01643-C482-476C-9404-F3AEDDACCD22" name="GUID-77E01643-C482-476C-9404-F3AEDDACCD22"></a>
+            
+            <h2 id="AEAPI-GUID-77E01643-C482-476C-9404-F3AEDDACCD22" class="sect2"><span class="enumeration_section">35.1 </span>FORMAT Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Returns a formatted string, with substitutions applied.</p>
+                  <p>Returns <code class="codeph">p_message</code> after replacing each <code class="codeph">&lt;n&gt;</code>th
+                occurrence of <code class="codeph">%s</code> with <code class="codeph">p&lt;n&gt;</code> and each
+                occurrence of <code class="codeph">%&lt;n&gt;</code> with <code class="codeph">p&lt;n&gt;</code>. If
+                    <code class="codeph">p_max_length</code> is not null,
+                    <code class="codeph">substr(p&lt;n&gt;,1,p_arg_max_length)</code> is used instead of
+                    <code class="codeph">p&lt;n&gt;</code>. Use <code class="codeph">%%</code> in
+                    <code class="codeph">p_message</code> to emit a single % character.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-77E01643-C482-476C-9404-F3AEDDACCD22__GUID-52FAC2A7-0835-4381-879E-E4A4C8730147">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>FORMAT (
+     p_message    IN VARCHAR2,
+     p0           IN VARCHAR2     default null,
+     p1           IN VARCHAR2     default null,
+     p2           IN VARCHAR2     default null,
+     p3           IN VARCHAR2     default null,
+     p4           IN VARCHAR2     default null,
+     p5           IN VARCHAR2     default null,
+     p6           IN VARCHAR2     default null,
+     p7           IN VARCHAR2     default null,
+     p8           IN VARCHAR2     default null,
+     p9           IN VARCHAR2     default null,
+     p10          IN VARCHAR2     default null,
+     p11          IN VARCHAR2     default null,
+     p12          IN VARCHAR2     default null,
+     p13          IN VARCHAR2     default null,
+     p14          IN VARCHAR2     default null,
+     p15          IN VARCHAR2     default null,
+     p16          IN VARCHAR2     default null,
+     p17          IN VARCHAR2     default null,
+     p18          IN VARCHAR2     default null,
+     p19          IN VARCHAR2     default null,
+     p_max_length IN PLS_INTEGER  default 1000,
+     p_prefix     IN VARCHAR2     default null )
+     return VARCHAR2</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-77E01643-C482-476C-9404-F3AEDDACCD22__GUID-572F0F7F-38EF-4578-80EE-F11C13F55B81">Parameters</p>
+                  <div class="tblformal" id="GUID-77E01643-C482-476C-9404-F3AEDDACCD22__GUID-26A6AD41-0022-4353-A4B7-045F2BB4F702">
+                     <p class="titleintable">Table 35-1 FORMAT Function Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="FORMAT Function Parameters" summary="Parameter descriptions for the FORMAT Function." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" id="d155196e104">Parameters</th>
+                              <th align="left" valign="bottom" id="d155196e107">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d155196e112" headers="d155196e104 ">
+                                 <p><code class="codeph">p_message</code></p>
+                              </td>
+                              <td align="left" valign="top" headers="d155196e112 d155196e107 ">
+                                 <p>Message string with substitution placeholders.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d155196e120" headers="d155196e104 ">
+                                 <p><code class="codeph">p0-p19</code></p>
+                              </td>
+                              <td align="left" valign="top" headers="d155196e120 d155196e107 ">
+                                 <p>Substitution parameters.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d155196e128" headers="d155196e104 ">
+                                 <p><code class="codeph">p_max_length</code></p>
+                              </td>
+                              <td align="left" valign="top" headers="d155196e128 d155196e107 ">
+                                 <p>If not null (default is 1000), cap each <code class="codeph">p&lt;n&gt;</code> at <code class="codeph">p_max_length</code> characters.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d155196e142" headers="d155196e104 ">
+                                 <p><code class="codeph">p_prefix</code></p>
+                              </td>
+                              <td align="left" valign="top" headers="d155196e142 d155196e107 ">
+                                 <p>If set, remove leading white space and the given prefix from each line. This parameter can be used to simplify the formatting of indented multi-line text.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-77E01643-C482-476C-9404-F3AEDDACCD22__GUID-5BEC34C4-6E31-45B8-94DC-5902C11CC92B">Example</p><pre class="pre codeblock"><code>apex_string.format('%s+%s=%s', 1, 2, 'three')
+-&gt; 1+2=three
+
+apex_string.format('%1+%2=%0', 'three', 1, 2)
+-&gt; 1+2=three    </code></pre><pre class="pre codeblock"><code>apex_string.format (
+    q'!begin
+      !    if not valid then
+      !        apex_debug.info('validation failed');
+      !    end if;
+      !end;!',
+    p_prefix =&gt; '!' )
+ -&gt; begin
+        if not valid then
+            apex_debug.info('validation failed');
+        end if;
+    end;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_STRING.html#GUID-CAFD987C-7382-4F0F-8CB9-1D3BD05F054A">APEX_STRING</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

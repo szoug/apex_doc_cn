@@ -1,0 +1,713 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Downloading and Installing Oracle Application Express">
+      <meta name="abstract" content="Learn about downloading and installing Oracle Application Express.">
+      <meta name="description" content="Learn about downloading and installing Oracle Application Express.">
+      <meta name="DC.subject" content="Application Express, download and install in non-CDB, non-CDB, installing in, download and install locally in PDB, PDB, Instance administrator account, creating, updating, about, running apxchpwd.sql, apxchpwd.sql, creating Instance Administrator account, updating Instance Administrator account, changing Instance Administrator account password, unlockin Instance Administrator account, Instance Administrator account, creating password, changing password, unlocking, running, installation, restart processes, APEX_PUBLIC_USER account, configuring, expiration in Oracle Database 11g, Oracle REST Data Services, configuring RESTful Services, RESTful Services">
+      <meta name="keywords" content="Application Express, download and install in non-CDB, non-CDB, installing in, download and install locally in PDB, PDB, Instance administrator account, creating, updating, about, running apxchpwd.sql, apxchpwd.sql, creating Instance Administrator account, updating Instance Administrator account, changing Instance Administrator account password, unlockin Instance Administrator account, Instance Administrator account, creating password, changing password, unlocking, running, installation, restart processes, APEX_PUBLIC_USER account, configuring, expiration in Oracle Database 11g, Oracle REST Data Services, configuring RESTful Services, RESTful Services">
+      <meta name="DC.Relation" scheme="URI" content="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA">
+      <meta name="DC.Relation" scheme="URI" content="downloading-installing-Oracle-AE.html#GUID-7E432C6D-CECC-4977-B183-3C654380F7BF">
+      <meta name="DC.Relation" scheme="URI" content="downloading-installing-Oracle-AE.html#GUID-4062E1F0-2772-48FC-A4AA-436F326CF751">
+      <meta name="DC.Relation" scheme="URI" content="downloading-installing-Oracle-AE.html#GUID-6F1E847B-B091-4832-9F87-739F19025AAC">
+      <meta name="DC.Relation" scheme="URI" content="downloading-installing-Oracle-AE.html#GUID-0619448A-56FB-43E1-A479-C45EC5002E4B">
+      <meta name="DC.Relation" scheme="URI" content="downloading-installing-Oracle-AE.html#GUID-93638EC4-5278-421B-9C19-BB68F9B31C40">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about downloading and installing Oracle Application Express.">
+      <meta name="description" content="Learn about downloading and installing Oracle Application Express.">
+      <title>Downloading and Installing Oracle Application Express</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about downloading and installing Oracle Application Express.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="performing-pre-installation-tasks-for-Oracle-AE.html" title="Previous" type="text/html">
+      <link rel="next" href="downloading-installing-Oracle-REST-data-services.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="performing-pre-installation-tasks-for-Oracle-AE.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="downloading-installing-Oracle-REST-data-services.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="installing-AE-and-configuring-Oracle-REST-data-services.html" property="item" typeof="WebPage"><span property="name"> Installing Application Express and Configuring Oracle REST Data Services</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Downloading and Installing Oracle Application Express</li>
+            </ol>
+            <a id="GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE" name="GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE"></a><a id="HTMIG29331"></a>
+            
+            <h2 id="HTMIG-GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE" class="sect2"><span class="enumeration_section">5.4 </span>Downloading and Installing Oracle Application Express
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about downloading and installing Oracle Application Express.</p>
+               <p>How you install Oracle Application Express depends upon by the type of database you into which you are installing. This section describes how to download and install Oracle Application Express.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-7E432C6D-CECC-4977-B183-3C654380F7BF">Installing Application Express</a><br>Install Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page.
+                  </li>
+                  <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-4062E1F0-2772-48FC-A4AA-436F326CF751">Creating or Updating Your Instance Administration Account</a><br>Learn how to create or update Instance Administrator account.
+                  </li>
+                  <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-6F1E847B-B091-4832-9F87-739F19025AAC">Restarting Processes</a><br>Restart the processes that you stopped before you began the installation.
+                  </li>
+                  <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-0619448A-56FB-43E1-A479-C45EC5002E4B">Configuring the APEX_PUBLIC_USER Account</a><br>It is important to correctly configure the <code class="codeph">APEX_PUBLIC_USER</code> account to enable proper operation of Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-93638EC4-5278-421B-9C19-BB68F9B31C40">Configuring RESTful Services</a><br>In a new installation of Oracle Application Express, you must run the                                 configuration script <code class="codeph">apex_rest_config.sql</code> to                                 configure RESTful Services.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE__GUID-B7F1E7C0-CB56-49DC-9322-0507C9F48754">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="multitenant-architecture-in-Oracle-db-12c.html#GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F" title="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">Utilizing the Multitenant Architecture in Oracle Database 12c or Later</a>."</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29147"></a><div class="props_rev_3"><a id="GUID-7E432C6D-CECC-4977-B183-3C654380F7BF" name="GUID-7E432C6D-CECC-4977-B183-3C654380F7BF"></a><h3 id="HTMIG-GUID-7E432C6D-CECC-4977-B183-3C654380F7BF" class="sect3"><span class="enumeration_section">5.4.1 </span>Installing Application Express 
+               </h3>
+               <div>
+                  <p>Install Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page.</p>
+                  <div class="section">
+                     <p>To install Oracle Application Express:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>For installations where the development will be in English only, download the
+                    file <code class="codeph">apex_20.1_en.zip</code> from the Oracle Application Express
+                    download page. If the development will include languages other than English,
+                    download <code class="codeph">apex_20.1.zip</code> from the Oracle Application Express
+                    download page. See:</span><div>
+                           <pre class="oac_no_warn" dir="ltr"><a href="http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html" target="_blank"><code class="codeph">http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html</code></a>
+</pre>
+                           <p>Note that the actual file name may differ if a more recent
+                        release has shipped since this document was published.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Unzip downloaded zip file: </span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>If English only, unzip <code class="codeph">apex_20.1_en.zip</code> as follows, preserving
+                                directory names:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>UNIX and Linux: <code class="codeph">$ unzip apex_20.1_en.zip</code></p>
+                                    </li>
+                                    <li>
+                                       <p>Windows: Double click the file <code class="codeph">apex_20.1_en.zip</code> in Windows
+                                        Explorer
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </li>
+                           </ul>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>If multiple languages, unzip <code class="codeph">apex_20.1.zip</code> as follows, preserving
+                                directory names:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>UNIX and Linux: <code class="codeph">$ unzip</code>
+                                          <code class="codeph">apex_20.1.zip</code></p>
+                                    </li>
+                                    <li>
+                                       <p>Windows: Double click the file <code class="codeph">apex_20.1.zip</code> in Windows
+                                        Explorer
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </li>
+                           </ul>
+                           <div class="infoboxnote" id="GUID-7E432C6D-CECC-4977-B183-3C654380F7BF__GUID-C71DF653-B08B-4940-A3E4-2454BD8817F1">
+                              <p class="notep1">Note:</p>
+                              <p>You should keep the directory tree where you unzip the files short and not under directories that contain spaces. For example, within Windows unzip to <code class="codeph">C:\TEMP</code>. 
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code>.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Disable any existing password complexity rules for the default profile. </span></li>
+                     <li class="stepexpand"><span>Select the appropriate <a id="d11130e301" class="indexterm-anchor"></a><a id="d11130e305" class="indexterm-anchor"></a>installation option. </span><div>
+                           <p><span class="bold">Full development environment</span> provides complete access to the <span>App Builder</span> environment to develop applications. A <span class="bold">Runtime environment</span> enables users to run applications that cannot be modified. 
+                           </p>
+                           <p>Available installation options include:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Full development environment</span>. Run <a id="d11130e329" class="indexterm-anchor"></a><a id="d11130e331" class="indexterm-anchor"></a><a id="d11130e335" class="indexterm-anchor"></a><code class="codeph">apexins.sql</code> passing the following four arguments in the order shown:
+                                 </p><pre class="oac_no_warn" dir="ltr">@apexins.sql <span class="italic">tablespace_apex</span> <span class="italic">tablespace_files</span> <span class="italic">tablespace_temp</span> <span class="italic">images</span>
+</pre><p>Where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_apex</code></span> is the name of the tablespace for the Oracle Application Express application user. 
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_files</code></span> is the name of the tablespace for the Oracle Application Express files user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_temp</code></span> is the name of the temporary tablespace or tablespace group.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">images</code></span> is the virtual directory for Oracle Application Express images. For installations using EPG, <code class="codeph">/i/</code> is the required value for the images argument. To support future Oracle Application Express upgrades, define the virtual image directory as <code class="codeph">/i/</code>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>Example:</p><pre class="oac_no_warn" dir="ltr">@apexins.sql SYSAUX SYSAUX TEMP /i/</pre><div class="infoboxnote" id="GUID-7E432C6D-CECC-4977-B183-3C654380F7BF__GUID-1DE636C2-646A-401A-8D0A-58DA193648DF">
+                                    <p class="notep1">Note:</p>
+                                    <p>If you receive the following error, exit SQL*Plus and change your working directory to where you unzipped the installation file, for example <code class="codeph">C:\TEMP</code> in Windows, before starting SQL*Plus:
+                                    </p>
+                                    <p> <code class="codeph">SP2-0310: unable to open file "apexins.sql</code>"
+                                    </p>
+                                 </div>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Runtime environment</span>. Run <a id="d11130e409" class="indexterm-anchor"></a><a id="d11130e411" class="indexterm-anchor"></a><a id="d11130e415" class="indexterm-anchor"></a><code class="codeph">apxrtins.sql</code> passing the following arguments in the order shown:
+                                 </p><pre class="oac_no_warn" dir="ltr">@apxrtins.sql <span class="italic">tablespace_apex</span> <span class="italic">tablespace_files</span> <span class="italic">tablespace_temp</span> <span class="italic">images</span>
+</pre><p>Where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_apex</code></span> is the name of the tablespace for the Oracle Application Express application user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_files</code></span> is the name of the tablespace for the Oracle Application Express files user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">tablespace_temp</code></span> is the name of the temporary tablespace or tablespace group.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">images</code></span> is the virtual directory for Oracle Application Express images. To support future Oracle Application Express upgrades, define the virtual image directory as <code class="codeph">/i/</code>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>Example:</p><pre class="oac_no_warn" dir="ltr">@apxrtins.sql SYSAUX SYSAUX TEMP /i/</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     
+                     <p>When Application Express installs, it creates the following database
+                accounts:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           
+                           <p><code class="codeph">APEX_200100</code> - This account owns the Application
+                        Express schema and metadata.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">FLOWS_FILES</code> - This account owns the Application
+                        Express uploaded files.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">APEX_PUBLIC_USER</code> - This minimally privileged
+                        account is used for Application Express configuration with Oracle REST Data
+                        Services or Oracle HTTP Server and <code class="codeph">mod_plsql</code>.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">APEX_INSTANCE_ADMIN_USER</code> - A minimally
+                        privileged account used for the REST Administration Interface.
+                           </p>
+                           
+                           <div class="infobox-tip" id="GUID-7E432C6D-CECC-4977-B183-3C654380F7BF__GUID-079897A5-6213-48CE-8413-2CF2BDBF65E6">
+                              <p class="notep1">Tip:</p>To learn more
+                        about the REST Administration Interface, see <span class="q">"<a href="../aeadm/viewing-rest-usage.html#AEADM-GUID-9B37A1E5-9BB1-4B4B-9DEA-5258192E8C19" target="_blank">About the REST
+                                Administration Interface</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></div>
+                           
+                        </li>
+                     </ul>
+                     <p>If you configured RESTful Web services, then these additional accounts will be created:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">APEX_REST_PUBLIC_USER</code> - The account used when invoking RESTful Services definitions stored in Oracle Application Express.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">APEX_LISTENER</code> - The account used to query RESTful Services definitions stored in Oracle Application Express.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>If you are upgrading from a previous release, then <code class="codeph">FLOWS_FILES</code> already exists and <code class="codeph">APEX_PUBLIC_USER</code> is created if it does not already exist.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-7E432C6D-CECC-4977-B183-3C654380F7BF__GUID-CF756789-0D53-45CA-BE69-03DCAF34520F">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"Configuring Password Protection"</span> in <a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=DBSEG0032" target="_blank"><span><cite>Oracle Database Security Guide</cite></span></a></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="Oracle-application-express-runtime-environment.html#GUID-BEB2F250-40B7-4022-9B05-3B1199386020" title="Learn about the Oracle Application Express runtime environment.">About the Oracle Application Express Runtime Environment</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=SQPUG-GUID-2AA5AAC7-6027-4B2F-8442-C1EA79D9956B" target="_blank"><span><cite>SQL*Plus User's Guide and Reference</cite></span></a>"</span> for more information about SQL*Plus
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle Application Express must be installed from a writable directory on the file system. See <span class="q">"<a href="reviewing-log-of-installation-session.html#GUID-E6FF6A64-5F6D-42AE-81CC-8BEB3F989551" title="The apexins.sql script creates a log file in the apex directory using the naming convention installYYYY-MM-DD_HH24-MI-SS.log.">Reviewing a Log of an Installation Session</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE" title="Learn about downloading and installing Oracle Application Express.">Downloading and Installing Oracle Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29149"></a><div class="props_rev_3"><a id="GUID-4062E1F0-2772-48FC-A4AA-436F326CF751" name="GUID-4062E1F0-2772-48FC-A4AA-436F326CF751"></a><h3 id="HTMIG-GUID-4062E1F0-2772-48FC-A4AA-436F326CF751" class="sect3"><span class="enumeration_section">5.4.2 </span>Creating or Updating Your Instance Administration Account
+               </h3>
+               <div>
+                  <p>Learn how to create or update Instance Administrator account.</p>
+                  <p>This section describes how to create or update your Instance Administrator account.</p>
+                  <div class="infobox-tip" id="GUID-4062E1F0-2772-48FC-A4AA-436F326CF751__GUID-642FA00C-E68B-4122-80A3-F7BC3B17E198">
+                     <p class="notep1">Tip:</p>
+                     <p>Skip this section if you are upgrading from a previous release of Oracle Application Express. In an upgrade scenario, the Instance Administrator account and password is preserved and carried over from the prior release. </p>
+                  </div>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-B8ACA78B-8483-4786-863C-912659880604">What Is an Instance Administrator?</a><br>Instance administrators are superusers that are responsible for managing an entire Oracle Application Express instance, including managing workspace provisioning, configuring features and instance settings, and managing security.
+                     </li>
+                     <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-FF0C27D4-3719-46F1-9E4A-FC89212E0061">About apxchpwd.sql</a><br>Running the <code class="codeph">apxchpwd.sql</code> script enables you to create or update your Instance Administrator account. 
+                     </li>
+                     <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-2DA3D4C1-EFB0-4FAF-841B-E90D58EF11E0">Running apxchpwd.sql</a><br>Run the <code class="codeph">apxchpwd.sql</code> script to create and update your Instance Administrator account.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE" title="Learn about downloading and installing Oracle Application Express.">Downloading and Installing Oracle Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-B8ACA78B-8483-4786-863C-912659880604" name="GUID-B8ACA78B-8483-4786-863C-912659880604"></a><h4 id="HTMIG-GUID-B8ACA78B-8483-4786-863C-912659880604" class="sect4"><span class="enumeration_section">5.4.2.1 </span>What Is an Instance Administrator?
+                  </h4>
+                  <div>
+                     <p>Instance administrators are superusers that are responsible for managing an entire Oracle Application Express instance, including managing workspace provisioning, configuring features and instance settings, and managing security.</p>
+                     <p>To perform these tasks, an Instance administrator signs in to the Oracle Application Express Administration Services application. </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-B8ACA78B-8483-4786-863C-912659880604__GUID-AAFBB247-F9F0-4F23-9496-C22D5F39F6E7">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="../aeadm/oracle-application-express-administration-services.html#AEADM-GUID-3E40D63B-D9C4-42B9-87D7-88A015762392" target="_blank">Oracle Application Express Administration Services</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-4062E1F0-2772-48FC-A4AA-436F326CF751" title="Learn how to create or update Instance Administrator account.">Creating or Updating Your Instance Administration Account</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29461"></a><div class="props_rev_3"><a id="GUID-FF0C27D4-3719-46F1-9E4A-FC89212E0061" name="GUID-FF0C27D4-3719-46F1-9E4A-FC89212E0061"></a><h4 id="HTMIG-GUID-FF0C27D4-3719-46F1-9E4A-FC89212E0061" class="sect4"><span class="enumeration_section">5.4.2.2 </span>About apxchpwd.sql
+                  </h4>
+                  <div>
+                     <p>Running the <code class="codeph">apxchpwd.sql</code> script enables you to create or update your Instance Administrator account. 
+                     </p>
+                     <p> You must run the <code class="codeph">apxchpwd.sql</code> script in the following
+            scenarios:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">New Oracle Application Express installations</span> - Run <code class="codeph">apxchpwd.sql</code> to create an Instance Administrator account and password.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Converting of a runtime environment to a development environment</span> - Run <code class="codeph">apxchpwd.sql</code> to change the Instance Administrator account password.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Changing Your Instance Administrator Password</span> -Run <code class="codeph">apxchpwd.sql</code> to change the password for an existing Instance Administrator account.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Unlocking Your Instance Administrator Account</span> - Run <code class="codeph">apxchpwd.sql</code> to unlock an existing Instance Administrator account.
+                           </p>
+                        </li>
+                     </ul>
+                     <div class="infobox-tip" id="GUID-FF0C27D4-3719-46F1-9E4A-FC89212E0061__GUID-637553C5-A531-401B-A780-CAEFDFBA3263">
+                        <p class="notep1">Tip:</p>
+                        <p>You do not need to run <code class="codeph">apxchpwd.sql</code> when upgrading from a previous release of Oracle Application Express. In an upgrade scenario, the Instance Administrator account password is preserved and carried over from the prior release. 
+                        </p>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-4062E1F0-2772-48FC-A4AA-436F326CF751" title="Learn how to create or update Instance Administrator account.">Creating or Updating Your Instance Administration Account</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29462"></a><div class="props_rev_3"><a id="GUID-2DA3D4C1-EFB0-4FAF-841B-E90D58EF11E0" name="GUID-2DA3D4C1-EFB0-4FAF-841B-E90D58EF11E0"></a><h4 id="HTMIG-GUID-2DA3D4C1-EFB0-4FAF-841B-E90D58EF11E0" class="sect4"><span class="enumeration_section">5.4.2.3 </span>Running apxchpwd.sql
+                  </h4>
+                  <div>
+                     <p>Run the <code class="codeph">apxchpwd.sql</code> script to create and update your Instance Administrator account.
+                     </p>
+                     <div class="section">
+                        <p>To create or update your Instance Administrator account:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the installation software.</span></li>
+                        <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 <li>
+                                    <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Run <a id="d11130e986" class="indexterm-anchor"></a><a id="d11130e988" class="indexterm-anchor"></a><code class="codeph">apxchpwd.sql</code>. For example:</span><div><pre class="oac_no_warn" dir="ltr">@apxchpwd.sql
+</pre><p>Follow the on-screen instructions. You will be prompted provide a username, password, and email address. If the account username does not exist, it will be created for you.</p>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-2DA3D4C1-EFB0-4FAF-841B-E90D58EF11E0__GUID-7E5145B2-7264-4DB4-ABDF-33F04C65865A">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=SQPUG-GUID-2AA5AAC7-6027-4B2F-8442-C1EA79D9956B" target="_blank"><span><cite>SQL*Plus User's Guide and Reference</cite></span></a> for more information about SQL*Plus
+                        </p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-4062E1F0-2772-48FC-A4AA-436F326CF751" title="Learn how to create or update Instance Administrator account.">Creating or Updating Your Instance Administration Account</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMIG29150"></a><div class="props_rev_3"><a id="GUID-6F1E847B-B091-4832-9F87-739F19025AAC" name="GUID-6F1E847B-B091-4832-9F87-739F19025AAC"></a><h3 id="HTMIG-GUID-6F1E847B-B091-4832-9F87-739F19025AAC" class="sect3"><span class="enumeration_section">5.4.3 </span>Restarting Processes
+               </h3>
+               <div>
+                  <p>Restart the processes that you stopped before you began the installation.</p>
+                  <div class="section">
+                     <p>After you install Oracle Application Express, you must restart the processes that you stopped before you began the installation.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE" title="Learn about downloading and installing Oracle Application Express.">Downloading and Installing Oracle Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29151"></a><div class="props_rev_3"><a id="GUID-0619448A-56FB-43E1-A479-C45EC5002E4B" name="GUID-0619448A-56FB-43E1-A479-C45EC5002E4B"></a><h3 id="HTMIG-GUID-0619448A-56FB-43E1-A479-C45EC5002E4B" class="sect3"><span class="enumeration_section">5.4.4 </span>Configuring the APEX_PUBLIC_USER Account
+               </h3>
+               <p>It is important to correctly configure the <code class="codeph">APEX_PUBLIC_USER</code> account to enable proper operation of Oracle Application Express.
+               </p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-382AFED6-6542-4E6E-9EF7-6DB1DC588E98">About the APEX_PUBLIC_USER Account</a><br>The <code class="codeph">APEX_PUBLIC_USER</code> account is created with a random password in a new installation of Oracle Application Express.
+                     </li>
+                     <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-97410621-4E32-48A1-9112-AB0329B3FE73">Unlocking the APEX_PUBLIC_USER Account</a><br>Unlock the <code class="codeph">APEX_PUBLIC_USER</code> account by running a SQL statement.
+                     </li>
+                     <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-EE55AB65-51CC-450C-9675-C6010EE95630">Changing the Password for the APEX_PUBLIC_USER Account</a><br>Change the password for the <code class="codeph">APEX_PUBLIC_USER</code> account by running a SQL statement.
+                     </li>
+                     <li class="ulchildlink"><a href="downloading-installing-Oracle-AE.html#GUID-FFD93D3E-7B9D-4786-B9EE-0F4575591B8F">About Password Expiration in Oracle Database 11g and Later</a><br>You can set <code class="codeph">PASSWORD_LIFE_TIME</code> parameter to unlimited by altering <code class="codeph">APEX_PUBLIC_USER</code> to prevent password expiration. To do this create another profile in which the <code class="codeph">PASSWORD_LIFE_TIME</code> parameter is set to unlimited and alter the <code class="codeph">APEX_PUBLIC_USER</code> account and assign it to the new profile. 
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE" title="Learn about downloading and installing Oracle Application Express.">Downloading and Installing Oracle Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMIG29152"></a><div class="props_rev_3"><a id="GUID-382AFED6-6542-4E6E-9EF7-6DB1DC588E98" name="GUID-382AFED6-6542-4E6E-9EF7-6DB1DC588E98"></a><h4 id="HTMIG-GUID-382AFED6-6542-4E6E-9EF7-6DB1DC588E98" class="sect4"><span class="enumeration_section">5.4.4.1 </span>About the APEX_PUBLIC_USER Account
+                  </h4>
+                  <div>
+                     <p>The <code class="codeph">APEX_PUBLIC_USER</code> account is created with a random password in a new installation of Oracle Application Express.
+                     </p>
+                     <p> You must change the password for this account before configuring the database
+            access descriptor (DAD) in a new installation. </p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-0619448A-56FB-43E1-A479-C45EC5002E4B" title="It is important to correctly configure the APEX_PUBLIC_USER account to enable proper operation of Oracle Application Express.">Configuring the APEX_PUBLIC_USER Account</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29153"></a><div class="props_rev_3"><a id="GUID-97410621-4E32-48A1-9112-AB0329B3FE73" name="GUID-97410621-4E32-48A1-9112-AB0329B3FE73"></a><h4 id="HTMIG-GUID-97410621-4E32-48A1-9112-AB0329B3FE73" class="sect4"><span class="enumeration_section">5.4.4.2 </span>Unlocking the APEX_PUBLIC_USER Account
+                  </h4>
+                  <div>
+                     <p>Unlock the <code class="codeph">APEX_PUBLIC_USER</code> account by running a SQL statement.
+                     </p>
+                     <div class="section">
+                        <div class="infobox-tip" id="GUID-97410621-4E32-48A1-9112-AB0329B3FE73__GUID-369297AC-877E-4D4C-8EF0-06B015FFA886">
+                           <p class="notep1">Tip:</p>
+                           <p>If you are upgrading from a prior release of Oracle Application Express, this step is unnecessary.</p>
+                        </div>
+                        <p>To unlock the <code class="codeph">APEX_PUBLIC_USER</code> account:
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. If Oracle Application Express is installed in the CDB, ensure you connect to <code class="codeph">CDB$ROOT</code>. For example:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 <li>
+                                    <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Run the following statement:</span><div><pre class="oac_no_warn" dir="ltr">ALTER USER APEX_PUBLIC_USER ACCOUNT UNLOCK
+</pre></div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-0619448A-56FB-43E1-A479-C45EC5002E4B" title="It is important to correctly configure the APEX_PUBLIC_USER account to enable proper operation of Oracle Application Express.">Configuring the APEX_PUBLIC_USER Account</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29154"></a><div class="props_rev_3"><a id="GUID-EE55AB65-51CC-450C-9675-C6010EE95630" name="GUID-EE55AB65-51CC-450C-9675-C6010EE95630"></a><h4 id="HTMIG-GUID-EE55AB65-51CC-450C-9675-C6010EE95630" class="sect4"><span class="enumeration_section">5.4.4.3 </span>Changing the Password for the APEX_PUBLIC_USER Account
+                  </h4>
+                  <div>
+                     <p>Change the password for the <code class="codeph">APEX_PUBLIC_USER</code> account by running a SQL statement.
+                     </p>
+                     <div class="section">
+                        <div class="infobox-tip" id="GUID-EE55AB65-51CC-450C-9675-C6010EE95630__GUID-7216B940-5761-472A-A799-619E3C9747DE">
+                           <p class="notep1">Tip:</p>
+                           <p>If you are upgrading from a prior release of Oracle Application Express, this step is unnecessary.</p>
+                        </div>
+                        <p>To change the password for the <code class="codeph">APEX_PUBLIC_USER</code> account:
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. If Oracle Application Express is installed in the CDB, ensure you connect to <code class="codeph">CDB$ROOT</code>. For example:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 <li>
+                                    <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Run the following statement:</span><div><pre class="oac_no_warn" dir="ltr">ALTER USER APEX_PUBLIC_USER IDENTIFIED BY <span class="italic">new_password</span>
+</pre><p>Where <code class="codeph">new_password</code> is the new password you are setting for <code class="codeph">APEX_PUBLIC_USER</code>. You will use this password when creating the DAD in the sections that follow.
+                              </p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-0619448A-56FB-43E1-A479-C45EC5002E4B" title="It is important to correctly configure the APEX_PUBLIC_USER account to enable proper operation of Oracle Application Express.">Configuring the APEX_PUBLIC_USER Account</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29155"></a><div class="props_rev_3"><a id="GUID-FFD93D3E-7B9D-4786-B9EE-0F4575591B8F" name="GUID-FFD93D3E-7B9D-4786-B9EE-0F4575591B8F"></a><h4 id="HTMIG-GUID-FFD93D3E-7B9D-4786-B9EE-0F4575591B8F" class="sect4"><span class="enumeration_section">5.4.4.4 </span>About Password Expiration in Oracle Database 11<span class="italic">g</span> and Later
+                  </h4>
+                  <div>
+                     <p>You can set <code class="codeph">PASSWORD_LIFE_TIME</code> parameter to unlimited by altering <code class="codeph">APEX_PUBLIC_USER</code> to prevent password expiration. To do this create another profile in which the <code class="codeph">PASSWORD_LIFE_TIME</code> parameter is set to unlimited and alter the <code class="codeph">APEX_PUBLIC_USER</code> account and assign it to the new profile. 
+                     </p>
+                     <p>In the default profile in Oracle Database 11<span class="italic">g</span> or later, the parameter <code class="codeph">PASSWORD_LIFE_TIME</code> is set to 180. If you are using Oracle Database 11<span class="italic">g</span> or later with Oracle Application Express, this causes the password for <code class="codeph">APEX_PUBLIC_USER</code> to expire in 180 days. As a result, your Oracle Application Express instance will become unusable until you change the password. 
+                     </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-FFD93D3E-7B9D-4786-B9EE-0F4575591B8F__GUID-6E5EA5A3-314F-4111-B091-A030D9094A0F">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=DBSEG-GUID-41040F53-D7A6-48FA-A92A-0C23118BC8A0" target="_blank"><span><cite>Oracle Database Security Guide</cite></span></a> for information on creating profiles and assigning them to database users
+                        </p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-0619448A-56FB-43E1-A479-C45EC5002E4B" title="It is important to correctly configure the APEX_PUBLIC_USER account to enable proper operation of Oracle Application Express.">Configuring the APEX_PUBLIC_USER Account</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMIG29159"></a><div class="props_rev_3"><a id="GUID-93638EC4-5278-421B-9C19-BB68F9B31C40" name="GUID-93638EC4-5278-421B-9C19-BB68F9B31C40"></a><h3 id="HTMIG-GUID-93638EC4-5278-421B-9C19-BB68F9B31C40" class="sect3"><span class="enumeration_section">5.4.5 </span>Configuring RESTful Services
+               </h3>
+               <div>
+                  <p>In a new installation of Oracle Application Express, you must run the
+                                configuration script <code class="codeph">apex_rest_config.sql</code> to
+                                configure RESTful Services.
+                  </p>
+                  <div class="section">
+                     <p>Once configured, the instance administrator can control the availability of the
+                feature. If the instance administrator has disabled RESTful Services for this
+                Application Express instance, RESTful Services are not available for this instance
+                and the RESTful Services icon does not display. </p>
+                     <p>To configure RESTful Services in Oracle Application Express:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the installation software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as SYS specifying the SYSDBA role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run <code class="codeph">apex_rest_config.sql</code>. For example:</span><div><pre class="oac_no_warn" dir="ltr">@apex_rest_config.sql
+</pre><p>When Prompted, enter a password for the <code class="codeph">APEX_LISTENER</code> and <code class="codeph">APEX_REST_PUBLIC_USER</code> accounts. 
+                           </p>
+                           <p>When configuring RESTful Services in Oracle Application Express, it creates two new database accounts.</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><code class="codeph">APEX_LISTENER</code> - The account used to query RESTful Services definitions stored in Oracle Application Express.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">APEX_REST_PUBLIC_USER</code> - The account used when calling RESTful Services definitions stored in Oracle Application Express.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-93638EC4-5278-421B-9C19-BB68F9B31C40__GUID-090800B6-7F98-4D16-8EB9-4559B49F2E26">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="../aeadm/configuring-features.html#AEADM-GUID-F9491905-FFDB-4ED1-BAAC-B13F8C48D436" target="_blank">Enabling RESTful Services for an
+                            Instance</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="downloading-installing-Oracle-AE.html#GUID-B5A5B38D-586C-488A-AE27-A168FAA28FEE" title="Learn about downloading and installing Oracle Application Express.">Downloading and Installing Oracle Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

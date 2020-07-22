@@ -1,0 +1,541 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding the Installation Process">
+      <meta name="abstract" content="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">
+      <meta name="description" content="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">
+      <meta name="DC.subject" content="installation, understanding, planning, requirements, patch sets, point releases, patch sets, point releases, overview, overview, process, Oracle Application Express, configuring your environment, environment, configuring, Sign In dialog, requesting a workspace, workspace, requesting from Sign In dialog, password, resetting from Sign In page, recovering workspace name, workspace name, recovering, login credentials, recovering workspace name">
+      <meta name="keywords" content="installation, understanding, planning, requirements, patch sets, point releases, patch sets, point releases, overview, overview, process, Oracle Application Express, configuring your environment, environment, configuring, Sign In dialog, requesting a workspace, workspace, requesting from Sign In dialog, password, resetting from Sign In page, recovering workspace name, workspace name, recovering, login credentials, recovering workspace name">
+      <meta name="DC.Relation" scheme="URI" content="overview.html#GUID-DB8E4B2B-1AEB-4B76-BBA3-31C5876C3F14">
+      <meta name="DC.Relation" scheme="URI" content="understanding-installation-process.html#GUID-07DF83AA-E2CD-44ED-927B-38B6FCB16F1A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-installation-process.html#GUID-F494B8A9-316C-4AE4-BC6B-A30BDD9B6773">
+      <meta name="DC.Relation" scheme="URI" content="understanding-installation-process.html#GUID-CB7E08C8-2757-4F88-876B-19C23C582326">
+      <meta name="DC.Relation" scheme="URI" content="understanding-installation-process.html#GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB">
+      <meta name="DC.Relation" scheme="URI" content="understanding-installation-process.html#GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842">
+      <meta name="DC.Relation" scheme="URI" content="understanding-installation-process.html#GUID-027C0587-1CC1-48F2-BE59-F6D46E86560F">
+      <meta name="DC.Relation" scheme="URI" content="understanding-installation-process.html#GUID-853B2DF0-ED46-46C4-8833-1021F05C57AC">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-EA165C61-C987-47F6-91D9-C44353207E1B">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">
+      <meta name="description" content="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">
+      <title>Understanding the Installation Process</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="accessing-oracle-application-express-oracle-database-cloud.html" title="Previous" type="text/html">
+      <link rel="next" href="upgrading-from-previous-Oracle-application-express-release.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="accessing-oracle-application-express-oracle-database-cloud.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="upgrading-from-previous-Oracle-application-express-release.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="overview.html" property="item" typeof="WebPage"><span property="name"> Oracle Application Express Installation Overview</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding the Installation Process</li>
+            </ol>
+            <a id="GUID-EA165C61-C987-47F6-91D9-C44353207E1B" name="GUID-EA165C61-C987-47F6-91D9-C44353207E1B"></a><a id="HTMIG29308"></a>
+            
+            <h2 id="HTMIG-GUID-EA165C61-C987-47F6-91D9-C44353207E1B" class="sect2"><span class="enumeration_section">3.2 </span>Understanding the Installation Process
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Installing Oracle Appliacation Express is a multiple step process. You
+        follow the same instructions for new or upgrade installations. The Web listener you choose
+        determines the actual installation procedures.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-installation-process.html#GUID-07DF83AA-E2CD-44ED-927B-38B6FCB16F1A">About Planning Your Installation</a><br>Learn about the steps needed to install Oracle Appliacation         Express.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-installation-process.html#GUID-F494B8A9-316C-4AE4-BC6B-A30BDD9B6773">About Patch Sets</a><br>Patch sets provide bug fixes only. A point release includes bug fixes and incorporates all current patch sets.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-installation-process.html#GUID-CB7E08C8-2757-4F88-876B-19C23C582326">About the Installation Scripts</a><br>You can install Oracle Application Express or update from previous release         using the same installation procedure and the installation scripts. 
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-installation-process.html#GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB">关于如何访问Oracle Application Express</a><br>You access the Oracle Application Express development environment, by signing in to a shared work area called a workspace.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-installation-process.html#GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842">Requesting a Workspace from the Sign In Dialog</a><br>Request a workspace from the Sign In dialog.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-installation-process.html#GUID-027C0587-1CC1-48F2-BE59-F6D46E86560F">Resetting Your Password from the Sign In Page</a><br>Reset your password by clicking a link on Oracle Application Express Sign In         page.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-installation-process.html#GUID-853B2DF0-ED46-46C4-8833-1021F05C57AC">Recovering Your Workspace Name</a><br>Recover your workspace name from the Oracle Application Express Sign In         page.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-EA165C61-C987-47F6-91D9-C44353207E1B__GUID-67E61819-150A-414B-8798-4011D86E6225">
+                  <p class="notep1">See Also:</p>
+                  
+                  <p><span class="q">"<a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a>"</span></p>
+                  
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="overview.html#GUID-DB8E4B2B-1AEB-4B76-BBA3-31C5876C3F14" title="Oracle Application Express 安装指南 describes how to install Oracle Application Express in a on-premises (or local) installation.">Oracle Application Express Installation Overview</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG364"></a><div class="props_rev_3"><a id="GUID-07DF83AA-E2CD-44ED-927B-38B6FCB16F1A" name="GUID-07DF83AA-E2CD-44ED-927B-38B6FCB16F1A"></a><h3 id="HTMIG-GUID-07DF83AA-E2CD-44ED-927B-38B6FCB16F1A" class="sect3"><span class="enumeration_section">3.2.1 </span>About Planning Your Installation 
+               </h3>
+               <div>
+                  <p>Learn about the steps needed to install Oracle Appliacation
+        Express.</p>
+                  <p>Oracle recommends you take the time to carefully plan your installation.</p>
+                  <p>Installing Oracle Appliacation Express involves the following steps:</p>
+                  <ol>
+                     <li>
+                        <p><span class="bold"> Decide on a Full or Runtime Environment</span> - Determine whether to install a full
+                    development environment or runtime environment. A <span class="bold">full development</span>
+                    environment provides complete access to the <span>App Builder</span> development environment to develop applications. A <span class="bold">runtime environment</span>
+                    is the appropriate choice for production implementations in which you want to
+                    run applications that cannot be modified. 
+                        </p>
+                        
+                        <p>See <span class="q">"<a href="Oracle-application-express-runtime-environment.html#GUID-BEB2F250-40B7-4022-9B05-3B1199386020" title="Learn about the Oracle Application Express runtime environment.">About the Oracle Application Express Runtime Environment</a>."</span></p>
+                     </li>
+                     <li>
+                        
+                        <p><span class="bold">Choose a Web listener</span> - The Web listener you choose determines the
+                    installation process. Available options include the Oracle REST Data Services,
+                    Embedded PL/SQL Gateway, or Oracle HTTP Server and <code class="codeph">mod_plsql</code>. 
+                        </p>
+                        
+                        <p>See <span class="q">"<a href="choosing-web-listener.html#GUID-450226C4-25BF-4124-A900-986DBBEB7406" title="In order to run, Oracle Application Express must have access to a Web listener.">Choosing a Web Listener</a>."</span></p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><span class="bold">Verify installation requirements</span>- Before installing, verify
+                    your system meets the minimum requirements. 
+                        </p>
+                        
+                        <p>See <span class="q">"<a href="Oracle-AE-installation-requirements.html#GUID-02BE4A34-B631-412C-8A82-EB92DABBACE0" title="Before installing Oracle Application Express you must verify your configuration meets the minimum installation requirements.">Oracle Application Express Installation Requirements</a>."</span></p>
+                        
+                     </li>
+                     <li>
+                        <p><span class="bold">Install the software</span> - Once you decide on a Web listener, follow the
+                    procedures in one of the following sections to install the software and complete
+                    the configuration tasks:
+                        </p>
+                        
+                        <ul style="list-style-type: disc;" id="GUID-07DF83AA-E2CD-44ED-927B-38B6FCB16F1A__UL_GLN_Y1J_R3B">
+                           <li>
+                              
+                              <p><span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>"</span></p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p><span class="q">"<a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a>"</span></p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p><span class="q">"<a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a>"</span></p>
+                              
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-installation-process.html#GUID-EA165C61-C987-47F6-91D9-C44353207E1B" title="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">Understanding the Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29309"></a><div class="props_rev_3"><a id="GUID-F494B8A9-316C-4AE4-BC6B-A30BDD9B6773" name="GUID-F494B8A9-316C-4AE4-BC6B-A30BDD9B6773"></a><h3 id="HTMIG-GUID-F494B8A9-316C-4AE4-BC6B-A30BDD9B6773" class="sect3"><span class="enumeration_section">3.2.2 </span>About Patch Sets
+               </h3>
+               <div>
+                  <p>Patch sets provide bug fixes only. A point release includes bug fixes and incorporates all current patch sets.</p>
+                  <p>Patch sets are a mechanism for delivering fully tested and integrated product fixes. Patch sets provide bug fixes only. Patch sets typically do not include new functionality and they do not require certification on the target system. Patch sets include all of the libraries that have been rebuilt to implement the bug fixes in the set. All of the fixes in the patch set have been tested and are certified to work with each other. </p>
+                  <p>In between major product releases, Oracle may offer a point release. A point release (for example Oracle Application Express release 5.0.3) includes bug fixes and incorporates all current patch sets. Typically, point releases do not introduce new functionality. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F494B8A9-316C-4AE4-BC6B-A30BDD9B6773__GUID-AD2ACE17-F449-47F1-907D-1EE1B4590677">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><span class="q">"<a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-installation-process.html#GUID-EA165C61-C987-47F6-91D9-C44353207E1B" title="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">Understanding the Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29312"></a><div class="props_rev_3"><a id="GUID-CB7E08C8-2757-4F88-876B-19C23C582326" name="GUID-CB7E08C8-2757-4F88-876B-19C23C582326"></a><h3 id="HTMIG-GUID-CB7E08C8-2757-4F88-876B-19C23C582326" class="sect3"><span class="enumeration_section">3.2.3 </span>About the Installation Scripts
+               </h3>
+               <div>
+                  <p>You can install Oracle Application Express or update from previous release
+        using the same installation procedure and the installation scripts. </p>
+                  <p>The installation script checks for the latest existing Oracle Application Express schema and automatically copies the instance metadata, workspaces, and applications from the previous schema into the current schema. The original schema associated with the previous release is left completely unaltered. Following best practices, Oracle recommends that you create new tablespaces for a new release of Oracle Application Express and follow the appropriate installation instructions as outlined in this document.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-installation-process.html#GUID-EA165C61-C987-47F6-91D9-C44353207E1B" title="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">Understanding the Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB" name="GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB"></a><h3 id="HTMIG-GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB" class="sect3"><span class="enumeration_section">3.2.4 </span>About Accessing Oracle Application Express
+               </h3>
+               <div>
+                  <p>You access the Oracle Application Express development environment, by signing in to a shared work area called a workspace.</p>
+                  <div class="section">
+                     <p>How you sign in and access Oracle Application Express depends upon your user role.</p>
+                     <p>A workspace enables multiple users to work within the same Oracle Application Express installation while keeping their objects, data, and applications private. Each workspace has a unique ID and name. An instance administrator can create a workspace manually within Oracle Application Express Administration Services or have users submit requests. Oracle Application Express Administration Services is a separate application for managing an entire Oracle Application Express instance.</p>
+                     <p>Users are divided into four primary roles: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Instance administrators</span> are <span class="italic">superusers</span> that manage an entire hosted instance using a separate application called Oracle Application Express Administration Services. Instance administrators manage workspace provisioning, configure features and instance settings, and manage security.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Workspace administrators</span> can perform administrator tasks specific to a workspace such as configuring workspace preferences, managing user accounts, monitoring workspace activity, and viewing log files. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Developers</span> are users who sign in to a workspace and create and edit applications.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">End users</span> can only run existing database or Websheet applications.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>If you are a developer, an administrator must grant you access to shared work area called a workspace. If you are an Instance administrator, you must sign in to Oracle Application Express Administration Services, determine whether to specify a provisioning mode, create a workspace, and then sign in to that workspace.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB__GUID-0EA55BB3-477F-441B-B51E-053F052E7A7D">About Specifying a Provisioning Mode</p>
+                     <p>The Instance administrator determines how the process of provisioning (or creating) a
+                workspace works for a specific Oracle Application Express instance. To determine how
+                provisioning works, an Instance Administrator selects a Provisioning Methods on the
+                Instance Settings page:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Manual</span> - An Instance administrator creates new workspaces and notifies the
+                        Workspace administrator regarding the Sign In credentials.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Request</span> - Users request a workspace. Once an administrator approves the
+                        request, the user receives an email containing an email verification link.
+                        After the user clicks the email verification link, the workspace is
+                        created.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold"><span class="bold">Automatic</span></span> - Works similar to <span class="bold">Request</span> except requests are
+                        automatically approved with no administrator review required
+                           </p>
+                        </li>
+                     </ul>
+                     
+                     <div class="infoboxnotealso" id="GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB__NOTE_JLW_F1Q_B3B">
+                        <p class="notep1">See Also:</p>
+                        
+                        <p><span class="q">"<a href="../aeadm/creating-workspaces.html#AEADM-GUID-CDB898E3-6348-4273-9264-9FB8D65E1584" target="_blank">About Specifying How Workspaces Are
+                            Created</a>"</span> and <span class="q">"<a href="../aeadm/creating-workspaces.html#AEADM-GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039" target="_blank">Selecting a Workspace Provisioning
+                            Mode</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                        
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB__GUID-1D5C37DC-9683-47DC-9750-64B594109E95">About Creating Workspaces and Users</p>
+                     <p>Before you can develop or install applications, an administrator must create a workspace and add Oracle Application Express users. To learn more contact your administrator, or see the “Creating a Workspace and Adding Oracle Application Express Users” section for your Web listener in this document.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-43D822B2-4B84-4411-9315-FB613DC4E9CB__GUID-92F2E100-5E72-4141-B45C-13C4FD6520D4">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              
+                              <p><span class="q">"<a href="../aeadm/creating-workspaces.html#AEADM-GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" target="_blank">Creating Workspaces in
+                                        Administration Services</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p>"<a href="../aeadm/making-a-service-request.html#AEADM-GUID-FFCFDDE8-5165-4E2F-A832-F2915487373E" target="_blank">Making a Service Request</a>" in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p><span class="q">"<a href="../aeadm/managing-workspace-and-change-requests.html#AEADM-GUID-622172B3-CDAA-48C2-9F0C-A9A23B9E938A" target="_blank">Managing Requests</a>"</span>
+                                in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                              
+                           </li>
+                        </ul> 
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-installation-process.html#GUID-EA165C61-C987-47F6-91D9-C44353207E1B" title="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">Understanding the Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842" name="GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842"></a><h3 id="HTMIG-GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842" class="sect3"><span class="enumeration_section">3.2.5 </span>Requesting a Workspace from the Sign In
+        Dialog
+               </h3>
+               <div>
+                  <p>Request a workspace from the Sign In dialog.</p>
+                  <div class="section">
+                     
+                     <div class="infoboxnote" id="GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842__GUID-EABA7802-7974-422E-96B6-EE71C769EDE0">
+                        <p class="notep1">Note:</p>
+                        
+                        <p>This information does not apply to Oracle Cloud products such as
+                    Oracle Database Cloud Service (Database Schema).</p>
+                        
+                     </div>
+                     
+                     <p>Your administrator determines how you request a new workspace. If your
+                administrator has set Provisioning Method to either <span class="uicontrol bold">Request</span>
+                or <span class="uicontrol bold">Automatic</span> and has configured email, you can request a
+                workspace on the Sign In dialog. 
+                     </p>
+                     
+                  </div>
+                  <!-- class="section" -->
+                  <p>To request a workspace from the Sign In dialog:</p>
+                  <ol id="GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842__STEPS_WSD_1JK_XHB">
+                     <li class="stepexpand"><span>Navigate to the Oracle Application Express Sign in dialog.</span></li>
+                     <li class="stepexpand"><span>Under Sign In, click <span class="uicontrol bold">Request a Workspace</span>.</span><div>The Request a Workspace Wizard appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>For Identification:</span><ol type="a" id="GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842__SUBSTEPS_W5G_VP3_XHB">
+                           <li><span>First Name - Enter your first name.</span></li>
+                           <li><span>Last Name - Enter your last name.</span></li>
+                           <li><span>Email - Enter the email address. A link to activate your workspace will
+                            be sent to this email address. </span></li>
+                           <li><span>Workspace - Enter a workspace name that name uniquely identifies your
+                            development environment.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>If defined, review and accept the service agreement and click
+                        <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>Verify your request and click <span class="uicontrol bold">Submit Request</span>.</span><div>Once you complete the Identification form, the following
+                    events occur:
+                           <ol type="a" id="GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842__OL_LW5_QV3_XHB">
+                              <li>
+                                 
+                                 <p>You will receive an email containing a verification
+                                link.</p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p>When you click the verification link, the workspace is
+                                created.</p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p>You will receive another email containing Sign In
+                                credentials (that is, the workspace name, username, and
+                                password).</p>
+                                 
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     
+                     <p>Once you complete the Identification form, the following events occur:</p>
+                     
+                     <ol id="GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842__OL_RH1_HVK_XHB">
+                        <li>You will receive an email containing a verification link.</li>
+                        <li>When you click the verification link, the workspace is created.</li>
+                        <li>You will then receive another email containing Sign In credentials
+                    (that is, the workspace name, username, and password).</li>
+                     </ol>
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-BEEC262D-50FE-432F-AAB5-E95A3E508842__GUID-5E38D2D7-8F0E-4548-B347-92AD7EC7A264">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><span class="q">"<a href="../aeadm/creating-workspaces.html#AEADM-GUID-CDB898E3-6348-4273-9264-9FB8D65E1584" target="_blank">About Specifying How Workspaces Are
+                            Created</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-installation-process.html#GUID-EA165C61-C987-47F6-91D9-C44353207E1B" title="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">Understanding the Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-027C0587-1CC1-48F2-BE59-F6D46E86560F" name="GUID-027C0587-1CC1-48F2-BE59-F6D46E86560F"></a><h3 id="HTMIG-GUID-027C0587-1CC1-48F2-BE59-F6D46E86560F" class="sect3"><span class="enumeration_section">3.2.6 </span>Resetting Your Password from the Sign In Page
+               </h3>
+               <div>
+                  <p>Reset your password by clicking a link on Oracle Application Express Sign In
+        page.</p>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-027C0587-1CC1-48F2-BE59-F6D46E86560F__GUID-3B89B932-BBF6-4325-B683-011A0F5B9607">
+                        <p class="notep1">Tip:</p>
+                        <p>To reset your password from the Sign In page, you must provide your email address
+                    and the workspace name.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To reset your password from the Sign In Page: </p>
+                  <ol>
+                     <li class="stepexpand"><span>In a web browser, navigate to the Oracle Application Express Sign In page. </span><div>The Sign In page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Under <span class="uicontrol bold">Sign In</span>, click <span class="uicontrol bold">Reset
+                        Password</span>.</span></li>
+                     <li class="stepexpand"><span>In the Reset Password form, enter your email address, workspace name, and click
+                        <span class="uicontrol bold">Reset Password</span>.</span><div>
+                           
+                           <p>You will receive an email confirming your workspace name and
+                        username and containing a <span class="uicontrol bold">Reset Password URL</span>
+                        link.
+                           </p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the email, click the <span class="uicontrol bold">Reset Password URL</span> link.</span></li>
+                     <li class="stepexpand"><span> In the Change Password form:</span><ol type="a">
+                           <li class="substepexpand"><span>New Password - Enter your new password.</span><div>
+                                 
+                                 <div class="infobox-tip" id="GUID-027C0587-1CC1-48F2-BE59-F6D46E86560F__GUID-95FA9908-17A7-4AC1-819D-39620BFEEC7F">
+                                    <p class="notep1">Tip:</p>
+                                    
+                                    <p>Passwords are case sensitive.</p>
+                                    
+                                 </div>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Confirm Password - Enter your new password again.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     
+                     <div class="infobox-tip" id="GUID-027C0587-1CC1-48F2-BE59-F6D46E86560F__GUID-096C17D4-5E4A-4EC0-A142-FFB41B35F907">
+                        <p class="notep1">Tip:</p>
+                        
+                        <p>You can also reset your password within Oracle Application Express. See <span class="q">"<a href="../htmdb/editing-your-account-profile.html#HTMDB-GUID-18098DFC-08AF-4C61-8383-5ECA6954782A" target="_blank">Changing Your Profile or
+                        Password</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                        
+                     </div>
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-installation-process.html#GUID-EA165C61-C987-47F6-91D9-C44353207E1B" title="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">Understanding the Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-853B2DF0-ED46-46C4-8833-1021F05C57AC" name="GUID-853B2DF0-ED46-46C4-8833-1021F05C57AC"></a><h3 id="HTMIG-GUID-853B2DF0-ED46-46C4-8833-1021F05C57AC" class="sect3"><span class="enumeration_section">3.2.7 </span>Recovering Your Workspace Name
+               </h3>
+               <div>
+                  <p>Recover your workspace name from the Oracle Application Express Sign In
+        page.</p>
+                  <div class="section">
+                     <p>If you cannot remember your workspace name, you can request a list of all workspace names associated with your email address.</p>
+                     <p>To find your workspace name: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>In a web browser, navigate to the Oracle Application Express Sign In page. </span></li>
+                     <li class="stepexpand"><span>On the Sign In page, click <span class="uicontrol bold">Reset Password</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Find My Workspace</span>.</span></li>
+                     <li class="stepexpand"><span>Enter your email address and click <span class="uicontrol bold">Find Workspace</span>.</span><div>
+                           <p>You will receive an email listing all workspaces associated with the email address you provided.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-installation-process.html#GUID-EA165C61-C987-47F6-91D9-C44353207E1B" title="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">Understanding the Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

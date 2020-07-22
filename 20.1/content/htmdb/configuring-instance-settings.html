@@ -1,0 +1,251 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Configuring Instance Settings">
+      <meta name="abstract" content="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">
+      <meta name="description" content="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">
+      <meta name="DC.subject" content="security best practices, configuring instance settings, instance settings, configuring, self service provisioning, automating workspace provisioning, workspace provisioning, enabling self service, enabling email, email, enabling, configuring storage options, storage options, configuring, creating wallets, wallets, creating">
+      <meta name="keywords" content="security best practices, configuring instance settings, instance settings, configuring, self service provisioning, automating workspace provisioning, workspace provisioning, enabling self service, enabling email, email, enabling, configuring storage options, storage options, configuring, creating wallets, wallets, creating">
+      <meta name="DC.Relation" scheme="URI" content="understanding-administrator-security-best-practices.html#GUID-F7EF538E-D12A-4623-A68C-6F8E6523B6B8">
+      <meta name="DC.Relation" scheme="URI" content="configuring-instance-settings.html#GUID-4D42E699-70E1-4DB3-8986-72A141F14D6F">
+      <meta name="DC.Relation" scheme="URI" content="configuring-instance-settings.html#GUID-6980046D-CAF9-479D-92B0-216065A9EC18">
+      <meta name="DC.Relation" scheme="URI" content="configuring-instance-settings.html#GUID-52B02464-3D9F-4694-8130-4CA729A30E74">
+      <meta name="DC.Relation" scheme="URI" content="configuring-instance-settings.html#GUID-9392DBFB-2CB0-4613-99F2-65D1FAC1A465">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">
+      <meta name="description" content="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">
+      <title>Configuring Instance Settings</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="manging-instance-security.html" title="Previous" type="text/html">
+      <link rel="next" href="configuring-workspace-purge-settings.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="manging-instance-security.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="configuring-workspace-purge-settings.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-security.html" property="item" typeof="WebPage"><span property="name">Managing Application Security</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-administrator-security-best-practices.html" property="item" typeof="WebPage"><span property="name">Understanding Administrator Security Best Practices</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Configuring Instance Settings</li>
+            </ol>
+            <a id="GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50" name="GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50"></a><a id="HTMDB29401"></a>
+            
+            <h2 id="HTMDB-GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50" class="sect2"><span class="enumeration_section">21.1.4 </span>Configuring Instance Settings
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="configuring-instance-settings.html#GUID-4D42E699-70E1-4DB3-8986-72A141F14D6F">About Enabling Automation When Creating Workspaces</a><br></li>
+                  <li class="ulchildlink"><a href="configuring-instance-settings.html#GUID-6980046D-CAF9-479D-92B0-216065A9EC18">About Enabling and Configuring Email</a><br></li>
+                  <li class="ulchildlink"><a href="configuring-instance-settings.html#GUID-52B02464-3D9F-4694-8130-4CA729A30E74">About Configuring Storage Options</a><br></li>
+                  <li class="ulchildlink"><a href="configuring-instance-settings.html#GUID-9392DBFB-2CB0-4613-99F2-65D1FAC1A465">About Creating Wallets</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50__GUID-2DA907FF-AB31-42CE-BA5F-CD01AB450765">
+                  <p class="notep1">See Also:</p>
+                  <p>"Configuring Instance Settings" in <a href="../aeadm/configuring-instance-settings.html#AEADM-GUID-0DE7FA26-7FF5-409A-9CED-2BFD218CFE14" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-administrator-security-best-practices.html#GUID-F7EF538E-D12A-4623-A68C-6F8E6523B6B8" title="Learn about security best practices for Oracle Application Express administrators.">Understanding Administrator Security Best Practices</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29402"></a><div class="props_rev_3"><a id="GUID-4D42E699-70E1-4DB3-8986-72A141F14D6F" name="GUID-4D42E699-70E1-4DB3-8986-72A141F14D6F"></a><h3 id="HTMDB-GUID-4D42E699-70E1-4DB3-8986-72A141F14D6F" class="sect3"><span class="enumeration_section">21.1.4.1 </span>About Enabling Automation When Creating Workspaces
+               </h3>
+               <div>
+                  <p>Administrators determine the amount of automation when provisioning (or creating) new
+            workspaces.</p>
+                  <p>To determine how provisioning works, an Instance Administrator selects one of the following options on the Instance Settings page:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="uicontrol bold">Manual</span> - An Instance administrator creates new workspaces and
+                    notifies the Workspace administrator regarding the Sign In credentials.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="uicontrol bold">Request</span> -  Users request a workspace. Once an administrator
+                    approves the request, the user receives an email containing an email
+                    verification link. After the user clicks the email verification link, the
+                    workspace is created.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="uicontrol bold">Automatic</span> - Works similar to <span class="uicontrol bold">Request</span>
+                    except requests are automatically approved with no administrator review
+                    required.
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnote" id="GUID-4D42E699-70E1-4DB3-8986-72A141F14D6F__GUID-C3326601-3AAA-4C91-83B4-FB4DB2D2BC3F">
+                     <p class="notep1">Note:</p>
+                     
+                     <p>To enable users to request a workspace using a link on the Sign In page, the Instance
+                administrator must choose either the <span class="uicontrol bold">Request</span> or
+                    <span class="uicontrol bold">Automatic</span> Provisioning Method and configure email. If the
+                Provisioning Method is set to <span class="uicontrol bold">Manual</span>, no link appears on the
+                Sign In page.
+                     </p>
+                     
+                  </div>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-4D42E699-70E1-4DB3-8986-72A141F14D6F__GUID-81E1631F-23AE-4DFB-96DA-8A234569406F">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><a href="../aeadm/managing-workspace-and-change-requests.html#AEADM-GUID-7691CE17-36AF-4630-BA40-17C3D6C76F7A" target="_blank">About the Workspace Request Approval Process</a> and <a href="../aeadm/creating-workspaces.html#AEADM-GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039" target="_blank">Selecting a Provisioning Mode</a> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-instance-settings.html#GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50" title="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">Configuring Instance Settings</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29404"></a><div class="props_rev_3"><a id="GUID-6980046D-CAF9-479D-92B0-216065A9EC18" name="GUID-6980046D-CAF9-479D-92B0-216065A9EC18"></a><h3 id="HTMDB-GUID-6980046D-CAF9-479D-92B0-216065A9EC18" class="sect3"><span class="enumeration_section">21.1.4.2 </span>About Enabling and Configuring Email
+               </h3>
+               <div>
+                  <p></p>
+                  <p>In order to send email from an Oracle Application Express application, an Instance administrator must define the email SMTP settings and set the Use SSL/TLS attribute to use a secure connection for Oracle Database 11<span class="italic">g</span> R2 or later.
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-6980046D-CAF9-479D-92B0-216065A9EC18__GUID-E22C945A-6E5D-42EC-8139-C91E02B38011">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"Configuring Email"</span> in <a href="../aeadm/configuring-instance-settings.html#AEADM-GUID-FEC98D5E-3C89-423E-9603-4CD2E553BA34" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="enabling-network-services.html#GUID-DEA26C53-0220-40F1-86FB-482163CA5681" title="Enabling network services enables support for sending outbound mail in Oracle Application Express, use of Web services in Oracle Application Express, and PDF report printing.">When and Why Network Services Must be Enabled</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-instance-settings.html#GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50" title="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">Configuring Instance Settings</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29403"></a><div class="props_rev_3"><a id="GUID-52B02464-3D9F-4694-8130-4CA729A30E74" name="GUID-52B02464-3D9F-4694-8130-4CA729A30E74"></a><h3 id="HTMDB-GUID-52B02464-3D9F-4694-8130-4CA729A30E74" class="sect3"><span class="enumeration_section">21.1.4.3 </span>About Configuring Storage Options
+               </h3>
+               <div>
+                  <p>Administrators can configure the following storage options: require a new schema when requesting a workspace, auto extend tablespaces, or delete uploaded files are a specified number of days.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-52B02464-3D9F-4694-8130-4CA729A30E74__GUID-FB6C9F8B-12CA-4D2C-9143-640334832E17">
+                     <p class="notep1">See Also:</p>
+                     <p>"Configuring Storage" in <a href="../aeadm/configuring-instance-settings.html#AEADM-GUID-95407496-C692-43B0-A795-9D335128A688" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-instance-settings.html#GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50" title="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">Configuring Instance Settings</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29405"></a><div class="props_rev_3"><a id="GUID-9392DBFB-2CB0-4613-99F2-65D1FAC1A465" name="GUID-9392DBFB-2CB0-4613-99F2-65D1FAC1A465"></a><h3 id="HTMDB-GUID-9392DBFB-2CB0-4613-99F2-65D1FAC1A465" class="sect3"><span class="enumeration_section">21.1.4.4 </span>About Creating Wallets
+               </h3>
+               <div>
+                  <p>A wallet is a password-protected container that stores authentication and signing credentials (including private keys, certificates, and trusted certificates) needed by SSL. You must create a wallet if you:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Call a SSL-enabled URL (for example, by invoking a Web service).</p>
+                     </li>
+                     <li>
+                        <p>Create a region of type URL that is SSL-enabled.</p>
+                     </li>
+                     <li>
+                        <p>Configure secure SMTP by setting the Use SSL/TLS attribute to <span class="uicontrol bold">Yes</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Have applications with LDAP authentication schemes that are configured to use SSL with Authentication.</p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-9392DBFB-2CB0-4613-99F2-65D1FAC1A465__GUID-870D98FC-BBFD-4CE6-A479-8E9604503E7A">
+                     <p class="notep1">See Also:</p>
+                     <p>"Configuring Wallet Information" in <a href="../aeadm/configuring-instance-settings.html#AEADM-GUID-BBE43F61-DA0B-4517-AC5E-D06C4C69D526" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-instance-settings.html#GUID-C0DCB552-9C3E-4D7F-8F17-C693A1876F50" title="Security best practices when configuring an Oracle Application Express instance include determining whether to automate the creation workspaces., enabling and configuring email, configuring storage options, and creating wallets.">Configuring Instance Settings</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

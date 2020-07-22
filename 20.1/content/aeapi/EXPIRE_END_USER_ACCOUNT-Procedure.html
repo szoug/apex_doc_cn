@@ -1,0 +1,162 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="EXPIRE_END_USER_ACCOUNT Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, EXPIRE_END_USER_ACCOUNT procedure">
+      <meta name="keywords" content="APEX_UTIL, EXPIRE_END_USER_ACCOUNT procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>EXPIRE_END_USER_ACCOUNT Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="END_USER_ACCOUNT_DAYS_LEFT-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="EXPIRE_WORKSPACE_ACCOUNT-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="END_USER_ACCOUNT_DAYS_LEFT-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="EXPIRE_WORKSPACE_ACCOUNT-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">EXPIRE_END_USER_ACCOUNT Procedure</li>
+            </ol>
+            <a id="GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947" name="GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947"></a><a id="AEAPI1564"></a><a id="AEAPI1565"></a><a id="AEAPI1566"></a><a id="AEAPI1567"></a><a id="AEAPI119"></a>
+            
+            <h2 id="AEAPI-GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947" class="sect2"><span class="enumeration_section">39.25 </span>EXPIRE_END_USER_ACCOUNT Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Expires the login account for use as a workspace end user. Must be run by an authenticated workspace administrator in a page request context.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947__GUID-FDC4E36D-CD5F-43E5-AB23-07461B260DEA">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.EXPIRE_END_USER_ACCOUNT (
+    p_user_name IN VARCHAR2
+    );
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947__GUID-CF2006AA-3295-437B-8536-6B3D4E5185FD">Parameters</p>
+                  <div class="tblformal" id="GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947__CHDIEFCE">
+                     <p class="titleintable">Table 39-23 EXPIRE_END_USER_ACCOUNT Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="EXPIRE_END_USER_ACCOUNT Parameters" summary="Parameter descriptions for the EXPIRE_END_USER_ACCOUNT procedure." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d181671e73">Parameter</th>
+                              <th align="left" valign="bottom" width="69%" id="d181671e76">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d181671e81" headers="d181671e73 ">
+                                 <p><code class="codeph">p_user_name</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d181671e81 d181671e76 ">
+                                 <p>The user name of the user account.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947__GUID-562671AC-9EBB-4419-86F7-08C10DB59A52">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example shows how to use the <code class="codeph">EXPIRE_END_USER_ACCOUNT</code> procedure. Use this procedure to expire an Oracle Application Express account (workspace administrator, developer, or end user) in the current workspace. This action specifically expires the account for its use by end users to authenticate to developed applications, but it may also expire the account for its use by developers or administrators to log in to a workspace.
+                  </p>
+                  <p>Note that this procedure must be run by a user having administration privileges in the current workspace.</p><pre class="pre codeblock"><code>BEGIN
+    FOR c1 IN (select user_name from apex_users) LOOP
+        APEX_UTIL.EXPIRE_END_USER_ACCOUNT(p_user_name =&gt; c1.user_name);
+        htp.p('End User Account:'||c1.user_name||' is now expired.');    
+    END LOOP;
+END;    
+</code></pre><div class="infoboxnotealso" id="GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947__GUID-C92FA331-8FC5-438A-876E-318A4F5EBDF7">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="UNEXPIRE_END_USER_ACCOUNT-Procedure.html#GUID-ABF5D38E-5156-436D-814A-B38A13DA8FA8">UNEXPIRE_END_USER_ACCOUNT Procedure</a>"</span></p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

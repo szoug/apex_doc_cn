@@ -1,0 +1,562 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Upgrading from a Previous Oracle Application Express Release">
+      <meta name="abstract" content="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">
+      <meta name="description" content="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">
+      <meta name="DC.subject" content="upgrading, about, release numbering, convention, sample scenarios, release number, viewing, Application Express, release number, Oracle REST Data Services, Oracle REST Data Services, version, determining, Oracle Application Express, installing, Oracle Database, existing applications, applications, upgrading, specifying compatibility mode, compatibility mode, specifying for, compatibility mode, testing, environment clean-up, reverting, reverting to previous release">
+      <meta name="keywords" content="upgrading, about, release numbering, convention, sample scenarios, release number, viewing, Application Express, release number, Oracle REST Data Services, Oracle REST Data Services, version, determining, Oracle Application Express, installing, Oracle Database, existing applications, applications, upgrading, specifying compatibility mode, compatibility mode, specifying for, compatibility mode, testing, environment clean-up, reverting, reverting to previous release">
+      <meta name="DC.Relation" scheme="URI" content="overview.html#GUID-DB8E4B2B-1AEB-4B76-BBA3-31C5876C3F14">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-54D7AD46-0359-40D0-AAD8-E1811F56E446">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-8A677851-19A5-4AEA-81C1-85C256D2E5C5">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-D15F0078-3E72-42D2-A63E-E25464AE1867">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-86098C71-5712-4BDF-8400-4F8672B67D05">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-766942ED-A16C-45AE-A0E1-256F8B92E9C5">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-54619C72-6291-420D-9CB5-865124AC3F0E">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-0E9AC015-883E-406C-96C5-FCAB7CD54CD1">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-A81B6A14-4DA8-4CA4-8FFB-7039EABED150">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-1C9FFC9D-D0BA-4A87-82D8-2832FCE40D3D">
+      <meta name="DC.Relation" scheme="URI" content="upgrading-from-previous-Oracle-application-express-release.html#GUID-6F35C5D1-F010-422E-A268-D17DA94823BD">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-802A767F-2528-4B98-AC4F-B683DF4E572B">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">
+      <meta name="description" content="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">
+      <title>Upgrading from a Previous Oracle Application Express Release</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="understanding-installation-process.html" title="Previous" type="text/html">
+      <link rel="next" href="choosing-web-listener.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="understanding-installation-process.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="choosing-web-listener.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="overview.html" property="item" typeof="WebPage"><span property="name"> Oracle Application Express Installation Overview</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Upgrading from a Previous Oracle Application Express Release</li>
+            </ol>
+            <a id="GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" name="GUID-802A767F-2528-4B98-AC4F-B683DF4E572B"></a><a id="HTMIG365"></a>
+            
+            <h2 id="HTMIG-GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" class="sect2"><span class="enumeration_section">3.3 </span>Upgrading from a Previous Oracle Application Express Release
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.</p>
+               <p>If you have Oracle Application Express release 19.x or earlier, following any of the
+                                    installation scenarios in this guide upgrades your Oracle
+                                    Application Express instance to release 20.1 and creates Oracle
+                                    Application Express 20.1 database objects in a new schema and
+                                    migrates the application metadata to the new release. </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-54D7AD46-0359-40D0-AAD8-E1811F56E446">About Release Numbering Conventions</a><br>New releases of <span>Oracle Application                                         Express</span> correlate to the calendar year.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-8A677851-19A5-4AEA-81C1-85C256D2E5C5">Sample Upgrade Scenarios</a><br>Common upgrade scenarios include upgrading from prior release and installing an Oracle Database release which include Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7">Viewing the Oracle Application Express Release Number</a><br>View your <span>Oracle Application                                         Express</span> release number on the Workspace home page or on the About Application Express         page.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-D15F0078-3E72-42D2-A63E-E25464AE1867">Viewing the Oracle REST Data Services Release Number</a><br>View the Oracle REST Data Services  release number on the About Application         Express page.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-86098C71-5712-4BDF-8400-4F8672B67D05">About Determining the version of Oracle REST Data Services</a><br>You can view the version of Oracle REST Data Services on the About Application Express page.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-766942ED-A16C-45AE-A0E1-256F8B92E9C5">About Installing the Oracle Application Express Release Included with the Oracle Database</a><br>Learn about the Oracle Application Express release included with Oracle         Database releases.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-54619C72-6291-420D-9CB5-865124AC3F0E">About Upgrading Existing Applications</a><br>If you install a new release of Oracle Application Express, the installation process updates existing applications to the latest release.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-0E9AC015-883E-406C-96C5-FCAB7CD54CD1">About Specifying an Application Compatibility Mode</a><br>You can specify the compatibility mode in the application definition within each application.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-A81B6A14-4DA8-4CA4-8FFB-7039EABED150">About Testing Requirements</a><br>Determining the appropriate amount of regression testing when upgrading Oracle Application Express depends upon the complexity, size, and number of applications you are upgrading.
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-1C9FFC9D-D0BA-4A87-82D8-2832FCE40D3D">About Cleaning Up Your Environment</a><br>Following the successful upgrade of all of the environments to the latest release of Oracle Application Express, you should clean-up the environments. 
+                  </li>
+                  <li class="ulchildlink"><a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-6F35C5D1-F010-422E-A268-D17DA94823BD">About Reverting to a Previous Release</a><br>You can revert to a previous release of Oracle Application Express.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-802A767F-2528-4B98-AC4F-B683DF4E572B__GUID-339C9E65-C098-45D1-831F-6B92AFB4A5A1">
+                  <p class="notep1">See Also:</p>
+                  <div class="p">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="understanding-installation-process.html#GUID-EA165C61-C987-47F6-91D9-C44353207E1B" title="Installing Oracle Appliacation Express is a multiple step process. You follow the same instructions for new or upgrade installations. The Web listener you choose determines the actual installation procedures.">Understanding the Installation Process</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="maximizing-uptime-during-an-application-express-upgrade.html#GUID-DE1EEE34-E79A-4937-8B5E-B405BE23F1B5" title="Learn how to maximize uptime during an Application Express upgrade.">Maximizing Uptime During an Application Express Upgrade</a>"</span></p>
+                        </li>
+                     </ul> 
+                  </div>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="overview.html#GUID-DB8E4B2B-1AEB-4B76-BBA3-31C5876C3F14" title="Oracle Application Express 安装指南 describes how to install Oracle Application Express in a on-premises (or local) installation.">Oracle Application Express Installation Overview</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-54D7AD46-0359-40D0-AAD8-E1811F56E446" name="GUID-54D7AD46-0359-40D0-AAD8-E1811F56E446"></a><h3 id="HTMIG-GUID-54D7AD46-0359-40D0-AAD8-E1811F56E446" class="sect3"><span class="enumeration_section">3.3.1 </span>About Release Numbering
+        Conventions
+               </h3>
+               <div>
+                  <p>New releases of <span>Oracle Application
+                                        Express</span> correlate to the calendar year.
+                  </p>
+                  <div class="section">
+                     <p> In 2018 and starting with release 18.1 and 18.2, <span>Oracle Application
+                                        Express</span> introduced correlating the release number to the calendar year.
+                     </p>
+                     <p>In addition, <span>Application Express</span> now only offers full releases and no longer provides patch set
+                                releases (such as 5.1.1). Eliminating patch set releases reduces
+                                downtime when updating existing installations. <span>Application Express</span> architecture also enables developers to revert releases if
+                                necessary.
+                     </p>
+                     <p>Patch set exceptions (PSEs) may still be delivered for major defects. To learn more about PSEs, visit the <a href="https://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html" target="_blank">Oracle Application Express Known Issues page</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29314"></a><a id="HTMIG29313"></a><div class="props_rev_3"><a id="GUID-8A677851-19A5-4AEA-81C1-85C256D2E5C5" name="GUID-8A677851-19A5-4AEA-81C1-85C256D2E5C5"></a><h3 id="HTMIG-GUID-8A677851-19A5-4AEA-81C1-85C256D2E5C5" class="sect3"><span class="enumeration_section">3.3.2 </span>Sample Upgrade Scenarios
+               </h3>
+               <div>
+                  <p>Common upgrade scenarios include upgrading from prior release and installing an Oracle Database release which include Oracle Application Express.</p>
+                  <div class="section">
+                     <p> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-8A677851-19A5-4AEA-81C1-85C256D2E5C5__CEGJIBAB" title="This table shows common upgrade scenarios.">Table 3-1</a> lists common upgrade scenarios.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-8A677851-19A5-4AEA-81C1-85C256D2E5C5__CEGJIBAB">
+                     <p class="titleintable">Table 3-1 Sample Upgrade Scenarios</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Sample Upgrade Scenarios" summary="This table shows common upgrade scenarios." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="56%" id="d4535e317">Upgrade Scenarios</th>
+                              <th align="left" valign="bottom" width="44%" id="d4535e320">Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="56%" id="d4535e325" headers="d4535e317 ">
+                                 <p>Upgrade from a prior Oracle Application Express release</p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d4535e325 d4535e320 ">
+                                 <p>Download the latest files from the Downloads page.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="56%" id="d4535e332" headers="d4535e317 ">
+                                 <p>You install Oracle Database which include Oracle Application Express.</p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d4535e332 d4535e320 ">
+                                 <p>Download the latest files from the Downloads page.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29315"></a><div class="props_rev_3"><a id="GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7" name="GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7"></a><h3 id="HTMIG-GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7" class="sect3"><span class="enumeration_section">3.3.3 </span>Viewing the Oracle Application Express Release
+        Number
+               </h3>
+               <div>
+                  <p>View your <span>Oracle Application
+                                        Express</span> release number on the Workspace home page or on the About Application Express
+        page.
+                  </p>
+                  <div class="section">
+                     <div class="p">You can view the <span>Oracle Application
+                                        Express</span> release number on the Workspace home page or on the About Application Express
+                    page:
+                        <ul style="list-style-type: disc;" id="GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7__UL_MMH_PQ2_VHB">
+                           <li>Workspace home page:
+                              <ul style="list-style-type: disc;" id="GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7__UL_HX5_PQ2_VHB">
+                                 <li>
+                                    
+                                    <p>Sign in to <span>Oracle Application
+                                        Express</span>.
+                                    </p>
+                                    
+                                    <p>On the Workspace home page, the current release
+                                    number displays in the bottom right corner.</p>
+                                    
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>About <span>Application Express</span> page:
+                              <ul style="list-style-type: disc;" id="GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7__UL_ISD_ZQ2_VHB">
+                                 <li>
+                                    
+                                    <p>Sign in to <span>Oracle Application
+                                        Express</span>.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p>Click the <span class="uicontrol bold">Help</span> menu in the
+                                    upper right and select <span class="uicontrol bold">About</span>.
+                                    </p>
+                                    
+                                    <p>On the About <span>Application Express</span> pag, the release number appears next to <span class="uicontrol bold">Product
+                                        Build</span>.
+                                    </p>
+                                    
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-D15F0078-3E72-42D2-A63E-E25464AE1867" name="GUID-D15F0078-3E72-42D2-A63E-E25464AE1867"></a><h3 id="HTMIG-GUID-D15F0078-3E72-42D2-A63E-E25464AE1867" class="sect3"><span class="enumeration_section">3.3.4 </span>Viewing the Oracle REST Data Services Release
+        Number
+               </h3>
+               <div>
+                  <p>View the Oracle REST Data Services  release number on the About Application
+        Express page.</p>
+                  <div class="section">
+                     <div class="p">To view the Oracle REST Data Services release number:
+                        <ol id="GUID-D15F0078-3E72-42D2-A63E-E25464AE1867__OL_STP_WT2_VHB">
+                           <li>
+                              
+                              <p>Sign in to <span>Oracle Application
+                                        Express</span>.
+                              </p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p>Click the <span class="uicontrol bold">Help</span> menu in the upper
+                            right and select <span class="uicontrol bold">About</span>.
+                              </p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p>Under the <span class="uicontrol bold">CGI Environment</span> section, find
+                                <code class="codeph">APEX_LISTENER_VERSION</code>.
+                              </p>
+                              
+                           </li>
+                        </ol>
+                     </div>
+                     
+                     <div class="infobox-tip" id="GUID-D15F0078-3E72-42D2-A63E-E25464AE1867__GUID-7A1A0054-94FE-4EFB-8F32-69958BB398BC">
+                        <p class="notep1">Tip:</p>
+                        
+                        <p>If <code class="codeph">APEX_LISTENER_VERSION</code> does not appear, then your Oracle
+                    Application Express instance is not using Oracle REST Data Services as its Web
+                    listener.
+                        </p>
+                        
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-86098C71-5712-4BDF-8400-4F8672B67D05" name="GUID-86098C71-5712-4BDF-8400-4F8672B67D05"></a><h3 id="HTMIG-GUID-86098C71-5712-4BDF-8400-4F8672B67D05" class="sect3"><span class="enumeration_section">3.3.5 </span>About Determining the version of Oracle REST Data Services
+               </h3>
+               <div>
+                  <p>You can view the version of Oracle REST Data Services on the About Application Express page.</p>
+                  <p>If you are using Oracle REST Data Services as your web listener for Oracle Application Express, view the About Application Express page . The version of Oracle REST Data Services (ORDS) will be in the CGI Environment section, next to <code class="codeph">APEX_LISTENER_VERSION</code>. If <code class="codeph">APEX_LISTENER_VERSION</code> does not appear, then your Oracle Application Express instance is not using ORDS as its web listener. 
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-86098C71-5712-4BDF-8400-4F8672B67D05__GUID-653EA379-2540-4093-AEEA-13A0C8A56B12">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-C1BE7081-ABEA-4629-9EA7-913F4353C5D7" title="View your Oracle Application Express release number on the Workspace home page or on the About Application Express page.">Viewing the Oracle Application Express Release Number</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-766942ED-A16C-45AE-A0E1-256F8B92E9C5" name="GUID-766942ED-A16C-45AE-A0E1-256F8B92E9C5"></a><h3 id="HTMIG-GUID-766942ED-A16C-45AE-A0E1-256F8B92E9C5" class="sect3"><span class="enumeration_section">3.3.6 </span>About Installing the Oracle Application
+        Express Release Included with the Oracle Database
+               </h3>
+               <div>
+                  <p>Learn about the Oracle Application Express release included with Oracle
+        Database releases.</p>
+                  <div class="infoboxnote" id="GUID-766942ED-A16C-45AE-A0E1-256F8B92E9C5__GUID-0DAA597C-F300-4B3E-BFB8-9C2E4DCFA6F7">
+                     <p class="notep1">Note:</p>
+                     
+                     <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), Oracle Application Express
+                is included in the Oracle Home on disk and is no longer installed by default in the
+                database.
+                     </p>
+                     
+                  </div>
+                  <p>Oracle Application Express is included with the following Oracle Database releases:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        
+                        <p> Oracle Database 19c - Oracle Application Express Release 18.1.</p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p> Oracle Database 18c - Oracle Application Express Release 5.1.</p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p>Oracle Database 12c Release 2 (12.2)- Oracle Application Express
+                    Release 5.0. </p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p>Oracle Database 12c Release 1 (12.1) - Oracle Application Express
+                    Release 4.2. </p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p>Oracle Database 11<span class="italic">g</span> Release 2 (11.2) - Oracle Application
+                    Express Release 3.2. 
+                        </p>
+                        
+                     </li>
+                     <li>
+                        <p>Oracle Database 11<span class="italic">g</span> Release 1 (11.1) - Oracle Application Express Release 3.0.
+                        </p>
+                     </li>
+                  </ul>
+                  <p>The Oracle Database releases less frequently than Oracle Application Express. Therefore, Oracle recommends updating to the latest Oracle Application Express release available on Oracle Technology Network. To learn more, see the installation instructions for the appropriate Web Listener in your environment.</p>
+                  <div class="infoboxnote" id="GUID-766942ED-A16C-45AE-A0E1-256F8B92E9C5__GUID-6F763B51-5D87-4252-B9FB-22B56BE5F05D">
+                     <p class="notep1">Note:</p>
+                     <p>If upgrading Oracle Application Express from a release that ships with the database, do not alter any Oracle Application Express files in the Oracle home directory (for example, <code class="codeph">/u01/app/oracle/product/18.0.0/dbhome_1/apex</code>) .
+                     </p>
+                  </div>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29316"></a><div class="props_rev_3"><a id="GUID-54619C72-6291-420D-9CB5-865124AC3F0E" name="GUID-54619C72-6291-420D-9CB5-865124AC3F0E"></a><h3 id="HTMIG-GUID-54619C72-6291-420D-9CB5-865124AC3F0E" class="sect3"><span class="enumeration_section">3.3.7 </span>About Upgrading Existing Applications
+               </h3>
+               <div>
+                  <p>If you install a new release of Oracle Application Express, the installation process updates existing applications to the latest release.</p>
+                  <p>The upgrade process is designed to not alter the application user interface or application components. As a result, application components that may impact the user interface are left untouched by the upgrade process. It is the developer's responsibility to manually review these components and update them, or leave them as is. Examples of components which may impact existing functionality include new features added to interactive reports, charts, certain validations, and so on. </p>
+                  <div class="infobox-tip" id="GUID-54619C72-6291-420D-9CB5-865124AC3F0E__GUID-20F94DD3-7A6A-42E9-B4F6-0BA788CC8C4E">
+                     <p class="notep1">Tip:</p>
+                     <p>Charts that use custom XML must be updated manually otherwise the custom XML will be lost.</p>
+                  </div>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-54619C72-6291-420D-9CB5-865124AC3F0E__GUID-F2961B2B-78A3-4022-9549-37F1D4D9425B">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="../htmdb/running-advisor-to-check-application-integrity.html#HTMDB-GUID-18449973-3C6C-442E-84E3-2B7A52E5C325" target="_blank">Running Advisor to Check Application Integrity</a>"</span>
+                in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29317"></a><div class="props_rev_3"><a id="GUID-0E9AC015-883E-406C-96C5-FCAB7CD54CD1" name="GUID-0E9AC015-883E-406C-96C5-FCAB7CD54CD1"></a><h3 id="HTMIG-GUID-0E9AC015-883E-406C-96C5-FCAB7CD54CD1" class="sect3"><span class="enumeration_section">3.3.8 </span>About Specifying an Application Compatibility Mode
+               </h3>
+               <div>
+                  <p>You can specify the compatibility mode in the application definition within each application.</p>
+                  <p>Within each application, you can also specify a <span class="uicontrol bold">Compatibility
+                Mode</span> in the Application Definition. The <span class="uicontrol bold">Compatibility
+                Mode</span> attribute controls the compatibility mode of the Application
+            Express runtime engine. Certain runtime behaviors change from release to release. You
+            can use this attribute to obtain specific application behavior. <span class="uicontrol bold">Compatibility
+                Mode</span> options include Pre 4.1, 4.1, 4.2, 5.0, 5.1/18.1, 18.2, 19.1, and
+            19.2.
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-0E9AC015-883E-406C-96C5-FCAB7CD54CD1__GUID-EEC69E6A-8643-448A-AADB-687037AD4EE5">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="../htmrn/index.html#HTMRN-GUID-712BE54F-08CD-43A3-A645-87B9360ED516" target="_blank">Compatibility Mode</a>"</span> in
+                                <span><cite>Oracle Application Express Release Notes</cite></span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="../htmdb/editing-application-attributes.html#HTMDB-GUID-FB090A95-B3CB-4598-892C-131A4E1DC4A5" target="_blank">Accessing the Definition
+                                    Page</a>"</span> and <span class="q">"<a href="../htmdb/editing-application-attributes.html#HTMDB-GUID-583B8D2A-D236-4A35-A510-F87BF3C694FA" target="_blank">Properties</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                           </li>
+                        </ul> 
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29318"></a><div class="props_rev_3"><a id="GUID-A81B6A14-4DA8-4CA4-8FFB-7039EABED150" name="GUID-A81B6A14-4DA8-4CA4-8FFB-7039EABED150"></a><h3 id="HTMIG-GUID-A81B6A14-4DA8-4CA4-8FFB-7039EABED150" class="sect3"><span class="enumeration_section">3.3.9 </span>About Testing Requirements
+               </h3>
+               <div>
+                  <p>Determining the appropriate amount of regression testing when upgrading Oracle Application Express depends upon the complexity, size, and number of applications you are upgrading.</p>
+                  <p>You should include the majority of complex pages, particularly those that incorporate significant JavaScript or extensive PL/SQL computations or processes. Developers should ensure pages which they manually update based on the Upgrade Application or Advisor are also included in regression tests. Not all remaining pages have to be included in regression testing. Oracle recommends you include a good representation of different page types includes reports, charts, and forms. An application should always be included in regression testing if its compatibility mode was modified post-upgrade.</p>
+                  <p>While regression testing of upgraded applications is imperative to minimize risk of disrupting the end users, it is important that testing is not drawn out for an extended period. As a general rule:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Step 1: Upgrade your development environment first. Allow developers to review the applications and make initial updates as needed.</p>
+                     </li>
+                     <li>
+                        <p>Step 2: Upgrade your QA/Test environment.</p>
+                     </li>
+                     <li>
+                        <p>Step 3: Upgrade applications from development are built into this environment.</p>
+                     </li>
+                     <li>
+                        <p>Step 4: Upgrade your production environment.</p>
+                     </li>
+                     <li>
+                        <p>Step 5: Build upgraded applications into this environment.</p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29319"></a><div class="props_rev_3"><a id="GUID-1C9FFC9D-D0BA-4A87-82D8-2832FCE40D3D" name="GUID-1C9FFC9D-D0BA-4A87-82D8-2832FCE40D3D"></a><h3 id="HTMIG-GUID-1C9FFC9D-D0BA-4A87-82D8-2832FCE40D3D" class="sect3"><span class="enumeration_section">3.3.10 </span>About Cleaning Up Your Environment
+               </h3>
+               <div>
+                  <p>Following the successful upgrade of all of the environments to the latest release of Oracle Application Express, you should clean-up the environments. </p>
+                  <p>Once you start developing with the newer release, the Oracle Application Express schema associated with the prior release can be deleted. If you installed the prior release into a separate tablespace, you can simply drop the specific tablespace. Oracle recommends leaving the older Oracle Application Express schema(s) for a few weeks and then remove them from the development, test, and production environments. This cleanup process releases disk space and ensures that no one accesses an outdated schema using tools such as SQL Developer or SQL*Plus.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29320"></a><div class="props_rev_3"><a id="GUID-6F35C5D1-F010-422E-A268-D17DA94823BD" name="GUID-6F35C5D1-F010-422E-A268-D17DA94823BD"></a><h3 id="HTMIG-GUID-6F35C5D1-F010-422E-A268-D17DA94823BD" class="sect3"><span class="enumeration_section">3.3.11 </span>About Reverting to a Previous Release
+               </h3>
+               <div>
+                  <p>You can revert to a previous release of Oracle Application Express.</p>
+                  <p>Because Oracle Application Express creates a new schema for each major release, reverting back to a prior release is a relatively simple process. If you revert to a prior release, any modifications made in the current Oracle Application Express instance are lost. The main task is to switch the public synonyms and grants to point at the previous schema instead of the new schema. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-6F35C5D1-F010-422E-A268-D17DA94823BD__GUID-FEAB03E4-8745-4839-A6CA-A8D71B6AC79D">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2" title="Learn about reverting to Oracle Application Express to a previous release in the case of a failed upgrade installation.">Reverting to a Previous Release After a Failed Upgrade Installation</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

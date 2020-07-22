@@ -1,0 +1,281 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="concept">
+      <meta name="DC.Title" content="Splitting Export Files into Separate Scripts">
+      <meta name="abstract" content="Learn about splitting application, page, and component export files into separate SQL scripts.">
+      <meta name="description" content="Learn about splitting application, page, and component export files into separate SQL scripts.">
+      <meta name="DC.Relation" scheme="URI" content="exporting-an-application-and-application-components.html#GUID-8D046D43-C033-4165-9C2B-6AB33A99CF75">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about splitting application, page, and component export files into separate SQL scripts.">
+      <meta name="description" content="Learn about splitting application, page, and component export files into separate SQL scripts.">
+      <title>Splitting Export Files into Separate Scripts</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Learn about splitting application, page, and component export files into separate SQL scripts.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-the-export-process.html" title="Previous" type="text/html">
+      <link rel="next" href="about-exporting-static-files.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-the-export-process.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-exporting-static-files.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="deploying-an-application.html" property="item" typeof="WebPage"><span property="name">Deploying an Application</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="exporting-an-application-and-application-components.html" property="item" typeof="WebPage"><span property="name">Exporting an Application and Application Components</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Splitting Export Files into Separate
+        Scripts</li>
+            </ol>
+            <a id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4" name="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4"></a>
+            
+            <h2 id="HTMDB-GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4" class="sect2"><span class="enumeration_section">25.8.2 </span>Splitting Export Files into Separate
+        Scripts
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about splitting application, page, and component export files into
+        separate SQL scripts.</p>
+               <div class="section">
+                  
+                  <p>Splitting application, page, and component exports into seprate files
+                can be very useful if you are managing files using a version control system such as
+                Apache Subversion (SVN) or Git. This approach enables you to check in files to the
+                repository as you make changes. For example, suppose a developer modifies Page 1 and
+                a list of values called Categories. If you export the application as separate files,
+                you can commit only the two files with changes.</p>
+                  
+                  <p>Another benefit of splitting exports into separate files is that it
+                enables you to take an incremental approach to deployment. Rather than having to
+                re-install an entire application for a minor change (for example, fixing a typo on a
+                label), only the file containing the fix needs to be run on the destination
+                system.</p>
+                  
+                  <p>You can split application, page, and component exports into separate
+                files in two ways:</p>
+                  
+                  <ul style="list-style-type: disc;" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__UL_ABH_1CF_MKB">
+                     <li>
+                        
+                        <p><strong class="term">Export as Zip</strong> - The <strong class="term">Export as Zip</strong> option is available on the following <span>App Builder</span> pages: Export Application, Export Page, and Export Component. Use the
+                            <strong class="term">Export as Zip</strong> option to archive the exported
+                        files into a single Zip file. You can unzip the Zip file on your local file
+                        system and then commit updated files to your source code repository.
+                        </p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><strong class="term">APEXExport</strong> - Use the
+                            <code class="codeph">APEXExport</code> program to export workspaces, applications,
+                        and related files from a command-line. Use the <code class="codeph">-split</code>
+                        option to export files into separate SQL scripts.
+                        </p>
+                        
+                     </li>
+                  </ul>
+                  
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  
+                  <div class="infoboxnotealso" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__GUID-DBDA2CA8-03E5-4DCA-83FC-6B620CF441AF">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p>
+                        <span class="q">"<a href="../aeadm/exporting-from-a-command-line.html#AEADM-GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC" target="_blank">Exporting Workspaces, Apps, and Related
+                            Files from a Command-line</a>"</span> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                     
+                  </div>
+                  
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__GUID-F6CBADE1-49E8-48F8-8126-35F87A66CAA9">Export  Directory
+                Structure</p>
+                  
+                  
+                  <p>Exporting an application, page, or components into separate scripts
+                creates a directory structure organized by component type. This directory structure
+                is the same whether you are using the <strong class="term">Export as Zip</strong> or the
+                    <code class="codeph">APEXExport</code> utility with <code class="codeph">-split</code>.
+                  </p>
+                  
+                  <div class="infoboxnotealso" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__GUID-44E8E018-1918-4AEF-92A7-93934B602C1F">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><span class="q">"<a href="directory-structure-when-splitting-export-files.html#GUID-DB991910-79AB-4EF6-94C9-B37F4DAD7438" title="Exporting an application, page, or component as separate files creates a directory structure organized by component type.">Directory Structure When Splitting Export Files into Separate Scripts</a>"</span></p>
+                     
+                  </div>
+                  
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__GUID-44195680-718F-4CE4-94E7-D21068E7B04C">Export File Names</p>
+                  
+                  
+                  <p>Whether you are using <strong class="term">Export as Zip</strong> or the
+                    <code class="codeph">APEXExport</code> utility with <code class="codeph">-split</code>, export files
+                use the following naming conventions:
+                  </p>
+                  
+                  <ul style="list-style-type: disc;" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__UL_WLL_HFF_MKB">
+                     <li>
+                        
+                        <p><strong class="term">Application Export</strong>  - Named using the application
+                        ID. For example, an application with the ID 326 would be named:
+                            <code class="codeph">f326.sql</code> or <code class="codeph">f326.zip</code>.
+                        </p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><strong class="term">Page Export</strong>  - Named after the application ID and
+                        page number. For example, exporting page 4 in an application with the ID 326
+                        would be named: <code class="codeph">f326_page_4.sql</code> or
+                            <code class="codeph">f326_page_4.zip</code>.
+                        </p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><strong class="term">Component Export</strong> - If you select
+                        multiple components, the name uses the application ID and components. For,
+                        example, multiple components in an application with the ID 326 would be
+                        named: <code class="codeph">f326_components.sql</code> or
+                            <code class="codeph">f326_components.zip</code>. 
+                        </p>
+                        
+                        <p>Component file names are based on the name specified in <span>App Builder</span>. In general, special characters are removed and spaces are
+                        replaced with underscores.
+                        </p>
+                        
+                        <p>If you rename a component in <span>App Builder</span>, the next time you create a Component Export, a new file name is
+                        used. For example, if you have breadcrumb named <code class="codeph">Menu</code> and
+                        you create a Component Export, the file would be named
+                            <code class="codeph">menu.sql</code>. If you rename that breadcrumb <code class="codeph">Main
+                            Menu</code>, the new Component Export is named
+                            <code class="codeph">main_menu.sql</code>. If you are using a version control
+                        system, you are responsible for applying the proper commands to rename or
+                        move the original file to maintain the history.
+                        </p>
+                        
+                     </li>
+                  </ul>
+                  
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__GUID-F04B3D6B-3ADB-472A-8511-7532FA8BD5FD">Generated Installation Scripts</p>
+                  
+                  
+                  <p>Both <strong class="term">Export as Zip</strong> and the
+                    <code class="codeph">APEXExport</code> utility with <code class="codeph">-split</code> create a number
+                of installation scripts.
+                  </p>
+                  
+                  <p>Depending upon the type of export, the installation scripts are named
+                one of the following:</p>
+                  
+                  <ul style="list-style-type: disc;" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__UL_XF3_N31_MKB">
+                     <li><strong class="term">Application Export</strong> - <code class="codeph">install.sql</code></li>
+                     <li><strong class="term">Page Export</strong> - <code class="codeph">install_page.sql</code></li>
+                     <li><strong class="term">Component Export</strong> -
+                        <code class="codeph">install_component.sql</code></li>
+                  </ul>
+                  
+                  <p>In addition to installation files, each export includes two files which
+                are useful when developing custom patch scripts:</p>
+                  
+                  <ul style="list-style-type: disc;" id="GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4__UL_YF3_N31_MKB">
+                     <li><code class="codeph">set_environment.sql</code></li>
+                     <li><code class="codeph">end_environment.sql</code></li>
+                  </ul>
+                  
+                  <p>These files contain internal code that help improve performance. These
+                scripts set internal variables and perform security checks at one time for the
+                entire import. Without these scripts, the internal variables check will be executed
+                for each file you run.</p>
+                  
+                  <p>A sample custom installation file might resemble following:</p>
+                  <pre class="pre codeblock"><code>@@application/set_environment.sql
+@@application/pages/page_00001.sql
+@@application/pages/page_00023.sql
+@@application/pages/page_00095.sql
+@@application/end_environment.sq</code></pre>
+                  </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="exporting-an-application-and-application-components.html#GUID-8D046D43-C033-4165-9C2B-6AB33A99CF75" title="Move a workspace, application, or related files by exporting it to another Application Express instance.">Exporting an Application and Application Components</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

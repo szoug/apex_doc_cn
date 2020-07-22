@@ -1,0 +1,364 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Enabling Network Services in Oracle Database 11g or Later">
+      <meta name="abstract" content="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">
+      <meta name="description" content="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">
+      <meta name="DC.subject" content="installation, enabling network services, network services, enabling, granting connect privileges, granting connect privileges, Oracle Database 12c, invalid ACL error">
+      <meta name="keywords" content="installation, enabling network services, network services, enabling, granting connect privileges, granting connect privileges, Oracle Database 12c, invalid ACL error">
+      <meta name="DC.Relation" scheme="URI" content="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81">
+      <meta name="DC.Relation" scheme="URI" content="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-DEA26C53-0220-40F1-86FB-482163CA5681">
+      <meta name="DC.Relation" scheme="URI" content="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-E50853EC-0BE9-4E04-A7D0-AF8E4106A470">
+      <meta name="DC.Relation" scheme="URI" content="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-CA19B8DF-B210-46FC-BC3A-F0DC76AE5625">
+      <meta name="DC.Relation" scheme="URI" content="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-C795F54B-D05F-4463-8424-052FD4C1CE52">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-8D125731-989A-4A51-AFFE-00181729F87F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">
+      <meta name="description" content="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">
+      <title>Enabling Network Services in Oracle Database 11g or Later</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="configuring-Oracle-HTTP-server.html" title="Previous" type="text/html">
+      <link rel="next" href="performingsecurity-tasks.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="configuring-Oracle-HTTP-server.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="performingsecurity-tasks.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html" property="item" typeof="WebPage"><span property="name"> Installing Application Express and
+    Configuring Legacy Web Listener &#x2013; Oracle HTTP Server  (Deprecated)</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Enabling Network Services in Oracle Database
+        11g or Later</li>
+            </ol>
+            <a id="GUID-8D125731-989A-4A51-AFFE-00181729F87F" name="GUID-8D125731-989A-4A51-AFFE-00181729F87F"></a><a id="HTMIG29160"></a>
+            
+            <h2 id="HTMIG-GUID-8D125731-989A-4A51-AFFE-00181729F87F" class="sect2"><span class="enumeration_section">B.5 </span>Enabling Network Services in Oracle Database
+        11g or Later
+            </h2>
+         </header>
+         <div class="ind">
+            <p>You must enable network services in Oracle Database 11g or later versions to
+        send outbound mail, use Web services, or use PDF report printing in Oracle Application
+        Express.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-DEA26C53-0220-40F1-86FB-482163CA5681">When and Why Network Services Must be Enabled</a><br>Enabling network services enables support for sending outbound mail in Oracle Application Express, use of Web services in Oracle Application Express, and PDF report printing.
+                  </li>
+                  <li class="ulchildlink"><a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-E50853EC-0BE9-4E04-A7D0-AF8E4106A470">Granting Connect Privileges Prior to Oracle Database 12c</a><br> Demonstrates how to grant connect privileges to any host for the       <code class="codeph">APEX_200100</code> database user.
+                  </li>
+                  <li class="ulchildlink"><a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-CA19B8DF-B210-46FC-BC3A-F0DC76AE5625">Granting Connect Privileges in Oracle Database 12c or Later</a><br>Procedures <code class="codeph">CREATE_ACL</code>, <code class="codeph">ASSIGN_ACL</code>, <code class="codeph">ADD_PRIVILEGE</code> and <code class="codeph">CHECK_PRIVILEGE</code> in <code class="codeph">DBMS_NETWORK_ACL_ADMIN</code> are deprecated in Oracle Database 12c. Oracle recommends to use <code class="codeph">APPEND_HOST_ACE</code>.
+                  </li>
+                  <li class="ulchildlink"><a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-C795F54B-D05F-4463-8424-052FD4C1CE52">Troubleshooting an Invalid ACL Error</a><br>Learn how to identify any invalid ACL error by running the query.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29161"></a><div class="props_rev_3"><a id="GUID-DEA26C53-0220-40F1-86FB-482163CA5681" name="GUID-DEA26C53-0220-40F1-86FB-482163CA5681"></a><h3 id="HTMIG-GUID-DEA26C53-0220-40F1-86FB-482163CA5681" class="sect3"><span class="enumeration_section">B.5.1 </span>When and Why Network Services Must be Enabled
+               </h3>
+               <div>
+                  <p>Enabling network services enables support for sending outbound mail in Oracle Application Express, use of Web services in Oracle Application Express, and PDF report printing.</p>
+                  <p>By default, the ability to interact with network services is disabled in Oracle
+            Database 11g Release 2 or later. Therefore, if you are running Oracle Application
+            Express with Oracle Database 11g Release 2 or later, you must use the new
+                <code class="codeph">DBMS_NETWORK_ACL_ADMIN</code> package to grant connect privileges to any
+            host for the <code class="codeph">APEX_200100</code> database user. Failing to grant these
+            privileges results in issues with:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Sending outbound mail in Oracle Application Express.</p>
+                        <p>Users can call methods from the <code class="codeph">APEX_MAIL</code> package, but issues arise when sending outbound email.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Consuming web services from Oracle Application Express.</p>
+                     </li>
+                     <li>
+                        
+                        <p>Making outbound LDAP calls from Oracle Application Express.</p>
+                        
+                     </li>
+                     <li>
+                        <p>PDF report printing.</p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnote" id="GUID-DEA26C53-0220-40F1-86FB-482163CA5681__GUID-040C12F5-33AB-4A6D-AC86-6FD39A132BD6">
+                     <p class="notep1">Note:</p>When upgrading Application Express on a database 12c or newer,based on the configuration of the old Application Express version the upgrade automatically configures Network Services. 
+                  </div>
+                  <div class="infobox-tip" id="GUID-DEA26C53-0220-40F1-86FB-482163CA5681__GUID-068BABE0-716A-4DD8-90D9-0D1D555E9335">
+                     <p class="notep1">Tip:</p>
+                     <p>To run the examples described in this section, the compatible initialization
+                parameter of the database must be set to at least 11.1.0.0.0. By default an 11g or
+                12c database will already have the parameter set properly, but a database upgraded
+                to 11g or 12c from a prior version may not. For information about changing database
+                initialization parameters, see <span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=ADMIN-GUID-807DE711-C82C-4BB2-8C31-5EE89CA71349" target="_blank">Creating and Configuring an Oracle
+                        Database</a>"</span> in <span><cite>Oracle Database Administrator’s Guide</cite></span>.
+                     </p>
+                  </div>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-8D125731-989A-4A51-AFFE-00181729F87F" title="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">Enabling Network Services in Oracle Database 11g or Later</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29162"></a><div class="props_rev_3"><a id="GUID-E50853EC-0BE9-4E04-A7D0-AF8E4106A470" name="GUID-E50853EC-0BE9-4E04-A7D0-AF8E4106A470"></a><h3 id="HTMIG-GUID-E50853EC-0BE9-4E04-A7D0-AF8E4106A470" class="sect3"><span class="enumeration_section">B.5.2 </span>Granting Connect Privileges Prior to Oracle Database 12<span class="italic">c</span></h3>
+               <div>
+                  <p> Demonstrates how to grant connect privileges to any host for the
+      <code class="codeph">APEX_200100</code> database user.
+                  </p>
+                  <div class="section">
+                     <p>The following example demonstrates how to grant connect privileges to any host for
+        the <code class="codeph">APEX_200100</code> database user. This example assumes you connected to the
+        database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying
+        the <code class="codeph">SYSDBA</code> role.
+                     </p><pre class="pre codeblock"><code>DECLARE
+  ACL_PATH  VARCHAR2(4000);
+BEGIN
+  -- Look for the ACL currently assigned to '*' and give APEX_200100
+  -- the "connect" privilege if APEX_200100 does not have the privilege yet.
+ 
+  SELECT ACL INTO ACL_PATH FROM DBA_NETWORK_ACLS
+   WHERE HOST = '*' AND LOWER_PORT IS NULL AND UPPER_PORT IS NULL;
+ 
+  IF DBMS_NETWORK_ACL_ADMIN.CHECK_PRIVILEGE(ACL_PATH, 'APEX_200100',
+     'connect') IS NULL THEN
+      DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(ACL_PATH,
+     'APEX_200100', TRUE, 'connect');
+  END IF;
+ 
+EXCEPTION
+  -- When no ACL has been assigned to '*'.
+  WHEN NO_DATA_FOUND THEN
+  DBMS_NETWORK_ACL_ADMIN.CREATE_ACL('power_users.xml',
+    'ACL that lets power users to connect to everywhere',
+    'APEX_200100', TRUE, 'connect');
+  DBMS_NETWORK_ACL_ADMIN.ASSIGN_ACL('power_users.xml','*');
+END;
+/
+COMMIT;
+</code></pre><p>The following example demonstrates how to provide less privileged access to local network resources. This example enables access to servers on the local host only, such as email and report servers.</p><pre class="pre codeblock"><code>DECLARE
+  ACL_PATH  VARCHAR2(4000);
+BEGIN
+  -- Look for the ACL currently assigned to 'localhost' and give APEX_200100
+  -- the "connect" privilege if APEX_200100 does not have the privilege yet.
+  SELECT ACL INTO ACL_PATH FROM DBA_NETWORK_ACLS
+   WHERE HOST = 'localhost' AND LOWER_PORT IS NULL AND UPPER_PORT IS NULL;
+   
+  IF DBMS_NETWORK_ACL_ADMIN.CHECK_PRIVILEGE(ACL_PATH, 'APEX_200100',
+     'connect') IS NULL THEN
+      DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(ACL_PATH,
+     'APEX_200100', TRUE, 'connect');
+  END IF;
+  
+EXCEPTION
+  -- When no ACL has been assigned to 'localhost'.
+  WHEN NO_DATA_FOUND THEN
+  DBMS_NETWORK_ACL_ADMIN.CREATE_ACL('local-access-users.xml',
+    'ACL that lets users to connect to localhost',
+    'APEX_200100', TRUE, 'connect');
+  DBMS_NETWORK_ACL_ADMIN.ASSIGN_ACL('local-access-users.xml','localhost');
+END;
+/
+COMMIT;</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-8D125731-989A-4A51-AFFE-00181729F87F" title="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">Enabling Network Services in Oracle Database 11g or Later</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29487"></a><div class="props_rev_3"><a id="GUID-CA19B8DF-B210-46FC-BC3A-F0DC76AE5625" name="GUID-CA19B8DF-B210-46FC-BC3A-F0DC76AE5625"></a><h3 id="HTMIG-GUID-CA19B8DF-B210-46FC-BC3A-F0DC76AE5625" class="sect3"><span class="enumeration_section">B.5.3 </span>Granting Connect Privileges in Oracle Database 12<span class="italic">c</span> or Later
+               </h3>
+               <div>
+                  <p>Procedures <code class="codeph">CREATE_ACL</code>, <code class="codeph">ASSIGN_ACL</code>, <code class="codeph">ADD_PRIVILEGE</code> and <code class="codeph">CHECK_PRIVILEGE</code> in <code class="codeph">DBMS_NETWORK_ACL_ADMIN</code> are deprecated in Oracle Database 12c. Oracle recommends to use <code class="codeph">APPEND_HOST_ACE</code>.
+                  </p>
+                  <div class="section">
+                     <p> The following example demonstrates how to grant connect privileges to any host for
+                the <code class="codeph">APEX_200100</code> database user. This example assumes you connected
+                to the database where Oracle Application Express is installed as
+                    <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role.
+                     </p><pre class="pre codeblock"><code>BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host =&gt; '*',
+        ace =&gt; xs$ace_type(privilege_list =&gt; xs$name_list('connect'),
+                           principal_name =&gt; 'APEX_200100',
+                           principal_type =&gt; xs_acl.ptype_db));
+END;
+/
+</code></pre><p>The following example demonstrates how to provide less privileged access to local network resources. This example enables access to servers on the local host only, such as email and report servers.</p><pre class="pre codeblock"><code>BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host =&gt; 'localhost',
+        ace =&gt; xs$ace_type(privilege_list =&gt; xs$name_list('connect'),
+                           principal_name =&gt; 'APEX_200100',
+                           principal_type =&gt; xs_acl.ptype_db));
+END;
+/
+</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-8D125731-989A-4A51-AFFE-00181729F87F" title="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">Enabling Network Services in Oracle Database 11g or Later</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29163"></a><div class="props_rev_3"><a id="GUID-C795F54B-D05F-4463-8424-052FD4C1CE52" name="GUID-C795F54B-D05F-4463-8424-052FD4C1CE52"></a><h3 id="HTMIG-GUID-C795F54B-D05F-4463-8424-052FD4C1CE52" class="sect3"><span class="enumeration_section">B.5.4 </span>Troubleshooting an Invalid ACL Error
+               </h3>
+               <div>
+                  <p>Learn how to identify any invalid ACL error by running the query.</p>
+                  <div class="section">
+                     <p>If you receive an <code class="codeph">ORA-44416: Invalid ACL</code> error after running the previous script, use the following query to identify the invalid ACL:
+                     </p><pre class="pre codeblock"><code>REM Show the dangling references to dropped users in the ACL that is assigned
+REM to '*'.
+
+SELECT ACL, PRINCIPAL
+  FROM DBA_NETWORK_ACLS NACL, XDS_ACE ACE
+ WHERE HOST = '*' AND LOWER_PORT IS NULL AND UPPER_PORT IS NULL AND
+       NACL.ACLID = ACE.ACLID AND
+       NOT EXISTS (SELECT NULL FROM ALL_USERS WHERE USERNAME = PRINCIPAL);
+</code></pre><p>Next, run the following code to fix the ACL:</p><pre class="pre codeblock"><code>DECLARE
+  ACL_ID   RAW(16);
+  CNT      NUMBER;
+BEGIN
+  -- Look for the object ID of the ACL currently assigned to '*'
+  SELECT ACLID INTO ACL_ID FROM DBA_NETWORK_ACLS
+   WHERE HOST = '*' AND LOWER_PORT IS NULL AND UPPER_PORT IS NULL;
+
+  -- If just some users referenced in the ACL are invalid, remove just those
+  -- users in the ACL. Otherwise, drop the ACL completely.
+  SELECT COUNT(PRINCIPAL) INTO CNT FROM XDS_ACE
+   WHERE ACLID = ACL_ID AND
+         EXISTS (SELECT NULL FROM ALL_USERS WHERE USERNAME = PRINCIPAL);
+
+  IF (CNT &gt; 0) THEN
+
+    FOR R IN (SELECT PRINCIPAL FROM XDS_ACE
+               WHERE ACLID = ACL_ID AND
+                     NOT EXISTS (SELECT NULL FROM ALL_USERS
+                                  WHERE USERNAME = PRINCIPAL)) LOOP
+      UPDATE XDB.XDB$ACL
+         SET OBJECT_VALUE =
+               DELETEXML(OBJECT_VALUE,
+                         '/ACL/ACE[PRINCIPAL="'||R.PRINCIPAL||'"]')
+       WHERE OBJECT_ID = ACL_ID;
+    END LOOP;
+
+  ELSE
+    DELETE FROM XDB.XDB$ACL WHERE OBJECT_ID = ACL_ID;
+  END IF;
+
+END;
+/
+
+REM commit the changes.
+
+COMMIT;
+</code></pre><p>Once the ACL has been fixed, you must run the first script in this section to apply
+        the ACL to the <code class="codeph">APEX_200100</code> user.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-8D125731-989A-4A51-AFFE-00181729F87F" title="You must enable network services in Oracle Database 11g or later versions to send outbound mail, use Web services, or use PDF report printing in Oracle Application Express.">Enabling Network Services in Oracle Database 11g or Later</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

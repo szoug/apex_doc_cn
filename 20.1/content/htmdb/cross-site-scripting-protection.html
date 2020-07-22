@@ -1,0 +1,424 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Cross-Site Scripting Protection">
+      <meta name="abstract" content="Protect your application from a cross site-scripting security breach.">
+      <meta name="description" content="Protect your application from a cross site-scripting security breach.">
+      <meta name="DC.subject" content="security best practices, cross site-scripting protection, cross site-scripting, about, HTML region, static display areas, about safe item types, safe item types, escaping values, using safe item types, protecting dynamic output, dynamic output, protecting report regions, report regions, protecting form items, restricting characters on items, injection attacks, restricting characters on items">
+      <meta name="keywords" content="security best practices, cross site-scripting protection, cross site-scripting, about, HTML region, static display areas, about safe item types, safe item types, escaping values, using safe item types, protecting dynamic output, dynamic output, protecting report regions, report regions, protecting form items, restricting characters on items, injection attacks, restricting characters on items">
+      <meta name="DC.Relation" scheme="URI" content="understanding-developer-security-best-practices.html#GUID-CC6B3716-C74D-4769-AA14-CE92D1E2B841">
+      <meta name="DC.Relation" scheme="URI" content="cross-site-scripting-protection.html#GUID-EBB112AB-766E-4383-AA3A-0971561E8042">
+      <meta name="DC.Relation" scheme="URI" content="cross-site-scripting-protection.html#GUID-DC111134-6369-4424-8DAD-BB9649F9B03F">
+      <meta name="DC.Relation" scheme="URI" content="cross-site-scripting-protection.html#GUID-B9E18D38-5B50-46F1-B016-A3D1EE61E0A4">
+      <meta name="DC.Relation" scheme="URI" content="cross-site-scripting-protection.html#GUID-1F6959D0-62CE-4898-9B3C-B9A4609903EC">
+      <meta name="DC.Relation" scheme="URI" content="cross-site-scripting-protection.html#GUID-9A81CF62-4B71-4232-88A8-AD2D9A579FF4">
+      <meta name="DC.Relation" scheme="URI" content="cross-site-scripting-protection.html#GUID-16BB195B-0A56-4763-9688-1440C3CAE37F">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-3E24746E-378C-478E-85F6-55DD8EC4A367">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Protect your application from a cross site-scripting security breach.">
+      <meta name="description" content="Protect your application from a cross site-scripting security breach.">
+      <title>Understanding Cross-Site Scripting Protection</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Protect your application from a cross site-scripting security breach.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="identifying-at-risk-passwords.html" title="Previous" type="text/html">
+      <link rel="next" href="about-session-state-and-security.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="identifying-at-risk-passwords.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-session-state-and-security.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-security.html" property="item" typeof="WebPage"><span property="name">Managing Application Security</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-developer-security-best-practices.html" property="item" typeof="WebPage"><span property="name">Understanding Developer Security Best Practices</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Cross-Site Scripting Protection</li>
+            </ol>
+            <a id="GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" name="GUID-3E24746E-378C-478E-85F6-55DD8EC4A367"></a><a id="HTMDB12001"></a>
+            
+            <h2 id="HTMDB-GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" class="sect2"><span class="enumeration_section">21.2.3 </span>Understanding Cross-Site Scripting Protection
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Protect your application from a cross site-scripting security
+        breach.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-EBB112AB-766E-4383-AA3A-0971561E8042">What Is Cross Site-scripting Security Breach?</a><br></li>
+                  <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-DC111134-6369-4424-8DAD-BB9649F9B03F">Protecting HTML Regions and Other Static Areas</a><br></li>
+                  <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-B9E18D38-5B50-46F1-B016-A3D1EE61E0A4">About Protecting Dynamic Output</a><br></li>
+                  <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-1F6959D0-62CE-4898-9B3C-B9A4609903EC">About Protecting Report Regions</a><br></li>
+                  <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-9A81CF62-4B71-4232-88A8-AD2D9A579FF4">About Protecting Form Items</a><br></li>
+                  <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-16BB195B-0A56-4763-9688-1440C3CAE37F">About Restricting Characters Entered on an Item</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-developer-security-best-practices.html#GUID-CC6B3716-C74D-4769-AA14-CE92D1E2B841" title="Learn about security best practices for Oracle Application Express developer.">Understanding Developer Security Best Practices</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29412"></a><div class="props_rev_3"><a id="GUID-EBB112AB-766E-4383-AA3A-0971561E8042" name="GUID-EBB112AB-766E-4383-AA3A-0971561E8042"></a><h3 id="HTMDB-GUID-EBB112AB-766E-4383-AA3A-0971561E8042" class="sect3"><span class="enumeration_section">21.2.3.1 </span>What Is Cross Site-scripting Security Breach?
+               </h3>
+               <div>
+                  <p>Cross site-scripting (also referred to as XSS) is a security breach that takes advantage of dynamically generated web pages. In a XSS attack, a web application is sent a script that activates when it is read by a user's browser. Once activated, these scripts can steal data, even session credentials, and return the information to the attacker. </p>
+                  <p>If malicious code were introduced into an Oracle Application Express application, it could be rendered into HTML regions and other places within the application during normal page rendering. To prevent the introduction of malicious code into session state, the Application Express engine escapes characters in certain cases.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25744"></a><div class="props_rev_3"><a id="GUID-DC111134-6369-4424-8DAD-BB9649F9B03F" name="GUID-DC111134-6369-4424-8DAD-BB9649F9B03F"></a><h3 id="HTMDB-GUID-DC111134-6369-4424-8DAD-BB9649F9B03F" class="sect3"><span class="enumeration_section">21.2.3.2 </span>Protecting HTML Regions and Other Static Areas
+               </h3>
+               <div>
+                  <p>Learn how to protect HTML regions and other static display areas.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-B85B9D65-6687-4100-AAA8-2B8F17B6DB6D">About Protecting HTML Regions and Other Static Areas</a><br></li>
+                     <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-A08F79CD-34AF-405B-ADC3-59D71BEC53C0">About Safe Item Display Types</a><br></li>
+                     <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-99F3E5F6-0B2B-4685-9077-67A08EF69FC1">About the Rules Used to Determine Whether to Escape Values</a><br></li>
+                     <li class="ulchildlink"><a href="cross-site-scripting-protection.html#GUID-34F59513-3F2E-4BE0-8CD7-425A9A861760">About Using Safe Item Types to Hold and Emit HTML Markup</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29413"></a><div class="props_rev_3"><a id="GUID-B85B9D65-6687-4100-AAA8-2B8F17B6DB6D" name="GUID-B85B9D65-6687-4100-AAA8-2B8F17B6DB6D"></a><h4 id="HTMDB-GUID-B85B9D65-6687-4100-AAA8-2B8F17B6DB6D" class="sect4"><span class="enumeration_section">21.2.3.2.1 </span>About Protecting HTML Regions and Other Static Areas
+                  </h4>
+                  <div>
+                     <p>In HTML regions and other static display areas, you can reference session state using the substitution strings. Special substitution strings available within a template are denoted by the number symbol (#), for example, <code class="codeph">#ABC#</code>. To reference page or application items use the <code class="codeph">&amp;ITEM.</code> notation. 
+                     </p>
+                     <p>Examples of static display areas include HTML regions, page headers and footers, region headers and footers, region titles, button labels, help text, form item labels and post-element text, templates, radiogroup (before and after field text), event success messages, event error messages, navigation bar attributes, application static substitution string values, chart labels and legends, breadcrumbs and list framing text, and calendar text, labels, or legends.</p>
+                     <p>Developers can also append an exclamation mark (<code class="codeph">!</code>) followed by a predefined filter name to a page or application item name or to a report column reference to escape special characters in the substitution value.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-B85B9D65-6687-4100-AAA8-2B8F17B6DB6D__GUID-B1BC5E22-60A0-4FAA-A704-828129715511">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="understanding-substitution-strings.html#GUID-C47D5D9B-3476-48EA-A0B1-DBA96E6E283B">关于使用替代字符串</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="understanding-substitution-strings.html#GUID-CA3ABA44-D03D-4396-A527-B160F1FFE933">控制替换字符串中的输出转义</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-DC111134-6369-4424-8DAD-BB9649F9B03F">Protecting HTML Regions and Other Static Areas</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25745"></a><div class="props_rev_3"><a id="GUID-A08F79CD-34AF-405B-ADC3-59D71BEC53C0" name="GUID-A08F79CD-34AF-405B-ADC3-59D71BEC53C0"></a><h4 id="HTMDB-GUID-A08F79CD-34AF-405B-ADC3-59D71BEC53C0" class="sect4"><span class="enumeration_section">21.2.3.2.2 </span>About Safe Item Display Types
+                  </h4>
+                  <div>
+                     <p>When session state is referenced in this way, the value emitted to the page will not
+            have special characters (<code class="codeph">&lt;</code>, <code class="codeph">&gt;</code>,
+                <code class="codeph">&amp;</code>, <code class="codeph">"</code>) escaped if the referenced item is
+                <span class="uicontrol bold">Display Only</span> with the attribute <span class="uicontrol bold">Save Session
+                State</span> set to <span class="uicontrol bold">No</span> and <span class="uicontrol bold">Escape
+                Special</span> set to <span class="uicontrol bold">No</span>. 
+                     </p>
+                     <p>If the referenced item has a display type other than <span class="uicontrol bold">Display
+                Only</span> with the attribute <span class="uicontrol bold">Save Session State</span> set to
+                <span class="uicontrol bold">No</span>, the value emitted to the page will have special
+            characters escaped. Although application-level items are also considered to have a safe
+            display type, they do not actually have display properties like form items do.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-A08F79CD-34AF-405B-ADC3-59D71BEC53C0__GUID-7E658CBF-7975-4DB7-A6B6-616740924584">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="understanding-page-level-items.html#GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0" title="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">Understanding Page-Level Items</a>"</span> 
+                        </p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-DC111134-6369-4424-8DAD-BB9649F9B03F">Protecting HTML Regions and Other Static Areas</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25746"></a><div class="props_rev_3"><a id="GUID-99F3E5F6-0B2B-4685-9077-67A08EF69FC1" name="GUID-99F3E5F6-0B2B-4685-9077-67A08EF69FC1"></a><h4 id="HTMDB-GUID-99F3E5F6-0B2B-4685-9077-67A08EF69FC1" class="sect4"><span class="enumeration_section">21.2.3.2.3 </span>About the Rules Used to Determine Whether to Escape Values
+                  </h4>
+                  <div>
+                     <p>The Application Express engine uses predefined smart escaping rules to determine if and when to escape values fetched from session state. </p>
+                     <p>The reason for these rules is that items that use the display types listed previously are often for text containing HTML that is intended to be emitted to the browser without being filtered (that is, escaped). The only way this can be made safe is by the enforcement of the rule that these types of items are always escaped on input to the application. For example, if a user passes some text into a safe item using an Oracle Application Express f?p URL syntax, the Application Express engine escapes special characters when saving the value into session state. This has two intended results: </p>
+                     <ol>
+                        <li>
+                           <p>If the value contained no special characters, the value passed in is saved into session state exactly as it was provided.</p>
+                        </li>
+                        <li>
+                           <p>If the value contained special characters, those characters are escaped when the value is saved into session state.</p>
+                        </li>
+                     </ol>
+                     <p>In either situation, the item can now safely be referenced using an <code class="codeph">&amp;ITEM.</code> notation in any HTML region or other static area mentioned previously.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-DC111134-6369-4424-8DAD-BB9649F9B03F">Protecting HTML Regions and Other Static Areas</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25747"></a><div class="props_rev_3"><a id="GUID-34F59513-3F2E-4BE0-8CD7-425A9A861760" name="GUID-34F59513-3F2E-4BE0-8CD7-425A9A861760"></a><h4 id="HTMDB-GUID-34F59513-3F2E-4BE0-8CD7-425A9A861760" class="sect4"><span class="enumeration_section">21.2.3.2.4 </span>About Using Safe Item Types to Hold and Emit HTML Markup
+                  </h4>
+                  <div>
+                     <p>You can use the safe item types listed previously to hold and emit HTML markup to the browser. For example, suppose you have a requirement to render some text in bold face by referencing a safe page item named <code class="codeph">P1_XXX</code> (using <code class="codeph">&amp;P1_XXX</code>.) The item <code class="codeph">P1_XXX</code> is presumed to contain the following HTML: 
+                     </p><pre class="oac_no_warn" dir="ltr">&lt;b&gt;ABABABAB&lt;/b&gt;
+</pre><p>You can achieve this by using application controls (computations, processes, item source expressions, item default values, and so on) to store values into these safe items. When values are introduced in this way, you ensure the safety of the content. When you use these methods, the Application Express engine does not escape any special characters when saving the values into session state.</p>
+                     <p>Finally, the safety of safe items is ensured by a rule that prevents those items from being posted on a page and submitted to the Application Express engine as part of a page submission.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-DC111134-6369-4424-8DAD-BB9649F9B03F">Protecting HTML Regions and Other Static Areas</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25748"></a><div class="props_rev_3"><a id="GUID-B9E18D38-5B50-46F1-B016-A3D1EE61E0A4" name="GUID-B9E18D38-5B50-46F1-B016-A3D1EE61E0A4"></a><h3 id="HTMDB-GUID-B9E18D38-5B50-46F1-B016-A3D1EE61E0A4" class="sect3"><span class="enumeration_section">21.2.3.3 </span>About Protecting Dynamic Output
+               </h3>
+               <div>
+                  <p>Items fetched from session state and rendered using <code class="codeph">htp.p</code> or other methods should be explicitly escaped by the code where it is appropriate to do so. For example, suppose a PL/SQL dynamic content region on a page uses the following:
+                  </p><pre class="oac_no_warn" dir="ltr">
+htp.p(v('SOME_ITEM'));
+</pre><p>If the value of the item fetched from session state could contain unintended tags or scripts, you might want to use the following in the region:</p><pre class="oac_no_warn" dir="ltr">htp.p(apex_escape.html(:SOME_ITEM));
+</pre><p>However, if you are confident that the fetched value is safe for rendering, you do not need to escape the value. As a developer, you must determine when it is appropriate to not escape output. </p>
+                  <p>As a best practice, follow this rule: </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Never emit an item fetched from session state without escaping it unless the item is a safe type.</p>
+                     </li>
+                  </ul>
+                  <p>The reason for this is that as a developer, there is no way you can prevent a hacker from posting a malicious value into a non-safe item. Even if your application does not present these items visibly to ordinary users, be aware that a hacker can mount a XSS attack using your application if you do not follow this rule.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-B9E18D38-5B50-46F1-B016-A3D1EE61E0A4__GUID-9A458C3D-54FE-4F36-9D2C-68C3397FC8EB">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="cross-site-scripting-protection.html#GUID-A08F79CD-34AF-405B-ADC3-59D71BEC53C0">About Safe Item Display Types</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25749"></a><div class="props_rev_3"><a id="GUID-1F6959D0-62CE-4898-9B3C-B9A4609903EC" name="GUID-1F6959D0-62CE-4898-9B3C-B9A4609903EC"></a><h3 id="HTMDB-GUID-1F6959D0-62CE-4898-9B3C-B9A4609903EC" class="sect3"><span class="enumeration_section">21.2.3.4 </span>About Protecting Report Regions
+               </h3>
+               <div>
+                  <p>The Application Express engine escapes data rendered in the body of a report. References to session state in report headings and messages are fetched from session state using the smart escaping rules so that the values of safe item types are not escaped and the values of other item types are escaped.</p>
+                  <p>Oracle Application Express automatically escapes HTML special characters of a report
+            column when the column's <span class="uicontrol bold">Escape special characters </span> attribute is
+            set to <span class="uicontrol bold">On</span>. If you need to render HTML fragments instead of plain
+            column values (for example, for highlighting), instead of concatenating the HTML
+            fragment in the query itself (which prevents you from using Escape special characters),
+            you should use the report column's <span class="uicontrol bold">HTML Expression</span> attribute. In
+            the <span class="uicontrol bold">HTML Expression</span> attribute, you can enter static HTML and
+            embed escaped column values with the <code class="codeph">#COLUMN#</code> notation. The extended
+            column notation gives you control regarding how Oracle Application Express should escape
+            a column value: 
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">#COLUMN!HTML#</code> - Escapes reserved HTML characters.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">#COLUMN!ATTR#</code> - Escapes reserved characters in a HTML attribute context.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">#COLUMN!JS#</code> - Escapes reserved characters in a JavaScript context.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">#COLUMN!RAW#</code> - Preserves the original item value and does not escape characters.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">#COLUMN!STRIPHTML#</code> - Removes HTML tags from the output and escapes reserved HTML characters.
+                        </p>
+                     </li>
+                  </ul>
+                  <p>For example, suppose you have a report based on this query:</p><pre class="oac_no_warn" dir="ltr">SELECT
+    empno,
+    ename,
+    NULL DELETE_LINK
+FROM emp
+</pre><p>In this example, all columns are escaped. You could define a HTML Expression on <code class="codeph">DELETE_LINK</code> as follows:
+                  </p><pre class="oac_no_warn" dir="ltr">&lt;a href="javascript:if (confirm('Do you really want to delete #ENAME!JS#?')) doSubmit('DELETE-#EMPNO#');"&gt;Delete&lt;/a&gt;
+</pre><p>This example renders a link that asks if you would like to delete an employee and submits a request to delete the row if the user is confirmed. If you had not used <code class="codeph">#ENAME!JS#</code> but <code class="codeph">#ENAME#</code>, a name like O'Neill would cause a syntax error and an attacker could exploit the improper escaping for cross-site scripting. 
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1F6959D0-62CE-4898-9B3C-B9A4609903EC__GUID-9B485F82-AD02-4CD2-BF2F-D0770E12113C">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="understanding-substitution-strings.html#GUID-CA3ABA44-D03D-4396-A527-B160F1FFE933">控制替换字符串中的输出转义</a>"</span></p>
+                        </li>
+                        <li>
+                           <p> <span class="q">"<a href="managing-interactive-report-column-attributes.html#GUID-95666FAA-5DE5-4E2C-8D7C-9886227DABD3">Editing Interactive Report Column Attributes</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25750"></a><div class="props_rev_3"><a id="GUID-9A81CF62-4B71-4232-88A8-AD2D9A579FF4" name="GUID-9A81CF62-4B71-4232-88A8-AD2D9A579FF4"></a><h3 id="HTMDB-GUID-9A81CF62-4B71-4232-88A8-AD2D9A579FF4" class="sect3"><span class="enumeration_section">21.2.3.5 </span>About Protecting Form Items
+               </h3>
+               <div>
+                  <p>When form items, including hidden items, obtain their values during the generation of the form page to be sent to the browser, the resulting text is escaped before rendering. Some of the safe item types are exceptions to this rule to support the intended behavior of each display type.</p>
+                  <p>Some item types have the Security attribute <span class="uicontrol bold">Escape special
+                characters</span>. Use the <span class="uicontrol bold">Escape special characters</span>
+            attribute to specify whether or not the value should be escaped. To prevent Cross-Site
+            Scripting (XSS) attacks, always set this attribute to <span class="uicontrol bold">On</span>. If you
+            need to render HTML tags stored in the page item or in the entries of a list of values,
+            you can set this flag to <span class="uicontrol bold">Off</span>. In such cases, you should take
+            additional precautions to ensure any user input to such fields are properly escaped when
+            entered and before saving.
+                  </p>
+                  <p>Developers can also append an exclamation mark (<code class="codeph">!</code>) followed by a predefined filter name to a page or application item name or to a report column reference, to escape special characters in the substitution value. 
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-9A81CF62-4B71-4232-88A8-AD2D9A579FF4__GUID-6053A1F3-6429-4FF9-AF0A-E6B13D6C1976">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-substitution-strings.html#GUID-CA3ABA44-D03D-4396-A527-B160F1FFE933">控制替换字符串中的输出转义</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29120"></a><div class="props_rev_3"><a id="GUID-16BB195B-0A56-4763-9688-1440C3CAE37F" name="GUID-16BB195B-0A56-4763-9688-1440C3CAE37F"></a><h3 id="HTMDB-GUID-16BB195B-0A56-4763-9688-1440C3CAE37F" class="sect3"><span class="enumeration_section">21.2.3.6 </span>About Restricting Characters Entered on an Item
+               </h3>
+               <div>
+                  <p>Limit cross site-scripting  (XSS) and other injection attacks by restricting the
+            characters users can save in session state. To accomplish this, edit the page item and
+            configure the <span class="uicontrol bold">Security</span>, <span class="uicontrol bold">Restricted
+                Characters</span> attribute. Restricted Characters can be saved in session
+            state. Available options include:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="uicontrol bold">All Characters Allowed</span></p>
+                        <p>No restriction applies.</p>
+                     </li>
+                     <li>
+                        <p><span class="uicontrol bold">Whitelist for a-Z, 0-9 and space</span> 
+                        </p>
+                        <p>Only allow characters a-z, A-Z, 0-9, and space.</p>
+                     </li>
+                     <li>
+                        <p><span class="uicontrol bold">Blacklist HTML command characters (&lt;&gt;")</span>.
+                        </p>
+                        <p>Do not allow reserved HTML characters</p>
+                     </li>
+                     <li>
+                        <p><span class="uicontrol bold">Blacklist &amp;&lt;&gt;"/;,*|=% and --:</span></p>
+                        <p>Do not allow &amp;, &lt;, &gt;, ", /, ;, ",", *, |, =, % and "--" (PL/SQL comment).</p>
+                     </li>
+                     <li>
+                        <p><span class="uicontrol bold">Blacklist &amp;&lt;&gt;"/;,*|=% or -- and new line</span></p>
+                        <p>Do not allow &amp;, &lt;, &gt;, ", /, ;, ",", *, |, =, %, "--", and new line characters</p>
+                     </li>
+                  </ul>
+                  <p>If you select a restriction, Oracle Application Express displays an error message if a user tries to save data which does not conform to the selected character restriction. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-16BB195B-0A56-4763-9688-1440C3CAE37F__GUID-0998B54B-BD02-49E2-B33A-EDA697014E46">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="editing-page-level-items.html#GUID-C89752E5-6CAD-49DF-9ED7-6DDAFC491F95">Configuring Page Item Security</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Using Query Builder">
+      <meta name="abstract" content="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">
+      <meta name="description" content="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">
+      <meta name="DC.subject" content="Query Builder, about, accessing, searching for objects, filtering objects, Object Selection pane, supported column types, resizing panes, removing objects in Design Pane, hiding objects in Design Pane, creating joins manually, creating joins automatically, Table Actions, View Actions, Saved SQL tab">
+      <meta name="keywords" content="Query Builder, about, accessing, searching for objects, filtering objects, Object Selection pane, supported column types, resizing panes, removing objects in Design Pane, hiding objects in Design Pane, creating joins manually, creating joins automatically, Table Actions, View Actions, Saved SQL tab">
+      <meta name="DC.Relation" scheme="URI" content="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-1BC771F5-E363-470A-B7CB-332889572628">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-BDE0C283-12DF-4E67-AD84-00153B874FA3">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-9F513EED-9E4F-4166-844E-A3C74C29D0AC">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-5B519ED0-0F50-4570-A421-F8958AA62569">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-1BB76F56-5D9C-4239-B251-F3100C1BE227">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-2DBA70A2-9098-46C1-8001-20DA9AD8FDD0">
+      <meta name="DC.Relation" scheme="URI" content="using-query-builder.html#GUID-E4A10BD8-C28E-4F1B-B0DD-AC74E3237927">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">
+      <meta name="description" content="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">
+      <title>Using Query Builder</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="loading-data-from-cloud.html" title="Previous" type="text/html">
+      <link rel="next" href="using-quick-SQL.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="loading-data-from-cloud.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-quick-SQL.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-Oracle-application-express-utilities.html" property="item" typeof="WebPage"><span property="name"> Using Oracle Application Express Utilities</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Using Query Builder</li>
+            </ol>
+            <a id="GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" name="GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA"></a><a id="AEUTL405"></a>
+            
+            <h2 id="AEUTL-GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" class="sect2"><span class="enumeration_section">5.2 </span>Using Query Builder
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.</p>
+               <p>Query Builder's graphical user interface enables database developers to build SQL queries without the need for manual SQL coding.</p>
+               <div class="infobox-tip" id="GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA__GUID-61EAAD08-B3D9-453A-9EBB-07AD6DB994BA">
+                  <p class="notep1">Tip:</p>
+                  <p>SQL commands created in the Query Builder can be accessed from SQL Commands.</p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-1BC771F5-E363-470A-B7CB-332889572628">Query Builder Home Page</a><br>Learn about Query Builder home page.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-BDE0C283-12DF-4E67-AD84-00153B874FA3">Accessing Query Builder</a><br>Learn how to access Query Builder.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-9F513EED-9E4F-4166-844E-A3C74C29D0AC">Understanding the Query Building Process</a><br>Learn how to build a query in Query Builder.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-5B519ED0-0F50-4570-A421-F8958AA62569">Using the Object Selection Pane</a><br>Use the Object Selection pane to search for and view tables, views, and materialized views within the current schema as well as select objects.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D">Using the Design Pane</a><br>Learn about how to use the Design pane.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE">Specifying Query Conditions</a><br>As you select columns within an object, you can specify conditions on the Conditions tab.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-1BB76F56-5D9C-4239-B251-F3100C1BE227">Creating Relationships Between Objects</a><br>You can create relationships between objects by creating a join.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260">Working with Saved Queries</a><br>You can create queries and save the query for later use.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-2DBA70A2-9098-46C1-8001-20DA9AD8FDD0">Viewing Generated SQL</a><br>The SQL view presents a read-only, formatted representation of the SQL generated by Query Builder. You can copy the SQL code that appears in the SQL View for use in other tools such as SQL Command Processor or <span>App Builder</span>.
+                  </li>
+                  <li class="ulchildlink"><a href="using-query-builder.html#GUID-E4A10BD8-C28E-4F1B-B0DD-AC74E3237927">Viewing Query Results</a><br> Execute a query, once you select objects and determine what columns to include in your query.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA__GUID-57112B70-985A-41E8-BE87-F93C89E4DF54">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="using-SQL-commands.html#GUID-41CC2FC0-F6B6-4737-B7D2-6C9C1B85310C" title="Using SQL commands you can create, edit, view, run, and delete database objects.">Using SQL Commands</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5" title="Oracle Application Express provides utilities to build SQL queries, load and unload data from an Oracle database, generate DDL, view object reports, manage User Interface Defaults, restore dropped database objects, compare schemas, monitor the database, and view database details.">Using Oracle Application Express Utilities</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL407"></a><div class="props_rev_3"><a id="GUID-1BC771F5-E363-470A-B7CB-332889572628" name="GUID-1BC771F5-E363-470A-B7CB-332889572628"></a><h3 id="AEUTL-GUID-1BC771F5-E363-470A-B7CB-332889572628" class="sect3"><span class="enumeration_section">5.2.1 </span>Query Builder Home Page
+               </h3>
+               <div>
+                  <p>Learn about Query Builder home page.</p>
+                  <div class="section">
+                     <p>The Query Builder page is divided into three sections:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><strong class="term">Object Selection pane</strong> displays on the left side of the page and contains a list objects from which you can build queries. Only objects in the current schema display. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><strong class="term">Design pane</strong> displays to the right of the Object Selection pane and above the Conditions, SQL, Results, and Saved SQL tabs. When you select an object from the Object Selection pane, it appears in the Design pane. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><strong class="term">Output pane</strong> displays below the Design pane. Once you select objects and columns, you can create conditions, view the generated SQL, or view query results.
+                           </p>
+                        </li>
+                     </ul>
+                     <div class="figure" id="GUID-1BC771F5-E363-470A-B7CB-332889572628__GUID-0ED8B09B-A6DB-4434-ACED-7E5C771FACDB"><img height="491" width="900" src="img/query_builder.png" alt="Description of query_builder.png follows" title="Description of query_builder.png follows" longdesc="img_text/query_builder.html"><br><a href="img_text/query_builder.html">Description of the illustration query_builder.png</a></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1BC771F5-E363-470A-B7CB-332889572628__GUID-81C18707-83EA-4968-B7ED-80FF029C1B02">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="getting-started.html#GUID-248C540B-7CBE-474D-BF99-8957D9556BCC" title="Select the default database schema for your SQL Workshop session.">Selecting a Schema</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL411"></a><div class="props_rev_3"><a id="GUID-BDE0C283-12DF-4E67-AD84-00153B874FA3" name="GUID-BDE0C283-12DF-4E67-AD84-00153B874FA3"></a><h3 id="AEUTL-GUID-BDE0C283-12DF-4E67-AD84-00153B874FA3" class="sect3"><span class="enumeration_section">5.2.2 </span>Accessing Query Builder 
+               </h3>
+               <div>
+                  <p>Learn how to access Query Builder.</p>
+                  <div class="section">
+                     <p>To access Query Builder:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Query Builder</span>.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>The Query Builder home page appears.</p>
+                     <div class="infobox-tip" id="GUID-BDE0C283-12DF-4E67-AD84-00153B874FA3__GUID-E5C7D1ED-C6AB-48AE-A5AB-67CA9838CB8C">
+                        <p class="notep1">Tip:</p>
+                        <p>You can also access Query Builder from a code editor in many part of Oracle Application Express by clicking the Query Builder button when editing a SQL attribute.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL412"></a><div class="props_rev_3"><a id="GUID-9F513EED-9E4F-4166-844E-A3C74C29D0AC" name="GUID-9F513EED-9E4F-4166-844E-A3C74C29D0AC"></a><h3 id="AEUTL-GUID-9F513EED-9E4F-4166-844E-A3C74C29D0AC" class="sect3"><span class="enumeration_section">5.2.3 </span>Understanding the Query Building Process
+               </h3>
+               <div>
+                  <p>Learn how to build a query in Query Builder.</p>
+                  <div class="section">
+                     <p>To build a query in Query Builder, you perform the following steps:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Select objects from the Object Selection pane.</span></li>
+                     <li><span>Add objects to the Design pane and select columns. </span></li>
+                     <li><span><span class="bold">Optional</span>: Establish relationships between objects. </span></li>
+                     <li><span><span class="bold">Optional</span>: Create query conditions. </span></li>
+                     <li><span>Execute the query and view results. </span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-9F513EED-9E4F-4166-844E-A3C74C29D0AC__GUID-D5C3DCDE-0EFF-46C3-838C-73F58DE23E2C">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="using-query-builder.html#GUID-2DBA70A2-9098-46C1-8001-20DA9AD8FDD0" title="The SQL view presents a read-only, formatted representation of the SQL generated by Query Builder. You can copy the SQL code that appears in the SQL View for use in other tools such as SQL Command Processor or App Builder.">Viewing Generated SQL</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="using-query-builder.html#GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260" title="You can create queries and save the query for later use.">Working with Saved Queries</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29185"></a><div class="props_rev_3"><a id="GUID-5B519ED0-0F50-4570-A421-F8958AA62569" name="GUID-5B519ED0-0F50-4570-A421-F8958AA62569"></a><h3 id="AEUTL-GUID-5B519ED0-0F50-4570-A421-F8958AA62569" class="sect3"><span class="enumeration_section">5.2.4 </span>Using the Object Selection Pane
+               </h3>
+               <p>Use the Object Selection pane to search for and view tables, views, and materialized views within the current schema as well as select objects.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-A366F1D9-BEEB-44D2-BDA9-FE134F7B3012">Searching and Filtering Objects</a><br>Use the Object Selection pane to search for and view tables, views, and materialized views within the current schema.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-B81F0724-E27A-4E0A-B933-FB04307C8138">Hiding and Restoring the Object Selection Pane</a><br>You can hide the Object Selection pane by selecting the Collapse control.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-42BCBE13-F8DB-4803-BA53-928BB56D120A">Selecting Objects</a><br>Use the Object Selection pane to select objects. 
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEUTL415"></a><div class="props_rev_3"><a id="GUID-A366F1D9-BEEB-44D2-BDA9-FE134F7B3012" name="GUID-A366F1D9-BEEB-44D2-BDA9-FE134F7B3012"></a><h4 id="AEUTL-GUID-A366F1D9-BEEB-44D2-BDA9-FE134F7B3012" class="sect4"><span class="enumeration_section">5.2.4.1 </span>Searching and Filtering Objects
+                  </h4>
+                  <div>
+                     <p>Use the Object Selection pane to search for and view tables, views, and materialized views within the current schema.</p>
+                     <div class="section">
+                        <p>To search or filter objects:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.</span><div>
+                              <p>Query Builder appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In the search field at the top of the Object Selection pane, enter a case insensitive query.</span><div>
+                              <div class="figure" id="GUID-A366F1D9-BEEB-44D2-BDA9-FE134F7B3012__GUID-F274644F-A3F8-491C-8D92-C152AE277D37"><img height="484" width="900" src="img/qb_search.png" alt="Description of qb_search.png follows" title="Description of qb_search.png follows" longdesc="img_text/qb_search.html"><br><a href="img_text/qb_search.html">Description of the illustration qb_search.png</a></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To view all tables or views within the currently selected schema, leave the search field blank.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-5B519ED0-0F50-4570-A421-F8958AA62569" title="Use the Object Selection pane to search for and view tables, views, and materialized views within the current schema as well as select objects.">Using the Object Selection Pane</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL416"></a><div class="props_rev_3"><a id="GUID-B81F0724-E27A-4E0A-B933-FB04307C8138" name="GUID-B81F0724-E27A-4E0A-B933-FB04307C8138"></a><h4 id="AEUTL-GUID-B81F0724-E27A-4E0A-B933-FB04307C8138" class="sect4"><span class="enumeration_section">5.2.4.2 </span>Hiding and Restoring the Object Selection Pane
+                  </h4>
+                  <div>
+                     <p>You can hide the Object Selection pane by selecting the Collapse control.</p>
+                     <div class="section">
+                        <p> The Collapse control displays on the right side of the Object Selection pane. If the Object Selection pane displays, selecting this control hides it. Similarly, if the Object Selection pane is hidden, selecting this control causes the pane restores it. Select the Left Splitter (click above or below the Collapse control to manually resize the Object Selection pane. </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-5B519ED0-0F50-4570-A421-F8958AA62569" title="Use the Object Selection pane to search for and view tables, views, and materialized views within the current schema as well as select objects.">Using the Object Selection Pane</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL417"></a><div class="props_rev_3"><a id="GUID-42BCBE13-F8DB-4803-BA53-928BB56D120A" name="GUID-42BCBE13-F8DB-4803-BA53-928BB56D120A"></a><h4 id="AEUTL-GUID-42BCBE13-F8DB-4803-BA53-928BB56D120A" class="sect4"><span class="enumeration_section">5.2.4.3 </span>Selecting Objects
+                  </h4>
+                  <div>
+                     <p>Use the Object Selection pane to select objects. </p>
+                     <div class="section">
+                        <p>The Design pane displays to the right of the Object Selection pane. When you select an object from the Object Selection pane, it appears in the Design pane. You use the Object Selection pane to select objects (that is, tables, views, and materialized views) and the Design pane to identify how those selected objects are used in a query.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-5B519ED0-0F50-4570-A421-F8958AA62569" title="Use the Object Selection pane to search for and view tables, views, and materialized views within the current schema as well as select objects.">Using the Object Selection Pane</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEUTL29186"></a><div class="props_rev_3"><a id="GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D" name="GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D"></a><h3 id="AEUTL-GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D" class="sect3"><span class="enumeration_section">5.2.5 </span>Using the Design Pane
+               </h3>
+               <div>
+                  <p>Learn about how to use the Design pane.</p>
+                  <p>Information on how to use how to use the Design pane includes the following topics:</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-EAE30F5F-41F3-4B3E-9B38-E44B4D0892E1">About Supported Column Types</a><br>Columns of all types available in Oracle Database 10<span class="italic">g</span> Release (10.2) or later display as objects in the Design pane.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-E3EBECA7-5F66-46B2-88F8-9BA410399ED9">Adding an Object to the Design Pane</a><br>You add an object to the Design pane by selecting it from the Object Selection pane.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-8B8F7AB7-706F-4B56-986C-5F4A164ED04E">Resizing the Design and Results Panes</a><br>As you select objects, you can resize Design and Results panes by selecting the Bottom Splitter in the center of the page.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-6EFCCD85-FFF0-4115-8BC0-30A66F7CED7E">Removing or Hiding Objects in the Design Pane</a><br>You remove or hide objects in the Design pane by selecting controls at the top of the object.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEUTL419"></a><div class="props_rev_3"><a id="GUID-EAE30F5F-41F3-4B3E-9B38-E44B4D0892E1" name="GUID-EAE30F5F-41F3-4B3E-9B38-E44B4D0892E1"></a><h4 id="AEUTL-GUID-EAE30F5F-41F3-4B3E-9B38-E44B4D0892E1" class="sect4"><span class="enumeration_section">5.2.5.1 </span>About Supported Column Types
+                  </h4>
+                  <div>
+                     <p>Columns of all types available in Oracle Database 10<span class="italic">g</span> Release (10.2) or later display as objects in the Design pane.
+                     </p>
+                     <p>Note the following column restrictions:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p> You may only select a maximum of 60 columns for each query.</p>
+                        </li>
+                        <li>
+                           <p>The following column types are not selectable and cannot be included in a generated query:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><code class="codeph">BLOB</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">NCLOB</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">RAW</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">LONG</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">LONG RAW</code></p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">XMLType</code></p>
+                              </li>
+                              <li>
+                                 <p>Any other nonscalar column types</p>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D" title="Learn about how to use the Design pane.">Using the Design Pane</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL420"></a><div class="props_rev_3"><a id="GUID-E3EBECA7-5F66-46B2-88F8-9BA410399ED9" name="GUID-E3EBECA7-5F66-46B2-88F8-9BA410399ED9"></a><h4 id="AEUTL-GUID-E3EBECA7-5F66-46B2-88F8-9BA410399ED9" class="sect4"><span class="enumeration_section">5.2.5.2 </span>Adding an Object to the Design Pane
+                  </h4>
+                  <div>
+                     <p>You add an object to the Design pane by selecting it from the Object Selection pane.</p>
+                     <div class="section">
+                        <p>To add an object to the Design pane:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.</span><div>
+                              <p>Query Builder appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Select an object from the Object Selection pane.</span><div>
+                              <div class="figure" id="GUID-E3EBECA7-5F66-46B2-88F8-9BA410399ED9__GUID-A4DF5E86-0E32-4773-A6AA-419F2CFEFF6F"><img height="450" width="901" src="img/query_builder_select.png" alt="Description of query_builder_select.png follows" title="Description of query_builder_select.png follows" longdesc="img_text/query_builder_select.html"><br><a href="img_text/query_builder_select.html">Description of the illustration query_builder_select.png</a></div>
+                              <!-- class="figure" -->
+                              <p>The selected object appears in the Design Pane. The icon next to the column name represents the type of the column.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the columns to be included in your query by clicking the check box to the left of the column name. </span><div>
+                              <p>When you select a column you are indicating it is included in the query. As you select a column, it appears on the Conditions tab. Note that the Show check box on the Conditions tab controls whether a column is included in query results. By default, this check box is selected. </p>
+                              <p>To select the first twenty columns, click the <span class="uicontrol bold">Table Actions</span> icon in the upper left corner of the object. The Actions window appears. Select <span class="uicontrol bold">Check All</span>.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To execute the query and view results, click <span class="uicontrol bold">Run</span> (<span class="uicontrol bold">Ctrl+Enter</span>).</span><div>
+                              <p>The Results pane displays the query results.</p>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-E3EBECA7-5F66-46B2-88F8-9BA410399ED9__GUID-8519F6C2-55B5-48AD-B9F0-82282D237162">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-query-builder.html#GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE" title="As you select columns within an object, you can specify conditions on the Conditions tab.">Specifying Query Conditions</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D" title="Learn about how to use the Design pane.">Using the Design Pane</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL421"></a><div class="props_rev_3"><a id="GUID-8B8F7AB7-706F-4B56-986C-5F4A164ED04E" name="GUID-8B8F7AB7-706F-4B56-986C-5F4A164ED04E"></a><h4 id="AEUTL-GUID-8B8F7AB7-706F-4B56-986C-5F4A164ED04E" class="sect4"><span class="enumeration_section">5.2.5.3 </span>Resizing the Design and Results Panes
+                  </h4>
+                  <div>
+                     <p>As you select objects, you can resize Design and Results panes by selecting the Bottom Splitter in the center of the page.</p>
+                     <div class="section">
+                        <p>The Bottom Splitter resembles a gray horizontal rule in the center of the page. Move the Bottom Splitter up and down to shrink and expand the Design pane.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D" title="Learn about how to use the Design pane.">Using the Design Pane</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL422"></a><div class="props_rev_3"><a id="GUID-6EFCCD85-FFF0-4115-8BC0-30A66F7CED7E" name="GUID-6EFCCD85-FFF0-4115-8BC0-30A66F7CED7E"></a><h4 id="AEUTL-GUID-6EFCCD85-FFF0-4115-8BC0-30A66F7CED7E" class="sect4"><span class="enumeration_section">5.2.5.4 </span>Removing or Hiding Objects in the Design Pane
+                  </h4>
+                  <div>
+                     <p>You remove or hide objects in the Design pane by selecting controls at the top of the object.</p>
+                     <div class="section">
+                        <p>To remove an object, select the <span class="uicontrol bold">Remove</span> icon in the upper right corner. To temporarily hide the columns within an object, click the <span class="uicontrol bold">Show/Hide Columns</span> icon. 
+                        </p>
+                        <div class="figure" id="GUID-6EFCCD85-FFF0-4115-8BC0-30A66F7CED7E__GUID-CF34DC10-BA78-4CA1-99FE-FA91F2FFB228"><img height="450" width="901" src="img/query_builder_remove.png" alt="Description of query_builder_remove.png follows" title="Description of query_builder_remove.png follows" longdesc="img_text/query_builder_remove.html"><br><a href="img_text/query_builder_remove.html">Description of the illustration query_builder_remove.png</a></div>
+                        <!-- class="figure" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1BFBB1AA-456C-4694-8D1A-E4840DCF352D" title="Learn about how to use the Design pane.">Using the Design Pane</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEUTL424"></a><a id="AEUTL423"></a><div class="props_rev_3"><a id="GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE" name="GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE"></a><h3 id="AEUTL-GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE" class="sect3"><span class="enumeration_section">5.2.6 </span>Specifying Query Conditions
+               </h3>
+               <div>
+                  <p>As you select columns within an object, you can specify conditions on the Conditions tab.</p>
+                  <div class="section">
+                     <p>Conditions enable you to filter and identify the data you want to work with.  You can use these attributes to modify the column alias, apply column conditions, sort columns, or apply functions.</p>
+                     <p>To specify query conditions:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.</span><div>
+                           <p>Query Builder appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select an object from the Object Selection pane.</span><div>
+                           <p>The selected object appears in the Design Pane.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select the columns to be included in your query by clicking the box to the left of the column name.</span><div>
+                           <p>When you select a column, you are indicating you want to include it in your query. As you select each column, it appears as a separate row in the Conditions view. <a href="using-query-builder.html#GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE__BABBDEFF" title="This table describes the attributes available on the Conditions tab.">Table 5-3</a> describes the attributes available on the Conditions tab. 
+                           </p>
+                           <div class="tblformal" id="GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE__BABBDEFF">
+                              <p class="titleintable">Table 5-3 Conditions Tab</p>
+                              <table cellpadding="4" cellspacing="0" class="Formal" title="Conditions Tab" summary="This table describes the attributes available on the Conditions tab." width="90%" frame="hsides" border="1" rules="rows">
+                                 <thead>
+                                    <tr align="left" valign="top">
+                                       <th align="left" valign="bottom" width="31%" id="d23953e1280">Condition Attribute</th>
+                                       <th align="left" valign="bottom" width="69%" id="d23953e1283">Description</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1288" headers="d23953e1280 ">
+                                          <p>Up and Down Arrows</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1288 d23953e1283 ">
+                                          <p>Controls the order that the columns to be displayed in the resulting query. Click the arrow buttons to move columns up and down.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1295" headers="d23953e1280 ">
+                                          <p>Column</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1295 d23953e1283 ">
+                                          <p>Displays the column name.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1302" headers="d23953e1280 ">
+                                          <p>Alias</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1302 d23953e1283 ">
+                                          <p>Specify an optional column alias. An <span class="bold">alias</span> is an alternative column name. Aliases make a column name more descriptive, shorten the column name, or prevent possible ambiguous references.
+                                          </p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1312" headers="d23953e1280 ">
+                                          <p>Object</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1312 d23953e1283 ">
+                                          <p>Specifies table or view name.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1319" headers="d23953e1280 ">
+                                          <p>Condition</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1319 d23953e1283 ">
+                                          <p>Specify a condition for the column. </p>
+                                          <p>The condition you enter modifies the query's <code class="codeph">WHERE</code> clause. When specifying a column condition, you must include the appropriate operator and operand. Consider the following examples:
+                                          </p><pre class="oac_no_warn" dir="ltr">&gt;=10
+='VA'
+IN (SELECT dept_no FROM dept)
+BETWEEN SYSDATE AND SYSDATE + 15
+ </pre></td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1333" headers="d23953e1280 ">
+                                          <p>Sort Type</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1333 d23953e1283 ">
+                                          <p>Select a sort type. Options include: </p>
+                                          <ul style="list-style-type: disc;">
+                                             <li>
+                                                <p>Ascending (<code class="codeph">Asc</code>) 
+                                                </p>
+                                             </li>
+                                             <li>
+                                                <p>Descending (<code class="codeph">Desc</code>)
+                                                </p>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1353" headers="d23953e1280 ">
+                                          <p>Sort Order</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1353 d23953e1283 ">
+                                          <p>Enter a number (1, 2, 3, and so on) to specify the order in which selected columns should display. </p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1360" headers="d23953e1280 ">
+                                          <p>Show</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1360 d23953e1283 ">
+                                          <p>Select this check box to include the column in your query results. It is not necessary to select Show to add a column to the query for filtering only.</p>
+                                          <p>For example, suppose you want to create following query:</p>
+                                          <p><code class="codeph">SELECT ename FROM emp WHERE deptno = 10</code> 
+                                          </p>
+                                          <p>To create this query in Query Builder:</p>
+                                          <ol type="a">
+                                             <li>
+                                                <p>From the Object list, select <span class="uicontrol bold">emp</span>.
+                                                </p>
+                                             </li>
+                                             <li>
+                                                <p>In the Design Pane, select <code class="codeph">ename</code> and <code class="codeph">deptno</code>.
+                                                </p>
+                                             </li>
+                                             <li>
+                                                <p>For the deptno column, in Condition enter <code class="codeph">=10 </code>and deselect the Show check box.
+                                                </p>
+                                             </li>
+                                          </ol>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1397" headers="d23953e1280 ">
+                                          <p>Function</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1397 d23953e1283 ">
+                                          <p>Select an argument function. Available functions are dependent on the column type and include:</p>
+                                          <ul style="list-style-type: disc;">
+                                             <li>
+                                                <p><span class="uicontrol bold">NUMBER columns</span> - <code class="codeph">COUNT</code>, <code class="codeph">COUNT</code> <code class="codeph">DISTINCT</code>, <code class="codeph">AVG</code>, <code class="codeph">MAX</code>, <code class="codeph">MIN</code>, <code class="codeph">SUM</code></p>
+                                             </li>
+                                             <li>
+                                                <p><span class="uicontrol bold">VARCHAR2, CHAR columns</span> - <code class="codeph">COUNT</code>, <code class="codeph">COUNT</code> <code class="codeph">DISTINCT</code>, <code class="codeph">INITCAP</code>, <code class="codeph">LENGTH</code>, <code class="codeph">LOWER</code>, <code class="codeph">LTRIM</code>, <code class="codeph">RTRIM</code>, <code class="codeph">TRIM</code>, <code class="codeph">UPPER</code></p>
+                                             </li>
+                                             <li>
+                                                <p><span class="uicontrol bold">DATE, TIMESTAMP columns </span>- <code class="codeph">COUNT</code>, <code class="codeph">COUNT</code> <code class="codeph">DISTINCT</code>, <code class="codeph">TO_CHAR</code> <code class="codeph">YEAR</code>, <code class="codeph">TO_CHAR</code> <code class="codeph">QUARTER</code>, <code class="codeph">TO_CHAR</code> <code class="codeph">MONTH</code>, <code class="codeph">TO_CHAR</code> <code class="codeph">DAY</code>, <code class="codeph">TO_CHAR</code> <code class="codeph">DAY OF YEAR</code>, <code class="codeph">TO_CHAR</code> <code class="codeph">WEEK</code></p>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1517" headers="d23953e1280 ">
+                                          <p>Group By</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1517 d23953e1283 ">
+                                          <p>Specify columns to be used for grouping when an aggregate function is used. Only applicable for columns included in output.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="31%" id="d23953e1524" headers="d23953e1280 ">
+                                          <p>Delete</p>
+                                       </td>
+                                       <td align="left" valign="top" width="69%" headers="d23953e1524 d23953e1283 ">
+                                          <p>Deselect the column, excluding it from the query.</p>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <!-- class="inftblhruleinformal" -->
+                           <p>As you select columns and define conditions, Query Builder writes the SQL for you.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To view the underlying SQL, click the <span class="uicontrol bold">SQL</span> tab.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-9075C399-23BC-47B5-AD89-1FE3295F62FE__GUID-F2D4D90F-A1B8-47B0-B94B-160455EE7537">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="using-query-builder.html#GUID-E4A10BD8-C28E-4F1B-B0DD-AC74E3237927" title="Execute a query, once you select objects and determine what columns to include in your query.">Viewing Query Results</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29187"></a><div class="props_rev_3"><a id="GUID-1BB76F56-5D9C-4239-B251-F3100C1BE227" name="GUID-1BB76F56-5D9C-4239-B251-F3100C1BE227"></a><h3 id="AEUTL-GUID-1BB76F56-5D9C-4239-B251-F3100C1BE227" class="sect3"><span class="enumeration_section">5.2.7 </span>Creating Relationships Between Objects
+               </h3>
+               <div>
+                  <p>You can create relationships between objects by creating a join.</p>
+                  <p>A <strong class="term">join</strong> identifies a relationship between two or more tables, views, or materialized views. 
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-8A189786-F034-4233-9DDB-567E5202639D">About Join Conditions</a><br>A join condition determines how the rows from one object combine with the rows from another object.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-EB1D9ACC-97A8-48F7-B700-147FD0DD6192">Joining Objects Manually</a><br>You can create a join manually by selecting the Join column in the Design pane.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-472FAE19-EB3C-4160-9409-D39E3959E18E">Joining Objects Automatically</a><br>Learn how to join objects automatically.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEUTL29188"></a><div class="props_rev_3"><a id="GUID-8A189786-F034-4233-9DDB-567E5202639D" name="GUID-8A189786-F034-4233-9DDB-567E5202639D"></a><h4 id="AEUTL-GUID-8A189786-F034-4233-9DDB-567E5202639D" class="sect4"><span class="enumeration_section">5.2.7.1 </span>About Join Conditions
+                  </h4>
+                  <div>
+                     <p>A join condition determines how the rows from one object combine with the rows from another object.</p>
+                     <p>When you write a join query, you specify a condition that conveys a relationship between two objects. This condition is called a <strong class="term">join condition</strong>. 
+                     </p>
+                     <p>Query Builder supports inner, outer, left, and right joins. An <strong class="term">inner join</strong> (also called a <strong class="term">simple join</strong>) returns the rows that satisfy the join condition. An outer join extends the result of a simple join. An <strong class="term">outer join</strong> returns all rows that satisfy the join condition and returns some or all of those rows from one table for which no rows from the other satisfy the join condition.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-8A189786-F034-4233-9DDB-567E5202639D__GUID-B280D538-FA18-4C98-A0FC-7833D13332F4">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=SQLRF-GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC" target="_blank"><span><cite>Oracle Database SQL Language Reference</cite></span></a>"</span> for information about join conditions
+                        </p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1BB76F56-5D9C-4239-B251-F3100C1BE227" title="You can create relationships between objects by creating a join.">Creating Relationships Between Objects</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL428"></a><div class="props_rev_3"><a id="GUID-EB1D9ACC-97A8-48F7-B700-147FD0DD6192" name="GUID-EB1D9ACC-97A8-48F7-B700-147FD0DD6192"></a><h4 id="AEUTL-GUID-EB1D9ACC-97A8-48F7-B700-147FD0DD6192" class="sect4"><span class="enumeration_section">5.2.7.2 </span>Joining Objects Manually
+                  </h4>
+                  <div>
+                     <p>You can create a join manually by selecting the Join column in the Design pane.</p>
+                     <div class="section">
+                        <p>To join two objects manually:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.</span><div>
+                              <p>Query Builder appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>From the Object Selection pane, select the objects you want to join.</span><div>
+                              <p>The objects display in the Design pane.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Identify the columns you want to join.</span><div>
+                              <p>You create a join by selecting the Join column adjacent to the column name. The Join column displays to the right of the datatype, beneath the Remove icon. When your cursor is in the appropriate position, the following tooltip displays:</p><pre class="oac_no_warn" dir="ltr">Click here to select column for join
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Select the appropriate Join column for the first object.</span><div>
+                              <p>When selected, the Join column displays as a dark gray. To deselect a Join column, simply select it again or press <span class="uicontrol bold">ESC</span>.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the appropriate Join column for the second object.</span><div>
+                              <div class="infobox-tip" id="GUID-EB1D9ACC-97A8-48F7-B700-147FD0DD6192__GUID-A65397D4-B87A-4D4C-A6AA-1FBD70084930">
+                                 <p class="notep1">Tip:</p>
+                                 <p>You can also join two objects by dragging and dropping. Select a column in the first table and then drag and drop it onto a column in another table.</p>
+                              </div>
+                              <p>When joined, a line connects the two columns. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the columns to be included in your query. You can view the SQL statement resulting from the join by positioning the cursor over the line.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Run</span> to execute the query.</span><div>
+                              <p>The Results pane displays the query results.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1BB76F56-5D9C-4239-B251-F3100C1BE227" title="You can create relationships between objects by creating a join.">Creating Relationships Between Objects</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL429"></a><div class="props_rev_3"><a id="GUID-472FAE19-EB3C-4160-9409-D39E3959E18E" name="GUID-472FAE19-EB3C-4160-9409-D39E3959E18E"></a><h4 id="AEUTL-GUID-472FAE19-EB3C-4160-9409-D39E3959E18E" class="sect4"><span class="enumeration_section">5.2.7.3 </span>Joining Objects Automatically
+                  </h4>
+                  <div>
+                     <p>Learn how to join objects automatically.</p>
+                     <div class="section">
+                        <p>When you join objects automatically, the Query Builder suggests logical, existing parent and child relationships between existing columns. </p>
+                        <p>To join objects automatically:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.</span><div>
+                              <p>Query Builder appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>From the Object Selection pane, select an object.</span><div>
+                              <p>The object displays in the Design pane.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click the small icon in the upper left corner of the object. Depending upon the selected object, the icon label displays as <span class="uicontrol bold">Table Actions</span> or <span class="uicontrol bold">View Actions</span>.</span><div>
+                              <p>The Actions window appears. Use the Actions window to select all columns within the current object or objects related to the current object.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In the Actions window, select the appropriate options:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="uicontrol bold">Check All </span>- Select this option to select the first twenty columns in the current object.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="uicontrol bold">Add Parent </span>- Displays tables that are referenced as a foreign key to the current object.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="uicontrol bold">Add Child</span> - Displays tables that reference the current object in a foreign key.
+                                    </p>
+                                 </li>
+                              </ul>
+                              <p>If using Add Parent or Add child, the selected object appears and a line connects the foreign key columns.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Select additional columns to be included in your query.</span><div>
+                              <p>You can view the SQL statement resulting from the join by positioning the cursor over the green line.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Run</span> to execute the query.</span><div>
+                              <p>The Results pane displays the query results.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1BB76F56-5D9C-4239-B251-F3100C1BE227" title="You can create relationships between objects by creating a join.">Creating Relationships Between Objects</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEUTL430"></a><div class="props_rev_3"><a id="GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260" name="GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260"></a><h3 id="AEUTL-GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260" class="sect3"><span class="enumeration_section">5.2.8 </span>Working with Saved Queries
+               </h3>
+               <div>
+                  <p>You can create queries and save the query for later use.</p>
+                  <p>As you create queries, you can save them by clicking the Save button in the Design pane. Once you save a query, you can access it later in the Saved SQL view.</p>
+                  <div class="infobox-tip" id="GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260__GUID-B2F4E793-120D-4B1B-A182-EB869E503799">
+                     <p class="notep1">Tip:</p>
+                     <p>The Saved SQL view only displays queries saved in Query Builder. In SQL Commands you can view queries saved in both SQL Commands and Query Builder.</p>
+                  </div>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-61B78326-F9E9-4BA8-879D-AFD2DD1810EC">Saving a Query</a><br>Learn how to save a query.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-7324366A-2595-495A-9152-3E3F53683EF6">Editing a Saved Query</a><br>Once you save a query, you can access it in the Saved SQL view and edit.
+                     </li>
+                     <li class="ulchildlink"><a href="using-query-builder.html#GUID-0DF5FB2C-66FB-4FFE-85F7-5A454CF8D2A3">Deleting a Saved Query</a><br>Learn how to delete a saved SQL query.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEUTL432"></a><div class="props_rev_3"><a id="GUID-61B78326-F9E9-4BA8-879D-AFD2DD1810EC" name="GUID-61B78326-F9E9-4BA8-879D-AFD2DD1810EC"></a><h4 id="AEUTL-GUID-61B78326-F9E9-4BA8-879D-AFD2DD1810EC" class="sect4"><span class="enumeration_section">5.2.8.1 </span>Saving a Query
+                  </h4>
+                  <div>
+                     <p>Learn how to save a query.</p>
+                     <div class="section">
+                        <p>To save a query:</p>
+                        <ol>
+                           <li>
+                              <p>Build a query:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.
+                                    </p>
+                                    <p>Query Builder appears.</p>
+                                 </li>
+                                 <li>
+                                    <p>Select objects from the Object Selection pane.</p>
+                                 </li>
+                                 <li>
+                                    <p>Add objects to the Design pane and select columns.</p>
+                                 </li>
+                                 <li>
+                                    <p>Execute the query.</p>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li>
+                              <p>Click <span class="uicontrol bold">Save</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Enter a name and description and click <span class="uicontrol bold">Save</span>.
+                              </p>
+                              <p>The saved query displays in the Saved SQL view.</p>
+                           </li>
+                        </ol>
+                        <p>Note that Query Builder does not support duplicate query names. If you open an existing query, keep the existing name, and save it again, Query Builder over-writes the existing query. If you change the name of an existing query and save it again, Query Builder saves the query again under the new name. </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260" title="You can create queries and save the query for later use.">Working with Saved Queries</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL433"></a><div class="props_rev_3"><a id="GUID-7324366A-2595-495A-9152-3E3F53683EF6" name="GUID-7324366A-2595-495A-9152-3E3F53683EF6"></a><h4 id="AEUTL-GUID-7324366A-2595-495A-9152-3E3F53683EF6" class="sect4"><span class="enumeration_section">5.2.8.2 </span>Editing a Saved Query
+                  </h4>
+                  <div>
+                     <p>Once you save a query, you can access it in the Saved SQL view and edit.</p>
+                     <div class="section">
+                        <p>To edit a Saved SQL query:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.</span><div>
+                              <p>Query Builder appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the <span class="uicontrol bold">Saved SQL</span> tab.</span></li>
+                        <li class="stepexpand"><span>To filter the display, you can:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Make a selection from the Owner list and click <span class="uicontrol bold">Go</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Enter a search query in the Name field and click <span class="uicontrol bold">Go</span>.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To edit a query, select the appropriate name.</span><div>
+                              <p>The saved query appears. The selected objects display in the Design pane and the Conditions view appears. </p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260" title="You can create queries and save the query for later use.">Working with Saved Queries</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL434"></a><div class="props_rev_3"><a id="GUID-0DF5FB2C-66FB-4FFE-85F7-5A454CF8D2A3" name="GUID-0DF5FB2C-66FB-4FFE-85F7-5A454CF8D2A3"></a><h4 id="AEUTL-GUID-0DF5FB2C-66FB-4FFE-85F7-5A454CF8D2A3" class="sect4"><span class="enumeration_section">5.2.8.3 </span>Deleting a Saved Query
+                  </h4>
+                  <div>
+                     <p>Learn how to delete a saved SQL query.</p>
+                     <div class="section">
+                        <p>To delete a Saved SQL query:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.</span><div>
+                              <p>Query Builder appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the <span class="uicontrol bold">Saved SQL</span> tab.</span></li>
+                        <li class="stepexpand"><span>Select the queries to be deleted and click <span class="uicontrol bold">Delete Checked</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-FCFA82BD-C8B3-4498-8410-1C4091DF9260" title="You can create queries and save the query for later use.">Working with Saved Queries</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEUTL435"></a><div class="props_rev_3"><a id="GUID-2DBA70A2-9098-46C1-8001-20DA9AD8FDD0" name="GUID-2DBA70A2-9098-46C1-8001-20DA9AD8FDD0"></a><h3 id="AEUTL-GUID-2DBA70A2-9098-46C1-8001-20DA9AD8FDD0" class="sect3"><span class="enumeration_section">5.2.9 </span>Viewing Generated SQL
+               </h3>
+               <div>
+                  <p>The SQL view presents a read-only, formatted representation of the SQL generated by Query Builder. You can copy the SQL code that appears in the SQL View for use in other tools such as SQL Command Processor or <span>App Builder</span>.
+                  </p>
+                  <div class="section">
+                     <p>To access the SQL view:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Query Builder</span>.</span><div>
+                           <p>Query Builder appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select an object from the Object Selection pane.</span><div>
+                           <p>The selected object appears in the Design Pane.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select the columns to be included in your query.</span></li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">SQL</span> tab.</span><div>
+                           <p>The SQL code generated by Query Builder appears.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-2DBA70A2-9098-46C1-8001-20DA9AD8FDD0__GUID-45ECDDB7-5B72-4DD5-93E5-7EC3F33840A9">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="using-SQL-commands.html#GUID-41CC2FC0-F6B6-4737-B7D2-6C9C1B85310C" title="Using SQL commands you can create, edit, view, run, and delete database objects.">Using SQL Commands</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL436"></a><div class="props_rev_3"><a id="GUID-E4A10BD8-C28E-4F1B-B0DD-AC74E3237927" name="GUID-E4A10BD8-C28E-4F1B-B0DD-AC74E3237927"></a><h3 id="AEUTL-GUID-E4A10BD8-C28E-4F1B-B0DD-AC74E3237927" class="sect3"><span class="enumeration_section">5.2.10 </span>Viewing Query Results
+               </h3>
+               <div>
+                  <p> Execute a query, once you select objects and determine what columns to include in your query.</p>
+                  <div class="section">
+                     <p>Execute a query by:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Clicking the <span class="uicontrol bold">Run</span> button (or pressing <span class="uicontrol bold">Ctrl+Enter</span>)
+                           </p>
+                        </li>
+                        <li>
+                           <p>Selecting the <span class="uicontrol bold">Results</span> tab
+                           </p>
+                        </li>
+                     </ul>
+                     <p>The Results view appears, displaying formatted query results. To export the report as a comma-delimited file (.csv) file, click the <span class="uicontrol bold">Download</span> link at the bottom of the page. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-query-builder.html#GUID-1F074D68-9C9E-43AD-B5CA-2A978C8C99EA" title="Using Query Builder, you can search and filter database objects, select objects and columns, create relationships between objects, view formatted query results, and save queries with little or no SQL knowledge.">Using Query Builder</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

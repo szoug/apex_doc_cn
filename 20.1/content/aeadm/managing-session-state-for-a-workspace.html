@@ -1,0 +1,333 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Session State for a Workspace">
+      <meta name="abstract" content="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">
+      <meta name="description" content="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">
+      <meta name="DC.subject" content="session state, managing, user preferences, viewing session details, removing, session, purging by age, purging current session">
+      <meta name="keywords" content="session state, managing, user preferences, viewing session details, removing, session, purging by age, purging current session">
+      <meta name="DC.Relation" scheme="URI" content="workspace-and-application-administration.html#GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14">
+      <meta name="DC.Relation" scheme="URI" content="managing-session-state-for-a-workspace.html#GUID-45FC9FB8-D08F-428B-BFB7-293D17034975">
+      <meta name="DC.Relation" scheme="URI" content="managing-session-state-for-a-workspace.html#GUID-C6377DEC-33AF-4B6A-8F96-3A6251F6532F">
+      <meta name="DC.Relation" scheme="URI" content="managing-session-state-for-a-workspace.html#GUID-3B5EEDE4-7E92-46D8-9D56-06E4FBB0829D">
+      <meta name="DC.Relation" scheme="URI" content="managing-session-state-for-a-workspace.html#GUID-3CE6FFEB-6A1B-48F7-A0F2-0444523F0269">
+      <meta name="DC.Relation" scheme="URI" content="managing-session-state-for-a-workspace.html#GUID-A2201B09-416B-4637-8E3F-4FC55C5CDB54">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-E9348DEB-057D-4C9D-BABE-163108749B25">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">
+      <meta name="description" content="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">
+      <title>Managing Session State for a Workspace</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="purging-the-developer-activity-and-click-count-log-files.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-user-preferences.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="purging-the-developer-activity-and-click-count-log-files.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-user-preferences.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="workspace-and-application-administration.html" property="item" typeof="WebPage"><span property="name">Workspace and Application Administration</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Session State for a Workspace</li>
+            </ol>
+            <a id="GUID-E9348DEB-057D-4C9D-BABE-163108749B25" name="GUID-E9348DEB-057D-4C9D-BABE-163108749B25"></a><a id="AEADM111"></a>
+            
+            <h2 id="AEADM-GUID-E9348DEB-057D-4C9D-BABE-163108749B25" class="sect2"><span class="enumeration_section">2.10 </span>Managing Session State for a Workspace
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-session-state-for-a-workspace.html#GUID-45FC9FB8-D08F-428B-BFB7-293D17034975">About Session State</a><br>A session is a logical construct that establishes persistence (or stateful behavior) across page views. Each session is assigned a unique ID, which the Application Express engine uses to store and retrieve an application's working set of data (or session state) before and after each page view. Sessions persist in the database until purged.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-session-state-for-a-workspace.html#GUID-C6377DEC-33AF-4B6A-8F96-3A6251F6532F">Removing Session State After Reviewing Session Details</a><br>Determine whether to remove existing sessions by first reviewing session details. From the Session Details page, administrators can remove the session record or session state. 
+                  </li>
+                  <li class="ulchildlink"><a href="managing-session-state-for-a-workspace.html#GUID-3B5EEDE4-7E92-46D8-9D56-06E4FBB0829D">Viewing Session State for the Current Session</a><br>View sessions state for the current session on the Session State page.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-session-state-for-a-workspace.html#GUID-3CE6FFEB-6A1B-48F7-A0F2-0444523F0269">Purging Sessions by Age</a><br>Purge existing sessions by age on the Purge Sessions page.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-session-state-for-a-workspace.html#GUID-A2201B09-416B-4637-8E3F-4FC55C5CDB54">Purging Session State for the Current Session</a><br>Purge session state for the current session on the Purge Session State page.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-E9348DEB-057D-4C9D-BABE-163108749B25__GUID-51682476-6D63-4B4F-B922-49CC7FFDF098">
+                  <p class="notep1">See Also:</p>
+                  
+                  <ul style="list-style-type: disc;" id="GUID-E9348DEB-057D-4C9D-BABE-163108749B25__UL_XHP_5BH_RHB">
+                     <li>
+                        
+                        <p><span class="q">"<a href="managing-meta-data.html#GUID-67CDB349-F01D-4D30-A9B7-1033C54333D6" title="View session state statistics and purge the session state on the Session State page.">Managing Session State for an Instance</a>"</span></p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><a href="../htmdb/understanding-session-state-management.html#HTMDB-GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9" target="_blank">Understanding Session State
+                            Management</a> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                        
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="workspace-and-application-administration.html#GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14" title="In an Oracle Application Express development environment, users sign in to a shared work area called a workspace. Workspace administrators monitor and administer a shared work area called a workspace.">Workspace and Application Administration</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM29150"></a><div class="props_rev_3"><a id="GUID-45FC9FB8-D08F-428B-BFB7-293D17034975" name="GUID-45FC9FB8-D08F-428B-BFB7-293D17034975"></a><h3 id="AEADM-GUID-45FC9FB8-D08F-428B-BFB7-293D17034975" class="sect3"><span class="enumeration_section">2.10.1 </span>About Session State
+               </h3>
+               <div>
+                  <p>A session is a logical construct that establishes persistence (or stateful behavior) across page views. Each session is assigned a unique ID, which the Application Express engine uses to store and retrieve an application's working set of data (or session state) before and after each page view. Sessions persist in the database until purged.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-45FC9FB8-D08F-428B-BFB7-293D17034975__GUID-B508535C-946B-4DC7-8A4A-049364F781AF">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><span class="q">"<a href="../htmdb/understanding-session-state-management.html#HTMDB-GUID-CE2E9C4B-2779-4D0A-808C-B462E382CE1C" target="_blank">What is Session State?</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-session-state-for-a-workspace.html#GUID-E9348DEB-057D-4C9D-BABE-163108749B25" title="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">Managing Session State for a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM112"></a><div class="props_rev_3"><a id="GUID-C6377DEC-33AF-4B6A-8F96-3A6251F6532F" name="GUID-C6377DEC-33AF-4B6A-8F96-3A6251F6532F"></a><h3 id="AEADM-GUID-C6377DEC-33AF-4B6A-8F96-3A6251F6532F" class="sect3"><span class="enumeration_section">2.10.2 </span>Removing Session State After Reviewing Session Details
+               </h3>
+               <div>
+                  <p>Determine whether to remove existing sessions by first reviewing session details. From the Session Details page, administrators can remove the session record or session state. </p>
+                  <div class="section">
+                     <p>To view session details and remove session state:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Meta Data, click <span class="uicontrol bold">Session State</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Recent Sessions</span>.</span><div>
+                           <p>You can customize the appearance of the page using the Search bar at the top of the page</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To view session details, select the session ID.</span></li>
+                     <li class="stepexpand"><span>On the Sessions Details page, click one of the following buttons: </span><ul>
+                           <li><span class="uicontrol bold">Remove State</span> clears the session data from the session state tables (including collections data) but does not remove the session record. Removing a session is a good approach for developers during debugging. This is the equivalent of clearing session state for the current session using the Clear Cache argument value <code class="codeph">SESSION</code> in the f?p URL. This option might also be used by developers during debugging.
+                           </li>
+                           <li><span class="uicontrol bold">Remove Session</span> removes the record of the session from the
+                            <code class="codeph">SESSIONS</code> table along with the session state (including
+                        collections data) associated with the session. Any user using a session that
+                        has removed is no longer able to use the session and is prompted to
+                        re-authenticate upon their next page request (in most situations). This
+                        option can be used by administrators to ensure a specific user can no longer
+                        access an Oracle Application Express application.
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C6377DEC-33AF-4B6A-8F96-3A6251F6532F__GUID-0233F5AE-A68D-42E9-9216-F743AD9FDAEE">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="../htmdb/debugging-an-application.html#HTMDB-GUID-2A0361B3-56AC-41F0-9FF3-C3DF15432762" target="_blank">Debugging an Application</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-session-state-for-a-workspace.html#GUID-E9348DEB-057D-4C9D-BABE-163108749B25" title="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">Managing Session State for a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM113"></a><div class="props_rev_3"><a id="GUID-3B5EEDE4-7E92-46D8-9D56-06E4FBB0829D" name="GUID-3B5EEDE4-7E92-46D8-9D56-06E4FBB0829D"></a><h3 id="AEADM-GUID-3B5EEDE4-7E92-46D8-9D56-06E4FBB0829D" class="sect3"><span class="enumeration_section">2.10.3 </span>Viewing Session State for the Current Session
+               </h3>
+               <div>
+                  <p>View sessions state for the current session on the Session State page.</p>
+                  <div class="section">
+                     <p>To view session state for the current or recent sessions:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Meta Data, click <span class="uicontrol bold">Session State</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="bold">Session State for Current Session</span>. </span><div>
+                           <p>You can customize the appearance of the page using the Search bar at the top of the page</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-3B5EEDE4-7E92-46D8-9D56-06E4FBB0829D__GUID-66FEE62A-0BB1-4120-B590-423D027430F0">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-session-state-for-a-workspace.html#GUID-C6377DEC-33AF-4B6A-8F96-3A6251F6532F" title="Determine whether to remove existing sessions by first reviewing session details. From the Session Details page, administrators can remove the session record or session state.">Removing Session State After Reviewing Session Details</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-session-state-for-a-workspace.html#GUID-E9348DEB-057D-4C9D-BABE-163108749B25" title="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">Managing Session State for a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM115"></a><div class="props_rev_3"><a id="GUID-3CE6FFEB-6A1B-48F7-A0F2-0444523F0269" name="GUID-3CE6FFEB-6A1B-48F7-A0F2-0444523F0269"></a><h3 id="AEADM-GUID-3CE6FFEB-6A1B-48F7-A0F2-0444523F0269" class="sect3"><span class="enumeration_section">2.10.4 </span>Purging Sessions by Age
+               </h3>
+               <div>
+                  <p>Purge existing sessions by age on the Purge Sessions page.</p>
+                  <div class="section">
+                     <p>To purge existing sessions by age:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Meta Data, click <span class="uicontrol bold">Session State</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Purge Sessions by Age</span>.</span></li>
+                     <li class="stepexpand"><span>On Purge Sessions, make a selection from the Sessions older than list.</span></li>
+                     <li class="stepexpand"><span>Click one of the following buttons:</span><ul>
+                           <li><span class="uicontrol bold">Report Sessions</span> generates a report detailing the total number of sessions for the workspace, the number of users, and the number of old sessions.
+                           </li>
+                           <li><span class="uicontrol bold">Purge Sessions</span> purges existing sessions by the age you selected.
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-3CE6FFEB-6A1B-48F7-A0F2-0444523F0269__GUID-2109228C-3875-41F3-88F3-F6917158BF67">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="../htmdb/viewing-session-state.html#HTMDB-GUID-F218A21D-C153-4BCB-8FE9-51C7FAA13637" target="_blank">Viewing Session State</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-session-state-for-a-workspace.html#GUID-E9348DEB-057D-4C9D-BABE-163108749B25" title="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">Managing Session State for a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM114"></a><div class="props_rev_3"><a id="GUID-A2201B09-416B-4637-8E3F-4FC55C5CDB54" name="GUID-A2201B09-416B-4637-8E3F-4FC55C5CDB54"></a><h3 id="AEADM-GUID-A2201B09-416B-4637-8E3F-4FC55C5CDB54" class="sect3"><span class="enumeration_section">2.10.5 </span>Purging Session State for the Current Session
+               </h3>
+               <div>
+                  <p>Purge session state for the current session on the Purge Session State page.</p>
+                  <div class="section">
+                     <p>To purge session state for the current session:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Meta Data, click <span class="uicontrol bold">Session State</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Purge Session State for Current Session</span>.</span></li>
+                     <li class="stepexpand"><span>Click one of the following buttons:</span><ul>
+                           <li><span class="uicontrol bold">View Session State</span> - Displays information about the current session.
+                           </li>
+                           <li><span class="uicontrol bold">Purge Session State</span> - Resets the session state for the current session.
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-session-state-for-a-workspace.html#GUID-E9348DEB-057D-4C9D-BABE-163108749B25" title="A session establishes persistence (or stateful behavior) across page views. Workspace administrators can view session details for the current session or for recent sessions, purge the current session state, or purge sessions based on their age.">Managing Session State for a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

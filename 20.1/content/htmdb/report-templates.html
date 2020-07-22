@@ -1,0 +1,926 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Report Templates">
+      <meta name="abstract" content="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">
+      <meta name="description" content="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">
+      <meta name="DC.subject" content="templates, reports, report templates, editing, generic column templates, named column templates, report column templates (generic), Report Template, Before Rows, reports, including pagination above, pagination, exporting to CSV format, Column Headings, report column templates, colorizing cell headings, omitting headings, Before Each Row, CSV export, Column Templates, columns, displaying HTML after all columns, displaying HTML after last row, After Rows, Row Highlighting, Pagination Subtemplate, report column templates (named), Report Template Identification, Subscription, Row Templates, colorizing column header cell, Before Rows attribute, columns templates, using JavaScript, using JavaScript, JavaScript, in row templates">
+      <meta name="keywords" content="templates, reports, report templates, editing, generic column templates, named column templates, report column templates (generic), Report Template, Before Rows, reports, including pagination above, pagination, exporting to CSV format, Column Headings, report column templates, colorizing cell headings, omitting headings, Before Each Row, CSV export, Column Templates, columns, displaying HTML after all columns, displaying HTML after last row, After Rows, Row Highlighting, Pagination Subtemplate, report column templates (named), Report Template Identification, Subscription, Row Templates, colorizing column header cell, Before Rows attribute, columns templates, using JavaScript, using JavaScript, JavaScript, in row templates">
+      <meta name="DC.Relation" scheme="URI" content="creating-custom-themes.html#GUID-CB755CDA-67EA-4CF8-943D-80E2CDCC2E3E">
+      <meta name="DC.Relation" scheme="URI" content="report-templates.html#GUID-CDB791D3-2D15-436D-B2DA-FEAA5AAE3CDC">
+      <meta name="DC.Relation" scheme="URI" content="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">
+      <meta name="DC.Relation" scheme="URI" content="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">
+      <meta name="DC.Relation" scheme="URI" content="report-templates.html#GUID-47D065E4-A399-4B92-A244-C60532D7D449">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-639BA4AD-FC98-4F5A-AB80-7B882CE5B4AA">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">
+      <meta name="description" content="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">
+      <title>Report Templates</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="region-templates.html" title="Previous" type="text/html">
+      <link rel="next" href="using-custom-cascading-style-sheets.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="region-templates.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-custom-cascading-style-sheets.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-themes-and-theme-styles.html" property="item" typeof="WebPage"><span property="name">Using Themes and Theme Styles</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="creating-custom-themes.html" property="item" typeof="WebPage"><span property="name">Creating Custom Themes</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Report Templates</li>
+            </ol>
+            <a id="GUID-639BA4AD-FC98-4F5A-AB80-7B882CE5B4AA" name="GUID-639BA4AD-FC98-4F5A-AB80-7B882CE5B4AA"></a><a id="HTMDB25707"></a>
+            
+            <h2 id="HTMDB-GUID-639BA4AD-FC98-4F5A-AB80-7B882CE5B4AA" class="sect2"><span class="enumeration_section">13.3.17 </span>Report Templates
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Report column templates provide you with control over the results of a row from a SQL
+        query. This type of template defines a cell, not an entire row.</p>
+               <p>Each report template identifies column names using the syntax <code class="codeph">#1#, #2#, #3#</code>, and so on. You can also name columns using column name substitution syntax such as <code class="codeph">#ENAME#</code> or <code class="codeph">#EMPNO#</code>. You can reference any item from your application within your template. For example, to reference an item called <span class="italic"><code class="codeph">ABC.</code></span> in your template, you could include the exact substitution string<span class="italic"><code class="codeph"> &amp;ABC.</code></span>. The actual value of ABC. would be provided by an end user editing an item in your application named <span class="italic"><code class="codeph">ABC</code></span>.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="report-templates.html#GUID-CDB791D3-2D15-436D-B2DA-FEAA5AAE3CDC">Generic Column Templates and Named Column Templates</a><br></li>
+                  <li class="ulchildlink"><a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a><br></li>
+                  <li class="ulchildlink"><a href="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">Report Column Template Attributes for Named Column Templates</a><br></li>
+                  <li class="ulchildlink"><a href="report-templates.html#GUID-47D065E4-A399-4B92-A244-C60532D7D449">About Using JavaScript in Column Templates</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="creating-custom-themes.html#GUID-CB755CDA-67EA-4CF8-943D-80E2CDCC2E3E" title="Create a custom theme by modifying existing templates.">Creating Custom Themes</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25708"></a><div class="props_rev_3"><a id="GUID-CDB791D3-2D15-436D-B2DA-FEAA5AAE3CDC" name="GUID-CDB791D3-2D15-436D-B2DA-FEAA5AAE3CDC"></a><h3 id="HTMDB-GUID-CDB791D3-2D15-436D-B2DA-FEAA5AAE3CDC" class="sect3"><span class="enumeration_section">13.3.17.1 </span>Generic Column Templates and Named Column Templates
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Oracle Application Express includes two types of report templates:</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-1D39E77C-4BBC-4915-94FB-A003789E0ABF">Generic Column Templates</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-2BC5FCC1-4B94-40E2-ADD7-D6BB09723DF0">Named Column Templates</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-639BA4AD-FC98-4F5A-AB80-7B882CE5B4AA" title="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">Report Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB25709"></a><div class="props_rev_3"><a id="GUID-1D39E77C-4BBC-4915-94FB-A003789E0ABF" name="GUID-1D39E77C-4BBC-4915-94FB-A003789E0ABF"></a><h4 id="HTMDB-GUID-1D39E77C-4BBC-4915-94FB-A003789E0ABF" class="sect4"><span class="enumeration_section">13.3.17.1.1 </span>Generic Column Templates
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>A generic column template determines the appearance of a report by defining the look of the column once. This look is then repeated as many times as is necessary, based on the number of columns specified in the report's definition. This type of template is limited to reports that have a standard row and column structure. Additional style can be applied to a report using this type of template through the use of conditions.</p>
+                        <p>The following example demonstrates how to have each column use a specific style:</p><pre class="oac_no_warn" dir="ltr">&lt;td class="tabledata" align="#ALIGN#"&gt;#COLUMN_VALUE#&lt;/td&gt;
+</pre><p>This example assumes your page template includes a CSS containing the class <code class="codeph">tabledata</code>. This example also demonstrates the use the substitution strings <code class="codeph">#ALIGN#</code> and <code class="codeph">#COLUMN_VALUE#</code>. If you actually ran this report, these substitution strings would be replaced with values generated by the results of a SQL query. 
+                        </p>
+                        <p>If your query uses an expression in the select list, it is a good idea to create an alias for the columns to avoid runtime errors. For example, suppose your query was as follows: </p><pre class="oac_no_warn" dir="ltr">SELECT ename, (sal + comm) * 12 FROM emp
+</pre><p>You could rewrite the query to alias the columns as follows:</p><pre class="oac_no_warn" dir="ltr">SELECT ename, (sal + comm) * 12 yearly_comp FROM emp
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-CDB791D3-2D15-436D-B2DA-FEAA5AAE3CDC">Generic Column Templates and Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25710"></a><div class="props_rev_3"><a id="GUID-2BC5FCC1-4B94-40E2-ADD7-D6BB09723DF0" name="GUID-2BC5FCC1-4B94-40E2-ADD7-D6BB09723DF0"></a><h4 id="HTMDB-GUID-2BC5FCC1-4B94-40E2-ADD7-D6BB09723DF0" class="sect4"><span class="enumeration_section">13.3.17.1.2 </span>Named Column Templates 
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Named column templates allow for more flexibility in report design. However, because they reference columns by name, they can only be used by reports that are based on those columns. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;tr&gt;&lt;td&gt;#ENAME#&lt;/td&gt;&lt;td&gt;#SAL#&lt;/td&gt;&lt;/tr&gt;
+</pre><p>Although named column templates offer flexibility, you may need to create a new template for each query. You can also include a position notation. The following example demonstrates how to use following HTML and substitution strings:</p><pre class="oac_no_warn" dir="ltr">&lt;tr&gt;&lt;td&gt;#ENAME#&lt;/td&gt;&lt;td&gt;#SAL#&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;#1#&lt;/td&gt;&lt;td&gt;#2#&lt;/td&gt;&lt;/tr&gt;
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-CDB791D3-2D15-436D-B2DA-FEAA5AAE3CDC">Generic Column Templates and Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25711"></a><div class="props_rev_3"><a id="GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF" name="GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF"></a><h3 id="HTMDB-GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF" class="sect3"><span class="enumeration_section">13.3.17.2 </span>Report Column Template Attributes for Generic Column Templates
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This section describes specific sections of the Edit Report Template page for Generic Column Templates. To learn more about a specific attribute, see field-level Help.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-AB829D4A-A12D-4187-A5FF-6D3CC3C10E9C">Report Template</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-E365FC1E-E2CC-4D85-8163-B31D52E0DDD0">Before Rows</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-D532C13F-F2A3-4C7C-A910-DC08CA5F24A7">Column Headings</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-C539B68A-A906-45B3-AC09-B43F7EE17524">Before Each Row</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-C83FE1B6-E7AE-48D1-9426-7BABDA8AD46C">Column Templates</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-27A41E67-AC3C-47CB-B7B0-6F27964368B5">After Each Row</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-896004B1-720B-4965-8072-B11CDDF0CC0E">After Rows</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-7ACF287D-8BF2-42D9-90E2-40CEAF75A9BC">Row Highlighting</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-241EA063-FA33-48EF-8EAC-C9412824D253">Pagination Subtemplate</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-E1BCFD82-D0CA-4D4B-A3BC-6CD6ED2A2DDB">Comments</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-639BA4AD-FC98-4F5A-AB80-7B882CE5B4AA" title="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">Report Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB25712"></a><div class="props_rev_3"><a id="GUID-AB829D4A-A12D-4187-A5FF-6D3CC3C10E9C" name="GUID-AB829D4A-A12D-4187-A5FF-6D3CC3C10E9C"></a><h4 id="HTMDB-GUID-AB829D4A-A12D-4187-A5FF-6D3CC3C10E9C" class="sect4"><span class="enumeration_section">13.3.17.2.1 </span>Report Template
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p><span class="bold">Template Name</span> identifies the name of the template. <span class="bold">Template Type</span> indicates the type of template. Named Column templates reference column names in the template. Generic Column Templates reference the <code class="codeph">#COLUMN_VALUE#</code> substitution string in the template. 
+                        </p>
+                        <p><span class="bold">Theme</span> indicates the theme to which the template is a member.<span class="bold"> Template Class</span> identifies a specific use for the template. When you switch to a new theme, all templates in one theme are mapped to corresponding templates in another theme. <span>App Builder</span> accomplishes this template mapping through the assignment of a template class. Use the <span class="bold">Translatable</span> check box to indicate the template contains text strings that require translation.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25714"></a><div class="props_rev_3"><a id="GUID-E365FC1E-E2CC-4D85-8163-B31D52E0DDD0" name="GUID-E365FC1E-E2CC-4D85-8163-B31D52E0DDD0"></a><h4 id="HTMDB-GUID-E365FC1E-E2CC-4D85-8163-B31D52E0DDD0" class="sect4"><span class="enumeration_section">13.3.17.2.2 </span>Before Rows
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>In <span class="bold">Before Rows</span>, enter HTML that displays once at the beginning of a report template. 
+                        </p>
+                        <p>Opening an HTML table is a common use of this attribute as shown in the following example:</p><pre class="oac_no_warn" dir="ltr">&lt;table&gt;
+</pre><p>You can include pagination above a report by including the substitution string <code class="codeph">#TOP_PAGINATION#</code>. This substitution string generates HTML that starts with an opening <code class="codeph">&lt;tr&gt;</code> tag and ends with a closing <code class="codeph">&lt;/tr&gt;</code> tag. For example, to include an open table tag and the <code class="codeph">#TOP_PAGINATION#</code> substitution string, you would enter the following:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;table&gt;#TOP_PAGINATION#
+</pre><p>You can also include the substitution string<a id="d154781e656" class="indexterm-anchor"></a> <code class="codeph">#CSV_LINK#</code> to include support for exporting your report to comma-separated value (CSV) format, a format compatible with most spreadsheet programs.
+                        </p>
+                        <p>You can also use the substitution string <code class="codeph">#REPORT_ATTRIBUTES#</code>. This substitution string is set per report region on the report attributes page.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25715"></a><div class="props_rev_3"><a id="GUID-D532C13F-F2A3-4C7C-A910-DC08CA5F24A7" name="GUID-D532C13F-F2A3-4C7C-A910-DC08CA5F24A7"></a><h4 id="HTMDB-GUID-D532C13F-F2A3-4C7C-A910-DC08CA5F24A7" class="sect4"><span class="enumeration_section">13.3.17.2.3 </span>Column Headings
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use <span class="bold">Before Column Heading</span> to display text before report heading.
+                        </p>
+                        <p>Use <span class="bold">Column Heading Template</span> to colorize each column header cell. The text of this attribute must include Help to indicate where the cell heading text should be colorized. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;th &gt;Item Help Text&lt;/th&gt;
+</pre><p>If you do not want any column headings, enter the following:</p><pre class="oac_no_warn" dir="ltr">OMIT
+</pre><p>If you do use this attribute, Application Express engine applies the default column heading template.</p>
+                        <p>Use <span class="bold">After Column Heading</span> to display text after report headings.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25716"></a><div class="props_rev_3"><a id="GUID-C539B68A-A906-45B3-AC09-B43F7EE17524" name="GUID-C539B68A-A906-45B3-AC09-B43F7EE17524"></a><h4 id="HTMDB-GUID-C539B68A-A906-45B3-AC09-B43F7EE17524" class="sect4"><span class="enumeration_section">13.3.17.2.4 </span>Before Each Row
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>In <span class="bold">Before Each Row,</span> enter text to display before all columns in the report. Use this attribute to open a new HTML row. Before Each Row supports the following substitution strings:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">#ROWNUM# </code> 
+                              </p>
+                              <p>Use this substitution string to specify the current row.</p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">#COLCOUNT#</code></p>
+                              <p>Use this substitution string to specify the number of columns.</p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">#HIGHLIGHT_ROW#</code></p>
+                              <p>Use this substitution string to specify the number of highlighted rows.</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB28531"></a><a id="HTMDB25717"></a><div class="props_rev_3"><a id="GUID-C83FE1B6-E7AE-48D1-9426-7BABDA8AD46C" name="GUID-C83FE1B6-E7AE-48D1-9426-7BABDA8AD46C"></a><h4 id="HTMDB-GUID-C83FE1B6-E7AE-48D1-9426-7BABDA8AD46C" class="sect4"><span class="enumeration_section">13.3.17.2.5 </span>Column Templates
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Column templates define the look of each column. You can define up to four column templates; each can be conditional. For example, you can have different background colors for even and odd rows, or highlight rows that meet a PL/SQL defined condition.</p>
+                        <p>In each Column Template, you define the look of each column. Column Templates support the substitution strings described in <a href="report-templates.html#GUID-C83FE1B6-E7AE-48D1-9426-7BABDA8AD46C__BABDJAEF" title="This table describes available describes supported column template substitution strings.">Table 13-14</a>. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-C83FE1B6-E7AE-48D1-9426-7BABDA8AD46C__BABDJAEF">
+                        <p class="titleintable">Table 13-14 Column Template Substitution Strings</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Column Template Substitution Strings" summary="This table describes available  describes supported column template substitution strings." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="31%" id="d154781e943">Substitution String</th>
+                                 <th align="left" valign="bottom" width="69%" id="d154781e946">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e951" headers="d154781e943 ">
+                                    <p><code class="codeph">#ALIGNMENT#</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e951 d154781e946 ">
+                                    <p>Determines the column alignment. Specified by the user.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e959" headers="d154781e943 ">
+                                    <p><code class="codeph">#COLCOUNT#</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e959 d154781e946 ">
+                                    <p>Defines the count of the number of columns.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e967" headers="d154781e943 ">
+                                    <p><code class="codeph">#COLNUM#</code> 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e967 d154781e946 ">
+                                    <p>Defines the current column number.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e976" headers="d154781e943 ">
+                                    <p><code class="codeph">#COLUMN_HEADER#</code> 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e976 d154781e946 ">
+                                    <p>Defines the column header.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e985" headers="d154781e943 ">
+                                    <p><code class="codeph">#COLUMN_VALUE#</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e985 d154781e946 ">
+                                    <p>Replaced with the value of the column.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e993" headers="d154781e943 ">
+                                    <p><code class="codeph">#ROWNUM#</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e993 d154781e946 ">
+                                    <p>Specifies the current row number.</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="section">
+                        <p>Consider the following example: </p><pre class="oac_no_warn" dir="ltr">&lt;td&gt; #ALIGNMENT#&gt;#COLUMN_VALUE#&lt;/td&gt;
+</pre><p>If you actually ran this report, these substitution strings would be replaced with values generated by the results of a SQL query. </p>
+                        <p>By creating conditions, you can create a report that displays columns differently depending on whether the specified condition is met. To specify a column template be used conditionally, select a condition type from the Column Template Condition list. Valid values include:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="bold">Use Based on PL/SQL Expression. </span>Conditionally formats columns based on data in that row. 
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">Use for Even Numbered Rows.</span> Conditionally formats even numbered rows.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">Use for Odd Numbered Rows.</span> Conditionally formats odd numbered rows.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>If you select <span class="bold">Use Based on PL/SQL Expression</span>, the next step is to enter a PL/SQL expression in the Column Template Expression field. For example, the following expression displays a value in bold if the value is greater than 2000:
+                        </p><pre class="oac_no_warn" dir="ltr">#SAL# &gt; 2000
+</pre><p>You could also use the substitution string <code class="codeph">#ROWNUM#</code>. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">#ROWNUM# &gt; 2000
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25718"></a><div class="props_rev_3"><a id="GUID-27A41E67-AC3C-47CB-B7B0-6F27964368B5" name="GUID-27A41E67-AC3C-47CB-B7B0-6F27964368B5"></a><h4 id="HTMDB-GUID-27A41E67-AC3C-47CB-B7B0-6F27964368B5" class="sect4"><span class="enumeration_section">13.3.17.2.6 </span>After Each Row
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>In <span class="bold">After Each Row,</span> enter HTML that displays after all columns in the report display. This attribute is often used to close an HTML table row. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;/tr&gt;
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25719"></a><div class="props_rev_3"><a id="GUID-896004B1-720B-4965-8072-B11CDDF0CC0E" name="GUID-896004B1-720B-4965-8072-B11CDDF0CC0E"></a><h4 id="HTMDB-GUID-896004B1-720B-4965-8072-B11CDDF0CC0E" class="sect4"><span class="enumeration_section">13.3.17.2.7 </span>After Rows
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use <span class="bold">After Rows</span> to specify text that should display after the last row. A common use of this attribute is to close the HTML table tag. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;/table&gt;
+</pre><p>The After Rows attribute supports the following substitution strings:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">#PAGINATION#</code> 
+                              </p>
+                              <p>Replaced with a pagination attribute.</p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">#COLCOUNT#</code></p>
+                              <p>Substituted at runtime with the number of columns defined in the report.</p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">#CSV_LINK#</code></p>
+                              <p>Substituted at runtime with CSV download link if CSV export is enabled. Otherwise the string is not shown.</p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">#EXTERNAL_LINK#</code></p>
+                              <p>Substituted at runtime with the download link for exports using external processing engine for (for example, PDF export). If this feature is not enabled, the string is not shown.</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25720"></a><div class="props_rev_3"><a id="GUID-7ACF287D-8BF2-42D9-90E2-40CEAF75A9BC" name="GUID-7ACF287D-8BF2-42D9-90E2-40CEAF75A9BC"></a><h4 id="HTMDB-GUID-7ACF287D-8BF2-42D9-90E2-40CEAF75A9BC" class="sect4"><span class="enumeration_section">13.3.17.2.8 </span>Row Highlighting
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p><span class="bold">Background color for checked row</span> controls the background color of a report row when the row selector is checked. <span class="bold">Background color for current row</span> controls the background color of a report row when the user moves the mouse over the row.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB28532"></a><a id="HTMDB25721"></a><div class="props_rev_3"><a id="GUID-241EA063-FA33-48EF-8EAC-C9412824D253" name="GUID-241EA063-FA33-48EF-8EAC-C9412824D253"></a><h4 id="HTMDB-GUID-241EA063-FA33-48EF-8EAC-C9412824D253" class="sect4"><span class="enumeration_section">13.3.17.2.9 </span>Pagination Subtemplate
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The Pagination Subtemplate section contains attributes for editing the Pagination Template, Next Page Template, Previous Page Template, Next Set Template, and Previous Template. Pagination Subtemplates support the substitution strings <code class="codeph">#PAGINATION_NEXT#</code>, <code class="codeph">#PAGINATION_NEXT_SET#</code>, <code class="codeph">#PAGINATION_PREVIOUS#</code> and <code class="codeph">#PAGINATION_PREVIOUS_SET#</code>. <a href="report-templates.html#GUID-A6754FC9-3B62-40F3-9E26-2A565AF34DA3__BABFCJGA" title="This table describes the Pagination Subtemplate attributes available on the Report Column Template page.">Table 13-17</a> describes these templates.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-241EA063-FA33-48EF-8EAC-C9412824D253__GUID-2C64A017-7330-4519-B87C-AA5BFAA6BC9C">
+                        <p class="titleintable">Table 13-15 Pagination Subtemplate Attributes</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Pagination Subtemplate Attributes" summary="This table describes the Pagination Subtemplate attributes available on the Report Column Template page." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="40%" id="d154781e1379">Pagination Subtemplate Attribute</th>
+                                 <th align="left" valign="bottom" width="60%" id="d154781e1382">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e1387" headers="d154781e1379 ">
+                                    <p><a id="d154781e1389" class="indexterm-anchor"></a>Pagination Template 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e1387 d154781e1382 ">
+                                    <p>Applies to the entire pagination subtemplate. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;span class="instructiontext"&gt;#TEXT#&lt;/span&gt;
+</pre><p>Use the substitution string <code class="codeph">#TEXT#</code> to specify where you want the pagination subtemplate to display.
+                                    </p>
+                                    <p>Use the other Pagination Subtemplate attributes to modify individual items.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e1407" headers="d154781e1379 ">
+                                    <p><a id="d154781e1409" class="indexterm-anchor"></a>Next Page Template
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e1407 d154781e1382 ">
+                                    <p>Enter HTML to modify how the Next Page portion of the pagination subtemplate appears. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;a href="#LINK#"&gt;next&lt;/a&gt;
+</pre></td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e1420" headers="d154781e1379 ">
+                                    <p><a id="d154781e1422" class="indexterm-anchor"></a>Previous Page Template
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e1420 d154781e1382 ">
+                                    <p>Enter HTML to modify how the Previous Page portion of the pagination subtemplate appears. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;a href="#LINK#"&gt;previous&lt;/a&gt;
+</pre></td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e1433" headers="d154781e1379 ">
+                                    <p><a id="d154781e1435" class="indexterm-anchor"></a>Next Set Template
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e1433 d154781e1382 ">
+                                    <p>Enter HTML to modify how the Next Set portion of the pagination subtemplate appears. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;a href="#LINK#"&gt;next set&lt;/a&gt;
+</pre></td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e1446" headers="d154781e1379 ">
+                                    <p><a id="d154781e1448" class="indexterm-anchor"></a>Previous Set Template
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e1446 d154781e1382 ">
+                                    <p>Enter HTML to modify how the Previous Set portion of the pagination subtemplate appears. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;a href="#LINK#"&gt;previous set&lt;/a&gt;
+</pre></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25722"></a><div class="props_rev_3"><a id="GUID-E1BCFD82-D0CA-4D4B-A3BC-6CD6ED2A2DDB" name="GUID-E1BCFD82-D0CA-4D4B-A3BC-6CD6ED2A2DDB"></a><h4 id="HTMDB-GUID-E1BCFD82-D0CA-4D4B-A3BC-6CD6ED2A2DDB" class="sect4"><span class="enumeration_section">13.3.17.2.10 </span>Comments
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use this attribute to record comments about this component.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-C6E539FF-A72C-40ED-95B8-D4BBC0B6EADF">Report Column Template Attributes for Generic Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25723"></a><div class="props_rev_3"><a id="GUID-7492427E-A609-45CA-8669-B933FD5FCC1D" name="GUID-7492427E-A609-45CA-8669-B933FD5FCC1D"></a><h3 id="HTMDB-GUID-7492427E-A609-45CA-8669-B933FD5FCC1D" class="sect3"><span class="enumeration_section">13.3.17.3 </span>Report Column Template Attributes for Named Column Templates
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This section describes specific sections of the Edit Report Template page for Named Column Templates. You can access the sections of the page by either scrolling down the page, or by clicking a navigation button at the top of the page. When you select a button at the top of the page, the selected section appears and all other sections are temporarily hidden. To view all sections of the page, click <span class="bold">Show All</span>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-2242B16E-0069-4D1E-A03F-09729E8E0258">Name</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-7CC8E266-9433-45A8-A5FA-F27FC4E15514">Subscription</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-81CA2D95-7BBC-45C8-9849-659D76FAF1DB">Row Templates</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-3340E47A-19E2-4429-8111-6CEEB069FA96">Column Headings</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-7C2D358B-4631-4A0D-9A7A-985E63272294">Before first and after last row text</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-A6754FC9-3B62-40F3-9E26-2A565AF34DA3">Pagination</a><br></li>
+                     <li class="ulchildlink"><a href="report-templates.html#GUID-D8030755-2266-4669-BEBA-45DD190F352C">Comments</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-639BA4AD-FC98-4F5A-AB80-7B882CE5B4AA" title="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">Report Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB25724"></a><div class="props_rev_3"><a id="GUID-2242B16E-0069-4D1E-A03F-09729E8E0258" name="GUID-2242B16E-0069-4D1E-A03F-09729E8E0258"></a><h4 id="HTMDB-GUID-2242B16E-0069-4D1E-A03F-09729E8E0258" class="sect4"><span class="enumeration_section">13.3.17.3.1 </span>Name
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p><span class="bold">Template Name</span> identifies the name of the template. <span class="bold">Template Type</span> indicates the type of template. Named Column templates reference column names in the template. Generic Column Templates reference the <code class="codeph">#COLUMN_VALUE#</code> substitution string in the template. 
+                        </p>
+                        <p><span class="bold">Theme</span> indicates the theme to which the template is a member. Use the <span class="bold">Translatable</span> check box to indicate the template contains text strings that require translation. <span class="bold">Template Class</span> identifies a specific use for the template. When you switch to a new theme, all templates in one theme are mapped to corresponding templates in another theme. <span>App Builder</span> accomplishes this template mapping through the assignment of a template class.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">Report Column Template Attributes for Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25725"></a><div class="props_rev_3"><a id="GUID-7CC8E266-9433-45A8-A5FA-F27FC4E15514" name="GUID-7CC8E266-9433-45A8-A5FA-F27FC4E15514"></a><h4 id="HTMDB-GUID-7CC8E266-9433-45A8-A5FA-F27FC4E15514" class="sect4"><span class="enumeration_section">13.3.17.3.2 </span>Subscription
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use Subscription to apply an existing template to the current application. When you select an existing template, you become a subscriber to that template.</p>
+                        <p>To load a new copy of a master template, click <span class="bold">Refresh</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">Report Column Template Attributes for Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB28533"></a><a id="HTMDB25726"></a><div class="props_rev_3"><a id="GUID-81CA2D95-7BBC-45C8-9849-659D76FAF1DB" name="GUID-81CA2D95-7BBC-45C8-9849-659D76FAF1DB"></a><h4 id="HTMDB-GUID-81CA2D95-7BBC-45C8-9849-659D76FAF1DB" class="sect4"><span class="enumeration_section">13.3.17.3.3 </span>Row Templates
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Row templates define the look of each column. You can define up to four row templates, each of which can be conditional.</p>
+                        <p>In each Row Template, you define the look of each row. Row Templates support the substitution strings described in <a href="report-templates.html#GUID-81CA2D95-7BBC-45C8-9849-659D76FAF1DB__BABHEBCH" title="This table describes available describes supported row template substitution strings.">Table 13-16</a>. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-81CA2D95-7BBC-45C8-9849-659D76FAF1DB__BABHEBCH">
+                        <p class="titleintable">Table 13-16 Row Template Substitution Strings</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Row Template Substitution Strings" summary="This table describes available  describes supported row template substitution strings." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="31%" id="d154781e1864">Substitution String</th>
+                                 <th align="left" valign="bottom" width="69%" id="d154781e1867">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e1872" headers="d154781e1864 ">
+                                    <p><code class="codeph">#ALIGNMENT#</code> 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e1872 d154781e1867 ">
+                                    <p>Determines the row alignment. Specified by the user.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e1881" headers="d154781e1864 ">
+                                    <p><code class="codeph">#COLCOUNT#</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e1881 d154781e1867 ">
+                                    <p>Defines the count of the number of columns.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e1889" headers="d154781e1864 ">
+                                    <p><code class="codeph">#COLNUM#</code> 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e1889 d154781e1867 ">
+                                    <p>Defines the current column number.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e1898" headers="d154781e1864 ">
+                                    <p><code class="codeph">#COLUMN_HEADER#</code> 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e1898 d154781e1867 ">
+                                    <p>Defines the column header.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e1907" headers="d154781e1864 ">
+                                    <p><code class="codeph">#COLUMN_VALUE#</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e1907 d154781e1867 ">
+                                    <p>Replaced with the value of the column.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="31%" id="d154781e1915" headers="d154781e1864 ">
+                                    <p><code class="codeph">#ROWNUM#</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="69%" headers="d154781e1915 d154781e1867 ">
+                                    <p>Specifies the current row number.</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="section">
+                        <p>By creating conditions, you can create a report that displays rows differently depending on whether the specified condition is met. To specify a row template be used conditionally, select a condition type from the Column Template Condition list. Valid values include:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="bold">Use Based on PL/SQL Expression. </span>Conditionally formats columns based on data in that row. 
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">Use for Even Numbered Rows.</span> Conditionally formats even numbered rows.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">Use for Odd Numbered Rows.</span> Conditionally formats odd numbered rows.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>If you select <span class="bold">Use Based on PL/SQL Expression</span>, the next step is to enter a PL/SQL expression in the Column Template Expression field. For example, the following expression displays a value in bold if the value is greater than 2000:
+                        </p><pre class="oac_no_warn" dir="ltr">#SAL# &gt; 2000
+</pre><p>You could also use the substitution string <code class="codeph">#ROWNUM#</code>. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">#ROWNUM# &gt; 2000
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">Report Column Template Attributes for Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25727"></a><div class="props_rev_3"><a id="GUID-3340E47A-19E2-4429-8111-6CEEB069FA96" name="GUID-3340E47A-19E2-4429-8111-6CEEB069FA96"></a><h4 id="HTMDB-GUID-3340E47A-19E2-4429-8111-6CEEB069FA96" class="sect4"><span class="enumeration_section">13.3.17.3.4 </span>Column Headings
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use this template to add color to each column header cell. The text of this attribute must include help to indicate where the cell heading text should be colorized. If you do not enter a Column Heading Template, then a default column header template is applied. If you do not want any column headings, then enter <code class="codeph">OMIT</code>. For example:
+                        </p><pre class="oac_no_warn" dir="ltr"> &lt;th #ALIGNMENT#&gt;#COLUMN_HEADER#&lt;/th&gt;
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">Report Column Template Attributes for Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25728"></a><div class="props_rev_3"><a id="GUID-7C2D358B-4631-4A0D-9A7A-985E63272294" name="GUID-7C2D358B-4631-4A0D-9A7A-985E63272294"></a><h4 id="HTMDB-GUID-7C2D358B-4631-4A0D-9A7A-985E63272294" class="sect4"><span class="enumeration_section">13.3.17.3.5 </span>Before first and after last row text
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>In <span class="bold">Before Rows</span>, enter HTML that displays once at the beginning of a report template. Opening an HTML table is a common use of this attribute, as shown in the following example:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;table&gt;
+</pre><p>You can identify column headers using the syntax <code class="codeph">#1#</code>, <code class="codeph">#2#</code>, <code class="codeph">#3#</code>. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;th&gt;#1#&lt;/th&gt;&lt;th&gt;#2#&lt;/th&gt;&lt;th&gt;#3#&lt;/th&gt;
+</pre><p>You can include pagination above a report by including the substitution string <code class="codeph">#TOP_PAGINATION#</code>. This substitution string generates HTML that starts with an opening <code class="codeph">&lt;tr&gt;</code> tag and ends with a closing <code class="codeph">&lt;/tr&gt;</code> tag. For example, to include an open table tag and <code class="codeph">#TOP_PAGINATION#</code> substitution string, you would enter the following:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;table&gt;#TOP_PAGINATION#
+</pre><p>You can also include the substitution string<a id="d154781e2143" class="indexterm-anchor"></a> <code class="codeph">#CSV_LINK#</code> to include support for exporting your report to CSV format, a format compatible with most spreadsheet programs.
+                        </p>
+                        <p>Use <span class="bold">After Rows</span> to specify text that should display after the last row. A common use of this attribute is to close the HTML table tag. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;/table&gt;
+</pre><p>The After Rows attribute supports the following substitution strings:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">#PAGINATION#</code> 
+                              </p>
+                              <p>Replaced with a pagination attribute.</p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">#COLCOUNT#</code></p>
+                              <p>Substituted at runtime with the number of columns defined in the report.</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">Report Column Template Attributes for Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB28534"></a><a id="HTMDB25729"></a><div class="props_rev_3"><a id="GUID-A6754FC9-3B62-40F3-9E26-2A565AF34DA3" name="GUID-A6754FC9-3B62-40F3-9E26-2A565AF34DA3"></a><h4 id="HTMDB-GUID-A6754FC9-3B62-40F3-9E26-2A565AF34DA3" class="sect4"><span class="enumeration_section">13.3.17.3.6 </span>Pagination
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The Pagination section contains attributes for editing the Pagination Template, Next Page Template, Previous Page Template, Next Set Template, and Previous Template. Pagination Subtemplates support the substitution strings <code class="codeph">#PAGINATION_NEXT#</code>, <code class="codeph">#PAGINATION_NEXT_SET#</code>, <code class="codeph">#PAGINATION_PREVIOUS#</code> and <code class="codeph">#PAGINATION_PREVIOUS_SET#</code>. <a href="report-templates.html#GUID-A6754FC9-3B62-40F3-9E26-2A565AF34DA3__BABFCJGA" title="This table describes the Pagination Subtemplate attributes available on the Report Column Template page.">Table 13-17</a> describes these templates.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-A6754FC9-3B62-40F3-9E26-2A565AF34DA3__BABFCJGA">
+                        <p class="titleintable">Table 13-17 Pagination Subtemplate Attributes</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Pagination Subtemplate Attributes" summary="This table describes the Pagination Subtemplate attributes available on the Report Column Template page." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="40%" id="d154781e2267">Pagination Subtemplate Attribute</th>
+                                 <th align="left" valign="bottom" width="60%" id="d154781e2270">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e2275" headers="d154781e2267 ">
+                                    <p><a id="d154781e2277" class="indexterm-anchor"></a>Pagination Template 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e2275 d154781e2270 ">
+                                    <p>Applies to the entire pagination subtemplate. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;span class="instructiontext"&gt;#TEXT#&lt;/span&gt;
+</pre><p>Use the substitution string <code class="codeph">#TEXT#</code> to specify where you want the pagination subtemplate to display.
+                                    </p>
+                                    <p>Use the other Pagination Subtemplate attributes to modify individual items.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e2295" headers="d154781e2267 ">
+                                    <p><a id="d154781e2297" class="indexterm-anchor"></a>Next Page Template
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e2295 d154781e2270 ">
+                                    <p>Enter HTML to modify how the Next Page portion of the pagination subtemplate appears. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;a href="#LINK#"&gt;next&lt;/a&gt;
+</pre></td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e2308" headers="d154781e2267 ">
+                                    <p><a id="d154781e2310" class="indexterm-anchor"></a>Previous Page Template
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e2308 d154781e2270 ">
+                                    <p>Enter HTML to modify how the Previous Page portion of the pagination subtemplate appears. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;a href="#LINK#"&gt;previous&lt;/a&gt;
+</pre></td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e2321" headers="d154781e2267 ">
+                                    <p><a id="d154781e2323" class="indexterm-anchor"></a>Next Set Template
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e2321 d154781e2270 ">
+                                    <p>Enter HTML to modify how the Next Set portion of the pagination subtemplate appears. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;a href="#LINK#"&gt;next set&lt;/a&gt;
+</pre></td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="40%" id="d154781e2334" headers="d154781e2267 ">
+                                    <p><a id="d154781e2336" class="indexterm-anchor"></a>Previous Set Template
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="60%" headers="d154781e2334 d154781e2270 ">
+                                    <p>Enter HTML to modify how the Previous Set portion of the pagination subtemplate appears. For example:</p><pre class="oac_no_warn" dir="ltr">&lt;a href="#LINK#"&gt;previous set&lt;/a&gt;
+</pre></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">Report Column Template Attributes for Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25730"></a><div class="props_rev_3"><a id="GUID-D8030755-2266-4669-BEBA-45DD190F352C" name="GUID-D8030755-2266-4669-BEBA-45DD190F352C"></a><h4 id="HTMDB-GUID-D8030755-2266-4669-BEBA-45DD190F352C" class="sect4"><span class="enumeration_section">13.3.17.3.7 </span>Comments
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Use this attribute to record comments about this component.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-7492427E-A609-45CA-8669-B933FD5FCC1D">Report Column Template Attributes for Named Column Templates</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25731"></a><div class="props_rev_3"><a id="GUID-47D065E4-A399-4B92-A244-C60532D7D449" name="GUID-47D065E4-A399-4B92-A244-C60532D7D449"></a><h3 id="HTMDB-GUID-47D065E4-A399-4B92-A244-C60532D7D449" class="sect3"><span class="enumeration_section">13.3.17.4 </span>About Using JavaScript in Column Templates
+               </h3>
+               <div>
+                  <p>You can conditionally display HTML depending upon values in the database using JavaScript. The following example displays an HTML row only if the <code class="codeph">GROUP_DESC</code> query column is not null: 
+                  </p><pre class="oac_no_warn" dir="ltr">&lt;script language="javascript"&gt;
+IF ( "#GROUP_DESC#" != "" )
+document.writeln( "&lt;TR&gt;;
+&lt;TD BGCOLOR=#336699&gt;;&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;/TR&gt;
+&lt;TD&gt;#GROUP_DESC#&lt;/TD&gt;
+          	&lt;/TR&gt;" );
+	&lt;/TR&gt;" );
+
+</pre></div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-47D065E4-A399-4B92-A244-C60532D7D449__GUID-A64F8754-49D3-48EE-BA24-A4FF72FB2EB9">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-regions-in-page-designer.html#GUID-D137BFE6-2F3A-4C63-9083-56D862B8C556">About Regions</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="report-templates.html#GUID-639BA4AD-FC98-4F5A-AB80-7B882CE5B4AA" title="Report column templates provide you with control over the results of a row from a SQL query. This type of template defines a cell, not an entire row.">Report Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

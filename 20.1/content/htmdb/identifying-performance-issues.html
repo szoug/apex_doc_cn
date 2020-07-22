@@ -1,0 +1,206 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Identifying Performance Issues">
+      <meta name="abstract" content="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">
+      <meta name="description" content="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">
+      <meta name="DC.subject" content="performance, identifying issues, slow running applications, diagnosing issues, debugging problematic SQL queries, debugging, SQL queries, slow queries">
+      <meta name="keywords" content="performance, identifying issues, slow running applications, diagnosing issues, debugging problematic SQL queries, debugging, SQL queries, slow queries">
+      <meta name="DC.Relation" scheme="URI" content="managing-application-performance.html#GUID-1684F55B-7782-4B1F-96AB-0D41BCBDB1BA">
+      <meta name="DC.Relation" scheme="URI" content="identifying-performance-issues.html#GUID-9F64557B-855B-4F0E-8034-147FA5D31B90">
+      <meta name="DC.Relation" scheme="URI" content="identifying-performance-issues.html#GUID-0992F8D1-3D89-4F51-815A-E23741D280EC">
+      <meta name="DC.Relation" scheme="URI" content="identifying-performance-issues.html#GUID-8916E846-FC4D-49F0-B73F-4A2086A48A5A">
+      <meta name="DC.Relation" scheme="URI" content="identifying-performance-issues.html#GUID-6B3AD98F-03BE-47A8-B067-FD6BB4FDB2DF">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-E3FBB697-3B39-4165-9ACE-6C0D344C914A">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">
+      <meta name="description" content="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">
+      <title>Identifying Performance Issues</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-best-practices-to-improve-performance.html" title="Previous" type="text/html">
+      <link rel="next" href="utilizing-logs-and-reports.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-best-practices-to-improve-performance.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="utilizing-logs-and-reports.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-performance.html" property="item" typeof="WebPage"><span property="name">Managing Application Performance</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> Identifying Performance Issues</li>
+            </ol>
+            <a id="GUID-E3FBB697-3B39-4165-9ACE-6C0D344C914A" name="GUID-E3FBB697-3B39-4165-9ACE-6C0D344C914A"></a><a id="HTMDB10001"></a>
+            
+            <h2 id="HTMDB-GUID-E3FBB697-3B39-4165-9ACE-6C0D344C914A" class="sect2"><span class="enumeration_section">23.2 </span> Identifying Performance Issues
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="identifying-performance-issues.html#GUID-9F64557B-855B-4F0E-8034-147FA5D31B90">About Troubleshooting Slow Running Applications</a><br></li>
+                  <li class="ulchildlink"><a href="identifying-performance-issues.html#GUID-0992F8D1-3D89-4F51-815A-E23741D280EC">Diagnosing Performance Issues</a><br></li>
+                  <li class="ulchildlink"><a href="identifying-performance-issues.html#GUID-8916E846-FC4D-49F0-B73F-4A2086A48A5A">About Debugging Problematic SQL Queries</a><br></li>
+                  <li class="ulchildlink"><a href="identifying-performance-issues.html#GUID-6B3AD98F-03BE-47A8-B067-FD6BB4FDB2DF">About Addressing Slow Queries</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-application-performance.html#GUID-1684F55B-7782-4B1F-96AB-0D41BCBDB1BA" title="Learn about how to improve application performance.">Managing Application Performance</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29382"></a><div class="props_rev_3"><a id="GUID-9F64557B-855B-4F0E-8034-147FA5D31B90" name="GUID-9F64557B-855B-4F0E-8034-147FA5D31B90"></a><h3 id="HTMDB-GUID-9F64557B-855B-4F0E-8034-147FA5D31B90" class="sect3"><span class="enumeration_section">23.2.1 </span>About Troubleshooting Slow Running Applications
+               </h3>
+               <div>
+                  <p>The first step in troubleshooting a slow running application is to determine the location of the bottleneck. You can evaluate application performance by reviewing the time it takes for the database to return a specific page request or submission. If this time is shorter than the time it takes to render the page on the user's browser, then other components are likely causing the perception that the application is slow. As a best practice, always check all of the components involved including client machines, the network, the middle-tier, the database, and disk and storage devices. Regarding the database, check the System Global Area (SGA), CPU utilization, locks, and database parameters. It is also important to determine if anything else is running within the database such as legacy applications, data warehouse, batch programs, and database jobs.</p>
+                  <p>The majority of the time, performance issues with Oracle Application Express applications are due to developer-authored SQL and PL/SQL. You should utilize standard database performance tuning techniques to address these issues. Performance issues are rarely related to a bug with Oracle Application Express or the Oracle database. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-9F64557B-855B-4F0E-8034-147FA5D31B90__GUID-396F5FF9-2071-48FD-9242-2531B3335708">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmdb&amp;id=TGDBA-GUID-DD122227-0E55-49DB-8DF0-0F321D03800F" target="_blank"><span><cite>Oracle Database Performance Tuning Guide</cite></span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="identifying-performance-issues.html#GUID-E3FBB697-3B39-4165-9ACE-6C0D344C914A" title="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">Identifying Performance Issues</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29383"></a><div class="props_rev_3"><a id="GUID-0992F8D1-3D89-4F51-815A-E23741D280EC" name="GUID-0992F8D1-3D89-4F51-815A-E23741D280EC"></a><h3 id="HTMDB-GUID-0992F8D1-3D89-4F51-815A-E23741D280EC" class="sect3"><span class="enumeration_section">23.2.2 </span>Diagnosing Performance Issues
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To diagnose performance issues, follow these steps:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span> Identify the time window.</span></li>
+                     <li><span>Isolate the largest consumers of database time.</span></li>
+                     <li><span>Identify the Oracle Application Express workspace and application.</span></li>
+                     <li><span>Correlate the offending SQL with a specific location within the application.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>Once you have identified the slow running pages, you should run the application in debug mode to identify the specific components consuming the most time.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="identifying-performance-issues.html#GUID-E3FBB697-3B39-4165-9ACE-6C0D344C914A" title="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">Identifying Performance Issues</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB10007"></a><div class="props_rev_3"><a id="GUID-8916E846-FC4D-49F0-B73F-4A2086A48A5A" name="GUID-8916E846-FC4D-49F0-B73F-4A2086A48A5A"></a><h3 id="HTMDB-GUID-8916E846-FC4D-49F0-B73F-4A2086A48A5A" class="sect3"><span class="enumeration_section">23.2.3 </span>About Debugging Problematic SQL Queries
+               </h3>
+               <div>
+                  <p>If your query does not seem to be running correctly, try running it in SQL*Plus, SQL Developer, or in SQL Commands. Any of these approaches will test your query outside the context of your application, making it easier to define the problem. </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="identifying-performance-issues.html#GUID-E3FBB697-3B39-4165-9ACE-6C0D344C914A" title="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">Identifying Performance Issues</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29384"></a><div class="props_rev_3"><a id="GUID-6B3AD98F-03BE-47A8-B067-FD6BB4FDB2DF" name="GUID-6B3AD98F-03BE-47A8-B067-FD6BB4FDB2DF"></a><h3 id="HTMDB-GUID-6B3AD98F-03BE-47A8-B067-FD6BB4FDB2DF" class="sect3"><span class="enumeration_section">23.2.4 </span>About Addressing Slow Queries
+               </h3>
+               <div>
+                  <p>For optimized queries that still take more than a second to process, consider implementing a progress bar and preventing multiple page submissions. Users expect instant results and often resubmit a page if it does not return immediately. Unless managed properly, each page submission instigates a new session in the database and continues until completion. Multiple page submissions often degrade performance and may lead to database locks. This is especially true with interactive reports. As an alternative approach, try using Oracle Application Express collections to hold query results. By using collections, expensive and time consuming queries are only executed once for each user rather than each time they perform pagination or create a filter.</p>
+                  <div class="infobox-tip" id="GUID-6B3AD98F-03BE-47A8-B067-FD6BB4FDB2DF__GUID-F03F2261-F77F-4353-AE0F-EBB910BA0FD9">
+                     <p class="notep1">Tip:</p>
+                     <p>You control whether end users may submit the same page more than once by configuring the page attribute, <span class="uicontrol bold">Advanced</span>, <span class="uicontrol bold">Enable duplicate page submissions</span>.
+                     </p>
+                  </div>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-6B3AD98F-03BE-47A8-B067-FD6BB4FDB2DF__GUID-2C769217-CDBE-4AED-9DD4-B93AA524D354">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="editing-page-attributes-in-page-designer.html#GUID-5CF0B715-7A6B-4A49-B14B-471CCA2C775C" title="Edit page attributes by viewing the page in Page Designer and selecting the the page name.">Editing Page Attributes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="about-using-collections.html#GUID-82528137-7048-44F3-BA64-C8A1E3FFD8F0" title="Collections enable you to temporarily capture one or more nonscalar values. You can use collections to store rows and columns currently in session state so they can be accessed, manipulated, or processed during a user's specific session.">About Using Collections</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="identifying-performance-issues.html#GUID-E3FBB697-3B39-4165-9ACE-6C0D344C914A" title="Consider the following key strategies to help identify and resolve performance issues with your Oracle Application Express application.">Identifying Performance Issues</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

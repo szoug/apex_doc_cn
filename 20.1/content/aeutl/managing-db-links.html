@@ -1,0 +1,306 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Database Links">
+      <meta name="abstract" content="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">
+      <meta name="description" content="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">
+      <meta name="DC.subject" content="Object Browser, managing database links, database link, creating, browsing, testing">
+      <meta name="keywords" content="Object Browser, managing database links, database link, creating, browsing, testing">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-links.html#GUID-3C7F86E1-368F-4A85-AC14-21472D022A9C">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-links.html#GUID-E301D886-BDE2-4098-B498-651E25401A5F">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-links.html#GUID-9B830E76-6008-4026-AE12-AB85DB22FBDF">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-links.html#GUID-9F8B1249-22ED-49EC-B25D-ABA5742E94B5">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">
+      <meta name="description" content="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">
+      <title>Managing Database Links</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-triggers.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-materialized-views.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-triggers.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-materialized-views.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-db-objects-with-object-browser.html" property="item" typeof="WebPage"><span property="name"> Managing Database Objects with Object Browser </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Database Links</li>
+            </ol>
+            <a id="GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D" name="GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D"></a><a id="AEUTL176"></a>
+            
+            <h2 id="AEUTL-GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D" class="sect2"><span class="enumeration_section">3.12 </span>Managing Database Links
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.</p>
+               <p> Once you create a database link, you can access the remote objects by appending <code class="codeph">@dblink</code> to the table or view name, where <code class="codeph">dblink</code> is the name of the database link.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-db-links.html#GUID-3C7F86E1-368F-4A85-AC14-21472D022A9C">Creating a Database Link</a><br>Create a database link using Object Browser.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-db-links.html#GUID-E301D886-BDE2-4098-B498-651E25401A5F">Browsing a Database Link</a><br>Select a database link from the Object Selection pane and view different reports about the database link.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-db-links.html#GUID-9B830E76-6008-4026-AE12-AB85DB22FBDF">Reports for Database Links</a><br>Alternative views available when viewing a database links in Object Browser.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-db-links.html#GUID-9F8B1249-22ED-49EC-B25D-ABA5742E94B5">Dropping a Database Link</a><br>Select a database link from the Object Selection pane and click Drop.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731" title="Object Browser enables developers to browse, create, and edit objects in a database.">Managing Database Objects with Object Browser</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL177"></a><div class="props_rev_3"><a id="GUID-3C7F86E1-368F-4A85-AC14-21472D022A9C" name="GUID-3C7F86E1-368F-4A85-AC14-21472D022A9C"></a><h3 id="AEUTL-GUID-3C7F86E1-368F-4A85-AC14-21472D022A9C" class="sect3"><span class="enumeration_section">3.12.1 </span>Creating a Database Link
+               </h3>
+               <div>
+                  <p>Create a database link using Object Browser.</p>
+                  <div class="section">
+                     <p>To create a database link:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Create</span> icon.</span></li>
+                     <li class="stepexpand"><span>From the list of object types, select <span class="uicontrol bold">Database Link</span>.</span></li>
+                     <li class="stepexpand"><span>For Define :</span><div>
+                           <ol type="a">
+                              <li>
+                                 <p><strong class="term">Database Link Name</strong> - Enter the name of the database link. Database link names must conform to Oracle naming conventions and cannot contain spaces, or start with a number or underscore.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Connect To Schema</strong>- Enter the name of the database schema on the remote system to access.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Password</strong> - Enter the password for the remote database schema.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Remote Hostname or IP</strong> - Enter the hostname or IP address of the database server you wish to access.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Remote Host Port</strong> - Enter the network port number on which the Oracle Net Listener is accepting requests. This is typically 1521.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Identified by - Select Service Name or SID. </p>
+                                 <p>If you select <span class="uicontrol bold">SID</span> (Oracle System Identifier), enter the SID name if the remote database is identified by a SID. If you select <span class="uicontrol bold">Service Name</span>, enter the service name if the remote database is identified by a service name.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Database Link</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-db-links.html#GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D" title="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">Managing Database Links</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL178"></a><div class="props_rev_3"><a id="GUID-E301D886-BDE2-4098-B498-651E25401A5F" name="GUID-E301D886-BDE2-4098-B498-651E25401A5F"></a><h3 id="AEUTL-GUID-E301D886-BDE2-4098-B498-651E25401A5F" class="sect3"><span class="enumeration_section">3.12.2 </span>Browsing a Database Link
+               </h3>
+               <div>
+                  <p>Select a database link from the Object Selection pane and view different reports about the database link.</p>
+                  <div class="section">
+                     <p>To browse a database link:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Database Links</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a database link.</span><div>
+                           <p>The Object Details view appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the tabs at the top of the page to view different reports about the database link. </span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-db-links.html#GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D" title="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">Managing Database Links</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL337"></a><a id="AEUTL179"></a><div class="props_rev_3"><a id="GUID-9B830E76-6008-4026-AE12-AB85DB22FBDF" name="GUID-9B830E76-6008-4026-AE12-AB85DB22FBDF"></a><h3 id="AEUTL-GUID-9B830E76-6008-4026-AE12-AB85DB22FBDF" class="sect3"><span class="enumeration_section">3.12.3 </span>Reports for Database Links
+               </h3>
+               <div>
+                  <p>Alternative views available when viewing a database links in Object Browser.</p>
+                  <div class="section">
+                     <p><a href="managing-db-links.html#GUID-9B830E76-6008-4026-AE12-AB85DB22FBDF__CHDHIIAJ" title="This table describes the alternative views available when viewing a database links in Object Browser.">Table 3-11</a> describes all available reports for database links.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-9B830E76-6008-4026-AE12-AB85DB22FBDF__CHDHIIAJ">
+                     <p class="titleintable">Table 3-11 Available Reports for Database Links</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Available Reports for Database Links" summary="This table describes the alternative views available when viewing a database links in Object Browser." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d15266e407">View</th>
+                              <th align="left" valign="bottom" width="69%" id="d15266e410">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d15266e415" headers="d15266e407 ">
+                                 <p>Object Details</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d15266e415 d15266e410 ">
+                                 <p>(Default) Displays details about the database link. Actions you can perform include:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">Drop</span> - Deletes the database link
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Test</span> - Tests the database link
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d15266e433" headers="d15266e407 ">
+                                 <p>Dependencies</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d15266e433 d15266e410 ">
+                                 <p>Displays a list of objects that use (or depend) upon this database link.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d15266e440" headers="d15266e407 ">
+                                 <p>SQL</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d15266e440 d15266e410 ">
+                                 <p>Displays the SQL necessary to re-create this database link.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-db-links.html#GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D" title="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">Managing Database Links</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL180"></a><div class="props_rev_3"><a id="GUID-9F8B1249-22ED-49EC-B25D-ABA5742E94B5" name="GUID-9F8B1249-22ED-49EC-B25D-ABA5742E94B5"></a><h3 id="AEUTL-GUID-9F8B1249-22ED-49EC-B25D-ABA5742E94B5" class="sect3"><span class="enumeration_section">3.12.4 </span>Dropping a Database Link
+               </h3>
+               <div>
+                  <p>Select a database link from the Object Selection pane and click Drop.</p>
+                  <div class="section">
+                     <p>To drop a database link in Object Browser:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Database Links</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a database link.</span><div>
+                           <p>The Object Details View appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Drop</span>.</span></li>
+                     <li class="stepexpand"><span>To confirm, click <span class="uicontrol bold">Finish</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-db-links.html#GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D" title="A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.">Managing Database Links</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

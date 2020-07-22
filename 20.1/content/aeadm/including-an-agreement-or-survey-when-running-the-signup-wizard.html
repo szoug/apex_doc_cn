@@ -1,0 +1,189 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating a Service Signup Wizard">
+      <meta name="abstract" content="Instance administrators can create a Service Signup Wizard that users must complete before new workspace requests are submitted.">
+      <meta name="description" content="Instance administrators can create a Service Signup Wizard that users must complete before new workspace requests are submitted.">
+      <meta name="DC.subject" content="Service Signup Wizard, Productivity App Only workspace, blocked email domains, enable schema selection, justification, agreement, success message, survey, Signup Wizard, running">
+      <meta name="keywords" content="Service Signup Wizard, Productivity App Only workspace, blocked email domains, enable schema selection, justification, agreement, success message, survey, Signup Wizard, running">
+      <meta name="DC.Relation" scheme="URI" content="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392">
+      <meta name="DC.Relation" scheme="URI" content="including-an-agreement-or-survey-when-running-the-signup-wizard.html#GUID-3F253C79-359D-458B-BE64-F40C27A10E68">
+      <meta name="DC.Relation" scheme="URI" content="including-an-agreement-or-survey-when-running-the-signup-wizard.html#GUID-90C83D61-EC66-40D1-9A47-4ABB4DA22C65">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-4170BB22-8FA0-44A9-8F33-7616C7C68CF5">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Instance administrators can create a Service Signup Wizard that users must complete before new workspace requests are submitted.">
+      <meta name="description" content="Instance administrators can create a Service Signup Wizard that users must complete before new workspace requests are submitted.">
+      <title>Creating a Service Signup Wizard</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Instance administrators can create a Service Signup Wizard that users must complete before new workspace requests are submitted.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-logs-and-files.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-schemas.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-logs-and-files.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-schemas.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating a Service Signup Wizard</li>
+            </ol>
+            <a id="GUID-4170BB22-8FA0-44A9-8F33-7616C7C68CF5" name="GUID-4170BB22-8FA0-44A9-8F33-7616C7C68CF5"></a><a id="AEADM446"></a>
+            
+            <h2 id="AEADM-GUID-4170BB22-8FA0-44A9-8F33-7616C7C68CF5" class="sect2"><span class="enumeration_section">3.12 </span>Creating a Service Signup Wizard
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Instance administrators can create a Service Signup Wizard that users must complete before new workspace requests are submitted.</p>
+               <p>When users request a new workspace, administrators can create a wizard that requires the user provide a justification, accept an agreement, or optionally respond to survey questions. In addition, administrators can specify whether to support Productivity App Only workspaces, define blocked email domains and provide a message that displays when a user enters an email address containing a blocked domain, and create a custom success message.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="including-an-agreement-or-survey-when-running-the-signup-wizard.html#GUID-3F253C79-359D-458B-BE64-F40C27A10E68">Defining a Service Signup Wizard</a><br>Instance administrators define a Service Signup Wizard on the Service Signup Wizard page.
+                  </li>
+                  <li class="ulchildlink"><a href="including-an-agreement-or-survey-when-running-the-signup-wizard.html#GUID-90C83D61-EC66-40D1-9A47-4ABB4DA22C65">Running a New Service Signup Wizard</a><br>Instance administrators can run the Signup Wizard by clicking <span class="uicontrol bold">Run New Service Signup Wizard</span> on the Manage Instance page.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392" title="Instance administrators manage an entire Oracle Application Express hosted instance using the Oracle Application Express Administration Services (Administration Services) application.">Oracle Application Express Administration Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM449"></a><div class="props_rev_3"><a id="GUID-3F253C79-359D-458B-BE64-F40C27A10E68" name="GUID-3F253C79-359D-458B-BE64-F40C27A10E68"></a><h3 id="AEADM-GUID-3F253C79-359D-458B-BE64-F40C27A10E68" class="sect3"><span class="enumeration_section">3.12.1 </span>Defining a Service Signup Wizard
+               </h3>
+               <div>
+                  <p>Instance administrators define a Service Signup Wizard on the Service Signup Wizard page.</p>
+                  <div class="section">When users request a new workspace, administrators can create a wizard that requires the user provide a justification, accept an agreement, or optionally respond to survey questions. In addition, administrators can specify whether to support Productivity App Only workspaces, define blocked email domains and provide a message that displays when a user enters an email address containing a blocked domain, and create a custom success message.</div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To define a New Service Signup Wizard:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>Sign in to Oracle Application Express Administration Services.</p>
+                  <ol>
+                     <li><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li><span>Under Self Service Sign Up, click <span class="uicontrol bold">Manage New Service Signup Wizard</span>.</span></li>
+                     <li><span>Under Options:</span><ol type="a">
+                           <li><span>Enable Productivity App Only Workspaces - Determines if users can create a Productivity App Only workspace. </span></li>
+                           <li><span>Blocked Email Domains - Specify a comma-delimited list of email domains that are not permitted to request a workspace, example: <code class="codeph">domain1.com,domain2.com</code>.</span></li>
+                           <li><span>Blocked Email Message - Message to display if users enter a blocked email address. </span></li>
+                           <li><span>Enable Schema Selection - Determines whether the user is prompted for the database schema information or whether the schema is defaulted.</span></li>
+                           <li><span>Require Justification - Determines whether to prompt the user for a justification for creating the workspace.</span></li>
+                           <li><span>Enable Agreement - Determines whether to include or exclude an agreement. Select <span class="uicontrol bold">Yes</span> to display an agreement.</span></li>
+                           <li><span>Agreement Text - Enter the text of the agreement.</span></li>
+                           <li><span>Request Success Message - Message to be shown to the user when they get to the Workspace Request successful page. This message replaces the standard message provided.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>Under Survey Questions:</span><ol type="a">
+                           <li><span>Enable Survey - Determines whether to include or exclude the survey. Select <span class="uicontrol bold">Yes</span> to display the survey questions you define during the New Service Signup Wizard.</span></li>
+                           <li><span>Questions - Each question can have any number of answers. Enter all answers for each question in one field, delimited by a new line.</span></li>
+                           <li><span>Pre Text - Enter introductory text.</span></li>
+                           <li><span>Post Text - Enter closing text.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-3F253C79-359D-458B-BE64-F40C27A10E68__GUID-F32DF8E6-C75A-438A-A46E-A4A47A38ADF1">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="monitoring-activity-across-a-development-instance.html#GUID-2CF889A8-A91A-4601-9EF5-F32A62C52172" title="View the Signup Survey report to view the survey questions, answers, and the number of responses.">Viewing the Signup Survey Report</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="including-an-agreement-or-survey-when-running-the-signup-wizard.html#GUID-4170BB22-8FA0-44A9-8F33-7616C7C68CF5" title="Instance administrators can create a Service Signup Wizard that users must complete before new workspace requests are submitted.">Creating a Service Signup Wizard</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29236"></a><div class="props_rev_3"><a id="GUID-90C83D61-EC66-40D1-9A47-4ABB4DA22C65" name="GUID-90C83D61-EC66-40D1-9A47-4ABB4DA22C65"></a><h3 id="AEADM-GUID-90C83D61-EC66-40D1-9A47-4ABB4DA22C65" class="sect3"><span class="enumeration_section">3.12.2 </span>Running a New Service Signup Wizard
+               </h3>
+               <div>
+                  <p>Instance administrators can run the Signup Wizard by clicking <span class="uicontrol bold">Run New Service Signup Wizard</span> on the Manage Instance page.
+                  </p>
+                  <div class="section">
+                     <p>To run a new Service Signup Wizard:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li><span>Under Self Service Sign Up, click <span class="uicontrol bold">Run New Service Signup Wizard</span>.</span></li>
+                     <li><span>Follow the on-screen instructions.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="including-an-agreement-or-survey-when-running-the-signup-wizard.html#GUID-4170BB22-8FA0-44A9-8F33-7616C7C68CF5" title="Instance administrators can create a Service Signup Wizard that users must complete before new workspace requests are submitted.">Creating a Service Signup Wizard</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

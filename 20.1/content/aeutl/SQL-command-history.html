@@ -1,0 +1,167 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Using SQL Command History">
+      <meta name="abstract" content="You use SQL Command History to access commands you have executed in SQL Commands.">
+      <meta name="description" content="You use SQL Command History to access commands you have executed in SQL Commands.">
+      <meta name="DC.Relation" scheme="URI" content="using-SQL-commands.html#GUID-41CC2FC0-F6B6-4737-B7D2-6C9C1B85310C">
+      <meta name="DC.Relation" scheme="URI" content="SQL-command-history.html#GUID-AFF41546-FCC2-4C06-8C0E-26BB1D3B82C2">
+      <meta name="DC.Relation" scheme="URI" content="SQL-command-history.html#GUID-8411E448-9149-4B89-BF43-FCCAC17A8626">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-9C1B01D7-5F5C-41CE-A2B8-121903A48F6D">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You use SQL Command History to access commands you have executed in SQL Commands.">
+      <meta name="description" content="You use SQL Command History to access commands you have executed in SQL Commands.">
+      <title>Using SQL Command History</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="You use SQL Command History to access commands you have executed in SQL Commands.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="saved-commands.html" title="Previous" type="text/html">
+      <link rel="next" href="using-Oracle-application-express-utilities.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="saved-commands.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-Oracle-application-express-utilities.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-SQL-commands.html" property="item" typeof="WebPage"><span property="name"> Using SQL Commands </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Using SQL Command History</li>
+            </ol>
+            <a id="GUID-9C1B01D7-5F5C-41CE-A2B8-121903A48F6D" name="GUID-9C1B01D7-5F5C-41CE-A2B8-121903A48F6D"></a><a id="AEUTL234"></a>
+            
+            <h2 id="AEUTL-GUID-9C1B01D7-5F5C-41CE-A2B8-121903A48F6D" class="sect2"><span class="enumeration_section">4.10 </span>Using SQL Command History
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You use SQL Command History to access commands you have executed in SQL Commands. </p>
+               <p>Commands you have executed are stored in the command history regardless of whether you explicitly save them. </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="SQL-command-history.html#GUID-AFF41546-FCC2-4C06-8C0E-26BB1D3B82C2">Accessing a Command from Command History</a><br>From the SQL Commands page, click the History tab.
+                  </li>
+                  <li class="ulchildlink"><a href="SQL-command-history.html#GUID-8411E448-9149-4B89-BF43-FCCAC17A8626">About the History Pane</a><br>The History pane displays a list of commands you have executed.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-SQL-commands.html#GUID-41CC2FC0-F6B6-4737-B7D2-6C9C1B85310C" title="Using SQL commands you can create, edit, view, run, and delete database objects.">Using SQL Commands</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL235"></a><div class="props_rev_3"><a id="GUID-AFF41546-FCC2-4C06-8C0E-26BB1D3B82C2" name="GUID-AFF41546-FCC2-4C06-8C0E-26BB1D3B82C2"></a><h3 id="AEUTL-GUID-AFF41546-FCC2-4C06-8C0E-26BB1D3B82C2" class="sect3"><span class="enumeration_section">4.10.1 </span>Accessing a Command from Command History
+               </h3>
+               <div>
+                  <p>From the SQL Commands page, click the History tab.</p>
+                  <div class="section">
+                     <p>To access history commands:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">SQL Commands</span>.</span><div>
+                           <p>The SQL Commands page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">History</span> tab. </span><div>
+                           <p>The list of commands in History appears in the display pane.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the partial command displayed in the SQL column.</span><div>
+                           <p>The command appears in the editor.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="SQL-command-history.html#GUID-9C1B01D7-5F5C-41CE-A2B8-121903A48F6D" title="You use SQL Command History to access commands you have executed in SQL Commands.">Using SQL Command History</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL236"></a><div class="props_rev_3"><a id="GUID-8411E448-9149-4B89-BF43-FCCAC17A8626" name="GUID-8411E448-9149-4B89-BF43-FCCAC17A8626"></a><h3 id="AEUTL-GUID-8411E448-9149-4B89-BF43-FCCAC17A8626" class="sect3"><span class="enumeration_section">4.10.2 </span>About the History Pane
+               </h3>
+               <div>
+                  <p>The History pane displays a list of commands you have executed.</p>
+                  <p>Each history entry shows the time the command was last executed, the first characters of the command, and the schema in which it was executed. </p>
+                  <p>On the History pane you can:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="uicontrol bold">Load a command</span> - Click the partial command displayed in the SQL column to load the command into the command editor. When the command loads, it also sets the schema in which it was last executed.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="SQL-command-history.html#GUID-9C1B01D7-5F5C-41CE-A2B8-121903A48F6D" title="You use SQL Command History to access commands you have executed in SQL Commands.">Using SQL Command History</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

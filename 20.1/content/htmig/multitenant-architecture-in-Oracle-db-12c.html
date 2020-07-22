@@ -1,0 +1,118 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Utilizing the Multitenant Architecture in Oracle Database 12c or Later">
+      <meta name="abstract" content="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">
+      <meta name="description" content="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">
+      <meta name="DC.subject" content="Multitenant Architecture">
+      <meta name="keywords" content="Multitenant Architecture">
+      <meta name="DC.Relation" scheme="URI" content="understanding-installation-choices.html#GUID-A805FD4D-6049-429D-9DD2-717C75D96E62">
+      <meta name="DC.Relation" scheme="URI" content="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D">
+      <meta name="DC.Relation" scheme="URI" content="installing-AE-into-different-PDBs.html#GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F">
+      <meta name="DC.Relation" scheme="URI" content="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F1D9485F-F21F-4194-A995-0F17547A664D">
+      <meta name="DC.Relation" scheme="URI" content="plugging-in-PDB-when-AE-is-not-in-root-container-of-target-CDB.html#GUID-E22E8E7A-9197-4E42-9267-773253D6BEB0">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">
+      <meta name="description" content="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">
+      <title>Utilizing the Multitenant Architecture in Oracle Database 12c or Later</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="Oracle-application-express-runtime-environment.html" title="Previous" type="text/html">
+      <link rel="next" href="understanding-installation-choices.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="Oracle-application-express-runtime-environment.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="understanding-installation-choices.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Utilizing the Multitenant Architecture in
+        Oracle Database 12c or Later</li>
+            </ol>
+            <a id="GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F" name="GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F"></a><a id="HTMIG29434"></a>
+            
+            <h2 id="HTMIG-GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F" class="sect2"><span class="enumeration_chapter">4 </span>Utilizing the Multitenant Architecture in
+        Oracle Database 12c or Later
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn about installation choices and different scenarios associated with
+        copying and moving pluggable databases introduced by the Oracle Database 12c or later
+        multitenant architecture with respect to Oracle Application Express (Application
+        Express).</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-installation-choices.html#GUID-A805FD4D-6049-429D-9DD2-717C75D96E62">Understanding the Installation Choices</a><br>Learn about the installation choices in Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D">Installing Application Express into an Application Container</a><br>Learn about the application container that stores data and metadata for         application back ends.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-AE-into-different-PDBs.html#GUID-91809585-A1BA-44B5-8AD5-8FB44FB61A3F">Installing Application Express into Different PDBs</a><br>You can install different versions of Oracle Application Express into different PDBs.
+                  </li>
+                  <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-installed-in-root-container.html#GUID-F1D9485F-F21F-4194-A995-0F17547A664D">Plugging in a PDB When Application Express is Installed in the Root Container</a><br>Learn about scenarios in which the target database has Application Express installed into the root container, <code class="codeph">CDB$ROOT</code> - the default installation option.
+                  </li>
+                  <li class="ulchildlink"><a href="plugging-in-PDB-when-AE-is-not-in-root-container-of-target-CDB.html#GUID-E22E8E7A-9197-4E42-9267-773253D6BEB0">Plugging in a PDB When Application Express Is Not in the Root Container of the Target CDB</a><br>The scenarios in this section describe when Application Express is not                 installed in the root container, <code class="codeph">CDB$ROOT</code>, by explicitly removing                 it as described in <span class="q">"Uninstalling Application Express from a                 CDB"</span>.
+                  </li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="task">
+      <meta name="DC.Title" content="Upgrading to the Latest Oracle Application Express Release">
+      <meta name="abstract" content="Learn how to upgrade to the latest Oracle Application Express release.">
+      <meta name="description" content="Learn how to upgrade to the latest Oracle Application Express release.">
+      <meta name="DC.Relation" scheme="URI" content="upgrading.html#GUID-38805604-3203-4365-B9E0-9347DE5D3D7A">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-4B4A2BDC-11AA-4ACF-88B2-E320D6361596">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn how to upgrade to the latest Oracle Application Express release.">
+      <meta name="description" content="Learn how to upgrade to the latest Oracle Application Express release.">
+      <title>Upgrading to the Latest Oracle Application Express Release</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn how to upgrade to the latest Oracle Application Express release.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="upgrading.html" title="Previous" type="text/html">
+      <link rel="next" href="understanding-diff-between-later-oracle-AE-releases.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="upgrading.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="understanding-diff-between-later-oracle-AE-releases.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="upgrading.html" property="item" typeof="WebPage"><span property="name">Upgrading Oracle Application Express within Oracle Database Express Edition</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Upgrading to the Latest Oracle Application Express Release</li>
+            </ol>
+            <a id="GUID-4B4A2BDC-11AA-4ACF-88B2-E320D6361596" name="GUID-4B4A2BDC-11AA-4ACF-88B2-E320D6361596"></a><a id="HTMIG29430"></a>
+            
+            <h2 id="HTMIG-GUID-4B4A2BDC-11AA-4ACF-88B2-E320D6361596" class="sect2"><span class="enumeration_section">F.1 </span>Upgrading to the Latest Oracle Application Express Release
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn how to upgrade to the latest Oracle Application Express release.</p>
+               <div class="section">
+                  <p>To upgrade to the latest Oracle Application Express release:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>Download the latest version of Oracle Application Express from the download page. See:</span><div><pre class="oac_no_warn" dir="ltr"><a href="http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html" target="_blank"><code class="codeph">http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html</code></a></pre></div>
+                  </li>
+                  <li class="stepexpand"><span>Unzip downloaded zip file: </span><div>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>UNIX and Linux: <code class="codeph">$ unzip </code><span class="italic"><code class="codeph">filename.zip</code></span></p>
+                           </li>
+                           <li>
+                              <p>Windows: Double click <span class="italic"><code class="codeph">filename.zip</code></span> in Windows Explorer
+                              </p>
+                              <div class="infobox-tip" id="GUID-4B4A2BDC-11AA-4ACF-88B2-E320D6361596__GUID-5A9E3B37-7353-4A7F-A3A3-38163D26A79F">
+                                 <p class="notep1">Tip:</p>
+                                 <p>Keep the directory tree where you unzip the files short and not under directories that contain spaces. For example, within Windows unzip to <code class="codeph">C:\</code>. 
+                                 </p>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code>.</span></li>
+                  <li class="stepexpand"><span>Start SQL*Plus and connect to the Oracle Database XE where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span></pre></li>
+                           <li>
+                              <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span></pre><div class="infobox-tip" id="GUID-4B4A2BDC-11AA-4ACF-88B2-E320D6361596__GUID-A7DF8F5B-BF78-470B-8A81-62B0C048807C">
+                                 <p class="notep1">Tip:</p>
+                                 <p>Keep the directory tree where you unzip the files short and not under directories that contain spaces. For example, within Windows unzip to <code class="codeph">C:\</code>. 
+                                 </p>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Install Oracle Application Express:</span><div><pre class="oac_no_warn" dir="ltr">@apexins.sql <span class="italic">tablespace_apex</span> <span class="italic">tablespace_files</span> <span class="italic">tablespace_temp</span> <span class="italic">images</span></pre><p>Where:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="italic"><code class="codeph">tablespace_apex</code></span> is the name of the tablespace for the Oracle Application Express application user.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="italic"><code class="codeph">tablespace_files</code></span> is the name of the tablespace for the Oracle Application Express files user.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="italic"><code class="codeph">tablespace_temp</code></span> is the name of the temporary tablespace or tablespace group.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="italic"><code class="codeph">images</code></span> is the virtual directory for Oracle Application Express images. To support future Oracle Application Express upgrades, define the virtual image directory as <code class="codeph">/i/</code>.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>Example</p><pre class="oac_no_warn" dir="ltr">@apexins.sql SYSAUX SYSAUX TEMP /i/</pre></div>
+                  </li>
+                  <li class="stepexpand"><span>Log back into SQL*Plus (as described in step 4) and load images:</span><div><pre class="oac_no_warn" dir="ltr">@apex_epg_config.sql <span class="italic">APEX_HOME</span></pre></div>
+                     <div>
+                        <div class="infobox-tip" id="GUID-4B4A2BDC-11AA-4ACF-88B2-E320D6361596__GUID-4A6B0213-2E49-44E9-AC9A-59AD99DBDF59">
+                           <p class="notep1">Tip:</p>
+                           <p><span class="italic"><code class="codeph">APEX_HOME</code></span> is the directory you specified when unzipping the file. For example, on Windows <code class="codeph">C:\</code>.
+                           </p>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Upgrade the Oracle Application Express password by running <a id="d36465e187" class="indexterm-anchor"></a><a id="d36465e189" class="indexterm-anchor"></a><code class="codeph">apxchpwd.sql</code>:</span><div><pre class="oac_no_warn" dir="ltr">@apxchpwd.sql
+</pre><p>When prompted, enter a password for the <code class="codeph">ADMIN</code> account.
+                        </p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Navigate to the Oracle Application Express Administration Services application:</span><div>
+                        <ol type="a">
+                           <li>
+                              <p>In a Web browser, navigate to:</p><pre class="oac_no_warn" dir="ltr">http://<span class="italic">hostname</span>:<span class="italic">port</span>/apex/apex_admin
+</pre><p>Where:</p>
+                              <p><span class="italic"><code class="codeph">hostname</code></span> is the name of the system where Oracle XML DB Protocol server is installed.
+                              </p>
+                              <p><span class="italic"><code class="codeph">port</code></span> is the port number assigned to HTTP on the Oracle XML DB Protocol server. In a default installation, this number is 8080. If you are using the Oracle Database 12<span class="italic">c</span> or later multitenant architecture, then each pluggable database (PDB) will have a distinct port number.
+                              </p>
+                              <p><span class="italic"><code class="codeph">apex</code></span> is the database access descriptor (DAD) defined in the configuration file.
+                              </p>
+                           </li>
+                           <li>
+                              <p>On the Sign In page:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Username - Enter <code class="codeph">admin</code>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Password - Enter the Oracle Application Express administrator account password you specified in step 4.</p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="bold">Sign In to Administration</span>.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ol>
+                        <p>Note that, depending on your setup, you might be required to change your password when you log in for the first time.</p>
+                     </div>
+                  </li>
+               </ol>
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="upgrading.html#GUID-38805604-3203-4365-B9E0-9347DE5D3D7A" title="Learn about upgrading Oracle Application Express included with Oracle Database XE.">Upgrading Oracle Application Express within Oracle Database Express Edition</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Access Control">
+      <meta name="abstract" content="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">
+      <meta name="description" content="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">
+      <meta name="DC.subject" content="access control, creating, authorization schemes, configuring, about exporting">
+      <meta name="keywords" content="access control, creating, authorization schemes, configuring, about exporting">
+      <meta name="DC.Relation" scheme="URI" content="controlling-access-to-applications-pages-and-page-components.html#GUID-E700B9CA-34BB-4A8B-9765-1CB6B7D0993B">
+      <meta name="DC.Relation" scheme="URI" content="how-access-control-works.html#GUID-0EBDB7DD-FB2C-41E6-BFF6-4DC46A4389C2">
+      <meta name="DC.Relation" scheme="URI" content="how-access-control-works.html#GUID-3A40B74B-5B88-4D1A-BB5A-A500DD9F1D87">
+      <meta name="DC.Relation" scheme="URI" content="how-access-control-works.html#GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7">
+      <meta name="DC.Relation" scheme="URI" content="how-access-control-works.html#GUID-BF6E5094-3B75-4BCD-8D05-DE6ACE6E974D">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-6522AF09-A489-4BA9-B0C5-24457C03729E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">
+      <meta name="description" content="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">
+      <title>Understanding Access Control</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="controlling-access-to-applications-pages-and-page-components.html" title="Previous" type="text/html">
+      <link rel="next" href="creating-access-control-create-app-wiz.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="controlling-access-to-applications-pages-and-page-components.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="creating-access-control-create-app-wiz.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-security.html" property="item" typeof="WebPage"><span property="name">Managing Application Security</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="controlling-access-to-applications-pages-and-page-components.html" property="item" typeof="WebPage"><span property="name">Controlling Access to Applications, Pages, and Page Components</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Access Control</li>
+            </ol>
+            <a id="GUID-6522AF09-A489-4BA9-B0C5-24457C03729E" name="GUID-6522AF09-A489-4BA9-B0C5-24457C03729E"></a>
+            
+            <h2 id="HTMDB-GUID-6522AF09-A489-4BA9-B0C5-24457C03729E" class="sect2"><span class="enumeration_section">21.3.1 </span>Understanding Access Control
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.</p>
+               <p></p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="how-access-control-works.html#GUID-0EBDB7DD-FB2C-41E6-BFF6-4DC46A4389C2">About Adding Access Control</a><br></li>
+                  <li class="ulchildlink"><a href="how-access-control-works.html#GUID-3A40B74B-5B88-4D1A-BB5A-A500DD9F1D87">About Access Control Authorization Schemes</a><br></li>
+                  <li class="ulchildlink"><a href="how-access-control-works.html#GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7">About Configuring Access Control</a><br></li>
+                  <li class="ulchildlink"><a href="how-access-control-works.html#GUID-BF6E5094-3B75-4BCD-8D05-DE6ACE6E974D">About Exporting an Application with Access Control</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="controlling-access-to-applications-pages-and-page-components.html#GUID-E700B9CA-34BB-4A8B-9765-1CB6B7D0993B" title="Control access to an application, individual pages, or page components by creating an access control list.">Controlling Access to Applications, Pages, and Page Components</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25482"></a><div class="props_rev_3"><a id="GUID-0EBDB7DD-FB2C-41E6-BFF6-4DC46A4389C2" name="GUID-0EBDB7DD-FB2C-41E6-BFF6-4DC46A4389C2"></a><h3 id="HTMDB-GUID-0EBDB7DD-FB2C-41E6-BFF6-4DC46A4389C2" class="sect3"><span class="enumeration_section">21.3.1.1 </span>About Adding Access Control
+               </h3>
+               <div>
+                  <p>Running the Access Control Wizard creates multiple pages and the following components:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Adds an Access Control region to the Administration page you specify.</p>
+                     </li>
+                     <li>
+                        <p>Creates the access roles: <code class="codeph">Administrator</code>, <code class="codeph">Contributor</code>, and <code class="codeph">Reader</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Creates the authorization schemes: <code class="codeph">Administration Rights</code>, <code class="codeph">Contribution Rights</code>, and <code class="codeph">Reader Rights</code>.
+                        </p>
+                        <div class="infoboxnote" id="GUID-0EBDB7DD-FB2C-41E6-BFF6-4DC46A4389C2__GUID-AA422396-CA78-4C69-A0F1-215C662DDE97">
+                           <p class="notep1">Note:</p>
+                           <p>When you add a new Access Control to an existing application, these authorization schemes are only be created if the names do not exist. &nbsp;For example, if <code class="codeph">Administration Rights</code> already exists (case sensitive comparison), the wizard will not recreate. Instead, the Access Control page will re-use the existing authorization scheme.
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <p>Creates the build option, <code class="codeph">Feature: Access Control</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Creates the Application Setting, <code class="codeph">ACCESS_CONTROL_SCOPE</code>.
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="p">Developers use the access control list to associate the privileges, <code class="codeph">view</code>, <code class="codeph">edit</code>, and <code class="codeph">administration</code>, with application users. Within the final Access Control UI, each privileges correlates to an access role:
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">View</code> correlates to the <code class="codeph">Reader</code> role.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">Edit</code> correlates to the <code class="codeph">Contributor</code> role.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">Administration</code> correlates to the <code class="codeph">Administrator</code> role.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-0EBDB7DD-FB2C-41E6-BFF6-4DC46A4389C2__GUID-7F362A65-4C51-4BD8-98D3-AD07B18C9017">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="attaching-an-authorization-scheme.html#GUID-C4770AB1-D084-4C19-8080-0CFF7FADFB29" title="Attach an authorization scheme to an entire application, page, control, or component.">Attaching an Authorization Scheme to an Application, Page, or Components</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="managing-roles-and-user-assignments.html#GUID-F38382D2-C292-48D3-89A8-4C1D2275BD11" title="Manage application access control roles and user role assignments on the Application Access Control page..">Managing Roles and User Assignments</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-access-control-works.html#GUID-6522AF09-A489-4BA9-B0C5-24457C03729E" title="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">Understanding Access Control</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-3A40B74B-5B88-4D1A-BB5A-A500DD9F1D87" name="GUID-3A40B74B-5B88-4D1A-BB5A-A500DD9F1D87"></a><h3 id="HTMDB-GUID-3A40B74B-5B88-4D1A-BB5A-A500DD9F1D87" class="sect3"><span class="enumeration_section">21.3.1.2 </span>About Access Control Authorization Schemes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>When you add the Access Control feature to an application, the PL/SQL Body Wizard creates the following authorization schemes: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">Administration Rights</code> &#x2013; This authorization scheme checks if the current user in the application is assigned <code class="codeph">ADMINISTRATOR</code> role.
+                           </p><pre class="pre codeblock"><code>return APEX_ACL.HAS_USER_ROLE (
+     p_application_id=&gt;:APP_ID, 
+     p_user_name =&gt; :APP_USER, 
+     p_role_static_id =&gt; 'ADMINISTRATOR');</code></pre></li>
+                        <li>
+                           <p><code class="codeph">Contribution Rights</code> &#x2013; This authorization scheme checks if the current user in the application is assigned the <code class="codeph">ADMINISTRATOR</code> role or the <code class="codeph">CONTRIBUTOR</code> role.
+                           </p><pre class="pre codeblock"><code>if apex_acl.has_user_role (
+  p_application_id=&gt;:APP_ID, 
+  p_user_name =&gt; :APP_USER, 
+  p_role_static_id =&gt; 'ADMINISTRATOR') or
+  apex_acl.has_user_role (
+    p_application_id=&gt;:APP_ID,
+    p_user_name=&gt; :APP_USER,
+    p_role_static_id=&gt; 'CONTRIBUTOR') then
+    return true;
+else
+    return false;
+end if;</code></pre></li>
+                        <li>
+                           <p><code class="codeph">Reader Rights</code> &#x2013; This authorization scheme returns TRUE if the access control is configured to allow any authenticated user access the application. &nbsp;If this behavior is not allowed, it checks if the current user in the application is assigned to any application role.
+                           </p><pre class="pre codeblock"><code>if nvl(apex_app_setting.get_value(
+   p_name =&gt; 'ACCESS_CONTROL_SCOPE'),'x') = 'ALL_USERS' then
+    -- allow user not in the ACL to access the application
+    return true;
+else
+    -- require user to have at least one role
+    return apex_acl.has_user_any_roles (
+        p_application_id =&gt; :APP_ID, 
+        p_user_name      =&gt; :APP_USER);
+end if;</code></pre></li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-3A40B74B-5B88-4D1A-BB5A-A500DD9F1D87__GUID-7F362A65-4C51-4BD8-98D3-AD07B18C9017">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="attaching-an-authorization-scheme.html#GUID-C4770AB1-D084-4C19-8080-0CFF7FADFB29" title="Attach an authorization scheme to an entire application, page, control, or component.">Attaching an Authorization Scheme to an Application, Page, or Components</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-access-control-works.html#GUID-6522AF09-A489-4BA9-B0C5-24457C03729E" title="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">Understanding Access Control</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25488"></a><div class="sect2"><a id="GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7" name="GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7"></a><h3 id="HTMDB-GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7" class="sect3"><span class="enumeration_section">21.3.1.3 </span>About Configuring Access Control
+               </h3>
+               <div>
+                  <p>Once you add the Access Control feature, you configure it by running the application and accessing the Access Control region on the Administration page. </p>
+                  <div class="figure" id="GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7__FIG-132-6DC55772"><img height="561" width="895" src="img/admin_access_control.png" alt="Description of admin_access_control.png follows" title="Description of admin_access_control.png follows" longdesc="img_text/admin_access_control.html"><br><a href="img_text/admin_access_control.html">Description of the illustration admin_access_control.png</a></div>
+                  <!-- class="figure" -->
+                  <p>The Access Control region lists currently defined access roles and contains two sections: <span class="uicontrol bold">Users</span> and <span class="uicontrol bold">Access Control</span>.
+                  </p>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7__GUID-4978CAD4-6725-4580-B034-E6E0FB548C7D">Users</p>
+                     <p>Click <span class="uicontrol bold">Users</span> to add new users, change a user’s role, or disable access control by locking an account.
+                     </p>
+                     <div class="infobox-tip" id="GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7__YOUADDADDITIONALROLESANDCONFIGURERO-6DC79F0C">
+                        <p class="notep1">Tip:</p>
+                        <p>You add additional roles and configure role assignments on the Shared Components, Application Access Control page. See <span class="q">"<a href="managing-roles-and-user-assignments.html#GUID-F38382D2-C292-48D3-89A8-4C1D2275BD11" title="Manage application access control roles and user role assignments on the Application Access Control page..">Managing Roles and User Assignments</a>."</span></p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7__GUID-314B99DF-B3B1-46D0-8E60-DDB154B4DD8C">Access Control</p>
+                     <p>Click <span class="uicontrol bold">Access Control</span> to specify the behavior when authenticated users access the application.
+                     </p>
+                     <p>For <span class="uicontrol bold">Any authenticated user may access this application</span>, select one of the following:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="uicontrol bold">Off</span> - Choose <span class="uicontrol bold">Off</span> if all defined users
+                        are included in the access control list.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">On</span> - Choose <span class="uicontrol bold">On</span> if authenticated users
+                        not in the access control list may also use this application.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-110A01D1-474C-4699-ABBA-0B5A82BDE3F7__GUID-4F71AC8A-6AB2-4741-A858-8D16FC5A12FA">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="managing-user-access.html#GUID-05D6A0DC-A64E-40DF-8EE2-91C92A2A6A2C" title="Manage user access on the Administration page.">Managing User Access</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="configuring-access-control.html#GUID-438A3AC1-34D3-46E3-974E-1147461918E3" title="Configure user access on the Administration page.">Configuring Access Control</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-access-control-works.html#GUID-6522AF09-A489-4BA9-B0C5-24457C03729E" title="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">Understanding Access Control</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-BF6E5094-3B75-4BCD-8D05-DE6ACE6E974D" name="GUID-BF6E5094-3B75-4BCD-8D05-DE6ACE6E974D"></a><h3 id="HTMDB-GUID-BF6E5094-3B75-4BCD-8D05-DE6ACE6E974D" class="sect3"><span class="enumeration_section">21.3.1.4 </span>About Exporting an Application with Access Control
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>When your export an application with the Access Control feature, the application roles, Administrator, Contributor, and Reader, are exported. &nbsp;However, the users assigned to these roles are not exported. If you deploy a exported application with the Access Control feature, navigation menu entry for Administration page will not display. When you deploy an application with Access Control feature, your can add user roles as needed by going to Shared Components, Application Access Control. &nbsp;If the application is being deployed in a runtime environment, you can add user roles using <code class="codeph">APEX_ACL</code> API. &nbsp;For example, the following example adds the user name 'SCOTT' as Administrator in application 255:
+                     </p><pre class="pre codeblock"><code>begin
+    APEX_ACL.ADD_USER_ROLE (
+        p_application_id =&gt; 255,
+        p_user_name      =&gt; 'SCOTT',
+        p_role_static_id =&gt; 'ADMINISTRATOR' );
+end;</code></pre><p>You can also execute the <code class="codeph">APEX_ACL</code> API from the command line or create an install script in application supporting objects.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-BF6E5094-3B75-4BCD-8D05-DE6ACE6E974D__GUID-7F362A65-4C51-4BD8-98D3-AD07B18C9017">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="attaching-an-authorization-scheme.html#GUID-C4770AB1-D084-4C19-8080-0CFF7FADFB29" title="Attach an authorization scheme to an entire application, page, control, or component.">Attaching an Authorization Scheme to an Application, Page, or Components</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="managing-roles-and-user-assignments.html#GUID-F38382D2-C292-48D3-89A8-4C1D2275BD11" title="Manage application access control roles and user role assignments on the Application Access Control page..">Managing Roles and User Assignments</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"APEX_ACL"</span> in <a href="../aeapi/APEX_ACL.html#AEAPI-GUID-C59214CB-8138-4CB4-89CC-4CC357A67288" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-access-control-works.html#GUID-6522AF09-A489-4BA9-B0C5-24457C03729E" title="Adding the Access Control feature to an application, creates multiple pages and the following components: an Access Control region, access roles, authorization schemes, a build option, and an Application Setting.">Understanding Access Control</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

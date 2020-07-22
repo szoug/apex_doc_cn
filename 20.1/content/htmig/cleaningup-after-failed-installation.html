@@ -1,0 +1,2545 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Cleaning Up After a Failed Installation">
+      <meta name="abstract" content="Learn about best practices for troubleshooting and cleaning up after a failed installation.">
+      <meta name="description" content="Learn about best practices for troubleshooting and cleaning up after a failed installation.">
+      <meta name="DC.subject" content="installing, failures, troubleshooting, cleaning up after failed installation">
+      <meta name="keywords" content="installing, failures, troubleshooting, cleaning up after failed installation">
+      <meta name="DC.Relation" scheme="URI" content="troubleshooting.html#GUID-DD71A070-847A-44D0-AF9A-27B55B826F9C">
+      <meta name="DC.Relation" scheme="URI" content="cleaningup-after-failed-installation.html#GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2">
+      <meta name="DC.Relation" scheme="URI" content="cleaningup-after-failed-installation.html#GUID-A16032EF-3440-4D7A-B8A2-193A49D0BB30">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-872260A2-2BF5-42F8-A9D5-B7A40EF9345C">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about best practices for troubleshooting and cleaning up after a failed installation.">
+      <meta name="description" content="Learn about best practices for troubleshooting and cleaning up after a failed installation.">
+      <title>Cleaning Up After a Failed Installation</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about best practices for troubleshooting and cleaning up after a failed installation.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="verifying-validity-of-Oracle-application-express-installation.html" title="Previous" type="text/html">
+      <link rel="next" href="images-displaying-incorrectly.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="verifying-validity-of-Oracle-application-express-installation.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="images-displaying-incorrectly.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="troubleshooting.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Installation Troubleshooting</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Cleaning Up After a Failed Installation</li>
+            </ol>
+            <a id="GUID-872260A2-2BF5-42F8-A9D5-B7A40EF9345C" name="GUID-872260A2-2BF5-42F8-A9D5-B7A40EF9345C"></a><a id="HTMIG265"></a>
+            
+            <h2 id="HTMIG-GUID-872260A2-2BF5-42F8-A9D5-B7A40EF9345C" class="sect2"><span class="enumeration_section">E.3 </span>Cleaning Up After a Failed Installation
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about best practices for troubleshooting and cleaning up after a failed
+        installation.</p>
+               <p>In a successful installation the following banner displays near the end of the installation:</p><pre class="oac_no_warn" dir="ltr">Thank you for installing Oracle Application Express.
+Oracle Application Express is installed in the APEX_200100 schema.
+</pre><p>To reinstall, you must either drop the Oracle Application Express database schemas, or run a script to completely remove Application Express from the database, depending upon the installation type.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2">Reverting to a Previous Release After a Failed Upgrade Installation</a><br>Learn about reverting to Oracle Application Express to a previous release in the case of a failed upgrade installation.
+                  </li>
+                  <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-A16032EF-3440-4D7A-B8A2-193A49D0BB30">Removing Oracle Application Express from the Database</a><br>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and execute the <code class="codeph">SQL&gt; @apxremov.sql</code> command.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="troubleshooting.html#GUID-DD71A070-847A-44D0-AF9A-27B55B826F9C" title="Learn about troubleshooting Oracle Application Express Installation.">Oracle Application Express Installation Troubleshooting</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG266"></a><div class="props_rev_3"><a id="GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2" name="GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2"></a><h3 id="HTMIG-GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2" class="sect3"><span class="enumeration_section">E.3.1 </span>Reverting to a Previous Release After a Failed Upgrade Installation
+               </h3>
+               <div>
+                  <p>Learn about reverting to Oracle Application Express to a previous release in the case of a failed upgrade installation.</p>
+                  <p>In the case of a failed upgrade installation, you may want to revert Oracle Application Express to a previous release and then remove the schemas associated with the current release.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-21C4B2F5-3ADE-4561-9E7E-962517AEB535">Verifying If You Have a Previous Release of Oracle Application Express</a><br></li>
+                     <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a><br></li>
+                     <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a><br></li>
+                     <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-872260A2-2BF5-42F8-A9D5-B7A40EF9345C" title="Learn about best practices for troubleshooting and cleaning up after a failed installation.">Cleaning Up After a Failed Installation</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMIG444"></a><div class="props_rev_3"><a id="GUID-21C4B2F5-3ADE-4561-9E7E-962517AEB535" name="GUID-21C4B2F5-3ADE-4561-9E7E-962517AEB535"></a><h4 id="HTMIG-GUID-21C4B2F5-3ADE-4561-9E7E-962517AEB535" class="sect4"><span class="enumeration_section">E.3.1.1 </span>Verifying If You Have a Previous Release of Oracle Application Express
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To verify whether you have a previous release of Oracle Application Express:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 <li>
+                                    <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Execute the following command in SQL*Plus: </span><div><pre class="oac_no_warn" dir="ltr">select username from dba_users
+    where regexp_like(username,'(FLOWS|APEX)_\d{6}')
+        and username &lt;&gt; (select table_owner from all_synonyms
+        where synonym_name = 'WWV_FLOW'
+        and owner = 'PUBLIC')
+</pre><p>If the query above returns any rows, the database contains a previous release of Oracle Application Express.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2" title="Learn about reverting to Oracle Application Express to a previous release in the case of a failed upgrade installation.">Reverting to a Previous Release After a Failed Upgrade Installation</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-E91839C4-E18A-4562-B975-C04EC1C5D614" name="GUID-E91839C4-E18A-4562-B975-C04EC1C5D614"></a><h4 id="HTMIG-GUID-E91839C4-E18A-4562-B975-C04EC1C5D614" class="sect4"><span class="enumeration_section">E.3.1.2 </span>Reverting the Images Directory
+                  </h4>
+                  <div>
+                     <p>If you altered your images directory, revert it back to the release you want to revert to using the following methods:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Oracle REST Data Services or Oracle HTTP Server with mod_plsql</span>:
+                           </p> 
+                           <p>If you altered your images directory, you must point the text alias
+                        <code class="codeph">/i/</code> back to images directory for the release you want to
+                    revert to. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Embedded PL/SQL Gateway</span>:
+                           </p>
+                           <p>Run <code class="codeph">apex_epg_config.sql</code> from the release directory you want to
+                    revert to, to restore the images of that release. See the <span><cite>Oracle Application Express 安装指南</cite></span> for the
+                    release you want to revert to and find the section <span class="italic">"Updating the Images
+                        Directory When Upgrading from a Previous Release."</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-E91839C4-E18A-4562-B975-C04EC1C5D614__GUID-E3CED759-718D-40BD-A53B-2E768BB492EB">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="configuring-Oracle-HTTP-server.html#GUID-11B3AD1B-6FBD-4CDC-A648-ABF380C3375E" title="Learn how to copy images directory.">Copying the Images Directory</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2" title="Learn about reverting to Oracle Application Express to a previous release in the case of a failed upgrade installation.">Reverting to a Previous Release After a Failed Upgrade Installation</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG267"></a><div class="props_rev_3"><a id="GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731" name="GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731"></a><h4 id="HTMIG-GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731" class="sect4"><span class="enumeration_section">E.3.1.3 </span>Reverting to a Previous Release
+                  </h4>
+                  <div>
+                     <p>This section describes how to revert to a previous release Oracle Application
+            Express.</p>
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-37F1EC00-15DA-4E3D-9BA0-8CD8507729CF">Reverting to Release 1.5</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-F880BBEF-9026-4EE6-83DD-BC4C57271903">Reverting to Release 1.6</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-CE93F79A-6058-469E-AAA9-F264DD51925B">Reverting to Release 2.0</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-16224976-DB5C-4F5D-A485-5E7A3A37FDE6">Reverting to Release 2.2</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-001BD03F-DFDC-4F09-B642-0CC4C10A5BAA">Reverting to Release 3.0</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-C22A5CC8-71AA-4118-A054-A2D72F443DFD">Reverting to Release 3.1</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-AF3A1693-C338-4CC1-91F4-3A99EC389BBD">Reverting to Release 3.2</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-27FDE57E-FBDA-46CD-9122-447CFCB97A65">Reverting to Release 4.0</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-445415C2-75B7-42BD-A580-7CB590F1B3B9">Reverting to Release 4.1</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-B1C62059-AE97-4550-B643-2A4DB95EF5B2">Reverting to Release 4.2 in a non-CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-505287B3-C766-4A2B-8CBC-14D92608F515">Reverting to Release 4.2 in a CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-08E61159-29B6-4EBE-88A7-64011A5FBEF3">Reverting to Release 5.0 in a non-CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-73311EF8-ACE9-444A-989D-F262DCEA808F">Reverting to Release 5.0 in a CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-F85C84B1-37B6-4C40-95E5-712640899467">Reverting to Release 5.1 in a non-CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-69ECCCC4-338A-4AE1-8CD9-9DF7FA7A4847">Reverting to Release 5.1 in a CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-1EB00E6C-854E-4CF0-B63E-5458265A2EFA">Reverting to Release 18.1 in a non-CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-E533789E-1982-48A3-A24B-F1C694EE4F1D">Reverting to Release 18.1 in a CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-F96A77D5-7F69-401B-8525-56FAE3D66ED9">Reverting to Release 18.2 in a non-CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-8722FA26-584D-4D37-86CA-B1A18D7F8396">Reverting to Release 18.2 in a CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-7DC3946D-1EA5-44CA-9DE5-FF8C233BE805">Reverting to Release 19.1 in a non-CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-A2D47B7E-D58A-43E6-A773-992A991949E5">Reverting to Release 19.1 in a CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-751AAC1D-DB8A-410D-8B4F-2FFE9706EE30">Reverting to Release 19.2 in a non-CDB</a><br></li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-8EF1960B-77E9-4A03-80BC-14CDFA2D1965">Reverting to Release 19.2 in a CDB</a><br></li>
+                     </ul>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2" title="Learn about reverting to Oracle Application Express to a previous release in the case of a failed upgrade installation.">Reverting to a Previous Release After a Failed Upgrade Installation</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <a id="HTMIG29475"></a><div class="props_rev_3"><a id="GUID-37F1EC00-15DA-4E3D-9BA0-8CD8507729CF" name="GUID-37F1EC00-15DA-4E3D-9BA0-8CD8507729CF"></a><h5 id="HTMIG-GUID-37F1EC00-15DA-4E3D-9BA0-8CD8507729CF" class="sect5"><span class="enumeration_section">E.3.1.3.1 </span>Reverting to Release 1.5
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 1.5:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                    <li>
+                                       <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CURRENT_SCHEMA = FLOWS_010500;
+exec flows_010500.wwv_flow_upgrade.switch_schemas('APEX_200100','FLOWS_010500');
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-37F1EC00-15DA-4E3D-9BA0-8CD8507729CF__GUID-A582986E-B5BF-471D-BE9B-129FCC00D4A2">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                                 
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29476"></a><div class="props_rev_3"><a id="GUID-F880BBEF-9026-4EE6-83DD-BC4C57271903" name="GUID-F880BBEF-9026-4EE6-83DD-BC4C57271903"></a><h5 id="HTMIG-GUID-F880BBEF-9026-4EE6-83DD-BC4C57271903" class="sect5"><span class="enumeration_section">E.3.1.3.2 </span>Reverting to Release 1.6
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a Oracle Application Express release 1.6:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                    <li>
+                                       <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CURRENT_SCHEMA = FLOWS_010600;
+exec flows_010600.wwv_flow_upgrade.switch_schemas('APEX_200100','FLOWS_010600');
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Depending upon the release you are reverting to, execute the appropriate command in SQL*Plus.</span></li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-F880BBEF-9026-4EE6-83DD-BC4C57271903__GUID-84C599BF-440C-43C1-A25E-CBCCA5F3540F">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29477"></a><div class="props_rev_3"><a id="GUID-CE93F79A-6058-469E-AAA9-F264DD51925B" name="GUID-CE93F79A-6058-469E-AAA9-F264DD51925B"></a><h5 id="HTMIG-GUID-CE93F79A-6058-469E-AAA9-F264DD51925B" class="sect5"><span class="enumeration_section">E.3.1.3.3 </span>Reverting to Release 2.0
+                     </h5>
+                     <div>
+                        <p></p>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 2.0:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                    <li>
+                                       <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CURRENT_SCHEMA = FLOWS_020000;
+exec flows_020000.wwv_flow_upgrade.switch_schemas('APEX_200100','FLOWS_020000');
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-CE93F79A-6058-469E-AAA9-F264DD51925B__GUID-6748ADFE-B54B-4482-8CFB-0E467A2B680C">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29478"></a><div class="props_rev_3"><a id="GUID-16224976-DB5C-4F5D-A485-5E7A3A37FDE6" name="GUID-16224976-DB5C-4F5D-A485-5E7A3A37FDE6"></a><h5 id="HTMIG-GUID-16224976-DB5C-4F5D-A485-5E7A3A37FDE6" class="sect5"><span class="enumeration_section">E.3.1.3.4 </span>Reverting to Release 2.2
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 2.2:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                    <li>
+                                       <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CURRENT_SCHEMA = FLOWS_020200;
+exec flows_020200.wwv_flow_upgrade.switch_schemas('APEX_200100','FLOWS_020200');
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-16224976-DB5C-4F5D-A485-5E7A3A37FDE6__GUID-3A3DCD07-88A5-44AC-9C7B-05EE198C8505">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29479"></a><div class="props_rev_3"><a id="GUID-001BD03F-DFDC-4F09-B642-0CC4C10A5BAA" name="GUID-001BD03F-DFDC-4F09-B642-0CC4C10A5BAA"></a><h5 id="HTMIG-GUID-001BD03F-DFDC-4F09-B642-0CC4C10A5BAA" class="sect5"><span class="enumeration_section">E.3.1.3.5 </span>Reverting to Release 3.0
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 3.0:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 3.0 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+
+@apexvalidate x x FLOWS_030000
+ALTER SESSION SET CURRENT_SCHEMA = FLOWS_030000;
+exec flows_030000.wwv_flow_upgrade.switch_schemas('APEX_200100','FLOWS_030000');
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+declare
+    l_apex_version varchar2(30);
+begin
+    l_apex_version := flows_030000.wwv_flows_release;
+    dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','FLOWS_030000');
+    dbms_registry.downgraded('APEX',l_apex_version);
+    validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release 19.1
+                        Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-001BD03F-DFDC-4F09-B642-0CC4C10A5BAA__GUID-C81304DC-2032-4743-8AEB-D6493AAD7889">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29480"></a><div class="props_rev_3"><a id="GUID-C22A5CC8-71AA-4118-A054-A2D72F443DFD" name="GUID-C22A5CC8-71AA-4118-A054-A2D72F443DFD"></a><h5 id="HTMIG-GUID-C22A5CC8-71AA-4118-A054-A2D72F443DFD" class="sect5"><span class="enumeration_section">E.3.1.3.6 </span>Reverting to Release 3.1
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 3.1:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 3.1 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">@wwv_flow_val.plb
+@wwv_dbms_sql.sql
+@wwv_dbms_sql.plb
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 3.1 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+ 
+@apexvalidate x x FLOWS_030100
+ALTER SESSION SET CURRENT_SCHEMA = FLOWS_030100;
+exec flows_030100.wwv_flow_upgrade.switch_schemas('APEX_200100','FLOWS_030100');
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+declare
+    l_apex_version varchar2(30);
+begin
+    l_apex_version := flows_030100.wwv_flows_release;
+    dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','FLOWS_030100');
+    dbms_registry.downgraded('APEX',l_apex_version);
+    validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-C22A5CC8-71AA-4118-A054-A2D72F443DFD__GUID-046C0D10-6EF5-4DE1-BB18-F51CF246F2A2">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29481"></a><div class="props_rev_3"><a id="GUID-AF3A1693-C338-4CC1-91F4-3A99EC389BBD" name="GUID-AF3A1693-C338-4CC1-91F4-3A99EC389BBD"></a><h5 id="HTMIG-GUID-AF3A1693-C338-4CC1-91F4-3A99EC389BBD" class="sect5"><span class="enumeration_section">E.3.1.3.7 </span>Reverting to Release 3.2
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 3.2:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 3.2 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">@wwv_flow_val.plb
+@wwv_dbms_sql.sql
+@wwv_dbms_sql.plb
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as SYS specifying the SYSDBA role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+ 
+@apexvalidate x x APEX_030200
+ALTER SESSION SET CURRENT_SCHEMA = APEX_030200;
+exec apex_030200.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_030200');
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+declare
+    l_apex_version varchar2(30);
+begin
+    l_apex_version := apex_030200.wwv_flows_release;
+    dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_030200')
+    dbms_registry.downgraded('APEX',l_apex_version);
+    validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-AF3A1693-C338-4CC1-91F4-3A99EC389BBD__GUID-CD7FE620-0DAA-4256-82E3-882BD4B4A892">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29482"></a><div class="props_rev_3"><a id="GUID-27FDE57E-FBDA-46CD-9122-447CFCB97A65" name="GUID-27FDE57E-FBDA-46CD-9122-447CFCB97A65"></a><h5 id="HTMIG-GUID-27FDE57E-FBDA-46CD-9122-447CFCB97A65" class="sect5"><span class="enumeration_section">E.3.1.3.8 </span>Reverting to Release 4.0
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 4.0:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">@wwv_flow_val.sql
+@wwv_flow_val.plb
+@wwv_dbms_sql.sql
+@wwv_dbms_sql.plb
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 4.0 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+
+@apexvalidate x x APEX_040000
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040000;
+exec apex_040000.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_040000');
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+declare
+    l_apex_version varchar2(30);
+begin
+    l_apex_version := apex_040000.wwv_flows_release;
+    dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_040000');
+    dbms_registry.downgraded('APEX',l_apex_version);
+    validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-27FDE57E-FBDA-46CD-9122-447CFCB97A65__GUID-BEE27A45-2CCD-46CC-8025-574123B5CF42">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29483"></a><div class="props_rev_3"><a id="GUID-445415C2-75B7-42BD-A580-7CB590F1B3B9" name="GUID-445415C2-75B7-42BD-A580-7CB590F1B3B9"></a><h5 id="HTMIG-GUID-445415C2-75B7-42BD-A580-7CB590F1B3B9" class="sect5"><span class="enumeration_section">E.3.1.3.9 </span>Reverting to Release 4.1
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 4.1:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 4.1 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">@wwv_flow_val.sql
+@wwv_flow_val.plb
+@wwv_dbms_sql.sql
+@wwv_dbms_sql.plb
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 4.1 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+ 
+@apexvalidate x x APEX_040100
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040100;
+exec apex_040100.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_040100');
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+declare
+    l_apex_version varchar2(30);
+begin
+    l_apex_version := apex_040100.wwv_flows_release;
+    dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_040100');
+    dbms_registry.downgraded('APEX',l_apex_version);
+    validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-445415C2-75B7-42BD-A580-7CB590F1B3B9__GUID-0753A287-19DB-4CEF-B61C-94BF47113D22">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29490"></a><div class="props_rev_3"><a id="GUID-B1C62059-AE97-4550-B643-2A4DB95EF5B2" name="GUID-B1C62059-AE97-4550-B643-2A4DB95EF5B2"></a><h5 id="HTMIG-GUID-B1C62059-AE97-4550-B643-2A4DB95EF5B2" class="sect5"><span class="enumeration_section">E.3.1.3.10 </span>Reverting to Release 4.2 in a non-CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 4.2 in a non-CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 4.2 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+                    installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code>
+                    role:</span><div>
+                                 
+                                 <p>On Windows:</p>
+                                 <pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre>
+                                 <p>On UNIX and Linux:</p>
+                                 <pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre>
+                                 </div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">alter session set current_schema = SYS;
+ 
+@core_sys_views.sql
+ 
+grant select on sys.wwv_flow_gv$session to APEX_040200;
+ 
+@wwv_flow_val.sql
+@wwv_flow_val.plb
+@wwv_dbms_sql.sql
+grant execute on wwv_dbms_sql to APEX_040200;
+@wwv_dbms_sql.plb
+ 
+begin
+    dbms_utility.compile_schema('APEX_040200');
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 4.2 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+ 
+@apexvalidate x x APEX_040200
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040200;
+exec apex_040200.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_040200');
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+declare
+    l_apex_version varchar2(30);
+begin
+    l_apex_version := apex_040200.wwv_flows_release;
+    dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_040200');
+    dbms_registry.downgraded('APEX',l_apex_version);
+    validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-B1C62059-AE97-4550-B643-2A4DB95EF5B2__GUID-9B98B26B-7B54-4DCE-BDA7-18E147BE123B">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29484"></a><div class="props_rev_3"><a id="GUID-505287B3-C766-4A2B-8CBC-14D92608F515" name="GUID-505287B3-C766-4A2B-8CBC-14D92608F515"></a><h5 id="HTMIG-GUID-505287B3-C766-4A2B-8CBC-14D92608F515" class="sect5"><span class="enumeration_section">E.3.1.3.11 </span>Reverting to Release 4.2 in a CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 4.2 in a CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 4.2 source.</span></li>
+                           <li class="stepexpand"><span>Create a new text file in that directory named <code class="codeph">apx42dgrd1.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">alter session set current_schema = SYS;
+ 
+@core_sys_views.sql
+ 
+grant select on sys.wwv_flow_gv$session to APEX_040200;
+ 
+@wwv_flow_val.sql
+@wwv_flow_val.plb
+@wwv_dbms_sql.sql
+grant execute on wwv_dbms_sql to APEX_040200;
+@wwv_dbms_sql.plb
+ 
+begin
+    dbms_utility.compile_schema('APEX_040200');
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Create a second new text file in that directory named <code class="codeph">apx42dgrd.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+ 
+whenever sqlerror exit
+ 
+column :xe_home new_value OH_HOME NOPRINT
+variable xe_home varchar2(255)
+ 
+set serverout on
+begin
+-- get oracle_home
+    sys.dbms_system.get_env('ORACLE_HOME',:xe_home);
+    if length(:xe_home) = 0 then
+        sys.dbms_output.put_line(lpad('-',80,'-'));
+        raise_application_error (
+            -20001,
+            'Oracle Home environment variable not set' );
+    end if;
+end;
+/
+whenever sqlerror continue
+ 
+set termout off
+select :xe_home from sys.dual;
+set termout on
+ 
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b apx42dgrd apx42dgrd1.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to <code class="codeph">CDB$ROOT</code> of the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">@apx42dgrd.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 4.2 source.</span></li>
+                           <li class="stepexpand"><span>Create a new text file in that directory name <code class="codeph">apx42dgrd1.sql</code> with the following contents:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+ 
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+ 
+@apexvalidate x x APEX_040200
+ 
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040200;
+exec apex_040200.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_040200');
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+declare
+    l_apex_version varchar2(30);
+begin
+    l_apex_version := apex_040200.wwv_flows_release;
+    dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_040200');
+    dbms_registry.downgraded('APEX',l_apex_version);
+    validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Create a second new text file in that directory named <code class="codeph">apx42dgrd.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+ 
+whenever sqlerror exit
+ 
+column :xe_home new_value OH_HOME NOPRINT
+variable xe_home varchar2(255)
+ 
+set serverout on
+begin
+-- get oracle_home
+    sys.dbms_system.get_env('ORACLE_HOME',:xe_home);
+    if length(:xe_home) = 0 then
+        sys.dbms_output.put_line(lpad('-',80,'-'));
+        raise_application_error (
+            -20001,
+            'Oracle Home environment variable not set' );
+    end if;
+end;
+/
+whenever sqlerror continue
+ 
+set termout off
+select :xe_home from sys.dual;
+set termout on
+ 
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b apx42dgrd apx42dgrd1.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to <code class="codeph">CDB$ROOT</code> of the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following:</span><div><pre class="oac_no_warn" dir="ltr">@apx42dgrd.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-505287B3-C766-4A2B-8CBC-14D92608F515__GUID-BF297A78-73F1-419C-8292-8A80C20D3B98">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-08E61159-29B6-4EBE-88A7-64011A5FBEF3" name="GUID-08E61159-29B6-4EBE-88A7-64011A5FBEF3"></a><h5 id="HTMIG-GUID-08E61159-29B6-4EBE-88A7-64011A5FBEF3" class="sect5"><span class="enumeration_section">E.3.1.3.12 </span>Reverting to Release 5.0 in a non-CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 5.0 in a non-CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 5.0 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as SYS specifying the SYSDBA role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">alter session set current_schema = SYS;   
+
+@wwv_flow_val.sql 
+@wwv_flow_val.plb 
+
+begin
+     dbms_utility.compile_schema('APEX_050000');
+end;
+/ 
+
+set define '^'   
+@validate_apex x x APEX_050000
+
+begin
+  for i in ( select owner, trigger_name
+               from sys.dba_triggers
+              where owner        =    'APEX_050000'
+                and trigger_name like 'WWV_FLOW_UPGRADE_%'
+              order by 1 )
+  loop
+    sys.dbms_output.put_line('Dropping trigger '||i.owner||'.'||i.trigger_name);
+    execute immediate 'drop trigger '||i.owner||'.'||i.trigger_name;
+  end loop;
+end;
+/
+
+ALTER SESSION SET CURRENT_SCHEMA = APEX_050000; 
+exec apex_050000.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_050000');
+ALTER SESSION SET CURRENT_SCHEMA = SYS; 
+drop context APEX$SESSION;
+create context APEX$SESSION using APEX_050000.WWV_FLOW_SESSION_CONTEXT;
+declare
+     l_apex_version varchar2(30); 
+     l_schemas sys.dbms_registry.schema_list_t;
+begin
+     l_apex_version := apex_050000.wwv_flows_release;
+     dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_050000');
+     dbms_registry.downgraded('APEX',l_apex_version);
+     select username
+       bulk collect into l_schemas
+       from all_users
+      where username in ('FLOWS_FILES','APEX_PUBLIC_USER','APEX_LISTENER','APEX_REST_PUBLIC_USER','APEX_INSTANCE_ADMIN_USER')
+      order by 1;
+     sys.dbms_registry.update_schema_list('APEX', l_schemas);
+     validate_apex;
+end;
+/</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-08E61159-29B6-4EBE-88A7-64011A5FBEF3__GUID-A2D321C8-A601-43A4-A9F7-E9F528662FE5">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-73311EF8-ACE9-444A-989D-F262DCEA808F" name="GUID-73311EF8-ACE9-444A-989D-F262DCEA808F"></a><h5 id="HTMIG-GUID-73311EF8-ACE9-444A-989D-F262DCEA808F" class="sect5"><span class="enumeration_section">E.3.1.3.13 </span>Reverting to Release 5.0 in a CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 5.0 in a CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 5.0 source.</span></li>
+                           <li class="stepexpand"><span>Create a new text file in that directory named <code class="codeph">apx50dgrd1.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">alter session set current_schema = SYS;   
+
+@wwv_flow_val.sql 
+@wwv_flow_val.plb 
+
+begin
+     dbms_utility.compile_schema('APEX_050000');
+end;
+/ 
+
+set define '^'   
+@validate_apex x x APEX_050000
+
+begin
+  for i in ( select owner, trigger_name
+               from sys.dba_triggers
+              where owner        =    'APEX_050000'
+                and trigger_name like 'WWV_FLOW_UPGRADE_%'
+              order by 1 )
+  loop
+    sys.dbms_output.put_line('Dropping trigger '||i.owner||'.'||i.trigger_name);
+    execute immediate 'drop trigger '||i.owner||'.'||i.trigger_name;
+  end loop;
+end;
+/
+
+ALTER SESSION SET CURRENT_SCHEMA = APEX_050000; 
+exec apex_050000.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_050000');
+ALTER SESSION SET CURRENT_SCHEMA = SYS; 
+drop context APEX$SESSION;
+create context APEX$SESSION using APEX_050000.WWV_FLOW_SESSION_CONTEXT;
+declare
+     l_apex_version varchar2(30); 
+     l_schemas sys.dbms_registry.schema_list_t;
+begin
+     l_apex_version := apex_050000.wwv_flows_release;
+     dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_050000');
+     dbms_registry.downgraded('APEX',l_apex_version);
+     select username
+       bulk collect into l_schemas
+       from all_users
+      where username in ('FLOWS_FILES','APEX_PUBLIC_USER','APEX_LISTENER','APEX_REST_PUBLIC_USER','APEX_INSTANCE_ADMIN_USER')
+      order by 1;
+     sys.dbms_registry.update_schema_list('APEX', l_schemas);
+     validate_apex;
+end;
+/</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Create a second new text file in that directory named <code class="codeph">apx50dgrd.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'   
+whenever sqlerror exit   
+column :xe_home new_value OH_HOME NOPRINT 
+variable xe_home varchar2(255)   
+set serverout on 
+begin 
+-- get oracle_home     
+sys.dbms_system.get_env('ORACLE_HOME',:xe_home);     
+if length(:xe_home) = 0 then
+    sys.dbms_output.put_line(lpad('-',80,'-'));         
+    raise_application_error (-20001,'Oracle Home environment variable not set' );  
+end if; 
+end; 
+/ 
+whenever sqlerror continue   
+set termout off 
+select :xe_home from sys.dual; 
+set termout on   
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b apx50dgrd apx50dgrd1.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to <code class="codeph">CDB$ROOT</code> of the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog 
+SQL&gt; CONNECT SYS as SYSDBA 
+Enter password: SYS_password 
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog 
+SQL&gt; CONNECT SYS as SYSDBA 
+Enter password: SYS_password 
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">@apx50dgrd.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-73311EF8-ACE9-444A-989D-F262DCEA808F__GUID-92F7DCA3-D83B-42BA-9BA7-7EC46AFC6415">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-F85C84B1-37B6-4C40-95E5-712640899467" name="GUID-F85C84B1-37B6-4C40-95E5-712640899467"></a><h5 id="HTMIG-GUID-F85C84B1-37B6-4C40-95E5-712640899467" class="sect5"><span class="enumeration_section">E.3.1.3.14 </span>Reverting to Release 5.1 in a non-CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 5.1 in a non-CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 5.1 source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+          installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 
+                                 <p>On Windows:</p>
+                                 <pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre>
+                                 <p>On UNIX and Linux:</p>
+                                 <pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre>
+                                 </div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">alter session set current_schema = SYS;   
+
+@wwv_flow_val.sql 
+@wwv_flow_val.plb 
+
+begin
+     dbms_utility.compile_schema('APEX_050100');
+end;
+/ 
+
+set define '^'   
+@validate_apex x x APEX_050100
+
+begin
+  for i in ( select owner, trigger_name
+               from sys.dba_triggers
+              where owner        =    'APEX_050100'
+                and trigger_name like 'WWV_FLOW_UPGRADE_%'
+              order by 1 )
+  loop
+    sys.dbms_output.put_line('Dropping trigger '||i.owner||'.'||i.trigger_name);
+    execute immediate 'drop trigger '||i.owner||'.'||i.trigger_name;
+  end loop;
+end;
+/
+
+ALTER SESSION SET CURRENT_SCHEMA = APEX_050100; 
+exec apex_050100.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_050100');
+ALTER SESSION SET CURRENT_SCHEMA = SYS; 
+drop context APEX$SESSION;
+create context APEX$SESSION using APEX_050100.WWV_FLOW_SESSION_CONTEXT;
+declare
+     l_apex_version varchar2(30); 
+     l_schemas sys.dbms_registry.schema_list_t;
+begin
+     l_apex_version := apex_050100.wwv_flows_release;
+     dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_050100');
+     dbms_registry.downgraded('APEX',l_apex_version);
+     select username
+       bulk collect into l_schemas
+       from all_users
+      where username in ('FLOWS_FILES','APEX_PUBLIC_USER','APEX_LISTENER','APEX_REST_PUBLIC_USER','APEX_INSTANCE_ADMIN_USER')
+      order by 1;
+     sys.dbms_registry.update_schema_list('APEX', l_schemas);
+     validate_apex;
+end;
+/</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See the next section, <span class="q">"Removing the Oracle Application Express Release
+            19.1 Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-F85C84B1-37B6-4C40-95E5-712640899467__GUID-A2D321C8-A601-43A4-A9F7-E9F528662FE5">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-69ECCCC4-338A-4AE1-8CD9-9DF7FA7A4847" name="GUID-69ECCCC4-338A-4AE1-8CD9-9DF7FA7A4847"></a><h5 id="HTMIG-GUID-69ECCCC4-338A-4AE1-8CD9-9DF7FA7A4847" class="sect5"><span class="enumeration_section">E.3.1.3.15 </span>Reverting to Release 5.1 in a CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 5.1 in a CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex/core</code> in the 5.1 source.</span></li>
+                           <li class="stepexpand"><span>Create a new text file in that directory named <code class="codeph">apx51dgrd1.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">alter session set current_schema = SYS;   
+
+@wwv_flow_val.sql 
+@wwv_flow_val.plb 
+
+begin
+     dbms_utility.compile_schema('APEX_050100');
+end;
+/ 
+
+set define '^'   
+@validate_apex x x APEX_050100
+
+begin
+  for i in ( select owner, trigger_name
+               from sys.dba_triggers
+              where owner        =    'APEX_050100'
+                and trigger_name like 'WWV_FLOW_UPGRADE_%'
+              order by 1 )
+  loop
+    sys.dbms_output.put_line('Dropping trigger '||i.owner||'.'||i.trigger_name);
+    execute immediate 'drop trigger '||i.owner||'.'||i.trigger_name;
+  end loop;
+end;
+/
+
+ALTER SESSION SET CURRENT_SCHEMA = APEX_050100; 
+exec apex_050100.wwv_flow_upgrade.switch_schemas('APEX_200100','APEX_050100');
+ALTER SESSION SET CURRENT_SCHEMA = SYS; 
+drop context APEX$SESSION;
+create context APEX$SESSION using APEX_050100.WWV_FLOW_SESSION_CONTEXT;
+declare
+     l_apex_version varchar2(30); 
+     l_schemas sys.dbms_registry.schema_list_t;
+begin
+     l_apex_version := apex_050100.wwv_flows_release;
+     dbms_registry.downgrading('APEX','Oracle Application Express','validate_apex','APEX_050100');
+     dbms_registry.downgraded('APEX',l_apex_version);
+     select username
+       bulk collect into l_schemas
+       from all_users
+      where username in ('FLOWS_FILES','APEX_PUBLIC_USER','APEX_LISTENER','APEX_REST_PUBLIC_USER','APEX_INSTANCE_ADMIN_USER')
+      order by 1;
+     sys.dbms_registry.update_schema_list('APEX', l_schemas);
+     validate_apex;
+end;
+/</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Create a second new text file in that directory named <code class="codeph">apx51dgrd.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'   
+whenever sqlerror exit   
+column :xe_home new_value OH_HOME NOPRINT 
+variable xe_home varchar2(255)   
+set serverout on 
+begin 
+-- get oracle_home     
+sys.dbms_system.get_env('ORACLE_HOME',:xe_home);     
+if length(:xe_home) = 0 then
+    sys.dbms_output.put_line(lpad('-',80,'-'));         
+    raise_application_error (-20001,'Oracle Home environment variable not set' );  
+end if; 
+end; 
+/ 
+whenever sqlerror continue   
+set termout off 
+select :xe_home from sys.dual; 
+set termout on   
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b apx51dgrd apx51dgrd1.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to <code class="codeph">CDB$ROOT</code> of the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog 
+SQL&gt; CONNECT SYS as SYSDBA 
+Enter password: SYS_password 
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog 
+SQL&gt; CONNECT SYS as SYSDBA 
+Enter password: SYS_password 
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following commands:</span><div><pre class="oac_no_warn" dir="ltr">@apx51dgrd.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-69ECCCC4-338A-4AE1-8CD9-9DF7FA7A4847__GUID-92F7DCA3-D83B-42BA-9BA7-7EC46AFC6415">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-1EB00E6C-854E-4CF0-B63E-5458265A2EFA" name="GUID-1EB00E6C-854E-4CF0-B63E-5458265A2EFA"></a><h5 id="HTMIG-GUID-1EB00E6C-854E-4CF0-B63E-5458265A2EFA" class="sect5"><span class="enumeration_section">E.3.1.3.16 </span>Reverting to Release 18.1 in a non-CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 18.1 in a non-CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 18.1 source.</span></li>
+                           <li class="stepexpand"><span>Create a new text file in that directory named <code class="codeph">apxdwngrd.sql</code> consisting of the following:</span><div><pre class="pre codeblock"><code>set define '^'
+set concat on
+set concat .
+set verify off
+ 
+set termout off
+column foo new_val LOG
+select 'apxdwngrd_' ||to_char(sysdate, 'YYYY-MM-DD_HH24-MI-SS') || '.log' as foo
+  from sys.dual;
+set termout on
+spool ^LOG
+ 
+@@core/scripts/set_appun.sql
+ 
+whenever sqlerror exit
+set serveroutput on size unlimited
+ 
+declare
+    l_cnt    number := 0;
+begin
+    select count(*) into l_cnt from sys.dba_users where username = '^APPUN';
+    if l_cnt = 0 then
+        dbms_output.put_line('^APPUN not found in this database.');
+        raise program_error;
+    end if;
+end;
+/
+whenever sqlerror continue
+ 
+ 
+prompt ...Create validate procedure in SYS schema and start registration
+@@core/validate_apex.sql x x ^APPUN
+ 
+grant inherit any privileges to ^APPUN;
+ 
+prompt Installing SYS views
+ 
+@@core/sys_core_views.sql
+ 
+@@core/wwv_flow_val.sql
+grant execute on sys.wwv_flow_val to ^APPUN.;
+ 
+@@core/wwv_flow_val.plb
+ 
+ALTER SESSION SET CURRENT_SCHEMA = ^APPUN;
+ 
+exec sys.dbms_session.modify_package_state(sys.dbms_session.reinitialize);
+ 
+begin
+    ^APPUN..wwv_flow_upgrade.remove_jobs();
+    ^APPUN..wwv_flow_upgrade.create_jobs('^APPUN');
+    ^APPUN..wwv_flow_upgrade.create_public_synonyms('^APPUN');
+    ^APPUN..wwv_flow_upgrade.grant_public_synonyms('^APPUN');
+    ^APPUN..wwv_flow_upgrade.flows_files_objects_remove('^APPUN');
+    ^APPUN..wwv_flow_upgrade.flows_files_objects_create('^APPUN');
+end;
+/
+ 
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+ 
+drop context APEX$SESSION;
+create context APEX$SESSION using ^APPUN..WWV_FLOW_SESSION_CONTEXT;
+ 
+alter package sys.wwv_dbms_sql_^APPUN. compile;
+alter package sys.wwv_dbms_sql_^APPUN. compile body;
+ 
+exec sys.dbms_session.modify_package_state(sys.dbms_session.reinitialize);
+ 
+set serveroutput on size unlimited
+ 
+declare
+     l_apex_version varchar2(30);
+     l_schemas sys.dbms_registry.schema_list_t;
+begin
+    execute immediate 'drop package ^APPUN..WWV_FLOW_DB_VERSION';
+    l_apex_version := ^APPUN..wwv_flows_release;
+    sys.dbms_registry.loading('APEX','Oracle Application Express','validate_apex', '^APPUN');
+    select username
+      bulk collect into l_schemas
+      from sys.all_users
+     where username in ('FLOWS_FILES','APEX_PUBLIC_USER','APEX_LISTENER','APEX_REST_PUBLIC_USER','APEX_INSTANCE_ADMIN_USER')
+     order by 1;
+     sys.dbms_registry.update_schema_list('APEX', l_schemas);
+     sys.dbms_registry.loaded('APEX',l_apex_version);
+     commit;
+     sys.validate_apex;
+end;
+/</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+                    installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code>
+                    role:</span><div>
+                                 
+                                 <p>On Windows:</p>
+                                 <pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre>
+                                 <p>On UNIX and Linux:</p>
+                                 <pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre>
+                                 </div>
+                           </li>
+                           <li class="stepexpand"><span>Run the <code class="codeph">apxdwngrd.sql</code> script:</span><div><pre class="pre codeblock"><code>SQL&gt; @apxdwngrd.sql </code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-1EB00E6C-854E-4CF0-B63E-5458265A2EFA__GUID-A2D321C8-A601-43A4-A9F7-E9F528662FE5">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-E533789E-1982-48A3-A24B-F1C694EE4F1D" name="GUID-E533789E-1982-48A3-A24B-F1C694EE4F1D"></a><h5 id="HTMIG-GUID-E533789E-1982-48A3-A24B-F1C694EE4F1D" class="sect5"><span class="enumeration_section">E.3.1.3.17 </span>Reverting to Release 18.1 in a CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 18.1 in a CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 18.1 source.</span></li>
+                           <li class="stepexpand"><span>Create a new text file in that directory named <code class="codeph">apxdwngrd.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+set concat on
+set concat .
+set verify off
+ 
+set termout off
+column foo new_val LOG
+select 'apxdwngrd_' ||to_char(sysdate, 'YYYY-MM-DD_HH24-MI-SS') || '.log' as foo
+  from sys.dual;
+set termout on
+spool ^LOG
+ 
+@@core/scripts/set_appun.sql
+ 
+whenever sqlerror exit
+set serveroutput on size unlimited
+ 
+declare
+    l_cnt    number := 0;
+begin
+    select count(*) into l_cnt from sys.dba_users where username = '^APPUN';
+    if l_cnt = 0 then
+        dbms_output.put_line('^APPUN not found in this database.');
+        raise program_error;
+    end if;
+end;
+/
+whenever sqlerror continue
+ 
+ 
+prompt ...Create validate procedure in SYS schema and start registration
+@@core/validate_apex.sql x x ^APPUN
+ 
+grant inherit any privileges to ^APPUN;
+ 
+prompt Installing SYS views
+ 
+@@core/sys_core_views.sql
+ 
+@@core/wwv_flow_val.sql
+grant execute on sys.wwv_flow_val to ^APPUN.;
+ 
+@@core/wwv_flow_val.plb
+ 
+ALTER SESSION SET CURRENT_SCHEMA = ^APPUN;
+ 
+exec sys.dbms_session.modify_package_state(sys.dbms_session.reinitialize);
+ 
+begin
+    ^APPUN..wwv_flow_upgrade.remove_jobs();
+    ^APPUN..wwv_flow_upgrade.create_jobs('^APPUN');
+    ^APPUN..wwv_flow_upgrade.create_public_synonyms('^APPUN');
+    ^APPUN..wwv_flow_upgrade.grant_public_synonyms('^APPUN');
+    ^APPUN..wwv_flow_upgrade.flows_files_objects_remove('^APPUN');
+    ^APPUN..wwv_flow_upgrade.flows_files_objects_create('^APPUN');
+end;
+/
+ 
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+ 
+drop context APEX$SESSION;
+create context APEX$SESSION using ^APPUN..WWV_FLOW_SESSION_CONTEXT;
+ 
+alter package sys.wwv_dbms_sql_^APPUN. compile;
+alter package sys.wwv_dbms_sql_^APPUN. compile body;
+ 
+exec sys.dbms_session.modify_package_state(sys.dbms_session.reinitialize);
+ 
+set serveroutput on size unlimited
+ 
+declare
+     l_apex_version varchar2(30);
+     l_schemas sys.dbms_registry.schema_list_t;
+begin
+    execute immediate 'drop package ^APPUN..WWV_FLOW_DB_VERSION';
+    l_apex_version := ^APPUN..wwv_flows_release;
+    sys.dbms_registry.loading('APEX','Oracle Application Express','validate_apex', '^APPUN');
+    select username
+      bulk collect into l_schemas
+      from sys.all_users
+     where username in ('FLOWS_FILES','APEX_PUBLIC_USER','APEX_LISTENER','APEX_REST_PUBLIC_USER','APEX_INSTANCE_ADMIN_USER')
+     order by 1;
+     sys.dbms_registry.update_schema_list('APEX', l_schemas);
+     sys.dbms_registry.loaded('APEX',l_apex_version);
+     commit;
+     sys.validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Create a second new text file in that directory named <code class="codeph">apxdwngrd_cdb.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'  
+whenever sqlerror exit  
+column :xe_home new_value OH_HOME NOPRINT
+variable xe_home varchar2(255)  
+set serverout on
+begin
+-- get oracle_home    
+sys.dbms_system.get_env('ORACLE_HOME',:xe_home);    
+if length(:xe_home) = 0 then
+    sys.dbms_output.put_line(lpad('-',80,'-'));        
+    raise_application_error (-20001,'Oracle Home environment variable not set' ); 
+end if;
+end;
+/
+whenever sqlerror continue  
+set termout off
+select :xe_home from sys.dual;
+set termout on  
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b apx181dgrd apxdwngrd.sql</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to <code class="codeph">CDB$ROOT</code> of the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog 
+SQL&gt; CONNECT SYS as SYSDBA 
+Enter password: SYS_password 
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog 
+SQL&gt; CONNECT SYS as SYSDBA 
+Enter password: SYS_password 
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Run the <code class="codeph">apxdwngrd_cdb.sql</code> script:</span><div><pre class="oac_no_warn" dir="ltr">SQL&gt; @apxdwngrd_cdb.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-E533789E-1982-48A3-A24B-F1C694EE4F1D__GUID-92F7DCA3-D83B-42BA-9BA7-7EC46AFC6415">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-F96A77D5-7F69-401B-8525-56FAE3D66ED9" name="GUID-F96A77D5-7F69-401B-8525-56FAE3D66ED9"></a><h5 id="HTMIG-GUID-F96A77D5-7F69-401B-8525-56FAE3D66ED9" class="sect5"><span class="enumeration_section">E.3.1.3.18 </span>Reverting to Release 18.2 in a non-CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 18.2 in a non-CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 18.2 source.</span></li>
+                           <li class="stepexpand"><span>Create a new text file in that directory named <code class="codeph">apxdwngrd.sql</code> consisting of the following:</span><div><pre class="pre codeblock"><code>set define '^'
+set concat on
+set concat .
+set verify off
+ 
+set termout off
+column foo new_val LOG
+select 'apxdwngrd_' ||to_char(sysdate, 'YYYY-MM-DD_HH24-MI-SS') || '.log' as foo
+  from sys.dual;
+set termout on
+spool ^LOG
+ 
+@@core/scripts/set_appun.sql
+ 
+whenever sqlerror exit
+set serveroutput on size unlimited
+ 
+declare
+    l_cnt    number := 0;
+begin
+    select count(*) into l_cnt from sys.dba_users where username = '^APPUN';
+    if l_cnt = 0 then
+        dbms_output.put_line('^APPUN not found in this database.');
+        raise program_error;
+    end if;
+end;
+/
+whenever sqlerror continue
+ 
+ 
+prompt ...Create validate procedure in SYS schema and start registration
+@@core/validate_apex.sql x x ^APPUN
+ 
+grant inherit any privileges to ^APPUN;
+ 
+prompt Installing SYS views
+ 
+@@core/sys_core_views.sql
+ 
+@@core/wwv_flow_val.sql
+grant execute on sys.wwv_flow_val to ^APPUN.;
+ 
+@@core/wwv_flow_val.plb
+ 
+ALTER SESSION SET CURRENT_SCHEMA = ^APPUN;
+ 
+exec sys.dbms_session.modify_package_state(sys.dbms_session.reinitialize);
+ 
+begin
+    ^APPUN..wwv_flow_upgrade.remove_jobs();
+    ^APPUN..wwv_flow_upgrade.create_jobs('^APPUN');
+    ^APPUN..wwv_flow_upgrade.create_public_synonyms('^APPUN');
+    ^APPUN..wwv_flow_upgrade.grant_public_synonyms('^APPUN');
+    ^APPUN..wwv_flow_upgrade.flows_files_objects_remove('^APPUN');
+    ^APPUN..wwv_flow_upgrade.flows_files_objects_create('^APPUN');
+end;
+/
+ 
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+ 
+drop context APEX$SESSION;
+create context APEX$SESSION using ^APPUN..WWV_FLOW_SESSION_CONTEXT;
+ 
+alter package sys.wwv_dbms_sql_^APPUN. compile;
+alter package sys.wwv_dbms_sql_^APPUN. compile body;
+ 
+exec sys.dbms_session.modify_package_state(sys.dbms_session.reinitialize);
+ 
+set serveroutput on size unlimited
+ 
+declare
+     l_apex_version varchar2(30);
+     l_schemas sys.dbms_registry.schema_list_t;
+begin
+    execute immediate 'drop package ^APPUN..WWV_FLOW_DB_VERSION';
+    l_apex_version := ^APPUN..wwv_flows_release;
+    sys.dbms_registry.loading('APEX','Oracle Application Express','validate_apex', '^APPUN');
+    select username
+      bulk collect into l_schemas
+      from sys.all_users
+     where username in ('FLOWS_FILES','APEX_PUBLIC_USER','APEX_LISTENER','APEX_REST_PUBLIC_USER','APEX_INSTANCE_ADMIN_USER')
+     order by 1;
+     sys.dbms_registry.update_schema_list('APEX', l_schemas);
+     sys.dbms_registry.loaded('APEX',l_apex_version);
+     commit;
+     sys.validate_apex;
+end;
+/</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+                    installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code>
+                    role:</span><div>
+                                 
+                                 <p>On Windows:</p>
+                                 <pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre>
+                                 <p>On UNIX and Linux:</p>
+                                 <pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+</pre>
+                                 </div>
+                           </li>
+                           <li class="stepexpand"><span>Run the <code class="codeph">apxdwngrd.sql</code> script:</span><div><pre class="pre codeblock"><code>SQL&gt; @apxdwngrd.sql </code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-F96A77D5-7F69-401B-8525-56FAE3D66ED9__GUID-A2D321C8-A601-43A4-A9F7-E9F528662FE5">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-8722FA26-584D-4D37-86CA-B1A18D7F8396" name="GUID-8722FA26-584D-4D37-86CA-B1A18D7F8396"></a><h5 id="HTMIG-GUID-8722FA26-584D-4D37-86CA-B1A18D7F8396" class="sect5"><span class="enumeration_section">E.3.1.3.19 </span>Reverting to Release 18.2 in a CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To revert to a previous Oracle Application Express release 18.2 in a CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 18.2 source.</span></li>
+                           <li class="stepexpand"><span>Create a new text file in that directory named <code class="codeph">apxdwngrd.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'
+set concat on
+set concat .
+set verify off
+ 
+set termout off
+column foo new_val LOG
+select 'apxdwngrd_' ||to_char(sysdate, 'YYYY-MM-DD_HH24-MI-SS') || '.log' as foo
+  from sys.dual;
+set termout on
+spool ^LOG
+ 
+@@core/scripts/set_appun.sql
+ 
+whenever sqlerror exit
+set serveroutput on size unlimited
+ 
+declare
+    l_cnt    number := 0;
+begin
+    select count(*) into l_cnt from sys.dba_users where username = '^APPUN';
+    if l_cnt = 0 then
+        dbms_output.put_line('^APPUN not found in this database.');
+        raise program_error;
+    end if;
+end;
+/
+whenever sqlerror continue
+ 
+ 
+prompt ...Create validate procedure in SYS schema and start registration
+@@core/validate_apex.sql x x ^APPUN
+ 
+grant inherit any privileges to ^APPUN;
+ 
+prompt Installing SYS views
+ 
+@@core/sys_core_views.sql
+ 
+@@core/wwv_flow_val.sql
+grant execute on sys.wwv_flow_val to ^APPUN.;
+ 
+@@core/wwv_flow_val.plb
+ 
+ALTER SESSION SET CURRENT_SCHEMA = ^APPUN;
+ 
+exec sys.dbms_session.modify_package_state(sys.dbms_session.reinitialize);
+ 
+begin
+    ^APPUN..wwv_flow_upgrade.remove_jobs();
+    ^APPUN..wwv_flow_upgrade.create_jobs('^APPUN');
+    ^APPUN..wwv_flow_upgrade.create_public_synonyms('^APPUN');
+    ^APPUN..wwv_flow_upgrade.grant_public_synonyms('^APPUN');
+    ^APPUN..wwv_flow_upgrade.flows_files_objects_remove('^APPUN');
+    ^APPUN..wwv_flow_upgrade.flows_files_objects_create('^APPUN');
+end;
+/
+ 
+ALTER SESSION SET CURRENT_SCHEMA = SYS;
+ 
+drop context APEX$SESSION;
+create context APEX$SESSION using ^APPUN..WWV_FLOW_SESSION_CONTEXT;
+ 
+alter package sys.wwv_dbms_sql_^APPUN. compile;
+alter package sys.wwv_dbms_sql_^APPUN. compile body;
+ 
+exec sys.dbms_session.modify_package_state(sys.dbms_session.reinitialize);
+ 
+set serveroutput on size unlimited
+ 
+declare
+     l_apex_version varchar2(30);
+     l_schemas sys.dbms_registry.schema_list_t;
+begin
+    execute immediate 'drop package ^APPUN..WWV_FLOW_DB_VERSION';
+    l_apex_version := ^APPUN..wwv_flows_release;
+    sys.dbms_registry.loading('APEX','Oracle Application Express','validate_apex', '^APPUN');
+    select username
+      bulk collect into l_schemas
+      from sys.all_users
+     where username in ('FLOWS_FILES','APEX_PUBLIC_USER','APEX_LISTENER','APEX_REST_PUBLIC_USER','APEX_INSTANCE_ADMIN_USER')
+     order by 1;
+     sys.dbms_registry.update_schema_list('APEX', l_schemas);
+     sys.dbms_registry.loaded('APEX',l_apex_version);
+     commit;
+     sys.validate_apex;
+end;
+/
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Create a second new text file in that directory named <code class="codeph">apxdwngrd_cdb.sql</code> consisting of the following:</span><div><pre class="oac_no_warn" dir="ltr">set define '^'  
+whenever sqlerror exit  
+column :xe_home new_value OH_HOME NOPRINT
+variable xe_home varchar2(255)  
+set serverout on
+begin
+-- get oracle_home    
+sys.dbms_system.get_env('ORACLE_HOME',:xe_home);    
+if length(:xe_home) = 0 then
+    sys.dbms_output.put_line(lpad('-',80,'-'));        
+    raise_application_error (-20001,'Oracle Home environment variable not set' ); 
+end if;
+end;
+/
+whenever sqlerror continue  
+set termout off
+select :xe_home from sys.dual;
+set termout on  
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b apx182dgrd apxdwngrd.sql</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to <code class="codeph">CDB$ROOT</code> of the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr">SYSTEM_DRIVE:\ sqlplus /nolog 
+SQL&gt; CONNECT SYS as SYSDBA 
+Enter password: SYS_password 
+</pre><p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog 
+SQL&gt; CONNECT SYS as SYSDBA 
+Enter password: SYS_password 
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Run the <code class="codeph">apxdwngrd_cdb.sql</code> script:</span><div><pre class="oac_no_warn" dir="ltr">SQL&gt; @apxdwngrd_cdb.sql
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>See <span class="q">"Removing the Oracle Application Express Release
+                    Schema."</span></span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-8722FA26-584D-4D37-86CA-B1A18D7F8396__GUID-92F7DCA3-D83B-42BA-9BA7-7EC46AFC6415">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E91839C4-E18A-4562-B975-C04EC1C5D614">Reverting the Images Directory</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="sect4"><a id="GUID-7DC3946D-1EA5-44CA-9DE5-FF8C233BE805" name="GUID-7DC3946D-1EA5-44CA-9DE5-FF8C233BE805"></a><h5 id="HTMIG-GUID-7DC3946D-1EA5-44CA-9DE5-FF8C233BE805" class="sect5"><span class="enumeration_section">E.3.1.3.20 </span>Reverting to Release 19.1 in a non-CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           
+                           <p>To revert to Oracle Application Express release 19.1 in a non-CDB:</p>
+                           
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to
+                    revert to.</span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 19.1
+                    source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+                    installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code>
+                    role:</span><ul id="GUID-7DC3946D-1EA5-44CA-9DE5-FF8C233BE805__CHOICES_MH2_XRG_D3B">
+                                 <li>
+                                    
+                                    <p>On Windows:</p>
+                                    <pre class="pre codeblock"><code>SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password</code></pre>
+                                    </li>
+                                 <li>
+                                    
+                                    <p>On UNIX and Linux:</p>
+                                    <pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password</code></pre>
+                                    </li>
+                              </ul>
+                           </li>
+                           <li class="stepexpand"><span>Run the <code class="codeph">apxdwngrd.sql</code> script:</span><div>
+                                 <pre class="pre codeblock"><code>SQL&gt; @apxdwngrd.sql</code></pre>
+                                 </div>
+                           </li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="sect4"><a id="GUID-A2D47B7E-D58A-43E6-A773-992A991949E5" name="GUID-A2D47B7E-D58A-43E6-A773-992A991949E5"></a><h5 id="HTMIG-GUID-A2D47B7E-D58A-43E6-A773-992A991949E5" class="sect5"><span class="enumeration_section">E.3.1.3.21 </span>Reverting to Release 19.1 in a CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           
+                           <p>To revert to Oracle Application Express release 19.1 in a CDB:</p>
+                           
+                        </div>
+                        <!-- class="section" -->
+                        <ol id="GUID-A2D47B7E-D58A-43E6-A773-992A991949E5__STEPS_ON2_H5G_D3B">
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to
+                    revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 19.1
+                    source.</span></li>
+                           <li class="stepexpand"><span>Create a script in the apex directory called <code class="codeph">apxdwngrd_cdb.sql</code>
+                    with the following contents:</span><div>
+                                 <pre class="pre codeblock"><code>set define '^'  
+whenever sqlerror exit  
+column :xe_home new_value OH_HOME NOPRINT
+variable xe_home varchar2(255)  
+set serverout on
+begin
+-- get oracle_home    
+sys.dbms_system.get_env('ORACLE_HOME',:xe_home);    
+if length(:xe_home) = 0 then
+    sys.dbms_output.put_line(lpad('-',80,'-'));        
+    raise_application_error (-20001,'Oracle Home environment variable not set' ); 
+end if;
+end;
+/
+whenever sqlerror continue  
+set termout off
+select :xe_home from sys.dual;
+set termout on  
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b apx191dgrd apxdwngrd.sql</code></pre>
+                                 </div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+                    installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code>
+                    role:</span><ul id="GUID-A2D47B7E-D58A-43E6-A773-992A991949E5__CHOICES_MH2_XRG_D3B">
+                                 <li>
+                                    
+                                    <p>On Windows:</p>
+                                    <pre class="pre codeblock"><code>SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password</code></pre>
+                                    </li>
+                                 <li>
+                                    
+                                    <p>On UNIX and Linux:</p>
+                                    <pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password</code></pre>
+                                    </li>
+                              </ul>
+                           </li>
+                           <li class="stepexpand"><span>Run the <code class="codeph">apxdwngrd_cdb.sql</code> script:</span><div>
+                                 <pre class="pre codeblock"><code>SQL&gt; @apxdwngrd_cdb.sql</code></pre>
+                                 </div>
+                           </li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="sect4"><a id="GUID-751AAC1D-DB8A-410D-8B4F-2FFE9706EE30" name="GUID-751AAC1D-DB8A-410D-8B4F-2FFE9706EE30"></a><h5 id="HTMIG-GUID-751AAC1D-DB8A-410D-8B4F-2FFE9706EE30" class="sect5"><span class="enumeration_section">E.3.1.3.22 </span>Reverting to Release 19.2 in a non-CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           
+                           <p>To revert to Oracle Application Express release 19.2 in a non-CDB:</p>
+                           
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to
+                    revert to.</span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 19.2
+                    source.</span></li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+                    installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code>
+                    role:</span><ul id="GUID-751AAC1D-DB8A-410D-8B4F-2FFE9706EE30__CHOICES_MH2_XRG_D3B">
+                                 <li>
+                                    
+                                    <p>On Windows:</p>
+                                    <pre class="pre codeblock"><code>SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password</code></pre>
+                                    </li>
+                                 <li>
+                                    
+                                    <p>On UNIX and Linux:</p>
+                                    <pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password</code></pre>
+                                    </li>
+                              </ul>
+                           </li>
+                           <li class="stepexpand"><span>Run the <code class="codeph">apxdwngrd.sql</code> script:</span><div>
+                                 <pre class="pre codeblock"><code>SQL&gt; @apxdwngrd.sql</code></pre>
+                                 </div>
+                           </li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                  <div class="sect4"><a id="GUID-8EF1960B-77E9-4A03-80BC-14CDFA2D1965" name="GUID-8EF1960B-77E9-4A03-80BC-14CDFA2D1965"></a><h5 id="HTMIG-GUID-8EF1960B-77E9-4A03-80BC-14CDFA2D1965" class="sect5"><span class="enumeration_section">E.3.1.3.23 </span>Reverting to Release 19.2 in a CDB
+                     </h5>
+                     <div>
+                        <div class="section">
+                           
+                           <p>To revert to Oracle Application Express release 19.2 in a CDB:</p>
+                           
+                        </div>
+                        <!-- class="section" -->
+                        <ol id="GUID-8EF1960B-77E9-4A03-80BC-14CDFA2D1965__STEPS_ON2_H5G_D3B">
+                           <li class="stepexpand"><span>If you altered your images directory, revert it back to the release you want to
+                    revert to. </span></li>
+                           <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code> in the 19.2
+                    source.</span></li>
+                           <li class="stepexpand"><span>Create a script in the apex directory called <code class="codeph">apxdwngrd_cdb.sql</code>
+                    with the following contents:</span><div>
+                                 <pre class="pre codeblock"><code>set define '^'  
+whenever sqlerror exit  
+column :xe_home new_value OH_HOME NOPRINT
+variable xe_home varchar2(255)  
+set serverout on
+begin
+-- get oracle_home    
+sys.dbms_system.get_env('ORACLE_HOME',:xe_home);    
+if length(:xe_home) = 0 then
+    sys.dbms_output.put_line(lpad('-',80,'-'));        
+    raise_application_error (-20001,'Oracle Home environment variable not set' ); 
+end if;
+end;
+/
+whenever sqlerror continue  
+set termout off
+select :xe_home from sys.dual;
+set termout on  
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b apx192dgrd apxdwngrd.sql</code></pre>
+                                 </div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+                    installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code>
+                    role:</span><ul id="GUID-8EF1960B-77E9-4A03-80BC-14CDFA2D1965__CHOICES_MH2_XRG_D3B">
+                                 <li>
+                                    
+                                    <p>On Windows:</p>
+                                    <pre class="pre codeblock"><code>SYSTEM_DRIVE:\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password</code></pre>
+                                    </li>
+                                 <li>
+                                    
+                                    <p>On UNIX and Linux:</p>
+                                    <pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password</code></pre>
+                                    </li>
+                              </ul>
+                           </li>
+                           <li class="stepexpand"><span>Run the <code class="codeph">apxdwngrd_cdb.sql</code> script:</span><div>
+                                 <pre class="pre codeblock"><code>SQL&gt; @apxdwngrd_cdb.sql</code></pre>
+                                 </div>
+                           </li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div><a id="HTMIG268"></a><div class="props_rev_3"><a id="GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0" name="GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0"></a><h4 id="HTMIG-GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0" class="sect4"><span class="enumeration_section">E.3.1.4 </span>Removing the Oracle Application Express
+                Release Schema
+                  </h4>
+                  <div>
+                     <p></p>
+                     <p>After you have reverted to the prior release, you can remove the Oracle Application
+                        Express schema.</p>
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-12F57A77-14BB-4AEA-9D06-D426D3CB65B2">Removing the Oracle Application Express Release 20.1 Schema from a Non-CDB</a><br>Start SQL*Plus and connect to the database and execute <code class="codeph">DROP USER             APEX_200100 CASCADE; </code>.
+                        </li>
+                        <li class="ulchildlink"><a href="cleaningup-after-failed-installation.html#GUID-D56D5C6D-EFAC-4628-A433-3EB84292E99B">Removing the Oracle Application Express Release 20.1 Schema from a CDB</a><br>Create text files, start SQL*Plus and connect to the database execute             <code class="codeph">@remove_apx201_usr.sql</code>.
+                        </li>
+                     </ul>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-24B09CC5-32FB-494F-AF84-E4482219E4E2" title="Learn about reverting to Oracle Application Express to a previous release in the case of a failed upgrade installation.">Reverting to a Previous Release After a Failed Upgrade Installation</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <a id="HTMIG29485"></a><div class="props_rev_3"><a id="GUID-12F57A77-14BB-4AEA-9D06-D426D3CB65B2" name="GUID-12F57A77-14BB-4AEA-9D06-D426D3CB65B2"></a><h5 id="HTMIG-GUID-12F57A77-14BB-4AEA-9D06-D426D3CB65B2" class="sect5"><span class="enumeration_section">E.3.1.4.1 </span>Removing the Oracle Application Express
+        Release 20.1 Schema from a Non-CDB
+                     </h5>
+                     <div>
+                        <p>Start SQL*Plus and connect to the database and execute <code class="codeph">DROP USER
+            APEX_200100 CASCADE; </code>.
+                        </p>
+                        <div class="section">
+                           <p>To remove the release 20.1 schema from a non-CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                    <li>
+                                       <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following command:</span><div><pre class="oac_no_warn" dir="ltr">DROP USER APEX_200100 CASCADE;
+</pre><p>Once you have removed the Oracle Application Express 20.1 schema, you can now attempt
+                        the upgrade again.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMIG29486"></a><div class="props_rev_3"><a id="GUID-D56D5C6D-EFAC-4628-A433-3EB84292E99B" name="GUID-D56D5C6D-EFAC-4628-A433-3EB84292E99B"></a><h5 id="HTMIG-GUID-D56D5C6D-EFAC-4628-A433-3EB84292E99B" class="sect5"><span class="enumeration_section">E.3.1.4.2 </span>Removing the Oracle Application Express
+        Release 20.1 Schema from a CDB
+                     </h5>
+                     <div>
+                        <p>Create text files, start SQL*Plus and connect to the database execute
+            <code class="codeph">@remove_apx201_usr.sql</code>.
+                        </p>
+                        <div class="section">
+                           <p>To remove the release 20.1 schema from a CDB:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Create a new text file named <code class="codeph">remove_apx201_usr1.sql</code> with the
+                    following contents:</span><div>
+                                 <pre class="oac_no_warn" dir="ltr">alter session set current_schema = SYS;
+drop user APEX_200100 cascade;
+</pre>
+                                 </div>
+                           </li>
+                           <li class="stepexpand"><span>Create a second new text file named <code class="codeph">remove_apx201_usr.sql</code> with
+                    the following contents:</span><div>
+                                 <pre class="oac_no_warn" dir="ltr">set define '^'
+whenever sqlerror exit
+column :xe_home new_value OH_HOME NOPRINT
+variable xe_home varchar2(255)
+ 
+set serverout on
+begin
+-- get oracle_home
+    sys.dbms_system.get_env('ORACLE_HOME',:xe_home);
+    if length(:xe_home) = 0 then
+        sys.dbms_output.put_line(lpad('-',80,'-'));
+        raise_application_error (
+            -20001,
+            'Oracle Home environment variable not set' );
+    end if;
+end;
+/
+whenever sqlerror continue
+ 
+set termout off
+select :xe_home from sys.dual;
+set termout on
+ 
+host ^OH_HOME/perl/bin/perl -I ^OH_HOME/rdbms/admin ^OH_HOME/rdbms/admin/catcon.pl -b remove_apx201_usr remove_apx201_usr1.sql
+</pre>
+                                 </div>
+                           </li>
+                           <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                    <li>
+                                       <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Execute the following command:</span><div><pre class="oac_no_warn" dir="ltr">@remove_apx201_usr.sql
+</pre><p>Once you have removed the Oracle Application Express 20.1 schema, you can now
+                        attempt the upgrade again.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-E7A956E1-00F8-44F5-B92F-6628514D2DF0">Removing the Oracle Application Express Release Schema</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div><a id="HTMIG270"></a><div class="props_rev_3"><a id="GUID-A16032EF-3440-4D7A-B8A2-193A49D0BB30" name="GUID-A16032EF-3440-4D7A-B8A2-193A49D0BB30"></a><h3 id="HTMIG-GUID-A16032EF-3440-4D7A-B8A2-193A49D0BB30" class="sect3"><span class="enumeration_section">E.3.2 </span>Removing Oracle Application Express from the Database
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and execute the <code class="codeph">SQL&gt; @apxremov.sql</code> command.
+                  </p>
+                  <div class="section">
+                     <p>This section describes how to remove the Oracle Application Express schema, synonyms, and users from the database without deleting the database. </p>
+                     <div class="infoboxnote" id="GUID-A16032EF-3440-4D7A-B8A2-193A49D0BB30__GUID-BEC058D8-637C-4506-A9EF-1AA06494C2D3">
+                        <p class="notep1">Note:</p>
+                        <p>Do NOT follow these steps if you have upgraded your database from a prior release,
+                                                  and still want to use the prior release of Oracle
+                                                  Application Express. For information about
+                                                  reverting to a prior release, see <a href="cleaningup-after-failed-installation.html#GUID-A1FA25CA-1537-4158-B92F-11AECC7D2731">Reverting to a Previous Release</a>. If you are not sure whether you
+                                                  have completed a new installation or an upgrade
+                                                  installation, review <a href="cleaningup-after-failed-installation.html#GUID-872260A2-2BF5-42F8-A9D5-B7A40EF9345C" title="Learn about best practices for troubleshooting and cleaning up after a failed installation.">Cleaning Up After a Failed Installation</a> to verify if a previous release of Oracle
+                                                  Application Express exists in the database.
+                        </p>
+                     </div>
+                     <p>To remove Oracle Application Express from the database:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the Oracle Application Express software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Execute the following command:</span><div><pre class="oac_no_warn" dir="ltr">SQL&gt; @apxremov.sql
+</pre></div>
+                     </li>
+                     <li class="stepexpand"><span>After successfully removing Application Express using <code class="codeph">apxremov.sql</code>, you must exit your current SQL*Plus session and reconnect before attempting another install using <code class="codeph">apexins.sql</code>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="cleaningup-after-failed-installation.html#GUID-872260A2-2BF5-42F8-A9D5-B7A40EF9345C" title="Learn about best practices for troubleshooting and cleaning up after a failed installation.">Cleaning Up After a Failed Installation</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

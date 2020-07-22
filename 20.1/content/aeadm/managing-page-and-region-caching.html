@@ -1,0 +1,172 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Page and Region Caching">
+      <meta name="abstract" content="Improve an application's performance by taking advantage of page and region caching.">
+      <meta name="description" content="Improve an application's performance by taking advantage of page and region caching.">
+      <meta name="DC.subject" content="pages, purging cached, regions, purging cached">
+      <meta name="keywords" content="pages, purging cached, regions, purging cached">
+      <meta name="DC.Relation" scheme="URI" content="workspace-and-application-administration.html#GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14">
+      <meta name="DC.Relation" scheme="URI" content="managing-page-and-region-caching.html#GUID-F2303F5A-9251-45FC-8024-A94EBA87746B">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-0BA4FF4C-B64A-4779-A1E7-6444D5B0D64F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Improve an application's performance by taking advantage of page and region caching.">
+      <meta name="description" content="Improve an application's performance by taking advantage of page and region caching.">
+      <title>Managing Page and Region Caching</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Improve an application's performance by taking advantage of page and region caching.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-user-preferences.html" title="Previous" type="text/html">
+      <link rel="next" href="changing-build-status-for-multiple-applications.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-user-preferences.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="changing-build-status-for-multiple-applications.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="workspace-and-application-administration.html" property="item" typeof="WebPage"><span property="name">Workspace and Application Administration</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Page and Region Caching</li>
+            </ol>
+            <a id="GUID-0BA4FF4C-B64A-4779-A1E7-6444D5B0D64F" name="GUID-0BA4FF4C-B64A-4779-A1E7-6444D5B0D64F"></a><a id="AEADM126"></a>
+            
+            <h2 id="AEADM-GUID-0BA4FF4C-B64A-4779-A1E7-6444D5B0D64F" class="sect2"><span class="enumeration_section">2.12 </span>Managing Page and Region Caching
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Improve an application's performance by taking advantage of page and region caching.</p>
+               <p>Developers can configure page and region caching by setting the Caching attribute
+            for a page or region. Workspace administrators can view and purge cached regions and
+            pages.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-page-and-region-caching.html#GUID-F2303F5A-9251-45FC-8024-A94EBA87746B">Purging Cached Regions and Pages</a><br>View and purge cached regions and pages on the Manage Application Cache page.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-0BA4FF4C-B64A-4779-A1E7-6444D5B0D64F__GUID-8FEAEA1F-ADA4-46AA-A7FE-307A68790A53">
+                  <p class="notep1">See Also:</p>
+                  
+                  <p><span class="q">"<a href="../htmdb/editing-page-attributes-in-page-designer.html#HTMDB-GUID-5CF0B715-7A6B-4A49-B14B-471CCA2C775C" target="_blank">Editing Page Attributes</a>"</span> and <span class="q">"<a href="../htmdb/managing-regions-in-page-designer.html#HTMDB-GUID-3AC8F07B-97FF-4BF7-A8B6-0D1719BB0E10" target="_blank">Editing Region Attributes</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                  
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="workspace-and-application-administration.html#GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14" title="In an Oracle Application Express development environment, users sign in to a shared work area called a workspace. Workspace administrators monitor and administer a shared work area called a workspace.">Workspace and Application Administration</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM127"></a><div class="props_rev_3"><a id="GUID-F2303F5A-9251-45FC-8024-A94EBA87746B" name="GUID-F2303F5A-9251-45FC-8024-A94EBA87746B"></a><h3 id="AEADM-GUID-F2303F5A-9251-45FC-8024-A94EBA87746B" class="sect3"><span class="enumeration_section">2.12.1 </span>Purging Cached Regions and Pages
+               </h3>
+               <div>
+                  <p>View and purge cached regions and pages on the Manage Application Cache page.</p>
+                  <p>To view and purge cached regions:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under <span class="uicontrol bold">Manage Meta Data</span>, click <span class="uicontrol bold">Application
+                        Cache</span> and select a purge option.</span></li>
+                     <li class="stepexpand"><span>On the  <span class="uicontrol bold">Application Cache</span> page, click one of the
+                    following options:</span><ul id="GUID-F2303F5A-9251-45FC-8024-A94EBA87746B__CHOICES_IQ4_PRT_QLB">
+                           <li><span class="uicontrol bold">Purge Cached Regions by Region</span> - Purge cache for
+                        a region by selecting one or more regions.
+                           </li>
+                           <li><span class="uicontrol bold">Purge Cached Regions by Application</span> - Purge all
+                        cached regions for the specified application.
+                           </li>
+                           <li><span class="uicontrol bold">Purge Cached Regions by Workspace</span> - Purge all
+                        cached regions for the current workspace.
+                           </li>
+                           <li><span class="uicontrol bold">Purge Cached Regions by Page</span> - Purge all cached
+                        regions on a page by selecting one or more pages.
+                           </li>
+                           <li><span class="uicontrol bold">Purge Cached Regions by Application</span> - Purge all
+                        cached pages for the specified application.
+                           </li>
+                           <li><span class="uicontrol bold">Purge Expired Cached Regions by Application</span> -
+                        Purge only cached pages that have expired for the specified
+                        application.
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="stepexpand"><span>Follow the on-screen instructions.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-page-and-region-caching.html#GUID-0BA4FF4C-B64A-4779-A1E7-6444D5B0D64F" title="Improve an application's performance by taking advantage of page and region caching.">Managing Page and Region Caching</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

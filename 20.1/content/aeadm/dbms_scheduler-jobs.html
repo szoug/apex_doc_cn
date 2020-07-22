@@ -1,0 +1,280 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="DBMS_SCHEDULER Jobs">
+      <meta name="abstract" content="The DBMS_SCHEDULER package provides a collection of scheduling functions and procedures that can be called from any PL/SQL program.">
+      <meta name="description" content="The DBMS_SCHEDULER package provides a collection of scheduling functions and procedures that can be called from any PL/SQL program.">
+      <meta name="DC.Relation" scheme="URI" content="dbms_scheduler-jobs.html#GUID-563FAF19-635C-4218-BB74-062F758B86C9">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-8C015BD9-8C6E-45C8-9CFA-54101A388E08">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The DBMS_SCHEDULER package provides a collection of scheduling functions and procedures that can be called from any PL/SQL program.">
+      <meta name="description" content="The DBMS_SCHEDULER package provides a collection of scheduling functions and procedures that can be called from any PL/SQL program.">
+      <title>DBMS_SCHEDULER Jobs</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="The DBMS_SCHEDULER package provides a collection of scheduling functions and procedures that can be called from any PL/SQL program.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="monitoring-activity-across-a-development-instance.html" title="Previous" type="text/html">
+      <link rel="next" href="book-index.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="monitoring-activity-across-a-development-instance.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="book-index.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">DBMS_SCHEDULER Jobs</li>
+            </ol>
+            <a id="GUID-8C015BD9-8C6E-45C8-9CFA-54101A388E08" name="GUID-8C015BD9-8C6E-45C8-9CFA-54101A388E08"></a><a id="AEADM459"></a>
+            
+            <h2 id="AEADM-GUID-8C015BD9-8C6E-45C8-9CFA-54101A388E08" class="sect2"><span class="enumeration_chapter">A </span>DBMS_SCHEDULER Jobs
+            </h2>
+         </header>
+         <div class="ind">
+            <p>The <code class="codeph">DBMS_SCHEDULER</code> package provides a collection of scheduling functions and procedures that can be called from any PL/SQL program.
+            </p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="dbms_scheduler-jobs.html#GUID-563FAF19-635C-4218-BB74-062F758B86C9">List of DBMS_SCHEDULER Jobs</a><br>The following table describes <code class="codeph">DBMS_SCHEDULER</code> jobs that are created in the database when you install Oracle Application Express.
+                  </li>
+               </ul>
+            </div>
+            <a id="AEADM461"></a><a id="AEADM29241"></a><div class="props_rev_3"><a id="GUID-563FAF19-635C-4218-BB74-062F758B86C9" name="GUID-563FAF19-635C-4218-BB74-062F758B86C9"></a><h3 id="AEADM-GUID-563FAF19-635C-4218-BB74-062F758B86C9" class="sect3"><span class="enumeration_section">A.1 </span>List of DBMS_SCHEDULER Jobs
+               </h3>
+               <div>
+                  <p>The following table describes <code class="codeph">DBMS_SCHEDULER</code> jobs that are created in the database when you install Oracle Application Express.
+                  </p>
+                  <div class="tblformal" id="GUID-563FAF19-635C-4218-BB74-062F758B86C9__BCFFGIBJ">
+                     <p class="titleintable">Table A-1 DBMS_SCHEDULER Jobs</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_SCHEDULER Jobs" summary="This table lists DBMS_SCHEDULER jobs that are included in Oracle Application Express." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d47421e116">Job Name</th>
+                              <th align="left" valign="bottom" width="37%" id="d47421e119">Description</th>
+                              <th align="left" valign="bottom" width="32%" id="d47421e122">To Learn More</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e126" headers="d47421e116 ">
+                                 
+                                 <p><code class="codeph">ORACLE_APEX_AUTO_APPROVAL</code></p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="37%" headers="d47421e126 d47421e119 ">
+                                 
+                                 <p>Automatically approves Workspace Requests every two minutes when the
+                                instance Provisioning Method is set to Automatic. The job should be
+                                disabled for all other Provisioning Methods.</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e126 d47421e122 ">
+                                 
+                                 <p>See <span class="q">"<a href="managing-workspace-and-change-requests.html#GUID-2DAA29DE-07D1-48C7-B1AA-A155F7BE1857" title="A Workspace Request enables a user to request a workspace by clicking a link on the Sign In page to access a request form.">Managing Workspace Requests</a>"</span>
+                                    
+                                 </p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e126 d47421e122 ">&nbsp;</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e151" headers="d47421e116 "><code class="codeph">ORACLE_APEX_BACKUP</code></td>
+                              <td align="left" valign="top" width="37%" headers="d47421e151 d47421e119 ">
+                                 
+                                 <p>Performs backups of applications that have been modified. Purges
+                                backups according to limit defined by the "Number of backups per
+                                application" instance setting. The backup job will be disabled when
+                                the setting is zero (0). The backup job runs every day starting at
+                                0200.</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e151 d47421e122 ">See <span class="q">"<a href="configuring-features.html#GUID-A61AAF17-D142-4F5E-8845-9811A8B88589" title="Configure the number of application backups.">Configuring the Number of Application Backups</a>"</span></td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e168" headers="d47421e116 ">
+                                 
+                                 <p><code class="codeph">ORACLE_APEX_DICTIONARY_CACHE</code></p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="37%" headers="d47421e168 d47421e119 ">
+                                 
+                                 <p>This job runs nightly at 0100 to gather statistics and data analysis
+                                of all workspace schema tables and caches into the Oracle
+                                Application Express Data Dictionary.</p>
+                                 
+                                 <p>If the Data Dictionary Cache is incorrect or out of date, you can
+                                update Data Dictionary Cache manually from the Workspace Cache
+                                report.</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e168 d47421e122 ">
+                                 
+                                 <p>See <span class="q">"<a href="accessing-data-dictionary-cache-from-administration-services.html#GUID-4874D50D-7944-472D-9C85-E1B4839A2B3D" title="View or refresh the Data Dictionary Cache.">Viewing or Refreshing the Data Dictionary Cache</a>"</span></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e194" headers="d47421e116 ">
+                                 
+                                 <p><code class="codeph">ORACLE_APEX_DTLD$<span class="codeinlineitalic">{job-id}</span>
+                                       </code></p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="37%" headers="d47421e194 d47421e119 ">
+                                 
+                                 <p>SQl Workshop data loading processes spawn jobs named
+                                        <code class="codeph">ORACLE_APEX_DTLD$<span class="codeinlineitalic">{job-id}</span></code>. Jobs are
+                                purged after completion. 
+                                 </p>
+                                 
+                                 <p>While the jobs are running, you can view them in Oracle
+                                Application Express Administration Services under <span class="uicontrol bold">Monitor
+                                    Activity</span>, <span class="uicontrol bold">Developer Activity</span>,
+                                    <span class="uicontrol bold">Data Loading Jobs</span>.
+                                 </p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e194 d47421e122 ">
+                                 
+                                 <p>See <span class="q">"<a href="monitoring-activity-across-a-development-instance.html#GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6" title="Monitor all end user and developer activity for an Oracle Application Express instance.">Monitoring Activity Across a Development Instance</a>"</span> and <span class="q">"<a href="../aeutl/using-data-workshop.html#AEUTL-GUID-C35417B6-D1D0-4098-BBE1-35F7BA1A2423" target="_blank">Using Data
+                                        Workshop</a>"</span> in <span><cite>Oracle Application Express SQL Workshop Guide</cite></span></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e246" headers="d47421e116 ">
+                                 
+                                 <p><code class="codeph">ORACLE_APEX_ISSUE_EMAILS</code></p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="37%" headers="d47421e246 d47421e119 ">
+                                 
+                                 <p>Determines Team Development notifications that must be
+                                sent. This job runs every hour.</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e246 d47421e122 ">
+                                 
+                                 <p>See <span class="q">"<a href="configuring-features.html#GUID-A61AAF17-D142-4F5E-8845-9811A8B88589" title="Configure the number of application backups.">Configuring the Number of Application Backups</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e273" headers="d47421e116 ">
+                                 <p><code class="codeph">ORACLE_APEX_PURGE_SESSIONS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="37%" headers="d47421e273 d47421e119 ">
+                                 <p>Purges sessions older than 12 hours (the default). This job runs every hour.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e273 d47421e122 ">
+                                 <p>See <span class="q">"<a href="managing-meta-data.html#GUID-67CDB349-F01D-4D30-A9B7-1033C54333D6" title="View session state statistics and purge the session state on the Session State page.">Managing Session State for an Instance</a>"</span></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e290" headers="d47421e116 ">
+                                 <p><code class="codeph">ORACLE_APEX_MAIL_QUEUE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="37%" headers="d47421e290 d47421e119 ">
+                                 <p>Sends mail that is in the mail queue every 5 minutes.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e290 d47421e122 ">
+                                 <p>See <span class="q">"<a href="../aeapi/APEX_MAIL.html#AEAPI-GUID-14F51C6D-CB82-4B38-AB6E-61C46E75596F" target="_blank">APEX_MAIL</a>"</span> in <span><cite>Oracle Application Express API Reference</cite></span>and  <span class="q">"<a href="configuring-instance-settings.html#GUID-FEC98D5E-3C89-423E-9603-4CD2E553BA34" title="To enable Oracle Application Express to send mail, an instance administrator must configure instance-level email settings.">Configuring Email</a>"</span></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e316" headers="d47421e116 ">
+                                 <p><code class="codeph">ORACLE_APEX_WS_NOTIFICATIONS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="37%" headers="d47421e316 d47421e119 ">
+                                 <p>Determines Websheet notifications that must be sent every 30 minutes.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e316 d47421e122 ">
+                                 <p>See <span class="q">"<a href="../htmdb/creating-websheet-applications.html#HTMDB-GUID-71B66749-39DE-4F05-81A0-F608D2547EFD" target="_blank">Creating Websheet
+                                        Applications</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d47421e335" headers="d47421e116 ">
+                                 <p><code class="codeph">ORACLE_APEX_DAILY_MAINTENANCE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="37%" headers="d47421e335 d47421e119 ">
+                                 <p>Performs nightly maintenance, every day at 0100. This job archives the activity summary and runs the workspace purge process.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d47421e335 d47421e122 ">
+                                 <p>See<span class="q">"<a href="purging-inactive-workspaces.html#GUID-31534DD1-50AF-4DFE-9FD7-409C73437D20" title="Inactive workspaces consume valuable storage space and degrade system performance. Instance administrator can configure an instance to periodically purge inactive workspaces.">Purging Inactive Workspaces</a>"</span></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="dbms_scheduler-jobs.html#GUID-8C015BD9-8C6E-45C8-9CFA-54101A388E08" title="The DBMS_SCHEDULER package provides a collection of scheduling functions and procedures that can be called from any PL/SQL program.">DBMS_SCHEDULER Jobs</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

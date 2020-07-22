@@ -1,0 +1,609 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating Maps">
+      <meta name="abstract" content="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">
+      <meta name="description" content="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">
+      <meta name="DC.subject" content="maps, creating, map chart, about support for, creating SQL queries, adding by running a wizard, adding in Page Designer, managing in Page Designer, editing map attributes, using custom XML, enabling automatic updates (Page Designer), asynchronous updates">
+      <meta name="keywords" content="maps, creating, map chart, about support for, creating SQL queries, adding by running a wizard, adding in Page Designer, managing in Page Designer, editing map attributes, using custom XML, enabling automatic updates (Page Designer), asynchronous updates">
+      <meta name="DC.Relation" scheme="URI" content="managing-database-application-components.html#GUID-E7598ABE-5077-4A1F-A3F9-1C89EE2B2CE8">
+      <meta name="DC.Relation" scheme="URI" content="creating-maps.html#GUID-C0164EAF-6F9F-4103-8D51-F264B2C7FC56">
+      <meta name="DC.Relation" scheme="URI" content="creating-maps.html#GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF">
+      <meta name="DC.Relation" scheme="URI" content="creating-maps.html#GUID-AA972518-F64D-47CB-8476-07ED4721AA72">
+      <meta name="DC.Relation" scheme="URI" content="creating-maps.html#GUID-18006A59-5BCF-46E5-9B5E-22F480B1ED42">
+      <meta name="DC.Relation" scheme="URI" content="creating-maps.html#GUID-AAF733A6-A604-441A-98E4-2D2CFB09C8C7">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">
+      <meta name="description" content="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">
+      <title>Creating Maps</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="creating-calendars.html" title="Previous" type="text/html">
+      <link rel="next" href="creating-charts.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="creating-calendars.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="creating-charts.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-database-application-components.html" property="item" typeof="WebPage"><span property="name">Managing Database Application Components</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating Maps</li>
+            </ol>
+            <a id="GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C" name="GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C"></a><a id="HTMDB28401"></a>
+            
+            <h2 id="HTMDB-GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C" class="sect2"><span class="enumeration_section">12.4 </span>Creating Maps
+            </h2>
+         </header>
+         <div class="ind">
+            <p><span>App Builder</span> includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page. 
+            </p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="creating-maps.html#GUID-C0164EAF-6F9F-4103-8D51-F264B2C7FC56">About Map Chart Support</a><br>Map chart support in Oracle Application Express is based on the AnyChart AnyMap Interactive Maps Component. 
+                  </li>
+                  <li class="ulchildlink"><a href="creating-maps.html#GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF">About Creating SQL Queries for Maps</a><br>You define a map chart by providing a SQL query with a specific syntax.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-maps.html#GUID-AA972518-F64D-47CB-8476-07ED4721AA72">Adding a Map Chart to a New Page</a><br>Add a map chart to a page by running the Create Page Wizard.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-maps.html#GUID-18006A59-5BCF-46E5-9B5E-22F480B1ED42">Adding a Map Chart in Page Designer</a><br>Add a map chart by manually creating it in Page Designer.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-maps.html#GUID-AAF733A6-A604-441A-98E4-2D2CFB09C8C7">Managing Map Charts</a><br>Once you create a map chart, you can alter its display by editing attributes in the Property Editor.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-database-application-components.html#GUID-E7598ABE-5077-4A1F-A3F9-1C89EE2B2CE8" title="Oracle Application Express supports the creation the following database application components: calendars, maps, charts, and application Help.">Managing Database Application Components</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB28403"></a><div class="props_rev_3"><a id="GUID-C0164EAF-6F9F-4103-8D51-F264B2C7FC56" name="GUID-C0164EAF-6F9F-4103-8D51-F264B2C7FC56"></a><h3 id="HTMDB-GUID-C0164EAF-6F9F-4103-8D51-F264B2C7FC56" class="sect3"><span class="enumeration_section">12.4.1 </span>About Map Chart Support
+               </h3>
+               <div>
+                  <p>Map chart support in Oracle Application Express is based on the AnyChart AnyMap Interactive Maps Component. </p>
+                  <p>AnyMap is a flexible Macromedia Flash-based solution that enables developers to visualize geographical related data. Map charts are rendered by a browser and require Flash Player 9 or later. For more information about AnyChart, go to <a href="http://www.anychart.com" target="_blank">http://www.anychart.com</a></p>
+                  <p>AnyChart stores map data in files with a <code class="codeph">*.amap</code> extension, and supports 300 map files for the United States of America, Europe, Asia, Europe, Africa, Oceania, North America, and South America. To render a desired map, you select the map source in the wizard (for example, <code class="codeph">Germany</code>) and the map XML automatically references the desired map source <code class="codeph">.amap</code> file, <code class="codeph">germany.amap</code>. To browse through the available maps, see <span class="q">"Map Reference"</span> in <span class="italic">AnyChart User's Guide</span>: <a href="http://6.anychart.com/products/anymap/docs/" target="_blank">http://6.anychart.com/products/anymap/docs/</a></p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-maps.html#GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C" title="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">Creating Maps</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28406"></a><div class="props_rev_3"><a id="GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF" name="GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF"></a><h3 id="HTMDB-GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF" class="sect3"><span class="enumeration_section">12.4.2 </span>About Creating SQL Queries for Maps
+               </h3>
+               <div>
+                  <p>You define a map chart by providing a SQL query with a specific syntax.</p>
+                  <p>When you define a map chart providing a SQL query using the following syntax:</p><pre class="oac_no_warn" dir="ltr">SELECT <span class="italic">link</span>, <span class="italic">label</span>, <span class="italic">value</span>
+FROM   ...
+</pre><p>Where:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="italic"><code class="codeph">link</code></span> is a URL.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">label</code></span> is the text that identifies the point on the map with which you want to associate data. The Region ID or Region Name of the map will be used as the label.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">value</code></span> is the numeric column that defines the data to be associated with a point on the map.
+                        </p>
+                     </li>
+                  </ul>
+                  <p>Consider the following example when creating a new page:</p>
+                  <ol>
+                     <li>
+                        <p>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Select an application.</p>
+                     </li>
+                     <li>
+                        <p>Click <span class="uicontrol bold">Create Page</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Click <span class="uicontrol bold">Chart</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Select <span class="uicontrol bold">Map Chart</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>For Map Type, select <span class="uicontrol bold">United States of America</span> and click <span class="uicontrol bold">Next</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>For Map Source, expand Country Maps and select <span class="uicontrol bold">States</span>.
+                        </p>
+                        <div class="figure" id="GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF__GUID-52C4E73F-3628-40B9-9B6C-95BB868055B9"><img height="373" width="782" src="img/map_chart1.png" alt="Description of map_chart1.png follows" title="Description of map_chart1.png follows" longdesc="img_text/map_chart1.html"><br><a href="img_text/map_chart1.html">Description of the illustration map_chart1.png</a></div>
+                        <!-- class="figure" -->
+                     </li>
+                     <li>
+                        <p>For Page Attributes specify the appropriate attributes and click <span class="uicontrol bold">Next</span>. 
+                        </p>
+                     </li>
+                     <li>
+                        <p>For Navigation Preference, specify the type of navigation to include on this page and click <span class="uicontrol bold">Next</span>. The navigation options (for example, navigation menu or tabs) depends upon the current application theme.
+                        </p>
+                     </li>
+                     <li>
+                        <p>For Map Attributes, select the appropriate attributes and click <span class="uicontrol bold">Next</span>.
+                        </p>
+                        <p>The Query page appears.</p>
+                     </li>
+                     <li>
+                        <p>Scroll down and expand and review the Map Query Example and Map Reference Information regions.</p>
+                     </li>
+                     <li>
+                        <p>Scroll down and expand and review the <span class="uicontrol bold">Map Reference Information</span> region at the bottom of the page.
+                        </p>
+                        <div class="figure" id="GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF__GUID-FCF11F84-EA39-47FD-88E9-5E6F5B2C5C64"><img height="649" width="980" src="img/map_chart2.png" alt="Description of map_chart2.png follows" title="Description of map_chart2.png follows" longdesc="img_text/map_chart2.html"><br><a href="img_text/map_chart2.html">Description of the illustration map_chart2.png</a></div>
+                        <!-- class="figure" -->
+                        <p>Specify a SQL query by either:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Entering a SQL query in the field provided. See <span class="q">"<a href="creating-maps.html#GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF" title="You define a map chart by providing a SQL query with a specific syntax.">About Creating SQL Queries for Maps</a>."</span></p>
+                           </li>
+                           <li>
+                              <p>Clicking the <span class="uicontrol bold">Build Query</span> button. When the Build Chart Query Wizard appears, follow the on-screen instructions.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>When you create your query, you must incorporate the region name information as described in the Map Reference Information region. The following example includes information for Florida and Alaska: </p><pre class="oac_no_warn" dir="ltr">SELECT null link, region label, value Populations
+FROM (
+SELECT 'Florida' region, 18328340 value FROM dual
+UNION ALL
+SELECT 'Alaska' region, 686293 value FROM dual)
+</pre><div class="infoboxnote" id="GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF__GUID-287ABC24-400B-4235-9D10-4FAEDFBA7DAD">
+                           <p class="notep1">Note:</p>
+                           <p>If you are referencing geographical information stored in a database table, the information must correspond with the Region information associated with the map source. For more information, see <span class="italic">AnyChart User's Guide</span>: <a href="http://6.anychart.com/products/anymap/docs/" target="_blank"><code class="codeph">http://6.anychart.com/products/anymap/docs/</code></a></p>
+                        </div>
+                        <div class="figure" id="GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF__GUID-6262F78B-78D0-4A75-BEB0-222EA3B37260"></div>
+                        <!-- class="figure" -->
+                        <p>Click <span class="uicontrol bold">Create</span>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-maps.html#GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C" title="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">Creating Maps</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28405"></a><div class="props_rev_3"><a id="GUID-AA972518-F64D-47CB-8476-07ED4721AA72" name="GUID-AA972518-F64D-47CB-8476-07ED4721AA72"></a><h3 id="HTMDB-GUID-AA972518-F64D-47CB-8476-07ED4721AA72" class="sect3"><span class="enumeration_section">12.4.3 </span>Adding a Map Chart to a New Page
+               </h3>
+               <div>
+                  <p>Add a map chart to a page by running the Create Page Wizard.</p>
+                  <div class="section">
+                     <p>To add a map chart on a new page:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select an application. </span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Page</span>. </span><div>The Create Page Wizard appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>For Create a Page:</span><div>
+                           <ol type="a">
+                              <li>
+                                 <p>User Interface - Select a user interface for the page.</p>
+                                 <p>This attribute only displays for applications using older themes and for which Desktop and Mobile User Interfaces have been defined.</p>
+                              </li>
+                              <li>
+                                 <p>Select a page type - Select <span class="uicontrol bold">Chart</span>.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On Create Chart, select <span class="uicontrol bold">Map Chart</span>.</span></li>
+                     <li class="stepexpand"><span>On Create Page, select a map type (for example, <span class="uicontrol bold">Europe</span>), and click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>On Create Map Chart, expand the tree and select the map to create.</span></li>
+                     <li class="stepexpand"><span>For Page Attributes:</span><ol type="a">
+                           <li><span>Page Number - Select a page in which the chart object is to appear.</span></li>
+                           <li><span>Page Name - If creating a new page, enter a page name.</span></li>
+                           <li><span>Page Mode - Select a page mode.</span></li>
+                           <li><span>Breadcrumb - Select whether you want to use a breadcrumb navigation control on your page, and which breadcrumb navigation control you want to use</span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>On Navigation Menu, specify a Navigation Preference to include on this page and click <span class="bold">Next</span>. The navigation options (for example, navigation menu or tabs) depends upon the current application theme.</span></li>
+                     <li class="stepexpand"><span>For Map Attributes, select the appropriate attributes and click <span class="bold">Next</span>.</span><div>
+                           <div class="infoboxnote" id="GUID-AA972518-F64D-47CB-8476-07ED4721AA72__GUID-372B3DEF-5673-4DE1-A45F-BCF03330A7A2">
+                              <p class="notep1">Note:</p>
+                              <p>To learn more about an attribute, see field-level Help.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Specify a query by either:</span><ul>
+                           <li>Entering a SQL query in the field provided.</li>
+                           <li>Clicking the <span class="bold">Build Query</span> button. When the Build Chart Query Wizard appears, follow the on-screen instructions.
+                           </li>
+                        </ul>
+                        <div>
+                           <p>Specify relevant attributes. To view map reference information associated with your selected Map Source, expand the <span class="uicontrol bold">Map Reference Information</span> region at the bottom of the page. 
+                           </p>
+                           <p>To associate data with geographical locations, you must incorporate information from the Region Name or Region ID columns into the Map query.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-AA972518-F64D-47CB-8476-07ED4721AA72__GUID-481A9325-21EF-4C56-8905-C1797E64CF03">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="creating-maps.html#GUID-297E4ABA-3919-4D6D-85FC-4F718D9A52EF" title="You define a map chart by providing a SQL query with a specific syntax.">About Creating SQL Queries for Maps</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-maps.html#GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C" title="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">Creating Maps</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29774"></a><div class="props_rev_3"><a id="GUID-18006A59-5BCF-46E5-9B5E-22F480B1ED42" name="GUID-18006A59-5BCF-46E5-9B5E-22F480B1ED42"></a><h3 id="HTMDB-GUID-18006A59-5BCF-46E5-9B5E-22F480B1ED42" class="sect3"><span class="enumeration_section">12.4.4 </span>Adding a Map Chart in Page Designer
+               </h3>
+               <div>
+                  <p>Add a map chart by manually creating it in Page Designer.</p>
+                  <div class="section">
+                     <p>To add a map chart to an existing page.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Gallery select the <span class="uicontrol bold">Map Chart</span> region and drag it to the appropriate location in the Layout tab.</span><div>
+                           <div class="infobox-tip" id="GUID-18006A59-5BCF-46E5-9B5E-22F480B1ED42__GUID-873C3C70-8153-4EBD-8810-196EBF802328">
+                              <p class="notep1">Tip:</p>
+                              <p>You can also right-click <span class="uicontrol bold">Map Chart</span> region, select <span class="uicontrol bold">Add To</span>, and select the appropriate location. 
+                              </p>
+                           </div>
+                           
+                           <p>Page Designer indicates what actions are required next. If there
+                        is an error, the <span class="uicontrol bold">Show Messages</span> icon displays next to
+                        the <span class="uicontrol bold">Save</span> button. Click the <span class="uicontrol bold">Show
+                            Messages</span> icon to view a dialog listing all the errors.
+                        Select an error to highlight the associated attribute in the Property
+                        Editor.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor, edit the following attributes. </span><div>
+                           <div class="infobox-tip" id="GUID-18006A59-5BCF-46E5-9B5E-22F480B1ED42__GUID-AFE5AA10-96A2-450E-A903-9AFBB7AAF3DB">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the center pane.
+                              </p>
+                           </div>
+                           <ol type="a">
+                              <li>
+                                 <p>Title - Enter a title for the region.</p>
+                              </li>
+                              <li>
+                                 <p>Layout: </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Sequence - Enter the display sequence for this item.</p>
+                                    </li>
+                                    <li>
+                                       <p>Parent Region - Select the parent region to which this region belongs.</p>
+                                    </li>
+                                    <li>
+                                       <p>Position - Select the template position used to display this region.</p>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <p>Appearance:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Template - Select a region template.</p>
+                                    </li>
+                                    <li>
+                                       <p>Item Display Position - Specify where page items display in relation to the main region content.</p>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <p>Layout - Specify the Sequence, Parent Region, and Position.</p>
+                              </li>
+                              <li>
+                                 <p>Appearance - Specify the template.</p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>View the Map Chart attributes. In the Rendering tab, under the map chart title, select the <span class="uicontrol bold">Attributes</span> node.</span><div>
+                           <p> In the Property Editor, edit the following Map attributes:</p>
+                           <ol type="a">
+                              <li>
+                                 <p>Map, Level 1 - Select the map level from the available list (for example <span class="uicontrol bold">Europe</span>).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Map, Level 2 - Select the map level from the available list (for example, <span class="uicontrol bold">Denmark</span>).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Source, SQL Query - Enter the SQL Query for the chart series.</p>
+                              </li>
+                              <li>
+                                 <p>Edit other attributes as appropriate.</p>
+                                 <div class="infobox-tip" id="GUID-18006A59-5BCF-46E5-9B5E-22F480B1ED42__GUID-E34938AF-0945-46E0-BEB5-E5BFD8000E7A">
+                                    <p class="notep1">Tip:</p>
+                                    <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="bold">Help</span> tab in the center pane.
+                                    </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-maps.html#GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C" title="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">Creating Maps</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29773"></a><div class="props_rev_3"><a id="GUID-AAF733A6-A604-441A-98E4-2D2CFB09C8C7" name="GUID-AAF733A6-A604-441A-98E4-2D2CFB09C8C7"></a><h3 id="HTMDB-GUID-AAF733A6-A604-441A-98E4-2D2CFB09C8C7" class="sect3"><span class="enumeration_section">12.4.5 </span>Managing Map Charts 
+               </h3>
+               <div>
+                  <p>Once you create a map chart, you can alter its display by editing attributes in the Property Editor.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="creating-maps.html#GUID-63B91A18-30C7-4964-82C3-3046D96D6541">Editing Map Chart Attributes</a><br></li>
+                     <li class="ulchildlink"><a href="creating-maps.html#GUID-3FE8D802-ADBF-4228-AECF-3BCC0575A281">Using Custom XML with Map Charts</a><br></li>
+                     <li class="ulchildlink"><a href="creating-maps.html#GUID-E23C045A-1F4C-4267-A111-D4113B9B8D67">Enabling Automatic Updates</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-maps.html#GUID-8B2BDD2D-64F2-4181-984E-36ED0C42D25C" title="App Builder includes built-in wizards for generating map charts on pages with a Desktop user interface. How you create a map chart depends upon whether you are adding the map to an existing page, or adding a map on a new page.">Creating Maps</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29775"></a><div class="props_rev_3"><a id="GUID-63B91A18-30C7-4964-82C3-3046D96D6541" name="GUID-63B91A18-30C7-4964-82C3-3046D96D6541"></a><h4 id="HTMDB-GUID-63B91A18-30C7-4964-82C3-3046D96D6541" class="sect4"><span class="enumeration_section">12.4.5.1 </span>Editing Map Chart Attributes 
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To view the map chart attributes:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                              <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li><span>Select an application.</span></li>
+                              <li><span>Select a page.</span></li>
+                           </ol>
+                           <div>Page Designer appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>To edit region attributes:</span><div>
+                              <ol type="a">
+                                 <li>
+                                    <p>In the Rendering tab, select the region that containing the map chart. </p>
+                                    <p>The region attributes display in the Property Editor.</p>
+                                 </li>
+                                 <li>
+                                    <p>Edit the appropriate attributes. </p>
+                                 </li>
+                              </ol>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To edit chart map attributes:</span><div>
+                              <ol type="a">
+                                 <li>
+                                    <p>In the Rendering tab, under the region title, select the <span class="uicontrol bold">Attributes</span> node. 
+                                    </p>
+                                    <p>The map chart attributes display in the Property Editor.</p>
+                                 </li>
+                                 <li>
+                                    <p>Edit the appropriate attributes. </p>
+                                 </li>
+                              </ol>
+                              <div class="infobox-tip" id="GUID-63B91A18-30C7-4964-82C3-3046D96D6541__GUID-19C04F7A-3158-4B91-B68B-702F07F43B2F">
+                                 <p class="notep1">Tip:</p>
+                                 <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the center pane.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-63B91A18-30C7-4964-82C3-3046D96D6541__GUID-BE943A6B-FE58-47F4-BF80-1AD14D2E57F6">
+                        <p class="notep1">See Also:</p>
+                        <p> <span class="q">"<a href="creating-maps.html#GUID-3FE8D802-ADBF-4228-AECF-3BCC0575A281">Using Custom XML with Map Charts</a>"</span> and <span class="q">"<a href="creating-maps.html#GUID-E23C045A-1F4C-4267-A111-D4113B9B8D67">Enabling Automatic Updates</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="creating-maps.html#GUID-AAF733A6-A604-441A-98E4-2D2CFB09C8C7" title="Once you create a map chart, you can alter its display by editing attributes in the Property Editor.">Managing Map Charts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29776"></a><div class="props_rev_3"><a id="GUID-3FE8D802-ADBF-4228-AECF-3BCC0575A281" name="GUID-3FE8D802-ADBF-4228-AECF-3BCC0575A281"></a><h4 id="HTMDB-GUID-3FE8D802-ADBF-4228-AECF-3BCC0575A281" class="sect4"><span class="enumeration_section">12.4.5.2 </span>Using Custom XML with Map Charts
+                  </h4>
+                  <div>
+                     <div class="section">There are additional map settings that cannot be controlled using the standard
+            attributes on the Map Attributes page. To further control the look and feel of a chart,
+            you can use custom XML.</div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>To use custom XML:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                              <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li><span>Select an application.</span></li>
+                              <li><span>Select a page.</span></li>
+                           </ol>
+                           <div>Page Designer appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>In the Rendering tab, under the region title, select the <span class="uicontrol bold">Attributes</span> node. </span><div>
+                              <p>The map chart attributes display in the Property Editor.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Locate and expand the <span class="uicontrol bold">Custom XML</span>. </span></li>
+                        <li class="stepexpand"><span>For Custom XML, Custom, select <span class="uicontrol bold">On</span>.</span></li>
+                        <li class="stepexpand"><span>Edit the XML. </span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     </ol>
+                     <div class="section">
+                        <div class="infobox-tip" id="GUID-3FE8D802-ADBF-4228-AECF-3BCC0575A281__GUID-AB526412-51C6-49B6-A3D9-E764A5EC20D6">
+                           <p class="notep1">Tip:</p>
+                           <p>For more information on supported XML format for maps, see the Online Map XML Reference at:</p>
+                           <p><a href="http://6.anychart.com/products/anymap/docs/" target="_blank"><code class="codeph">http://6.anychart.com/products/anymap/docs/</code></a></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="creating-maps.html#GUID-AAF733A6-A604-441A-98E4-2D2CFB09C8C7" title="Once you create a map chart, you can alter its display by editing attributes in the Property Editor.">Managing Map Charts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29777"></a><div class="props_rev_3"><a id="GUID-E23C045A-1F4C-4267-A111-D4113B9B8D67" name="GUID-E23C045A-1F4C-4267-A111-D4113B9B8D67"></a><h4 id="HTMDB-GUID-E23C045A-1F4C-4267-A111-D4113B9B8D67" class="sect4"><span class="enumeration_section">12.4.5.3 </span>Enabling Automatic Updates
+                  </h4>
+                  <div>
+                     <div class="section">You can create map charts that monitor information by enabling the Asynchronous
+            Update attribute on the Map Attributes page. Enabling this attribute updates the map to
+            reflect changes in the underlying data within a specified time interval.</div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>To enable automatic refresh:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                              <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li><span>Select an application.</span></li>
+                              <li><span>Select a page.</span></li>
+                           </ol>
+                           <div>Page Designer appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>In the Rendering tab, select the region that contains the map chart. </span><div>The region attributes display in the Property Editor.</div>
+                        </li>
+                        <li class="stepexpand"><span>In the Rendering tab, under the region title, select the <span class="uicontrol bold">Attributes</span> node. </span><div>The map chart attributes display in the Property Editor.</div>
+                        </li>
+                        <li class="stepexpand"><span>Find <span class="uicontrol bold">Automatic Refresh</span>. </span><ol type="a">
+                              <li><span>Automatic Refresh - Select <span class="uicontrol bold">On</span>.</span></li>
+                              <li><span>Interval - Enter the interval in seconds between chart updates.</span></li>
+                           </ol>
+                           <div>
+                              <div class="infoboxnote" id="GUID-E23C045A-1F4C-4267-A111-D4113B9B8D67__GUID-E6CC6819-B66E-4484-9086-4A01DFA5D3CC">
+                                 <p class="notep1">Note:</p>
+                                 <p>Oracle discourages very small updates intervals, such as 2 seconds, since they may cause serious database performance issues.</p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="creating-maps.html#GUID-AAF733A6-A604-441A-98E4-2D2CFB09C8C7" title="Once you create a map chart, you can alter its display by editing attributes in the Property Editor.">Managing Map Charts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

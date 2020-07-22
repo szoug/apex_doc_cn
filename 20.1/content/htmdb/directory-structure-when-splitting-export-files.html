@@ -1,0 +1,662 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Directory Structure When Splitting Export Files into Separate Scripts">
+      <meta name="abstract" content="Exporting an application, page, or component as separate files creates a directory structure organized by component type.">
+      <meta name="description" content="Exporting an application, page, or component as separate files creates a directory structure organized by component type.">
+      <meta name="DC.subject" content="Export As Zip, directory structure, APEXExport with -split, directory structure">
+      <meta name="keywords" content="Export As Zip, directory structure, APEXExport with -split, directory structure">
+      <meta name="DC.Relation" scheme="URI" content="directory-structure-when-splitting-export-files.html#GUID-F39E084B-99A4-4E06-8C7B-C22D21856370">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-DB991910-79AB-4EF6-94C9-B37F4DAD7438">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Exporting an application, page, or component as separate files creates a directory structure organized by component type.">
+      <meta name="description" content="Exporting an application, page, or component as separate files creates a directory structure organized by component type.">
+      <title>Directory Structure When Splitting Export Files into Separate Scripts</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Exporting an application, page, or component as separate files creates a directory structure organized by component type.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="oracle-application-express-limits.html" title="Previous" type="text/html">
+      <link rel="next" href="available-conditions.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="oracle-application-express-limits.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="available-conditions.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Directory Structure When Splitting Export
+        Files into Separate Scripts</li>
+            </ol>
+            <a id="GUID-DB991910-79AB-4EF6-94C9-B37F4DAD7438" name="GUID-DB991910-79AB-4EF6-94C9-B37F4DAD7438"></a>
+            
+            <h2 id="HTMDB-GUID-DB991910-79AB-4EF6-94C9-B37F4DAD7438" class="sect2"><span class="enumeration_chapter">C </span>Directory Structure When Splitting Export
+        Files into Separate Scripts
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Exporting an application, page, or component as separate files creates a
+        directory structure organized by component type.</p>
+               <p>This directory structure may extend mutliple levels. This directory
+            structure is the same whether you are using <strong class="term">Export as Zip</strong>
+            option in <span>App Builder</span> or the <code class="codeph">APEXExport</code> utility with the <code class="codeph">-split</code>
+            option.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="directory-structure-when-splitting-export-files.html#GUID-F39E084B-99A4-4E06-8C7B-C22D21856370">Export Directory Structure</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-DB991910-79AB-4EF6-94C9-B37F4DAD7438__GUID-09733521-A7DC-4704-965B-1C6B13CB36B9">
+                  <p class="notep1">See Also:</p>
+                  
+                  <p><span class="q">"<a href="splitting-export-files-into-separate-scripts.html#GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4" title="Learn about splitting application, page, and component export files into separate SQL scripts.">Splitting Export Files into Separate Scripts</a>"</span></p>
+                  
+               </div>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-F39E084B-99A4-4E06-8C7B-C22D21856370" name="GUID-F39E084B-99A4-4E06-8C7B-C22D21856370"></a><h3 id="HTMDB-GUID-F39E084B-99A4-4E06-8C7B-C22D21856370" class="sect3"><span class="enumeration_section">C.1 </span>Export Directory Structure
+               </h3>
+               <div>
+                  <div class="section">
+                     
+                     <p>The following table describes the directory structure of applications,
+                pages, or components exported as separate files.</p>
+                     
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformalwide" id="GUID-F39E084B-99A4-4E06-8C7B-C22D21856370__GUID-2C246366-E468-41ED-BBB3-21D40ACE7F3B">
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title summary="This table describes the directory structure eof application, pages,&#xA;                or components exported as separate files." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="34%" id="d314299e149">
+                            Component
+                        </th>
+                              <th align="left" valign="bottom" width="66%" id="d314299e154">
+                            Directory Structure
+                        </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e161" headers="d314299e149 ">
+                                 
+                                 <p>Page</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e161 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/pages</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e173" headers="d314299e149 ">
+                                 
+                                 <p>Page Group</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e173 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/pages/page_groups</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e185" headers="d314299e149 ">
+                                 
+                                 <p>Plug-in Settings</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e185 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/plugin_settings</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e197" headers="d314299e149 ">
+                                 
+                                 <p>Credential </p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e197 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/credentials</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e209" headers="d314299e149 ">
+                                 
+                                 <p>Data Loading</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e209 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/data_loading/tables</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e221" headers="d314299e149 ">
+                                 
+                                 <p>Data Profile</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e221 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/data_profiles</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e233" headers="d314299e149 ">
+                                 
+                                 <p>Email Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e233 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/email/templates</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e245" headers="d314299e149 ">
+                                 
+                                 <p>Application Static File</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e245 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/files</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e257" headers="d314299e149 ">
+                                 
+                                 <p>Text Message</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e257 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/globalization/messages</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e269" headers="d314299e149 ">
+                                 
+                                 <p>Application Computation</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e269 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/logic/application_computations</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e281" headers="d314299e149 ">
+                                 
+                                 <p>Application Item</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e281 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/logic/application_items</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e294" headers="d314299e149 ">
+                                 
+                                 <p>Application Process</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e294 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/logic/application_processes</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e306" headers="d314299e149 ">
+                                 
+                                 <p>Application Setting</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e306 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/logic/application_settings</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e318" headers="d314299e149 ">
+                                 
+                                 <p>Build Option </p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e318 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/logic/build_options</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e330" headers="d314299e149 ">
+                                 
+                                 <p>Build Option Status</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e330 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/logic/build_options/status</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e342" headers="d314299e149 ">
+                                 
+                                 <p>Web Service</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e342 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/logic/webservices</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e354" headers="d314299e149 ">
+                                 
+                                 <p>Breadcrumb Entry</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e354 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/navigation/breadcrumbentry</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e366" headers="d314299e149 ">
+                                 
+                                 <p>Breadcrumb</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e366 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/navigation/breadcrumbs</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e378" headers="d314299e149 ">
+                                 
+                                 <p>List</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e378 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/navigation/lists</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e390" headers="d314299e149 ">
+                                 
+                                 <p>Navigation Bar Entry</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e390 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/navigation/navigation_bar</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e402" headers="d314299e149 ">
+                                 
+                                 <p>Parent Tab </p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e402 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/navigation/tabs/parent</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e414" headers="d314299e149 ">
+                                 
+                                 <p>Tab</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e414 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/navigation/tabs/standard</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e427" headers="d314299e149 ">
+                                 
+                                 <p>Tree</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e427 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/navigation/trees</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e439" headers="d314299e149 ">
+                                 
+                                 <p>Plug-in</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e439 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/plugins</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e451" headers="d314299e149 ">
+                                 
+                                 <p>Remote Server</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e451 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/remote_servers</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e463" headers="d314299e149 ">
+                                 
+                                 <p>Report Layout</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e463 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/reports/report_layouts</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e475" headers="d314299e149 ">
+                                 
+                                 <p>Report Query</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e475 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/reports/report_queries</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e487" headers="d314299e149 ">
+                                 
+                                 <p>Application Access Control Role</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e487 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/security/app_access_control</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e499" headers="d314299e149 ">
+                                 
+                                 <p>Authentication Scheme</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e499 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/security/authentications</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e511" headers="d314299e149 ">
+                                 
+                                 <p>Authorization Scheme</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e511 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/security/authorizations</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e523" headers="d314299e149 ">
+                                 
+                                 <p>List of Values</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e523 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/lovs</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e535" headers="d314299e149 ">
+                                 
+                                 <p>Shortcut</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e535 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/shortcuts</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e547" headers="d314299e149 ">
+                                 
+                                 <p>Breadcrumb Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e547 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/breadcrumb</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e560" headers="d314299e149 ">
+                                 
+                                 <p>Button Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e560 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/button</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e572" headers="d314299e149 ">
+                                 
+                                 <p>Calendar Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e572 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/calendar</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e584" headers="d314299e149 ">
+                                 
+                                 <p>Label Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e584 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/label</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e596" headers="d314299e149 ">
+                                 
+                                 <p>List Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e596 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/list</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e608" headers="d314299e149 ">
+                                 
+                                 <p>Page Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e608 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/page</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e620" headers="d314299e149 ">
+                                 
+                                 <p>Popup List of Values Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e620 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/popuplov</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e632" headers="d314299e149 ">
+                                 
+                                 <p>Region Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e632 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/region</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e644" headers="d314299e149 ">
+                                 
+                                 <p>Report Template</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e644 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/user_interface/templates/report</code></p>
+                                 
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d314299e656" headers="d314299e149 ">
+                                 
+                                 <p>Web Source</p>
+                                 
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d314299e656 d314299e154 ">
+                                 
+                                 <p><code class="codeph">application/shared_components/web_sources</code></p>
+                                 
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="directory-structure-when-splitting-export-files.html#GUID-DB991910-79AB-4EF6-94C9-B37F4DAD7438" title="Exporting an application, page, or component as separate files creates a directory structure organized by component type.">Directory Structure When Splitting Export Files into Separate Scripts</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

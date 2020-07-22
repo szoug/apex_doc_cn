@@ -1,0 +1,270 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Converting FormModules, ObjectLibraries, or MenuModules to XML">
+      <meta name="DC.subject" content="FormModules, converting to XML, object libraries, MenuModules, Forms2XML conversion tool, about, Oracle Forms conversion, Forms2XML, using from command line, using in Java program">
+      <meta name="keywords" content="FormModules, converting to XML, object libraries, MenuModules, Forms2XML conversion tool, about, Oracle Forms conversion, Forms2XML, using from command line, using in Java program">
+      <meta name="DC.Relation" scheme="URI" content="converting-Oracle-forms-application.html#GUID-4D68922E-E13E-47E8-9EFC-0AC993F1AB64">
+      <meta name="DC.Relation" scheme="URI" content="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-341739BC-7CC8-43DD-825F-D8D7599C6582">
+      <meta name="DC.Relation" scheme="URI" content="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-2129F193-209F-4AB6-B58F-34248C48C3DB">
+      <meta name="DC.Relation" scheme="URI" content="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-D015C87D-E888-4840-B942-0D9685D5BE41">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Converting FormModules, ObjectLibraries, or MenuModules to XML</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Application Migration Guide ">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Application Migration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-application-migration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-07T14:07:47-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2012, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24721-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="how-to-convert-application.html" title="Previous" type="text/html">
+      <link rel="next" href="converting-oracle-forms-to-XML.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Application Migration Guide">
+    <meta name="dcterms.isVersionOf" content="AEMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="how-to-convert-application.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="converting-oracle-forms-to-XML.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Application Migration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="converting-Oracle-forms-application.html" property="item" typeof="WebPage"><span property="name">    Converting an Oracle Forms Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Converting FormModules, ObjectLibraries, or MenuModules to XML</li>
+            </ol>
+            <a id="GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E" name="GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E"></a><a id="AEMIG170"></a>
+            
+            <h2 id="AEMIG-GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E" class="sect2"><span class="enumeration_section">4.2 </span>Converting FormModules, ObjectLibraries, or MenuModules to XML
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can convert Oracle Forms FormModule, MenuModule, and ObjectLibrary files to Extensible Markup Language (XML) using the Oracle Forms to XML conversion tool, <code class="codeph">Forms2XML</code>. 
+               </p>
+               <div class="infoboxnote" id="GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E__GUID-6392DDA9-8370-44D9-B534-53D817010644">
+                  <p class="notep1">Note:</p>
+                  <p>The <code class="codeph">Forms2XML</code> utility must generate an XML file in English only. If the generated XML tags are not in English, then the file will fail to load. The conversion of synonym-based data blocks is not supported. Only data blocks based on tables or views is supported by the conversion process. Please ensure that the application you want to convert is based only on tables and views.
+                  </p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-341739BC-7CC8-43DD-825F-D8D7599C6582">About the Forms2XML Conversion Tool</a><br></li>
+                  <li class="ulchildlink"><a href="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-2129F193-209F-4AB6-B58F-34248C48C3DB">Using the Forms2XML Conversion Tool From a Command Line</a><br></li>
+                  <li class="ulchildlink"><a href="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-D015C87D-E888-4840-B942-0D9685D5BE41">Using the Forms2XML Conversion Tool in a Java Program</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="converting-Oracle-forms-application.html#GUID-4D68922E-E13E-47E8-9EFC-0AC993F1AB64">Converting an Oracle Forms Application</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEMIG172"></a><div class="props_rev_3"><a id="GUID-341739BC-7CC8-43DD-825F-D8D7599C6582" name="GUID-341739BC-7CC8-43DD-825F-D8D7599C6582"></a><h3 id="AEMIG-GUID-341739BC-7CC8-43DD-825F-D8D7599C6582" class="sect3"><span class="enumeration_section">4.2.1 </span>About the Forms2XML Conversion Tool
+               </h3>
+               <div>
+                  <p>The Oracle Forms to XML conversion tool, <code class="codeph">Forms2XML</code> was introduced in Oracle9<span class="italic">i</span> Oracle Developer Suite and is also available in Oracle Developer Suite 10<span class="italic">g</span>. This tool should also work on files from earlier releases of Oracle Forms. If the Oracle Forms to XML Conversion tool does not work for a specific file from an earlier version of Oracle Forms, then you must upgrade the file to Oracle Developer Suite 9<span class="italic">i</span> or 10<span class="italic">g</span> and then convert to XML
+                  </p>
+                  <p><code class="codeph">Forms2XML</code> produces an XML file that has the same base name as the Forms file with an <code class="codeph">.xml </code>extension. The extension <code class="codeph">_fmb</code>, <code class="codeph">_mmb</code>, or <code class="codeph">_olb</code> is added to the base file name to indicate whether the original file was a Forms Modules, a MenuModule, or an Object Library. The following table displays a few examples of the changes the tool makes to the name of the file being converted:
+                  </p>
+                  <div class="tblformal" id="GUID-341739BC-7CC8-43DD-825F-D8D7599C6582__GUID-9217C13A-45BF-4183-B0CC-8D0BF3E22465">
+                     <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table demonstrates how Forms2XML adds the extension _fmb, _mmb, or _olb to the base file name to indicate whether the original file was a FormModule, a MenuModule, or an Object Library." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="50%" id="d2585e158">File name before conversion</th>
+                              <th align="left" valign="bottom" width="50%" id="d2585e161">File name after conversion</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="50%" id="d2585e166" headers="d2585e158 ">
+                                 <p><span class="italic"><code class="codeph">myForm</code></span><code class="codeph">.fmb</code></p>
+                              </td>
+                              <td align="left" valign="top" width="50%" headers="d2585e166 d2585e161 ">
+                                 <p><span class="italic"><code class="codeph">myForm</code></span><code class="codeph">_fmb.xml</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="50%" id="d2585e181" headers="d2585e158 ">
+                                 <p><span class="italic"><code class="codeph">myMenu</code></span><code class="codeph">.mmb</code></p>
+                              </td>
+                              <td align="left" valign="top" width="50%" headers="d2585e181 d2585e161 ">
+                                 <p><span class="italic"><code class="codeph">myMenu</code></span><code class="codeph">_mmb.xml</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="50%" id="d2585e196" headers="d2585e158 ">
+                                 <p><span class="italic"><code class="codeph">myLibrary</code></span><code class="codeph">.olb</code></p>
+                              </td>
+                              <td align="left" valign="top" width="50%" headers="d2585e196 d2585e161 ">
+                                 <p><span class="italic"><code class="codeph">myLibrary</code></span><code class="codeph">_olb.xml</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E">Converting FormModules, ObjectLibraries, or MenuModules to XML</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEMIG173"></a><div class="props_rev_3"><a id="GUID-2129F193-209F-4AB6-B58F-34248C48C3DB" name="GUID-2129F193-209F-4AB6-B58F-34248C48C3DB"></a><h3 id="AEMIG-GUID-2129F193-209F-4AB6-B58F-34248C48C3DB" class="sect3"><span class="enumeration_section">4.2.2 </span>Using the Forms2XML Conversion Tool From a Command Line
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The <code class="codeph">Forms2XML</code> command takes one or more Forms Module files as an argument. The files can be FormsModule (<code class="codeph">.fmb</code>), ObjectLibrary (<code class="codeph">.olb</code>), or MenuModule (<code class="codeph">.mmb</code>) files. The output is placed in the current folder. The command has the following syntax: 
+                     </p><pre class="oac_no_warn" dir="ltr">frmf2xml [options] <span class="italic">file1</span> [<span class="italic">file2</span>...]
+java oracle.forms.util.xmltools.Forms2XML [options] <span class="italic">file1</span> [<span class="italic">file2</span>...]
+</pre><p>The following table describes available options.</p>
+                     <div class="tblformal" id="GUID-2129F193-209F-4AB6-B58F-34248C48C3DB__GUID-D76C9F75-684B-4D7A-A339-EF666C442F9E">
+                        <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table describes options when using the XML2Forms conversion tool." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="49%" id="d2585e293">Options</th>
+                                 <th align="left" valign="bottom" width="51%" id="d2585e296">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="49%" id="d2585e301" headers="d2585e293 ">
+                                    <p><code class="codeph">USE_PROPERTY_IDS=YES/NO</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="51%" headers="d2585e301 d2585e296 ">
+                                    <p>Setting <code class="codeph">USE_PROPERTY_IDS</code> to <code class="codeph">YES</code> causes the Forms to XML conversion tool to write the internal ID for Real or Character into the XML file. 
+                                    </p>
+                                    <p>The default value (<code class="codeph">NO</code>) generates property value names as before.
+                                    </p>
+                                    <p><span class="bold">Note: </span>The Forms2XML utility must be run with <code class="codeph">USE_PROPERTY_IDS=NO</code>.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="49%" id="d2585e327" headers="d2585e293 ">
+                                    <p><code class="codeph">OVERWRITE=YES/NO</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="51%" headers="d2585e327 d2585e296 ">
+                                    <p>Valid values are <code class="codeph">YES</code> or <code class="codeph">NO</code>.
+                                    </p>
+                                    <p>If <code class="codeph">OVERWRITE=YES</code>, the tool overwrites any XML files with the same name that exist in the output directory.
+                                    </p>
+                                    <p>If <code class="codeph">OVERWRITE=NO</code>, (default) the tool does not overwrite any XML files with the same name that exist in the output directory. The tool will stop processing and return the message:
+                                    </p>
+                                    <p>If the file <span class="italic"><code class="codeph">file 1</code></span> exists, use argument <code class="codeph">OVERWRITE=YES</code> to replace.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="49%" id="d2585e360" headers="d2585e293 ">
+                                    <p><code class="codeph">DUMP=ALL/OVERRIDEN</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="51%" headers="d2585e360 d2585e296 ">
+                                    <p>If <code class="codeph">DUMP=ALL</code>, the tool dumps all properties.
+                                    </p>
+                                    <p>If <code class="codeph">DUMP=OVERRIDEN</code>, the tool dumps only those properties that are overridden.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E">Converting FormModules, ObjectLibraries, or MenuModules to XML</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEMIG174"></a><div class="props_rev_3"><a id="GUID-D015C87D-E888-4840-B942-0D9685D5BE41" name="GUID-D015C87D-E888-4840-B942-0D9685D5BE41"></a><h3 id="AEMIG-GUID-D015C87D-E888-4840-B942-0D9685D5BE41" class="sect3"><span class="enumeration_section">4.2.3 </span>Using the Forms2XML Conversion Tool in a Java Program
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can pass the <code class="codeph">Forms2XML</code> tool a <code class="codeph">JdapiModule</code> Java object (class <code class="codeph">oracle.forms.jdapi.JdapiModule</code>) and dump its objects and properties to an <code class="codeph">XMLDocument</code> (class <code class="codeph">oracle.xml.parser.v2.XMLDocument</code>). For example:
+                     </p><pre class="oac_no_warn" dir="ltr">...
+ // get the modules in the session
+ JdapiIterator mods = Jdapi.getModules(); 
+    // ... and iterate round them 
+    while(mods.hasNext())
+      {
+        JdapiModule mod = (JdapiModule)mods.next();
+        Forms2XML converter = new Forms2XML(
+        XMLDocument doc = converter.dumpModule(false);
+              ... 
+       }
+</pre><p>The Boolean argument taken by the <code class="codeph">dumpModule()</code> method instructs the converter to dump all properties to the <code class="codeph">XMLDocument doc,</code> not just those which are overridden. 
+                     </p>
+                     <p>Once you have the module as an <code class="codeph">XMLDocument</code> object, you could then use the XDK classes to manipulate it programmatically. For example, you could traverse it, remove or add objects, change properties, copy objects into other modules that are also saved as <code class="codeph">XMLDocument</code> objects, and so on.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D015C87D-E888-4840-B942-0D9685D5BE41__GUID-534D7CB5-1FAC-4837-BDF3-94F171297F93">
+                     <p class="notep1">See Also:</p>
+                     <p>To learn more about Oracle Forms, <span class="q">"<a href="http://www.oracle.com/technetwork/developer-tools/forms/overview/index.html" target="_blank"><code class="codeph">http://www.oracle.com/technetwork/developer-tools/forms/overview/index.html</code></a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E">Converting FormModules, ObjectLibraries, or MenuModules to XML</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

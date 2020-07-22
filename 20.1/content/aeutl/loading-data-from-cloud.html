@@ -1,0 +1,348 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Loading Data From the Cloud (Autonomous Data Warehouse Only)">
+      <meta name="abstract" content="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">
+      <meta name="description" content="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">
+      <meta name="DC.Relation" scheme="URI" content="using-data-workshop.html#GUID-C35417B6-D1D0-4098-BBE1-35F7BA1A2423">
+      <meta name="DC.Relation" scheme="URI" content="loading-data-from-cloud.html#GUID-24F492B8-ECF0-4FAA-937D-0E26BE08CA7F">
+      <meta name="DC.Relation" scheme="URI" content="loading-data-from-cloud.html#GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C">
+      <meta name="DC.Relation" scheme="URI" content="loading-data-from-cloud.html#GUID-7F128314-475C-4DB4-A1FB-C078CFF208B4">
+      <meta name="DC.Relation" scheme="URI" content="loading-data-from-cloud.html#GUID-84041A40-4382-422D-A772-BA316D3A448D">
+      <meta name="DC.Relation" scheme="URI" content="loading-data-from-cloud.html#GUID-2C9378E2-4A81-4FF2-87D4-5304C4B3465D">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">
+      <meta name="description" content="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">
+      <title>Loading Data From the Cloud (Autonomous Data Warehouse Only)</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="using-data-workshop.html" title="Previous" type="text/html">
+      <link rel="next" href="using-query-builder.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-data-workshop.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-query-builder.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-Oracle-application-express-utilities.html" property="item" typeof="WebPage"><span property="name"> Using Oracle Application Express Utilities</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-data-workshop.html" property="item" typeof="WebPage"><span property="name">Using Data Workshop</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Loading Data From the Cloud (Autonomous Data Warehouse Only)</li>
+            </ol>
+            <a id="GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442" name="GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442"></a>
+            
+            <h2 id="AEUTL-GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442" class="sect2"><span class="enumeration_section">5.1.7 </span>Loading Data From the Cloud (Autonomous Data Warehouse Only)
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)</p>
+               <p>On-premise users of <span>Application Express</span> only see Load Data and Unload Data buttons on the Utilities page of Data Workshop.
+               </p>
+               <p>Users of Autonomous Database Warehouse also see the <span class="uicontrol bold">Load from Cloud</span> button.
+               </p><br><div class="imageleft"><img class="imageleft" id="GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442__IMAGE_HXB_KBJ_XKB" height="668" width="1007" src="img/load_from_cloud_button.png" alt="Description of load_from_cloud_button.png follows" title="Description of load_from_cloud_button.png follows" longdesc="img_text/load_from_cloud_button.html"><br><a href="img_text/load_from_cloud_button.html">Description of the illustration load_from_cloud_button.png</a></div><br></div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="loading-data-from-cloud.html#GUID-24F492B8-ECF0-4FAA-937D-0E26BE08CA7F">About Object Store References</a><br>Data Workshop uses Object Store References to reference cloud-based URLs for loading data. Use Object Store References to create External Tables from the Cloud, which you can then import into your workspace or connect to your applications.
+                  </li>
+                  <li class="ulchildlink"><a href="loading-data-from-cloud.html#GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C">Creating an Object Store Reference</a><br>Create a new Object Store Reference.
+                  </li>
+                  <li class="ulchildlink"><a href="loading-data-from-cloud.html#GUID-7F128314-475C-4DB4-A1FB-C078CFF208B4">Creating an External Table from Cloud</a><br>Create a table from an external source with an Object Store Reference.
+                  </li>
+                  <li class="ulchildlink"><a href="loading-data-from-cloud.html#GUID-84041A40-4382-422D-A772-BA316D3A448D">Loading Avro or Parquet Files into Object Browser from Cloud</a><br>For Avro and Parquet files, first prepare an external table then load it into your workspace for local use.
+                  </li>
+                  <li class="ulchildlink"><a href="loading-data-from-cloud.html#GUID-2C9378E2-4A81-4FF2-87D4-5304C4B3465D">Loading Other Files into Object Browser from Cloud</a><br>For non-Avro and non-Parquet files, view the Object Store Reference in Data Workshop then import the file into your workspace for local use.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-data-workshop.html#GUID-C35417B6-D1D0-4098-BBE1-35F7BA1A2423" title="Use Data Workshop to load and unload data to the database.">Using Data Workshop</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-24F492B8-ECF0-4FAA-937D-0E26BE08CA7F" name="GUID-24F492B8-ECF0-4FAA-937D-0E26BE08CA7F"></a><h3 id="AEUTL-GUID-24F492B8-ECF0-4FAA-937D-0E26BE08CA7F" class="sect3"><span class="enumeration_section">5.1.7.1 </span>About Object Store References
+               </h3>
+               <div>
+                  <p>Data Workshop uses Object Store References to reference cloud-based URLs for loading data. Use Object Store References to create External Tables from the Cloud, which you can then import into your workspace or connect to your applications.</p>
+                  <p>Creating an Object Store Reference is the first step to creating external tables in the cloud. Essentially, the Object Store Reference preserves the necessary credentials to authorize your <span>Application Express</span> workspace to access external data, and therefore enable your apps to access external data.
+                  </p>
+                  <p>You can store the following types of credentials in an Object Store Reference:</p>
+                  <ul style="list-style-type: disc;" id="GUID-24F492B8-ECF0-4FAA-937D-0E26BE08CA7F__UL_W3Z_SWZ_BLB">
+                     <li><strong class="term">Username/Password</strong> - Basic two-field username and password.
+                     </li>
+                     <li><strong class="term">OCI Native</strong> - Use the Oracle Cloud Infrastructure (OCI) protocol: User OCID, Private Key, Tenancy OCID, and Fingerprint.
+                     </li>
+                     <li><strong class="term">Web Credential</strong> - Reuse a web credential already stored in the workspace.
+                     </li>
+                     <li><strong class="term">DBMS_CLOUD Credential</strong> - Reuse a DBMS_CLOUD credential already stored in the workspace.
+                     </li>
+                  </ul>
+                  <p>For Parquet and Avro files, Data Workshop asks for an external table name and where to derive the schema. Other file types can be up to 50MB.</p>
+                  <div class="p">When using an Object Store Reference to create an external table, <span>Application Express</span> calls the data using the <code class="codeph">DBMS_CLOUD.CREATE_EXTERNAL_TABLE</code> procedure. 
+                  </div>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-24F492B8-ECF0-4FAA-937D-0E26BE08CA7F__GUID-AEF13F9F-F81A-40D6-B611-82C95076A2F8">
+                     <p class="notep1">See Also:</p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=ADWUD-GUID-27942374-AEE7-457A-9301-3D9C04657E26" target="_blank">DBMS_CLOUD CREATE_EXTERNAL_TABLE Procedure</a> in <span class="italic">Using Oracle Autonomous Data Warehouse on Dedicated Exadata Infrastructure</span></div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="loading-data-from-cloud.html#GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442" title="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">Loading Data From the Cloud (Autonomous Data Warehouse Only)</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C" name="GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C"></a><h3 id="AEUTL-GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C" class="sect3"><span class="enumeration_section">5.1.7.2 </span>Creating an Object Store Reference
+               </h3>
+               <div>
+                  <p>Create a new Object Store Reference.</p>
+                  <div class="p">
+                     <p><span class="bold">Required</span></p>
+                     <p>Before you begin, ensure you know the URL of the Object Store Bucket you want to call from Autonomous Data Warehouse.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p><span class="bold">Procedure</span></p>
+                     <p>To create a new Object Store Reference:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Create New</span> button.</span><div>The Object Store Reference dialog displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>Enter the following information:</span><ol type="a" id="GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C__SUBSTEPS_THB_SDQ_XKB">
+                           <li class="substepexpand"><span><span class="bold">URL</span> - The URL is the URI of the Object Store bucket <span class="bold">excluding</span> the filename.</span><div>
+                                 <div class="infoboxnote" id="GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C__GUID-E947FFC4-EF9B-4BD7-88F5-6CA3D2D1778B">
+                                    <p class="notep1">Note:</p>To learn more about the DBMS_CLOUD Package File URI format, see <a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=CSWHU-GUID-5D3E1614-ADF2-4DB5-B2B2-D5613F10E4FA" target="_blank">REF File URI Formats</a>.
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="bold">Reference Name</span> - Copied from the URL field. You can change the Reference Name to something easier, such as <code class="codeph">Project Bucket</code>.</span></li>
+                           <li class="substepexpand"><span><span class="bold">Credential Type</span> - Select the authentication scheme used to access the Object Store bucket.</span><div>
+                                 <div class="infobox-tip" id="GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C__GUID-4E4A5E14-A926-4F3D-BA98-F23526FAFC8B">
+                                    <p class="notep1">Tip:</p>For Amazon Web Services (AWS):
+                                    <ul style="list-style-type: disc;" id="GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C__UL_FCL_GXN_BLB">
+                                       <li><span class="bold">Username</span> - Access Key ID
+                                       </li>
+                                       <li><span class="bold">Password</span> - Secret access key
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Enter the requested credentials for the selected Credential Type (options vary between credential type).</span><div>
+                                 <div class="infoboxnote" id="GUID-025AFAFD-C52A-434E-9F4B-7F5EFCC0AE8C__GUID-E9954B9E-3F27-4BC8-9A81-C97F5F54963B">
+                                    <p class="notep1">Note:</p>Enable <span class="uicontrol bold">Create a Web Credential</span> to create a reusable authorization stored in the workspace. Web Credentials are useful for granting access to a data source without providing the full username and password, for example.
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section">The Object Store References page reloads with the success message <code class="codeph">Object Store Reference saved</code>.
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="loading-data-from-cloud.html#GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442" title="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">Loading Data From the Cloud (Autonomous Data Warehouse Only)</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-7F128314-475C-4DB4-A1FB-C078CFF208B4" name="GUID-7F128314-475C-4DB4-A1FB-C078CFF208B4"></a><h3 id="AEUTL-GUID-7F128314-475C-4DB4-A1FB-C078CFF208B4" class="sect3"><span class="enumeration_section">5.1.7.3 </span>Creating an External Table from Cloud
+               </h3>
+               <div>
+                  <p>Create a table from an external source with an Object Store Reference.</p>
+                  <p>To view an Object Store Reference:</p>
+                  <ol>
+                     <li class="stepexpand"><span>In Data Workshop, click <span class="uicontrol bold">Load from Cloud</span>.</span></li>
+                     <li class="stepexpand"><span>Select the Object Store Reference from the drop-down menu.</span><div>The associated Object Store Bucket loads. A list of object names populates below.</div>
+                     </li>
+                  </ol>
+                  <p>To create an external table:</p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>Click the filename of an object. Click more than one name to select multiple files to externalize.</span><div>
+                           <p>The Load File from Object Store dialog displays below. The selected filename appears in the File Name Pattern field.</p>
+                           <p>If selecting multiple files, the names appear in the order selected, separated by commas.</p>
+                           <div class="infobox-tip" id="GUID-7F128314-475C-4DB4-A1FB-C078CFF208B4__GUID-828B8F7B-DA0D-48C3-AF3D-1284A1FC5556">
+                              <p class="notep1">Tip:</p>
+                              <p>Click the X icon to clear the File Name Pattern field of all selections.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Configure the Load File from Object Store section:</span><ol type="a" id="GUID-7F128314-475C-4DB4-A1FB-C078CFF208B4__SUBSTEPS_ZG5_GLY_CLB">
+                           <li><span>File Type - Select whether the object file type is <span class="uicontrol bold">Avro</span>, <span class="uicontrol bold">Parquet</span>, or <span class="uicontrol bold">Other</span>.</span></li>
+                           <li><span>Derive Data Definition - Choose <span class="uicontrol bold">First File </span> to apply the schema to the rest of the batch. Choose <span class="uicontrol bold">All Files</span> to preserve multiple schemas.</span></li>
+                           <li><span>External Table Name - Enter a name for the table.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Create External Table</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p><span>Application Express</span> loads the data (depending on size, this may take some time).
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>When loading is complete, do one of the following:</span><ul id="GUID-7F128314-475C-4DB4-A1FB-C078CFF208B4__CHOICES_LJP_L3G_DLB">
+                           <li>To review the table, click <span class="uicontrol bold">View Table</span>. The Review External Table page displays.
+                           </li>
+                           <li>To launch the Create App wizard, click <span class="uicontrol bold">Create Application</span>.
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="loading-data-from-cloud.html#GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442" title="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">Loading Data From the Cloud (Autonomous Data Warehouse Only)</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-84041A40-4382-422D-A772-BA316D3A448D" name="GUID-84041A40-4382-422D-A772-BA316D3A448D"></a><h3 id="AEUTL-GUID-84041A40-4382-422D-A772-BA316D3A448D" class="sect3"><span class="enumeration_section">5.1.7.4 </span>Loading Avro or Parquet Files into Object Browser from Cloud
+               </h3>
+               <div>
+                  <p>For Avro and Parquet files, first prepare an external table then load it into your workspace for local use.</p>
+                  <p>To create an external table:</p>
+                  <ol>
+                     <li class="stepexpand"><span>In Data Workshop, click <span class="uicontrol bold">Load from Cloud</span>.</span></li>
+                     <li class="stepexpand"><span>Select an Object Store Reference from the drop-down menu.</span><div>The associated Object Store Bucket loads. A list of object names populates below.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click the object names you wish to import.</span><div>
+                           <p>If selecting multiple files, the names appear in the order selected, separated by commas.</p>
+                           <div class="infobox-tip" id="GUID-84041A40-4382-422D-A772-BA316D3A448D__GUID-828B8F7B-DA0D-48C3-AF3D-1284A1FC5556">
+                              <p class="notep1">Tip:</p>
+                              <p>Click the X icon to clear the File Name Pattern field of all selections.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For File Type, select <span class="uicontrol bold">Avro</span> or <span class="uicontrol bold">Parquet</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create External Table</span>.</span><div>The Review External Table page displays.</div>
+                     </li>
+                  </ol>
+                  <p>To load the data to a local table:</p>
+                  <ol start="6">
+                     <li class="stepexpand"><span>On the Review External Table page under Load Data, configure how <span>Application Express</span> imports the external table into the workspace:</span><ol type="a" id="GUID-84041A40-4382-422D-A772-BA316D3A448D__SUBSTEPS_RYQ_LVY_CLB">
+                           <li><span>Load Into - Choose whether to create a <span class="uicontrol bold">New Table</span> or overwrite an <span class="uicontrol bold">Existing Table</span>.</span></li>
+                           <li><span>New Table Name - Enter a name for the table. Click the <span class="uicontrol bold">Configure</span> button to choose which columns to load.</span></li>
+                           <li><span>Monitor Progress - Toggle whether to view a progress bar during import. (Useful for large tables.)</span></li>
+                           <li><span>Commit Interval - Choose the rate of row inserations at which a <code class="codeph">COMMIT</code> operation is executed.</span></li>
+                           <li><span>Drop External Table after Load - Enable to retain the external table afterward. Disable to drop the selected external table.</span></li>
+                        </ol>
+                        <div>A preview of the final import version displays at the bottom.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Load Data to Local Table</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="loading-data-from-cloud.html#GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442" title="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">Loading Data From the Cloud (Autonomous Data Warehouse Only)</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-2C9378E2-4A81-4FF2-87D4-5304C4B3465D" name="GUID-2C9378E2-4A81-4FF2-87D4-5304C4B3465D"></a><h3 id="AEUTL-GUID-2C9378E2-4A81-4FF2-87D4-5304C4B3465D" class="sect3"><span class="enumeration_section">5.1.7.5 </span>Loading Other Files into Object Browser from Cloud
+               </h3>
+               <div>
+                  <p>For non-Avro and non-Parquet files, view the Object Store Reference in Data Workshop then import the file into your workspace for local use.</p>
+                  <p>To import the file to your workspace from Cloud:</p>
+                  <ol>
+                     <li class="stepexpand"><span>In Data Workshop, click <span class="uicontrol bold">Load from Cloud</span>.</span></li>
+                     <li class="stepexpand"><span>Select an Object Store Reference from the drop-down menu.</span><div>The associated Object Store Bucket loads. A list of object names populates below.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click the name of the object you wish to import.</span></li>
+                     <li class="stepexpand"><span>For File Type, select <span class="uicontrol bold">Other</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Import</span>.</span><div>
+                           <p><span>Application Express</span> loads the data.
+                           </p>
+                           <p>The Load Data dialog displays.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Configure how <span>Application Express</span> imports the resulting table:</span><ol type="a" id="GUID-2C9378E2-4A81-4FF2-87D4-5304C4B3465D__SUBSTEPS_K3J_GCH_DLB">
+                           <li><span>Load To - Choose whether to create a <span class="uicontrol bold">New Table</span> or overwrite an <span class="uicontrol bold">Existing Table</span>.</span></li>
+                           <li><span>Table Owner - Choose a table owner.</span></li>
+                           <li><span>Table Name - Name the table. Note: For new tables, the name must be unique to the workspace.</span></li>
+                        </ol>
+                        <div>A preview of the first few rows displays at the bottom of the dialog.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Load Data</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="loading-data-from-cloud.html#GUID-1290FC2E-3BBA-4915-A60C-1DA4402F4442" title="Load data from the cloud using Object Store References. (This function is only available for Autonomous Database users.)">Loading Data From the Cloud (Autonomous Data Warehouse Only)</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

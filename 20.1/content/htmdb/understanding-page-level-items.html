@@ -1,0 +1,429 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Page-Level Items">
+      <meta name="abstract" content="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">
+      <meta name="description" content="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">
+      <meta name="DC.subject" content="page-level item, creating, about, application item, naming conventions, item, referencing values, JavaScript, referencing items, referencing using JavaScript, multiple select list item, multiple select list item, handling return values, using APEX_UTIL.STRING_TO_TABLE">
+      <meta name="keywords" content="page-level item, creating, about, application item, naming conventions, item, referencing values, JavaScript, referencing items, referencing using JavaScript, multiple select list item, multiple select list item, handling return values, using APEX_UTIL.STRING_TO_TABLE">
+      <meta name="DC.Relation" scheme="URI" content="managing-page-level-items.html#GUID-77666224-27D0-4A0E-B5E3-EE5844E6CCB0">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-level-items.html#GUID-DBE765CA-96D0-4062-A3BC-B402D167A305">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-level-items.html#GUID-D057244E-B592-4C7B-AFAB-7615AA781470">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-level-items.html#GUID-207E66F9-C8A6-4FD1-B2F4-12D4BB302D31">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-level-items.html#GUID-2DB01EA1-444C-4657-BF17-B9C56479C673">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-level-items.html#GUID-18FF2087-3FA0-48C2-85C0-E45253D820B8">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">
+      <meta name="description" content="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">
+      <title>Understanding Page-Level Items</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-page-level-items.html" title="Previous" type="text/html">
+      <link rel="next" href="viewing-page-level-items.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-page-level-items.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="viewing-page-level-items.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-database-application-controls.html" property="item" typeof="WebPage"><span property="name">Managing Database Application Controls</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-page-level-items.html" property="item" typeof="WebPage"><span property="name">Managing Page-Level Items</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Page-Level Items</li>
+            </ol>
+            <a id="GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0" name="GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0"></a><a id="HTMDB05010"></a>
+            
+            <h2 id="HTMDB-GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0" class="sect2"><span class="enumeration_section">15.1.1 </span>Understanding Page-Level Items
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>An item is part of an HTML form such as a check box, date picker,  file
+        browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text
+        field, text area, and so on.</p>
+               <p>When defining an item, developers must follow defined naming conventions and follow specific rules when referencing item values stored in session state.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-page-level-items.html#GUID-DBE765CA-96D0-4062-A3BC-B402D167A305">About the Differences Between Page Items and Application Items</a><br>Page items are placed on a page and have associated user interface properties and Application items are not associated with a page.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-page-level-items.html#GUID-D057244E-B592-4C7B-AFAB-7615AA781470">About Item Naming Conventions</a><br>When creating an item name, developers must follow very specific item naming conventions.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-page-level-items.html#GUID-207E66F9-C8A6-4FD1-B2F4-12D4BB302D31">Referencing Item Values</a><br>You can reference item values stored in session state in regions, computations, processes, validation, and branches. 
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-page-level-items.html#GUID-2DB01EA1-444C-4657-BF17-B9C56479C673">About Referencing Items Using JavaScript</a><br>When you reference an item, the best approach is to reference by ID.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-page-level-items.html#GUID-18FF2087-3FA0-48C2-85C0-E45253D820B8">Working with Multiple Select List Item</a><br>Learn how to handle values returned from a multiple select list item.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0__GUID-1BC0A02B-782A-4B4D-82C2-1D5E9041DCAD">
+                  <p class="notep1">See Also:</p>
+                  
+                  <p><span class="q">"<a href="about-item-types.html#GUID-81BF829A-B26C-484D-A321-6A3F47C9192B" title="Learn about key attributes that control item functionality.">About Item Types</a>"</span></p>
+                  
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-page-level-items.html#GUID-77666224-27D0-4A0E-B5E3-EE5844E6CCB0" title="View existing page-level items, create new page-level items, and edit an item to change its appearance or behavior.">Managing Page-Level Items</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25304"></a><div class="props_rev_3"><a id="GUID-DBE765CA-96D0-4062-A3BC-B402D167A305" name="GUID-DBE765CA-96D0-4062-A3BC-B402D167A305"></a><h3 id="HTMDB-GUID-DBE765CA-96D0-4062-A3BC-B402D167A305" class="sect3"><span class="enumeration_section">15.1.1.1 </span>About the Differences Between Page Items and Application Items
+               </h3>
+               <div>
+                  <p>Page items are placed on a page and have associated user interface properties and Application items are not associated with a page.</p>
+                  <p>There are two types of items: page items and application items. <span class="bold">Page items</span> are placed on a page and have associated user interface properties, such as Display Only, Label and Label Template. Examples of page-level items include a check box, date picker, display as text, file browse field, popup list of values, select list, or a text area. In contrast <span class="bold">Application items</span> are not associated with a page and therefore have no user interface properties. You can use an application item as a global variable.
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-DBE765CA-96D0-4062-A3BC-B402D167A305__GUID-0326A17D-A009-4828-A9CD-F2E19F657997">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-application-level-items.html#GUID-F616E451-87EC-420A-BAAD-7A6D9BB5B4F7" title="Application-level items do not display, but are used as global variables to the application. You can use an application item as a global variable.">Managing Application-Level Items</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-level-items.html#GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0" title="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">Understanding Page-Level Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25310"></a><div class="props_rev_3"><a id="GUID-D057244E-B592-4C7B-AFAB-7615AA781470" name="GUID-D057244E-B592-4C7B-AFAB-7615AA781470"></a><h3 id="HTMDB-GUID-D057244E-B592-4C7B-AFAB-7615AA781470" class="sect3"><span class="enumeration_section">15.1.1.2 </span>About Item Naming Conventions
+               </h3>
+               <div>
+                  <p>When creating an item name, developers must follow very specific item naming conventions.</p>
+                  <p>When specifying an item name, remember the following rules. Item names must:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Be unique within an application.</p>
+                     </li>
+                     <li>
+                        <p>Not include quotation marks.</p>
+                     </li>
+                     <li>
+                        <p>Begin with a letter or a number, and subsequent characters can be letters, numbers, or underscore characters. </p>
+                     </li>
+                     <li>
+                        <p>Be case-insensitive.</p>
+                     </li>
+                     <li>
+                        <p>Should not exceed 30 characters. Items longer than 30 characters cannot be referenced using bind variable syntax. See <span class="q">"<a href="managing-session-state-values.html#GUID-A052DC04-0D04-4DEA-BDEF-4DCBFF489E07" title="Use bind variable syntax anywhere where you are using SQL or PL/SQL to reference session state of a specified item.&nbsp;">用绑定变量语法来引用会话状态</a>."</span></p>
+                     </li>
+                     <li>
+                        <p>Cannot contain letters outside the base ASCII character set.</p>
+                     </li>
+                  </ul>
+                  <p>As a best practice Oracle recommends including the page number when naming items. By default, wizards prefix page item names with <code class="codeph">P</code><span class="italic"><code class="codeph">&lt;page no&gt;</code></span><code class="codeph">_</code><span class="italic"><code class="codeph">&lt;item name&gt;</code></span> (for example, <code class="codeph">P1_NAME)</code>.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-level-items.html#GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0" title="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">Understanding Page-Level Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28294"></a><a id="HTMDB25335"></a><div class="props_rev_3"><a id="GUID-207E66F9-C8A6-4FD1-B2F4-12D4BB302D31" name="GUID-207E66F9-C8A6-4FD1-B2F4-12D4BB302D31"></a><h3 id="HTMDB-GUID-207E66F9-C8A6-4FD1-B2F4-12D4BB302D31" class="sect3"><span class="enumeration_section">15.1.1.3 </span>Referencing Item Values
+               </h3>
+               <div>
+                  <p>You can reference item values stored in session state in regions, computations, processes, validation, and branches. </p>
+                  <div class="section">
+                     <p><a href="understanding-page-level-items.html#GUID-207E66F9-C8A6-4FD1-B2F4-12D4BB302D31__CEGJAFEA" title="This table describes the supported syntax for referencing item values.">Table 15-1</a> describes the supported syntax for referencing item values.
+                     </p>
+                     <div class="tblformalwide" id="GUID-207E66F9-C8A6-4FD1-B2F4-12D4BB302D31__CEGJAFEA">
+                        <p class="titleintable">Table 15-1 Syntax for Referencing Item Values </p>
+                        <table cellpadding="4" cellspacing="0" class="FormalWide" title="Syntax for Referencing Item Values " summary="This table describes the supported syntax for referencing item values." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="17%" id="d160973e400">Type</th>
+                                 <th align="left" valign="bottom" width="28%" id="d160973e403">Syntax</th>
+                                 <th align="left" valign="bottom" width="54%" id="d160973e406">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="17%" id="d160973e411" headers="d160973e400 ">
+                                    <p>SQL</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d160973e411 d160973e403 ">
+                                    <p><code class="codeph">:MY_ITEM</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="54%" headers="d160973e411 d160973e406 ">
+                                    <p>Standard bind variable syntax for items whose names are no longer than 30 bytes. Use this syntax for references within a SQL query and within PL/SQL code.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="17%" id="d160973e422" headers="d160973e400 ">
+                                    <p>PL/SQL</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d160973e422 d160973e403 ">
+                                    <p><code class="codeph">V('MY_ITEM')</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="54%" headers="d160973e422 d160973e406 ">
+                                    <p>PL/SQL syntax referencing the item value using the <code class="codeph">V</code> function. Use this syntax in PL/SQL code of packages or stored procedures and functions. 
+                                    </p>
+                                    <p>Avoid this syntax in SQL statements. It may result in performance problems.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="17%" id="d160973e438" headers="d160973e400 ">
+                                    <p>PL/SQL</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d160973e438 d160973e403 ">
+                                    <p><code class="codeph">NV('MY_NUMERIC_ITEM')</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="54%" headers="d160973e438 d160973e406 ">
+                                    <p>Standard PL/SQL syntax referencing the numeric item value using the <code class="codeph">NV</code> function. Use this syntax in PL/SQL code of packages or stored procedures and functions.
+                                    </p>
+                                    <p>Avoid this syntax in SQL statements. It may result in performance problems.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="17%" id="d160973e454" headers="d160973e400 ">
+                                    <p>Static Text (exact)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d160973e454 d160973e403 ">
+                                    <p><code class="codeph">&amp;MY_ITEM.</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="54%" headers="d160973e454 d160973e406 ">
+                                    <p>Static text. Exact Substitution.</p>
+                                    <p><span class="bold">Note</span>: Exact substitution syntax should be avoided in SQL or PL/SQL code because it can result in SQL Injection vulnerabilities. 
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <p>You can set the value of an item in your application using any of the following methods:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>For page-level items, use the Source Attribute to set the item value. </p>
+                           <p>From the page, select the item name to view the Edit Page Item page. Scroll down to Source and edit the appropriate fields.</p>
+                           <p>You can also set the value of an item in any region based on PL/SQL or a process using the following syntax:</p><pre class="oac_no_warn" dir="ltr">BEGIN
+ :MY_ITEM :=  'new value';
+END;
+</pre></li>
+                        <li>
+                           <p>Pass the value on a URL reference using <code class="codeph">f?p</code> syntax. For example:
+                           </p><pre class="oac_no_warn" dir="ltr">f?p=100:101:10636547268728380919::NO::MY_ITEM:ABC
+</pre></li>
+                        <li>
+                           <p>Set the value using a computation. Computations are designed to set item values. For example:</p><pre class="oac_no_warn" dir="ltr">TO_CHAR(SYSDATE,'Day DD Month, YYYY');
+</pre></li>
+                        <li>
+                           <p>Use the PL/SQL API to set an item value within a PL/SQL context. For example:</p><pre class="oac_no_warn" dir="ltr">APEX_UTIL.SET_SESSION_STATE('MY_ITEM',SYSDATE);
+F</pre></li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-207E66F9-C8A6-4FD1-B2F4-12D4BB302D31__GUID-48955E22-C25C-45BA-BA41-F26C64826FF3">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="managing-session-state-values.html#GUID-985BE4F8-4C7F-46DD-8803-6C7DD18F6F08" title="Clearing a cached value resets the value to null. You can clear the cached value for specific items, all items on a page, all pages in an application, or the current user session.">清除会话状态</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-session-state-values.html#GUID-EF798946-9E8A-430E-94F5-C2AF6EABE264" title="Manage session state to store and retrieve values for a user as the user navigates between different application pages.">管理会话状态值</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-level-items.html#GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0" title="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">Understanding Page-Level Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25492"></a><div class="props_rev_3"><a id="GUID-2DB01EA1-444C-4657-BF17-B9C56479C673" name="GUID-2DB01EA1-444C-4657-BF17-B9C56479C673"></a><h3 id="HTMDB-GUID-2DB01EA1-444C-4657-BF17-B9C56479C673" class="sect3"><span class="enumeration_section">15.1.1.4 </span>About Referencing Items Using JavaScript
+               </h3>
+               <div>
+                  <p>When you reference an item, the best approach is to reference by ID.</p>
+                  <p>If you view the HTML source of an Oracle Application Express page in a web browser, you would notice that all items have an id attribute. This ID corresponds to the name of the item, not the item label. For example, if you create an item with the name <code class="codeph">P1_FIRST_NAME</code> and a label of <code class="codeph">First Name</code>, the ID is <code class="codeph">P1_FIRST_NAME</code>. 
+                  </p>
+                  <p>You can get and set item attributes and values using the JavaScript functions <code class="codeph">$v('P1_FIRST_NAME')</code> and <code class="codeph">$s('P1_FIRST_NAME', 'Joe');</code>. Consider the following example:
+                  </p><pre class="oac_no_warn" dir="ltr">function showFirstName(){
+  alert('First Name is ' +$v('P1_FIRST_NAME'))
+};
+function setFirstName(pFirstName){
+  $s('P1_FIRST_NAME', pFirstName);
+};
+</pre><p>These functions can be called by other JavaScript functions or with the Execute JavaScript code dynamic action.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-2DB01EA1-444C-4657-BF17-B9C56479C673__GUID-5F48D524-658C-4C44-93D0-F4F32F4C524E">
+                     <p class="notep1">See Also:</p>
+                     <p>"APEX_JAVASCRIPT" in <a href="../aeapi/APEX_JAVASCRIPT.html#AEAPI534" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-level-items.html#GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0" title="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">Understanding Page-Level Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25337"></a><div class="props_rev_3"><a id="GUID-18FF2087-3FA0-48C2-85C0-E45253D820B8" name="GUID-18FF2087-3FA0-48C2-85C0-E45253D820B8"></a><h3 id="HTMDB-GUID-18FF2087-3FA0-48C2-85C0-E45253D820B8" class="sect3"><span class="enumeration_section">15.1.1.5 </span>Working with Multiple Select List Item
+               </h3>
+               <p>Learn how to handle values returned from a multiple select list item.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="understanding-page-level-items.html#GUID-D3F907D8-AEE9-442C-AF58-3B8C6DB24653">About Handling Values Returned from a Multiple Select List Item</a><br></li>
+                     <li class="ulchildlink"><a href="understanding-page-level-items.html#GUID-1A9F566F-2A64-4E57-888A-640BD748CAF8">Using APEX_UTIL.STRING_TO_TABLE to Convert Selected Values</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-level-items.html#GUID-362F8ADE-43E7-4C6B-9CE6-707C9A5FA0C0" title="An item is part of an HTML form such as a check box, date picker, file browse field, popup list of values (LOV), select list, shuttle, flip toggle switch, text field, text area, and so on.">Understanding Page-Level Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29262"></a><div class="props_rev_3"><a id="GUID-D3F907D8-AEE9-442C-AF58-3B8C6DB24653" name="GUID-D3F907D8-AEE9-442C-AF58-3B8C6DB24653"></a><h4 id="HTMDB-GUID-D3F907D8-AEE9-442C-AF58-3B8C6DB24653" class="sect4"><span class="enumeration_section">15.1.1.5.1 </span>About Handling Values Returned from a Multiple Select List Item
+                  </h4>
+                  <div>
+                     <p>A multiple select item renders as a multiple select list form element which can be either a Multiselect List or Shuttle item type. When submitted, selected values are returned in a single colon-delimited string. You can handle values in this format in three ways: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Using the <code class="codeph">INSTR</code> function
+                           </p>
+                        </li>
+                        <li>
+                           <p>Using the <code class="codeph">APEX_UTIL.STRING_TO_TABLE</code> function
+                           </p>
+                        </li>
+                        <li>
+                           <p>Creating a shuttle</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-page-level-items.html#GUID-18FF2087-3FA0-48C2-85C0-E45253D820B8" title="Learn how to handle values returned from a multiple select list item.">Working with Multiple Select List Item</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25338"></a><div class="props_rev_3"><a id="GUID-1A9F566F-2A64-4E57-888A-640BD748CAF8" name="GUID-1A9F566F-2A64-4E57-888A-640BD748CAF8"></a><h4 id="HTMDB-GUID-1A9F566F-2A64-4E57-888A-640BD748CAF8" class="sect4"><span class="enumeration_section">15.1.1.5.2 </span>Using APEX_UTIL.STRING_TO_TABLE to Convert Selected Values
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Suppose you had a report on the <code class="codeph">EMP</code> and <code class="codeph">DEPT</code> tables that is limited by the departments selected from a Department multiple select list. First, you create the multiple select item, P1_DEPTNO, using the following query:
+                        </p><pre class="oac_no_warn" dir="ltr">SELECT dname, deptno
+FROM dept
+</pre><p>Second, you return only those employees within the selected departments as follows:</p><pre class="oac_no_warn" dir="ltr">SELECT ename, job, sal, comm, dname
+FROM emp e, dept d
+WHERE d.deptno = e.deptno
+AND instr(':'||:P1_DEPTNO||':',':'||e.deptno||':') &gt; 0
+
+</pre><p>Next, assume you want to programmatically step through the values selected in the multiple select item, P1_DEPTNO. To accomplish this task, convert the colon-delimited string into a PL/SQL array using the <code class="codeph">APEX_UTIL.STRING_TO_TABLE</code> function. The following example demonstrates how to insert the selected departments into an audit table containing the date of the query. 
+                        </p><pre class="oac_no_warn" dir="ltr">DECLARE
+    l_selected APEX_APPLICATION_GLOBAL.VC_ARR2;
+BEGIN
+  --
+  -- Convert the colon separated string of values into
+  -- a PL/SQL array 
+
+  l_selected := APEX_UTIL.STRING_TO_TABLE(:P1_DEPTNO);
+
+  --
+  -- Loop over array to insert department numbers and sysdate
+  --
+
+  FOR i IN 1..l_selected.count 
+  LOOP
+    INSERT INTO report_audit_table (report_date, selected_department)
+        VALUES (sysdate, l_selected(i));
+  END LOOP;
+END;
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-1A9F566F-2A64-4E57-888A-640BD748CAF8__GUID-454962D5-59C6-4585-9249-01B724B4152D">
+                        <p class="notep1">See Also:</p>
+                        <p>"STRING_TO_TABLE Function" in <a href="../aeapi/STRING_TO_TABLE-Function.html#AEAPI185" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-page-level-items.html#GUID-18FF2087-3FA0-48C2-85C0-E45253D820B8" title="Learn how to handle values returned from a multiple select list item.">Working with Multiple Select List Item</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

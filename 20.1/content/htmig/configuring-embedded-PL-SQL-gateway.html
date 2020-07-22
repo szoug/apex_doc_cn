@@ -1,0 +1,507 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Configuring the Embedded PL/SQL Gateway">
+      <meta name="abstract" content="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">
+      <meta name="description" content="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">
+      <meta name="DC.subject" content="embedded PL/SQL gateway, configuring, installation, configuring embedded PL/SQL gateway, configuring, embedded PL/SQL gateway, apex_epg_config.sql, apex_epg_config.sql, updating images directory, Oracle XML DB Protocol server, Oracle XML DB Protocol Server, verifying HTTP server port, verifying HTTP server port, Oracle XML DB Protocol Server, enabling, configuring behind reverse proxy, configuring behind load balancer">
+      <meta name="keywords" content="embedded PL/SQL gateway, configuring, installation, configuring embedded PL/SQL gateway, configuring, embedded PL/SQL gateway, apex_epg_config.sql, apex_epg_config.sql, updating images directory, Oracle XML DB Protocol server, Oracle XML DB Protocol Server, verifying HTTP server port, verifying HTTP server port, Oracle XML DB Protocol Server, enabling, configuring behind reverse proxy, configuring behind load balancer">
+      <meta name="DC.Relation" scheme="URI" content="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91">
+      <meta name="DC.Relation" scheme="URI" content="configuring-embedded-PL-SQL-gateway.html#GUID-C9847FEA-E02E-4B5A-86FA-D15983833BDC">
+      <meta name="DC.Relation" scheme="URI" content="configuring-embedded-PL-SQL-gateway.html#GUID-194241A1-B17E-4C83-92D8-B34F110144EE">
+      <meta name="DC.Relation" scheme="URI" content="configuring-embedded-PL-SQL-gateway.html#GUID-25F94A9C-24AF-4204-BB99-97037A4B2057">
+      <meta name="DC.Relation" scheme="URI" content="configuring-embedded-PL-SQL-gateway.html#GUID-C155B841-223A-4590-B971-DA80141B21ED">
+      <meta name="DC.Relation" scheme="URI" content="configuring-embedded-PL-SQL-gateway.html#GUID-C163D819-B796-4C11-8E89-69D7406074C2">
+      <meta name="DC.Relation" scheme="URI" content="configuring-embedded-PL-SQL-gateway.html#GUID-17748D6B-AC73-4F07-ABC2-8710D1BC0A41">
+      <meta name="DC.Relation" scheme="URI" content="configuring-embedded-PL-SQL-gateway.html#GUID-C57329A2-4B0B-4FF0-8187-11AC8FC28200">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-3C35896B-9987-4297-920A-64044A01F17F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">
+      <meta name="description" content="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">
+      <title>Configuring the Embedded PL/SQL Gateway</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="downloading-and-installing-Oracle-AE.html" title="Previous" type="text/html">
+      <link rel="next" href="enabling-network-services-in-Oracledb-11g-or-later.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="downloading-and-installing-Oracle-AE.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="enabling-network-services-in-Oracledb-11g-or-later.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Installing-AE-and-configuring-PLSQL-gateway.html" property="item" typeof="WebPage"><span property="name">Installing Application Express and Configuring
+                Web Listener - Embedded PL/SQL Gateway  (Deprecated)</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Configuring the Embedded PL/SQL Gateway</li>
+            </ol>
+            <a id="GUID-3C35896B-9987-4297-920A-64044A01F17F" name="GUID-3C35896B-9987-4297-920A-64044A01F17F"></a><a id="HTMIG29203"></a>
+            
+            <h2 id="HTMIG-GUID-3C35896B-9987-4297-920A-64044A01F17F" class="sect2"><span class="enumeration_section">A.4 </span>Configuring the Embedded PL/SQL Gateway
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>To configure the embedded PL/SQL gateway, you run a configuration script and unlock the <code class="codeph">ANONYMOUS</code> account.
+               </p>
+               <p>The embedded PL/SQL gateway installs with the Oracle Database 11<span class="italic">g</span> and later. However, you must configure it before you can use it with Oracle Application Express. To configure the embedded PL/SQL gateway, you run a configuration script and unlock the <code class="codeph">ANONYMOUS</code> account.
+               </p>
+               <div class="infoboxnote" id="GUID-3C35896B-9987-4297-920A-64044A01F17F__GUID-2C3DAC72-D760-4530-8427-B27DFAB2620F">
+                  <p class="notep1">Note:</p>
+                  <p>The Oracle XML DB Protocol Server with the Embedded PL/SQL Gateway is not supported before Oracle Database 11<span class="italic">g</span>.
+                  </p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="configuring-embedded-PL-SQL-gateway.html#GUID-C9847FEA-E02E-4B5A-86FA-D15983833BDC">Running the apex_epg_config.sql Configuration Script</a><br>Run the <code class="codeph">apex_epg_config.sql</code> script. Then, unlock the <code class="codeph">ANONYMOUS</code> account.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-embedded-PL-SQL-gateway.html#GUID-194241A1-B17E-4C83-92D8-B34F110144EE">Updating the Images Directory When Upgrading from a Previous Release</a><br>Run the <code class="codeph">apex_epg_config.sql</code> script to update the <code class="codeph">images</code> directory. 
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-embedded-PL-SQL-gateway.html#GUID-25F94A9C-24AF-4204-BB99-97037A4B2057">Verifying the Port Assigned to HTTP on the Oracle XML DB HTTP Server</a><br>Start SQL* Plus and connect to the database and enter the statement  to verify the port number assigned to HTTP on the Oracle XML DB HTTP Server.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-embedded-PL-SQL-gateway.html#GUID-C155B841-223A-4590-B971-DA80141B21ED">Verifying the Oracle XML DB Protocol Server Port</a><br>Start SQL* Plus and connect to the database and enter the statement to verify the port number where the Oracle XML DB Protocol Server is running.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-embedded-PL-SQL-gateway.html#GUID-C163D819-B796-4C11-8E89-69D7406074C2">Enabling Oracle XML DB Protocol Server</a><br>Start SQL* Plus and connect to the database and run a SQL statement to enable Oracle XML DB Protocol Server.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-embedded-PL-SQL-gateway.html#GUID-17748D6B-AC73-4F07-ABC2-8710D1BC0A41">Configuring Static File Support</a><br>For configuring static files, you must run             <code class="codeph">apex_rest_config.sql</code> after a new installation of Oracle Application         Express.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-embedded-PL-SQL-gateway.html#GUID-C57329A2-4B0B-4FF0-8187-11AC8FC28200">About Configuring Embedded PL/SQL Gateway Behind a Reverse Proxy or Load Balancer</a><br>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. Execute the PL/SQL block.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-3C35896B-9987-4297-920A-64044A01F17F__GUID-B554E7A7-ECC7-45DD-B06A-7B8011119877">
+                  <p class="notep1">See Also:</p>
+                  <div class="p">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="choosing-web-listener.html#GUID-450226C4-25BF-4124-A900-986DBBEB7406" title="In order to run, Oracle Application Express must have access to a Web listener.">Choosing a Web Listener</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="choosing-web-listener.html#GUID-570A97EA-1A5E-440C-9D04-21F2D5589454" title="Oracle XML DB Protocol Server with the embedded PL/SQL gateway installs with Oracle Database.">About the Embedded PL/SQL Gateway (Deprecated)</a>"</span></p>
+                        </li>
+                     </ul> 
+                  </div>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29205"></a><div class="props_rev_3"><a id="GUID-C9847FEA-E02E-4B5A-86FA-D15983833BDC" name="GUID-C9847FEA-E02E-4B5A-86FA-D15983833BDC"></a><h3 id="HTMIG-GUID-C9847FEA-E02E-4B5A-86FA-D15983833BDC" class="sect3"><span class="enumeration_section">A.4.1 </span>Running the apex_epg_config.sql Configuration Script
+               </h3>
+               <div>
+                  <p>Run the <code class="codeph">apex_epg_config.sql</code> script. Then, unlock the <code class="codeph">ANONYMOUS</code> account.
+                  </p>
+                  <div class="section">
+                     <p>You configure the embedded PL/SQL gateway by running the configuration script <code class="codeph">apex_epg_config.sql</code>. Then, you unlock the <code class="codeph">ANONYMOUS</code> account.
+                     </p>
+                     <p>To run the <code class="codeph">apex_epg_config.sql</code> configuration script:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <div class="infoboxnotewarn" id="GUID-C9847FEA-E02E-4B5A-86FA-D15983833BDC__GUID-B2D59275-61F9-4345-BE51-A7282E203F49">
+                        <p class="notep1">WARNING:</p>
+                        <p>This script has to be executed only on the database server . It's not possible to perform a remote connect to the database server. The database server should have access to the specified directory. It's also not possible to map a network directory.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the Oracle Application Express software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>If you are configuring a PDB, enter the following statement:</span><div><pre class="pre codeblock"><code>ALTER SESSION SET CONTAINER = &lt;PDB_NAME&gt;;
+</code></pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Run <a id="d18627e293" class="indexterm-anchor"></a><a id="d18627e295" class="indexterm-anchor"></a><code class="codeph">apex_epg_config.sql</code> passing the file system path to the base directory where the Oracle Application Express software was unzipped as shown in the following example: </span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code>@apex_epg_config.sql <span class="italic">SYSTEM_DRIVE:\TEMP</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>@apex_epg_config.sql /<span class="italic">tmp</span></code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Unlock the <code class="codeph">ANONYMOUS</code> account. If configuring a PDB, run this
+                    statement in <code class="codeph">CDB$ROOT</code>. Enter the following statement:</span><div>
+                           <pre class="pre codeblock"><code>ALTER USER ANONYMOUS ACCOUNT UNLOCK;
+</code></pre>
+                           </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-embedded-PL-SQL-gateway.html#GUID-3C35896B-9987-4297-920A-64044A01F17F" title="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">Configuring the Embedded PL/SQL Gateway</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29459"></a><div class="props_rev_3"><a id="GUID-194241A1-B17E-4C83-92D8-B34F110144EE" name="GUID-194241A1-B17E-4C83-92D8-B34F110144EE"></a><h3 id="HTMIG-GUID-194241A1-B17E-4C83-92D8-B34F110144EE" class="sect3"><span class="enumeration_section">A.4.2 </span>Updating the Images Directory When Upgrading from a Previous Release
+               </h3>
+               <div>
+                  <p>Run the <code class="codeph">apex_epg_config.sql</code> script to update the <code class="codeph">images</code> directory. 
+                  </p>
+                  <div class="section">
+                     <p>If you are upgrading Oracle Application Express from a previous release, you must run the <a id="d18627e406" class="indexterm-anchor"></a><code class="codeph">apex_epg_config.sql </code>script to update the <code class="codeph">images</code> directory. 
+                     </p>
+                     <div class="infobox-tip" id="GUID-194241A1-B17E-4C83-92D8-B34F110144EE__GUID-B6FF5004-4C58-4003-99CD-CE3AC3A536D0">
+                        <p class="notep1">Tip:</p>
+                        <p>If this is a new installation, this step is unnecessary. The images will be loaded by running <code class="codeph">apex_epg_config.sql</code> as described in the prior section.
+                        </p>
+                     </div>
+                     <p>To run the <code class="codeph">apex_epg_config.sql</code> script:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the Oracle Application Express software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run <code class="codeph">apex_epg_config.sql</code> passing the file system path to the base directory where the Oracle Application Express software was unzipped as shown in the following example: </span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code>@apex_epg_config.sql <span class="italic">SYSTEM_DRIVE:\TEMP</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>@apex_epg_config.sql /tmp
+</code></pre></li>
+                           </ul>
+                           <div class="infobox-tip" id="GUID-194241A1-B17E-4C83-92D8-B34F110144EE__GUID-3CB2BF0B-45EB-4150-93C9-C9486005BBE8">
+                              <p class="notep1">Tip:</p>
+                              <p>The above examples assume that you unzipped Oracle Application Express in a directory called <code class="codeph">TEMP</code> on Windows and <code class="codeph">tmp</code> on UNIX or Linux.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-embedded-PL-SQL-gateway.html#GUID-3C35896B-9987-4297-920A-64044A01F17F" title="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">Configuring the Embedded PL/SQL Gateway</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-25F94A9C-24AF-4204-BB99-97037A4B2057" name="GUID-25F94A9C-24AF-4204-BB99-97037A4B2057"></a><h3 id="HTMIG-GUID-25F94A9C-24AF-4204-BB99-97037A4B2057" class="sect3"><span class="enumeration_section">A.4.3 </span>Verifying the Port Assigned to HTTP on the Oracle XML DB HTTP Server
+               </h3>
+               <div>
+                  <p>Start SQL* Plus and connect to the database and enter the statement  to verify the port number assigned to HTTP on the Oracle XML DB HTTP Server.</p>
+                  <div class="section">
+                     <p>The embedded PL/SQL gateway runs in the Oracle XML DB Protocol Server in the Oracle database. </p>
+                     <p>To verify the port number assigned to HTTP on the Oracle XML DB HTTP Server:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as SYS specifying the SYSDBA role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:</span>\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Enter the following statement to verify the port number:</span><div><pre class="pre codeblock"><code>SELECT DBMS_XDB.GETHTTPPORT FROM DUAL;
+</code></pre><p> If the port number returns <code class="codeph">0</code>, the Oracle XML DB HTTP Server is disabled. 
+                           </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-embedded-PL-SQL-gateway.html#GUID-3C35896B-9987-4297-920A-64044A01F17F" title="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">Configuring the Embedded PL/SQL Gateway</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29207"></a><div class="props_rev_3"><a id="GUID-C155B841-223A-4590-B971-DA80141B21ED" name="GUID-C155B841-223A-4590-B971-DA80141B21ED"></a><h3 id="HTMIG-GUID-C155B841-223A-4590-B971-DA80141B21ED" class="sect3"><span class="enumeration_section">A.4.4 </span>Verifying the Oracle XML DB Protocol Server Port
+               </h3>
+               <div>
+                  <p>Start SQL* Plus and connect to the database and enter the statement to verify the port number where the Oracle XML DB Protocol Server is running.</p>
+                  <div class="section">
+                     <p>The Embedded PL/SQL Gateway runs in the Oracle XML DB Protocol Server in the Oracle database. You can determine if the Oracle XML DB Protocol Server is enabled by verifying the associated port number. </p>
+                     <p>To verify the port number where the Oracle XML DB Protocol Server is running:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Enter the following statement to verify the port number:</span><div><pre class="pre codeblock"><code>SELECT DBMS_XDB.GETHTTPPORT FROM DUAL;
+</code></pre><p> If the port number returns <code class="codeph">0</code>, the Oracle XML DB Protocol Server is disabled. 
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To enable the Oracle XML DB Protocol Server.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C155B841-223A-4590-B971-DA80141B21ED__GUID-DEF60989-F6C7-4557-9F71-0B2C04B38F86">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="configuring-embedded-PL-SQL-gateway.html#GUID-C163D819-B796-4C11-8E89-69D7406074C2" title="Start SQL* Plus and connect to the database and run a SQL statement to enable Oracle XML DB Protocol Server.">Enabling Oracle XML DB Protocol Server</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-embedded-PL-SQL-gateway.html#GUID-3C35896B-9987-4297-920A-64044A01F17F" title="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">Configuring the Embedded PL/SQL Gateway</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29208"></a><div class="props_rev_3"><a id="GUID-C163D819-B796-4C11-8E89-69D7406074C2" name="GUID-C163D819-B796-4C11-8E89-69D7406074C2"></a><h3 id="HTMIG-GUID-C163D819-B796-4C11-8E89-69D7406074C2" class="sect3"><span class="enumeration_section">A.4.5 </span>Enabling Oracle XML DB Protocol Server
+               </h3>
+               <div>
+                  <p>Start SQL* Plus and connect to the database and run a SQL statement to enable Oracle XML DB Protocol Server.</p>
+                  <div class="section">
+                     <p>The embedded PL/SQL gateway runs in the Oracle XML DB Protocol Server in the Oracle database. </p>
+                     <p>To enable Oracle XML DB Protocol Server:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Enter a statement similar to the following:</span><div><pre class="pre codeblock"><code>EXEC DBMS_XDB.SETHTTPPORT(<span class="italic">port</span>);
+</code></pre><p>For example:</p><pre class="pre codeblock"><code>EXEC DBMS_XDB.SETHTTPPORT(8080);
+</code></pre></div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-C163D819-B796-4C11-8E89-69D7406074C2__GUID-9FF225ED-E432-4F7A-9310-0DA2ACEA2C1E">
+                        <p class="notep1">Note:</p>
+                        <p>Port numbers less than 1024 are reserved for use by privileged processes on many operating systems. To enable the XML DB HTTP listener on a port less than 1024, such as 80, review the documentation.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C163D819-B796-4C11-8E89-69D7406074C2__GUID-82D05326-CD71-442C-B4D8-A9C29B3907DD">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=ADXDB-GUID-0476309D-E3DF-4C56-BF21-68CD04D00C98" target="_blank">Repository Access
+                                    Using Protocols</a>"</span> in <span><cite>Oracle XML&nbsp;DB Developer’s Guide</cite></span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmig&amp;id=NETRF-GUID-F3016CD3-9168-4BCF-BF25-774FA2682C15" target="_blank">Protocol Address
+                                    Configuration</a>"</span> in <span><cite>Oracle Database Net Services Reference</cite></span> .
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-embedded-PL-SQL-gateway.html#GUID-3C35896B-9987-4297-920A-64044A01F17F" title="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">Configuring the Embedded PL/SQL Gateway</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29473"></a><div class="props_rev_3"><a id="GUID-17748D6B-AC73-4F07-ABC2-8710D1BC0A41" name="GUID-17748D6B-AC73-4F07-ABC2-8710D1BC0A41"></a><h3 id="HTMIG-GUID-17748D6B-AC73-4F07-ABC2-8710D1BC0A41" class="sect3"><span class="enumeration_section">A.4.6 </span>Configuring Static File Support
+               </h3>
+               <div>
+                  <p>For configuring static files, you must run
+            <code class="codeph">apex_rest_config.sql</code> after a new installation of Oracle Application
+        Express.
+                  </p>
+                  <p>Oracle Application Express enables application developers to include static files with their applications. Static files can be associated with a workspace, an application, a plug-in, or an application theme. When using the embedded PL/SQL gateway as your web listener, the necessary configuration to support static files is performed as part of the embedded PL/SQL gateway configuration.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-17748D6B-AC73-4F07-ABC2-8710D1BC0A41__GUID-75FDE6D7-BD43-4CD9-B6EA-03EF759C07AE">
+                     <p class="notep1">See Also:</p>
+                     <div class="p">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>For new installations, see <span class="q">"<a href="configuring-embedded-PL-SQL-gateway.html#GUID-C9847FEA-E02E-4B5A-86FA-D15983833BDC" title="Run the apex_epg_config.sql script. Then, unlock the ANONYMOUS account.">Running the apex_epg_config.sql Configuration Script</a>"</span></p>
+                           </li>
+                           <li>
+                              <p>For upgrade installations, see <span class="q">"<a href="configuring-embedded-PL-SQL-gateway.html#GUID-194241A1-B17E-4C83-92D8-B34F110144EE" title="Run the apex_epg_config.sql script to update the images directory.">Updating the Images Directory When Upgrading from a Previous Release</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-embedded-PL-SQL-gateway.html#GUID-3C35896B-9987-4297-920A-64044A01F17F" title="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">Configuring the Embedded PL/SQL Gateway</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29345"></a><div class="props_rev_3"><a id="GUID-C57329A2-4B0B-4FF0-8187-11AC8FC28200" name="GUID-C57329A2-4B0B-4FF0-8187-11AC8FC28200"></a><h3 id="HTMIG-GUID-C57329A2-4B0B-4FF0-8187-11AC8FC28200" class="sect3"><span class="enumeration_section">A.4.7 </span>About Configuring Embedded PL/SQL Gateway Behind a Reverse Proxy or Load Balancer
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. Execute the PL/SQL block.
+                  </p>
+                  <p>If Oracle Application Express is running behind a reverse proxy or load balancer, you set the CGI environment variables <code class="codeph">PROTOCOL</code> and <code class="codeph">HTTP_HOST</code>. For embedded PL/SQL gateway, you must call the following PL/SQL block:
+                  </p>
+                  <ol>
+                     <li>
+                        <p>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the installation software.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           <li>
+                              <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p>Execute the following PL/SQL block:</p><pre class="pre codeblock"><code>BEGIN
+ DBMS_EPG.set_dad_attribute (
+ dad_name =&gt; 'APEX',
+ attr_name =&gt; 'cgi-environment-list',
+ attr_value =&gt; 'REQUEST_PROTOCOL=https');
+ DBMS_EPG.set_dad_attribute (
+ dad_name =&gt; 'APEX',
+ attr_name =&gt; 'cgi-environment-list',
+ attr_value =&gt; 'HTTP_HOST=external-name:external-port');
+ commit;
+END;
+/
+</code></pre></li>
+                  </ol>
+                  <p>To learn more, see your Java EE application servers documentation.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-embedded-PL-SQL-gateway.html#GUID-3C35896B-9987-4297-920A-64044A01F17F" title="To configure the embedded PL/SQL gateway, you run a configuration script and unlock the ANONYMOUS account.">Configuring the Embedded PL/SQL Gateway</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

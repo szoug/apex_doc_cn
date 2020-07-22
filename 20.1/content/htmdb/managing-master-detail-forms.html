@@ -1,0 +1,992 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating Master Detail Forms">
+      <meta name="abstract" content="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">
+      <meta name="description" content="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">
+      <meta name="DC.subject" content="forms, creating master detail, master detail, creating, master detail, master detail form, about, master detail form, creating with Create Application Wizard, Create Application Wizard, creating master detail forms, creating Stacked master detail, Stacked master detail, creating with Create Page Wizard, creating using local database, creating with Create Page Wizard, creating using external data sources, creating Side by Side, creating Side by Side master detail, Side by Side master detail, creating with Create Page Wizard, creating Side by Side master detail, creating using local database, creating with Create Page Wizard, creating using external data sources, creating Drill Down, creating Drill Down master detail, Drill Down master detail, creating Drill Down, creating drill down, drill down master detail">
+      <meta name="keywords" content="forms, creating master detail, master detail, creating, master detail, master detail form, about, master detail form, creating with Create Application Wizard, Create Application Wizard, creating master detail forms, creating Stacked master detail, Stacked master detail, creating with Create Page Wizard, creating using local database, creating with Create Page Wizard, creating using external data sources, creating Side by Side, creating Side by Side master detail, Side by Side master detail, creating with Create Page Wizard, creating Side by Side master detail, creating using local database, creating with Create Page Wizard, creating using external data sources, creating Drill Down, creating Drill Down master detail, Drill Down master detail, creating Drill Down, creating drill down, drill down master detail">
+      <meta name="DC.Relation" scheme="URI" content="developing-forms.html#GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E">
+      <meta name="DC.Relation" scheme="URI" content="managing-master-detail-forms.html#GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381">
+      <meta name="DC.Relation" scheme="URI" content="managing-master-detail-forms.html#GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716">
+      <meta name="DC.Relation" scheme="URI" content="managing-master-detail-forms.html#GUID-38EEBB22-915A-46F5-BB33-0C1B0815F49D">
+      <meta name="DC.Relation" scheme="URI" content="managing-master-detail-forms.html#GUID-E5FC5425-FEC8-41CF-9F85-0D41286A122A">
+      <meta name="DC.Relation" scheme="URI" content="managing-master-detail-forms.html#GUID-4B8E1A41-23F2-4812-80F6-204B15C66D6D">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">
+      <meta name="description" content="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">
+      <title>Creating Master Detail Forms</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-making-grids-editable.html" title="Previous" type="text/html">
+      <link rel="next" href="validating-user-input-in-forms.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-making-grids-editable.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="validating-user-input-in-forms.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="developing-forms.html" property="item" typeof="WebPage"><span property="name">Developing Forms</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating Master Detail Forms</li>
+            </ol>
+            <a id="GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB" name="GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB"></a><a id="HTMDB30059"></a>
+            
+            <h2 id="HTMDB-GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB" class="sect2"><span class="enumeration_section">11.5 </span>Creating Master Detail Forms
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381">About Master Detail Forms</a><br>A master detail form enables users to query, insert, update,                                 and delete values from two related tables or views. You choose the                                 tables on which to build the master and detail regions.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716">Creating a Master Detail Form Using the Create Application Wizard</a><br>Run the Create Application Wizard to create a new application containing one or more         pages. Supported master detail forms include Stacked and Side by Side.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-38EEBB22-915A-46F5-BB33-0C1B0815F49D">Creating a Stacked Master Detail Using the Create Page Wizard</a><br>Run the Create Page Wizard to add a single page (or Stacked) master         detail form that uses an local or external data source.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-E5FC5425-FEC8-41CF-9F85-0D41286A122A">Creating a Side by Side Master Detail Using the Create Page Wizard</a><br>Run the Create Page Wizard to add a new page with a Side by Side master         detail that uses a local or external data source.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-4B8E1A41-23F2-4812-80F6-204B15C66D6D">Creating a Drill Down Master Detail Using the Create Page Wizard</a><br>Run the Create Page Wizard to add a two page Drill Down master detail         that uses a local or external data source.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB__GUID-1FC3385A-1B77-486E-9865-2B96A0BCC7A6">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="managing-interactive-grid-region-attributes.html#GUID-20319811-CA35-4A8A-9698-4963E91E1DAA">Creating Master Detail from an Existing Interactive Grid</a>"</span> and <span class="q">"<a href="creating-legacy-master-detail.html#GUID-95ADACFB-337B-4929-9959-4444F740DE72" title="Create a legacy master detail form by running the Create Page Wizard and selecting Legacy Page and then Legacy Master Detail.">Creating a Legacy Master Detail Form</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="developing-forms.html#GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E" title="Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.">Developing Forms</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB30060"></a><div class="props_rev_3"><a id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381" name="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381"></a><h3 id="HTMDB-GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381" class="sect3"><span class="enumeration_section">11.5.1 </span>About Master Detail Forms
+               </h3>
+               <div>
+                  <p>A master detail form enables users to query, insert, update,
+                                and delete values from two related tables or views. You choose the
+                                tables on which to build the master and detail regions.</p>
+                  <p>A master detail form reflects a one-to-many relationship between tables in a
+      database. Typically, a master detail form displays a master row and multiple detail rows. When
+      you create a master detail form using the Create Page or Create Application Wizards, you
+      choose the tables on which to build the master form and the detail form. <span><span class="uicontrol bold">App
+                                        Builder</span></span> supports three types of master detail form options: <strong class="term">Stacked</strong>; <strong class="term">Drill Down</strong>; and <strong class="term">Side by Side</strong>. While the Create
+      Page Wizard supports all master detail form options, the Create Application Wizard supports
+      only Stacked and Side by Side.
+                  </p>
+                  <div class="infobox-tip" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__GUID-18CAE014-AD29-45FC-9B34-C5E70AF23435">
+                     <p class="notep1">Tip:</p>
+                     <p>To see master detail examples, install the sample application, <span class="italic">Sample Master Detail</span> and select a master detail type in the left navigation menu. See <span class="q">"<a href="managing-packaged-applications-in-a-full-development-environment.html#GUID-34C7101B-4B2F-4502-B365-92798DDBCA38">安装生产力和示例应用</a>."</span></p>
+                  </div>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__GUID-C7BCA55D-458F-4661-90F3-79A4744DAFEC">Stacked Master Detail</p>
+                     <p>A <strong class="term">Stacked</strong> master detail form contains a single page with editable interactive grids based on two related tables or views. Users select a row in the master grid to update the detail grids. Developers can create a stacked master detail with either the Create Application Wizard or the Create Page Wizard.
+                     </p>
+                     <p>The following example displays master detail interactive grids on the same page. The user has option of interacting with either the master or the detail without leaving the page.</p><img height="403" width="1019" src="img/master_detail_single_1.png" alt="Description of master_detail_single_1.png follows" title="Description of master_detail_single_1.png follows" longdesc="img_text/master_detail_single_1.html"><br><a href="img_text/master_detail_single_1.html">Description of the illustration master_detail_single_1.png</a><p>The previous illustration shows the master interactive grid with the project, <span class="italic">Develop Production Partner Portal</span> selected. The next illustration shows detail interactive grids for <span class="italic">Milestones</span> and <span class="italic">Tasks</span>.
+                     </p><img height="701" width="1018" src="img/master_detail_single_2.png" alt="Description of master_detail_single_2.png follows" title="Description of master_detail_single_2.png follows" longdesc="img_text/master_detail_single_2.html"><br><a href="img_text/master_detail_single_2.html">Description of the illustration master_detail_single_2.png</a></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__GUID-E6350016-72A7-4538-B59F-CA13DD244543">Drill Down Master Detail</p>
+                     <p>A <strong class="term">Drill Down</strong> master detail contains two pages based on two related tables or views. The first page contains an interactive report for the master table. The second page features a standard form for the master and interactive grids for the detail. Developers can create a Drill Down master detail with the Create Page Wizard.
+                     </p>
+                     <div class="figure" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__GUID-4FD785F9-8C8A-4F13-BD4C-3FCAAF57C9FF"><img height="451" width="1009" src="img/rprt_master_detail1.png" alt="Description of rprt_master_detail1.png follows" title="Description of rprt_master_detail1.png follows" longdesc="img_text/rprt_master_detail1.html"><br><a href="img_text/rprt_master_detail1.html">Description of the illustration rprt_master_detail1.png</a></div>
+                     <!-- class="figure" -->
+                     <p>In this example, users click the Edit icon to view project details. The second page includes both a standard form (for the master) and editable interactive grids.</p>
+                     <div class="figure" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__GUID-1EDCDD86-3419-4E22-9C6B-B8AC734C8BCD"><img height="775" width="1018" src="img/rprt_master_detail2.png" alt="Description of rprt_master_detail2.png follows" title="Description of rprt_master_detail2.png follows" longdesc="img_text/rprt_master_detail2.html"><br><a href="img_text/rprt_master_detail2.html">Description of the illustration rprt_master_detail2.png</a></div>
+                     <!-- class="figure" -->
+                     <p>For numeric and date fields, you can also pre-define date and number format masks, or apply those format masks after generating the initial form. Wizard generated master detail forms also automatically create validations for some columns. Validations are created for columns that are set to <code class="codeph">NOT NULL</code> in the underlying table and columns of type <code class="codeph">NUMBER</code>, <code class="codeph">DATE</code> or <code class="codeph">TIMESTAMP</code>. Note that validations are not created for columns if the column is set to read-only, either based on the user's selection, or defined user interface defaults.
+                     </p>
+                     <div class="infobox-tip" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__GUID-BCA1F50C-15A5-42BD-8172-0F50DC6A65FF">
+                        <p class="notep1">Tip:</p>
+                        <p>You can control the appearance of a specific column by editing column attributes.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__SIDEBYSIDEMASTERDETAIL-C7832724">Side by Side Master Detail</p>
+                     <p>A <strong class="term">Side by Side </strong>master detail form contains a single page
+                master detail utilizing a side by side layout and report regions with modal edit
+                windows. The left side contains a master list to navigate to the master record. The
+                right side contains the selected master record and the associated detail report(s).
+                Developers can create Side by Side master detail with either Create Application
+                Wizard or Create Page Wizard.
+                     </p>
+                     <div class="figure" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__FIG-1343-C79C7BAC"><img height="669" width="1025" src="img/side_by_side_master_detail.png" alt="Description of side_by_side_master_detail.png follows" title="Description of side_by_side_master_detail.png follows" longdesc="img_text/side_by_side_master_detail.html"><br><a href="img_text/side_by_side_master_detail.html">Description of the illustration side_by_side_master_detail.png</a></div>
+                     <!-- class="figure" -->
+                     <p>The illustration that follows shows the Milestones detail interactive report. Users can Milestones by clicking an Edit icon.</p>
+                     <div class="figure" id="GUID-8A0BE4D9-DF3F-4771-A322-EC7B9AA90381__FIG-1345-C79C8202"><img height="637" width="1021" src="img/side_by_side_update.png" alt="Description of side_by_side_update.png follows" title="Description of side_by_side_update.png follows" longdesc="img_text/side_by_side_update.html"><br><a href="img_text/side_by_side_update.html">Description of the illustration side_by_side_update.png</a></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB" title="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">Creating Master Detail Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30061"></a><div class="props_rev_3"><a id="GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716" name="GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716"></a><h3 id="HTMDB-GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716" class="sect3"><span class="enumeration_section">11.5.2 </span>Creating a Master Detail Form Using the Create Application Wizard
+               </h3>
+               <div>
+                  <p>Run the Create Application Wizard to create a new application containing one or more
+        pages. Supported master detail forms include Stacked and Side by Side.</p>
+                  <div class="section"> </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716__GUID-893CDE9A-E1C3-4FD4-BF1A-06D8BD87CE7E">
+                        <p class="notep1">Tip:</p>
+                        <p>The Create Application Wizard uses general best practices to generate the application and does not include several advanced options included in the Create Page Wizard.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To create a master detail form using the Create Application Wizard: </p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Create</span> button.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">New Application</span>.</span></li>
+                     <li class="stepexpand"><span>For Name, enter the name used to identify the application to developers.</span></li>
+                     <li class="stepexpand"><span>For Appearance, accept the default Theme Style and menu layout (Vita, Side Menu), or change it by clicking the <span class="uicontrol bold">Set Appearance</span> icon adjacent to the Appearance field.</span></li>
+                     <li class="stepexpand"><span>To add a report, click <span class="uicontrol bold">Add Page</span> and select then select <span class="uicontrol bold">Master Detail</span>. </span></li>
+                     <li class="stepexpand"><span>On Add Master Detail Page:</span><ol type="a">
+                           <li class="substepexpand"><span>Page Name - Enter a name for this page.</span></li>
+                           <li class="substepexpand"><span>Set Icon - Select an icon to display in the navigation menu for this page.</span></li>
+                           <li class="substepexpand"><span>Page Type - Select one of the following:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">Side by Side</span> - Creates a single page (or Side by Side) master detail with a master table and detail table. The left side contains a master list to navigate to the master record. The right side contains the selected master record and the associated detail report.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Stacked</span> - Creates single page master detail with editable interactive grids. 
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>If Page Type is <span class="uicontrol bold">Side by Side</span>:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Table - Select the master table for the page.</p>
+                                    </li>
+                                    <li>
+                                       <p>Primary Display Column - Select the column to display in the list of master records.</p>
+                                    </li>
+                                    <li>
+                                       <p>Secondary Display Column - Select the descriptive column to display in the list of master records, under the Primary Display Column.</p>
+                                    </li>
+                                    <li>
+                                       <p>Detail Table - Select the detail table.</p>
+                                    </li>
+                                 </ul>
+                                 <p>If Page Type is <span class="uicontrol bold">Stacked</span>:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Table - Select the master table for the editable interactive grid.</p>
+                                    </li>
+                                    <li>
+                                       <p>Detail Table - Select the detail table for the page.</p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Advanced - Expand <span class="uicontrol bold">Advanced</span>:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Page Help&nbsp;- Enter text to be displayed when the user selects Page Help.</p>
+                                       <div class="infobox-tip" id="GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716__GUID-E018E5C6-85DF-472E-9E4C-D40322EC4BA1">
+                                          <p class="notep1">Tip:</p>
+                                          <p>This setting requires you select the <span class="uicontrol bold">Help Pages</span> feature. If the <span class="uicontrol bold">Help Pages</span> feature is not selected, the Help icon is not be generated and end users cannot access page help.
+                                          </p>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Add Page</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Features, select features to include with the application. Features provide application-level functionality and are typically added once per application. To learn more, click the Help icon adjacent to <span class="uicontrol bold">Features</span>.</span><div>
+                           <div class="infobox-tip" id="GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716__GUID-6B2703AC-08A4-4306-B956-FE73D1CF6CAE">
+                              <p class="notep1">Tip:</p>
+                              <p>Click the <span class="uicontrol bold">Check All</span> button to select all features.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Settings, specify settings used to generate this application. To learn more about an attribute, click the Help icon adjacent to <span class="uicontrol bold">Settings</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Application</span>.</span></li>
+                     <li class="stepexpand"><span>To view the new master detail page, click <span class="uicontrol bold">Run Page</span>.</span><div>The rendered page appears.</div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D9909EAD-9EDE-4EE0-B678-A23B36168716__GUID-54150F87-9651-4FA0-83E3-96BA544F5DEC">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="creating-database-applications.html#GUID-F09AF2EB-F452-4CC1-A3B7-8B0DA9FF94B0" title="A database application is a collection of pages linked together using navigation menus, tabs, buttons, or hypertext links. Application pages share a common session state and authentication.">Creating Database Applications</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB" title="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">Creating Master Detail Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-38EEBB22-915A-46F5-BB33-0C1B0815F49D" name="GUID-38EEBB22-915A-46F5-BB33-0C1B0815F49D"></a><h3 id="HTMDB-GUID-38EEBB22-915A-46F5-BB33-0C1B0815F49D" class="sect3"><span class="enumeration_section">11.5.3 </span>Creating a Stacked Master Detail
+        Using the Create Page Wizard
+               </h3>
+               <div>
+                  <p>Run the Create Page Wizard to add a single page (or Stacked) master
+        detail form that uses an local or external data source.</p>
+                  <p>A <strong class="term">Stacked</strong> master detail form contains a single page
+            with editable interactive grids based on two related tables or views. Users select a row
+            in the master grid to update the detail grids.
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-566A9E95-FD67-4017-B2F9-A81EB94F93DA">Creating a Stacked Master Detail Using a Local Database</a><br></li>
+                     <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-4FA89133-2C2A-4365-B3ED-EE05EDB795BD">Creating a Stacked Master Detail Using External Data Sources</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB" title="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">Creating Master Detail Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-566A9E95-FD67-4017-B2F9-A81EB94F93DA" name="GUID-566A9E95-FD67-4017-B2F9-A81EB94F93DA"></a><h4 id="HTMDB-GUID-566A9E95-FD67-4017-B2F9-A81EB94F93DA" class="sect4"><span class="enumeration_section">11.5.3.1 </span>Creating a Stacked Master Detail Using a Local
+        Database
+                  </h4>
+                  <div>
+                     <p>To create a Stacked master detail on a new page using a local
+                database:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Page</span>.</span></li>
+                        <li class="stepexpand"><span>For Create a Page:</span><ol type="a" id="GUID-566A9E95-FD67-4017-B2F9-A81EB94F93DA__SUBSTEPS_VJZ_5RX_ZHB">
+                              <li class="substepexpand"><span>Page Type - Select <span class="uicontrol bold">Component</span> and then
+                                <span class="uicontrol bold">Master Detail</span>.</span><div>
+                                    
+                                    <div class="infobox-tip" id="GUID-566A9E95-FD67-4017-B2F9-A81EB94F93DA__GUID-01A7807E-9844-45F4-B1DB-4AAC92E5868C">
+                                       <p class="notep1">Tip:</p>
+                                       
+                                       <p><span class="uicontrol bold">Component</span> pages provides
+                                    page-level functionality and can be added multiple times within
+                                    a given application such as reports, forms, charts, or
+                                    calendars. <span class="uicontrol bold"> Feature</span> pages provide
+                                    application-level functionality and can only be added once per
+                                    application.
+                                       </p>
+                                       
+                                    </div>
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>Select <span class="uicontrol bold">Stacked</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>On Page Attributes:</span><ol type="a">
+                              <li class="substepexpand"><span>Page Number - Enter the page number of the master page. If you identify a new page number, the wizard creates a new page. If you identify an existing page number, the wizard adds the component to that page.</span></li>
+                              <li class="substepexpand"><span>Page Name - Enter the name of the page.</span></li>
+                              <li class="substepexpand"><span>Page Mode - Identify the page mode. Options include:</span><div>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="uicontrol bold">Normal</span> - The page is presented as a normal Application Express application page.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="uicontrol bold">Modal Dialog</span> - The page is presented as a modal dialog. A modal dialog is an overlay window positioned within the viewport, which remains active and focused until the end user dismisses (closes) it. The underlying page is grayed out and the end user is prevented from interacting with the rest of the page until the dialog is closed.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>Breadcrumb - Select whether you want to use a breadcrumb navigation control on your page. If you elect to include breadcrumb navigation, additional attributes appear.</span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Navigation Preference:</span><ol type="a">
+                              <li><span>Select how you want this page integrated into the Navigation Menu. To learn more, see field-level Help.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Master Source:</span><ol type="a">
+                              <li><span>Master Region Title - Enter a region title for the master region.</span></li>
+                              <li><span>Location - Select <span class="uicontrol bold">Local Database</span>.</span></li>
+                              <li><span>Location - <span class="uicontrol bold">Local Database</span>.</span></li>
+                              <li><span>Table / View Name - Select the table or view on which the grid will be based.</span></li>
+                              <li><span>Primary Key Column - Select the name of the column that uniquely identifies a row in the table.</span></li>
+                              <li><span>Select Columns - Select one or more columns to be included in the region. Select all columns to be displayed.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Detail Source:</span><ol type="a">
+                              <li><span>Detail Region Title - Enter a region title for the detail region.</span></li>
+                              <li><span>Location - <span class="uicontrol bold">Local Database</span>.</span></li>
+                              <li><span>Table/View Name - Select the table or view on which the grid is based.</span></li>
+                              <li><span>Primary Key Column - Select the name of the column that uniquely identifies a row in the table.</span></li>
+                              <li><span>Master Detail Foreign Key - Select the foreign key that relates between the master and detail tables.</span></li>
+                              <li><span>Select Columns - Select one or more columns to be included in the region. Select all columns to be displayed.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                           </ol>
+                           <div>The Page Designer appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>To view the new master detail, click <span class="uicontrol bold">Save and Run Page</span>.</span><div>The rendered page appears.</div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-38EEBB22-915A-46F5-BB33-0C1B0815F49D" title="Run the Create Page Wizard to add a single page (or Stacked) master detail form that uses an local or external data source.">Creating a Stacked Master Detail Using the Create Page Wizard</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-4FA89133-2C2A-4365-B3ED-EE05EDB795BD" name="GUID-4FA89133-2C2A-4365-B3ED-EE05EDB795BD"></a><h4 id="HTMDB-GUID-4FA89133-2C2A-4365-B3ED-EE05EDB795BD" class="sect4"><span class="enumeration_section">11.5.3.2 </span>Creating a Stacked Master Detail Using
+        External Data Sources
+                  </h4>
+                  <div>
+                     <div class="p">
+                        
+                        <p>The component(s) described in this topic
+                                include built-in support for REST Enabled SQL and Web Sources which
+                                enables read and write access to remote data sources. In order to
+                                build a component on a remote data source, you must first create the
+                                application and configure the external data source.</p>
+                        
+                        <div class="infobox-tip" id="GUID-4FA89133-2C2A-4365-B3ED-EE05EDB795BD__GUID-CB7776F4-007A-4DA2-93B2-0AB45F30693F">
+                           <p class="notep1">Tip:</p> To learn more about external
+                                data sources, see <span class="q">"<a href="accessing-data-remotely-using-rest-enabled-sql.html#GUID-94515117-40F3-42FC-BBB2-EE77315DF434" title="Execute SQL queries or PL/SQL defined at the component-level on a remote database using REST Enabled SQL references.">Managing REST Enabled SQL References</a>"</span> and <span class="q">"<a href="managing-web-source-modules.html#GUID-93D7A596-03A9-48AF-9FC9-6538BCC25DED" title="Web Source Modules act as a reference to one or multiple external web services. A module can contain one or many Web Source Operations which are the references to a concrete external web service.">Managing Web Source Modules</a>."</span></div>
+                        
+                     </div>
+                     <!-- class="section" -->
+                     <p>To create a single page master detail master detail on a new page using an
+                external data source:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Page</span>.</span></li>
+                        <li class="stepexpand"><span>For Create a Page:</span><ol type="a" id="GUID-4FA89133-2C2A-4365-B3ED-EE05EDB795BD__SUBSTEPS_VJZ_5RX_ZHB">
+                              <li class="substepexpand"><span>Page Type - Select <span class="uicontrol bold">Component</span> and then
+                                <span class="uicontrol bold">Master Detail</span>.</span><div>
+                                    
+                                    <div class="infobox-tip" id="GUID-4FA89133-2C2A-4365-B3ED-EE05EDB795BD__GUID-01A7807E-9844-45F4-B1DB-4AAC92E5868C">
+                                       <p class="notep1">Tip:</p>
+                                       
+                                       <p><span class="uicontrol bold">Component</span> pages provides
+                                    page-level functionality and can be added multiple times within
+                                    a given application such as reports, forms, charts, or
+                                    calendars. <span class="uicontrol bold"> Feature</span> pages provide
+                                    application-level functionality and can only be added once per
+                                    application.
+                                       </p>
+                                       
+                                    </div>
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>Select <span class="uicontrol bold">Stacked</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>On Page Attributes:</span><ol type="a">
+                              <li class="substepexpand"><span>Page Number - Enter the page number of the master page. If you identify a new page number, the wizard creates a new page. If you identify an existing page number, the wizard adds the component to that page.</span></li>
+                              <li class="substepexpand"><span>Page Name - Enter the name of the page.</span></li>
+                              <li class="substepexpand"><span>Page Mode - Identify the page mode. Options include:</span><div>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="uicontrol bold">Normal</span> - The page is presented as a normal Application Express application page.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="uicontrol bold">Modal Dialog</span> - The page is presented as a modal dialog. A modal dialog is an overlay window positioned within the viewport, which remains active and focused until the end user dismisses (closes) it. The underlying page is grayed out and the end user is prevented from interacting with the rest of the page until the dialog is closed.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>Breadcrumb - Select whether you want to use a breadcrumb navigation control on your page. If you elect to include breadcrumb navigation, additional attributes appear.</span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Navigation Preference:</span><ol type="a">
+                              <li><span>Select how you want this page integrated into the Navigation Menu. To learn more, see field-level Help.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Master Source:</span><ol type="a">
+                              <li class="substepexpand"><span>Master Region Title - Enter a region title for the master region.</span></li>
+                              <li class="substepexpand"><span>Location - Select a data source. Options include:</span><div>
+                                    
+                                    <ul style="list-style-type: disc;" id="GUID-4FA89133-2C2A-4365-B3ED-EE05EDB795BD__UL_YPF_MW4_ZHB">
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Local Database</span> - Data is
+                                sourced from a local database.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">REST Enabled SQL
+                                        Service</span> - Data is sourced from a remote database
+                                where the connection is defined using a REST Enabled SQL
+                                service.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Web Source</span> - Data is sourced from
+                                an arbitrary REST Service (Oracle or non-Oracle) using Web Source
+                                Modules.
+                                          </p>
+                                          
+                                       </li>
+                                    </ul>
+                                    
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>For Location, select either <span class="uicontrol bold">REST Enabled SQL
+                                Service</span> or <span class="uicontrol bold">Web Source </span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>What displays next changes based on your selection. Follow the on-screen
+                    instruction. To learn more about an attribute, see field-level Help.</span></li>
+                        <li class="stepexpand"><span>To view the new master detail, click <span class="uicontrol bold">Save and Run Page</span>.</span><div>The rendered page appears.</div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-38EEBB22-915A-46F5-BB33-0C1B0815F49D" title="Run the Create Page Wizard to add a single page (or Stacked) master detail form that uses an local or external data source.">Creating a Stacked Master Detail Using the Create Page Wizard</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-E5FC5425-FEC8-41CF-9F85-0D41286A122A" name="GUID-E5FC5425-FEC8-41CF-9F85-0D41286A122A"></a><h3 id="HTMDB-GUID-E5FC5425-FEC8-41CF-9F85-0D41286A122A" class="sect3"><span class="enumeration_section">11.5.4 </span>Creating a Side by Side Master
+        Detail Using the Create Page Wizard
+               </h3>
+               <div>
+                  <p>Run the Create Page Wizard to add a new page with a Side by Side master
+        detail that uses a local or external data source.</p>
+                  <p>A <strong class="term">Side by Side </strong> master detail form contains a
+            single page master detail utilizing a side by side layout and report regions with modal
+            edit windows. The left side contains a master list to navigate to the master record. The
+            right side contains the selected master record and the associated detail report(s).
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-6F872C34-391D-4383-AB19-10BD87BD0F06">Creating a Side by Side Master Detail Using a Local Database</a><br></li>
+                     <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-D63F26BA-B540-44AA-A9EB-0903584ABA71">Creating a Side by Side Master Detail Using External Data Sources</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB" title="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">Creating Master Detail Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-6F872C34-391D-4383-AB19-10BD87BD0F06" name="GUID-6F872C34-391D-4383-AB19-10BD87BD0F06"></a><h4 id="HTMDB-GUID-6F872C34-391D-4383-AB19-10BD87BD0F06" class="sect4"><span class="enumeration_section">11.5.4.1 </span>Creating a Side by Side Master Detail Using a
+        Local Database
+                  </h4>
+                  <div>
+                     <p>To create a Side by Side master detail on a new page using a local
+                database: </p>
+                     <ol>
+                        <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li><span>Select an application.</span></li>
+                        <li><span>Click <span class="uicontrol bold">Create Page</span>.</span></li>
+                        <li><span>For Create a Page:</span><ol type="a" class="single-step">
+                              <li class="substepexpand"><span>Page Type - Select <span class="uicontrol bold">Component</span> and then
+                                <span class="uicontrol bold">Master Detail</span>.</span><div>
+                                    
+                                    <div class="infobox-tip" id="GUID-6F872C34-391D-4383-AB19-10BD87BD0F06__GUID-A768B255-0163-438D-AAC3-6172ED4AE020">
+                                       <p class="notep1">Tip:</p>
+                                       
+                                       <p><span class="uicontrol bold">Component</span> pages provides
+                                    page-level functionality and can be added multiple times within
+                                    a given application such as reports, forms, charts, or
+                                    calendars. <span class="uicontrol bold"> Feature</span> pages provide
+                                    application-level functionality and can only be added once per
+                                    application.
+                                       </p>
+                                       
+                                    </div>
+                                    
+                                 </div>
+                              </li>
+                           </ol>
+                           <ol type="a" class="single-step">
+                              <li><span>On Create Page, select <span class="uicontrol bold">Side by Side</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li><span>On Page Attributes:</span><ol type="a">
+                              <li><span>Starting Page Number - Enter an unused starting page number. This wizard will create multiple pages starting with the number specified.  The default is the first available page number within this application.</span></li>
+                              <li><span>Master Detail Page Name - Enter the name of the master detail page which contains side by side master detail regions. The left side contains a master list to navigate to navigate to the master record. The right side contains the selected master record and the associated detail report.</span></li>
+                              <li><span>Breadcrumb - Select whether you want to use a breadcrumb navigation control on your page. If you elect to include breadcrumb navigation, additional attributes appear.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li><span>For Navigation Preference:</span><ol type="a">
+                              <li><span>Select how you want this page integrated into the Navigation Menu. To learn more, see field-level Help.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li><span>On the Master Detail Source, specify the following:</span><ol type="a">
+                              <li><span>Table/View Owner - Select the owner of the table on which you are
+                            building master detail page.</span></li>
+                              <li><span>Master Table - Select the master table or view.</span></li>
+                              <li><span>Primary Display Column - Select the column to display as primary column
+                            in the report to navigate to a different master record.</span></li>
+                              <li><span>Secondary Display Column - Select the column to display as secondary
+                            column in the report to navigate to a different master record.</span></li>
+                              <li><span>Detail Table - Select the detail table or view.</span></li>
+                              <li><span>Detail Table 2 - Select the detail table or view (optional).</span></li>
+                              <li><span>Detail Table 3 - Select the detail table or view (optional).</span></li>
+                              <li><span>Detail Table 4 - Select the detail table or view (optional).</span></li>
+                              <li><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li><span>To view the new master detail, click <span class="uicontrol bold">Save and Run Page</span>.</span></li>
+                     </ol>
+                     <div class="section">
+                        <p>The rendered pages appear.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-E5FC5425-FEC8-41CF-9F85-0D41286A122A" title="Run the Create Page Wizard to add a new page with a Side by Side master detail that uses a local or external data source.">Creating a Side by Side Master Detail Using the Create Page Wizard</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-D63F26BA-B540-44AA-A9EB-0903584ABA71" name="GUID-D63F26BA-B540-44AA-A9EB-0903584ABA71"></a><h4 id="HTMDB-GUID-D63F26BA-B540-44AA-A9EB-0903584ABA71" class="sect4"><span class="enumeration_section">11.5.4.2 </span>Creating a Side by Side Master Detail Using
+        External Data Sources
+                  </h4>
+                  <div>
+                     <div class="p">
+                        
+                        <p>The component(s) described in this topic
+                                include built-in support for REST Enabled SQL and Web Sources which
+                                enables read and write access to remote data sources. In order to
+                                build a component on a remote data source, you must first create the
+                                application and configure the external data source.</p>
+                        
+                        <div class="infobox-tip" id="GUID-D63F26BA-B540-44AA-A9EB-0903584ABA71__GUID-C61ECD60-897F-4D7E-8087-37C69706E262">
+                           <p class="notep1">Tip:</p> To learn more about external
+                                data sources, see <span class="q">"<a href="accessing-data-remotely-using-rest-enabled-sql.html#GUID-94515117-40F3-42FC-BBB2-EE77315DF434" title="Execute SQL queries or PL/SQL defined at the component-level on a remote database using REST Enabled SQL references.">Managing REST Enabled SQL References</a>"</span> and <span class="q">"<a href="managing-web-source-modules.html#GUID-93D7A596-03A9-48AF-9FC9-6538BCC25DED" title="Web Source Modules act as a reference to one or multiple external web services. A module can contain one or many Web Source Operations which are the references to a concrete external web service.">Managing Web Source Modules</a>."</span></div>
+                        
+                     </div>
+                     <!-- class="section" -->
+                     <p>To create a Side by Side master detail on a new page using an external data
+                source: </p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Page</span>.</span></li>
+                        <li class="stepexpand"><span>For Create a Page:</span><ol type="a">
+                              <li class="substepexpand"><span>Page Type - Select <span class="uicontrol bold">Component</span> and then
+                                <span class="uicontrol bold">Master Detail</span>.</span><div>
+                                    
+                                    <div class="infobox-tip" id="GUID-D63F26BA-B540-44AA-A9EB-0903584ABA71__GUID-A768B255-0163-438D-AAC3-6172ED4AE020">
+                                       <p class="notep1">Tip:</p>
+                                       
+                                       <p><span class="uicontrol bold">Component</span> pages provides
+                                    page-level functionality and can be added multiple times within
+                                    a given application such as reports, forms, charts, or
+                                    calendars. <span class="uicontrol bold"> Feature</span> pages provide
+                                    application-level functionality and can only be added once per
+                                    application.
+                                       </p>
+                                       
+                                    </div>
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>On Create Page, select <span class="uicontrol bold">Side by Side</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>On Page Attributes:</span><ol type="a">
+                              <li><span>Starting Page Number - Enter an unused starting page number. This wizard will create multiple pages starting with the number specified.  The default is the first available page number within this application.</span></li>
+                              <li><span>Master Detail Page Name - Enter the name of the master detail page which contains side by side master detail regions. The left side contains a master list to navigate to navigate to the master record. The right side contains the selected master record and the associated detail report.</span></li>
+                              <li><span>Breadcrumb - Select whether you want to use a breadcrumb navigation control on your page. If you elect to include breadcrumb navigation, additional attributes appear.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Navigation Preference:</span><ol type="a">
+                              <li><span>Select how you want this page integrated into the Navigation Menu. To learn more, see field-level Help.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>On the Master Detail Source, click the <span class="uicontrol bold">Advanced</span> button
+                    and edit the following:</span><ol type="a" id="GUID-D63F26BA-B540-44AA-A9EB-0903584ABA71__SUBSTEPS_V13_YR4_ZHB">
+                              <li class="substepexpand"><span>Master Region Title - Enter a region title for the master region.</span></li>
+                              <li class="substepexpand"><span>Location - Select a data source. Options include:</span><div>
+                                    
+                                    <ul style="list-style-type: disc;" id="GUID-D63F26BA-B540-44AA-A9EB-0903584ABA71__UL_YPF_MW4_ZHB">
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Local Database</span> - Data is
+                                sourced from a local database.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">REST Enabled SQL
+                                        Service</span> - Data is sourced from a remote database
+                                where the connection is defined using a REST Enabled SQL
+                                service.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Web Source</span> - Data is sourced from
+                                an arbitrary REST Service (Oracle or non-Oracle) using Web Source
+                                Modules.
+                                          </p>
+                                          
+                                       </li>
+                                    </ul>
+                                    
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>For Location, select either <span class="uicontrol bold">REST Enabled SQL
+                                Service</span> or <span class="uicontrol bold">Web Source </span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>What displays next changes based on your selection. Follow the on-screen
+                    instruction. To learn more about an attribute, see field-level Help.</span></li>
+                        <li class="stepexpand"><span>To view the new master detail, click <span class="uicontrol bold">Save and Run
+                    Page</span>.</span><div>The rendered page appears.</div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-E5FC5425-FEC8-41CF-9F85-0D41286A122A" title="Run the Create Page Wizard to add a new page with a Side by Side master detail that uses a local or external data source.">Creating a Side by Side Master Detail Using the Create Page Wizard</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-4B8E1A41-23F2-4812-80F6-204B15C66D6D" name="GUID-4B8E1A41-23F2-4812-80F6-204B15C66D6D"></a><h3 id="HTMDB-GUID-4B8E1A41-23F2-4812-80F6-204B15C66D6D" class="sect3"><span class="enumeration_section">11.5.5 </span>Creating a Drill Down Master
+        Detail Using the Create Page Wizard
+               </h3>
+               <div>
+                  <p>Run the Create Page Wizard to add a two page Drill Down master detail
+        that uses a local or external data source.</p>
+                  <p>A <strong class="term">Drill Down</strong> master detail contains two pages based on two
+            related tables or views. The first page contains an interactive report for the master
+            table. The second page features a standard form for the master and interactive grids for
+            the detail.
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-13B701BC-5F10-414E-898A-0399103CCB8D">Creating a Drill Down Master Detail Using a Local Database</a><br></li>
+                     <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-7E673C15-7083-476F-A83D-366D1DF84301">Creating a Drill Down Master Using External Data Sources</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB" title="Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.">Creating Master Detail Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB30062"></a><div class="props_rev_3"><a id="GUID-13B701BC-5F10-414E-898A-0399103CCB8D" name="GUID-13B701BC-5F10-414E-898A-0399103CCB8D"></a><h4 id="HTMDB-GUID-13B701BC-5F10-414E-898A-0399103CCB8D" class="sect4"><span class="enumeration_section">11.5.5.1 </span>Creating a Drill Down Master Detail Using a
+        Local Database
+                  </h4>
+                  <div>
+                     <p>To create a two page Drill Down master detail using a local dataase: </p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Page</span>.</span></li>
+                        <li class="stepexpand"><span>For Create a Page:</span><ol type="a">
+                              <li class="substepexpand"><span>Page Type - Select <span class="uicontrol bold">Component</span> and then
+                                <span class="uicontrol bold">Master Detail</span>.</span><div>
+                                    
+                                    <div class="infobox-tip" id="GUID-13B701BC-5F10-414E-898A-0399103CCB8D__GUID-01A7807E-9844-45F4-B1DB-4AAC92E5868C">
+                                       <p class="notep1">Tip:</p>
+                                       
+                                       <p><span class="uicontrol bold">Component</span> pages provides
+                                    page-level functionality and can be added multiple times within
+                                    a given application such as reports, forms, charts, or
+                                    calendars. <span class="uicontrol bold"> Feature</span> pages provide
+                                    application-level functionality and can only be added once per
+                                    application.
+                                       </p>
+                                       
+                                    </div>
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>Select  <span class="uicontrol bold">Drill Down</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>On Page Attributes:</span><ol type="a">
+                              <li><span>Master Page Number - Enter the page number of the master page. The master page will contain a read-only master interactive grid. Enter a new page number or an existing page number.</span></li>
+                              <li><span>Master Page Name - Enter the name of the master page.</span></li>
+                              <li><span>Detail Page Number - Enter the page number of the detail page. The detail page will contain a form and editable interactive grid..</span></li>
+                              <li><span>Detail Page Name - Enter the name of the detail page.</span></li>
+                              <li><span>Breadcrumb - Select whether you want to use a breadcrumb navigation control on your page. If you elect to include breadcrumb navigation, additional attributes appear.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Navigation Preference:</span><ol type="a">
+                              <li><span>Select how you want this page integrated into the Navigation Menu. To learn more, see field-level Help.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Master Source:</span><ol type="a">
+                              <li><span>Table/View Owner - Select the owner of the table on which you are building the interactive grid.</span></li>
+                              <li><span>Table/View Name - Select the table or view on which the grid is based.</span></li>
+                              <li><span>Primary Key Column - Select the name of the column that uniquely identifies a row in the table.</span></li>
+                              <li><span>Form Navigation Order - Select the navigation order column used by the previous and next buttons on the Detail Page which navigates to a different master record.</span></li>
+                              <li><span>Select Columns - Select one or more columns to be included in the region. Select all columns to be displayed.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Detail Source:</span><ol type="a">
+                              <li><span>Table/View Owner - Select the owner of the table on which you are building the interactive grid.</span></li>
+                              <li><span>Table/View Name - Select the table or view on which the grid is based.</span></li>
+                              <li><span>Primary Key Column - Select the name of the column that uniquely identifies a row in the table.</span></li>
+                              <li><span>Master Detail Foreign Key - Select the foreign key that relates between the master and detail tables.</span></li>
+                              <li><span>Select Columns - Select one or more columns to be included in the region. Select all columns to be displayed.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                           </ol>
+                           <div>Page Designer appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>To view the new master detail, click <span class="uicontrol bold">Save and Run Page</span>.</span></li>
+                     </ol>
+                     <div class="section">
+                        <p>The rendered pages appear.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-4B8E1A41-23F2-4812-80F6-204B15C66D6D" title="Run the Create Page Wizard to add a two page Drill Down master detail that uses a local or external data source.">Creating a Drill Down Master Detail Using the Create Page Wizard</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="sect3"><a id="GUID-7E673C15-7083-476F-A83D-366D1DF84301" name="GUID-7E673C15-7083-476F-A83D-366D1DF84301"></a><h4 id="HTMDB-GUID-7E673C15-7083-476F-A83D-366D1DF84301" class="sect4"><span class="enumeration_section">11.5.5.2 </span>Creating a Drill Down Master Using External
+        Data Sources
+                  </h4>
+                  <div>
+                     <div class="p">
+                        
+                        <p>The component(s) described in this topic
+                                include built-in support for REST Enabled SQL and Web Sources which
+                                enables read and write access to remote data sources. In order to
+                                build a component on a remote data source, you must first create the
+                                application and configure the external data source.</p>
+                        
+                        <div class="infobox-tip" id="GUID-7E673C15-7083-476F-A83D-366D1DF84301__GUID-DF33E213-39F6-4E38-8D6C-850A9233B7DF">
+                           <p class="notep1">Tip:</p> To learn more about external
+                                data sources, see <span class="q">"<a href="accessing-data-remotely-using-rest-enabled-sql.html#GUID-94515117-40F3-42FC-BBB2-EE77315DF434" title="Execute SQL queries or PL/SQL defined at the component-level on a remote database using REST Enabled SQL references.">Managing REST Enabled SQL References</a>"</span> and <span class="q">"<a href="managing-web-source-modules.html#GUID-93D7A596-03A9-48AF-9FC9-6538BCC25DED" title="Web Source Modules act as a reference to one or multiple external web services. A module can contain one or many Web Source Operations which are the references to a concrete external web service.">Managing Web Source Modules</a>."</span></div>
+                        
+                     </div>
+                     <!-- class="section" -->
+                     <p>To create a two page drill down master detail using an external
+                data sources: </p>
+                     <ol id="GUID-7E673C15-7083-476F-A83D-366D1DF84301__STEPS_JY5_PTR_ZHB">
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Page</span>.</span></li>
+                        <li class="stepexpand"><span>For Create a Page:</span><ol type="a" id="GUID-7E673C15-7083-476F-A83D-366D1DF84301__SUBSTEPS_KY5_PTR_ZHB">
+                              <li class="substepexpand"><span>Page Type - Select <span class="uicontrol bold">Component</span> and then
+                                <span class="uicontrol bold">Master Detail</span>.</span><div>
+                                    
+                                    <div class="infobox-tip" id="GUID-7E673C15-7083-476F-A83D-366D1DF84301__GUID-A768B255-0163-438D-AAC3-6172ED4AE020">
+                                       <p class="notep1">Tip:</p>
+                                       
+                                       <p><span class="uicontrol bold">Component</span> pages provides
+                                    page-level functionality and can be added multiple times within
+                                    a given application such as reports, forms, charts, or
+                                    calendars. <span class="uicontrol bold"> Feature</span> pages provide
+                                    application-level functionality and can only be added once per
+                                    application.
+                                       </p>
+                                       
+                                    </div>
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>On Create Page, select <span class="uicontrol bold">Drill Down</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>On Page Attributes:</span><ol type="a" id="GUID-7E673C15-7083-476F-A83D-366D1DF84301__SUBSTEPS_LY5_PTR_ZHB">
+                              <li><span>Master Page Number - Enter the page number of the master page. The
+                            master page will contain a read-only master interactive grid. Enter a
+                            new page number or an existing page number.</span></li>
+                              <li><span>Master Page Name - Enter the name of the master page.</span></li>
+                              <li><span>Detail Page Number - Enter the page number of the detail page. The
+                            detail page will contain a form and editable interactive grid..</span></li>
+                              <li><span>Detail Page Name - Enter the name of the detail page.</span></li>
+                              <li><span>Breadcrumb - Select whether you want to use a breadcrumb navigation
+                            control on your page. If you elect to include breadcrumb navigation,
+                            additional attributes appear.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Navigation Preference:</span><ol type="a" id="GUID-7E673C15-7083-476F-A83D-366D1DF84301__SUBSTEPS_MY5_PTR_ZHB">
+                              <li><span>Select how you want this page integrated into the Navigation Menu. To
+                            learn more, see field-level Help.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>On the Master Detail Source, click the <span class="uicontrol bold">Advanced</span> button
+                    and edit the following:</span><ol type="a" id="GUID-7E673C15-7083-476F-A83D-366D1DF84301__SUBSTEPS_V13_YR4_ZHB">
+                              <li class="substepexpand"><span>Master Region Title - Enter a region title for the master region.</span></li>
+                              <li class="substepexpand"><span>Location - Select a data source. Options include:</span><div>
+                                    
+                                    <ul style="list-style-type: disc;" id="GUID-7E673C15-7083-476F-A83D-366D1DF84301__UL_YPF_MW4_ZHB">
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Local Database</span> - Data is
+                                sourced from a local database.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">REST Enabled SQL
+                                        Service</span> - Data is sourced from a remote database
+                                where the connection is defined using a REST Enabled SQL
+                                service.
+                                          </p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p><span class="uicontrol bold">Web Source</span> - Data is sourced from
+                                an arbitrary REST Service (Oracle or non-Oracle) using Web Source
+                                Modules.
+                                          </p>
+                                          
+                                       </li>
+                                    </ul>
+                                    
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>For Location, select either <span class="uicontrol bold">REST Enabled SQL
+                                Service</span> or <span class="uicontrol bold">Web Source </span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>What displays next changes based on your selection. Follow the on-screen
+                    instruction. To learn more about an attribute, see field-level Help.</span></li>
+                        <li class="stepexpand"><span>To view the new master detail, click <span class="uicontrol bold">Save and Run
+                    Page</span>.</span><div>The rendered page appears.</div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-master-detail-forms.html#GUID-4B8E1A41-23F2-4812-80F6-204B15C66D6D" title="Run the Create Page Wizard to add a two page Drill Down master detail that uses a local or external data source.">Creating a Drill Down Master Detail Using the Create Page Wizard</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding the Translation Process">
+      <meta name="abstract" content="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">
+      <meta name="description" content="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">
+      <meta name="DC.subject" content="translation, understanding, steps, mapping primary application ID, mapping target application ID, seeding, exporting text, export, text for translations, seeding, translation file, XLIFF, translation file, XLIFF, XLIFF Target Elements, Target Elements, uploading and publishing, uploading, publishing, applying, deleting an uploaded document, editing manually">
+      <meta name="keywords" content="translation, understanding, steps, mapping primary application ID, mapping target application ID, seeding, exporting text, export, text for translations, seeding, translation file, XLIFF, translation file, XLIFF, XLIFF Target Elements, Target Elements, uploading and publishing, uploading, publishing, applying, deleting an uploaded document, editing manually">
+      <meta name="DC.Relation" scheme="URI" content="managing-application-globalization.html#GUID-19BD5CD3-596D-46A4-BEA7-3CB1411AC89A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-translation-process.html#GUID-76786C7A-1A9E-4372-B78F-5B22AEED64B7">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-translation-process.html#GUID-18EAA9E7-4EDA-4F4D-933F-3F0E93EDD507">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-translation-process.html#GUID-5E8ED498-621E-42B5-B25E-D2BF39B64025">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-translation-process.html#GUID-C7A729AA-F437-4058-9E42-B9AB04F35362">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-translation-process.html#GUID-CD27DFF4-980E-4F49-B7D0-86A239853DFE">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-translation-process.html#GUID-B1F25D63-233A-487E-A54E-04040C09558C">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-50AFFADA-E439-4738-A072-F1ACB402AD85">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">
+      <meta name="description" content="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">
+      <title>Understanding the Translation Process</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-translating-for-multibyte-languages.html" title="Previous" type="text/html">
+      <link rel="next" href="translating-messages.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-translating-for-multibyte-languages.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="translating-messages.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-globalization.html" property="item" typeof="WebPage"><span property="name">Managing Application Globalization</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding the Translation Process</li>
+            </ol>
+            <a id="GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" name="GUID-50AFFADA-E439-4738-A072-F1ACB402AD85"></a><a id="HTMDB14003"></a>
+            
+            <h2 id="HTMDB-GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" class="sect2"><span class="enumeration_section">22.5 </span>Understanding the Translation Process
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p> To translate an application developed in <span>App Builder</span>, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.
+               </p>
+               <p>This section describes the process of translating an application.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-76786C7A-1A9E-4372-B78F-5B22AEED64B7">Step 1: Define Application Language</a><br>The first step in translating an application is to map the primary and target application language. The primary application is the application to be translated. The target application is the resulting translated application. 
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-18EAA9E7-4EDA-4F4D-933F-3F0E93EDD507">Step 2: Seed and Download to a Translation File</a><br>Seed the translation table and then export the translation text to a translation file.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-5E8ED498-621E-42B5-B25E-D2BF39B64025">Step 3: Translate the XLIFF File</a><br>After you export a translatable file to XLIFF format, you can translate it into the appropriate languages.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-C7A729AA-F437-4058-9E42-B9AB04F35362">Step 4: Upload and Apply a Translated XLIFF Document</a><br>After your XLIFF document has been translated, the next step is to upload and then apply it.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-CD27DFF4-980E-4F49-B7D0-86A239853DFE">Step 5: Publish the Application</a><br>Publishing your application creates a copy of the base language application, substituting the translated text strings from your translations table. This published application can then be used to render your application in alternate languages. 
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-B1F25D63-233A-487E-A54E-04040C09558C">Manually Editing a Translation</a><br>Once you have mapped the target language and seeded the translatable text, you manually edit a translation. 
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-50AFFADA-E439-4738-A072-F1ACB402AD85__GUID-F2187A83-5C46-4795-A98D-99F65B721CC2">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="translating-messages.html#GUID-3557FD3D-EC89-4F18-91B7-E8E304459266" title="Learn when and how to translate messages is an Oracle Application Express application.">Translating Messages</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="translating-data-that-supports-list-of-values.html#GUID-E3D85D48-1F6F-4EC5-8330-48B8C8A48B6F" title="You create a dynamic translation to translate dynamic pieces of data. For example, you might use a dynamic translation on a list of values based on a database query.">Translating Data That Supports List of Values</a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-application-globalization.html#GUID-19BD5CD3-596D-46A4-BEA7-3CB1411AC89A" title="You can run applications built in App Builder concurrently in different languages.">Managing Application Globalization</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25923"></a><div class="props_rev_3"><a id="GUID-76786C7A-1A9E-4372-B78F-5B22AEED64B7" name="GUID-76786C7A-1A9E-4372-B78F-5B22AEED64B7"></a><h3 id="HTMDB-GUID-76786C7A-1A9E-4372-B78F-5B22AEED64B7" class="sect3"><span class="enumeration_section">22.5.1 </span>Step 1: Define Application Language
+               </h3>
+               <div>
+                  <p>The first step in translating an application is to map the primary and target application language. The primary application is the application to be translated. The target application is the resulting translated application. </p>
+                  <div class="section">
+                     <p>To map the primary and target application language:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Translate Application page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                           <li class="substepexpand"><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span><div>
+                                 <p>The Translate page appears.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Define application languages</span>. </span><div>
+                           <p>The Mappings page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                     <li class="stepexpand"><span>On the Create/Edit Language Application Mapping:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Translation Application</strong> - Enter a unique integer value that identifies an application. The application ID must be unique on your instance of Oracle Application Express.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Language</strong> - Select the language to be translated.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Image Directory</strong> - Enter the directory where images are obtained. Unless you are using static files from the images directory which are translated, leave this field blank. This is the default and most common option.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-76786C7A-1A9E-4372-B78F-5B22AEED64B7__GUID-19E251C4-8205-4898-A40B-559AF1533036">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-the-translation-process.html#GUID-18EAA9E7-4EDA-4F4D-933F-3F0E93EDD507" title="Seed the translation table and then export the translation text to a translation file.">Step 2: Seed and Download to a Translation File</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" title="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">Understanding the Translation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25924"></a><div class="props_rev_3"><a id="GUID-18EAA9E7-4EDA-4F4D-933F-3F0E93EDD507" name="GUID-18EAA9E7-4EDA-4F4D-933F-3F0E93EDD507"></a><h3 id="HTMDB-GUID-18EAA9E7-4EDA-4F4D-933F-3F0E93EDD507" class="sect3"><span class="enumeration_section">22.5.2 </span>Step 2: Seed and Download to a Translation File
+               </h3>
+               <p>Seed the translation table and then export the translation text to a translation file.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-8458D6B7-D62C-4594-AC48-0616629E8281">Seeding Translatable Text</a><br></li>
+                     <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-94CF68D7-BD2F-4101-871C-6470F86A3B40">Downloading an XLIFF File</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" title="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">Understanding the Translation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB25925"></a><div class="props_rev_3"><a id="GUID-8458D6B7-D62C-4594-AC48-0616629E8281" name="GUID-8458D6B7-D62C-4594-AC48-0616629E8281"></a><h4 id="HTMDB-GUID-8458D6B7-D62C-4594-AC48-0616629E8281" class="sect4"><span class="enumeration_section">22.5.2.1 </span>Seeding Translatable Text
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Seeding the translation copies all translatable text into the Translation Text repository. After you specify the language and seed the Translation Text, you can then generate and export an XLIFF file for translation.</p>
+                        <p>The seeding process keeps your primary language application synchronized with the Translation Text repository. You should run the seed process any time your primary language application changes.</p>
+                        <p>To seed translatable text:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Translate Application page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                              <li class="substepexpand"><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span><div>
+                                    <p>The Translate page appears.</p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Seed translatable text</span>.</span></li>
+                        <li class="stepexpand"><span>Select the appropriate target application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Seed</span>.</span><div>
+                              <p>When completed, the following message displays:</p><pre class="oac_no_warn" dir="ltr">Successfully seeded translatable text.</pre></div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-18EAA9E7-4EDA-4F4D-933F-3F0E93EDD507" title="Seed the translation table and then export the translation text to a translation file.">Step 2: Seed and Download to a Translation File</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25926"></a><div class="props_rev_3"><a id="GUID-94CF68D7-BD2F-4101-871C-6470F86A3B40" name="GUID-94CF68D7-BD2F-4101-871C-6470F86A3B40"></a><h4 id="HTMDB-GUID-94CF68D7-BD2F-4101-871C-6470F86A3B40" class="sect4"><span class="enumeration_section">22.5.2.2 </span>Downloading an XLIFF File
+                  </h4>
+                  <div>
+                     <p>Once the translation mappings are established the translatable text within the application is seeded into a translation repository. This repository is then exported to an XML Localization Interchange File Format (XLIFF) file for translation.</p>
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-F10A248D-E593-4DD4-84F9-1F36353466B2">About the XLIFF Export Page</a><br></li>
+                        <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-1193007B-A257-4C09-8D73-E8C59D9AC074">Downloading a XLIFF file for an Application</a><br></li>
+                        <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-A9AF2E8B-07D6-48D5-8F0B-F868B7730501">Downloading an XLIFF File for an Application Page</a><br></li>
+                        <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-063B68F2-F9A6-4DCF-8D9D-71D698F0961A">About Including XLIFF Target Elements</a><br></li>
+                     </ul>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-18EAA9E7-4EDA-4F4D-933F-3F0E93EDD507" title="Seed the translation table and then export the translation text to a translation file.">Step 2: Seed and Download to a Translation File</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <a id="HTMDB29474"></a><div class="props_rev_3"><a id="GUID-F10A248D-E593-4DD4-84F9-1F36353466B2" name="GUID-F10A248D-E593-4DD4-84F9-1F36353466B2"></a><h5 id="HTMDB-GUID-F10A248D-E593-4DD4-84F9-1F36353466B2" class="sect5"><span class="enumeration_section">22.5.2.2.1 </span>About the XLIFF Export Page
+                     </h5>
+                     <div>
+                        <p>The XLIFF Export page is divided into two sections. Use the upper section to export translatable text for an entire application (that is, all pages, lists of values, messages, and so on). Use the lower section to export translatable text for a specific page.</p>
+                        <div class="infoboxnote" id="GUID-F10A248D-E593-4DD4-84F9-1F36353466B2__GUID-D87E196B-D3D9-4640-8299-DE39438773E2">
+                           <p class="notep1">Note:</p>
+                           <p>XML Localization Interchange File Format (XLIFF) is an XML-based format for exchanging localization data. For more information about XLIFF and the XLIFF 1.0 specification, see:</p><a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xliff" target="_blank">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xliff</a></div>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-94CF68D7-BD2F-4101-871C-6470F86A3B40">Downloading an XLIFF File</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMDB25927"></a><div class="props_rev_3"><a id="GUID-1193007B-A257-4C09-8D73-E8C59D9AC074" name="GUID-1193007B-A257-4C09-8D73-E8C59D9AC074"></a><h5 id="HTMDB-GUID-1193007B-A257-4C09-8D73-E8C59D9AC074" class="sect5"><span class="enumeration_section">22.5.2.2.2 </span>Downloading a XLIFF file for an Application
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To download an XLIFF file for an complete application:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li><span>Seed the translatable text. </span></li>
+                           <li><span>Navigate to the Translate Application page:</span><ol type="a">
+                                 <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                                 <li class="substepexpand"><span>Select an application. </span></li>
+                                 <li class="substepexpand"><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                                 <li class="substepexpand"><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span><div>
+                                       <p>The Translate page appears.</p>
+                                    </div>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li><span>On the Translate page, click <span class="uicontrol bold">Download XLIFF translation files</span>.</span></li>
+                           <li><span>Under Download XLIFF file for complete Application:</span><ol type="a">
+                                 <li><span><strong class="term">Language</strong> - Choose the language to be downloaded in the XLIFF file.</span></li>
+                                 <li><span><strong class="term">Include XLIFF Target Elements </strong>- Specify whether to include XLIFF target elements. To include then, select <span class="uicontrol bold">Include XLIFF Target Elements</span>.</span></li>
+                                 <li><span><strong class="term">Export</strong> - Choose to export all translatable elements of the application or only those elements which are new or have been updated.</span></li>
+                                 <li><span>Click <span class="uicontrol bold">Export XLIFF</span>.</span></li>
+                              </ol>
+                           </li>
+                           <li><span>Follow the on-screen instructions.</span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-1193007B-A257-4C09-8D73-E8C59D9AC074__GUID-1F9178DD-8E9B-4CFC-B11B-0E7C5ED54138">
+                           <p class="notep1">See Also:</p>
+                           <p><span class="q">"<a href="understanding-the-translation-process.html#GUID-8458D6B7-D62C-4594-AC48-0616629E8281">Seeding Translatable Text</a>"</span></p>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-94CF68D7-BD2F-4101-871C-6470F86A3B40">Downloading an XLIFF File</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMDB25928"></a><div class="props_rev_3"><a id="GUID-A9AF2E8B-07D6-48D5-8F0B-F868B7730501" name="GUID-A9AF2E8B-07D6-48D5-8F0B-F868B7730501"></a><h5 id="HTMDB-GUID-A9AF2E8B-07D6-48D5-8F0B-F868B7730501" class="sect5"><span class="enumeration_section">22.5.2.2.3 </span>Downloading an XLIFF File for an Application Page
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To download an XLIFF file for a specific page:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li><span>Seed the translatable text.</span></li>
+                           <li><span>Navigate to the Translate Application page:</span><ol type="a">
+                                 <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                                 <li class="substepexpand"><span>Select an application. </span></li>
+                                 <li class="substepexpand"><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                                 <li class="substepexpand"><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span><div>
+                                       <p>The Translate page appears.</p>
+                                    </div>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li><span>On the Translate page, click <span class="uicontrol bold">Download XLIFF translation files</span>.</span></li>
+                           <li><span>Under Download XLIFF file for Application Page:</span><ol type="a">
+                                 <li><span><strong class="term">Language</strong> - Choose the language to be downloaded in the XLIFF file.</span></li>
+                                 <li><span><strong class="term">Page</strong> - Select a page.</span></li>
+                                 <li><span><strong class="term">Include XLIFF Target Elements</strong> - Specify whether to include XLIFF target elements. To include then, select <span class="uicontrol bold">Include XLIFF Target Elements</span>.</span></li>
+                                 <li><span><strong class="term">Export</strong> - Choose to export all translatable elements of the page or only those elements which are new or have been updated.</span></li>
+                                 <li><span>Click <span class="uicontrol bold">Export XLIFF</span>.</span></li>
+                              </ol>
+                           </li>
+                           <li><span>Follow the on-screen instructions.</span></li>
+                        </ol>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-A9AF2E8B-07D6-48D5-8F0B-F868B7730501__GUID-B589298E-8628-4EB1-9E42-2FA5A1A834BE">
+                           <p class="notep1">See Also:</p>
+                           <p><span class="q">"<a href="understanding-the-translation-process.html#GUID-8458D6B7-D62C-4594-AC48-0616629E8281">Seeding Translatable Text</a>"</span></p>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-94CF68D7-BD2F-4101-871C-6470F86A3B40">Downloading an XLIFF File</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMDB25929"></a><div class="props_rev_3"><a id="GUID-063B68F2-F9A6-4DCF-8D9D-71D698F0961A" name="GUID-063B68F2-F9A6-4DCF-8D9D-71D698F0961A"></a><h5 id="HTMDB-GUID-063B68F2-F9A6-4DCF-8D9D-71D698F0961A" class="sect5"><span class="enumeration_section">22.5.2.2.4 </span>About Including XLIFF Target Elements
+                     </h5>
+                     <div>
+                        <p>When Oracle Application Express generates an XLIFF document, each document contains multiple translation units. Each translation unit consists of a source element and a target element. The XLIFF document can be generated with both the source and target elements for each translation unit. You have the option of generating a file containing only source elements. The updated translations will be applied from the target elements of the translation units.</p>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-94CF68D7-BD2F-4101-871C-6470F86A3B40">Downloading an XLIFF File</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div><a id="HTMDB25931"></a><div class="props_rev_3"><a id="GUID-5E8ED498-621E-42B5-B25E-D2BF39B64025" name="GUID-5E8ED498-621E-42B5-B25E-D2BF39B64025"></a><h3 id="HTMDB-GUID-5E8ED498-621E-42B5-B25E-D2BF39B64025" class="sect3"><span class="enumeration_section">22.5.3 </span>Step 3: Translate the XLIFF File
+               </h3>
+               <div>
+                  <p>After you export a translatable file to XLIFF format, you can translate it into the appropriate languages.</p>
+                  <div class="section">
+                     <p>Because XLIFF is an open standard XML file for exchanging translations, most translation vendors should support it. Oracle Application Express only supports XLIFF files encoded in UTF-8 character sets. In other words, it exports XLIFF files for translation in UTF-8 and assumes that the translated XLIFF files are in the same character set. </p>
+                     <p>Translation is a time-consuming task. Oracle Application Express supports incremental translation so that application development can be done in parallel with the translation. An XLIFF file can be translated and uploaded to Oracle Application Express even when only part of the XLIFF file is translated. For strings that have no translation in the corresponding translated application, Oracle Application Express uses the corresponding ones in the primary language. </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5E8ED498-621E-42B5-B25E-D2BF39B64025__GUID-A957D2B7-7C9E-47C1-AA54-C1948960D2DA">
+                     <p class="notep1">See Also:</p>
+                     <p>For more information about the XLIFF and the XLIFF 1.0 specification, see:</p><a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xliff" target="_blank"><code class="codeph">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=xliff</code></a></div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" title="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">Understanding the Translation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25932"></a><div class="props_rev_3"><a id="GUID-C7A729AA-F437-4058-9E42-B9AB04F35362" name="GUID-C7A729AA-F437-4058-9E42-B9AB04F35362"></a><h3 id="HTMDB-GUID-C7A729AA-F437-4058-9E42-B9AB04F35362" class="sect3"><span class="enumeration_section">22.5.4 </span>Step 4: Upload and Apply a Translated XLIFF Document
+               </h3>
+               <p>After your XLIFF document has been translated, the next step is to upload and then apply it.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-8830AF12-9D9B-4E34-9B2E-6DC015D46F1A">Uploading a Translated XLIFF Document</a><br></li>
+                     <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-F7B0A4E9-3B6B-43B7-AC16-ABEF36A6D3F0">Applying an Uploaded XLIFF Document</a><br></li>
+                     <li class="ulchildlink"><a href="understanding-the-translation-process.html#GUID-20DD4D88-7050-49BD-A28E-59A9A85EDBC2">Deleting an Uploaded XLIFF Document</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" title="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">Understanding the Translation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB25933"></a><div class="props_rev_3"><a id="GUID-8830AF12-9D9B-4E34-9B2E-6DC015D46F1A" name="GUID-8830AF12-9D9B-4E34-9B2E-6DC015D46F1A"></a><h4 id="HTMDB-GUID-8830AF12-9D9B-4E34-9B2E-6DC015D46F1A" class="sect4"><span class="enumeration_section">22.5.4.1 </span>Uploading a Translated XLIFF Document
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To upload a translated XLIFF document:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Translate Application page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                              <li class="substepexpand"><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span><div>
+                                    <p>The Translate page appears.</p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply XLIFF translation files</span>.</span><div>
+                              <p>The XLIFF Translation Files page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Upload Files</span>.</span></li>
+                        <li class="stepexpand"><span>On the XLIFF Upload page:</span><ol type="a">
+                              <li class="substepexpand"><span>Locate the file to be uploaded.</span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Upload</span>.</span><div>
+                                    <p>The uploaded document appears on the XLIFF Translation Files page.</p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-C7A729AA-F437-4058-9E42-B9AB04F35362" title="After your XLIFF document has been translated, the next step is to upload and then apply it.">Step 4: Upload and Apply a Translated XLIFF Document</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25934"></a><div class="props_rev_3"><a id="GUID-F7B0A4E9-3B6B-43B7-AC16-ABEF36A6D3F0" name="GUID-F7B0A4E9-3B6B-43B7-AC16-ABEF36A6D3F0"></a><h4 id="HTMDB-GUID-F7B0A4E9-3B6B-43B7-AC16-ABEF36A6D3F0" class="sect4"><span class="enumeration_section">22.5.4.2 </span>Applying an Uploaded XLIFF Document
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>After you upload an XLIFF document, the next step is to apply the XLIFF document and then publish the translated application. When you apply an XLIFF document, the Application Express engine parses the file and then updates the translation tables with the new translatable text. </p>
+                        <p>Publishing your application creates a copy of the base language application, substituting the translated text strings from your translations table. This published application can then be used to render your application in alternate languages. </p>
+                        <p>Remember that to run an application in an alternative language, you must run it with globalization settings that cause an alternative language version to display. For example, if the language is derived from the browser language, you must set the browser language to the same language as the translated application.</p>
+                        <p>To apply a translated XLIFF document:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Translate Application page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                              <li class="substepexpand"><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span><div>
+                                    <p>The Translate Application page appears.</p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply XLIFF translation files</span>. </span><div>
+                              <p>The XLIFF Translation Files page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To apply the XLIFF files:</span><ol type="a">
+                              <li><span>Select the XLIFF files you want to apply.</span></li>
+                              <li><span>From Apply to Translation, choose a translation mapping.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Apply Checked</span>.</span></li>
+                           </ol>
+                           <div>
+                              <p>The XLIFF file is parsed and the contents is applied to the translation repository. Once this process is complete, you must publish the application for each translation.</p>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-F7B0A4E9-3B6B-43B7-AC16-ABEF36A6D3F0__GUID-CDE6843A-7360-482B-97E2-B81CF398A811">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="specifying-the-primary-language-for-application.html#GUID-342FD509-66F7-4EED-99CA-26DD6C05FE2A" title="Globalization attributes specify how the Application Express engine determines the primary language of an application.">Specifying the Primary Language for an Application</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="understanding-the-translation-process.html#GUID-CD27DFF4-980E-4F49-B7D0-86A239853DFE" title="Publishing your application creates a copy of the base language application, substituting the translated text strings from your translations table. This published application can then be used to render your application in alternate languages.">Step 5: Publish the Application</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-C7A729AA-F437-4058-9E42-B9AB04F35362" title="After your XLIFF document has been translated, the next step is to upload and then apply it.">Step 4: Upload and Apply a Translated XLIFF Document</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25935"></a><div class="props_rev_3"><a id="GUID-20DD4D88-7050-49BD-A28E-59A9A85EDBC2" name="GUID-20DD4D88-7050-49BD-A28E-59A9A85EDBC2"></a><h4 id="HTMDB-GUID-20DD4D88-7050-49BD-A28E-59A9A85EDBC2" class="sect4"><span class="enumeration_section">22.5.4.3 </span>Deleting an Uploaded XLIFF Document
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To delete an uploaded XLIFF document:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Translate Application page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                              <li class="substepexpand"><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span><div>
+                                    <p>The Translate page appears.</p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply XLIFF translation files</span>. </span><div>
+                              <p>The XLIFF Translation Files page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In the XLIFF Files repository, select the check box to the left of the Filename column.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Delete Checked</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-20DD4D88-7050-49BD-A28E-59A9A85EDBC2__GUID-30D36328-CEC4-4064-A600-13032A257B4B">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="specifying-the-primary-language-for-application.html#GUID-342FD509-66F7-4EED-99CA-26DD6C05FE2A" title="Globalization attributes specify how the Application Express engine determines the primary language of an application.">Specifying the Primary Language for an Application</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-C7A729AA-F437-4058-9E42-B9AB04F35362" title="After your XLIFF document has been translated, the next step is to upload and then apply it.">Step 4: Upload and Apply a Translated XLIFF Document</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB28985"></a><div class="props_rev_3"><a id="GUID-CD27DFF4-980E-4F49-B7D0-86A239853DFE" name="GUID-CD27DFF4-980E-4F49-B7D0-86A239853DFE"></a><h3 id="HTMDB-GUID-CD27DFF4-980E-4F49-B7D0-86A239853DFE" class="sect3"><span class="enumeration_section">22.5.5 </span>Step 5: Publish the Application
+               </h3>
+               <div>
+                  <p>Publishing your application creates a copy of the base language application, substituting the translated text strings from your translations table. This published application can then be used to render your application in alternate languages. </p>
+                  <div class="section">
+                     <p>Remember that to run an application in an alternative language, you must run it with globalization settings that cause an alternative language version to display. For example, if the language is derived from the browser language, you must set the browser language to the same language as the translated application.</p>
+                     <p>To publish an application:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Translate Application page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li class="substepexpand"><span>Select an application.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                           <li class="substepexpand"><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span><div>
+                                 <p>The Translate Application page appears.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Publish translated applications</span>. </span><div>
+                           <p>The XLIFF Translation Files page appears</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select the items you want to publish and click <span class="uicontrol bold">Publish</span>.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>You should verify the existence of the translated application after it is published. Translated applications do not display in the Available Applications list on the <span>App Builder</span> home page. Instead, use the Application Navigate list on the left side of the page.
+                     </p>
+                     <p>Note that in order for a translated application to appear in <span>App Builder</span>, you must ensure that you have correctly configured the application Globalization attributes.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-CD27DFF4-980E-4F49-B7D0-86A239853DFE__GUID-CF83FD48-1C96-44A1-971F-B372103611ED">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="specifying-the-primary-language-for-application.html#GUID-342FD509-66F7-4EED-99CA-26DD6C05FE2A" title="Globalization attributes specify how the Application Express engine determines the primary language of an application.">Specifying the Primary Language for an Application</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" title="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">Understanding the Translation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25936"></a><div class="props_rev_3"><a id="GUID-B1F25D63-233A-487E-A54E-04040C09558C" name="GUID-B1F25D63-233A-487E-A54E-04040C09558C"></a><h3 id="HTMDB-GUID-B1F25D63-233A-487E-A54E-04040C09558C" class="sect3"><span class="enumeration_section">22.5.6 </span>Manually Editing a Translation
+               </h3>
+               <div>
+                  <p>Once you have mapped the target language and seeded the translatable text, you manually edit a translation. </p>
+                  <div class="section">
+                     <p>To manually edit a translation:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Define the application language. </span></li>
+                     <li class="stepexpand"><span>Seed the translatable text.</span></li>
+                     <li class="stepexpand"><span>Navigate to the Translatable Text: </span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application. </span></li>
+                           <li><span>Click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                           <li><span>Under Globalization, click <span class="uicontrol bold">Translate Application</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Translation Utilities, click <span class="uicontrol bold">Translation Repository</span>.</span><div>
+                           <p>The Translatable Text page appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select a Language Mapping or page and click <span class="uicontrol bold">Set</span>.</span></li>
+                     <li class="stepexpand"><span>To further customize the report, use the Search bar at the top of the page. </span></li>
+                     <li class="stepexpand"><span>To edit translatable text:</span><ol type="a">
+                           <li class="substepexpand"><span>Click the <span class="uicontrol bold">Edit</span> icon. </span><div>The Translatable Text page appears.</div>
+                           </li>
+                           <li class="substepexpand"><span>Translate From Text - Identifies the primary language text. </span></li>
+                           <li class="substepexpand"><span>Translate to Text - Identifies the translated text. </span></li>
+                           <li class="substepexpand"><span>Update all occurrences of this string - Enable this option to update all occurrences of the string in the Translation Repository.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To access a Grid Edit page:</span><ol type="a">
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Grid Edit</span>.</span><div>The Translatable Text - Grid Edit page appears.</div>
+                           </li>
+                           <li class="substepexpand"><span>Click the <span class="uicontrol bold">Edit</span> button.</span></li>
+                           <li class="substepexpand"><span>In the <span class="uicontrol bold">Translate To</span> column, select and then edit
+                            the string.</span></li>
+                           <li class="substepexpand"><span>Click the <span class="uicontrol bold">Save</span> button.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-B1F25D63-233A-487E-A54E-04040C09558C__GUID-2E6E4475-9C40-43AA-98D4-BA1FE543D69D">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="understanding-the-translation-process.html#GUID-76786C7A-1A9E-4372-B78F-5B22AEED64B7" title="The first step in translating an application is to map the primary and target application language. The primary application is the application to be translated. The target application is the resulting translated application.">Step 1: Define Application Language</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="understanding-the-translation-process.html#GUID-8458D6B7-D62C-4594-AC48-0616629E8281">Seeding Translatable Text</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="customizing-interactive-reports-as-an-end-user.html#GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61" title="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">Customizing Interactive Reports in a Running Application</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-the-translation-process.html#GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" title="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">Understanding the Translation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

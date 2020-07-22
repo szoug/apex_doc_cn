@@ -1,0 +1,449 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Remote Servers">
+      <meta name="abstract" content="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">
+      <meta name="description" content="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">
+      <meta name="DC.subject" content="Web Source Modules, managing, Remote Server, about, exporting, creating, editing, deleting, viewing utilization, viewing history">
+      <meta name="keywords" content="Web Source Modules, managing, Remote Server, about, exporting, creating, editing, deleting, viewing utilization, viewing history">
+      <meta name="DC.Relation" scheme="URI" content="managing-application-data.html#GUID-32A38938-FAEC-4535-B944-1C1E50315F02">
+      <meta name="DC.Relation" scheme="URI" content="managing-remote-server-objects.html#GUID-32BADE76-6388-4A54-8F64-15DD50D51F3A">
+      <meta name="DC.Relation" scheme="URI" content="managing-remote-server-objects.html#GUID-0C0E46FD-654A-45ED-B233-8BF7C89CFDC0">
+      <meta name="DC.Relation" scheme="URI" content="managing-remote-server-objects.html#GUID-14B3F27F-E706-4654-BC85-3E8F7E7DF24C">
+      <meta name="DC.Relation" scheme="URI" content="managing-remote-server-objects.html#GUID-BFC8DADC-4609-4E51-9A06-704A417DDB52">
+      <meta name="DC.Relation" scheme="URI" content="managing-remote-server-objects.html#GUID-3F419346-0949-49F1-B30B-2D1B54AE85AB">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">
+      <meta name="description" content="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">
+      <title>Managing Remote Servers</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-web-source-modules.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-credentials.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-web-source-modules.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-credentials.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-data.html" property="item" typeof="WebPage"><span property="name">Managing Application Data</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Remote Servers</li>
+            </ol>
+            <a id="GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18" name="GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18"></a>
+            
+            <h2 id="HTMDB-GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18" class="sect2"><span class="enumeration_section">19.5 </span>Managing Remote Servers
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-remote-server-objects.html#GUID-32BADE76-6388-4A54-8F64-15DD50D51F3A">About Remote Servers</a><br></li>
+                  <li class="ulchildlink"><a href="managing-remote-server-objects.html#GUID-0C0E46FD-654A-45ED-B233-8BF7C89CFDC0">Creating a Remote Server</a><br></li>
+                  <li class="ulchildlink"><a href="managing-remote-server-objects.html#GUID-14B3F27F-E706-4654-BC85-3E8F7E7DF24C">Editing or Deleting a Remote Server</a><br></li>
+                  <li class="ulchildlink"><a href="managing-remote-server-objects.html#GUID-BFC8DADC-4609-4E51-9A06-704A417DDB52">Viewing Remote Server Utilization</a><br></li>
+                  <li class="ulchildlink"><a href="managing-remote-server-objects.html#GUID-3F419346-0949-49F1-B30B-2D1B54AE85AB">Viewing Remote Server History</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-application-data.html#GUID-32A38938-FAEC-4535-B944-1C1E50315F02">Managing Application Data</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-32BADE76-6388-4A54-8F64-15DD50D51F3A" name="GUID-32BADE76-6388-4A54-8F64-15DD50D51F3A"></a><h3 id="HTMDB-GUID-32BADE76-6388-4A54-8F64-15DD50D51F3A" class="sect3"><span class="enumeration_section">19.5.1 </span>About Remote Servers
+               </h3>
+               <div>
+                  <p>Oracle Application Express splits the endpoint URL of a Web Source Module into two parts. The first part is server-specific&nbsp;part and is stored as a separate entity called the <strong class="term">Remote Server</strong>. You can reuse a Remote Server with multiple Web Source Modules if each one uses the same server, port, and URL Path Prefix (context root). Remote Servers are stored at the workspace-level and therefore visible in all applications.
+                  </p>
+                  <p>The second part of the endpoint URL and is specific to the Web Source module. Multiple Web Source modules can share one Remote Server, thus sharing information such as&nbsp;the Base URL and Authentication. If you change Remote Server attributes, the change impacts all Web Source Modules using the Remote Server. Remote Servers make it easy to move a collection of Web Source Modules. For example, you can move from a test system to a production system by changing the URL within the Remote Server object.</p>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-32BADE76-6388-4A54-8F64-15DD50D51F3A__EXPORTINGANDIMPORTINGCREDENTIALS-338C765D">Exporting and Importing Remove Server Information</p>
+                     <p>When you export an application, referenced Remote Servers are added to the export file. When you import the application into another workspace, Application Express checks whether the target workspace already contains Remote Servers with the same&nbsp;<span class="bold">static ID</span>. If a Remote Server already exists, the application uses it. Otherwise the Remote Servers from the import file are created in the target workspace.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-32BADE76-6388-4A54-8F64-15DD50D51F3A__AND-3445B3B3">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-web-source-modules.html#GUID-93D7A596-03A9-48AF-9FC9-6538BCC25DED" title="Web Source Modules act as a reference to one or multiple external web services. A module can contain one or many Web Source Operations which are the references to a concrete external web service.">Managing Web Source Modules</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-remote-server-objects.html#GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18" title="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">Managing Remote Servers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-0C0E46FD-654A-45ED-B233-8BF7C89CFDC0" name="GUID-0C0E46FD-654A-45ED-B233-8BF7C89CFDC0"></a><h3 id="HTMDB-GUID-0C0E46FD-654A-45ED-B233-8BF7C89CFDC0" class="sect3"><span class="enumeration_section">19.5.2 </span>Creating a Remote Server
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To create a Remote Server object:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Navigate to the Remove Server page:</span><ul>
+                           <li>From Workspace Utilities:
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Workspace Utilities</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Remote Server</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li> From Shared Components:
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Select an application.</p>
+                                 </li>
+                                 <li>
+                                    <p>On the Application home page, click <span class="uicontrol bold">Shared Components</span> in the center of the page.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Under Workspace Objects, select <span class="uicontrol bold">Remote Servers</span>. 
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                        </ul>
+                     </li>
+                     <li><span>On the Remote Servers page, click <span class="uicontrol bold">Create</span>.</span></li>
+                     <li><span>Name - Enter a name for the remote server object. Remote Server names must be unique within the application.</span></li>
+                     <li><span>Static ID - Enter a static ID for the Remote Server. </span></li>
+                     <li><span>Server Type - Select one of the following:</span><ul>
+                           <li><span class="uicontrol bold">Web Source</span></li>
+                           <li><span class="uicontrol bold">Authentication</span></li>
+                        </ul>
+                     </li>
+                     <li><span>Base URL - Enter the base URL of the remote server.&nbsp;</span></li>
+                     <li><span>Prompt on Install - Select <span class="uicontrol bold">On</span> to have Oracle Application
+                    Express prompt for the Base URL after the application installs into another
+                    workspace. </span></li>
+                     <li><span>Comments - Enter any comments or notes here. These comments never display when running the application.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-remote-server-objects.html#GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18" title="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">Managing Remote Servers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-14B3F27F-E706-4654-BC85-3E8F7E7DF24C" name="GUID-14B3F27F-E706-4654-BC85-3E8F7E7DF24C"></a><h3 id="HTMDB-GUID-14B3F27F-E706-4654-BC85-3E8F7E7DF24C" class="sect3"><span class="enumeration_section">19.5.3 </span>Editing or Deleting a Remote Server
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To edit a Remote Server:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Credentials page:</span><ul>
+                           <li>From Workspace Utilities:
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Workspace Utilities</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Remote Server</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li> From Shared Components:
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Select an application.</p>
+                                 </li>
+                                 <li>
+                                    <p>On the Application home page, click <span class="uicontrol bold">Shared Components</span> in the center of the page.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Under Security, select <span class="uicontrol bold">Remote Server</span>. 
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="stepexpand"><span>On the Remote Server page, click the name of the Remote Server.</span><div>The Edit Remote Server dialog appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>To delete the current Remote Server, click <span class="uicontrol bold">Delete</span>. Otherwise, edit the appropriate attributes.</span><div>
+                           <div class="infobox-tip" id="GUID-14B3F27F-E706-4654-BC85-3E8F7E7DF24C__GUID-5A5A6EBB-38F4-46A1-9CE1-603B71F43FDB">
+                              <p class="notep1">Tip:</p>
+                              <p>Remote Servers which are referenced within an application cannot be deleted.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To edit the General attributes:</span><ol type="a">
+                           <li class="substepexpand"><span>Name - Enter a descriptive name.</span></li>
+                           <li class="substepexpand"><span>Static ID - Enter a name for the remote server object here. Remote
+                            Server names must be unique within the application.</span></li>
+                           <li class="substepexpand"><span>Server Type - Select either:</span><div>
+                                 
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Web Source</span></p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Authentication</span></p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Base URL - Enter the base URL of the remote server.&nbsp;</span></li>
+                           <li class="substepexpand"><span>Prompt on Install - If <span class="uicontrol bold">On</span>, Application Express
+                            prompts for the Base URL after the application has been installed into
+                            another workspace.</span></li>
+                           <li class="substepexpand"><span>HTTPS Host Name - The host name to be matched against the common name
+                            (CN) of the remote server's certificate for an HTTPS request. It can
+                            also be a domain name like <code class="codeph">*.example.com</code>. If NULL, the
+                            host name in the given URL is used.</span><div><span class="uicontrol bold">HTTPS Host Name</span> only displays
+                            if you are using Oracle Database 12.2 or higher.
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Comments - Enter any comments or notes. These comments only display
+                            within App Builder and never display when running the application.</span></li>
+                           <li class="substepexpand"><span>To save your changes, click <span class="uicontrol bold">Apply Changes</span>.
+                        </span></li>
+                        </ol>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-remote-server-objects.html#GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18" title="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">Managing Remote Servers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-BFC8DADC-4609-4E51-9A06-704A417DDB52" name="GUID-BFC8DADC-4609-4E51-9A06-704A417DDB52"></a><h3 id="HTMDB-GUID-BFC8DADC-4609-4E51-9A06-704A417DDB52" class="sect3"><span class="enumeration_section">19.5.4 </span>Viewing Remote Server Utilization
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To view Web Source Modules utilization:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Remove Server page:</span><ul>
+                           <li>From Workspace Utilities:
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Workspace Utilities</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Remote Server</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li> From Shared Components:
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Select an application.</p>
+                                 </li>
+                                 <li>
+                                    <p>On the Application home page, click <span class="uicontrol bold">Shared Components</span> in the center of the page.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Under Workspace Objects, select <span class="uicontrol bold">Remote Servers</span>. 
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="stepexpand"><span>On the Remote Servers page, click <span class="uicontrol bold">Utilization</span>.</span><div>The Utilization page displays where Remote Servers page used within the current workspace.</div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-remote-server-objects.html#GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18" title="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">Managing Remote Servers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-3F419346-0949-49F1-B30B-2D1B54AE85AB" name="GUID-3F419346-0949-49F1-B30B-2D1B54AE85AB"></a><h3 id="HTMDB-GUID-3F419346-0949-49F1-B30B-2D1B54AE85AB" class="sect3"><span class="enumeration_section">19.5.5 </span>Viewing Remote Server History
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To view recent modifications to Remote Servers:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Remove Server page:</span><ul>
+                           <li>From Workspace Utilities:
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Workspace Utilities</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Remote Server</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li> From Shared Components:
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Select an application.</p>
+                                 </li>
+                                 <li>
+                                    <p>On the Application home page, click <span class="uicontrol bold">Shared Components</span> in the center of the page.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Under Workspace Objects, select <span class="uicontrol bold">Remote Servers</span>. 
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="stepexpand"><span>On the Remote Servers page, click <span class="uicontrol bold">History</span>.</span><div>The History page displays recent modifications made to Remote Servers in the current workspace.</div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-remote-server-objects.html#GUID-0CD0245A-65BD-434C-B21D-9DD82EE73C18" title="A Remote Server is separate entity that stores Web Source server information. Remote Servers can be shared among multiple Web Sources, thus enabling you to information such as the&nbsp;Base URL or Authentication.">Managing Remote Servers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,769 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Dynamic Actions">
+      <meta name="abstract" content="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">
+      <meta name="description" content="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">
+      <meta name="DC.subject" content="Dynamic Actions, managing, understanding, creating, editing, frequency and scope, deleting, JavaScript, using a dynamic action, debugging">
+      <meta name="keywords" content="Dynamic Actions, managing, understanding, creating, editing, frequency and scope, deleting, JavaScript, using a dynamic action, debugging">
+      <meta name="DC.Relation" scheme="URI" content="managing-database-application-controls.html#GUID-1356B4CC-6BF0-4D72-94AD-017382BBCA49">
+      <meta name="DC.Relation" scheme="URI" content="managing-dynamic-actions.html#GUID-93732CF5-42AD-4400-B1B9-5F6AA3D80715">
+      <meta name="DC.Relation" scheme="URI" content="managing-dynamic-actions.html#GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B">
+      <meta name="DC.Relation" scheme="URI" content="managing-dynamic-actions.html#GUID-C76B8764-BCA1-4112-8FB6-3991869F497D">
+      <meta name="DC.Relation" scheme="URI" content="managing-dynamic-actions.html#GUID-2AFD3FA1-2CC8-47DB-83CC-E4BC8891F1E3">
+      <meta name="DC.Relation" scheme="URI" content="managing-dynamic-actions.html#GUID-639B578E-17DA-43A1-B449-871460AA4700">
+      <meta name="DC.Relation" scheme="URI" content="managing-dynamic-actions.html#GUID-46C9BE69-8B0F-43E7-BA76-B9634112961F">
+      <meta name="DC.Relation" scheme="URI" content="managing-dynamic-actions.html#GUID-D1FA7529-5586-4CCA-8AFA-1A85C8FA6995">
+      <meta name="DC.Relation" scheme="URI" content="managing-dynamic-actions.html#GUID-EDE0D674-67EA-4DFF-B7CF-D7085615BD18">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">
+      <meta name="description" content="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">
+      <title>Managing Dynamic Actions</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="editing-page-level-items.html" title="Previous" type="text/html">
+      <link rel="next" href="creating-buttons.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="editing-page-level-items.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="creating-buttons.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-database-application-controls.html" property="item" typeof="WebPage"><span property="name">Managing Database Application Controls</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Dynamic Actions</li>
+            </ol>
+            <a id="GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" name="GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE"></a><a id="HTMDB27020"></a>
+            
+            <h2 id="HTMDB-GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" class="sect2"><span class="enumeration_section">15.2 </span>Managing Dynamic Actions
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-93732CF5-42AD-4400-B1B9-5F6AA3D80715">About Dynamic Actions</a><br>Dynamic actions provide a way to define complex client-side behavior declaratively without the need for JavaScript. Using the Dynamic Action Create wizard, you specify an action that is performed when a defined set of conditions occur. You can also specify which elements are affected by the action, and when and how they are affected.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B">About Dynamic Action Events</a><br>You can define dynamic actions to fire based on events that happen on the         page. Oracle Application Express includes four different categories of events: Browser         events, Framework events, Component events, and Custom events. This section describes all         supported events, including the internal JavaScript event name in brackets.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-C76B8764-BCA1-4112-8FB6-3991869F497D">Creating a Dynamic Action</a><br>Creating a dynamic action involves specifying when the action happens (with optional conditions), what action or actions are performed, and what elements are affected by the action. To learn more about any Property Editor attribute, select the attribute and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-2AFD3FA1-2CC8-47DB-83CC-E4BC8891F1E3">Editing Dynamic Actions</a><br>Once you create a dynamic action, you can modify attributes defined during the creation process, specify attributes not available during the process (such as specifying an Authorization Scheme) and add additional true actions.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-639B578E-17DA-43A1-B449-871460AA4700">Defining Dynamic Action Event Scope</a><br>After creating the dynamic action, the scope of the action can be modified to trigger only once, for the lifetime of the current page, or until triggering elements are updated by a Partial Page Refresh (PPR).
+                  </li>
+                  <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-46C9BE69-8B0F-43E7-BA76-B9634112961F">Deleting a Dynamic Action</a><br>Delete a dynamic action by selecting it in Page Designer and selecting Delete from the context menu.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-D1FA7529-5586-4CCA-8AFA-1A85C8FA6995">About Calling JavaScript Using a Dynamic Action</a><br>You can execute JavaScript code by creating a dynamic action.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-EDE0D674-67EA-4DFF-B7CF-D7085615BD18">Debugging Dynamic Actions</a><br>Learn how to debug dynamic actions in Oracle Application Express.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE__GUID-B74EA061-916B-4CF2-92C3-811180415C50">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="accessing-application-utilities.html#GUID-08369FB1-451F-4A53-8185-11C39B83BBEA" title="Use the links in the Page Specific Utilities region to access Cross Page Utilities and Page Groups as well as access handy utilities for regions, buttons, items, computations, validations, process, dynamic actions, and branches.">Accessing Page Specific Utilities</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-database-application-controls.html#GUID-1356B4CC-6BF0-4D72-94AD-017382BBCA49" title="Developers can create and manage a variety of database application page controls, including page-level items, dynamic actions, buttons, and trees.">Managing Database Application Controls</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB28002"></a><div class="props_rev_3"><a id="GUID-93732CF5-42AD-4400-B1B9-5F6AA3D80715" name="GUID-93732CF5-42AD-4400-B1B9-5F6AA3D80715"></a><h3 id="HTMDB-GUID-93732CF5-42AD-4400-B1B9-5F6AA3D80715" class="sect3"><span class="enumeration_section">15.2.1 </span>About Dynamic Actions
+               </h3>
+               <div>
+                  <p>Dynamic actions provide a way to define complex client-side behavior declaratively without the need for JavaScript. Using the Dynamic Action Create wizard, you specify an action that is performed when a defined set of conditions occur. You can also specify which elements are affected by the action, and when and how they are affected.</p>
+                  <p>When working with dynamic actions, you should be mindful of the fact that the more dynamic actions you add to a page, the greater your overall page size. This is because the dynamic action framework emits additional code to the client for each dynamic action defined, which then also must be downloaded and executed by the framework in the client.</p>
+                  <p>The process of implementing a dynamic action involves the following steps:</p>
+                  <ol>
+                     <li>
+                        <p>Create (or use an existing) page component such as an item, button or region. This
+                    component is referenced within the dynamic action, in defining when it
+                    fires.</p>
+                     </li>
+                     <li>
+                        <p>Create a dynamic action from the application page that invokes the action.</p>
+                     </li>
+                     <li>
+                        <p>Run your application to test the dynamic action.</p>
+                     </li>
+                  </ol>
+                  <div class="infobox-tip" id="GUID-93732CF5-42AD-4400-B1B9-5F6AA3D80715__GUID-18DE4C2E-ACA8-4085-9749-2CF343014C8D">
+                     <p class="notep1">Tip:</p>
+                     <p>See <span class="q">"<a href="managing-dynamic-actions.html#GUID-EDE0D674-67EA-4DFF-B7CF-D7085615BD18" title="Learn how to debug dynamic actions in Oracle Application Express.">Debugging Dynamic Actions</a>"</span> for information on how to debug problems.
+                     </p>
+                  </div>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-93732CF5-42AD-4400-B1B9-5F6AA3D80715__GUID-A6F8CB82-47CD-4183-996D-E79E82E7D95B">Viewing Dynamic Action Examples</p>
+                     <p>To view dynamic action examples, install the <span class="italic">Sample Dynamic Actions</span> sample application. As an alternative, go to the Oracle Learning Library at <a href="http://www.oracle.com/oll/apex" target="_blank">http://www.oracle.com/oll/apex</a>. Enter search criteria in the field provided (for example, <code class="codeph">dynamic actions</code>) and click <span class="uicontrol bold">Search</span>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-93732CF5-42AD-4400-B1B9-5F6AA3D80715__GUID-D942FFED-0A96-4AF0-A588-2002E42B249B">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-packaged-applications-in-a-full-development-environment.html#GUID-34C7101B-4B2F-4502-B365-92798DDBCA38">安装生产力和示例应用</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29976"></a><a id="HTMDB29977"></a><a id="HTMDB29978"></a><a id="HTMDB29975"></a><div class="props_rev_3"><a id="GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B" name="GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B"></a><h3 id="HTMDB-GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B" class="sect3"><span class="enumeration_section">15.2.2 </span>About Dynamic Action Events
+               </h3>
+               <div>
+                  <p>You can define dynamic actions to fire based on events that happen on the
+        page. Oracle Application Express includes four different categories of events: Browser
+        events, Framework events, Component events, and Custom events. This section describes all
+        supported events, including the internal JavaScript event name in brackets.</p>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B__GUID-2C602C95-B139-405C-A6EB-81867AEF6482">Browser Events</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B__GUID-AA9D244C-74AA-436F-9877-D05C555E671D">
+                        <p class="notep1">Note:</p>
+                        <p>The events displayed differ according to the page's current User Interface type. If you want to select an event that corresponds to a different type, then you have the option of selecting Show unsupported, which displays all events including those that do not correspond to the current type.</p>
+                     </div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Change (<code class="codeph">change</code>) - Fires when a control loses the input focus and its value has been modified since gaining focus. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click (<code class="codeph">click</code>) - Fires when the pointing device button is clicked over the triggering element. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Double Click (<code class="codeph">dblclick</code>) - Fires when the pointing device button is double clicked over the triggering element.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Double Tap (<code class="codeph">apexdoubletap</code>)  - Fires when the pointer is doing a double tap/click.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Get Focus (<code class="codeph">focusing</code>) - Fires when the triggering element receives focus by either a pointing device or by tabbing into the element. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Key Down (<code class="codeph">keydown</code>) - Fires when a key on the keyboard is pressed. Use this event when you want to capture special keystrokes such as arrow keys, after a key has been pressed.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Key Press (<code class="codeph">keypress</code>) - Fires when a key on the keyboard is pressed resulting in text being entered. Use this event when you want to capture actual text entry. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Key Release (<code class="codeph">keyup</code>) - Fires when a key on the keyboard is released. Use this event when you want to capture special keystrokes such as arrow keys, after a key has been released. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Lose Focus (<code class="codeph">focusout</code>) - Fires when the triggering element loses focus either by the pointing device or by tabbing out of the element.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Mouse Button Press (<code class="codeph">mousedown</code>) - Fires when the pointing device button is pressed over the triggering element. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Mouse Button Release (<code class="codeph">mouseup</code>) - Fires when the pointing device button is released over the triggering element.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Mouse Enter (<code class="codeph">mouseenter</code>) - Fires once when the pointing device is moved into the triggering element.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Mouse Leave (<code class="codeph">mouseleave</code>) - Fires once when the pointing device is moved away from the triggering element. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Mouse Move (<code class="codeph">mousemove</code>) - Fires when the pointing device is moved while it is over the triggering element.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Pan (<code class="codeph">apexpan</code>)  - Fires when the pointer is down, then moved in a horizontal direction.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Page Load <code class="codeph">ready</code> &#x2013; Fires when the page loads.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Page Unload (<code class="codeph">unload</code>) - Fires when a page is unloaded.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Press (<code class="codeph">apexpress</code>)  - Fires when the pointer is down for greater than 250ms.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Resize (<code class="codeph">resize</code>) - Fires when the browser window is resized.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Resource Load (<code class="codeph">load</code>) - When the triggering element is the window element (using a JavaScript Expression value of <code class="codeph">window</code> in the When attributes), the event fires when the browser finishes loading all content within a document, including window, frames, objects and images. For other elements, this event can only be used for elements associated with a URL: images, scripts, frames, iframes.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Scroll (<code class="codeph">scroll</code>) - Fires when a scrollable triggering element is scrolled. This could be the browser window (using a JavaScript Expression value of <code class="codeph">window</code> in the When attributes), scrollable frames or elements with the <code class="codeph">overflow</code> CSS property set to <code class="codeph">scroll</code> (or <code class="codeph">auto</code> when the element's explicit height is less than the height of its contents).
+                           </p>
+                        </li>
+                        <li>
+                           <p>Select (<code class="codeph">select</code>) - Fires when a user selects some text in a text field.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Swipe (<code class="codeph">apexswipe</code>)  - Fires when the pointer is moving fast in a horizontal direction.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Tap (<code class="codeph">apextap</code>)  - Fires when the pointer is doing a small tap click.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B__GUID-349E31C6-845E-49D5-AF4D-2B545176B792">Framework Events</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>After Refresh (<code class="codeph">apexafterrefresh</code>) - Fires after the triggering
+                        element has been refreshed. The event is only valid for triggering elements
+                        that perform Partial Page Refresh and fire this event. The native components
+                        that support this are Interactive Reports, Classic Reports, Charts, List
+                        View and all item types with cascading LOV support. Plug-ins might support
+                        this event as well. This event can be sent by the
+                            <code class="codeph">apex.server.plugin</code> and
+                            <code class="codeph">apex.server.process</code> APIs when the
+                            <code class="codeph">refreshObject</code> option is provided. See <span class="q">"<a href="https://docs.oracle.com/en/database/oracle/application-express/19.1/aexjs/apex.server.html" target="_blank">apex.server</a>"</span>
+                        in <span><cite>Oracle Application Express JavaScript API Reference</cite></span>
+                              
+                           </p>
+                        </li>
+                        <li>
+                           <p>Before Page Submit (<code class="codeph">apexbeforepagesubmit</code>) - Fires before a page being submitted.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Before Refresh (<code class="codeph">apexbeforerefresh</code>) - Fires before the triggering
+                        element has been refreshed. The event is only valid for triggering elements
+                        that perform Partial Page Refresh and fire this event. The native components
+                        that support this are Interactive Reports, Classic Reports, Charts, List
+                        View and all item types with cascading LOV support. Plug-ins might support
+                        this event as well. This event can be sent by the
+                            <code class="codeph">apex.server.plugin</code> and
+                            <code class="codeph">apex.server.process</code> APIs when the refreshObject option
+                        is provided. See <span class="q">"<a href="https://docs.oracle.com/en/database/oracle/application-express/19.1/aexjs/apex.server.html" target="_blank">apex.server</a>"</span>
+                        in <span><cite>Oracle Application Express JavaScript API Reference</cite></span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Dialog Closed (<code class="codeph">apexafterclosedialog</code>) - Fires when an Application Express&nbsp;dialog is closed. This event only fires when the dialog is closed using the&nbsp;'Close Dialog' page process, or the 'Close Dialog' dynamic action.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B__GUID-832E5964-0E64-4208-A702-84DF00D13730">Component Events</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>These events are available when there is a component (either an item, region, or dynamic action) available to your application that triggers a custom event. These events appear in the following format Event name [Component Name], for example the Change Order event triggered by the Shuttle native item type appears as Change Order [Shuttle]. Component events are either triggered from native components shipped with Oracle Application Express, or from plug-in components you have installed into your application.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           
+                           <p>Events triggered by native components: </p>
+                           
+                           <p>These will be in the format Event name [Component Name]. For
+                        help related to events raised by our native components, see
+                            <code class="codeph">interactiveGrid</code> and <code class="codeph">treeView</code>. See <span class="q">"<a href="https://docs.oracle.com/en/database/oracle/application-express/19.1/aexjs/interactiveGrid.html" target="_blank">interactiveGrid</a>"</span> and <span class="q">"
+                            <a href="https://docs.oracle.com/en/database/oracle/application-express/19.1/aexjs/treeView.html" target="_blank">treeView</a>"</span> in
+                            <cite>Oracle Application Express JavaScript API
+                            Reference</cite>.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           <p>Events triggered by plug-in components: </p>
+                           <p>These will be available when added to your current application and will be in the format Event name [Component Name]. For help related to events raised by plug-ins, refer to Help text on the plug-in configuration page, by navigating to Shared Components, Plug-ins, <span class="italic">plug-in name</span>, Help Text, where the plug-in author may have included documentation.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B__GUID-70A52D65-626E-4278-9BEF-6E80AD4B40D3">Custom Events</p>
+                     
+                     
+                     <ul style="list-style-type: disc;" id="GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B__UL_CMB_QCX_ZKB">
+                        <li>
+                           
+                           <p>Custom Events: </p>
+                           
+                           <p>By selecting Custom an additional field displays enabling you to
+                        define of a custom event. This is useful when the native or plug-in provided
+                        events are insufficient.</p>
+                           
+                        </li>
+                     </ul>
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29735"></a><div class="props_rev_3"><a id="GUID-C76B8764-BCA1-4112-8FB6-3991869F497D" name="GUID-C76B8764-BCA1-4112-8FB6-3991869F497D"></a><h3 id="HTMDB-GUID-C76B8764-BCA1-4112-8FB6-3991869F497D" class="sect3"><span class="enumeration_section">15.2.3 </span>Creating a Dynamic Action
+               </h3>
+               <div>
+                  <p>Creating a dynamic action involves specifying when the action happens (with optional conditions), what action or actions are performed, and what elements are affected by the action. To learn more about any Property Editor attribute, select the attribute and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                  </p>
+                  <div class="section">
+                     <p>To create a dynamic action in Page Designer:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Dynamic Actions</span> tab in the left pane.</span></li>
+                     <li class="stepexpand"><span>Under Dynamic Actions, right-click <span class="uicontrol bold">Events</span> and select <span class="uicontrol bold">Create Dynamic Action</span>.</span><div>
+                           
+                           <div class="infobox-tip" id="GUID-C76B8764-BCA1-4112-8FB6-3991869F497D__GUID-334C3C00-A034-474D-83CF-635D611D7977">
+                              <p class="notep1">Tip:</p>
+                              
+                              <p>You can also select an event type and then right-click to
+                            select <span class="uicontrol bold">Create Dynamic Action</span>.
+                              </p>
+                              
+                           </div>
+                           
+                           <p>The Property Editor displays Dynamic Action attributes.</p>
+                           
+                           <p>Page Designer indicates what actions are required next. If there
+                        is an error, a <span class="uicontrol bold">Messages</span> icon displays next to the
+                            <span class="uicontrol bold">Save</span> button. Click the
+                            <span class="uicontrol bold">Messages</span> icon to view a dialog listing all the
+                        errors. Select an error to highlight the associated attribute in the
+                        Property Editor.
+                           </p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor, edit the following Dynamic Action attributes:</span><div>
+                           <div class="infobox-tip" id="GUID-C76B8764-BCA1-4112-8FB6-3991869F497D__GUID-29D4CD2C-C0FC-4B67-BAE7-DB1BBA587BB7">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                              </p>
+                           </div>
+                           <ol type="a">
+                              <li>
+                                 <p><span class="uicontrol bold">Identification</span>, <span class="uicontrol bold">Name</span> - Enter the name of the dynamic action.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Execution Options</span>, <span class="uicontrol bold">Sequence</span> - Enter the sequence for this computation. The sequence determines the order of execution.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">When</span>, <span class="uicontrol bold">Event</span> - Specify the event that causes the dynamic action to fire.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">When</span>, <span class="uicontrol bold">Selection</span> - Select the type of page element or construct to be used to trigger the event. 
+                                 </p>
+                                 <div class="infoboxnote" id="GUID-C76B8764-BCA1-4112-8FB6-3991869F497D__GUID-46E0FEEE-CA5E-4F1D-BB02-3D41D2CD3F13">
+                                    <p class="notep1">Note:</p>
+                                    <p>Only available if the event selected supports definition of a page element. Selecting any of the following events hides this attribute: Page Load, Page Unload, Resize, Before Page Submit, Orientation Change. All other event types show this field.</p>
+                                 </div>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Client-side Condition</span>, <span class="uicontrol bold">Type</span> - Optionally select the type of condition you want to control the true and false action processing of the dynamic action. If no client-side condition is defined, only true actions will fire. If a client-side condition is defined, the true action will fire when the condition is met, and the false action will fire when it is not.
+                                 </p>
+                                 <div class="infoboxnote" id="GUID-C76B8764-BCA1-4112-8FB6-3991869F497D__GUID-7D95F03F-5A4F-4AB8-AE74-8080608171BF">
+                                    <p class="notep1">Note:</p>
+                                    <p>Other properties will display conditionally based on the type, to declaratively allow you to define the condition. For example for the condition type <code class="codeph">Item = Value</code>, you will see an <code class="codeph">Item</code> and <code class="codeph">Value</code> property, which will be checked in evaluating the condition.
+                                    </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </div>
+                        <div>Next, define the action that to be performed if the event evaluates to True or False.</div>
+                     </li>
+                     <li class="stepexpand"><span>To edit an existing action:</span><div>
+                           <ol type="a">
+                              <li>
+                                 <p>Expand the Dynamic Action tree and select an existing action (that is, select either <span class="uicontrol bold">True</span> or <span class="uicontrol bold">False</span>).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>In Property Editor, edit the following <span class="uicontrol bold">Action</span> attributes:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">Action</span> - Specify which action you want to perform.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Affected Elements</span> - Select  the page components to be
+                                        affected when this action is executed. Additional options
+                                        display depending upon the type of element selected.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Execution Options</span>, <span class="uicontrol bold">Fire When Event Result Is</span> - Specify whether this action fires when the triggering element condition is met by selecting True (True Action), or when it is not met by selecting False (False Action). If no condition is specified, only True actions fire.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Fire on Initialization</span> - Specify if the action fires on initialization. 
+                                       </p>
+                                       <p><span class="italic">Initialization</span> has a slightly different meaning depending on how the dynamic action is defined. For dynamic actions defined to fire on interactive grid columns, this specifies if the action fires when the interactive grid row is activated for editing. For all other dynamic actions, this specifies if the action fires when the page loads.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To add a new action:</span><div>
+                           <ol type="a">
+                              <li>
+                                 <p>Expand the Dynamic Action tree.</p>
+                              </li>
+                              <li>
+                                 <p>Right-click the dynamic action and select either <span class="uicontrol bold">Create TRUE Action</span> or <span class="uicontrol bold">Create FALSE Action</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Edit the action in the Property Editor as described in the previous step.</p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C76B8764-BCA1-4112-8FB6-3991869F497D__GUID-DD7F367F-BCD9-4D7F-A835-2036CA04A9EB">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-dynamic-actions.html#GUID-95E8C5A5-6A25-4786-BD7A-809C18F17D3B" title="You can define dynamic actions to fire based on events that happen on the page. Oracle Application Express includes four different categories of events: Browser events, Framework events, Component events, and Custom events. This section describes all supported events, including the internal JavaScript event name in brackets.">About Dynamic Action Events</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29736"></a><div class="props_rev_3"><a id="GUID-2AFD3FA1-2CC8-47DB-83CC-E4BC8891F1E3" name="GUID-2AFD3FA1-2CC8-47DB-83CC-E4BC8891F1E3"></a><h3 id="HTMDB-GUID-2AFD3FA1-2CC8-47DB-83CC-E4BC8891F1E3" class="sect3"><span class="enumeration_section">15.2.4 </span>Editing Dynamic Actions
+               </h3>
+               <div>
+                  <p>Once you create a dynamic action, you can modify attributes defined during the creation process, specify attributes not available during the process (such as specifying an Authorization Scheme) and add additional true actions.</p>
+                  <div class="section">
+                     <p>To edit a dynamic action:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Dynamic Actions</span> tab in the left pane. Dynamic actions are organized by events.</span></li>
+                     <li class="stepexpand"><span>Expand the appropriate event and select the dynamic action.</span><div>Attributes for the dynamic action display in the Property Editor.</div>
+                     </li>
+                     <li class="stepexpand"><span>In Property Editor, edit the appropriate Dynamic Action attributes.</span><div>
+                           <div class="infobox-tip" id="GUID-2AFD3FA1-2CC8-47DB-83CC-E4BC8891F1E3__GUID-087A1CA2-E184-4AC7-A12F-942E94A523B0">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To edit an existing action:</span><ol type="a">
+                           <li><span>Expand the Dynamic Action tree to view the True or False nodes.</span></li>
+                           <li><span>Under True or False, select the action.</span></li>
+                           <li><span>Edit the action in the Property Editor.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To add a new action:</span><ol type="a">
+                           <li><span>Expand the Dynamic Action tree.</span></li>
+                           <li><span>Right-click the dynamic action and select either <span class="uicontrol bold">Create TRUE Action</span> or <span class="uicontrol bold">Create FALSE Action</span>.</span></li>
+                           <li><span>Edit the action in the Property Editor.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29740"></a><div class="props_rev_3"><a id="GUID-639B578E-17DA-43A1-B449-871460AA4700" name="GUID-639B578E-17DA-43A1-B449-871460AA4700"></a><h3 id="HTMDB-GUID-639B578E-17DA-43A1-B449-871460AA4700" class="sect3"><span class="enumeration_section">15.2.5 </span>Defining Dynamic Action Event Scope
+               </h3>
+               <div>
+                  <p>After creating the dynamic action, the scope of the action can be modified to trigger only once, for the lifetime of the current page, or until triggering elements are updated by a Partial Page Refresh (PPR).</p>
+                  <div class="section">
+                     <p>To specify scope:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Dynamic Actions</span> tab in the left pane.</span></li>
+                     <li class="stepexpand"><span>Under Dynamic Actions, select the dynamic action.</span><div>
+                           <p>The Property Editor displays attributes for the dynamic action. Attributes are organized in groups.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To find a group or attribute:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Search for the group or attribute</span> -&nbsp;Enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;To return to the default display, delete the keywords.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Use Go to Group</span> - Click <span class="uicontrol bold">Go to Group</span> and select the group. To return the default display, click <span class="uicontrol bold">Go to Group</span> again and select <span class="uicontrol bold">Expand All</span>.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under <span class="uicontrol bold">Advanced</span>, select <span class="uicontrol bold">Event Scope</span>. The scope of the event determines when the event is evaluated a second or successive time. Options include:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Static</span> - Binds the event handler to the triggering element(s) for the lifetime of the current page, but is no longer bound if a triggering element is updated via Partial Page Refresh (PPR).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Dynamic</span> - Binds the event handler to the triggering element(s) for the lifetime of the current page, irrespective of any triggering elements being recreated via Partial Page Refresh (PPR).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Once</span> -  Binds the event handler to the triggering element(s) only once. The dynamic action is not triggered again until after the page has been fully refreshed.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29987"></a><div class="props_rev_3"><a id="GUID-46C9BE69-8B0F-43E7-BA76-B9634112961F" name="GUID-46C9BE69-8B0F-43E7-BA76-B9634112961F"></a><h3 id="HTMDB-GUID-46C9BE69-8B0F-43E7-BA76-B9634112961F" class="sect3"><span class="enumeration_section">15.2.6 </span>Deleting a Dynamic Action
+               </h3>
+               <div>
+                  <p>Delete a dynamic action by selecting it in Page Designer and selecting Delete from the context menu.</p>
+                  <div class="section">
+                     <p>To delete a dynamic action:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="bold">Dynamic Actions</span> tab in the left pane. </span></li>
+                     <li class="stepexpand"><span>Expand the appropriate event and locate the dynamic action to be deleted.</span></li>
+                     <li class="stepexpand"><span>Right-click the dynamic action and select <span class="uicontrol bold">Delete</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28452"></a><div class="props_rev_3"><a id="GUID-D1FA7529-5586-4CCA-8AFA-1A85C8FA6995" name="GUID-D1FA7529-5586-4CCA-8AFA-1A85C8FA6995"></a><h3 id="HTMDB-GUID-D1FA7529-5586-4CCA-8AFA-1A85C8FA6995" class="sect3"><span class="enumeration_section">15.2.7 </span>About Calling JavaScript Using a Dynamic Action
+               </h3>
+               <div>
+                  <p>You can execute JavaScript code by creating a dynamic action.</p>
+                  <p>Although Dynamic Actions are designed to be low code, there are a number of places where
+            you can extend the native possibilities with custom JavaScript code. You can use a
+            JavaScript Expression for a custom Client-Side condition, which can be useful for
+            example if you want to based your condition on multiple item values. In addition, you
+            can also execute JavaScript code by creating a dynamic action with the Execute
+            JavaScript Code or Set Value actions</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D1FA7529-5586-4CCA-8AFA-1A85C8FA6995__GUID-8A02ADFD-F926-4F76-80D8-7306EF3551A4">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28007"></a><div class="props_rev_3"><a id="GUID-EDE0D674-67EA-4DFF-B7CF-D7085615BD18" name="GUID-EDE0D674-67EA-4DFF-B7CF-D7085615BD18"></a><h3 id="HTMDB-GUID-EDE0D674-67EA-4DFF-B7CF-D7085615BD18" class="sect3"><span class="enumeration_section">15.2.8 </span>Debugging Dynamic Actions
+               </h3>
+               <p>Learn how to debug dynamic actions in Oracle Application Express.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-01748AED-D105-428D-A8C2-769803D6F40F">About Debugging Dynamic Actions</a><br></li>
+                     <li class="ulchildlink"><a href="managing-dynamic-actions.html#GUID-D5ED3F2D-70C8-48D8-8D78-0B380352296F">Debugging Dynamic Actions</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29465"></a><div class="props_rev_3"><a id="GUID-01748AED-D105-428D-A8C2-769803D6F40F" name="GUID-01748AED-D105-428D-A8C2-769803D6F40F"></a><h4 id="HTMDB-GUID-01748AED-D105-428D-A8C2-769803D6F40F" class="sect4"><span class="enumeration_section">15.2.8.1 </span>About Debugging Dynamic Actions 
+                  </h4>
+                  <div>
+                     <p>Debugging dynamic actions in Oracle Application Express is slightly different than other debugging, because much of the processing done with the dynamic action framework is done on the client, not on the server. To debug dynamic actions, Oracle Application Express outputs debug information to the browser's JavaScript console if your browser supports it (for example Firefox with Firebug installed shows the debug information in its Console pane). The debug information tells you when an action of a dynamic action fires, along with some additional information about the dynamic action, in the following format: </p><pre class="pre codeblock"><code>Dynamic Action Fired: [Dynamic Action name] ([Action name]) {JavaScript object containing all Dynamic Action information}</code></pre><p>This format enables you to identify the dynamic action name, the action name which indicates which action is triggered, and the JavaScript object which contains a lot of information about the dynamic action, including the when element, the affected elements, the event object and any data that may be associated with the dynamic action.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-EDE0D674-67EA-4DFF-B7CF-D7085615BD18" title="Learn how to debug dynamic actions in Oracle Application Express.">Debugging Dynamic Actions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29466"></a><div class="props_rev_3"><a id="GUID-D5ED3F2D-70C8-48D8-8D78-0B380352296F" name="GUID-D5ED3F2D-70C8-48D8-8D78-0B380352296F"></a><h4 id="HTMDB-GUID-D5ED3F2D-70C8-48D8-8D78-0B380352296F" class="sect4"><span class="enumeration_section">15.2.8.2 </span>Debugging Dynamic Actions
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To debug a dynamic action: </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Ensure the application containing the dynamic action has Debugging enabled. See <span class="q">"<a href="utilizing-debug-mode.html#GUID-65F66F2B-ADCB-41B2-8EEE-3B7D7603F50C" title="Use Debug mode to track down unexpected application behavior.">Utilizing Debug Mode</a>."</span></span></li>
+                        <li class="stepexpand"><span>Run the page containing the dynamic action.</span></li>
+                        <li class="stepexpand"><span>Open the browser's JavaScript console.</span></li>
+                        <li class="stepexpand"><span>From the Developer toolbar, click <span class="bold">Debug</span>.</span><div>
+                              <p>The page refreshes. If you have any dynamic actions that are set to fire on page load, you will see the debug output in the browser console.</p>
+                              <p>Since debug information is only output when running in Debug mode, leaving Debug mode switched on enables you to further test if dynamic actions are firing when you expect them to. For example if you have defined a dynamic action that fires when a certain item's value changes, change that item's value and the console shows the debug output if the dynamic action fires.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-dynamic-actions.html#GUID-EDE0D674-67EA-4DFF-B7CF-D7085615BD18" title="Learn how to debug dynamic actions in Oracle Application Express.">Debugging Dynamic Actions</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

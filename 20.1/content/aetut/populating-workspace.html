@@ -1,0 +1,181 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Populating Your Workspace">
+      <meta name="abstract" content="To build an Oracle Application Express app, you need a complete set of tables and data.">
+      <meta name="description" content="To build an Oracle Application Express app, you need a complete set of tables and data.">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Shakeeb Rahman">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-31C586B2-F654-4566-B7C5-D62144916917">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="To build an Oracle Application Express app, you need a complete set of tables and data.">
+      <meta name="description" content="To build an Oracle Application Express app, you need a complete set of tables and data.">
+      <title>Populating Your Workspace</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Tutorial: Building an Application">
+      <meta property="og:description" content="To build an Oracle Application Express app, you need a complete set of tables and data.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Tutorial: Building an Application">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-tutorial-building-application.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-08T10:54:58-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24727-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="before-you-begin.html" title="Previous" type="text/html">
+      <link rel="next" href="creating-initial-application.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Tutorial: Building an Application">
+    <meta name="dcterms.isVersionOf" content="AETUT">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="before-you-begin.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="creating-initial-application.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Tutorial: Building an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Populating Your Workspace</li>
+            </ol>
+            <a id="GUID-31C586B2-F654-4566-B7C5-D62144916917" name="GUID-31C586B2-F654-4566-B7C5-D62144916917"></a>
+            
+            <h2 id="AETUT-GUID-31C586B2-F654-4566-B7C5-D62144916917" class="sect2"><span class="enumeration_chapter">3 </span>Populating Your Workspace
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>To build an <span>Oracle Application
+                                        Express</span> app, you need a complete set of tables and data.
+               </p>
+               <div class="section">
+                  <p class="subhead1" id="GUID-31C586B2-F654-4566-B7C5-D62144916917__GUID-84EAB412-95E4-4492-9DF1-DBB19A1FF1F0">About This Lesson</p>
+                  <p>In this lesson, you install <strong class="term">Sample Datasets</strong> provided by Oracle.
+                  </p>
+                  <p>Once installed, you also review the output of the scripts in Object Browser to confirm the presence of the tables and data.</p>
+                  <p>The sample tables and data that you load in these steps resemble the kind of information that real <span>Application Express</span> project management apps use every day. They include information typical of data sets for employees, projects, and calendars.
+                  </p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87" name="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87"></a><h3 id="AETUT-GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87" class="sect3"><span class="enumeration_section">3.1 </span>Installing the Sample Datasets
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The <span>Application Express</span> SQL Workshop comes with several sample datasets intended to enhance app experimentation.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To install the Project Data sample dataset in SQL Workshop:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to your <span>Oracle Application
+                                        Express</span> workspace.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">SQL Workshop</span>, click <span class="uicontrol bold">Utilities</span>, and click <span class="uicontrol bold">Sample Datasets</span>.</span><div>
+                           <div class="infobox-tip" id="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87__GUID-DA73B5BC-5A0F-4771-94A9-86F02211B0F2">
+                              <p class="notep1">Tip:</p>
+                              <p>You can also click the down arrow icons to open the drop-down menus on the tabs at the top of the screen to shortcut your way around your workspace.</p>
+                              <div class="figure" id="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87__FIG_GJH_FWY_2HB"><br><div class="imageleft"><img class="imageleft" id="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87__IMAGE_T14_T2Z_2HB" height="603" width="646" src="img/workspace_sql_util_sample_datasets.png" alt="Sample Datasets in SQL Wokrshop drop-down menu" title="Sample Datasets in SQL Wokrshop drop-down menu"><br><a href="img_text/workspace_sql_util_sample_datasets.html">Description of the illustration workspace_sql_util_sample_datasets.png</a></div><br></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Find <span class="italic">Project Data</span> in the list and click the adjacent <span class="uicontrol bold">Install</span> button.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87__IMAGE_FJ1_3B2_FHB" height="479" width="513" src="img/sql_util_sample_datasets_install.png" alt="Install Project Data sample dataset" title="Install Project Data sample dataset"><br><a href="img_text/sql_util_sample_datasets_install.html">Description of the illustration sql_util_sample_datasets_install.png</a></div><br></div>
+                        <div>The Manage Sample Dataset dialog displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Install Dataset</span>.</span></li>
+                     <li class="stepexpand"><span>In Results dialog, review the new objects.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87__IMAGE_CRS_ZF2_FHB" height="404" width="541" src="img/sample_dataset_objects.png" alt="Sample dataset objects" title="Sample dataset objects"><br><a href="img_text/sample_dataset_objects.html">Description of the illustration sample_dataset_objects.png</a></div><br><p>The script created the following objects:</p>
+                           <ul style="list-style-type: disc;" id="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87__UL_HPV_F3P_4LB">
+                              <li>EBA_PROJECT_STATUS (Table)</li>
+                              <li>EBA_PROJECTS (Table)</li>
+                              <li>EBA_PROJECT_MILESTONES (Table)</li>
+                              <li>EBA_PROJECT_TASKS (Table)</li>
+                              <li>EBA_PROJECT_TASK_TODOS (Table)</li>
+                              <li>EBA_PROJECT_TASK_LINKS (Table)</li>
+                              <li>EBA_PROJECT_COMMENTS (Table)</li>
+                              <li>EBA_PROJECTS_V (View)</li>
+                              <li>EBA_PROJECTS_COMPLETED_V (View)</li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Exit</span>.</span><div>
+                           <div class="infoboxnote" id="GUID-A8928E6D-95BE-49AC-8F4A-6EA2EED0DE87__INSTEADOFEXITCLICKINGCREATEAPPLICAT-D4E67F4C">
+                              <p class="notep1">Note:</p>The Create Application button is a shortcut to the Create Application Wizard loaded with the sample data.
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">You have populated the sample tables and data in your workspace.</div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-A56FA8C1-2BE5-474D-8C7B-7F29F7ECEF30" name="GUID-A56FA8C1-2BE5-474D-8C7B-7F29F7ECEF30"></a><h3 id="AETUT-GUID-A56FA8C1-2BE5-474D-8C7B-7F29F7ECEF30" class="sect3"><span class="enumeration_section">3.2 </span>Reviewing the Created Tables with Object Browser
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Object Browser displays all the raw objects present in the <span>Oracle</span> database schema associated with your workspace. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To navigate to Object Browser:</p>
+                  <ol id="GUID-A56FA8C1-2BE5-474D-8C7B-7F29F7ECEF30__STEPS_K2J_L3P_4LB">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">SQL Workshop</span> to return to the SQL Workshop home page.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <div class="infobox-tip" id="GUID-A56FA8C1-2BE5-474D-8C7B-7F29F7ECEF30__GUID-B8106287-562C-49FA-B46F-8F770FDFBD43">
+                              <p class="notep1">Tip:</p>For quicker navigation, click the arrow next to <span class="uicontrol bold">SQL Workshop</span> to display a drop-down menu.
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the list of tables, select <span class="uicontrol bold">EBA_PROJECTS</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-A56FA8C1-2BE5-474D-8C7B-7F29F7ECEF30__IMAGE_PDT_2K2_FHB" height="407" width="470" src="img/object_browser.png" alt="Tables in Object Browser" title="Tables in Object Browser"><br><a href="img_text/object_browser.html">Description of the illustration object_browser.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Data</span> tab. The Data tab displays the raw information of the <code class="codeph">EBA_PROJECTS</code> table.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-A56FA8C1-2BE5-474D-8C7B-7F29F7ECEF30__IMAGE_GJX_LL2_FHB" height="389" width="728" src="img/object_browser_sampleprojects.png" alt="Data tab" title="Data tab"><br><a href="img_text/object_browser_sampleprojects.html">Description of the illustration object_browser_sampleprojects.png</a></div><br><div class="infoboxnote" id="GUID-A56FA8C1-2BE5-474D-8C7B-7F29F7ECEF30__GUID-F1A2AB0D-8049-4118-B320-98DDCABDF716">
+                              <p class="notep1">Note:</p>You can edit the data directly by clicking the Edit icon on the Data report. However, leave the data unchanged for now.
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>When finished, click the <span class="uicontrol bold">Oracle</span> logo in the top-left of the page to return to the Workspace home page.</span></li>
+                  </ol>
+                  <div class="section">You have fully populated your workspace and are ready to create a new application.</div>
+                  <!-- class="section" -->
+                  <div class="section">Proceed to the next lesson.</div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

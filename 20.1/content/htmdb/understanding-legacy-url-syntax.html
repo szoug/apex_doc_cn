@@ -1,0 +1,463 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="了解 f?p URL 格式">
+      <meta name="abstract" content="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">
+      <meta name="description" content="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">
+      <meta name="DC.subject" content="f?p syntax, pages, linking with f?p syntax, calling with an alias, calling from a button">
+      <meta name="keywords" content="f?p syntax, pages, linking with f?p syntax, calling with an alias, calling from a button">
+      <meta name="DC.Relation" scheme="URI" content="understanding-url-syntax.html#GUID-F9B81EAF-D33F-401D-8349-3952DEDA5460">
+      <meta name="DC.Relation" scheme="URI" content="understanding-legacy-url-syntax.html#GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35">
+      <meta name="DC.Relation" scheme="URI" content="understanding-legacy-url-syntax.html#GUID-D5510BFC-AF94-4AAD-8B82-FF780A47601D">
+      <meta name="DC.Relation" scheme="URI" content="understanding-legacy-url-syntax.html#GUID-42B279B6-776C-447A-BA3F-4B017E127700">
+      <meta name="DC.Relation" scheme="URI" content="understanding-legacy-url-syntax.html#GUID-70A38D52-92C4-4344-AB0C-8EA202DBAA71">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-ABC99726-E754-4AC1-8C87-8B684D2F8D42">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">
+      <meta name="description" content="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">
+      <title>了解 f?p URL 格式</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="understanding-friendly-url-syntax.html" title="Previous" type="text/html">
+      <link rel="next" href="hiding-the-session-ID-on-public-pages.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="understanding-friendly-url-syntax.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="hiding-the-session-ID-on-public-pages.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="application-builder-concepts.html" property="item" typeof="WebPage"><span property="name"> 应用构建器（App Builder）概念</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-url-syntax.html" property="item" typeof="WebPage"><span property="name">了解URL格式</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">了解 f?p URL 格式</li>
+            </ol>
+            <a id="GUID-ABC99726-E754-4AC1-8C87-8B684D2F8D42" name="GUID-ABC99726-E754-4AC1-8C87-8B684D2F8D42"></a>
+            
+            <h2 id="HTMDB-GUID-ABC99726-E754-4AC1-8C87-8B684D2F8D42" class="sect2"><span class="enumeration_section">3.7.2 </span>了解 f?p URL 格式
+            </h2>
+         </header>
+         <div class="ind">
+            <p>f?p URL Syntax is a legacy syntax that creates a unique URL structure that
+                identifies the address of Oracle Application Express, the application ID, page
+                number, and session ID.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-legacy-url-syntax.html#GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35">关于  f?p URL 格式</a><br>f?p URL Syntax creates a unique URL structure that identifies the location                 and address of <span>Oracle Application                                         Express</span>, the application ID, page number, and session ID. 
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-legacy-url-syntax.html#GUID-D5510BFC-AF94-4AAD-8B82-FF780A47601D">关于使用f?p 格式来链接到其他页</a><br>Create links between application page using <code class="codeph">f?p</code>             syntax.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-legacy-url-syntax.html#GUID-42B279B6-776C-447A-BA3F-4B017E127700">通过应用别名或者页别名来调用页面</a><br>Use URL syntax to call a page using an application alias and/or page             alias.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-legacy-url-syntax.html#GUID-70A38D52-92C4-4344-AB0C-8EA202DBAA71">通过按钮URL来调用页面</a><br>Use URL syntax to call a page from a button URL.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-url-syntax.html#GUID-F9B81EAF-D33F-401D-8349-3952DEDA5460" title="Oracle Application Express applications support two types of URL syntax: Friendly URL Syntax and f?p Syntax.">了解URL格式</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB03018"></a><div class="props_rev_3"><a id="GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35" name="GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35"></a><h3 id="HTMDB-GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35" class="sect3"><span class="enumeration_section">3.7.2.1 </span>关于  f?p URL 格式
+               </h3>
+               <div>
+                  <p>f?p URL Syntax creates a unique URL structure that identifies the location
+                and address of <span>Oracle Application
+                                        Express</span>, the application ID, page number, and session ID. 
+                  </p>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35__GUID-4A4F0BC4-19EA-44A1-8CC9-69B28E61BECD">f?p URL Structure and Syntax</p>
+                     
+                     
+                     <p>f?p URL Syntax creates a URL with the following structure
+                                and syntax:</p>
+                     <pre class="pre codeblock"><code>http://<span class="italic">hostname</span>:<span class="italic">port</span>/<span class="italic">ords</span>/f?p=<span class="italic">&lt;app_id&gt;</span>:<span class="italic">&lt;page_number&gt;</span>:<span class="italic">&lt;session_id&gt;</span></code></pre>
+                     </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35__GUID-A8492793-0F65-4FBC-B074-71DB5895E11B">f?p URL Example</p>
+                     
+                     <pre class="pre codeblock"><code>http://<span class="italic">hostname</span>:<span class="italic">port</span>/<span class="italic">ords</span>/f?p=<span class="italic">392</span>:<span class="italic">3</span>:13766599855150</code></pre>
+                     <p>This example indicates:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35__UL_QHZ_XNB_5KB">
+                        <li>
+                           
+                           <p><code class="codeph">http:</code> stands for HyperText
+                                                Transfer Protocol and operates at the application
+                                                layer.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph"><span class="codeinlineitalic">hostname</span></code> is the
+                                                domain name of the server. It can also include a
+                                                port number or an IP address.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>
+                              <code class="codeph"><span class="codeinlineitalic">port</span></code> is the port number
+                                                assigned when configuring Oracle REST Data
+                                                Services.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">ords</code> is the service name
+                                                defined when configuring Oracle REST Data
+                                                Services.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">f?p=</code>is a prefix used by
+                                                Oracle Application Express to route the request to
+                                                the correct engine process.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">392</code> is the ID of the
+                                                application being called. The application ID is a
+                                                unique number that identifies each application.
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">3</code> is the number of the page
+                                                within the application. Page number must be unique
+                                                within the application. 
+                           </p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><code class="codeph">13766599855150</code> is the
+                                                session number. When you run an application, the
+                                                Application Express engine generates a session
+                                                number that serves as a key to the user's session
+                                                state. 
+                           </p>
+                           
+                        </li>
+                     </ul>
+                     
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35__GUID-5D440199-9B14-4C95-B469-E5A5AF8167AF">
+                     <p class="notep1">See Also:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-F249FDCA-972B-4DFB-A51B-DD127AAB9C35__UL_CC2_K25_TKB">
+                        <li><span class="q">"<a href="understanding-session-state-management.html#GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9" title="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">了解会话状态管理</a>"</span></li>
+                        <li><span class="q">"<a href="about-publishing-the-database-application-url.html#GUID-AE39B235-A734-499C-97B5-FD042774A260" title="Once you deploy your application, load the data, and create users, you can publish your production URL.">About Publishing the Database Application URL</a>"</span></li>
+                     </ul>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-legacy-url-syntax.html#GUID-ABC99726-E754-4AC1-8C87-8B684D2F8D42" title="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">了解 f?p URL 格式</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28050"></a><a id="HTMDB03019"></a><div class="props_rev_3"><a id="GUID-D5510BFC-AF94-4AAD-8B82-FF780A47601D" name="GUID-D5510BFC-AF94-4AAD-8B82-FF780A47601D"></a><h3 id="HTMDB-GUID-D5510BFC-AF94-4AAD-8B82-FF780A47601D" class="sect3"><span class="enumeration_section">3.7.2.2 </span>关于使用f?p 格式来链接到其他页
+               </h3>
+               <div>
+                  <p>Create links between application page using <code class="codeph">f?p</code>
+            syntax.
+                  </p>
+                  <p><span>App Builder</span> includes many wizards that automatically create these references for you. However, you may have to create the syntax yourself in some situations. 
+                  </p>
+                  <p>To create links between pages in an application, use the following <code class="codeph">f?p</code> syntax:
+                  </p><pre class="oac_no_warn" dir="ltr">f?p=App:Page:Session:Request:Debug:ClearCache:itemNames:itemValues:PrinterFriendly
+</pre><p>The following table describes the arguments you can pass when using <code class="codeph">f?p</code> syntax. 
+                  </p>
+                  <div class="tblformal" id="GUID-D5510BFC-AF94-4AAD-8B82-FF780A47601D__BEIGDEHF">
+                     <p class="titleintable">Table 3-1 f?p Syntax Arguments</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="f?p Syntax Arguments" summary="This table describes the possible arguments you can pass when using f?p syntax." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="24%" id="d20296e391">Syntax</th>
+                              <th align="left" valign="bottom" width="76%" id="d20296e394">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e399" headers="d20296e391 ">
+                                 <p><code class="codeph">App</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e399 d20296e394 ">
+                                 <p>Indicates an application ID or alphanumeric application alias.</p>
+                                 <p>An <strong class="term">application alias</strong> is a unique alternate alphanumeric application identifier that developers can use in place of the application ID. You define an Application Alias editing the Application Definition.
+                                 </p>
+                                 <p><span class="bold">See Also:</span> <span class="q">"<a href="managing-application-attributes.html#GUID-257F4773-0F0E-4E50-A00E-9D71D9319EAC" title="Application attributes (also known as the Application Definition) control the behavior of an entire application and are divided into the categories: Definition, Security, Globalization, and User Interface.">Managing Application Attributes</a>"</span></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e422" headers="d20296e391 ">
+                                 <p><code class="codeph">Page</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e422 d20296e394 ">
+                                 <p>Indicates a page number or alphanumeric page alias.</p>
+                                 <p>A <strong class="term">page alias</strong> is a unique alternate alphanumeric for a page number. Developers can use a page alias in place of the page number ID. You define a Page Alias by editing the page attributes. 
+                                 </p>
+                                 <p><span class="bold">See Also:</span> <span class="q">"<a href="editing-page-attributes-in-page-designer.html#GUID-CEB3B037-4670-4D11-A54A-D32413B089CE" title="Edit page attributes to control basic information and functionality for a given page, including the page name or title, header and footer text, navigation menus, inclusion of page-level JavaScript or CSS files, error handling, and the selected authorization scheme.">Managing Page Attributes</a>"</span></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e445" headers="d20296e391 ">
+                                 <p><code class="codeph">Session</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e445 d20296e394 ">
+                                 <p>Identifies a session ID. You can reference a session ID to create hypertext links to other pages that maintain the same session state by passing the session number. You can reference the session ID using the syntax:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Short substitution string: <code class="codeph">&amp;SESSION</code>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>PL/SQL: <code class="codeph">V('SESSION')</code></p>
+                                    </li>
+                                    <li>
+                                       <p>Bind variable: <code class="codeph">:APP_SESSION</code></p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e471" headers="d20296e391 ">
+                                 <p><code class="codeph">Request</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e471 d20296e394 ">
+                                 <p>Sets the value of <code class="codeph">REQUEST</code>. Each application button sets the value of <code class="codeph">REQUEST</code> to the name of the button which enables accept processing to reference the name of the button when a user clicks it. You can reference <code class="codeph">REQUEST</code> using the syntax:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Substitution string: <code class="codeph">&amp;REQUEST</code>.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>PL/SQL: <code class="codeph">V('REQUEST')</code></p>
+                                    </li>
+                                    <li>
+                                       <p>Bind variable: <code class="codeph">:REQUEST</code></p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e506" headers="d20296e391 ">
+                                 <p><code class="codeph">Debug</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e506 d20296e394 ">
+                                 <p>Displays application processing details. Valid values for the DEBUG flag include:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>YES.</p>
+                                    </li>
+                                    <li>
+                                       <p><code class="codeph">LEVEL</code><span class="italic"><code class="codeph">n</code></span></p>
+                                    </li>
+                                    <li>
+                                       <p>NO</p>
+                                    </li>
+                                 </ul>
+                                 <p>Setting this flag to <code class="codeph">YES</code> displays details about application processing. Setting this flag to <code class="codeph">LEVEL</code><span class="italic"><code class="codeph">n</code></span> (where <span class="italic"><code class="codeph">n</code></span> is between 1 and 9) controls the level of debug detail that displays. The value of YES equals <code class="codeph">LEVEL4</code>.
+                                 </p>
+                                 <p>You can reference the Debug flag using the following syntax:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Short substitution string: <code class="codeph">&amp;DEBUG</code>.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>PL/SQL: <code class="codeph">V('DEBUG'</code>)
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Bind variable: <code class="codeph">:DEBUG</code></p>
+                                    </li>
+                                 </ul>
+                                 <p><span class="bold">See Also</span>: <span class="q">"<a href="debugging-an-application.html#GUID-2A0361B3-56AC-41F0-9FF3-C3DF15432762" title="Learn about best practices for debugging an Oracle Application Express application.">Debugging an Application</a>"</span></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e576" headers="d20296e391 ">
+                                 <p><code class="codeph">ClearCache</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e576 d20296e394 ">
+                                 <p>Clears the cache. This sets the value of items to null. </p>
+                                 <p>To clear cached items on a single page, specify the numeric page number. To clear cached items on multiple pages, use a comma-separated list of page numbers. Clearing a page's cache also resets any stateful processes on the page. Individual or comma-separated values can also include collection names to be reset or the keyword <code class="codeph">RP</code>, which resets region pagination on the requested page. The keyword <code class="codeph">APP</code> clears cache for all pages and all application-level items in the current application and removes sort preferences for the current user. The keyword <code class="codeph">SESSION</code> achieves the same result as the <code class="codeph">APP</code> keyword, but clears items associated with all applications that have been used in the current session.
+                                 </p>
+                                 <p><span class="bold">See Also</span>: <span class="q">"<a href="managing-session-state-values.html#GUID-985BE4F8-4C7F-46DD-8803-6C7DD18F6F08" title="Clearing a cached value resets the value to null. You can clear the cached value for specific items, all items on a page, all pages in an application, or the current user session.">清除会话状态</a>"</span></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e608" headers="d20296e391 ">
+                                 <p><code class="codeph">itemNames</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e608 d20296e394 ">
+                                 <p>Comma-delimited list of item names used to set session state with a URL.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e616" headers="d20296e391 ">
+                                 <p><code class="codeph">itemValues</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e616 d20296e394 ">
+                                 <p>List of item values used to set session state within a URL. To pass a comma in an item value, enclose the characters with backslashes. For example:</p><pre class="oac_no_warn" dir="ltr">\123,45\
+</pre><p>Every character sequence except <code class="codeph">backslash comma</code> (<code class="codeph">\,</code>) can be enclosed with backslash. 
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="24%" id="d20296e634" headers="d20296e391 ">
+                                 <p><code class="codeph">PrinterFriendly</code></p>
+                              </td>
+                              <td align="left" valign="top" width="76%" headers="d20296e634 d20296e394 ">
+                                 <p>Determines if the page is being rendered in printer friendly mode. If PrinterFriendly is set to Yes, then the page is rendered in printer friendly mode. The value of PrinterFriendly can be used in rendering conditions to remove elements such as regions from the page to optimize printed output. </p>
+                                 <p>You can reference the printer friendly preference by using the following syntax:</p><pre class="oac_no_warn" dir="ltr">V('PRINTER_FRIENDLY')
+</pre><p>When referenced, the page displays using a printer friendly template. The Application Express engine displays all text within HTML form fields as text. The printer friendly template does not need to have the <code class="codeph">#FORM_OPEN#</code> or <code class="codeph">#FORM_CLOSE#</code> tags. The objective is to be able to display information with few tables and in a format suitable for printing.
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-legacy-url-syntax.html#GUID-ABC99726-E754-4AC1-8C87-8B684D2F8D42" title="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">了解 f?p URL 格式</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB03020"></a><div class="props_rev_3"><a id="GUID-42B279B6-776C-447A-BA3F-4B017E127700" name="GUID-42B279B6-776C-447A-BA3F-4B017E127700"></a><h3 id="HTMDB-GUID-42B279B6-776C-447A-BA3F-4B017E127700" class="sect3"><span class="enumeration_section">3.7.2.3 </span>通过应用别名或者页别名来调用页面
+               </h3>
+               <div>
+                  <p>Use URL syntax to call a page using an application alias and/or page
+            alias.</p>
+                  <div class="section">
+                     <p>Application and page aliases must consist of valid Oracle identifiers, cannot contain any whitespace, and cannot be case-sensitive. The following example calls a page from within an application using an application alias and a page alias. This example runs the page <span class="italic"><code class="codeph">home</code></span> of the application <span class="italic"><code class="codeph">myapp</code></span> and uses the current session ID.
+                     </p><pre class="oac_no_warn" dir="ltr">f?p=<span class="italic">myapp</span>:<span class="italic">home</span>:&amp;APP_SESSION.
+</pre><p>Application aliases must be unique within a workspace. If an application in a different workspace has the same application alias, use the <code class="codeph">&amp;c</code> argument to specify the workspace name. For example:
+                     </p><pre class="oac_no_warn" dir="ltr">f?p=common_alias:home:&amp;APP_SESSION.&amp;c=WORKSPACE_A
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-legacy-url-syntax.html#GUID-ABC99726-E754-4AC1-8C87-8B684D2F8D42" title="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">了解 f?p URL 格式</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB03021"></a><div class="props_rev_3"><a id="GUID-70A38D52-92C4-4344-AB0C-8EA202DBAA71" name="GUID-70A38D52-92C4-4344-AB0C-8EA202DBAA71"></a><h3 id="HTMDB-GUID-70A38D52-92C4-4344-AB0C-8EA202DBAA71" class="sect3"><span class="enumeration_section">3.7.2.4 </span>通过按钮URL来调用页面
+               </h3>
+               <div>
+                  <p>Use URL syntax to call a page from a button URL.</p>
+                  <div class="section">
+                     <p>When you create a button, you can specify a URL to redirect to when the user clicks the button. This example runs page 6001 of application 6000 and uses the current session ID.</p><pre class="oac_no_warn" dir="ltr">f?p=6000:6001:&amp;APP_SESSION.
+</pre><p>Note that this is only one approach to using a button. This method bypasses page submission and acts as a hyperlink on the page. You can also have a button click submit a page. In that approach, clicking the button submits the page for processing, allowing forms to be submitted and session state to be saved.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-70A38D52-92C4-4344-AB0C-8EA202DBAA71__GUID-778F2699-58A5-4572-A75D-64960636AAA1">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="creating-buttons.html#GUID-F6DA76D1-2020-4930-8D26-12D0A3497C8E" title="You can use buttons to direct users to a specific page or URL, or to post or process information (for example, by creating Create, Cancel, Next, Previous, or Delete buttons). You can also configure buttons to display conditionally or warn users of unsaved changes.">Managing Buttons</a>"</span> and <span class="q">"<a href="understanding-substitution-strings.html#GUID-E6B36FCC-3756-4F24-B6C0-A0798E605E9E">APP_SESSION</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-legacy-url-syntax.html#GUID-ABC99726-E754-4AC1-8C87-8B684D2F8D42" title="f?p URL Syntax is a legacy syntax that creates a unique URL structure that identifies the address of Oracle Application Express, the application ID, page number, and session ID.">了解 f?p URL 格式</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

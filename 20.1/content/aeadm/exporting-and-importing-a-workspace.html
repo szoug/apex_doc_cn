@@ -1,0 +1,284 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Exporting and Importing a Workspace">
+      <meta name="abstract" content="Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.">
+      <meta name="description" content="Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.">
+      <meta name="DC.subject" content="Oracle Application Express administrator, exporting a workspace, importing a workspace, workspace, exporting, importing, export, workspace, import, workspace">
+      <meta name="keywords" content="Oracle Application Express administrator, exporting a workspace, importing a workspace, workspace, exporting, importing, export, workspace, import, workspace">
+      <meta name="DC.Relation" scheme="URI" content="managing-existing-workspaces.html#GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9">
+      <meta name="DC.Relation" scheme="URI" content="exporting-and-importing-a-workspace.html#GUID-D9A1DD75-4AD4-426E-98AF-301435C46C91">
+      <meta name="DC.Relation" scheme="URI" content="exporting-and-importing-a-workspace.html#GUID-2C9A8909-91F1-432E-B1D5-4FFD28370FE6">
+      <meta name="DC.Relation" scheme="URI" content="exporting-and-importing-a-workspace.html#GUID-8956B389-71D6-4337-ADA8-EED358107978">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.">
+      <meta name="description" content="Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.">
+      <title>Exporting and Importing a Workspace</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="accessing-data-dictionary-cache-from-administration-services.html" title="Previous" type="text/html">
+      <link rel="next" href="exporting-from-a-command-line.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="accessing-data-dictionary-cache-from-administration-services.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="exporting-from-a-command-line.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-existing-workspaces.html" property="item" typeof="WebPage"><span property="name">Managing Existing Workspaces</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Exporting and Importing a Workspace</li>
+            </ol>
+            <a id="GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119" name="GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119"></a><a id="AEADM284"></a>
+            
+            <h2 id="AEADM-GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119" class="sect2"><span class="enumeration_section">3.15.14 </span>Exporting and Importing a Workspace
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="exporting-and-importing-a-workspace.html#GUID-D9A1DD75-4AD4-426E-98AF-301435C46C91">About Exporting and Importing a Workspace</a><br>To move a workspace and all associated users to a new Oracle Application Express instance, you export the workspace. 
+                  </li>
+                  <li class="ulchildlink"><a href="exporting-and-importing-a-workspace.html#GUID-2C9A8909-91F1-432E-B1D5-4FFD28370FE6">Exporting a Workspace in Administration Services</a><br>Create a Workspace Export by navigating to Manage Workspaces and selecting         Export Workspace.
+                  </li>
+                  <li class="ulchildlink"><a href="exporting-and-importing-a-workspace.html#GUID-8956B389-71D6-4337-ADA8-EED358107978">Importing a Workspace in Administration Services</a><br>Import a Workspace Export by navigating to Manage Workspaces and selecting         Import Workspace.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119__GUID-E28D12E7-64DE-42A4-9513-7C302E6B7F1E">
+                  <p class="notep1">See Also:</p>
+                  
+                  <ul style="list-style-type: disc;" id="GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119__UL_E53_WP4_MKB">
+                     <li>
+                        
+                        <p><span class="q">"<a href="../htmdb/deploying-an-application.html#HTMDB-GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD" target="_blank">Deploying an Application</a>"</span>
+                        in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><span class="italic">
+                              <span><a href="http://www.oracle.com/technetwork/developer-tools/apex/learnmore/apex-life-cycle-management-wp-3030229.pdf" target="_blank">Life Cycle Management with Oracle Application
+                                    Express</a></span></span></p>
+                        
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-existing-workspaces.html#GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9" title="Instance administrators can manage existing workspaces within an Oracle Application Express instance.">Managing Existing Workspaces</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM29222"></a><div class="props_rev_3"><a id="GUID-D9A1DD75-4AD4-426E-98AF-301435C46C91" name="GUID-D9A1DD75-4AD4-426E-98AF-301435C46C91"></a><h3 id="AEADM-GUID-D9A1DD75-4AD4-426E-98AF-301435C46C91" class="sect3"><span class="enumeration_section">3.15.14.1 </span>About Exporting and Importing a Workspace
+               </h3>
+               <div>
+                  <p>To move a workspace and all associated users to a new Oracle Application Express instance, you export the workspace. </p>
+                  <p>When you export a workspace, Oracle Application Express generates a text file. This file contains information about your workspace, all the users in your workspace, and any groups in your workspace (if applicable). You can import this file into another Oracle Application Express instance. </p>
+                  <p>Exporting a workspace and importing it into a new database instance enables developers to import application components. When building new environments (for example, moving from development to testing or testing to production), Oracle recommends creating workspaces by importing them.</p>
+                  <p>Keep in mind, this method only imports the workspace, users, and groups. This file
+            does not contain:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>The schemas associated with this workspace or the objects in those schemas.</p>
+                     </li>
+                     <li>
+                        <p>Any applications, images, cascading style sheets, and static text files.</p>
+                     </li>
+                  </ul>
+                  <p>These items must be exported separately.</p>
+                  <div class="section">
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D9A1DD75-4AD4-426E-98AF-301435C46C91__GUID-76765AA7-EB6E-4999-9456-E12244B92B69">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><span class="q">"<a href="../htmdb/exporting-an-application-and-application-components.html#HTMDB-GUID-8D046D43-C033-4165-9C2B-6AB33A99CF75" target="_blank">Exporting an Application and Application
+                            Components</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="exporting-and-importing-a-workspace.html#GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119" title="Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.">Exporting and Importing a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM285"></a><div class="props_rev_3"><a id="GUID-2C9A8909-91F1-432E-B1D5-4FFD28370FE6" name="GUID-2C9A8909-91F1-432E-B1D5-4FFD28370FE6"></a><h3 id="AEADM-GUID-2C9A8909-91F1-432E-B1D5-4FFD28370FE6" class="sect3"><span class="enumeration_section">3.15.14.2 </span>Exporting a Workspace in Administration Services
+               </h3>
+               <div>
+                  <p>Create a Workspace Export by navigating to Manage Workspaces and selecting
+        Export Workspace.</p>
+                  <p>To create a Workspace Export:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Workspaces</span>.</span></li>
+                     <li class="stepexpand"><span>Under <span class="uicontrol bold">Export Import</span>, click <span class="uicontrol bold">Export
+                        Workspace</span>.</span><div>
+                           
+                           <div class="infobox-tip" id="GUID-2C9A8909-91F1-432E-B1D5-4FFD28370FE6__GUID-5D951403-12E8-4A1A-965F-A852600BBC68">
+                              <p class="notep1">Tip:</p>
+                              
+                              <p>To view a list of  existing Workspace Imports, click <span class="uicontrol bold">View
+                                Imported Workspace Export Files</span> under
+                                <span class="uicontrol bold">Tasks</span>.
+                              </p>
+                              
+                           </div>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select a workspace and then click <span class="uicontrol bold">Export Workspace</span>.</span></li>
+                     <li class="stepexpand"><span>On Export Workspace:</span><ol type="a">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Include Team Development</span> - Set
+                                to&nbsp;<span class="uicontrol bold">Yes</span>&nbsp;to include Team Development data.
+                            Otherwise, select <span class="uicontrol bold">No</span>.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Export Type</span>:</span><div>
+                                 
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Minimal</span> - In most cases,
+                                        accept the default value <span class="uicontrol bold">Minimal</span>.
+                                            <span class="uicontrol bold">Minimal</span> includes the Workspace
+                                        meta data, User Groups, and User definitions.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Full</span> - Select
+                                            <span class="uicontrol bold">Full</span>  to replicate to another
+                                        instance all workspace artifacts including SQL Scripts, SQL
+                                        Command History, saved SQL, user preferences, developer
+                                        login history, email logs, and user interface defaults. 
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Character Set</span> - Identifies the specified
+                            character set the for export file. When importing this file, you will
+                            need to specify the same character set.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To export the selected workspace, click <span class="uicontrol bold">Save File</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="exporting-and-importing-a-workspace.html#GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119" title="Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.">Exporting and Importing a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM286"></a><div class="props_rev_3"><a id="GUID-8956B389-71D6-4337-ADA8-EED358107978" name="GUID-8956B389-71D6-4337-ADA8-EED358107978"></a><h3 id="AEADM-GUID-8956B389-71D6-4337-ADA8-EED358107978" class="sect3"><span class="enumeration_section">3.15.14.3 </span>Importing a Workspace in Administration Services
+               </h3>
+               <div>
+                  <p>Import a Workspace Export by navigating to Manage Workspaces and selecting
+        Import Workspace.</p>
+                  <p>To import a Workspace Export:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Workspaces</span>.</span></li>
+                     <li class="stepexpand"><span>Under <span class="uicontrol bold">Export Import</span>, click <span class="uicontrol bold">Import
+                        Workspace</span>.</span><div>
+                           
+                           <div class="infobox-tip" id="GUID-8956B389-71D6-4337-ADA8-EED358107978__GUID-3299644A-E27B-4B26-8F7B-BDFAF7199495">
+                              <p class="notep1">Tip:</p>
+                              
+                              <p>To view a list of  existing Workspace Imports, click <span class="uicontrol bold">View
+                                Imported Workspace Export Files</span> under
+                                <span class="uicontrol bold">Tasks</span>.
+                              </p>
+                              
+                           </div>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Locate the import file and click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>To install the workspace, click <span class="uicontrol bold">Install</span>.</span></li>
+                     <li class="stepexpand"><span>Follow the on-screen instructions.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="exporting-and-importing-a-workspace.html#GUID-32E9F3E5-EE93-4783-9707-0B3B607CF119" title="Move a workspace and all associated users to a new Oracle Application Express instance by exporting and importing.">Exporting and Importing a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

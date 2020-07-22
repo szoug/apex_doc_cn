@@ -1,0 +1,166 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="LOCK_ACCOUNT Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, LOCK_ACCOUNT procedure">
+      <meta name="keywords" content="APEX_UTIL, LOCK_ACCOUNT procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>LOCK_ACCOUNT Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="KEYVAL_VC2-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="PASSWORD_FIRST_USE_OCCURRED-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="KEYVAL_VC2-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PASSWORD_FIRST_USE_OCCURRED-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">LOCK_ACCOUNT Procedure</li>
+            </ol>
+            <a id="GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E" name="GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E"></a><a id="AEAPI1754"></a><a id="AEAPI1755"></a><a id="AEAPI1756"></a><a id="AEAPI1757"></a><a id="AEAPI158"></a>
+            
+            <h2 id="AEAPI-GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E" class="sect2"><span class="enumeration_section">39.89 </span>LOCK_ACCOUNT Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Sets a user account status to locked. Must be run by an authenticated workspace administrator in the context of a page request.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E__GUID-176F53D4-BDFA-4DF4-AB30-EFB88550DB53">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.LOCK_ACCOUNT (
+     p_user_name IN VARCHAR2); </code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E__GUID-E2FB8D81-DE37-4D3B-B340-D73C637C0CB0">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E__GUID-A9B2D6F8-5D6B-4F6C-AC83-EA3FE51B4866">
+                  <p class="titleintable">Table 39-73 LOCK_ACCOUNT Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="LOCK_ACCOUNT Parameters" summary="Parameter descriptions for the LOCK_ACCOUNT procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d196565e73">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d196565e76">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d196565e81" headers="d196565e73 ">
+                              <p><code class="codeph">p_user_name</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d196565e81 d196565e76 ">
+                              <p>The user name of the user account.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E__GUID-25AE5706-53AC-47F6-89A6-EBD9CAFE568E">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example shows how to use the <code class="codeph">LOCK_ACCOUNT</code> procedure. Use this procedure to lock an Application Express account (workspace administrator, developer, or end user) in the current workspace. This action locks the account for use by administrators, developers, and end users.
+                  </p><pre class="pre codeblock"><code>BEGIN
+    FOR c1 IN (SELECT user_name from apex_users) LOOP
+        APEX_UTIL.LOCK_ACCOUNT(p_user_name =&gt; c1.user_name);
+        htp.p('End User Account:'||c1.user_name||' is now locked.');    
+    END LOOP;
+END;
+</code></pre><div class="infoboxnotealso" id="GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E__GUID-651A84D8-A9F8-49BF-BD25-B1AAADE684F1">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="UNLOCK_ACCOUNT-Procedure.html#GUID-0867626D-9B3B-49AA-97C9-2C45443188BC">UNLOCK_ACCOUNT Procedure</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="GET_ACCOUNT_LOCKED_STATUS-Function.html#GUID-4164E9A2-26B5-49B3-90CB-84C3EC7CE844">GET_ACCOUNT_LOCKED_STATUS Function</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

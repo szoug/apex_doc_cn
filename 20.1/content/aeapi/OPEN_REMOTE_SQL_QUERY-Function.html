@@ -1,0 +1,258 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="OPEN_REMOTE_SQL_QUERY Function">
+      <meta name="DC.subject" content="APEX_EXEC, OPEN_REMOTE_SQL_QUERY Function">
+      <meta name="keywords" content="APEX_EXEC, OPEN_REMOTE_SQL_QUERY Function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-75BF9671-7289-40A9-9896-394DCD3FB482">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>OPEN_REMOTE_SQL_QUERY Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="OPEN_REMOTE_DML_CONTEXT-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="OPEN_QUERY_CONTEXT-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="OPEN_REMOTE_DML_CONTEXT-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="OPEN_QUERY_CONTEXT-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_EXEC.html" property="item" typeof="WebPage"><span property="name"> APEX_EXEC</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">OPEN_REMOTE_SQL_QUERY Function </li>
+            </ol>
+            <a id="GUID-75BF9671-7289-40A9-9896-394DCD3FB482" name="GUID-75BF9671-7289-40A9-9896-394DCD3FB482"></a>
+            
+            <h2 id="AEAPI-GUID-75BF9671-7289-40A9-9896-394DCD3FB482" class="sect2"><span class="enumeration_section">16.31 </span>OPEN_REMOTE_SQL_QUERY Function 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This function opens a query context and executes the provided SQL query on the ORDS REST Enabled SQL instance.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-75BF9671-7289-40A9-9896-394DCD3FB482__TITLE-1321-F94BDADF">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>FUNCTION OPEN_REMOTE_SQL_QUERY(
+    p_server_static_id      IN VARCHAR2,
+    p_sql_query             IN VARCHAR2,
+    p_sql_parameters        IN t_parameters DEFAULT c_empty_parameters,
+    p_auto_bind_items       IN BOOLEAN      DEFAULT TRUE,
+    --
+    p_first_row             IN PLS_INTEGER  DEFAULT NULL,
+    p_max_rows              IN PLS_INTEGER  DEFAULT NULL,
+    --
+    p_total_row_count       IN BOOLEAN      DEFAULT FALSE,
+    p_total_row_count_limit IN PLS_INTEGER  DEFAULT NULL )
+    RETURN t_context;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-75BF9671-7289-40A9-9896-394DCD3FB482__TITLE-1341-F94C107A">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-75BF9671-7289-40A9-9896-394DCD3FB482__WRITEPROCEDUREPARAMETERS-F94C1E2F">
+                  <p class="titleintable">Table 16-29 OPEN_REMOTE_SQL_QUERY Function Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="OPEN_REMOTE_SQL_QUERY Function Parameters" summary="Parameter descriptions for the OPEN_REMOTE_SQL_QUERY function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="34%" id="d69055e68">Parameter</th>
+                           <th align="left" valign="bottom" width="66%" id="d69055e71">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d69055e76" headers="d69055e68 ">
+                              <p><code class="codeph">p_server_static_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d69055e76 d69055e71 ">
+                              <p>Static ID of the ORDS REST Enabled SQL Instance.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d69055e84" headers="d69055e68 ">
+                              <p><code class="codeph">p_sql_query</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d69055e84 d69055e71 ">
+                              <p>SQL Query to execute.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d69055e92" headers="d69055e68 ">
+                              <p><code class="codeph"> p_sql_parameters</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d69055e92 d69055e71 ">
+                              <p>Bind variables to pass to the remote server.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d69055e100" headers="d69055e68 ">
+                              <p><code class="codeph"> p_auto_bind_items</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d69055e100 d69055e71 ">
+                              <p>Whether to auto-bind all page items.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d69055e108" headers="d69055e68 ">
+                              <p><code class="codeph">p_first_row</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d69055e108 d69055e71 ">
+                              <p>First row to be fetched from the result set.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d69055e116" headers="d69055e68 ">
+                              <p><code class="codeph">p_max_rows</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d69055e116 d69055e71 ">
+                              <p>Maximum amount of rows to be fetched.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d69055e124" headers="d69055e68 ">
+                              <p><code class="codeph">p_total_row_count</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d69055e124 d69055e71 ">
+                              <p>Whether to determine the total row count.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d69055e132" headers="d69055e68 ">
+                              <p><code class="codeph">p_total_row_count_limit </code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d69055e132 d69055e71 ">
+                              <p>Upper boundary for total row count computation.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-75BF9671-7289-40A9-9896-394DCD3FB482__GUID-8CE6BC29-C75B-4177-8BE8-300D18B04212">Returns</p>
+                  <p>The context object representing a cursor for the web source query.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-75BF9671-7289-40A9-9896-394DCD3FB482__GUID-7954C706-7216-44E8-99A0-196014B9279B">Example</p>
+                  <p>The following example assumes a REST enabled ORDS instance to be configured in Shared Components with the static ID <code class="codeph">"My_Remote_SQL_Instance"</code>. Based on that, the example executes the query on the remote server and prints out the result set. This example code could be used Within a plug-in or within a "Execute PL/SQL" region.
+                  </p><pre class="pre codeblock"><code>declare
+    l_context apex_exec.t_context;
+
+    l_idx_empno    pls_integer;
+    l_idx_ename    pls_integer;
+    l_idx_job      pls_integer;
+    l_idx_hiredate pls_integer;
+    l_idx_mgr      pls_integer;
+    l_idx_sal      pls_integer;
+    l_idx_comm     pls_integer;
+    l_idx_deptno   pls_integer;
+
+begin
+    l_context := apex_exec.open_remote_sql_query(
+         p_server_static_id   =&gt; 'My_Remote_SQL_Instance',
+         p_sql_query          =&gt; 'select * from emp' );
+
+    l_idx_empno    := apex_exec.get_column_position( l_context, 'EMPNO'); 
+    l_idx_ename    := apex_exec.get_column_position( l_context, 'ENAME'); 
+    l_idx_job      := apex_exec.get_column_position( l_context, 'JOB'); 
+    l_idx_hiredate := apex_exec.get_column_position( l_context, 'HIREDATE'); 
+    l_idx_mgr      := apex_exec.get_column_position( l_context, 'MGR'); 
+    l_idx_sal      := apex_exec.get_column_position( l_context, 'SAL'); 
+    l_idx_comm     := apex_exec.get_column_position( l_context, 'COMM'); 
+    l_idx_deptno   := apex_exec.get_column_position( l_context, 'DEPTNO'); 
+
+    while apex_exec.next_row( l_context ) loop
+
+          htp.p( 'EMPNO: ' || apex_exec.get_number  ( l_context, l_idx_empno    ) ); 
+          htp.p( 'ENAME: ' || apex_exec.get_varchar2( l_context, l_idx_ename    ) );
+          htp.p( 'MGR:   ' || apex_exec.get_number  ( l_context, l_idx_mgr      ) );
+
+    end loop;
+
+    apex_exec.close( l_context );
+    return;
+exception
+    when others then
+         apex_debug.log_exception;
+         apex_exec.close( l_context );
+    raise;    
+end;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">APEX_EXEC</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

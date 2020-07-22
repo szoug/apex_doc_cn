@@ -1,0 +1,629 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating Workspaces in Administration Services">
+      <meta name="abstract" content="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">
+      <meta name="description" content="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">
+      <meta name="DC.subject" content="Administration Services, ceating a workspace, workspace, creating in Administration Services, selecting provisioning status, provisioning status, specifying, specifying how to create, specifying a provisioning mode, provisioning mode, creating new tablespaces, Oracle-managed files, about provisioning, Oracle Application Express administrator, creating a workspace manually, creating manually, creating in development environment, creating in runtime environment">
+      <meta name="keywords" content="Administration Services, ceating a workspace, workspace, creating in Administration Services, selecting provisioning status, provisioning status, specifying, specifying how to create, specifying a provisioning mode, provisioning mode, creating new tablespaces, Oracle-managed files, about provisioning, Oracle Application Express administrator, creating a workspace manually, creating manually, creating in development environment, creating in runtime environment">
+      <meta name="DC.Relation" scheme="URI" content="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaces.html#GUID-AB114B4E-59C9-40DE-A9AE-2D6A9FFC3D7F">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaces.html#GUID-CDB898E3-6348-4273-9264-9FB8D65E1584">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaces.html#GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaces.html#GUID-8D4D6DB7-0984-43CD-B82D-B09AAEC783B3">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaces.html#GUID-7748E463-C413-4DAD-8FD3-C1A7B7EA2DDE">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaces.html#GUID-6254E560-AAA9-45B3-88B2-BF9A98ADFCA1">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">
+      <meta name="description" content="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">
+      <title>Creating Workspaces in Administration Services</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-schemas.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-existing-workspaces.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-schemas.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-existing-workspaces.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating Workspaces in Administration
+        Services</li>
+            </ol>
+            <a id="GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" name="GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8"></a><a id="AEADM239"></a>
+            
+            <h2 id="AEADM-GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" class="sect2"><span class="enumeration_section">3.14 </span>Creating Workspaces in Administration
+        Services
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Users access Oracle Application Express by signing in to a shared work area
+        called a workspace. An administrator can create workspaces manually in Administration
+        Services or take advantage of an automated approach in which users click a link a login
+        page.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="creating-workspaces.html#GUID-AB114B4E-59C9-40DE-A9AE-2D6A9FFC3D7F">About Workspaces</a><br>A workspace enables multiple users to work within the same Oracle Application Express installation while keeping their objects, data and applications private. Each workspace has a unique numeric ID and name.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaces.html#GUID-CDB898E3-6348-4273-9264-9FB8D65E1584">About Specifying How Workspaces Are Created</a><br>The Instance administrator determines how the process of provisioning (or creating) a workspace works for a specific Oracle Application Express instance. 
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaces.html#GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039">Selecting a Workspace Provisioning Mode</a><br>An Instance Administrator selects a Provisioning Method to determine how         workspace provisioning works.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaces.html#GUID-8D4D6DB7-0984-43CD-B82D-B09AAEC783B3">How Oracle-Managed Files Effects Workspace Provisioning</a><br>When an Instance administrator creates a new workspace with a new schema, a new tablespace and data file are created for that schema. If Oracle-Managed Files is enabled, it manages the data file for the new tablespace.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaces.html#GUID-7748E463-C413-4DAD-8FD3-C1A7B7EA2DDE">Creating a Workspace Manually</a><br>Instance administrators can provision a workspace manually in either a full development environment or a runtime environment.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaces.html#GUID-6254E560-AAA9-45B3-88B2-BF9A98ADFCA1">Creating Multiple Workspaces</a><br>Provision multiple workspaces by running the Create Multiple Workspaces Wizard
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8__GUID-7D7DE999-C07D-4191-96FC-796F08F5AD81">
+                  <p class="notep1">See Also:</p>
+                  
+                  <ul style="list-style-type: disc;" id="GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8__UL_SM3_JSM_XHB">
+                     <li>
+                        
+                        <p><span class="q">"<a href="understanding-workspace-administration.html#GUID-0B6EB870-83E1-4964-88E6-E884C9B085BF" title="Request a workspace on the Workspace Administration page.">Requesting a Workspace in Workspace Administration</a>"</span></p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><span class="q">"<a href="making-a-service-request.html#GUID-0D65ACDA-E3FF-4532-A197-52271613F341" title="Request another workspace using a service request.">Requesting Another Workspace</a>"</span></p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><span class="q">"<a href="managing-existing-workspaces.html#GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9" title="Instance administrators can manage existing workspaces within an Oracle Application Express instance.">Managing Existing Workspaces</a>"</span></p>
+                        
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392" title="Instance administrators manage an entire Oracle Application Express hosted instance using the Oracle Application Express Administration Services (Administration Services) application.">Oracle Application Express Administration Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM29206"></a><div class="props_rev_3"><a id="GUID-AB114B4E-59C9-40DE-A9AE-2D6A9FFC3D7F" name="GUID-AB114B4E-59C9-40DE-A9AE-2D6A9FFC3D7F"></a><h3 id="AEADM-GUID-AB114B4E-59C9-40DE-A9AE-2D6A9FFC3D7F" class="sect3"><span class="enumeration_section">3.14.1 </span>About Workspaces
+               </h3>
+               <div>
+                  <p>A workspace enables multiple users to work within the same Oracle Application Express installation while keeping their objects, data and applications private. Each workspace has a unique numeric ID and name.</p>
+                  <p>To make changes to a workspace, the Workspace administrators must submit a service or change requests to an Instance administrator. Only the Instance administrator can approve change requests or provision new workspaces.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-AB114B4E-59C9-40DE-A9AE-2D6A9FFC3D7F__GUID-3E89FD00-0946-4175-9BE0-7EB02A704614">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="making-a-service-request.html#GUID-FFCFDDE8-5165-4E2F-A832-F2915487373E" title="Workspace administrators use the Request Service page to request a schema, add storage space, terminate a workspace, or request another workspace.">Making a Service Request</a>"</span> and <span class="q">"<a href="managing-workspace-and-change-requests.html#GUID-622172B3-CDAA-48C2-9F0C-A9A23B9E938A" title="Approve and decline workspace service requests and change requests on the Manage Request page.">Managing Requests</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaces.html#GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" title="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">Creating Workspaces in Administration Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM241"></a><div class="props_rev_3"><a id="GUID-CDB898E3-6348-4273-9264-9FB8D65E1584" name="GUID-CDB898E3-6348-4273-9264-9FB8D65E1584"></a><h3 id="AEADM-GUID-CDB898E3-6348-4273-9264-9FB8D65E1584" class="sect3"><span class="enumeration_section">3.14.2 </span>About Specifying How Workspaces Are Created
+               </h3>
+               <div>
+                  <p>The Instance administrator determines how the process of provisioning (or creating) a workspace works for a specific Oracle Application Express instance. </p>
+                  <p>To determine how provisioning works, an Instance Administrator selects a Provisioning
+            Method on the Instance Settings page:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        
+                        <p><span class="uicontrol bold">Manual</span> - An Instance
+                                        administrator creates new workspaces and notifies the
+                                        Workspace administrator regarding the Sign In
+                                        credentials.
+                        </p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><span class="uicontrol bold">Request</span> - Users request a
+                                        workspace. Once an administrator approves the request, the
+                                        user receives an email containing an email verification
+                                        link. After the user clicks the email verification link, the
+                                        workspace is created.
+                        </p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><span class="uicontrol bold">Automatic</span> - Works similar to
+                                                <span class="uicontrol bold">Request</span> except requests are
+                                        automatically approved with no administrator review
+                                        required.
+                        </p>
+                        
+                     </li>
+                  </ul>
+                  <div class="infoboxnote" id="GUID-CDB898E3-6348-4273-9264-9FB8D65E1584__GUID-44A19689-6AF4-4C03-BE54-F2ECDDDDDD51">
+                     <p class="notep1">Note:</p>
+                     
+                     <p>To enable users to request a workspace using a link on the
+                                Sign In page, the Instance administrator must choose either the
+                                Provisioning Method <span class="uicontrol bold">Request</span> or
+                                        <span class="uicontrol bold">Automatic</span> and configure email. If the
+                                Provisioning Method is set to <span class="uicontrol bold">Manual</span>, no link
+                                appears on the Sign In page. 
+                     </p>
+                     
+                  </div>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-CDB898E3-6348-4273-9264-9FB8D65E1584__GUID-52D527A0-8EA7-422D-90DA-49EF11CACC22">About Request and Automatic Provisioning</p>
+                     
+                     
+                     <p>If a workspace uses the Provisioning Methods
+                                        <span class="uicontrol bold">Request</span> or
+                                        <span class="uicontrol bold">Automatic</span>, the following events
+                                occur:
+                     </p>
+                     
+                     <ol id="GUID-CDB898E3-6348-4273-9264-9FB8D65E1584__OL_IXT_1YS_XHB">
+                        <li>
+                           
+                           <p>The user receives an email containing an
+                                                email verification link.</p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>When user clicks the verification link, the
+                                                workspace is created.</p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>The user receives another email containing
+                                                Sign In credentials (that is, the workspace name,
+                                                username, and password).</p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>The status of the workspace request changes
+                                                from <code class="codeph">Accepted</code> to
+                                                  <code class="codeph">Approved</code>.
+                           </p>
+                           
+                        </li>
+                     </ol>
+                     
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-CDB898E3-6348-4273-9264-9FB8D65E1584__GUID-48BDDE4D-A332-4543-B476-5D7EDA3F9E69">
+                     <p class="notep1">See Also:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-CDB898E3-6348-4273-9264-9FB8D65E1584__UL_FXV_XXS_XHB">
+                        <li>
+                           
+                           <p><span class="q">"<a href="configuring-instance-settings.html#GUID-C04F7811-8115-41E1-8CF1-5799E78BCB8A" title="Use Email Provisioning in conjunction with the Provisioning Method, Automatic, to disable workspace provisioning and send users a message.">Disabling Email Provisioning</a>"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"<a href="configuring-instance-settings.html#GUID-FEC98D5E-3C89-423E-9603-4CD2E553BA34" title="To enable Oracle Application Express to send mail, an instance administrator must configure instance-level email settings.">Configuring Email</a>"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"<a href="managing-workspace-and-change-requests.html#GUID-622172B3-CDAA-48C2-9F0C-A9A23B9E938A" title="Approve and decline workspace service requests and change requests on the Manage Request page.">Managing Requests</a>"</span></p>
+                           
+                        </li>
+                     </ul>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaces.html#GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" title="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">Creating Workspaces in Administration Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29207"></a><div class="props_rev_3"><a id="GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039" name="GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039"></a><h3 id="AEADM-GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039" class="sect3"><span class="enumeration_section">3.14.3 </span>Selecting a Workspace Provisioning
+        Mode
+               </h3>
+               <div>
+                  <p>An Instance Administrator selects a Provisioning Method to determine how
+        workspace provisioning works.</p>
+                  <div class="section">
+                     <p>To select a Provisioning Method:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Instance Settings, click <span class="uicontrol bold">Instance Settings</span>.</span></li>
+                     <li class="stepexpand"><span>Under <span class="uicontrol bold">Workspace Creation</span>, select a Provisioning
+                    Method:</span><ul>
+                           <li><span class="uicontrol bold">Manual</span> - An Instance administrator
+                        creates new workspaces and notifies the Workspace administrator regarding
+                        the Sign In credentials.
+                           </li>
+                           <li><span class="uicontrol bold">Request</span> - Users request a workspace.
+                        Once an administrator approves the request, the user receives an email
+                        containing an email verification link. After the user clicks the email
+                        verification link, the workspace is created.
+                           </li>
+                           <li><span class="uicontrol bold">Automatic </span> - Works similar to
+                            <span class="uicontrol bold">Request</span> except requests are automatically
+                        approved with no administrator review required.
+                           </li>
+                        </ul>
+                        <div>
+                           
+                           <div class="infoboxnote" id="GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039__GUID-47C3FE49-6919-44B3-AD7A-D9E7E68FE417">
+                              <p class="notep1">Note:</p>
+                              
+                              <p>To enable users to request a workspace using a link on the
+                            Sign In page, the Instance administrator must choose either the
+                            Provisioning Method <span class="uicontrol bold">Request</span> or
+                                <span class="uicontrol bold">Automatic</span> and configure email. If the
+                            Provisioning Method is set to <span class="uicontrol bold">Manual</span>, no link
+                            appears on the Sign In page. 
+                              </p>
+                              
+                           </div>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>If you select <span class="uicontrol bold">Request</span> or
+                        <span class="uicontrol bold">Automatic</span>, edit the following:</span><ul>
+                           <li>Require Verification Code - Determines if a verification
+                        code displays and is required during the request process. Select
+                            <span class="uicontrol bold">Yes</span> or <span class="uicontrol bold">No</span>.
+                           </li>
+                           <li>Notification Email Address - Enter the email address to
+                        receive notification email messages for new workspace requests and change
+                        workspace requests. If not specified, no workspace request notification
+                        email messages is sent.</li>
+                        </ul>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039__GUID-B109CBE8-0EE1-439D-8781-AB07E56ED348">
+                        <p class="notep1">Tip:</p>
+                        <p>If you select <span class="uicontrol bold">Automatic</span>, you can disable workspace
+                    provisioning and send users a message. See <span class="q">"<a href="configuring-instance-settings.html#GUID-C04F7811-8115-41E1-8CF1-5799E78BCB8A" title="Use Email Provisioning in conjunction with the Provisioning Method, Automatic, to disable workspace provisioning and send users a message.">Disabling Email Provisioning</a>."</span></p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-529BB1CB-E6A6-46B2-BCCB-E28062DE1039__GUID-C8AC771B-6122-4824-BE69-6636A27E0E2A">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="configuring-instance-settings.html#GUID-FEC98D5E-3C89-423E-9603-4CD2E553BA34" title="To enable Oracle Application Express to send mail, an instance administrator must configure instance-level email settings.">Configuring Email</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-workspace-and-change-requests.html#GUID-622172B3-CDAA-48C2-9F0C-A9A23B9E938A" title="Approve and decline workspace service requests and change requests on the Manage Request page.">Managing Requests</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaces.html#GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" title="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">Creating Workspaces in Administration Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM240"></a><div class="props_rev_3"><a id="GUID-8D4D6DB7-0984-43CD-B82D-B09AAEC783B3" name="GUID-8D4D6DB7-0984-43CD-B82D-B09AAEC783B3"></a><h3 id="AEADM-GUID-8D4D6DB7-0984-43CD-B82D-B09AAEC783B3" class="sect3"><span class="enumeration_section">3.14.4 </span>How Oracle-Managed Files Effects Workspace Provisioning
+               </h3>
+               <div>
+                  <p>When an Instance administrator creates a new workspace with a new schema, a new tablespace and data file are created for that schema. If Oracle-Managed Files is enabled, it manages the data file for the new tablespace.</p>
+                  <p>Using Oracle-managed files simplifies the administration of the Oracle database and eliminates the need for the database administrator (DBA) to directly manage the operating system files that comprise the database. Using Oracle-managed files, the DBA specifies operations in terms of database objects rather than file names. The data file for the new tablespaces are named according to the Oracle-managed files conventions. The placement of these files is determined by the database initialization parameter <code class="codeph">DB_CREATE_FILE_DEST</code>.
+                  </p>
+                  <p>If the Oracle-Managed Files is not enabled, the data file is created in the same directory as the first data file of the tablespace in which Oracle Application Express is installed.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-8D4D6DB7-0984-43CD-B82D-B09AAEC783B3__GUID-7E729EAC-F43E-4247-A63F-A72759298F23">
+                     <p class="notep1">See Also:</p>
+                     <p>
+                        <span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeadm&amp;id=ADMIN-GUID-4A3C4616-0D81-4BBA-8EAD-FCAA8AD5C15A" target="_blank">Using Oracle Managed Files</a>"</span> in <span><cite>Oracle Database Administrator’s Guide</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaces.html#GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" title="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">Creating Workspaces in Administration Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM242"></a><div class="props_rev_3"><a id="GUID-7748E463-C413-4DAD-8FD3-C1A7B7EA2DDE" name="GUID-7748E463-C413-4DAD-8FD3-C1A7B7EA2DDE"></a><h3 id="AEADM-GUID-7748E463-C413-4DAD-8FD3-C1A7B7EA2DDE" class="sect3"><span class="enumeration_section">3.14.5 </span>Creating a Workspace Manually
+               </h3>
+               <p>Instance administrators can provision a workspace manually in either a full development environment or a runtime environment.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="creating-workspaces.html#GUID-4A0C462F-6FC5-4117-9BC7-B24E19EE790E">Creating Workspace Manually in a Full Development Environment</a><br>Instance administrators can create workspaces manually in a full development environment by running the Create Workspace Wizard.
+                     </li>
+                     <li class="ulchildlink"><a href="creating-workspaces.html#GUID-24B309D2-50CB-4C8D-8476-EE37774624F8">Creating a Workspace Manually in a Runtime Environment</a><br>Instance administrators can create workspaces manually in a runtime environment starting SQL*Plus and running the following SQL statements.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaces.html#GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" title="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">Creating Workspaces in Administration Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEADM243"></a><div class="props_rev_3"><a id="GUID-4A0C462F-6FC5-4117-9BC7-B24E19EE790E" name="GUID-4A0C462F-6FC5-4117-9BC7-B24E19EE790E"></a><h4 id="AEADM-GUID-4A0C462F-6FC5-4117-9BC7-B24E19EE790E" class="sect4"><span class="enumeration_section">3.14.5.1 </span>Creating Workspace Manually in a Full Development Environment
+                  </h4>
+                  <div>
+                     <p>Instance administrators can create workspaces manually in a full development environment by running the Create Workspace Wizard.</p>
+                     <div class="section">
+                        <p>To create a workspace manually:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Workspaces</span>.</span></li>
+                        <li class="stepexpand"><span>Under Workspace Actions, click <span class="uicontrol bold">Create Workspace</span>. </span><div>The Create Workspace Wizard appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>For Identify Workspace:</span><ol type="a">
+                              <li><span>Workspace Name - Enter a unique workspace name. </span></li>
+                              <li><span>Workspace ID - Leave Workspace ID blank to have the new Workspace ID automatically generated. A Workspace ID must be a positive integer greater than 100000. </span></li>
+                              <li><span>Workspace Description - Enter a workspace description.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Identify Schema, specify whether you are re-using an existing schema or creating a new one.</span><div>
+                              <p>If you are using an existing schema:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p>Re-use existing schema - Select <span class="uicontrol bold">Yes</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Schema Name - Select a schema from the list.</p>
+                                 </li>
+                                 <li>
+                                    <p>Inspect the information in the report <span class="uicontrol bold">Information on Schema</span>. If the report shows <span class="uicontrol bold">Suggested Additional Privileges</span>, consider granting these privileges to the schema, to avoid privilege errors when using it as an application parsing schema.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Next</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                              <p>If you are creating a new schema:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p>Re-use existing schema - Select <span class="uicontrol bold">No</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Schema Name - Select a schema from the list.</p>
+                                 </li>
+                                 <li>
+                                    <p>Schema Password - Enter a password.</p>
+                                 </li>
+                                 <li>
+                                    <p>Space Quota (MB) - If creating a new schema, select the maximum size of the tablespace to be associated with that schema. You can adjust this limit later.</p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Next</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>For Identify Administrator, enter the Workspace administrator information and click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Confirm your selections and click <span class="uicontrol bold">Create Workspace</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="creating-workspaces.html#GUID-7748E463-C413-4DAD-8FD3-C1A7B7EA2DDE" title="Instance administrators can provision a workspace manually in either a full development environment or a runtime environment.">Creating a Workspace Manually</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM244"></a><div class="props_rev_3"><a id="GUID-24B309D2-50CB-4C8D-8476-EE37774624F8" name="GUID-24B309D2-50CB-4C8D-8476-EE37774624F8"></a><h4 id="AEADM-GUID-24B309D2-50CB-4C8D-8476-EE37774624F8" class="sect4"><span class="enumeration_section">3.14.5.2 </span>Creating a Workspace Manually in a Runtime Environment
+                  </h4>
+                  <div>
+                     <p>Instance administrators can create workspaces manually in a runtime environment starting SQL*Plus and running the following SQL statements.</p>
+                     <div class="section">
+                        <p>To add a workspace in a runtime environment:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code>. For example:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:</span>\ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                                 <li>
+                                    <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Run the following statement:</span><div><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CURRENT_SCHEMA = APEX_190200
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>The following example demonstrates how to use the <code class="codeph">ADD_WORKSPACE</code> procedure to add a new workspace named <code class="codeph">MY_WORKSPACE</code> using the primary schema, <code class="codeph">SCOTT</code>, along with additional schema mappings for HR and OE.</span><div><pre class="oac_no_warn" dir="ltr">BEGIN
+    APEX_INSTANCE_ADMIN.ADD_WORKSPACE (
+        p_workspace_id =&gt; 8675309,
+        p_workspace =&gt; 'MY_WORKSPACE',
+        p_primary_schema =&gt; 'SCOTT',
+        p_additional_schemas =&gt; 'SCOTT' );
+END;
+</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-24B309D2-50CB-4C8D-8476-EE37774624F8__GUID-4BA929DC-758D-4993-A7EE-024C4B4F0816">
+                        <p class="notep1">See Also:</p>
+                        <p>"ADD_WORKSPACE Procedure" in <a href="../aeapi/ADD_WORKSPACE-Procedure.html#AEAPI253" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="creating-workspaces.html#GUID-7748E463-C413-4DAD-8FD3-C1A7B7EA2DDE" title="Instance administrators can provision a workspace manually in either a full development environment or a runtime environment.">Creating a Workspace Manually</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEADM500"></a><div class="props_rev_3"><a id="GUID-6254E560-AAA9-45B3-88B2-BF9A98ADFCA1" name="GUID-6254E560-AAA9-45B3-88B2-BF9A98ADFCA1"></a><h3 id="AEADM-GUID-6254E560-AAA9-45B3-88B2-BF9A98ADFCA1" class="sect3"><span class="enumeration_section">3.14.6 </span>Creating Multiple Workspaces
+               </h3>
+               <div>
+                  <p>Provision multiple workspaces by running the Create Multiple Workspaces Wizard</p>
+                  <div class="section">
+                     <p>To create multiple workspaces:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Workspaces</span>.</span></li>
+                     <li class="stepexpand"><span>Under Workspace Actions, click <span class="uicontrol bold">Create Multiple Workspaces</span>. </span><div>
+                           <p>The Create Multiple Workspaces Wizard appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For Provision Workspace Using:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">System Generated Workspace Names</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Statically Prefixed Workspace Name with Sequential Integer Suffix</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Email Domain Name as Workspace Name, with Sequential Integer Suffix for duplicates</span></p>
+                              </li>
+                           </ul>
+                           <p>What displays next depends upon the option you select.</p>
+                           <div class="infobox-tip" id="GUID-6254E560-AAA9-45B3-88B2-BF9A98ADFCA1__GUID-32D2A4C5-D1DD-493C-9AAC-DDD4A8AA1055">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about a specific field, see field-level Help.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>If you select <span class="uicontrol bold">System Generated Workspace Names</span>, specify the following:</span><ol type="a">
+                           <li><span>Workspace Count</span></li>
+                           <li><span>Install Sample Application</span></li>
+                           <li><span>Install Sample Websheet</span></li>
+                           <li><span>Install Sample EMP and DEPT Tables </span></li>
+                           <li><span>Space Quota (MB)</span></li>
+                           <li><span>Resource Manager Consumer Group</span></li>
+                           <li><span>Allow workspaces to be automatically purged</span></li>
+                           <li><span>Workspace Description</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>If you select <span class="uicontrol bold">Statically Prefixed Workspace Name with Sequential Integer Suffix</span>, specify the following:</span><ol type="a">
+                           <li><span>Workspace Prefix</span></li>
+                           <li><span>Workspace Count</span></li>
+                           <li><span>Install Sample Application</span></li>
+                           <li><span>Install Sample Websheet</span></li>
+                           <li><span>Install Sample EMP and DEPT Tables</span></li>
+                           <li><span>Space Quota (MB)</span></li>
+                           <li><span>Resource Manager Consumer Group</span></li>
+                           <li><span>Allow workspaces to be automatically purged </span></li>
+                           <li><span>Workspace Description</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>If you select <span class="uicontrol bold">Email Domain Name as Workspace Name, with Sequential Integer Suffix for duplicates</span>, specify the following:</span><ol type="a">
+                           <li><span>Install Sample Application</span></li>
+                           <li><span>Install Sample Websheet</span></li>
+                           <li><span>Install Sample EMP and DEPT Tables</span></li>
+                           <li><span>Space Quota (MB)</span></li>
+                           <li><span>Resource Manager Consumer Group</span></li>
+                           <li><span>Allow workspaces to be automatically purged </span></li>
+                           <li><span>Email Addresses (cut and paste any text that contains email addresses)(Value Required)</span></li>
+                           <li><span>Workspace Description</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>Confirm your choices and click <span class="uicontrol bold">Provision Workspaces</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-workspaces.html#GUID-4C221D31-B584-40DB-A407-A4CABDECDAD8" title="Users access Oracle Application Express by signing in to a shared work area called a workspace. An administrator can create workspaces manually in Administration Services or take advantage of an automated approach in which users click a link a login page.">Creating Workspaces in Administration Services</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

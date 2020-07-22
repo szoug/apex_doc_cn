@@ -1,0 +1,163 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="APEX_PLUGIN_UTIL">
+      <meta name="DC.Relation" scheme="URI" content="CLEAR_COMPONENT_VALUES-Procedure.html#GUID-D61D4ED0-B386-42A3-9C03-2CA9D16F36C8">
+      <meta name="DC.Relation" scheme="URI" content="DEBUG_DYNAMIC-_ACTION-Procedure.html#GUID-1A0BE743-786B-471D-BDA7-F6486FBBF3CA">
+      <meta name="DC.Relation" scheme="URI" content="DEBUG_PAGE_ITEM-Procedure-Signature-1.html#GUID-32C44069-329E-40C2-A9D4-86D943EC89EF">
+      <meta name="DC.Relation" scheme="URI" content="DEBUG_PAGE_ITEM-Procedure-Signature-2.html#GUID-B8C0384B-D2CC-4F39-A2ED-175BDEAEFC62">
+      <meta name="DC.Relation" scheme="URI" content="DEBUG_PROCESS-Procedure.html#GUID-5CA81432-5AC5-4D71-91A9-ECCD152CC044">
+      <meta name="DC.Relation" scheme="URI" content="DEBUG_REGION-Procedure-Signature-1.html#GUID-74E386D2-BC55-44C6-B883-D18DC826CA5C">
+      <meta name="DC.Relation" scheme="URI" content="DEBUG_REGION-Procedure-Signature-2.html#GUID-E1DA4F34-3F0B-4E1E-B716-EC2B57F4E0B2">
+      <meta name="DC.Relation" scheme="URI" content="ESCAPE-Function-2.html#GUID-0835FD58-E48A-442B-AE6B-C62957E5CBA5">
+      <meta name="DC.Relation" scheme="URI" content="EXECUTE_PLSQL_CODE-Procedure.html#GUID-87124F57-70BC-4E1F-9E11-975804F1A19C">
+      <meta name="DC.Relation" scheme="URI" content="GET_ATTRIBUTE_AS_NUMBER-Function.html#GUID-EC55E32B-655D-4A51-8E83-CCA672032FF1">
+      <meta name="DC.Relation" scheme="URI" content="GET_DATA-Function-Signature-1.html#GUID-2B38D0C3-50B3-4152-9834-8D018760D602">
+      <meta name="DC.Relation" scheme="URI" content="GET_DATA-Function-Signature-2.html#GUID-E768C671-AB40-4758-9A7E-1D81228C81D5">
+      <meta name="DC.Relation" scheme="URI" content="GET_DATA2-Function-Signature-1.html#GUID-C3026414-6879-4BD5-A8A8-D31B51C7EEDB">
+      <meta name="DC.Relation" scheme="URI" content="GET_DATA2-Function-Signature-2.html#GUID-35C86FEC-BA17-411E-B3E3-92F10F73A204">
+      <meta name="DC.Relation" scheme="URI" content="GET_DISPLAY_DATA-Function-Signature-1.html#GUID-777E0819-9862-420D-93B5-CED8D3C08C5E">
+      <meta name="DC.Relation" scheme="URI" content="GET_DISPLAY_DATA-Function-Signature-2.html#GUID-8237A2EF-B63B-4FF4-9201-93233728B6E3">
+      <meta name="DC.Relation" scheme="URI" content="GET_ELEMENT_ATTRIBUTES-Function.html#GUID-D612BF2F-DEA6-4D4C-879D-32D6511BC160">
+      <meta name="DC.Relation" scheme="URI" content="GET_PLSQL_EXPRESSION_RESULT-Function.html#GUID-1BA415C4-8700-4995-B6F0-AF93F356E887">
+      <meta name="DC.Relation" scheme="URI" content="GET_PLSQL_FUNCTION_RESULT-Function.html#GUID-8C1A7328-ED0D-48F5-BE7B-0FDCD5A73B8E">
+      <meta name="DC.Relation" scheme="URI" content="GET_POSITION_IN_LIST-Function.html#GUID-76597C32-B306-43B8-A317-CB14E008BE84">
+      <meta name="DC.Relation" scheme="URI" content="GET_SEARCH_STRING-Function.html#GUID-246990B9-E747-4B0F-B2AC-B593A35737A5">
+      <meta name="DC.Relation" scheme="URI" content="GET_VALUE_AS_VARCHAR2-Function.html#GUID-D5143DBC-7166-44AD-B0AB-D713405085D5">
+      <meta name="DC.Relation" scheme="URI" content="IS_EQUAL-Function.html#GUID-6BCB00A6-5286-4235-B403-E34632FD7C71">
+      <meta name="DC.Relation" scheme="URI" content="PAGE_ITEM_NAMES_TO_JQUERY-Function.html#GUID-0EAA3D4A-D5CA-499C-97B7-B8D01B88E110">
+      <meta name="DC.Relation" scheme="URI" content="PRINT_DISPLAY_ONLY-Procedure.html#GUID-7302B306-09FE-40DC-BB4D-0D605B862330">
+      <meta name="DC.Relation" scheme="URI" content="PRINT_ESCAPED_VALUE-Procedure.html#GUID-2A94DB10-CD69-4436-A103-EF29EC0782DF">
+      <meta name="DC.Relation" scheme="URI" content="PRINT_HIDDEN_IF_READONLY-Procedure.html#GUID-F384CA3E-178A-4063-98BF-C8FC3DFB1F89">
+      <meta name="DC.Relation" scheme="URI" content="PRINT_JSON_HTTP_HEADER-Procedure.html#GUID-C5AE4453-178B-48FC-B876-C7FDFDFC399D">
+      <meta name="DC.Relation" scheme="URI" content="PRINT_LOV_AS_JSON-Procedure.html#GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5">
+      <meta name="DC.Relation" scheme="URI" content="PRINT_OPTION-Procedure.html#GUID-DAC2B906-047D-406C-80A2-476FA6F1108F">
+      <meta name="DC.Relation" scheme="URI" content="REPLACE_SUBSTITUTIONS-Function.html#GUID-4462ADC1-479B-46B5-A823-B93B5087FDC0">
+      <meta name="DC.Relation" scheme="URI" content="SET_COMPONENT_VALUES-Procedure.html#GUID-D49DBBA3-9BCA-4B48-A154-7B0E8F408A86">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-E1FE05BA-E290-4446-82DC-5271B75FDD4C">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>APEX_PLUGIN_UTIL</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="GET_INPUT_NAME_FOR_PAGE_ITEM-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="CLEAR_COMPONENT_VALUES-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="GET_INPUT_NAME_FOR_PAGE_ITEM-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="CLEAR_COMPONENT_VALUES-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> APEX_PLUGIN_UTIL</li>
+            </ol>
+            <a id="GUID-E1FE05BA-E290-4446-82DC-5271B75FDD4C" name="GUID-E1FE05BA-E290-4446-82DC-5271B75FDD4C"></a><a id="AEAPI536"></a>
+            
+            <h2 id="AEAPI-GUID-E1FE05BA-E290-4446-82DC-5271B75FDD4C" class="sect2"><span class="enumeration_chapter">31 </span> APEX_PLUGIN_UTIL
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <a id="d138718e43" class="indexterm-anchor"></a><a id="d138718e45" class="indexterm-anchor"></a><code class="codeph">APEX_PLUGIN_UTIL</code> package provides utility functions that solve common problems when writing a plug-in.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="CLEAR_COMPONENT_VALUES-Procedure.html#GUID-D61D4ED0-B386-42A3-9C03-2CA9D16F36C8">CLEAR_COMPONENT_VALUES Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="DEBUG_DYNAMIC-_ACTION-Procedure.html#GUID-1A0BE743-786B-471D-BDA7-F6486FBBF3CA">DEBUG_DYNAMIC _ACTION Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="DEBUG_PAGE_ITEM-Procedure-Signature-1.html#GUID-32C44069-329E-40C2-A9D4-86D943EC89EF">DEBUG_PAGE_ITEM Procedure Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="DEBUG_PAGE_ITEM-Procedure-Signature-2.html#GUID-B8C0384B-D2CC-4F39-A2ED-175BDEAEFC62">DEBUG_PAGE_ITEM Procedure Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="DEBUG_PROCESS-Procedure.html#GUID-5CA81432-5AC5-4D71-91A9-ECCD152CC044">DEBUG_PROCESS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="DEBUG_REGION-Procedure-Signature-1.html#GUID-74E386D2-BC55-44C6-B883-D18DC826CA5C">DEBUG_REGION Procedure Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="DEBUG_REGION-Procedure-Signature-2.html#GUID-E1DA4F34-3F0B-4E1E-B716-EC2B57F4E0B2">DEBUG_REGION Procedure Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="ESCAPE-Function-2.html#GUID-0835FD58-E48A-442B-AE6B-C62957E5CBA5">ESCAPE Function</a><br></li>
+                  <li class="ulchildlink"><a href="EXECUTE_PLSQL_CODE-Procedure.html#GUID-87124F57-70BC-4E1F-9E11-975804F1A19C">EXECUTE_PLSQL_CODE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="GET_ATTRIBUTE_AS_NUMBER-Function.html#GUID-EC55E32B-655D-4A51-8E83-CCA672032FF1">GET_ATTRIBUTE_AS_NUMBER Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DATA-Function-Signature-1.html#GUID-2B38D0C3-50B3-4152-9834-8D018760D602">GET_DATA Function Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DATA-Function-Signature-2.html#GUID-E768C671-AB40-4758-9A7E-1D81228C81D5">GET_DATA Function Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DATA2-Function-Signature-1.html#GUID-C3026414-6879-4BD5-A8A8-D31B51C7EEDB">GET_DATA2 Function Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DATA2-Function-Signature-2.html#GUID-35C86FEC-BA17-411E-B3E3-92F10F73A204">GET_DATA2 Function Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DISPLAY_DATA-Function-Signature-1.html#GUID-777E0819-9862-420D-93B5-CED8D3C08C5E">GET_DISPLAY_DATA Function Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DISPLAY_DATA-Function-Signature-2.html#GUID-8237A2EF-B63B-4FF4-9201-93233728B6E3">GET_DISPLAY_DATA Function Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="GET_ELEMENT_ATTRIBUTES-Function.html#GUID-D612BF2F-DEA6-4D4C-879D-32D6511BC160">GET_ELEMENT_ATTRIBUTES Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_PLSQL_EXPRESSION_RESULT-Function.html#GUID-1BA415C4-8700-4995-B6F0-AF93F356E887">GET_PLSQL_EXPRESSION_RESULT Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_PLSQL_FUNCTION_RESULT-Function.html#GUID-8C1A7328-ED0D-48F5-BE7B-0FDCD5A73B8E">GET_PLSQL_FUNCTION_RESULT Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_POSITION_IN_LIST-Function.html#GUID-76597C32-B306-43B8-A317-CB14E008BE84">GET_POSITION_IN_LIST Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_SEARCH_STRING-Function.html#GUID-246990B9-E747-4B0F-B2AC-B593A35737A5">GET_SEARCH_STRING Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_VALUE_AS_VARCHAR2-Function.html#GUID-D5143DBC-7166-44AD-B0AB-D713405085D5">GET_VALUE_AS_VARCHAR2 Function</a><br></li>
+                  <li class="ulchildlink"><a href="IS_EQUAL-Function.html#GUID-6BCB00A6-5286-4235-B403-E34632FD7C71">IS_EQUAL Function</a><br></li>
+                  <li class="ulchildlink"><a href="PAGE_ITEM_NAMES_TO_JQUERY-Function.html#GUID-0EAA3D4A-D5CA-499C-97B7-B8D01B88E110">PAGE_ITEM_NAMES_TO_JQUERY Function</a><br></li>
+                  <li class="ulchildlink"><a href="PRINT_DISPLAY_ONLY-Procedure.html#GUID-7302B306-09FE-40DC-BB4D-0D605B862330">PRINT_DISPLAY_ONLY Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PRINT_ESCAPED_VALUE-Procedure.html#GUID-2A94DB10-CD69-4436-A103-EF29EC0782DF">PRINT_ESCAPED_VALUE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PRINT_HIDDEN_IF_READONLY-Procedure.html#GUID-F384CA3E-178A-4063-98BF-C8FC3DFB1F89">PRINT_HIDDEN_IF_READONLY Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PRINT_JSON_HTTP_HEADER-Procedure.html#GUID-C5AE4453-178B-48FC-B876-C7FDFDFC399D">PRINT_JSON_HTTP_HEADER Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PRINT_LOV_AS_JSON-Procedure.html#GUID-B5C3E18B-0A33-4428-8803-5E8AD76C7AB5">PRINT_LOV_AS_JSON Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PRINT_OPTION-Procedure.html#GUID-DAC2B906-047D-406C-80A2-476FA6F1108F">PRINT_OPTION Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="REPLACE_SUBSTITUTIONS-Function.html#GUID-4462ADC1-479B-46B5-A823-B93B5087FDC0">REPLACE_SUBSTITUTIONS Function</a><br></li>
+                  <li class="ulchildlink"><a href="SET_COMPONENT_VALUES-Procedure.html#GUID-D49DBBA3-9BCA-4B48-A154-7B0E8F408A86">SET_COMPONENT_VALUES Procedure</a><br></li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

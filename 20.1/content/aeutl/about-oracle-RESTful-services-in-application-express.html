@@ -1,0 +1,453 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="About Oracle RESTful Services in Application Express">
+      <meta name="abstract" content="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">
+      <meta name="description" content="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">
+      <meta name="DC.subject" content="RESTful services, requirements, RESTful Services, REST, Representational State Transfer (REST), resource module, resource handler, example, terminology">
+      <meta name="keywords" content="RESTful services, requirements, RESTful Services, REST, Representational State Transfer (REST), resource module, resource handler, example, terminology">
+      <meta name="DC.Relation" scheme="URI" content="using-RESTful-services.html#GUID-9EF9F122-554D-40C3-B14D-70C3ACF1A48D">
+      <meta name="DC.Relation" scheme="URI" content="about-oracle-RESTful-services-in-application-express.html#GUID-72BA915C-2305-4957-8446-77E81098B8E9">
+      <meta name="DC.Relation" scheme="URI" content="about-oracle-RESTful-services-in-application-express.html#GUID-A3CF9098-52B6-4064-93D2-CC9DC0B4AB38">
+      <meta name="DC.Relation" scheme="URI" content="about-oracle-RESTful-services-in-application-express.html#GUID-07A1A37A-7C8A-4C47-B849-7B178E74DA07">
+      <meta name="DC.Relation" scheme="URI" content="about-oracle-RESTful-services-in-application-express.html#GUID-BCED781C-0DCB-4C10-96C0-BE38A7DF6BE5">
+      <meta name="DC.Relation" scheme="URI" content="about-oracle-RESTful-services-in-application-express.html#GUID-B47DCA33-5607-43DD-8347-ADFCB121E887">
+      <meta name="DC.Relation" scheme="URI" content="about-oracle-RESTful-services-in-application-express.html#GUID-DD051429-0B3C-4DBD-995C-95088D6AC719">
+      <meta name="DC.Relation" scheme="URI" content="about-oracle-RESTful-services-in-application-express.html#GUID-52727E28-F793-4324-A134-58AD92686555">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">
+      <meta name="description" content="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">
+      <title>About Oracle RESTful Services in Application Express</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="using-RESTful-services.html" title="Previous" type="text/html">
+      <link rel="next" href="enabling-REST-objects-from-object-browser.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-RESTful-services.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="enabling-REST-objects-from-object-browser.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-RESTful-services.html" property="item" typeof="WebPage"><span property="name">Enabling Data Exchange with RESTful Services </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">About Oracle RESTful Services in Application Express</li>
+            </ol>
+            <a id="GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" name="GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666"></a>
+            
+            <h2 id="AEUTL-GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" class="sect2"><span class="enumeration_section">7.1 </span>About Oracle RESTful Services in Application Express
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.</p>
+               <p>You use Resource Modules, Resource Templates, and Resource Handlers, to configure RESTful Services as implemented by Oracle REST Data Services (ORDS).</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="about-oracle-RESTful-services-in-application-express.html#GUID-72BA915C-2305-4957-8446-77E81098B8E9">RESTful Service Configuration Requirements</a><br>Configuration requirements for exposing RESTful Services to external systems.
+                  </li>
+                  <li class="ulchildlink"><a href="about-oracle-RESTful-services-in-application-express.html#GUID-A3CF9098-52B6-4064-93D2-CC9DC0B4AB38">REST and RESTful Services</a><br>Representational State Transfer (REST) is a way of providing interoperability between computer systems over the Internet. You can define the RESTful services to enable the querying and manipulation of data without the need for direct access to the underlying data store.
+                  </li>
+                  <li class="ulchildlink"><a href="about-oracle-RESTful-services-in-application-express.html#GUID-07A1A37A-7C8A-4C47-B849-7B178E74DA07">Resource Modules</a><br>A Resource Module is a container that groups a set of related RESTful Services together.
+                  </li>
+                  <li class="ulchildlink"><a href="about-oracle-RESTful-services-in-application-express.html#GUID-BCED781C-0DCB-4C10-96C0-BE38A7DF6BE5">Resource Templates</a><br>A Resource Template defines an individual service that can be called. Resource Templates are contained in Resource Modules.
+                  </li>
+                  <li class="ulchildlink"><a href="about-oracle-RESTful-services-in-application-express.html#GUID-B47DCA33-5607-43DD-8347-ADFCB121E887">Resource Handlers</a><br>Each Resource Handler implements one (and only one) HTTP operation. It is important to understand how Resource Handler implementations are mapped to traditional Create, Read, Update, Delete (CRUD) operations.
+                  </li>
+                  <li class="ulchildlink"><a href="about-oracle-RESTful-services-in-application-express.html#GUID-DD051429-0B3C-4DBD-995C-95088D6AC719">Example RESTful Service</a><br>Use Resource Modules, Resource Templates, and Resource Handlers, to configure RESTful Services as implemented by Oracle REST Data Services (ORDS).
+                  </li>
+                  <li class="ulchildlink"><a href="about-oracle-RESTful-services-in-application-express.html#GUID-52727E28-F793-4324-A134-58AD92686555">RESTful Services Terminology</a><br>Terminology used in Application Express and other Oracle tools to reference the different components that make up a RESTful Service.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-RESTful-services.html#GUID-9EF9F122-554D-40C3-B14D-70C3ACF1A48D" title="RESTful Services enable the declarative specification of RESTful services used to access the database.">Enabling Data Exchange with RESTful Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL29133"></a><div class="props_rev_3"><a id="GUID-72BA915C-2305-4957-8446-77E81098B8E9" name="GUID-72BA915C-2305-4957-8446-77E81098B8E9"></a><h3 id="AEUTL-GUID-72BA915C-2305-4957-8446-77E81098B8E9" class="sect3"><span class="enumeration_section">7.1.1 </span>RESTful Service Configuration
+    Requirements
+               </h3>
+               <div>
+                  <p>Configuration requirements for exposing RESTful Services to external systems.</p>
+                  <div class="section">
+                     <p>You must meet the following requirements for the RESTful Service utility to be available and function:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Your Oracle Application Express configuration includes <span>Oracle REST Data Services (ORDS) 19.x or later</span>.
+                           </p>
+                           <div class="infoboxnote" id="GUID-72BA915C-2305-4957-8446-77E81098B8E9__GUID-E121B414-1DD4-4BE7-88BA-1B9047B27AA4">
+                              <p class="notep1">Note:</p>
+                              <p>The Oracle XML DB HTTP Server with the embedded PL/SQL gateway and Oracle HTTP Server with <code class="codeph">mod_plsql</code> do NOT support RESTful Services.
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>An administrator has enabled RESTful Services either at the workspace or instance-level as described in <a href="../aeadm/configuring-workspace-preferences.html#AEADM-GUID-140DE54B-E74A-47E0-AFFE-436F6FC329C0" target="_blank">Controlling RESTful Services for a Workspace</a> and <a href="../aeadm/configuring-features.html#AEADM-GUID-F9491905-FFDB-4ED1-BAAC-B13F8C48D436" target="_blank">Enabling RESTful Services for an Instance</a> in <span><cite>Oracle Application Express Administration Guide</cite></span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-72BA915C-2305-4957-8446-77E81098B8E9__GUID-E48B6BCB-7758-44A1-8423-9B36BD73FBD1"> Support for Existing RESTful Services from Earlier Releases</p>
+                     
+                     
+                     <p>Prior to Oracle Application Express release 18.1, the metadata for Application Express based RESTful Services are defined in the core Oracle Application Express metadata repository.</p>
+                     
+                     <p>As Oracle moves toward a unified
+                                                  RESTful Services repository based on Oracle REST
+                                                  Data Services (ORDS), you need to migrate RESTful
+                                                  Services previously defined in Oracle Application
+                                                  Express to the ORDS-based repository.</p>
+                     
+                     <p>The behavior of Oracle REST Data Services in
+                                                  earlier releases differs from the current
+                                                  release:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-72BA915C-2305-4957-8446-77E81098B8E9__UL_FKK_XMV_5HB">
+                        <li>
+                           
+                           <p>When running Oracle Application
+                                                  Express release 18.1 with Oracle REST Data
+                                                  Services prior to release 17.4.1, only the
+                                                  traditional Application Express based REST
+                                                  Services console is available. You can continue to
+                                                  create and maintain Application Express based
+                                                  RESTful services and they will be stored in the
+                                                  traditional Oracle Application Express metadata
+                                                  repository.</p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>When running Oracle Application Express release 18.1 with Oracle REST Data Services (ORDS) release 19.1 or later and the workspace currently contains Application Express based RESTful Services. </p>
+                           
+                           <ul style="list-style-type: disc;" id="GUID-72BA915C-2305-4957-8446-77E81098B8E9__UL_GKK_XMV_5HB">
+                              <li>
+                                 
+                                 <p>You only have read-only access to the traditional Application Express based RESTful Service pages. The current services continue to work, however, you are not be able to create new or edit existing Application Express based RESTful Services.</p>
+                                 
+                                 <div class="infoboxnote" id="GUID-72BA915C-2305-4957-8446-77E81098B8E9__GUID-43DF3AB2-9D14-4978-A537-22CF496B905C">
+                                    <p class="notep1">Note:</p>
+                                    
+                                    <p>Clicking the <span class="uicontrol bold">Migrate to ORDS RESTful Services</span> button migrates all existing Application Express-based RESTful services within the workspace to the ORDS metadata repository.
+                                    </p>
+                                    
+                                 </div>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>When running Oracle Application Express release 18.1 with Oracle REST Data Services (ORDS) release 19.1 or later and the workspace currently does not contain any Application Express based RESTful Services, you are navigated to the new Oracle REST Data Services (ORDS) based RESTful Services pages and will not have access to the traditional Application Express based RESTful Services screens.</p>
+                           
+                        </li>
+                     </ul>
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-72BA915C-2305-4957-8446-77E81098B8E9__GUID-0669F718-3FF7-4342-B960-9E8E4043D7AF">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=AELIG-GUID-A16BCCA2-8081-4062-A635-9F7C36FC394F" target="_blank"><span class="q">"Installing Oracle REST Data Services"</span></a> in <span class="italic">Oracle REST Data Services Installation, Configuration, and Development Guide</span></p>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="about-oracle-RESTful-services-in-application-express.html#GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" title="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">About Oracle RESTful Services in Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29132"></a><div class="props_rev_3"><a id="GUID-A3CF9098-52B6-4064-93D2-CC9DC0B4AB38" name="GUID-A3CF9098-52B6-4064-93D2-CC9DC0B4AB38"></a><h3 id="AEUTL-GUID-A3CF9098-52B6-4064-93D2-CC9DC0B4AB38" class="sect3"><span class="enumeration_section">7.1.2 </span>REST and RESTful Services
+               </h3>
+               <div>
+                  <p>Representational State Transfer (REST) is a way of providing interoperability between computer systems over the Internet. You can define the RESTful services to enable the querying and manipulation of data without the need for direct access to the underlying data store.</p>
+                  <p>A service is described as RESTful when it conforms to the tenets of REST. Although a full discussion of REST is outside the scope of this document, a RESTful Service has the following characteristics:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>A RESTful Service is modeled as a set of resources. Those resources are identified by URLs and accessed over the <code class="codeph">http</code> or <code class="codeph">https</code> web protocols.
+                        </p>
+                     </li>
+                     <li>
+                        <p>A small set of operations are used to manipulate resources (such as <code class="codeph">PUT</code>, <code class="codeph">POST</code>, <code class="codeph">GET</code>, <code class="codeph">DELETE</code>).
+                        </p>
+                     </li>
+                     <li>
+                        <p>RESTful Services are stateless. They maintain no connection between the client and serving computer systems, and no client context is stored between requests.</p>
+                     </li>
+                     <li>
+                        <p>Requests to a RESTful Service always elicit a response. This response is in the form of XML, JSON, HTML, or some other defined format.</p>
+                     </li>
+                     <li>
+                        <p>Responses provide details of some sort of alteration to the underlying data, error messages, and hypertext links to other related resources depending upon the operation.</p>
+                     </li>
+                  </ul>
+                  <p>REST resources use a stateless protocol with standard operations, so you can create reusable, underlying components that can be managed and updated without affecting the system, even while REST is running.</p>
+                  <p>While consuming RESTful Services uses the standard HTTP operations, processing the data returned through a RESTful service is different. Oracle Application Express 19.2 provides a comprehensive set of components to make consuming RESTful services easier.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="about-oracle-RESTful-services-in-application-express.html#GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" title="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">About Oracle RESTful Services in Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-07A1A37A-7C8A-4C47-B849-7B178E74DA07" name="GUID-07A1A37A-7C8A-4C47-B849-7B178E74DA07"></a><h3 id="AEUTL-GUID-07A1A37A-7C8A-4C47-B849-7B178E74DA07" class="sect3"><span class="enumeration_section">7.1.3 </span>Resource Modules
+               </h3>
+               <div>
+                  <p>A Resource Module is a container that groups a set of related RESTful Services together.</p>
+                  <p>A Resource Module not only provides a way to identify the group uniquely, but also defines the unique Base Path used on a URL to access the set of services defined within the module.</p>
+                  <p>In most cases, you must configure a Resource Module and a child Resource Template for each RESTful Service that you want your application to provide. You must also define a Resource Handler for each method associated with the same Resource Template. For example, to provide a method to return data and another to store data, you must define a Resource Handler for each operation.</p>
+                  <div class="example" id="GUID-07A1A37A-7C8A-4C47-B849-7B178E74DA07__GUID-637731B6-7AD5-4B9C-A0E7-8E81E544FB4C">
+                     <p class="titleinexample">Example 7-1 Resource Module</p>
+                     <p>A Resource Module that enables you to access information about employees is named <code class="codeph">oracle.example.hr</code> and the base path value for the service is <code class="codeph">/hr/</code> . 
+                     </p>
+                  </div>
+                  <!-- class="example" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="about-oracle-RESTful-services-in-application-express.html#GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" title="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">About Oracle RESTful Services in Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-BCED781C-0DCB-4C10-96C0-BE38A7DF6BE5" name="GUID-BCED781C-0DCB-4C10-96C0-BE38A7DF6BE5"></a><h3 id="AEUTL-GUID-BCED781C-0DCB-4C10-96C0-BE38A7DF6BE5" class="sect3"><span class="enumeration_section">7.1.4 </span>Resource Templates
+               </h3>
+               <div>
+                  <p>A Resource Template defines an individual service that can be called. Resource Templates are contained in Resource Modules.</p>
+                  <p>Each Resource Template defines a URI Pattern where it can be reached and implements at least one Resource Handler. A Resource Template may only implement one of each type of Resource Handler (GET, POST, PUT, DELETE) but can be configured not to implement all of them.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="about-oracle-RESTful-services-in-application-express.html#GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" title="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">About Oracle RESTful Services in Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-B47DCA33-5607-43DD-8347-ADFCB121E887" name="GUID-B47DCA33-5607-43DD-8347-ADFCB121E887"></a><h3 id="AEUTL-GUID-B47DCA33-5607-43DD-8347-ADFCB121E887" class="sect3"><span class="enumeration_section">7.1.5 </span>Resource Handlers
+               </h3>
+               <div>
+                  <p>Each Resource Handler implements one (and only one) HTTP operation. It is important to understand how Resource Handler implementations are mapped to traditional Create, Read, Update, Delete (CRUD) operations.</p>
+                  <dl>
+                     <dt class="dlterm"><a name="GUID-B47DCA33-5607-43DD-8347-ADFCB121E887__GUID-0AF127F2-9434-40A2-B34C-CEBC3C9F8D1A">
+                           <!-- --></a><code class="codeph">GET</code></dt>
+                     <dd>Retrieves a representation of a resource, equivalent to a SQL SELECT statement.</dd>
+                     <dt class="dlterm"><a name="GUID-B47DCA33-5607-43DD-8347-ADFCB121E887__GUID-FADEE36D-A5BF-4057-8E01-D4B752D12D49">
+                           <!-- --></a><code class="codeph">POST</code></dt>
+                     <dd>Creates a new resource or adds a resource to a collection, equivalent to a SQL INSERT statement.</dd>
+                     <dt class="dlterm"><a name="GUID-B47DCA33-5607-43DD-8347-ADFCB121E887__GUID-F4205062-CBE1-40FA-A4BC-99946A22AD4E">
+                           <!-- --></a><code class="codeph">PUT</code></dt>
+                     <dd>Updates the values an existing resource, equivalent to a SQL UPDATE statement.</dd>
+                     <dt class="dlterm"><a name="GUID-B47DCA33-5607-43DD-8347-ADFCB121E887__GUID-42F1E9DD-523A-4F1F-A0C3-1A5DDF75CAE6">
+                           <!-- --></a><code class="codeph">DELETE</code></dt>
+                     <dd>Deletes an existing resource, equivalent to a SQL DELETE statement.</dd>
+                  </dl>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="about-oracle-RESTful-services-in-application-express.html#GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" title="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">About Oracle RESTful Services in Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL447"></a><div class="props_rev_3"><a id="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719" name="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719"></a><h3 id="AEUTL-GUID-DD051429-0B3C-4DBD-995C-95088D6AC719" class="sect3"><span class="enumeration_section">7.1.6 </span>Example RESTful Service
+               </h3>
+               <div>
+                  <p>Use Resource Modules, Resource Templates, and Resource Handlers, to configure RESTful Services as implemented by Oracle REST Data Services (ORDS).</p>
+                  <div class="example" id="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__GUID-A0A231C2-A290-4407-A4D2-8A31C0B9B2EF">
+                     <p class="titleinexample">Example 7-2 Complete Resource Template</p><pre class="pre codeblock"><code>http://server.com/ords/anyco/hr/employees/7978</code></pre><p>Where:</p><pre class="pre codeblock"><code>
+http://<span class="italic">server_URL</span>/<span class="italic">ords_alias</span>/<span class="italic">schema_alias</span>/<span class="italic">base_path</span>/<span class="italic">module_base_path</span>/<span class="italic">URI_template</span>/:<span class="italic">bind_variable</span>
+</code></pre><p>A functionally complete Resource Template implements the ability to retrieve a specific employee's details by passing in the employee id. The Resource Template's URI Pattern is <code class="codeph">employees/:id</code>. A Resource Handler is implemented using the GET operation and the following logic:
+                     </p><pre class="pre codeblock"><code>select empno, ename, dept from emp where empno = :id </code></pre><p>When calling the RESTful Service, access the service using the server path, base path and URI Template and providing a static value for the employee id as: </p><pre class="pre codeblock"><code>http://server.com/ords/anyco/hr/employees/7978</code></pre><dl>
+                        <dt class="dlterm"><a name="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__GUID-C7CF8E2E-7E9E-4983-8DD9-A7A5AD13974A">
+                              <!-- --></a>Server Path
+                        </dt>
+                        <dd><code class="codeph">http://server.com/</code></dd>
+                        <dt class="dlterm"><a name="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__GUID-6500A303-7327-432C-BD04-377E80FE354E">
+                              <!-- --></a>ORDS Alias
+                        </dt>
+                        <dd><code class="codeph">/ords/</code></dd>
+                        <dt class="dlterm"><a name="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__GUID-4288C443-87A7-4BE3-B0D5-2A807063C404">
+                              <!-- --></a>Schema Alias
+                        </dt>
+                        <dd><code class="codeph">/anyco/</code></dd>
+                        <dt class="dlterm"><a name="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__GUID-19E8124E-A668-409D-AE81-D9E707764649">
+                              <!-- --></a>Base Path
+                        </dt>
+                        <dd><code class="codeph">/hr/</code></dd>
+                        <dt class="dlterm"><a name="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__GUID-68247754-2135-4B93-87A4-0890ECB4BEFA">
+                              <!-- --></a>URI Template
+                        </dt>
+                        <dd><code class="codeph">employees/7978</code></dd>
+                     </dl>
+                     <p>When this particular URL is called using an HTTP GET, the service returns the result of the SQL Statement listed above. The format in which the data is returned depends upon the full definition of the Resource Handler.</p>
+                     <div class="infoboxnote" id="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__GUID-D8F66A96-42BE-410D-9B1B-3A93831DD2E4">
+                        <p class="notep1">Note:</p>
+                        <p>A Resource Template is considered functionally incomplete if it does not implement at least one Resource Handler.</p>
+                     </div>
+                  </div>
+                  <!-- class="example" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__GUID-949FB6A0-55C4-40E8-A372-341C85F11510">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;" id="GUID-DD051429-0B3C-4DBD-995C-95088D6AC719__UL_KPC_2DF_T3B">
+                        <li>
+                           <p><a href="how-to-create-RESTful-service-module-example.html#GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" title="Learn how to create the ORDS Based RESTful Services module example.">How to Create the ORDS Based RESTful Services Module Example</a></p>
+                        </li>
+                        <li>
+                           <p><a href="../htmdb/implementing-web-services.html#HTMDB13005" target="_blank">Implementing Web Services</a> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="about-oracle-RESTful-services-in-application-express.html#GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" title="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">About Oracle RESTful Services in Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-52727E28-F793-4324-A134-58AD92686555" name="GUID-52727E28-F793-4324-A134-58AD92686555"></a><h3 id="AEUTL-GUID-52727E28-F793-4324-A134-58AD92686555" class="sect3"><span class="enumeration_section">7.1.7 </span>RESTful Services Terminology
+               </h3>
+               <div>
+                  <p>Terminology used in Application Express and other Oracle tools to reference the different components that make up a RESTful Service.</p>
+                  <div class="section">
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-52727E28-F793-4324-A134-58AD92686555__GUID-DBFDB3B9-4CE2-4EF8-AACA-E684B26B8EBD">
+                              <!-- --></a>Base Path
+                        </dt>
+                        <dd>A case sensitive base path that is used to access a RESTful Service. This base path for the module is appended to the server path and the Schema Alias for the underlying Oracle schema. The base path must be unique within the schema.</dd>
+                        <dt class="dlterm"><a name="GUID-52727E28-F793-4324-A134-58AD92686555__GUID-70FAE377-F5A6-4A8C-80B9-D205C1E1A370">
+                              <!-- --></a>HTTP Operation
+                        </dt>
+                        <dd>HyperText Transport Protocol (HTTP) defines standard methods that can be performed on resources: GET, POST, PUT, and DELETE.</dd>
+                        <dt class="dlterm"><a name="GUID-52727E28-F793-4324-A134-58AD92686555__GUID-08BF8AF8-FBC9-4CDF-832E-F8EAB3B14769">
+                              <!-- --></a>Resource Handler
+                        </dt>
+                        <dd>Provides the logic required to service a specific HTTP operation for a specific resource template.</dd>
+                        <dt class="dlterm"><a name="GUID-52727E28-F793-4324-A134-58AD92686555__GUID-BB644F1F-5853-4195-8666-36C94D69D91A">
+                              <!-- --></a>Resource Module
+                        </dt>
+                        <dd>A container that is used to group related RESTful Services together.</dd>
+                        <dt class="dlterm"><a name="GUID-52727E28-F793-4324-A134-58AD92686555__GUID-97DE3EA8-F7F2-444F-8C80-665653B38600">
+                              <!-- --></a>Resource Template
+                        </dt>
+                        <dd>An individual RESTful Service that is able to service requests for some set of Universal Resource Identifiers (URIs ). The URI Pattern of the Resource Template defines the set of URIs.</dd>
+                        <dt class="dlterm"><a name="GUID-52727E28-F793-4324-A134-58AD92686555__GUID-49F3B4AF-C7DA-4291-AAF6-CD69551301DD">
+                              <!-- --></a>RESTful Service
+                        </dt>
+                        <dd>An HTTP web service that conforms to the tenets of the RESTful architectural style.</dd>
+                        <dt class="dlterm"><a name="GUID-52727E28-F793-4324-A134-58AD92686555__GUID-0C1C5EA9-F594-44DB-B13B-97020F4A7531">
+                              <!-- --></a>Schema Alias
+                        </dt>
+                        <dd>When enabling an Oracle schema for use with RESTful services, an alias is required. The case sensitive Schema Alias is used to form the URL and appended to the server path prior to the Base Path and URI pattern.</dd>
+                        <dt class="dlterm"><a name="GUID-52727E28-F793-4324-A134-58AD92686555__GUID-FD660068-6EF9-49DD-A898-B3BFF860A327">
+                              <!-- --></a>URI pattern
+                        </dt>
+                        <dd>
+                           <p>A case sensitive path used to access the specific resource and can be either a Route Pattern or a URI Template. The URI Pattern for the resource is appended to the server path and Resource Module Base Path. The URI Pattern may also include a bind variable appended after a forward slash. This allows a value to be passed to the service as part of the URI. The bind variable syntax prefixes the variable name with a colon (:).</p>
+                           <ul style="list-style-type: disc;" id="GUID-52727E28-F793-4324-A134-58AD92686555__UL_XG1_HTC_S3B">
+                              <li>
+                                 <p>Route Pattern - a pattern that focuses on decomposing the path portion of a URI into its component parts. For example, a pattern of <code class="codeph">/:object/:id?</code> will match <code class="codeph">/emp/101</code> (matches a request for the item in the <code class="codeph">emp</code> resource with id of <code class="codeph">101</code>) and also match <code class="codeph">/emp/</code> (matches a request for the <code class="codeph">emp</code> resource, because the <code class="codeph">:id</code> parameter is annotated with the <code class="codeph">?</code> modifier, which indicates that the id parameter is optional).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>URI Template - a simple grammar that defines the specific patterns of URIs that a given resource template can handle. For example, the pattern <code class="codeph">employees/:id</code> matches any URI whose path begins with <code class="codeph">employees/</code>, such as <code class="codeph">employees/2560</code>. 
+                                 </p>
+                              </li>
+                           </ul>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="about-oracle-RESTful-services-in-application-express.html#GUID-E7D7D0F0-3315-40F6-9240-DC0E464D9666" title="This section introduces RESTful Services as implemented by Oracle REST Data Services (ORDS) and provides clarification on the terminology used within Application Express and other Oracle tools to reference the different components that make up a RESTful Service.">About Oracle RESTful Services in Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

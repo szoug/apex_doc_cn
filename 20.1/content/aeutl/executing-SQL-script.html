@@ -1,0 +1,239 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Executing a SQL Script">
+      <meta name="abstract" content="You can execute scripts stored in the Script Repository. You can submit a script for execution either from the Script Editor or from the SQL Scripts page.">
+      <meta name="description" content="You can execute scripts stored in the Script Repository. You can submit a script for execution either from the Script Editor or from the SQL Scripts page.">
+      <meta name="DC.Relation" scheme="URI" content="using-SQL-scripts.html#GUID-7288B4B4-E00C-4DC4-89EA-5FA52623A1EF">
+      <meta name="DC.Relation" scheme="URI" content="executing-SQL-script.html#GUID-7EDFCB2C-6E33-4B0A-B6D2-947FA7E1B230">
+      <meta name="DC.Relation" scheme="URI" content="executing-SQL-script.html#GUID-F0FDF9A8-0C4B-4F4E-A088-98A140012FBD">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-5BEC52D9-F4F5-4DC9-B012-41647B37B3FA">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can execute scripts stored in the Script Repository. You can submit a script for execution either from the Script Editor or from the SQL Scripts page.">
+      <meta name="description" content="You can execute scripts stored in the Script Repository. You can submit a script for execution either from the Script Editor or from the SQL Scripts page.">
+      <title>Executing a SQL Script</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="You can execute scripts stored in the Script Repository. You can submit a script for execution either from the Script Editor or from the SQL Scripts page.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="copying-SQL-script.html" title="Previous" type="text/html">
+      <link rel="next" href="viewing-SQL-script-results.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="copying-SQL-script.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="viewing-SQL-script-results.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-SQL-scripts.html" property="item" typeof="WebPage"><span property="name"> Using SQL Scripts </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Executing a SQL Script</li>
+            </ol>
+            <a id="GUID-5BEC52D9-F4F5-4DC9-B012-41647B37B3FA" name="GUID-5BEC52D9-F4F5-4DC9-B012-41647B37B3FA"></a><a id="AEUTL205"></a>
+            
+            <h2 id="AEUTL-GUID-5BEC52D9-F4F5-4DC9-B012-41647B37B3FA" class="sect2"><span class="enumeration_section">6.10 </span>Executing a SQL Script
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can execute scripts stored in the Script Repository. You can submit a script for execution either from the Script Editor or from the SQL Scripts page.</p>
+               <p><a id="d36971e44" class="indexterm-anchor"></a> 
+               </p>
+               <p>When you submit a script for execution, the Run Script page appears. It displays the script name, when it was created and by whom, when it was last updated and by whom, the number of statements it contains, and its size in bytes. It also lists unknown statements such as SQL*Plus commands that are ignored during execution.</p>
+               <p>If a script does not contain any runnable statements, the Run control does not display.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="executing-SQL-script.html#GUID-7EDFCB2C-6E33-4B0A-B6D2-947FA7E1B230">Executing a SQL Script in the Script Editor</a><br>Learn how to execute a script in the Script Editor.
+                  </li>
+                  <li class="ulchildlink"><a href="executing-SQL-script.html#GUID-F0FDF9A8-0C4B-4F4E-A088-98A140012FBD">Executing a SQL Script from the SQL Scripts Page</a><br>Learn how to execute a script from the SQL Scripts page.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-5BEC52D9-F4F5-4DC9-B012-41647B37B3FA__GUID-1F6A12A3-ACD7-4C48-941A-760BCF87FC8F">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="monitoring-db.html#GUID-5FCC34EE-DF96-41A5-95B5-444A899141C6" title="The Long Operations page displays the status of various operations that run for longer than 6 seconds (in absolute time).">About Long Operations Page</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-SQL-scripts.html#GUID-7288B4B4-E00C-4DC4-89EA-5FA52623A1EF" title="Use SQL scripts to create, edit, view, run, and delete script files.">Using SQL Scripts</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL206"></a><div class="props_rev_3"><a id="GUID-7EDFCB2C-6E33-4B0A-B6D2-947FA7E1B230" name="GUID-7EDFCB2C-6E33-4B0A-B6D2-947FA7E1B230"></a><h3 id="AEUTL-GUID-7EDFCB2C-6E33-4B0A-B6D2-947FA7E1B230" class="sect3"><span class="enumeration_section">6.10.1 </span>Executing a SQL Script in the Script Editor
+               </h3>
+               <div>
+                  <p>Learn how to execute a script in the Script Editor.</p>
+                  <div class="section">
+                     <p>To execute<a id="d36971e137" class="indexterm-anchor"></a><a id="d36971e141" class="indexterm-anchor"></a> a script in the Script Editor:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Open the script you want to execute in the Script Editor. </span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Run</span> in the Script Editor.</span><div>
+                           <p>The Run Script page appears. This page displays information about the script and lists statements in error preventing execution, or statements such as SQL*Plus commands that are ignored when the script is executed. </p>
+                           <p>Available options on the Run Script page include:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Cancel</span> -  returns you to the SQL Scripts page without executing the script.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Run Now</span> -  to submit the script for execution. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Run in Background</span> -  runs the script using <code class="codeph">DBMS_SCHEDULER</code> rather than submitting for execution. This option is useful for long running scripts.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Run Now</span> to submit the script for execution. </span><div>
+                           <p>The Manage Script Results page appears listing script results.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To view script results, click <span class="uicontrol bold">View Results</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-7EDFCB2C-6E33-4B0A-B6D2-947FA7E1B230__GUID-140F1E2F-23BD-454D-879B-C9BD426FC1F8">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="using-script-editor.html#GUID-BC7C24CE-692D-4C3F-8A1C-1AA4244BE66A" title="You use the Script Editor to add content to a new script, to edit existing scripts, and to run and delete scripts in the script repository.">Using the Script Editor</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="viewing-SQL-script-results.html#GUID-6751D843-F337-46A3-9879-DC62F09EF335" title="You use the Manage Script Results page to view and delete script results.">Viewing SQL Script Results</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="executing-SQL-script.html#GUID-5BEC52D9-F4F5-4DC9-B012-41647B37B3FA" title="You can execute scripts stored in the Script Repository. You can submit a script for execution either from the Script Editor or from the SQL Scripts page.">Executing a SQL Script</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL207"></a><div class="props_rev_3"><a id="GUID-F0FDF9A8-0C4B-4F4E-A088-98A140012FBD" name="GUID-F0FDF9A8-0C4B-4F4E-A088-98A140012FBD"></a><h3 id="AEUTL-GUID-F0FDF9A8-0C4B-4F4E-A088-98A140012FBD" class="sect3"><span class="enumeration_section">6.10.2 </span>Executing a SQL Script from the SQL Scripts Page
+               </h3>
+               <div>
+                  <p>Learn how to execute a script from the SQL Scripts page.</p>
+                  <div class="section">
+                     <p>To execute<a id="d36971e274" class="indexterm-anchor"></a><a id="d36971e278" class="indexterm-anchor"></a> a script from the SQL Scripts page:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">SQL Scripts</span>.</span><div>
+                           <p>The SQL Scripts page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">View Report</span> icon.</span><div>
+                           <p>Reports view appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the far right column, click the <span class="uicontrol bold">Run</span> icon for the script you want to execute. </span><div>
+                           <div class="infobox-tip" id="GUID-F0FDF9A8-0C4B-4F4E-A088-98A140012FBD__GUID-25BF09DA-00C4-48C6-96F5-DCCD2FE165E5">
+                              <p class="notep1">Tip:</p>
+                              <p>If the script does not contain any runnable statements, an error icon displays.</p>
+                           </div>
+                           <p>The Run Script page appears. This page displays information about the script and lists statements in error preventing execution, or statements such as SQL*Plus commands that are ignored when the script is executed. </p>
+                           <p>Available options on the Run Script page include:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Cancel</span> -  returns you to the SQL Scripts page without executing the script.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Run Now</span> -  to submit the script for execution. 
+                                 </p>
+                                 <p> </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Run Now</span> to submit the script for execution. </span><div>
+                           <p>The Manage Script Results page appears listing available results for the script.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">View Results</span> icon in the far right column.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F0FDF9A8-0C4B-4F4E-A088-98A140012FBD__GUID-EDB870FC-8994-4041-AC6A-6AE5B8F5B310">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="viewing-SQL-script-results.html#GUID-6751D843-F337-46A3-9879-DC62F09EF335" title="You use the Manage Script Results page to view and delete script results.">Viewing SQL Script Results</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="executing-SQL-script.html#GUID-5BEC52D9-F4F5-4DC9-B012-41647B37B3FA" title="You can execute scripts stored in the Script Repository. You can submit a script for execution either from the Script Editor or from the SQL Scripts page.">Executing a SQL Script</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

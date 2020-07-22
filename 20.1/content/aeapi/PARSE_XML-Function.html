@@ -1,0 +1,197 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="PARSE_XML Function">
+      <meta name="DC.subject" content="APEX_WEB_SERVICE, PARSE_XML function">
+      <meta name="keywords" content="APEX_WEB_SERVICE, PARSE_XML function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_WEB_SERVICE.html#GUID-B95EA4B6-950D-419D-A2B0-CDB254E1E9F0">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-BDE092C8-77BD-425A-B522-0FE3656628B4">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>PARSE_XML Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="PARSE_RESPONSE_CLOB-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="PARSE_XML_CLOB-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="PARSE_RESPONSE_CLOB-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PARSE_XML_CLOB-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_WEB_SERVICE.html" property="item" typeof="WebPage"><span property="name"> APEX_WEB_SERVICE</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">PARSE_XML Function</li>
+            </ol>
+            <a id="GUID-BDE092C8-77BD-425A-B522-0FE3656628B4" name="GUID-BDE092C8-77BD-425A-B522-0FE3656628B4"></a><a id="AEAPI1971"></a><a id="AEAPI1972"></a><a id="AEAPI1973"></a><a id="AEAPI1974"></a><a id="AEAPI1970"></a>
+            
+            <h2 id="AEAPI-GUID-BDE092C8-77BD-425A-B522-0FE3656628B4" class="sect2"><span class="enumeration_section">40.19 </span>PARSE_XML Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Use this function to parse the response from a Web service returned as an XMLTYPE and return the value requested as a VARCHAR2.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BDE092C8-77BD-425A-B522-0FE3656628B4__GUID-B1E6F7E1-270C-443D-A4D4-2F7A82DC3E29">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_WEB_SERVICE.PARSE_XML (
+    p_xml               IN XMLTYPE,
+    p_xpath             IN VARCHAR2,
+    p_ns                IN VARCHAR2 DEFAULT NULL ) 
+RETURN VARCHAR2;
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BDE092C8-77BD-425A-B522-0FE3656628B4__GUID-D4F2BA13-6B85-4451-BE17-3A359632E7D8">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-BDE092C8-77BD-425A-B522-0FE3656628B4__BABBCGFI">
+                  <p class="titleintable">Table 40-13 PARSE_XML Function Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="PARSE_XML Function Parameters" summary="Parameter descriptions for the PARSE_XML function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d216872e73">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d216872e76">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d216872e81" headers="d216872e73 ">
+                              <p><code class="codeph">p_xml</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d216872e81 d216872e76 ">
+                              <p>The XML document as an XMLTYPE to parse.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d216872e89" headers="d216872e73 ">
+                              <p><code class="codeph">p_xpath</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d216872e89 d216872e76 ">
+                              <p>The XPath expression to the desired node.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d216872e97" headers="d216872e73 ">
+                              <p><code class="codeph">p_ns</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d216872e97 d216872e76 ">
+                              <p>The namespace to the desired node.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BDE092C8-77BD-425A-B522-0FE3656628B4__GUID-FDADFDF3-B9ED-4277-9887-1F459BB7F7CC">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example uses the <code class="codeph">make_request</code> function to call a Web service and store the results in a local XMLTYPE variable. The <code class="codeph">parse_xml</code> function is then used to pull out a specific node of the XML document stored in the <code class="codeph">XMLTYPE</code> and stores it in a locally declared VARCHAR2 variable.
+                  </p><pre class="pre codeblock"><code>declare
+    l_envelope CLOB;
+    l_xml XMLTYPE;
+    l_movie VARCHAR2(4000);
+BEGIN
+    l_envelope := ' &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:tns="http://www.ignyte.com/whatsshowing"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+   &lt;soap:Body&gt;
+      &lt;tns:GetTheatersAndMovies&gt;
+         &lt;tns:zipCode&gt;43221&lt;/tns:zipCode&gt;
+         &lt;tns:radius&gt;5&lt;/tns:radius&gt;
+      &lt;/tns:GetTheatersAndMovies&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;';
+ 
+   l_xml := apex_web_service.make_request(
+     p_url =&gt; ' http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx',
+     p_action =&gt; ' http://www.ignyte.com/whatsshowing/GetTheatersAndMovies',
+     p_envelope =&gt; l_envelope );
+ 
+   l_movie := apex_web_service.parse_xml(
+     p_xml =&gt; l_xml,
+     p_xpath =&gt; ' //GetTheatersAndMoviesResponse/GetTheatersAndMoviesResult/Theater/Movies/Movie/Name[1]',
+     p_ns =&gt; ' xmlns="http://www.ignyte.com/whatsshowing"' );
+ 
+END;
+</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_WEB_SERVICE.html#GUID-B95EA4B6-950D-419D-A2B0-CDB254E1E9F0">APEX_WEB_SERVICE</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

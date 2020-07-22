@@ -1,0 +1,1358 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Using Quick SQL">
+      <meta name="abstract" content="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">
+      <meta name="description" content="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">
+      <meta name="DC.subject" content="create, generate, SQL:, shorthand syntax, Quick SQL">
+      <meta name="keywords" content="create, generate, SQL:, shorthand syntax, Quick SQL">
+      <meta name="DC.Relation" scheme="URI" content="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-B6A3CC9F-697D-4570-9C93-9216D4355B2A">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-CD967EAC-E5D1-4E9E-A6CF-B82A07CC41F6">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-A1308899-AA1D-42EA-8CAE-B128366538FE">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-C2EA1899-6C18-4FC8-A410-E5CC63EE2390">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-98AB9049-A59D-43A3-B65B-FDE1AD747300">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-B6610861-CA63-49B4-A0C0-4305FBC0D8BE">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-C0D38BF1-9420-42F7-BC62-4F0305ED8ACD">
+      <meta name="DC.Relation" scheme="URI" content="using-quick-SQL.html#GUID-7EE0F687-E7F7-499E-8DAA-5090C35D4E97">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">
+      <meta name="description" content="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">
+      <title>Using Quick SQL</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="using-query-builder.html" title="Previous" type="text/html">
+      <link rel="next" href="using-sample-datasets.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-query-builder.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-sample-datasets.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-Oracle-application-express-utilities.html" property="item" typeof="WebPage"><span property="name"> Using Oracle Application Express Utilities</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Using Quick SQL</li>
+            </ol>
+            <a id="GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" name="GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD"></a>
+            
+            <h2 id="AEUTL-GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" class="sect2"><span class="enumeration_section">5.3 </span>Using Quick SQL
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-B6A3CC9F-697D-4570-9C93-9216D4355B2A">Getting Started with Quick SQL</a><br>Learn about common Quick SQL use cases, the basics of Quick SQL shorthand         syntax, and how to access the Quick SQL page.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-CD967EAC-E5D1-4E9E-A6CF-B82A07CC41F6">Using Quick SQL Help</a><br>Review Quick SQL Help to learn about Quick SQL shorthand syntax.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-A1308899-AA1D-42EA-8CAE-B128366538FE">Generating Quick SQL with SQL Shorthand Syntax</a><br>Quickly develop a script for simple tables and views by entering SQL         shorthand syntax in the the left pane and clicking Generate SQL.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-C2EA1899-6C18-4FC8-A410-E5CC63EE2390">Saving Scripts</a><br>Learn about saving or downloading generated script.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6">Creating an Application from a Generated SQL Script</a><br>Create an application from a saved script.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-98AB9049-A59D-43A3-B65B-FDE1AD747300">Using Quick SQL Samples</a><br>Learn about about SQL shorthand syntax by viewing Quick SQL         samples.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2">Configuring Settings</a><br>Configure settings inline to explicitly set SQL syntax generation options,         or click Settings at the top of the right pane to declaratively set the generation         options.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-B6610861-CA63-49B4-A0C0-4305FBC0D8BE">About Database Terminology</a><br>Learn about common database terminology used in Quick SQL.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-C0D38BF1-9420-42F7-BC62-4F0305ED8ACD">Recommendations When Using Quick SQL</a><br>Learn about recommended approaches to creating effective data         models.
+                  </li>
+                  <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-7EE0F687-E7F7-499E-8DAA-5090C35D4E97">About Supported Data Types</a><br>Learn about supported data types.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5" title="Oracle Application Express provides utilities to build SQL queries, load and unload data from an Oracle database, generate DDL, view object reports, manage User Interface Defaults, restore dropped database objects, compare schemas, monitor the database, and view database details.">Using Oracle Application Express Utilities</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-B6A3CC9F-697D-4570-9C93-9216D4355B2A" name="GUID-B6A3CC9F-697D-4570-9C93-9216D4355B2A"></a><h3 id="AEUTL-GUID-B6A3CC9F-697D-4570-9C93-9216D4355B2A" class="sect3"><span class="enumeration_section">5.3.1 </span>Getting Started with Quick SQL
+               </h3>
+               <p>Learn about common Quick SQL use cases, the basics of Quick SQL shorthand
+        syntax, and how to access the Quick SQL page.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-82052E9C-F50B-454E-9AFC-AAB85EDDDAA7">About Quick SQL</a><br></li>
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-89A0BA18-C64D-4165-9B4D-82D043AFEC67">About Quick SQL Shorthand Syntax</a><br></li>
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-7D03E6C4-D66D-451B-A824-E230C5A210F5">Accessing Quick SQL</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="sect3"><a id="GUID-82052E9C-F50B-454E-9AFC-AAB85EDDDAA7" name="GUID-82052E9C-F50B-454E-9AFC-AAB85EDDDAA7"></a><h4 id="AEUTL-GUID-82052E9C-F50B-454E-9AFC-AAB85EDDDAA7" class="sect4"><span class="enumeration_section">5.3.1.1 </span>About Quick SQL
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Quick SQL reduces the time and effort required to create SQL tables, triggers, and
+                                                  index structures. It is not designed to be a
+                                                  replacement for data modeling. Quick SQL is simply
+                                                  a quick way to develop a script for simple tables
+                                                  and views. Once the SQL is generated it can be
+                                                  tweaked and expanded upon. Quick SQL provides a
+                                                  quick way to generate the SQL required to create a
+                                                  relational data model from an indented text
+                                                  document. </p>
+                        <p>Use Cases:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Quickly create robust data models</p>
+                           </li>
+                           <li>
+                              <p>Easily generate random data</p>
+                           </li>
+                           <li>
+                              <p>Learn SQL create table, select, insert, index, trigger, PL/SQL package, and view syntax using provided examples&nbsp;&nbsp;</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-B6A3CC9F-697D-4570-9C93-9216D4355B2A" title="Learn about common Quick SQL use cases, the basics of Quick SQL shorthand syntax, and how to access the Quick SQL page.">Getting Started with Quick SQL</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-89A0BA18-C64D-4165-9B4D-82D043AFEC67" name="GUID-89A0BA18-C64D-4165-9B4D-82D043AFEC67"></a><h4 id="AEUTL-GUID-89A0BA18-C64D-4165-9B4D-82D043AFEC67" class="sect4"><span class="enumeration_section">5.3.1.2 </span>About Quick SQL Shorthand Syntax
+                  </h4>
+                  <div>
+                     <div class="section">
+                        
+                        <p>When using using Quick SQL shorthand
+        syntax, follow these rules:</p>
+                        
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              
+                              <p><span class="uicontrol bold">Parent table
+                                                  names</span> - Enter parent table names
+                                                  without any indention.
+                              </p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p><span class="uicontrol bold">Table column
+                                                  names</span> - Enter table columns with a
+                                                  uniform indention of two or more spaces.
+                              </p>
+                              
+                           </li>
+                           <li>
+                              
+                              <p><span class="uicontrol bold">Parent/child
+                                                  relationships</span> - Create parent child
+                                                  relationships by indenting child tables under
+                                                  parent tables. Indent the child tables to the same
+                                                  level as the columns in the parent table.
+                              </p>
+                              
+                           </li>
+                        </ul>
+                        
+                        <div class="infoboxnote" id="GUID-89A0BA18-C64D-4165-9B4D-82D043AFEC67__GUID-68B939C8-93CF-40AF-8A22-C36FEDA2E507">
+                           <p class="notep1">Note:</p>
+                           
+                           <p>As a best practice, do not specify
+          primary keys, the system will generate them for you.</p>
+                           
+                        </div>
+                        
+                        <div class="infobox-tip" id="GUID-89A0BA18-C64D-4165-9B4D-82D043AFEC67__GUID-F2A3C510-B59B-4115-BB0C-E5797992D5B1">
+                           <p class="notep1">Tip:</p>
+                           
+                           <p>To learn more about Quick SQL shorthand syntax, click
+            <span class="uicontrol bold">Help</span> at the top of the Quick SQL Shorthand pane.
+                           </p>
+                           
+                        </div>
+                        
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3" id="GUID-89A0BA18-C64D-4165-9B4D-82D043AFEC67__GUID-5226E96D-7653-4ED0-A5EA-67B0F50C4F34">About Settings</p>
+                        
+                        
+                        <p>Click the
+                                                  <span class="uicontrol bold">Settings</span> button to view
+                                                  many generation options. You can automatically add
+                                                  Who Columns which indicate who created or last
+                                                  updated a given row and when. You can add a row
+                                                  sequence column that automatically increments by
+                                                  one on each row update. A row sequence can be
+                                                  useful to simplify lost update detection. You can
+                                                  also generate a PL/SQL API which provides a
+                                                  package per table and provides procedures to
+                                                  query, insert, update, and delete rows. Some
+                                                  applications benefit by having each change
+                                                  captured in a history table, logging of old and
+                                                  new values, which is also an option.
+                        </p>
+                        
+                        
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-89A0BA18-C64D-4165-9B4D-82D043AFEC67__GUID-2EE7EEAE-DA5B-4573-8146-09DDFBCAB897">
+                        <p class="notep1">See Also:</p>
+                        
+                        <p><span class="q">"<a href="using-quick-SQL.html#GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2" title="Configure settings inline to explicitly set SQL syntax generation options, or click Settings at the top of the right pane to declaratively set the generation options.">Configuring Settings</a>"</span></p>
+                        
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-B6A3CC9F-697D-4570-9C93-9216D4355B2A" title="Learn about common Quick SQL use cases, the basics of Quick SQL shorthand syntax, and how to access the Quick SQL page.">Getting Started with Quick SQL</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-7D03E6C4-D66D-451B-A824-E230C5A210F5" name="GUID-7D03E6C4-D66D-451B-A824-E230C5A210F5"></a><h4 id="AEUTL-GUID-7D03E6C4-D66D-451B-A824-E230C5A210F5" class="sect4"><span class="enumeration_section">5.3.1.3 </span>Accessing Quick SQL
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To access the Quick SQL page:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span> icon.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Quick SQL</span>.</span><div>
+                              <p>The Quick SQL page appears.</p>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        
+                        <div class="infoboxnote" id="GUID-7D03E6C4-D66D-451B-A824-E230C5A210F5__GUID-34D6157D-4B1B-4333-AF63-76FC91ACCF6E">
+                           <p class="notep1">Note:</p>
+                           
+                           <p>You can also access Quick SQL on the SQL Scripts page by clickig the
+                        <span class="uicontrol bold">Quick SQL</span> button. See <span class="q">"<a href="using-SQL-scripts.html#GUID-7288B4B4-E00C-4DC4-89EA-5FA52623A1EF" title="Use SQL scripts to create, edit, view, run, and delete script files.">Using SQL Scripts</a>."</span></p>
+                           
+                        </div>
+                        
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-B6A3CC9F-697D-4570-9C93-9216D4355B2A" title="Learn about common Quick SQL use cases, the basics of Quick SQL shorthand syntax, and how to access the Quick SQL page.">Getting Started with Quick SQL</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-CD967EAC-E5D1-4E9E-A6CF-B82A07CC41F6" name="GUID-CD967EAC-E5D1-4E9E-A6CF-B82A07CC41F6"></a><h3 id="AEUTL-GUID-CD967EAC-E5D1-4E9E-A6CF-B82A07CC41F6" class="sect3"><span class="enumeration_section">5.3.2 </span>Using Quick SQL Help
+               </h3>
+               <p>Review Quick SQL Help to learn about Quick SQL shorthand syntax.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-5D37C7E9-330F-42C0-99A9-659ECE0273B7">Accessing Quick SQL Help</a><br></li>
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-62CBFB23-1AD5-4600-8AD1-F79B14BA16E3">About Quick SQL Help</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-5D37C7E9-330F-42C0-99A9-659ECE0273B7" name="GUID-5D37C7E9-330F-42C0-99A9-659ECE0273B7"></a><h4 id="AEUTL-GUID-5D37C7E9-330F-42C0-99A9-659ECE0273B7" class="sect4"><span class="enumeration_section">5.3.2.1 </span>Accessing Quick SQL Help
+                  </h4>
+                  <div>
+                     <p>To access the Quick SQL Help:</p>
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Quick SQL page:</span><ol type="a" id="GUID-5D37C7E9-330F-42C0-99A9-659ECE0273B7__SUBSTEPS_FFK_FWM_PHB">
+                              <li><span>On the Workspace home page, click the <span class="uicontrol bold">SQL
+                                Workshop</span> icon.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Quick SQL</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Help</span> at the top of the Quick SQL Shorthand
+                    pane.</span><div>
+                              
+                              <div class="figure" id="GUID-5D37C7E9-330F-42C0-99A9-659ECE0273B7__FIG-132441-6764AFB9"><img id="GUID-5D37C7E9-330F-42C0-99A9-659ECE0273B7__IMAGE_U2Z_ZFH_PHB" height="401" width="887" src="img/quick_sql_help.png" alt="Description of quick_sql_help.png follows" title="Description of quick_sql_help.png follows" longdesc="img_text/quick_sql_help.html"><br><a href="img_text/quick_sql_help.html">Description of the illustration quick_sql_help.png</a></div>
+                              <!-- class="figure" -->
+                              
+                           </div>
+                           <div>The Quick sQL A Help window appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>Click one of the following tabs to learn more about Quick SQL shorthand
+                    syntax:</span><div>
+                              
+                              <ul style="list-style-type: disc;" id="GUID-5D37C7E9-330F-42C0-99A9-659ECE0273B7__UL_MBS_H54_PHB">
+                                 <li>
+                                    
+                                    <p><span class="bold">About</span> - Overview of Quick SQL together with tips
+                                on getting started and steps to create the database objects.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p><span class="bold">Data Types</span> - List of data types that can applied
+                                to each column.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p><span class="bold">Table Directives</span> - Commands used to modify
+                                tables.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p><span class="bold">Column Directives</span> - Commands used to extend column
+                                definitions.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p><span class="bold">Views</span> - Syntax for defining a view.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p><span class="bold">Settings</span> - Inline settings to explicitly set SQL
+                                syntax generation options.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    
+                                    <p><span class="bold">Samples</span> - Samples of data models that can be used
+                                to populate the Quick SQL Shorthand.
+                                    </p>
+                                    
+                                 </li>
+                              </ul>
+                              
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-CD967EAC-E5D1-4E9E-A6CF-B82A07CC41F6" title="Review Quick SQL Help to learn about Quick SQL shorthand syntax.">Using Quick SQL Help</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-62CBFB23-1AD5-4600-8AD1-F79B14BA16E3" name="GUID-62CBFB23-1AD5-4600-8AD1-F79B14BA16E3"></a><h4 id="AEUTL-GUID-62CBFB23-1AD5-4600-8AD1-F79B14BA16E3" class="sect4"><span class="enumeration_section">5.3.2.2 </span>About Quick SQL Help 
+                  </h4>
+                  <div>
+                     <p></p>
+                     <p>Quick SQL Help has the following:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">About</span> - Overview of Quick SQL together with tips on getting started and steps to create the DB objects.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Data Types</span> - List of data types that can applied to each column.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Table Directives</span> - Commands used to modify tables.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Column Directives</span> - Commands used to extend column definitions.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Views</span> - Syntax for defining a view.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Settings</span> -  Inline settings to explicitly set SQL syntax generation options.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Samples</span> -  Samples of data models that can be used to populate the Quick SQL Shorthand.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-CD967EAC-E5D1-4E9E-A6CF-B82A07CC41F6" title="Review Quick SQL Help to learn about Quick SQL shorthand syntax.">Using Quick SQL Help</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE" name="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE"></a><h3 id="AEUTL-GUID-A1308899-AA1D-42EA-8CAE-B128366538FE" class="sect3"><span class="enumeration_section">5.3.3 </span>Generating Quick SQL with SQL Shorthand
+        Syntax
+               </h3>
+               <div>
+                  <p>Quickly develop a script for simple tables and views by entering SQL
+        shorthand syntax in the the left pane and clicking Generate SQL.</p>
+                  <div class="section">
+                     
+                     <div class="infobox-tip" id="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE__GUID-9DB95166-E6E5-4D2C-864C-214012E385C1">
+                        <p class="notep1">Tip:</p>
+                        
+                        <p>Viewing samples is a great way to learn about Quick SQL shorthand syntax. To view
+                    samples, click <span class="uicontrol bold">Help</span> and then
+                        <span class="uicontrol bold">Samples</span>. Select a sample by clicking <span class="uicontrol bold">Load
+                        Model</span>.
+                        </p>
+                        
+                     </div>
+                     
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To generate the Quick SQL with SQL shorthand syntax:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Quick SQL page:</span><ol type="a" id="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE__SUBSTEPS_FFK_FWM_PHB">
+                           <li><span>On the Workspace home page, click the <span class="uicontrol bold">SQL
+                                Workshop</span> icon.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Quick SQL</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In the Quick SQL Shorthand pane (the left pane), enter SQL shorthand
+                    syntax.</span><div>
+                           
+                           <div class="figure" id="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE__FIG-132431-6A07F3F8"><img height="403" width="444" src="img/shorthand_syntax.png" alt="Description of shorthand_syntax.png follows" title="Description of shorthand_syntax.png follows" longdesc="img_text/shorthand_syntax.html"><br><a href="img_text/shorthand_syntax.html">Description of the illustration shorthand_syntax.png</a></div>
+                           <!-- class="figure" -->
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Generate SQL</span>.</span><div>
+                           <p>The generated SQL appears in Oracle SQL Output pane.</p>
+                           <div class="figure" id="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE__FIG-132532-6768AAB0"><img height="422" width="889" src="img/quick_sql_with_sql_shorthand.png" alt="Description of quick_sql_with_sql_shorthand.png follows" title="Description of quick_sql_with_sql_shorthand.png follows" longdesc="img_text/quick_sql_with_sql_shorthand.html"><br><a href="img_text/quick_sql_with_sql_shorthand.html">Description of the illustration quick_sql_with_sql_shorthand.png</a></div>
+                           <!-- class="figure" -->
+                        </div>
+                        <div>
+                           <div class="infoboxnote" id="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE__GUID-FD8B53EF-8418-408B-BD20-1050E9AB4DE3">
+                              <p class="notep1">Note:</p>
+                              <p>You can save the generated script or review and run the script.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save SQL Script</span>.</span><div>
+                           <p>The Save Script dialog appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Save Script dialog:</span><ol type="a">
+                           <li class="substepexpand"><span>In Script Name, enter a name.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save Script</span>.</span><div>The script is saved under SQL Scripts.</div>
+                           </li>
+                        </ol>
+                        <div>
+                           <div class="infoboxnote" id="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE__GUID-6450222E-029E-48C6-9D75-221A0F6EDF91">
+                              <p class="notep1">Note:</p>
+                              <p>To create an application from script, go to SQL Scripts page and run the saved script. You can also review and run the script by clicking <span class="uicontrol bold">Review and Run</span> button.
+                              </p>
+                           </div>
+                        </div>
+                        <div>
+                           <div class="infoboxnotealso" id="GUID-A1308899-AA1D-42EA-8CAE-B128366538FE__GUID-193E7587-C928-43C0-B7FA-4DABDD90E56E">
+                              <p class="notep1">See Also:</p>
+                              <p><span class="q">"<a href="using-SQL-scripts.html#GUID-7288B4B4-E00C-4DC4-89EA-5FA52623A1EF" title="Use SQL scripts to create, edit, view, run, and delete script files.">Using SQL Scripts</a>"</span></p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-C2EA1899-6C18-4FC8-A410-E5CC63EE2390" name="GUID-C2EA1899-6C18-4FC8-A410-E5CC63EE2390"></a><h3 id="AEUTL-GUID-C2EA1899-6C18-4FC8-A410-E5CC63EE2390" class="sect3"><span class="enumeration_section">5.3.4 </span>Saving Scripts
+               </h3>
+               <p>Learn about saving or downloading generated script.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-6E4A8B72-D439-428A-9C99-A3C545D86220">Saving a SQL Script</a><br></li>
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-75CD79CE-C528-4CCD-A863-32032953D2ED">Downloading SQL Scripts</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-6E4A8B72-D439-428A-9C99-A3C545D86220" name="GUID-6E4A8B72-D439-428A-9C99-A3C545D86220"></a><h4 id="AEUTL-GUID-6E4A8B72-D439-428A-9C99-A3C545D86220" class="sect4"><span class="enumeration_section">5.3.4.1 </span>Saving a SQL Script
+                  </h4>
+                  <div>
+                     <div class="section">Learn how to save a generated script.</div>
+                     <!-- class="section" -->
+                     <p>To save a SQL script:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Quick SQL page, enter Quick SQL shorthand syntax in the left pane and
+                    click <span class="uicontrol bold">Generate SQL</span>.</span><div>The generated SQL appears on the Oracle SQL output pane.</div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Save SQL Script</span>.</span></li>
+                        <li class="stepexpand"><span>In the Save Script dialog:</span><ol type="a">
+                              <li class="substepexpand"><span>In Script Name - Enter a name.</span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Save Script</span>.</span><div>
+                                    <p>The saved script is saved under SQL Scripts.</p>
+                                 </div>
+                              </li>
+                           </ol>
+                           <div>
+                              <div class="infoboxnote" id="GUID-6E4A8B72-D439-428A-9C99-A3C545D86220__GUID-6450222E-029E-48C6-9D75-221A0F6EDF91">
+                                 <p class="notep1">Note:</p>
+                                 <p>To create an application from script, go to SQL Scripts page and run the saved script. You can also review and run the script by clicking <span class="uicontrol bold">Review and Run</span> button.
+                                 </p>
+                              </div>
+                           </div>
+                           <div>
+                              <div class="infoboxnotealso" id="GUID-6E4A8B72-D439-428A-9C99-A3C545D86220__GUID-F4F6C7F3-B3A6-46C5-AE50-008F25B629BD">
+                                 <p class="notep1">See Also:</p><span class="q">"<a href="SQL-scripts.html#GUID-BD5FAC53-261E-4785-A656-9D3AD7D49114" title="A SQL script is a set of SQL commands saved as a file in SQL Scripts.">About SQL Scripts</a>"</span></div>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-C2EA1899-6C18-4FC8-A410-E5CC63EE2390" title="Learn about saving or downloading generated script.">Saving Scripts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-75CD79CE-C528-4CCD-A863-32032953D2ED" name="GUID-75CD79CE-C528-4CCD-A863-32032953D2ED"></a><h4 id="AEUTL-GUID-75CD79CE-C528-4CCD-A863-32032953D2ED" class="sect4"><span class="enumeration_section">5.3.4.2 </span>Downloading SQL Scripts
+                  </h4>
+                  <div>
+                     <p>To download Quick SQL shorthand and the generated SQL script
+                locally:</p>
+                     <ol>
+                        <li class="stepexpand"><span>On the Quick SQL page, enter Quick SQL shorthand syntax in the left pane and
+                    click <span class="uicontrol bold">Generate SQL</span>.</span><div>The generated SQL appears on the Oracle SQL Output pane.</div>
+                        </li>
+                        <li class="stepexpand"><span>Scroll through generated SQL in the SQL Output pane. </span><div>
+                              
+                              <div class="figure" id="GUID-75CD79CE-C528-4CCD-A863-32032953D2ED__FIG-132332-6769C489"><img height="410" width="882" src="img/quick_sql_home.png" alt="Description of quick_sql_home.png follows" title="Description of quick_sql_home.png follows" longdesc="img_text/quick_sql_home.html"><br><a href="img_text/quick_sql_home.html">Description of the illustration quick_sql_home.png</a></div>
+                              <!-- class="figure" -->
+                              
+                              <p>At the bottom, the line starting with <code class="codeph">-- Generated by
+                            Quick SQL</code> is the SQL shorthand syntax. If you specified any
+                        settings they display after line starting with <code class="codeph"># settings =
+                        </code>. The following is the Quick SQL syntax and Settings in the
+                        previous example:
+                              </p>
+                              <pre class="pre codeblock"><code>-- Generated by Quick SQL Wednesday May 01, 2019  10:04:45
+ 
+/*
+departments /insert 4
+   name /nn
+   location
+   country
+   employees /insert 14
+      name /nn vc50
+      email /lower
+      cost center num
+      date hired
+      job vc255
+
+view emp_v departments employees
+
+# settings = { language: "EN", APEX: true }
+*/
+</code></pre>
+                              </div>
+                        </li>
+                        <li class="stepexpand"><span>Click<span class="uicontrol bold"> Download</span>  to save both the Quick SQL shorthand and
+                    the generated SQL locally.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-C2EA1899-6C18-4FC8-A410-E5CC63EE2390" title="Learn about saving or downloading generated script.">Saving Scripts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6" name="GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6"></a><h3 id="AEUTL-GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6" class="sect3"><span class="enumeration_section">5.3.5 </span>Creating an Application from a Generated  SQL Script
+               </h3>
+               <div>
+                  <p>Create an application from a saved script.</p>
+                  <div class="section">
+                     <p>Saving a script, saves it to SQL Scripts. After you run the saved script, you You can
+                                                  run the Create Application Wizard from SQL Scripts
+                                                  page.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To create an application from saved script:</p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span> icon.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">SQL Scripts</span>.</span><div>The SQL Script page
+                                                  appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Run the saved script:</span><ol type="a" id="GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6__SUBSTEPS_PMH_NV4_PHB">
+                           <li class="substepexpand"><span>Locate the script and click
+                                                  <span class="uicontrol bold">Run</span>.</span><div>
+                                 
+                                 <div class="figure" id="GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6__FIG-132331-6D07D7FE"><img id="GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6__IMAGE_AQN_4V4_PHB" height="340" width="752" src="img/run_script.png" alt="Description of run_script.png follows" title="Description of run_script.png follows" longdesc="img_text/run_script.html"><br><a href="img_text/run_script.html">Description of the illustration run_script.png</a></div>
+                                 <!-- class="figure" -->
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>On Run Script, click <span class="uicontrol bold">Run
+                                                  Now</span>.</span><div>
+                                 
+                                 <p>The Results page appears.</p>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To create an application, click <span class="uicontrol bold">Create App</span>.</span><div>
+                           <p>The Create Application Wizard appears.</p>
+                        </div>
+                        <div>
+                           <div class="infoboxnote" id="GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6__GUID-276C64EA-BCC1-44F1-80E3-F29FB75D0A3A">
+                              <p class="notep1">Note:</p>
+                              <p>Creating a database application is a multiple step process. Once you specify the application name and appearance, you add pages, select features, and configure application settings.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Create Application Wizard:</span><div>
+                           <ol type="a">
+                              <li>
+                                 <p>Enter the application name, select an appearance, add pages, select features, and configure application settings.</p>
+                                 <div class="infobox-tip" id="GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6__GUID-A27C0209-C5A8-4718-B9AB-1A0FC355224B">
+                                    <p class="notep1">Tip:</p>
+                                    <p>To learn more, see online Help.</p>
+                                 </div>
+                              </li>
+                              <li>
+                                 <p>Click <span class="uicontrol bold">Create  Application</span>.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                        <div>
+                           <div class="infoboxnotealso" id="GUID-2193ECBE-5EFB-41A7-AF0B-3F6C46D836C6__GUID-23E61112-E079-4F8F-A6CD-615E9F3F9B64">
+                              <p class="notep1">See Also:</p>
+                              <p><span class="q">"<a href="../htmdb/page-types-features-settings.html#HTMDB-GUID-22A203E5-96CC-4A11-8DA3-97E1375203E5" target="_blank">Understanding Page Types, Features, and Settings</a>"</span></p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-98AB9049-A59D-43A3-B65B-FDE1AD747300" name="GUID-98AB9049-A59D-43A3-B65B-FDE1AD747300"></a><h3 id="AEUTL-GUID-98AB9049-A59D-43A3-B65B-FDE1AD747300" class="sect3"><span class="enumeration_section">5.3.6 </span>Using Quick SQL Samples
+               </h3>
+               <p>Learn about about SQL shorthand syntax by viewing Quick SQL
+        samples.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-EDC41112-72D3-40D8-AF80-F280573D78D9">About Quick SQL Samples</a><br></li>
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-2D4C5FFA-CFEB-4EB0-9F4E-F9AC6D7DA4E5">Accessing Quick SQL Samples</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-EDC41112-72D3-40D8-AF80-F280573D78D9" name="GUID-EDC41112-72D3-40D8-AF80-F280573D78D9"></a><h4 id="AEUTL-GUID-EDC41112-72D3-40D8-AF80-F280573D78D9" class="sect4"><span class="enumeration_section">5.3.6.1 </span>About Quick SQL Samples
+                  </h4>
+                  <div>
+                     <p>Quick SQL Help includes the four samples. By selecting a sample and clicking
+                <span class="uicontrol bold">Load Model</span>, you can view both the SQL shorthand syntax and
+            the generated SQL.
+                     </p>
+                     <p>Available Quick SQL samples include:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Departments and Employees</span> - Shorthand SQL syntax  creates a
+                        <code class="codeph">DEPARTMENTS</code> and <code class="codeph">EMPLOYEES</code> table with a SQL
+                    join <code class="codeph">VIEW</code>. Random data is also generated using<code class="codeph">
+                        /INSERT</code> syntax. The <code class="codeph">/NN</code> adds a <code class="codeph">NOT NULL
+                        SQL</code> column constraint. Indented lists are used to define tables,
+                    columns and child tables. Primary and foreign key columns are automatically
+                    added. You do not need to supply any primary or foreign key columns.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Employee Skills</span> - Creates a <code class="codeph">DEPARTMENTS</code>,
+                        <code class="codeph">EMPLOYEES</code>, and <code class="codeph">SKILLS</code> table using
+                    indentation to identify parent and child tables. Shorthand syntax
+                        <code class="codeph">VC255</code> is used to specify a SQL datatype. The
+                        <code class="codeph">/INSERT</code> syntax is used to generate random data.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Product Sales</span> - Short hand syntax that creates a star schema with
+                        <code class="codeph">PRODUCTS</code>, <code class="codeph">CUSTOMERS</code>,
+                        <code class="codeph">CHANNELS</code>, <code class="codeph">PROMOTIONS</code>, and
+                        <code class="codeph">SALES</code> tables. The <code class="codeph">SALES</code> table contains
+                    foreign key references to the other tables. A <code class="codeph">SQL VIEW</code> is also
+                    created which joins all five tables. Random sample data is also generated.
+                    Numeric column are identified with <code class="codeph">NUM</code> syntax.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Project Management</span> - Creates a <code class="codeph">PROJECT_MANAGEMENT</code> and four
+                    detail tables. Two views are created using<code class="codeph"> /VIEW</code> syntax.
+                    Database CHECK constraints are also added using <code class="codeph">/CHECK</code> syntax.
+                    Also uses <code class="codeph">#APEX</code> to set settings that control SQL syntax
+                    generation.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-98AB9049-A59D-43A3-B65B-FDE1AD747300" title="Learn about about SQL shorthand syntax by viewing Quick SQL samples.">Using Quick SQL Samples</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-2D4C5FFA-CFEB-4EB0-9F4E-F9AC6D7DA4E5" name="GUID-2D4C5FFA-CFEB-4EB0-9F4E-F9AC6D7DA4E5"></a><h4 id="AEUTL-GUID-2D4C5FFA-CFEB-4EB0-9F4E-F9AC6D7DA4E5" class="sect4"><span class="enumeration_section">5.3.6.2 </span>Accessing Quick SQL Samples
+                  </h4>
+                  <div>
+                     <p>To access the Quick SQL samples:</p>
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Quick SQL page:</span><ol type="a" id="GUID-2D4C5FFA-CFEB-4EB0-9F4E-F9AC6D7DA4E5__SUBSTEPS_FFK_FWM_PHB">
+                              <li><span>On the Workspace home page, click the <span class="uicontrol bold">SQL
+                                Workshop</span> icon.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Quick SQL</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Samples</span> on the Quick SQL Shorthand pane.</span><div>
+                              <p>The Samples page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Choose a sample and click <span class="uicontrol bold">Load Model</span>.</span><div>
+                              <p>The Sample loads on Quick SQL Shorthand pane and generated SQL is displayed in Oracle SQL Output pane .</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-98AB9049-A59D-43A3-B65B-FDE1AD747300" title="Learn about about SQL shorthand syntax by viewing Quick SQL samples.">Using Quick SQL Samples</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2" name="GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2"></a><h3 id="AEUTL-GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2" class="sect3"><span class="enumeration_section">5.3.7 </span>Configuring Settings
+               </h3>
+               <p>Configure settings inline to explicitly set SQL syntax generation options,
+        or click Settings at the top of the right pane to declaratively set the generation
+        options.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-8F8F741C-88D9-4DE0-A5FA-D3DC2CA90F61">About Settings</a><br>Learn how to set SQL syntax generation options.
+                     </li>
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A">Configuring Settings Declaratively</a><br></li>
+                     <li class="ulchildlink"><a href="using-quick-SQL.html#GUID-660D22D6-1B27-489A-A815-E25B80A985D1">Configuring Settings Inline</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-8F8F741C-88D9-4DE0-A5FA-D3DC2CA90F61" name="GUID-8F8F741C-88D9-4DE0-A5FA-D3DC2CA90F61"></a><h4 id="AEUTL-GUID-8F8F741C-88D9-4DE0-A5FA-D3DC2CA90F61" class="sect4"><span class="enumeration_section">5.3.7.1 </span>About Settings
+                  </h4>
+                  <div>
+                     <p>Learn how to set SQL syntax generation options.</p>
+                     <p>You can use inline settings to explicitly set SQL syntax generation options by either entering settings directly into the Quick SQL Shorthand pane, or by clicking the <span class="uicontrol bold">Settings</span> button at the top of the Oracle SQL Output pane.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2" title="Configure settings inline to explicitly set SQL syntax generation options, or click Settings at the top of the right pane to declaratively set the generation options.">Configuring Settings</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A" name="GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A"></a><h4 id="AEUTL-GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A" class="sect4"><span class="enumeration_section">5.3.7.2 </span>Configuring Settings Declaratively
+                  </h4>
+                  <div>
+                     <p>To configure settings declaratively:</p>
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Quick SQL page:</span><ol type="a" id="GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A__SUBSTEPS_FFK_FWM_PHB">
+                              <li><span>On the Workspace home page, click the <span class="uicontrol bold">SQL
+                                Workshop</span> icon.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Quick SQL</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Settings</span> on the Oracle SQL Output pane.</span><div>
+                              <p>The Settings page appears. Configure the appropriate attributes.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Table:</span><ul>
+                              <li>Object Prefix - Database object prefix. Prefixes all object names with the provided value .</li>
+                              <li>Schema - Prefix object names with a schema name. The default is no schema prefix for object names.</li>
+                              <li>On Delete - Defines how foreign keys behavebehave on delete of the parent row.
+                        Options include:
+                                 <ul style="list-style-type: disc;" id="GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A__UL_WMP_M4N_PHB">
+                                    <li><span class="uicontrol bold">Cascade</span> - A foreigh key with "on
+                                delete cascade"  automatically deletes the child row when the
+                                correponding parent is deleted. 
+                                    </li>
+                                    <li><span class="uicontrol bold">Restrict</span> - A foreign key with
+                                "on delete restrict" prevents deletion of the parent row if a child
+                                row exists.
+                                    </li>
+                                    <li><span class="uicontrol bold">Set Null</span> - A foreign key with
+                                "set null on delete" means that if a record in the parent table is
+                                deleted, then the corresponding records in the child table will have
+                                the foreign key fields set to null.
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>Compression - Determines if you want your tables to be compressed or not.
+                            
+                                 <p>Table compression saves disk space and reduces memory use in the
+                            buffer cache. Table compression can also speed up query execution during
+                            reads. There is, however, a cost in CPU overhead for data loading and
+                            DML. Table compression is completely transparent to applications. It is
+                            especially useful in online analytical processing (OLAP) systems, where
+                            there are lengthy read-only operations, but can also be used in online
+                            transaction processing (OLTP) systems.</p>
+                              </li>
+                              <li>Generate Inserts - Generating inserts can be time consuming and impact
+                        usability. Consider turning off the generation of inserts as you refine your
+                        data model, then turning on when you are ready to generate data.</li>
+                           </ul>
+                        </li>
+                        <li class="stepexpand"><span>Under Column:</span><ul>
+                              <li>Primary Keys - Defines how table primary keys are to be
+                        populated. Options include:
+                                 <ul style="list-style-type: disc;" id="GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A__UL_CXS_FPN_PHB">
+                                    <li><span class="uicontrol bold">Via triggers and GUIDs</span> -
+                                Populate the primary key with a numeric random number that is non
+                                sequential and non uniform in length. This method is useful in that
+                                it can be more secure, it can also allow data to be merged from
+                                different databases with out fear of primary key conflict. This
+                                primary key population is implemented via a database trigger.
+                                    </li>
+                                    <li><span class="uicontrol bold">Via triggers and Sequence</span> -
+                                Increment the primary key using number sequence. This primary key
+                                population is implemented via a database trigger.
+                                    </li>
+                                    <li><span class="uicontrol bold">12c Identity Datatype</span> - Set the
+                                primary key by default to an ever increasing number. This does not
+                                require any trigger logic to be implemented.
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>Date Data Type - Defines what type of date to use to store
+                        columns identified as dates. Options include: <span class="uicontrol bold">Date</span>,
+                            <span class="uicontrol bold">Timestamp</span>, and <span class="uicontrol bold">Timestamp with local
+                            time zone</span>.
+                              </li>
+                              <li>Semantics- Options include:
+                                 <ul style="list-style-type: disc;" id="GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A__UL_K4V_MPN_PHB">
+                                    <li><span class="uicontrol bold">Default</span> - Default to the
+                                database setting. If you are unsure what this is, select
+                                    <span class="uicontrol bold">Default</span>. 
+                                    </li>
+                                    <li><span class="uicontrol bold">BYTE</span> - Indicates that the column
+                                will have byte length semantics.
+                                    </li>
+                                    <li><span class="uicontrol bold">CHAR</span> - Indicates that the column
+                                will have character semantics.
+                                    </li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </li>
+                        <li class="stepexpand"><span>Under Additional Columns:</span><ul>
+                              <li>Include - Additional columns to automatically add to your table. Options
+                        include: <span class="uicontrol bold">Audit Columns</span>, <span class="uicontrol bold">Row
+                            Key</span>, <span class="uicontrol bold">Row Version Number</span>, and
+                            <span class="uicontrol bold">Security Group ID</span>.
+                              </li>
+                           </ul>
+                        </li>
+                        <li class="stepexpand"><span>Under Options:</span><ul>
+                              <li>Data Language - Controls the language used for generating the data using the
+                            <code class="codeph">/INSERT</code> flag.
+                              </li>
+                              <li>PL/SQL API - Select <span class="uicontrol bold">Yes</span> to generate a PL/SQL APIs with
+                        one package per table on all tables. Select <span class="uicontrol bold">No</span> to
+                        only generate PL/SQL APIs for tables that include an /api at the end of the
+                        name. 
+                              </li>
+                              <li>Include Drops - Include drop object commands in the output. When set to
+                            <span class="uicontrol bold">Yes</span>, a drop command is generated for each
+                        database object created. For
+                        example:<pre class="pre codeblock"><code>drop table X including contents;
+drop table Y including contents;</code></pre></li>
+                              <li>History Tables - Select <span class="uicontrol bold">Yes</span> to create a history table to
+                        log all updates and deletes to all tables. A PL/SQL after update or delete
+                        trigger will be created that inserts into this history table. Select
+                            <span class="uicontrol bold">No</span> to create a history table only if one or more
+                        tables includes a <code class="codeph">/history</code> option, for
+                        example:<pre class="pre codeblock"><code>employees /history
+   name
+   email
+   phone num</code></pre></li>
+                              <li>Auto Primary Key - Select <span class="uicontrol bold">Yes</span> to have primary key
+                        columns  automatically generated for tables. The primary key column name
+                        will be ID and it will be of type number. 
+                                 <div class="infobox-tip" id="GUID-E45F9086-D628-4DEE-ACCB-FEC6D1E5EA1A__GUID-5298C731-4727-48A6-B9D7-2F9408B4B6E2">
+                                    <p class="notep1">Tip:</p>To see an
+                            example, see field-level Help.
+                                 </div>
+                              </li>
+                              <li>Longer Varchars - Available in Oracle Database 12.1 or later. Longer Varchars
+                        allow for columns to be up to 32K bytes. Ensure your database is configured
+                        to support longer varchars if you wish to use this feature.</li>
+                              <li>Editionable - When generating PL/SQL objects including triggers and packages make these editionable.</li>
+                              <li>APEX Enabled - Controls the syntax generated to support audit columns.</li>
+                              <li>Tags Framework - Choose <span class="uicontrol bold">Yes</span> or
+                            <span class="uicontrol bold">No</span>.
+                              </li>
+                              <li>Compatibility - Select an Oracle Database release. Ensures generated SQL is
+                        compatible with the database release selected.</li>
+                           </ul>
+                        </li>
+                        <li class="stepexpand"><span>Under Preferences:</span><ul>
+                              <li>Prefix primary keys with table name - Prefix primary key database table columns with name of table.</li>
+                              <li>Created Column Name - When generating audit columns, controls the name of this
+                        audit column. </li>
+                              <li>Created By Column Name - When generating audit columns, controls the name of
+                        this audit column. </li>
+                              <li>Updated Column Name - When generating audit columns, controls the name of this
+                        audit column. </li>
+                              <li>Updated By Column Name - When generating audit columns, controls the name of
+                        this audit column. </li>
+                           </ul>
+                        </li>
+                        <li class="stepexpand"><span>To save your configuration, click <span class="uicontrol bold">Save Changes</span></span></li>
+                        <li class="stepexpand"><span>To reset to the default settings, click <span class="uicontrol bold">Reset</span></span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2" title="Configure settings inline to explicitly set SQL syntax generation options, or click Settings at the top of the right pane to declaratively set the generation options.">Configuring Settings</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="props_rev_3"><a id="GUID-660D22D6-1B27-489A-A815-E25B80A985D1" name="GUID-660D22D6-1B27-489A-A815-E25B80A985D1"></a><h4 id="AEUTL-GUID-660D22D6-1B27-489A-A815-E25B80A985D1" class="sect4"><span class="enumeration_section">5.3.7.3 </span>Configuring Settings Inline
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>You can configure settings inline to explicitly set SQL syntax generation options.
+                When configuring setting inline:</p>
+                        
+                        <ul style="list-style-type: disc;" id="GUID-660D22D6-1B27-489A-A815-E25B80A985D1__UL_OB2_HY4_PHB">
+                           <li>Settings must start on a new line. To enter multiple settings, begin with
+                        <code class="codeph"># settings =</code>. To enter a single setting per line, use
+                        <code class="codeph">#</code>.
+                           </li>
+                           <li>All values are case insensitive.</li>
+                           <li>Brackets, spaces, and commas can be added for clarity but are ignored.</li>
+                           <li>To have all settings generated use <code class="codeph"># verbose: true</code></li>
+                        </ul>
+                        
+                        <p>Entering settings directly into the Quick SQL Shorthand pane ensures the same SQL
+                generation options are utilized even if you download the script and later paste it
+                back. For example, enter the following to prefix all table names with TEST and
+                generate for schema OBE:</p><pre class="pre codeblock"><code># settings = { prefix: "test", schema: "OBE" }.
+Alternatively, enter each setting on a separate line for the same result:
+# prefix: "test" 
+# schema: "OBE"</code></pre><div class="infobox-tip" id="GUID-660D22D6-1B27-489A-A815-E25B80A985D1__GUID-0BCC282D-7B04-4B16-B739-58B446E9A9CE">
+                           <p class="notep1">Tip:</p>
+                           <p>To view a listing of settings, by clicking <span class="uicontrol bold">Help</span> and then
+                        <span class="uicontrol bold">Settings</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-9D2D0ECB-CFD5-474D-A712-DA2F7E5809B2" title="Configure settings inline to explicitly set SQL syntax generation options, or click Settings at the top of the right pane to declaratively set the generation options.">Configuring Settings</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-B6610861-CA63-49B4-A0C0-4305FBC0D8BE" name="GUID-B6610861-CA63-49B4-A0C0-4305FBC0D8BE"></a><h3 id="AEUTL-GUID-B6610861-CA63-49B4-A0C0-4305FBC0D8BE" class="sect3"><span class="enumeration_section">5.3.8 </span>About Database Terminology
+               </h3>
+               <div>
+                  <p>Learn about common database terminology used in Quick SQL.</p>
+                  <p>Common database terms referenced in Quick SQL include:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">BLOB</span> &#x2013; A binary large object or <code class="codeph">CLOB</code>. BLOBs store binary data and do not impose any character set encoding. <code class="codeph">BLOB</code> size can store 4GB or more depending on system configuration.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Check Constraint</span> &#x2013; A check constraint is a declarative way to limit the values a given column may contain.
+                        </p><pre class="pre codeblock"><code>create table projects (
+	          id     number primary key, 
+	          name   varchar2(50), 
+	          status varchar2(30) check (status in ('OPEN','CLOSED'))
+	          );</code></pre></li>
+                     <li>
+                        <p><span class="bold">CLOB</span> &#x2013; A character large object or <code class="codeph">CLOB</code>. The maximum size of a <code class="codeph">VARCHAR2</code> datatype is 32,767 bytes, however a <code class="codeph">CLOB</code> size can be store up to 4GB of character data.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Column</span> &#x2013; RDBMS tables store data in tables that are comprised of rows and columns. Each column is named. For example, <code class="codeph">first_name</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Database</span> &#x2013; A structured set of data held in a computer, especially one that is accessible in various ways.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Data Model</span> &#x2013; A Data Model is a method of organizing elements of data and defining how they relate to one another. A model typically organizes data into entities that when they are transformed into a physical database model are converted into tables and columns. This tool is a very rudimentary tool that creates physical data models from indented text. For serious data modeling it is recommended that you use a proper data modeling tool Oracle SQL Data Modeler. It is a free graphical tool that enhances productivity and simplifies data modeling tasks.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Data Type</span> &#x2013; Each column in a table has a data type. Data types are frequently character <code class="codeph">(VARCHAR2)</code>, <code class="codeph">number</code>, or <code class="codeph">dates</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">DML</span> &#x2013; Data Manipulation Language. SQL commands that include the following:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">INSERT</code> - SQL statement used to add new rows to a table.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">UPDATE</code> - SQL statement used to update one or more rows of data within a table.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">DELETE</code> - SQL statement used to remove one or more rows of data from a table.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p><span class="bold">Foreign Key</span> &#x2013; A column(s) in a table that references another table. For example, if employees are organized by departments, a <code class="codeph">department_id</code> in the employees table could be a foreign key to the primary key of the <code class="codeph">employee</code> table. By defining foreign keys you are declaratively defining a relationship between tables.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Join</span> &#x2013; A join is a SQL query that combines rows from two or more tables or views. A query is a join query whenever multiple tables appear in the <code class="codeph">FROM</code> clause. A major benefit of the relational database model is that you can store data that repeats in one location. For example, assume we have two table departments, and employees. Here is a query that selects data from both tables.
+                        </p><pre class="pre codeblock"><code>select d.name, d.location, e.name, e.job
+	    from   departments d, employees e
+	    where  e.department_id = e.id</code></pre><p>Note if the department name or location changes it is changed in only one place.</p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Relational Database</span> &#x2013; A database model that organizes data in a relational model. The relational model organizes data into one or more tables, also known as relations, of columns and rows. The standard language to access data within a relational database and to define database objects is SQL.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">RDBMS</span> &#x2013; Relational Database Management System.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Object</span> &#x2013; A database object is a named widget used to store or manage data. For example <code class="codeph">tables</code>, <code class="codeph">views</code>, <code class="codeph">triggers</code>, and <code class="codeph">synonyms</code> are all considered database objects.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">PL/SQL</span> &#x2013; Oracle procedural extension to the SQL language. PL/SQL stands for Procedural Language SQL. PL/SQL is a server-side, stored procedural language that can be used to perform procedural operations on Oracle database data.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Query</span> &#x2013; To access / query data in your relational database you use a SQL <code class="codeph">SELECT</code> statement. In SQL a <code class="codeph">SELECT</code> statement can query data from one or more tables or views.
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Query of 3 columns from a table called projects</p><pre class="pre codeblock"><code>select id, name, status
+    from projects
+    where status = 'OPEN';</code></pre></li>
+                           <li>
+                              <p>Aggregate Query</p><pre class="pre codeblock"><code>select count(*) count_of_projects,
+           sum(case when status = 'OPEN' then  1 else 0) open_projects,
+           sum(case when status = 'CLOSED' then  1 else 0) closed_projects
+    from projects;</code></pre></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p><span class="bold">Reserved Word</span> &#x2013; A name that cannot be used as an object identifier. For example <code class="codeph">SELECT</code> cannot be used as a table name.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Row</span> &#x2013; RDBMS tables store data in tables that are comprised of rows and columns. Each row is made up of one or more columns.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Sequence</span> &#x2013; Sequences are database objects from which multiple users can generate unique integers. The sequence generator generates sequential numbers, which can help to generate unique primary keys automatically, and to coordinate keys across multiple rows or tables. A sequence can be created with the following Syntax: 
+                        </p><pre class="pre codeblock"><code>create sequence project_seq;</code></pre><p>The sequence values can be referenced using <code class="codeph">project_seq.currval</code> (current value) or <code class="codeph">project_seq.nextval</code> (next value). Each time the <code class="codeph">nextval</code> is access the sequence increments. The default increment is<code class="codeph">1</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Schemas</span> &#x2013; A schema is a namespace for creating database objects such as tables. You do not create database tables in databases you create them within schemas within a database. Each database can store any number of schemas. Schemas are also sometimes called users. When you have a new database you first create a schema (or user, they are the same thing) then create your tables within the schema or user. You can create schemas using the SQL <code class="codeph">create schema</code> or <code class="codeph">create user</code> command. Schemas are a way of organizing database objects within a database.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">SQL</span> &#x2013; Structure Query Language. The language used to define database tables, and to manipulate the data within the tables.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Structured Data</span> &#x2013; Relational database data is frequently referred to as structured because data is organized cleanly into rows and columns. Unstructured typically refers to data that has no structure imposed on it.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Table</span> &#x2013; A database object that stores related data organized into rows and columns.
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Creating a table</p><pre class="pre codeblock"><code>create table projects (
+        id     number primary key, 
+        name   varchar2(50), 
+        status varchar2(30)
+        );</code></pre></li>
+                           <li>
+                              <p>Inserting rows into a table</p><pre class="pre codeblock"><code>insert into projects (id, name, status)
+      values (1, 'My Project','OPEN');</code></pre></li>
+                           <li>
+                              <p>Querying the data with the table</p><pre class="pre codeblock"><code>select id, name, status
+      from projects
+      where status = 'OPEN';</code></pre></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p><span class="bold">Trigger</span> &#x2013; A database trigger is procedural code that is automatically executed in response to certain events on a particular table. For example before or after insert of a row. The following trigger forces a column to lower case.
+                        </p><pre class="pre codeblock"><code>create or replace trigger PROJECTS_BIU
+	        before insert or update 
+	        on PROJECTS
+	        for each row
+	    begin
+	        :new.OWENER_EMAIL := LOWER(:new.OWENER_EMAIL);
+	    end;
+	/</code></pre></li>
+                     <li>
+                        <p><span class="bold">View</span> &#x2013; A database view is a virtual table based on the result-set of an SQL statement. A view is also known as a stored query. You can create a view that joins multiple tables. Once the view is created you can query it as if it was a table. Following is an example of the SQL to create a view: 
+                        </p><pre class="pre codeblock"><code>	create view department_employees as
+	select d.name, d.location, e.name, e.job
+	    from   departments d, employees e
+	    where  e.department_id = e.id;</code></pre></li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-C0D38BF1-9420-42F7-BC62-4F0305ED8ACD" name="GUID-C0D38BF1-9420-42F7-BC62-4F0305ED8ACD"></a><h3 id="AEUTL-GUID-C0D38BF1-9420-42F7-BC62-4F0305ED8ACD" class="sect3"><span class="enumeration_section">5.3.9 </span>Recommendations When Using Quick SQL
+               </h3>
+               <div>
+                  <p>Learn about recommended approaches to creating effective data
+        models.</p>
+                  <p>Although there are many valid approaches to creating an effective data model, Oracle
+            recommends the following:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Table Naming</span> &#x2013; Define your tables as plural and columns as singular. Since tables are designed to store many rows it makes sense to have them plural. For example <code class="codeph">Employees</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Column Naming</span> &#x2013; Define your column names as singular. For example <code class="codeph">First Name</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Primary Keys</span> &#x2013; Every table should have a primary key, primary keys are used to uniquely identify each row and can be used to associate child table data.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Primary Key Column Naming</span> &#x2013; Every table will have a primary key and it should be called <code class="codeph">ID</code> and it should be numeric.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Table Constraints</span> &#x2013; The best way to ensure data integrity is to have the database only allow proper data. For example, if a column is required ensure you have a <code class="codeph">not null</code> constraint. If a column is unique ensure you have a unique constraint.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Referential Integrity</span> &#x2013; Most relational database models have parent child, also known as one too many relationships. They frequently also have many to many relationships. Using declarative primary key and foreign key syntax you can have the database enforce these relationships to ensure the integrity of your data. By defining the referential integrity you ensure all child tables do in fact relate to parent tables. 
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-7EE0F687-E7F7-499E-8DAA-5090C35D4E97" name="GUID-7EE0F687-E7F7-499E-8DAA-5090C35D4E97"></a><h3 id="AEUTL-GUID-7EE0F687-E7F7-499E-8DAA-5090C35D4E97" class="sect3"><span class="enumeration_section">5.3.10 </span>About Supported Data Types
+               </h3>
+               <div>
+                  <p>Learn about supported data types.</p>
+                  <p>Quick SQL supports the following data types:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">VARCHAR2</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">NUMBER</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">INTEGER</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">DATE</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">TIMESTAMP</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">TIMESTAMP WITH TIME ZONE</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">TIMESTAMP WITH LOCAL TIME ZONE</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">CLOB</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">BLOB</code></p>
+                     </li>
+                  </ul>
+                  <div class="infobox-tip" id="GUID-7EE0F687-E7F7-499E-8DAA-5090C35D4E97__GUID-7653A1A3-1173-47A0-BB0F-B6E79442E216">
+                     <p class="notep1">Tip:</p> To learn more about  Quick SQL shorthand syntax for supported data types,
+            click <span class="uicontrol bold">Help</span> and select <span class="uicontrol bold">Data Types</span>.
+                  </div>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="using-quick-SQL.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD" title="Rapidly design and prototype data models using a markdown-like shorthand syntax that expands to standards-based Oracle SQL.">Using Quick SQL</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

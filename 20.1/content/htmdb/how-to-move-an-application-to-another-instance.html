@@ -1,0 +1,193 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="concept">
+      <meta name="DC.Title" content="How to Move an Application to Another Instance">
+      <meta name="DC.subject" content="application, exporting, deploying, deployment, export, managing database objects">
+      <meta name="keywords" content="application, exporting, deploying, deployment, export, managing database objects">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-deployment-process.html#GUID-EFB553A8-C47F-4663-9D99-95C59C8276CE">
+      <meta name="DC.Relation" scheme="URI" content="how-to-move-an-application-to-another-instance.html#GUID-3F108562-4199-4DB1-9351-83AFD606F844">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>How to Move an Application to Another Instance</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="understanding-the-deployment-process.html" title="Previous" type="text/html">
+      <link rel="next" href="how-to-create-a-custom-packaged-application.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="understanding-the-deployment-process.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="how-to-create-a-custom-packaged-application.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="deploying-an-application.html" property="item" typeof="WebPage"><span property="name">Deploying an Application</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-the-deployment-process.html" property="item" typeof="WebPage"><span property="name">Understanding the Deployment Process</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">How to Move an Application to Another Instance</li>
+            </ol>
+            <a id="GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964" name="GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964"></a><a id="HTMDB11003"></a>
+            
+            <h2 id="HTMDB-GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964" class="sect2"><span class="enumeration_section">25.3.3 </span>How to Move an Application to Another Instance
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Whether you are moving an application to another workspace or just making a copy of it, deployment involves the following steps:</p>
+               <ol>
+                  <li>
+                     <p>Move the supporting database objects (if appropriate). Review the Database Object Dependencies report to determine what objects to move. </p>
+                     <p>See <span class="q">"<a href="accessing-application-utilities.html#GUID-4415ECD6-5FEE-4941-B86D-3BC6CB676B9B" title="The Database Object Dependencies report identifies database objects referenced by the current application. Review this report to determine what objects to move when deploying an application.">Using the Database Object Dependencies Report</a>."</span></p>
+                  </li>
+                  <li>
+                     <p>Package the application definition with its supporting objects to create a custom application. </p>
+                     <p>See <span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a>."</span></p>
+                  </li>
+                  <li>
+                     <p>Export the custom application. </p>
+                     <p>See <span class="q">"<a href="exporting-an-application-and-application-components.html#GUID-8D046D43-C033-4165-9C2B-6AB33A99CF75" title="Move a workspace, application, or related files by exporting it to another Application Express instance.">Exporting an Application and Application Components</a>."</span></p>
+                  </li>
+                  <li>
+                     <p>Import the exported files into the target Oracle Application Express instance. </p>
+                     <p>See <span class="q">"<a href="importing-export-files.html#GUID-16650312-4E36-489E-8012-940924ADF2E9" title="After you create Export files, you then import them into the target Oracle Application Express instance.">Importing Export Files</a>."</span></p>
+                  </li>
+               </ol>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="how-to-move-an-application-to-another-instance.html#GUID-3F108562-4199-4DB1-9351-83AFD606F844">About Managing Database Objects</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964__GUID-5F357A8B-5203-4E9E-B3E6-7F6B3E7DA5E5">
+                  <p class="notep1">See Also:</p>
+                  
+                  <ul style="list-style-type: disc;" id="GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964__UL_JST_PRS_XKB">
+                     <li>
+                        
+                        <p><span class="q">"<a href="exporting-an-application-and-application-components.html#GUID-8D046D43-C033-4165-9C2B-6AB33A99CF75" title="Move a workspace, application, or related files by exporting it to another Application Express instance.">Exporting an Application and Application Components</a>."</span></p>
+                        
+                     </li>
+                     <li>
+                        
+                        <p><span class="q">"<a href="one-click-remote-application-deployment.html#GUID-90AF8CC0-5023-4F26-992E-C15D294C3B00" title="Deploy an application to remote Oracle Application Express instances using REST Enabled SQL references.">Understanding One-click Remote Application Deployment</a>"</span></p>
+                        
+                     </li>
+                  </ul>
+                  
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-the-deployment-process.html#GUID-EFB553A8-C47F-4663-9D99-95C59C8276CE" title="Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.">Understanding the Deployment Process</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25800"></a><div class="props_rev_3"><a id="GUID-3F108562-4199-4DB1-9351-83AFD606F844" name="GUID-3F108562-4199-4DB1-9351-83AFD606F844"></a><h3 id="HTMDB-GUID-3F108562-4199-4DB1-9351-83AFD606F844" class="sect3"><span class="enumeration_section">25.3.3.1 </span>About Managing Database Objects
+               </h3>
+               <div>
+                  <p>Before you export an application and the appropriate related files, you must determine if you also need to migrate the database objects referenced by the application. If you are unsure of which database objects to move, review the Database Object Dependencies report.</p>
+                  <p>If the target schema is different from the schema used in the development environment, you must migrate the database objects referenced by the application. In many cases, this process can be as simple as using Oracle database export and import utilities to copy the application schema from the development environment to target instance. The following are two common scenarios where this approach does <span class="italic">not</span> work:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>When the object development schema refers to tablespaces to which the target instance schema does not have access.</p>
+                     </li>
+                     <li>
+                        <p>When the development instance schema has sample data that you do not want to migrate to the target instance schema.</p>
+                     </li>
+                  </ul>
+                  <p>If a database administrator or an Oracle Application Express administrator is the person responsible for exporting Oracle Application Express applications, be sure to clearly communicate if he or she:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Should include all data when exporting your application.</p>
+                     </li>
+                     <li>
+                        <p>Should NOT include data from specific tables you identify.</p>
+                     </li>
+                  </ul>
+                  <div class="infobox-tip" id="GUID-3F108562-4199-4DB1-9351-83AFD606F844__GUID-4EB76B06-3C9B-4EED-86C8-D722667AEA81">
+                     <p class="notep1">Tip:</p>
+                     <p>"Using Data Workshop to Manage Data" in <a href="../aeutl/using-data-workshop.html#AEUTL246" target="_blank"><span class="italic">Oracle Application Express SQL Workshop Guide</span></a></p>
+                  </div>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-3F108562-4199-4DB1-9351-83AFD606F844__GUID-7C4E5DC8-E453-4F73-95F4-FE53DDD25A54">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="accessing-application-utilities.html#GUID-4415ECD6-5FEE-4941-B86D-3BC6CB676B9B" title="The Database Object Dependencies report identifies database objects referenced by the current application. Review this report to determine what objects to move when deploying an application.">Using the Database Object Dependencies Report</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-move-an-application-to-another-instance.html#GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964">How to Move an Application to Another Instance</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

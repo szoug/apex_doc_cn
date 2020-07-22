@@ -1,0 +1,195 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="MESSAGE Function">
+      <meta name="DC.subject" content="APEX_LANG, MESSAGE function">
+      <meta name="keywords" content="APEX_LANG, MESSAGE function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_LANG.html#GUID-68DF9D22-3C3A-418A-B27A-868A569BD990">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>MESSAGE Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="LANG_Function.html" title="Previous" type="text/html">
+      <link rel="next" href="PUBLISH_APPLICATION-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="LANG_Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PUBLISH_APPLICATION-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_LANG.html" property="item" typeof="WebPage"><span property="name"> APEX_LANG</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> MESSAGE Function</li>
+            </ol>
+            <a id="GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A" name="GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A"></a><a id="AEAPI1157"></a><a id="AEAPI1158"></a><a id="AEAPI1159"></a><a id="AEAPI1160"></a><a id="AEAPI1156"></a>
+            
+            <h2 id="AEAPI-GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A" class="sect2"><span class="enumeration_section">25.7 </span> MESSAGE Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Use this function to translate text strings (or messages) generated from PL/SQL stored procedures, functions, triggers, packaged procedures, and functions.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A__GUID-308F9639-8A7F-445F-91E6-85FF442D5954">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_LANG.MESSAGE (
+    p_name            IN VARCHAR2 DEFAULT NULL,
+    p0                IN VARCHAR2 DEFAULT NULL,
+    p1                IN VARCHAR2 DEFAULT NULL,
+    p2                IN VARCHAR2 DEFAULT NULL,
+    ...
+    p9                IN VARCHAR2 DEFAULT NULL,
+    p_lang            IN VARCHAR2 DEFAULT NULL,
+    p_application_id  IN NUMBER   DEFAULT NULL)
+RETURN VARCHAR2;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A__GUID-811C1B0C-1B35-41B9-AFDB-8B972A5A1688">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A__GUID-9B3A9B39-8129-4BFC-BF2A-9E09904B6791">
+                  <p class="titleintable">Table 25-6 MESSAGE Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="MESSAGE Parameters" summary="Parameter descriptions for the MESSAGE function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d125926e73">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d125926e76">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d125926e81" headers="d125926e73 ">
+                              <p><code class="codeph">p_name</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d125926e81 d125926e76 ">
+                              <p>Name of the message as defined in Text Messages under Shared Components of your application in Oracle Application Express.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d125926e89" headers="d125926e73 ">
+                              <p><code class="codeph">p0</code> through <code class="codeph">p9</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d125926e89 d125926e76 ">
+                              <p>Dynamic substitution value: p0 corresponds to %0 in the translation string; p1 corresponds to %1 in the translation string; p2 corresponds to %2 in the translation string, and so on.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d125926e100" headers="d125926e73 ">
+                              <p><code class="codeph">p_lang</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d125926e100 d125926e76 ">
+                              <p>Language code for the message to be retrieved. If not specified, Oracle Application Express uses the current language for the user as defined in the Application Language Derived From attribute.</p>
+                              <p><span class="bold">See also</span>: <a href="../htmdb/specifying-the-primary-language-for-application.html#HTMDB14002" target="_blank">Specifying the Primary Language for an Application</a> in the <a href="../htmdb/quick-start.html#HTMDB-GUID-3D645140-7A61-4853-B975-218F3B99F687" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a>.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d125926e122" headers="d125926e73 ">
+                              <p><code class="codeph">p_application_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d125926e122 d125926e76 ">
+                              <p>Used to specify the application ID within the current workspace that owns the translated message you wish to return. Useful when coding packages that might be called outside of the scope of Oracle Application Express such as packages called from a database job.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A__GUID-1221ADB7-C936-4465-AA8B-171F53404E1A">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example assumes you have defined a message called GREETING_MSG in your application in English as "Good morning %0" and in German as "Guten Tag %1". The following example demonstrates how you could invoke this message from PL/SQL:</p><pre class="pre codeblock"><code>BEGIN
+--
+-- Print the greeting
+--
+HTP.P(APEX_LANG.MESSAGE('GREETING_MSG', V('APP_USER')));
+END;
+</code></pre><p>How the <code class="codeph">p_lang</code> attribute is defined depends on how the Application Express engine derives the Application Primary Language. For example, if you are running the application in German and the previous call is made to the <code class="codeph">APEX_LANG.MESSAGE</code> API, the Application Express engine first looks for a message called <code class="codeph">GREETING_MSG</code> with a <code class="codeph">LANG_CODE</code> of <code class="codeph">de</code>. If it does not find anything, then it is reverted to the Application Primary Language attribute. If it still does not find anything, the Application Express engine looks for a message by this name with a language code of en.
+                  </p>
+                  <div class="infoboxnote" id="GUID-0D2B9901-CEBB-4B99-A6EA-7D7B3CCA8F1A__GUID-538D6EEC-7F1A-4D97-AB79-D7B5CFAAE9D8">
+                     <p class="notep1">See also:</p>
+                     <p> <a href="../htmdb/specifying-the-primary-language-for-application.html#HTMDB14002" target="_blank">Specifying the Primary Language for an Application</a> in the <a href="../htmdb/quick-start.html#HTMDB-GUID-3D645140-7A61-4853-B975-218F3B99F687" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a>.
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_LANG.html#GUID-68DF9D22-3C3A-418A-B27A-868A569BD990">APEX_LANG</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

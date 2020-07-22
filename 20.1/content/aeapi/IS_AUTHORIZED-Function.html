@@ -1,0 +1,196 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="IS_AUTHORIZED Function">
+      <meta name="DC.subject" content="APEX_AUTHORIZATION, IS_AUTHORIZED function">
+      <meta name="keywords" content="APEX_AUTHORIZATION, IS_AUTHORIZED function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_AUTHORIZATION.html#GUID-4C7EE89E-9C67-4713-B62F-25873C819574">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>IS_AUTHORIZED Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="ENABLE_DYNAMIC_GROUPS-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="RESET_CACHE-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ENABLE_DYNAMIC_GROUPS-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="RESET_CACHE-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_AUTHORIZATION.html" property="item" typeof="WebPage"><span property="name"> APEX_AUTHORIZATION</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">IS_AUTHORIZED Function</li>
+            </ol>
+            <a id="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58" name="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58"></a><a id="AEAPI29598"></a><a id="AEAPI29599"></a><a id="AEAPI29600"></a><a id="AEAPI29601"></a><a id="AEAPI29602"></a><a id="AEAPI29603"></a><a id="AEAPI29597"></a>
+            
+            <h2 id="AEAPI-GUID-508AD235-84C1-4CDF-B877-D344B0A42E58" class="sect2"><span class="enumeration_section">7.2 </span>IS_AUTHORIZED Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Determine if the current user passes the authorization with name <code class="codeph">p_authorization_name</code>. For performance reasons, authorization results are cached. Because of this, the function may not always evaluate the authorization when called, but take the result out of the cache.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58__GUID-908E0B8F-16A7-444A-A202-8D57F54C2238">
+                     <p class="notep1">See Also:</p>
+                     <p>"Changing the Evaluation Point Attribute" in <a href="../htmdb/creating-and-editing-authorization-scheme.html#HTMDB25785" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58__GUID-0D1B46A0-43B3-44D3-BF19-83126EBA1088">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_AUTHORIZATION.IS_AUTHORIZED (
+    p_authorization_name IN VARCHAR2 )
+    RETURN BOOLEAN;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58__GUID-B66745BC-5EA4-4B16-9A96-B5E7776DF891">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58__GUID-27BA9F4C-B2BB-4A9D-862D-CC0BC6B80585">
+                  <p class="titleintable">Table 7-2 IS_AUTHORIZED Function Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="IS_AUTHORIZED Function Parameters" summary="Parameter descriptions for the IS_AUTHORIZED function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d24054e86">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d24054e89">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d24054e94" headers="d24054e86 ">
+                              <p><code class="codeph">p_authorization_name</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d24054e94 d24054e89 ">
+                              <p>The name of an authorization scheme in the application.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58__GUID-8D3F82A9-1B30-4B33-9045-8249361FC0BA">Returns</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58__GUID-A4D87CAE-6DEE-4C14-A2EB-EC7C0D235BB0">
+                  <p class="titleintable">Table 7-3 IS_AUTHORIZED Function Returns</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="IS_AUTHORIZED Function Returns" summary="Parameter descriptions for the IS_AUTHORIZED Function Returns." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d24054e114">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d24054e117">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d24054e122" headers="d24054e114 ">
+                              <p><code class="codeph">TRUE</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d24054e122 d24054e117 ">
+                              <p>If the authorization is successful.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d24054e130" headers="d24054e114 ">
+                              <p><code class="codeph">FALSE</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d24054e130 d24054e117 ">
+                              <p>If the authorization is not successful.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-508AD235-84C1-4CDF-B877-D344B0A42E58__GUID-9CCFF8BA-666D-4204-A511-E639533DC14D">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>This example prints the result of the authorization "User Is Admin".</p><pre class="pre codeblock"><code>begin
+    sys.htp.p('User Is Admin: '||
+              case apex_authorization.is_authorized (
+                       p_authorization_name =&gt; 'User Is Admin' )
+              when true then 'YES'
+              when false then 'NO'
+              else 'null'
+              end);
+end;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_AUTHORIZATION.html#GUID-4C7EE89E-9C67-4713-B62F-25873C819574">APEX_AUTHORIZATION</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

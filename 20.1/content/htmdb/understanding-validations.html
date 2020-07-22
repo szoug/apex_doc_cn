@@ -1,0 +1,522 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Validations">
+      <meta name="abstract" content="Use validations to create edit checks on specific items, pages, or columns.">
+      <meta name="description" content="Use validations to create edit checks on specific items, pages, or columns.">
+      <meta name="DC.subject" content="validations, about, about, creating, defining error messages, making conditional, Go to Error link">
+      <meta name="keywords" content="validations, about, about, creating, defining error messages, making conditional, Go to Error link">
+      <meta name="DC.Relation" scheme="URI" content="managing-computations-validations-and-processes.html#GUID-ADF401B9-95A6-45E9-9971-5BC1751F151E">
+      <meta name="DC.Relation" scheme="URI" content="understanding-validations.html#GUID-05FE01F5-69F6-4DF1-AFA3-70AFC7B2F1F5">
+      <meta name="DC.Relation" scheme="URI" content="understanding-validations.html#GUID-A80CEBFA-66A3-4F7E-92A6-7ED52D955612">
+      <meta name="DC.Relation" scheme="URI" content="understanding-validations.html#GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472">
+      <meta name="DC.Relation" scheme="URI" content="understanding-validations.html#GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-validations.html#GUID-6E5C5FF0-CAEC-4A4E-B899-E4BA4927A8B5">
+      <meta name="DC.Relation" scheme="URI" content="understanding-validations.html#GUID-D10D5518-CA71-4722-A856-3CA51C9A4FAA">
+      <meta name="DC.Relation" scheme="URI" content="understanding-validations.html#GUID-B73C1210-E9D0-403A-82CF-8C95679C650D">
+      <meta name="DC.Relation" scheme="URI" content="understanding-validations.html#GUID-3AE3F9F0-6413-43BC-AE3D-C07100B3C87F">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-082832A1-FA94-4FB3-805A-78CB15C297B4">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use validations to create edit checks on specific items, pages, or columns.">
+      <meta name="description" content="Use validations to create edit checks on specific items, pages, or columns.">
+      <title>Understanding Validations</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Use validations to create edit checks on specific items, pages, or columns.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="understanding-page-computations.html" title="Previous" type="text/html">
+      <link rel="next" href="understanding-page-processes.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="understanding-page-computations.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="understanding-page-processes.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-computations-validations-and-processes.html" property="item" typeof="WebPage"><span property="name">Managing Computations, Validations, and Processes</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Validations</li>
+            </ol>
+            <a id="GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" name="GUID-082832A1-FA94-4FB3-805A-78CB15C297B4"></a><a id="HTMDB29820"></a>
+            
+            <h2 id="HTMDB-GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" class="sect2"><span class="enumeration_section">17.2 </span>Understanding Validations
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Use validations to create edit checks on specific items, pages, or columns.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-validations.html#GUID-05FE01F5-69F6-4DF1-AFA3-70AFC7B2F1F5">About Validations</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-validations.html#GUID-A80CEBFA-66A3-4F7E-92A6-7ED52D955612">What Happens When a Validation Fails?</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-validations.html#GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472">Creating a Validation</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-validations.html#GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A">Editing a Validation</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-validations.html#GUID-6E5C5FF0-CAEC-4A4E-B899-E4BA4927A8B5">About Determining When Validations Execute</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-validations.html#GUID-D10D5518-CA71-4722-A856-3CA51C9A4FAA">About Defining How Validation Error Messages Display</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-validations.html#GUID-B73C1210-E9D0-403A-82CF-8C95679C650D">Processing Validations Conditionally</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-validations.html#GUID-3AE3F9F0-6413-43BC-AE3D-C07100B3C87F">About Altering the Go to Error Link</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-computations-validations-and-processes.html#GUID-ADF401B9-95A6-45E9-9971-5BC1751F151E" title="Enhance your application by including computations, validations, and processes.">Managing Computations, Validations, and Processes</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29821"></a><div class="props_rev_3"><a id="GUID-05FE01F5-69F6-4DF1-AFA3-70AFC7B2F1F5" name="GUID-05FE01F5-69F6-4DF1-AFA3-70AFC7B2F1F5"></a><h3 id="HTMDB-GUID-05FE01F5-69F6-4DF1-AFA3-70AFC7B2F1F5" class="sect3"><span class="enumeration_section">17.2.1 </span>About Validations
+               </h3>
+               <div>
+                  <p>A validation is an edit check. Validations specific to a single item are <span class="uicontrol bold">page item validations</span>. Validations that apply to an entire page are <span class="uicontrol bold">page validations</span>. Validations for tabular forms specific to a single column are <span class="uicontrol bold">column level validations</span>. Validations for tabular forms that do not apply to a single column are <span class="uicontrol bold">tabular form row validations</span>.
+                  </p>
+                  <p>You can define a validation declaratively by selecting a validation method. You enter the actual validation edit check in the Validation Messages field. Be aware that if a validation fails, subsequent page processes or computations do not occur. Also remember that the validation you enter must be consistent with the validation type you selected. </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29836"></a><div class="props_rev_3"><a id="GUID-A80CEBFA-66A3-4F7E-92A6-7ED52D955612" name="GUID-A80CEBFA-66A3-4F7E-92A6-7ED52D955612"></a><h3 id="HTMDB-GUID-A80CEBFA-66A3-4F7E-92A6-7ED52D955612" class="sect3"><span class="enumeration_section">17.2.2 </span>What Happens When a Validation Fails?
+               </h3>
+               <div>
+                  <p>If a page is submitted and some of the validations fail, Oracle Application Express
+            redisplays the existing page with all inline validation errors. While displaying inline
+            errors, Application Express does not execute computations, application processes, or
+            page processes (for example, Automated Row Fetch) which are defined to execute during
+            Page Rendering (in other words, all "On Load %" display points). The one exception is if
+            the computations and processes use the condition type Inline Validation Errors
+            Displayed.</p>
+                  <p>The reason for skipping these computations and processes is that any of they could potentially alter the data entered by the user. For example, an Automated Row Fetch process would fetch and overwrite the modified data with the values from the database when the user actually wants to get the entered data in order to fix the validation error.</p>
+                  <p>If a computation is skipped, the following displays in the debug output:</p><pre class="oac_no_warn" dir="ltr">Do not perform computation because inline validation errors found.
+</pre><p>If an application or page process is skipped, the following displays in the debug output:</p><pre class="oac_no_warn" dir="ltr">Skip because inline validation errors found.
+</pre></div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29824"></a><div class="props_rev_3"><a id="GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472" name="GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472"></a><h3 id="HTMDB-GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472" class="sect3"><span class="enumeration_section">17.2.3 </span>Creating a Validation
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To create a validation in Page Designer:</p>
+                     <div class="infoboxnote" id="GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472__GUID-8DBB0B96-10F7-412C-9E49-B0F8ACB1E5BB">
+                        <p class="notep1">Note:</p>
+                        <p>Text entered for validations may not exceed 3,950 characters.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Processing</span> tab in the left pane.</span></li>
+                     <li class="stepexpand"><span>Right-click <span class="uicontrol bold">Validations</span> and select <span class="uicontrol bold">Create Validation</span>.</span><div>
+                           <p>Validation attributes display in the Property Editor. Attributes are organized in groups.</p>
+                           
+                           <div class="infoboxnote" id="GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472__GUID-E21073CD-FD19-46ED-98C0-AE8879AA42E8">
+                              <p class="notep1">Note:</p>
+                              
+                              <p>To find a group or attribute, enter keywords in the Filter Properties
+                            field. The Property Editor displays the group or attributes. Or, you can
+                            click <span class="uicontrol bold">Go to Group</span> and select the group.
+                              </p>
+                              
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span><span class="uicontrol bold">Identification</span>, <span class="uicontrol bold">Name</span> - Enter the
+                    name of the validation. Make this name should be descriptive so that developers
+                    can easily identify conditions being checked.</span></li>
+                     <li class="stepexpand"><span><span class="uicontrol bold">Execution Options</span>, <span class="uicontrol bold">Sequence</span> -
+                    Enter the sequence for this validation. The sequence determines the order of
+                    execution.</span></li>
+                     <li class="stepexpand"><span>Edit the following <span class="uicontrol bold">Validation</span> attributes:</span><ol type="a" id="GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472__SUBSTEPS_VR5_QDM_V3B">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Validation</span>, <span class="uicontrol bold">Editable
+                                Region</span> - Select the associated region.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Validation</span>, <span class="uicontrol bold">Type</span> - Select
+                            the type of equality to be tested for this validation. Depending on your
+                            selection, one or more additional attributes are required to fully
+                            define this validation.</span><div>If the validation passes the equality test, or evaluates to
+                            TRUE, then the validation error message does not display. Validation
+                            error messages display when the validation fails the equality test, or
+                            evaluates to FALSE, or a non-empty text string is returned.
+                        </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Validation</span>, <span class="uicontrol bold">Always
+                                Execute</span> - Specify whether this validation always
+                            executes. </span><div>If set to&nbsp;<span class="uicontrol bold">On</span>, this validation is always
+                            evaluated, irrespective of the&nbsp;Execute Validations&nbsp;setting defined
+                            against the button that submitted the page. If set
+                                to&nbsp;<span class="uicontrol bold">Off</span>, this validation is only evaluated if
+                            the triggering button has an&nbsp;Execute Validations&nbsp;setting
+                                of&nbsp;<span class="uicontrol bold">On</span>.
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Edit the following <span class="uicontrol bold">Error</span> attributes:</span><ol type="a">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Error</span>, <span class="uicontrol bold">Error Message</span> -
+                            Enter text for the error message.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Error</span>, <span class="uicontrol bold">Display Location</span> -
+                            Select where the error message displays for this validation.</span><div>Validation error messages display on a separate error page, or
+                            inline with the existing page. Inline error messages display underneath
+                            the&nbsp;Associated Item&nbsp;label and/or in a Notification area, defined as part
+                            of the page template.</div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Error</span>, <span class="uicontrol bold">Associated Item </span>-
+                            Select the item where this validation error message displays. </span><div>If you select an item and the&nbsp;Error message display
+                            location&nbsp;includes <span class="uicontrol bold">Inline with Field</span>, the error
+                            message displays underneath the label of the specified item. If
+                            the&nbsp;Error message display location&nbsp;does not include <span class="uicontrol bold">Inline
+                                with Field</span>, this attribute has no impact on the display
+                            of the error message.
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-434E1E3E-37B6-4F9E-9F58-A0995F5B5472__GUID-C8C1FB7B-5C64-4A1C-9E89-02DABF08EE3F">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="using-page-designer.html#GUID-7D9EA456-F9AA-4722-A5FF-CA4C3671D0BF">Creating Pre-Rendering Branches, Computations, and Processes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="using-page-designer.html#GUID-6CA4911D-93CC-45DE-9C29-3F949994F2EF">Creating Page Submission Branches, Validations, Computations, and Processes</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30010"></a><div class="props_rev_3"><a id="GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A" name="GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A"></a><h3 id="HTMDB-GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A" class="sect3"><span class="enumeration_section">17.2.4 </span>Editing a Validation
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To edit a validation in Page Designer:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Processing</span> tab in the left pane.</span></li>
+                     <li class="stepexpand"><span>Expand <span class="uicontrol bold">Validating</span> and then <span class="uicontrol bold">Validations</span> and select the validation.</span><div>Validation attributes display in the Property Editor. Attributes are
+                    organized in groups.
+                           <div class="infoboxnote" id="GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A__GUID-E21073CD-FD19-46ED-98C0-AE8879AA42E8">
+                              <p class="notep1">Note:</p>
+                              
+                              <p>To find a group or attribute, enter keywords in the Filter
+                            Properties field. The Property Editor displays the group or attributes.
+                            Or, you can click <span class="uicontrol bold">Go to Group</span> and select the
+                            group.
+                              </p>
+                              
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Property Editor, edit the appropriate attributes.</span><div>
+                           <div class="infobox-tip" id="GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A__GUID-A51B1BE6-9A6B-476E-8415-1C5E8ACE0AF3">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="bold">Help</span> tab in the center pane.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29832"></a><div class="props_rev_3"><a id="GUID-6E5C5FF0-CAEC-4A4E-B899-E4BA4927A8B5" name="GUID-6E5C5FF0-CAEC-4A4E-B899-E4BA4927A8B5"></a><h3 id="HTMDB-GUID-6E5C5FF0-CAEC-4A4E-B899-E4BA4927A8B5" class="sect3"><span class="enumeration_section">17.2.5 </span>About Determining When Validations Execute
+               </h3>
+               <div>
+                  <p>The <span class="uicontrol bold">Always Execute</span> attribute determines if validations execute
+            when a page is submitted. Use this attribute for buttons or certain page items that
+            submit a page. The <span class="uicontrol bold">Always Execute</span> attribute has two options: 
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="uicontrol bold">On</span> - The validation always executes independent of validation
+                    settings for buttons or items on a page. 
+                        </p>
+                        <p>For example, select <span class="uicontrol bold">On</span> if your validation is a security check
+                    which determines if the current user is allowed to modify or delete the current
+                    record. This ensures the validation executes for any operation and prevents
+                    unprivileged users from modifying data.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="uicontrol bold">Off</span> - The validation only executes if the button or item used
+                    to submit the page has the <span class="uicontrol bold">Execute Validations</span> attributes
+                    set to <span class="uicontrol bold">On</span>. 
+                        </p>
+                        <p>For example, it is not useful to verify that an item be numeric and display an error
+                    message if the user is simply deleting a record. In that scenario, the
+                    validations should only execute when the user clicks the Create or Apply Changes
+                    buttons. </p>
+                        <p>To accomplish this behavior:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>For the validation, set <span class="uicontrol bold">Always Execute</span> to
+                                <span class="uicontrol bold">On</span></p>
+                           </li>
+                           <li>
+                              <p>For the Create and Apply Changes buttons, set <span class="uicontrol bold">Execute
+                                Validations</span> to <span class="uicontrol bold">On</span>. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>For the Delete button, set <span class="uicontrol bold">Execute Validations</span> to <span class="bold">Off</span>
+                            to avoid unnecessary validations.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-6E5C5FF0-CAEC-4A4E-B899-E4BA4927A8B5__GUID-6CAD21B2-673C-4191-A439-E5D644A9C014">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-validations.html#GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A">Editing a Validation</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29833"></a><div class="props_rev_3"><a id="GUID-D10D5518-CA71-4722-A856-3CA51C9A4FAA" name="GUID-D10D5518-CA71-4722-A856-3CA51C9A4FAA"></a><h3 id="HTMDB-GUID-D10D5518-CA71-4722-A856-3CA51C9A4FAA" class="sect3"><span class="enumeration_section">17.2.6 </span>About Defining How Validation Error Messages Display
+               </h3>
+               <div>
+                  <p>You can choose to have validation error messages display inline (that is, on the page where the validation is performed) or on a separate error page. </p>
+                  <p>You define how a validation error message displays by configuring the following validation attributes:</p>
+                  <ol>
+                     <li>
+                        <p><span class="uicontrol bold">Error</span>, <span class="uicontrol bold">Error Message</span> - Enter the error
+                                                  message text in this field. You can use
+                                                  <code class="codeph">#LABEL#</code> as placeholder for the
+                                                  label of the associated page item or
+                                                  <code class="codeph">#COLUMN_HEADER#</code> for the heading
+                                                  of the associated editable region column. The
+                                                  placeholders are not supported if error display
+                                                  location is set to On Error Page.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="uicontrol bold">Error</span>, <span class="uicontrol bold">Display Location</span> - Select where
+                                                  the error message displays for this validation.
+                                                  Validation error messages display on a separate
+                                                  error page, or inline with the existing page.
+                                                  Inline error messages display underneath the
+                                                  Associated Item label and/or in a Notification
+                                                  area, defined as part of the page template. 
+                        </p>
+                        <p>Options include:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="uicontrol bold">Inline with Field and in Notification</span> - Error displays inline within the field label and within a notification area (defined as part of the page template).
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Inline with Field</span> - Error displays inline within the field label.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Inline in Notification</span> - Error displays inline within a notification area (defined as part of the page template).
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">On Error Page</span> - Displays the error on a separate error page. To create a hard error that stops all processing (including validations), you must display the error on an error page.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p>
+                           <span class="uicontrol bold">Error</span>,
+                                                  <span class="uicontrol bold">Associated Item</span> (or Column)
+                                                  - Select the item (or column) where this
+                                                  validation error message displays. 
+                        </p>
+                        <p>If you select an item and the Error message display location includes <span class="uicontrol bold">Inline with Field</span>, the error message displays underneath the label of the specified item. If the Error message display location does not include <span class="uicontrol bold">Inline with Field</span>, this attribute has no impact on the display of the error message.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D10D5518-CA71-4722-A856-3CA51C9A4FAA__GUID-5D6AF09D-6FF7-45EF-A18C-32BFEB95DD80">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-validations.html#GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A">Editing a Validation</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29835"></a><div class="props_rev_3"><a id="GUID-B73C1210-E9D0-403A-82CF-8C95679C650D" name="GUID-B73C1210-E9D0-403A-82CF-8C95679C650D"></a><h3 id="HTMDB-GUID-B73C1210-E9D0-403A-82CF-8C95679C650D" class="sect3"><span class="enumeration_section">17.2.7 </span>Processing Validations Conditionally
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can control when and if a validation is performed by configuring the following
+                    <span class="uicontrol bold">Server-side Condition</span> attributes:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span><span class="uicontrol bold">Server-side Condition</span>, <span class="uicontrol bold">When Button
+                        Pressed</span> - If you want this page processing component to execute
+                    only when the specified button is clicked, select a button from the list. You
+                    can incorporate this button condition with other conditions to further refine
+                    when this page processing component executes.</span><div>
+                           
+                           <p>If no button is pressed, other conditions are evaluated before
+                        performing the validation.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span><span class="uicontrol bold">Server-side Condition</span>,  <span class="uicontrol bold">Type</span> -
+                    Select a condition type from the list that must be met in order for this
+                    component to be rendered or processed. </span><div>To view a list of options, select the <span class="uicontrol bold">Type</span>
+                    attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab
+                    in the central pane. 
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-B73C1210-E9D0-403A-82CF-8C95679C650D__GUID-2CD57FEA-D0AA-4F1E-9277-A7B3C27F8C83">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="understanding-validations.html#GUID-08745CCD-C00A-4182-9E93-34DDCFF3567A">Editing a Validation</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="how-does-page-processing-and-page-rendering-work.html#GUID-A904BFBC-5E83-48BD-A409-D5256970BF42">Understanding Conditional Rendering and Processing</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29834"></a><div class="props_rev_3"><a id="GUID-3AE3F9F0-6413-43BC-AE3D-C07100B3C87F" name="GUID-3AE3F9F0-6413-43BC-AE3D-C07100B3C87F"></a><h3 id="HTMDB-GUID-3AE3F9F0-6413-43BC-AE3D-C07100B3C87F" class="sect3"><span class="enumeration_section">17.2.8 </span>About Altering the Go to Error Link
+               </h3>
+               <div>
+                  <p>If you define an associated item, Oracle Application Express renders a <span class="bold">Go to Error</span> link in the Notification display location next to the corresponding error message. When clicked, the user's focus is set to the associated item. 
+                  </p>
+                  <p>You can alter the <span class="bold">Go to Error</span> text to change the default text or to translate it into a language that is not translated by default with Oracle Application Express. In either case, define a text message called<code class="codeph"> APEX.GO_TO_ERROR</code> with the text and language of your choice. Additionally, you can disable this functionality and remove the <span class="bold">Go to Error</span> link by setting the text of the <code class="codeph">APEX.GO_TO_ERROR</code> text message to just a single space. 
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-3AE3F9F0-6413-43BC-AE3D-C07100B3C87F__GUID-4106451B-8B92-484D-902E-DAC4F289A57F">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="translating-messages.html#GUID-B9604D2B-7366-4F1A-BB67-E4F4D66630B9" title="If your application uses a language that is not among the ten languages into which Oracle Application Express is translated, you must translate messages displayed by the Application Express reporting engine.">Translating Messages Used Internally by Oracle Application Express</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

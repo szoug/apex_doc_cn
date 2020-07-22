@@ -1,0 +1,477 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Procedures">
+      <meta name="abstract" content="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">
+      <meta name="description" content="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">
+      <meta name="DC.subject" content="Object Browser, managing procedures, procedure, creating, browsing, finding, replacing, editing, editing manually, compiling, downloading, dropping">
+      <meta name="keywords" content="Object Browser, managing procedures, procedure, creating, browsing, finding, replacing, editing, editing manually, compiling, downloading, dropping">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731">
+      <meta name="DC.Relation" scheme="URI" content="managing-procedures.html#GUID-2A58EB42-18F6-4BD8-B8B4-3E19B354A903">
+      <meta name="DC.Relation" scheme="URI" content="managing-procedures.html#GUID-202AE39F-2050-44F5-B2DA-88E511B4CA1D">
+      <meta name="DC.Relation" scheme="URI" content="managing-procedures.html#GUID-4A9FC1AB-96AC-47E8-8EEB-2DD692D19ED9">
+      <meta name="DC.Relation" scheme="URI" content="managing-procedures.html#GUID-70D973C2-9E6A-4A0E-96BF-886304F7D628">
+      <meta name="DC.Relation" scheme="URI" content="managing-procedures.html#GUID-96431A8F-860B-4162-9650-6BBEE219B4F0">
+      <meta name="DC.Relation" scheme="URI" content="managing-procedures.html#GUID-1B0DAC57-EFC0-4EB4-844D-C910C5E5FE87">
+      <meta name="DC.Relation" scheme="URI" content="managing-procedures.html#GUID-E8FB9E0C-49CF-4662-8585-E035C23E36B6">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">
+      <meta name="description" content="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">
+      <title>Managing Procedures</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-packages.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-functions.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-packages.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-functions.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-db-objects-with-object-browser.html" property="item" typeof="WebPage"><span property="name"> Managing Database Objects with Object Browser </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Procedures</li>
+            </ol>
+            <a id="GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" name="GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3"></a><a id="AEUTL149"></a>
+            
+            <h2 id="AEUTL-GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" class="sect2"><span class="enumeration_section">3.9 </span>Managing Procedures
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures. </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-procedures.html#GUID-2A58EB42-18F6-4BD8-B8B4-3E19B354A903">Creating a Procedure</a><br>Create procedure using Object Browser. 
+                  </li>
+                  <li class="ulchildlink"><a href="managing-procedures.html#GUID-202AE39F-2050-44F5-B2DA-88E511B4CA1D">Browsing a Procedure</a><br>Select a procedure from the Object Selection pane and view different reports about the procedure.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-procedures.html#GUID-4A9FC1AB-96AC-47E8-8EEB-2DD692D19ED9">Reports for Procedures</a><br>Alternative views available when viewing a procedure in Object Browser.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-procedures.html#GUID-70D973C2-9E6A-4A0E-96BF-886304F7D628">Editing a Procedure</a><br>When you edit a procedure you can edit the code manually or perform a search and replace.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-procedures.html#GUID-96431A8F-860B-4162-9650-6BBEE219B4F0">Compiling a Procedure</a><br>If you edit and make changes to a view, you must compile to save your changes.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-procedures.html#GUID-1B0DAC57-EFC0-4EB4-844D-C910C5E5FE87">Downloading a Procedure</a><br>Select a procedure from the Object Selection pane and click Download Source to save the current procedure as a file.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-procedures.html#GUID-E8FB9E0C-49CF-4662-8585-E035C23E36B6">Dropping a Procedure</a><br>Select a procedure from the Object Selection pane and click Drop.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3__GUID-6277A830-5AD8-48C6-BA05-932289F82062">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=LNPLS-GUID-2FBCFBBE-6B42-4DB8-83F3-55B63B75B1EB" target="_blank"><span><cite>Oracle Database PL/SQL Language Reference</cite></span></a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731" title="Object Browser enables developers to browse, create, and edit objects in a database.">Managing Database Objects with Object Browser</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL150"></a><div class="props_rev_3"><a id="GUID-2A58EB42-18F6-4BD8-B8B4-3E19B354A903" name="GUID-2A58EB42-18F6-4BD8-B8B4-3E19B354A903"></a><h3 id="AEUTL-GUID-2A58EB42-18F6-4BD8-B8B4-3E19B354A903" class="sect3"><span class="enumeration_section">3.9.1 </span>Creating a Procedure
+               </h3>
+               <div>
+                  <p>Create procedure using Object Browser. </p>
+                  <div class="section">
+                     <p>To create a procedure:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Create</span> icon.</span></li>
+                     <li class="stepexpand"><span>From the list of object types, select <span class="uicontrol bold">Procedure</span>.</span></li>
+                     <li class="stepexpand"><span>For Name:</span><div>
+                           <ol type="a">
+                              <li>
+                                 <p><strong class="term">Procedure Name</strong> - Enter the name of the procedure. 
+                                 </p>
+                                 <div class="infoboxnote" id="GUID-2A58EB42-18F6-4BD8-B8B4-3E19B354A903__GUID-B94C6855-2989-4777-90E2-85844FA609FF">
+                                    <p class="notep1">Note:</p>
+                                    <p>Object names must conform to Oracle naming conventions and cannot contain spaces, or start with a number or underscore.</p>
+                                 </div>
+                              </li>
+                              <li>
+                                 <p>Specify whether to Include Arguments or Preserve Case.</p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="uicontrol bold">Next</span>.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For Arguments, define the arguments by specifying the following information (optional):</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Argument Name</strong></p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">In/Out (the parameter mode)</strong></p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Argument Type (datatype)</strong></p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Default (value)</strong></p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Move</strong></p>
+                              </li>
+                           </ul>
+                           <p>To add additional arguments, click <span class="uicontrol bold">Add Argument</span>.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>For Define, enter PL/SQL block you want to use as the procedure body and click <span class="uicontrol bold">Next</span>. </span><div>
+                           <p>A confirmation page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Procedure</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" title="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">Managing Procedures</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL151"></a><div class="props_rev_3"><a id="GUID-202AE39F-2050-44F5-B2DA-88E511B4CA1D" name="GUID-202AE39F-2050-44F5-B2DA-88E511B4CA1D"></a><h3 id="AEUTL-GUID-202AE39F-2050-44F5-B2DA-88E511B4CA1D" class="sect3"><span class="enumeration_section">3.9.2 </span>Browsing a Procedure
+               </h3>
+               <div>
+                  <p>Select a procedure from the Object Selection pane and view different reports about the procedure.</p>
+                  <div class="section">
+                     <p>To browse a procedure:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Procedures</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a procedure.</span><div>
+                           <p>The Code view appears, displaying the source code for the procedure. You can edit the code in this view. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the tabs at the top of the page to view different reports about the procedure.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" title="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">Managing Procedures</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL334"></a><a id="AEUTL152"></a><div class="props_rev_3"><a id="GUID-4A9FC1AB-96AC-47E8-8EEB-2DD692D19ED9" name="GUID-4A9FC1AB-96AC-47E8-8EEB-2DD692D19ED9"></a><h3 id="AEUTL-GUID-4A9FC1AB-96AC-47E8-8EEB-2DD692D19ED9" class="sect3"><span class="enumeration_section">3.9.3 </span>Reports for Procedures
+               </h3>
+               <div>
+                  <p>Alternative views available when viewing a procedure in Object Browser.</p>
+                  <div class="section">
+                     <p><a href="managing-procedures.html#GUID-4A9FC1AB-96AC-47E8-8EEB-2DD692D19ED9__CHDJIGDH" title="This table describes the alternative views available when viewing a procedure in Object Browser.">Table 3-8</a> describes all available reports for procedures.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-4A9FC1AB-96AC-47E8-8EEB-2DD692D19ED9__CHDJIGDH">
+                     <p class="titleintable">Table 3-8 Available Views for Procedures</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Available Views for Procedures" summary="This table describes the alternative views available when viewing a procedure in Object Browser." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d11482e455">View </th>
+                              <th align="left" valign="bottom" width="69%" id="d11482e458">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d11482e463" headers="d11482e455 ">
+                                 <p>Code</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d11482e463 d11482e458 ">
+                                 <p>(Default) Displays the source code for the procedure. You can edit the code in this view. Actions you can perform in this view include:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Edit the code manually</p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Save &amp; Compile</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Download Source</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Drop</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Undo</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Redo</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Find</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Replace</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Auto Complete</span></p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d11482e506" headers="d11482e455 ">
+                                 <p>Dependencies</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d11482e506 d11482e458 ">
+                                 <p>Displays objects that use (or depend) on the current procedure and objects the procedure depends on. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d11482e513" headers="d11482e455 ">
+                                 <p>Errors</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d11482e513 d11482e458 ">
+                                 <p>Lists errors related to the current procedure.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d11482e520" headers="d11482e455 ">
+                                 <p>Grants</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d11482e520 d11482e458 ">
+                                 <p>Lists details of grants for the current procedure, including privilege, grantee, grantable, grantor, and object name.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-4A9FC1AB-96AC-47E8-8EEB-2DD692D19ED9__GUID-8F435E94-75F7-4C67-858A-1EE6C02E2AA9">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="managing-procedures.html#GUID-70D973C2-9E6A-4A0E-96BF-886304F7D628" title="When you edit a procedure you can edit the code manually or perform a search and replace.">Editing a Procedure</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-procedures.html#GUID-96431A8F-860B-4162-9650-6BBEE219B4F0" title="If you edit and make changes to a view, you must compile to save your changes.">Compiling a Procedure</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-procedures.html#GUID-1B0DAC57-EFC0-4EB4-844D-C910C5E5FE87" title="Select a procedure from the Object Selection pane and click Download Source to save the current procedure as a file.">Downloading a Procedure</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-procedures.html#GUID-E8FB9E0C-49CF-4662-8585-E035C23E36B6" title="Select a procedure from the Object Selection pane and click Drop.">Dropping a Procedure</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" title="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">Managing Procedures</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL153"></a><div class="props_rev_3"><a id="GUID-70D973C2-9E6A-4A0E-96BF-886304F7D628" name="GUID-70D973C2-9E6A-4A0E-96BF-886304F7D628"></a><h3 id="AEUTL-GUID-70D973C2-9E6A-4A0E-96BF-886304F7D628" class="sect3"><span class="enumeration_section">3.9.4 </span>Editing a Procedure
+               </h3>
+               <p>When you edit a procedure you can edit the code manually or perform a search and replace.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-procedures.html#GUID-23457395-A41D-4AAD-AB95-2770BC2869FA">Editing a Procedure Manually</a><br>Select a procedure from the Object Selection pane and click Find or Replace.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" title="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">Managing Procedures</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEUTL154"></a><div class="props_rev_3"><a id="GUID-23457395-A41D-4AAD-AB95-2770BC2869FA" name="GUID-23457395-A41D-4AAD-AB95-2770BC2869FA"></a><h4 id="AEUTL-GUID-23457395-A41D-4AAD-AB95-2770BC2869FA" class="sect4"><span class="enumeration_section">3.9.4.1 </span>Editing a Procedure Manually
+                  </h4>
+                  <div>
+                     <p>Select a procedure from the Object Selection pane and click Find or Replace.</p>
+                     <div class="section">
+                        <p>To edit a procedure manually:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                              <p>Object Browser appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Procedures</span>.</span></li>
+                        <li class="stepexpand"><span>From the Object Selection pane, select a procedure.</span><div>
+                              <p>The Code view appears. You can edit the code in this view. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To perform a basic search, click the <span class="uicontrol bold">Find</span> icon (which resembles a magnifying glass).</span></li>
+                        <li class="stepexpand"><span>To replace existing code, click the <span class="uicontrol bold">Replace</span> icon (which resembles a two-sided arrow).</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-procedures.html#GUID-70D973C2-9E6A-4A0E-96BF-886304F7D628" title="When you edit a procedure you can edit the code manually or perform a search and replace.">Editing a Procedure</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEUTL155"></a><div class="props_rev_3"><a id="GUID-96431A8F-860B-4162-9650-6BBEE219B4F0" name="GUID-96431A8F-860B-4162-9650-6BBEE219B4F0"></a><h3 id="AEUTL-GUID-96431A8F-860B-4162-9650-6BBEE219B4F0" class="sect3"><span class="enumeration_section">3.9.5 </span>Compiling a Procedure
+               </h3>
+               <div>
+                  <p>If you edit and make changes to a view, you must compile to save your changes.</p>
+                  <div class="section">
+                     <p> There is no save function because this is just a view of the object within the database.</p>
+                     <p>To compile a procedure:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Procedures</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a procedure.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save &amp; Compile</span> to compile the current procedure. </span><div>
+                           <p>Compiling re-creates the object in the database. If the compilation fails, an error message displays above the code.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" title="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">Managing Procedures</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL156"></a><div class="props_rev_3"><a id="GUID-1B0DAC57-EFC0-4EB4-844D-C910C5E5FE87" name="GUID-1B0DAC57-EFC0-4EB4-844D-C910C5E5FE87"></a><h3 id="AEUTL-GUID-1B0DAC57-EFC0-4EB4-844D-C910C5E5FE87" class="sect3"><span class="enumeration_section">3.9.6 </span>Downloading a Procedure
+               </h3>
+               <div>
+                  <p>Select a procedure from the Object Selection pane and click Download Source to save the current procedure as a file.</p>
+                  <div class="section">
+                     <p>To download a procedure:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Procedures</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a procedure.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Download Source</span> to save the current procedure as a file.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" title="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">Managing Procedures</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL157"></a><div class="props_rev_3"><a id="GUID-E8FB9E0C-49CF-4662-8585-E035C23E36B6" name="GUID-E8FB9E0C-49CF-4662-8585-E035C23E36B6"></a><h3 id="AEUTL-GUID-E8FB9E0C-49CF-4662-8585-E035C23E36B6" class="sect3"><span class="enumeration_section">3.9.7 </span>Dropping a Procedure
+               </h3>
+               <div>
+                  <p>Select a procedure from the Object Selection pane and click Drop.</p>
+                  <div class="section">
+                     <p>To drop a procedure:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Procedures</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a procedure.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Drop</span>.</span></li>
+                     <li class="stepexpand"><span>To confirm, click <span class="uicontrol bold">Finish</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3" title="A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures.">Managing Procedures</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Application Processes">
+      <meta name="abstract" content="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">
+      <meta name="description" content="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">
+      <meta name="DC.subject" content="Shared Components page, Application Processes, application processes, understanding, On Demand, application computations, executing On New Instance, example, creating, editing attributes, creating error message, error message, creating for application processes, reports">
+      <meta name="keywords" content="Shared Components page, Application Processes, application processes, understanding, On Demand, application computations, executing On New Instance, example, creating, editing attributes, creating error message, error message, creating for application processes, reports">
+      <meta name="DC.Relation" scheme="URI" content="managing-computations-validations-and-processes.html#GUID-ADF401B9-95A6-45E9-9971-5BC1751F151E">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-processes.html#GUID-83C634B4-CEFE-4FEA-85E0-F35D186B6CDB">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-processes.html#GUID-5395E71E-23AA-46C2-A67D-36E551E7C3BA">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-processes.html#GUID-A6958224-D065-49F7-BD85-E1B8B70672B2">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-processes.html#GUID-98DF4013-324F-4E52-804F-1C6378E8563C">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-processes.html#GUID-A36B9E6C-A5A4-4548-B1E7-18D5FD42A20C">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-processes.html#GUID-6B8E148E-841A-4358-A745-6B8B648C3CC8">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-processes.html#GUID-1C245BD7-424C-4A7F-BF9A-FFDE66EBDFEC">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-processes.html#GUID-768D33A7-8342-4245-9B97-4B5F368F0879">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">
+      <meta name="description" content="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">
+      <title>Understanding Application Processes</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-branches.html" title="Previous" type="text/html">
+      <link rel="next" href="understanding-application-computations.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-branches.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="understanding-application-computations.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-computations-validations-and-processes.html" property="item" typeof="WebPage"><span property="name">Managing Computations, Validations, and Processes</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Application Processes</li>
+            </ol>
+            <a id="GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" name="GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1"></a><a id="HTMDB04010"></a>
+            
+            <h2 id="HTMDB-GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" class="sect2"><span class="enumeration_section">17.5 </span>Understanding Application Processes
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.</p>
+               <div class="infobox-tip" id="GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1__GUID-59C9487E-08D7-42B2-BD6A-4737EBD6CAF1">
+                  <p class="notep1">Tip:</p>
+                  <p>To learn more about execution behavior in the case of a validation error, see <span class="q">"<a href="understanding-validations.html#GUID-A80CEBFA-66A3-4F7E-92A6-7ED52D955612">What Happens When a Validation Fails?</a>."</span></p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-application-processes.html#GUID-83C634B4-CEFE-4FEA-85E0-F35D186B6CDB">On Demand Application Processes</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-application-processes.html#GUID-5395E71E-23AA-46C2-A67D-36E551E7C3BA">About Application Processes that Execute On New Instance</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-application-processes.html#GUID-A6958224-D065-49F7-BD85-E1B8B70672B2">About Running an On Demand Process from a Page Request</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-application-processes.html#GUID-98DF4013-324F-4E52-804F-1C6378E8563C">Application Process Example</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-application-processes.html#GUID-A36B9E6C-A5A4-4548-B1E7-18D5FD42A20C">Creating an Application Process</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-application-processes.html#GUID-6B8E148E-841A-4358-A745-6B8B648C3CC8">Editing Application Process Attributes</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-application-processes.html#GUID-1C245BD7-424C-4A7F-BF9A-FFDE66EBDFEC">Creating Application Process Error Messages</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-application-processes.html#GUID-768D33A7-8342-4245-9B97-4B5F368F0879">Viewing the Application Processes History Report</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1__GUID-7BD89F0C-5061-4FCC-B401-5A74918DFE01">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" title="Create page processes to perform an action at a specified point during the rendering or submission of the page.">Understanding Page Processes</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-computations-validations-and-processes.html#GUID-ADF401B9-95A6-45E9-9971-5BC1751F151E" title="Enhance your application by including computations, validations, and processes.">Managing Computations, Validations, and Processes</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25209"></a><div class="props_rev_3"><a id="GUID-83C634B4-CEFE-4FEA-85E0-F35D186B6CDB" name="GUID-83C634B4-CEFE-4FEA-85E0-F35D186B6CDB"></a><h3 id="HTMDB-GUID-83C634B4-CEFE-4FEA-85E0-F35D186B6CDB" class="sect3"><span class="enumeration_section">17.5.1 </span>On Demand Application Processes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>An <span class="bold">On Demand</span> process is special type of application process which has a Process Point of On Demand, is of type PL/SQL, and executes when called from a page-level On Demand process or from an Ajax call from the browser. On Demand processes are useful when you have PL/SQL logic that you would like to run from different execution points across multiple pages.
+                     </p>
+                     <p>On Demand processes should typically be created on a page and not at the application-level. On Demand processes created at the application-level are created with an initial authorization scheme of <span class="bold">Must Not Be Public User</span>. This prohibits the processes being invoked from users in unauthenticated sessions.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-83C634B4-CEFE-4FEA-85E0-F35D186B6CDB__GUID-C84B4892-A065-46A7-BAB6-9BF7B0ACECB1">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-page-processes.html#GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947">Creating Page Processes</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29848"></a><div class="props_rev_3"><a id="GUID-5395E71E-23AA-46C2-A67D-36E551E7C3BA" name="GUID-5395E71E-23AA-46C2-A67D-36E551E7C3BA"></a><h3 id="HTMDB-GUID-5395E71E-23AA-46C2-A67D-36E551E7C3BA" class="sect3"><span class="enumeration_section">17.5.2 </span>About Application Processes that Execute On New Instance
+               </h3>
+               <div>
+                  <p>Typically an application process runs at the same point across multiple pages in an application. Processes having a Process Point of <span class="bold">On New Instance</span> are the exception. These types of processes are useful when you only need to retrieve information once within a user's session. For example, if the application items do not depend on the logged in user, you can initialize them using the Process Point <span class="bold">On New Instance</span>. To look up information that depends on the user, you can also use <span class="bold">After Authentication</span>.
+                  </p>
+                  <p>If you configure applications to share the same session by setting the same cookie name in the authentication scheme, <span class="bold">On New Instance</span> and <span class="bold">After Login</span>, the application processes fire whenever Oracle Application Express first processes a request for the application (that is, On New Instance), or processes a request of an authenticated user for the application (that is, <span class="bold">After Authentication</span>).
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25210"></a><div class="props_rev_3"><a id="GUID-A6958224-D065-49F7-BD85-E1B8B70672B2" name="GUID-A6958224-D065-49F7-BD85-E1B8B70672B2"></a><h3 id="HTMDB-GUID-A6958224-D065-49F7-BD85-E1B8B70672B2" class="sect3"><span class="enumeration_section">17.5.3 </span>About Running an On Demand Process from a Page Request
+               </h3>
+               <div>
+                  <p>You can have a page request run an On Demand process by using the following syntax:</p><pre class="oac_no_warn" dir="ltr">f?p=application_id:page_id:session:APPLICATION_PROCESS=process_id
+</pre><p>Where:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="italic"><code class="codeph">application_id</code></span> is the application ID or alphanumeric alias
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">page_id</code></span> is the page number or alphanumeric alias
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">session</code></span> is the session ID
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">APPLICATION_PROCESS=process_id</code></span> is the keyword <span class="italic"><code class="codeph">APPLICATION_PROCESS= </code></span>followed by either the process ID or an alphanumeric name of an application-level process having a Process Point of On Demand
+                        </p>
+                     </li>
+                  </ul>
+                  <p>When you use this syntax, the Application Express engine recognizes the request and processes it using the following rules:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>The page number in the URL can be the current page number or alias. A page number or alias is required in the request only as a syntactic placeholder because no specific page is accessed for this type of request.</p>
+                     </li>
+                     <li>
+                        <p>The process authorization scheme, the application's authorization scheme, and the process conditions are supported.</p>
+                     </li>
+                     <li>
+                        <p>Session state (that is, item names and values) may be set in the URL, but clear cache options are ignored.</p>
+                     </li>
+                     <li>
+                        <p>Any failures of authentication, authorization, or process conditions do not result in visible error messages or other indicators of such failures and most often result in a blank page being displayed. Note that if you are logged in to <span>App Builder</span> as a developer, an error messages displays.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Specifying the process by name locates the first process with the specified (case-preserved) name. </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-A6958224-D065-49F7-BD85-E1B8B70672B2__GUID-CF9839CC-69A8-4070-8162-2B7BA97BBBDB">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-session-state-values.html#GUID-985BE4F8-4C7F-46DD-8803-6C7DD18F6F08" title="Clearing a cached value resets the value to null. You can clear the cached value for specific items, all items on a page, all pages in an application, or the current user session.">清除会话状态</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25211"></a><div class="props_rev_3"><a id="GUID-98DF4013-324F-4E52-804F-1C6378E8563C" name="GUID-98DF4013-324F-4E52-804F-1C6378E8563C"></a><h3 id="HTMDB-GUID-98DF4013-324F-4E52-804F-1C6378E8563C" class="sect3"><span class="enumeration_section">17.5.4 </span>Application Process Example
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>A shopping cart application is a good example of when you might use an application process. For example, to display the contents of a user's shopping cart with each page view, you create a region on page zero of your application that displays the values of the application-level items <code class="codeph">TOTAL_CART_ITEMS</code> and <code class="codeph">TOTAL_PURCHASE_PRICE</code>. 
+                     </p>
+                     <p>Instead of writing a process for each page to set the values of <code class="codeph">TOTAL_CART_ITEMS</code> and <code class="codeph">TOTAL_PURCHASE_PRICE</code>, you could write an application process of type <span class="bold">On Load: Before Header</span> to compute these values. Then, the Application Express engine would execute the process on each page as it renders the application. As a result, each page, would display the most current values for <code class="codeph">TOTAL_CART_ITEMS</code> and <code class="codeph">TOTAL_PURCHASE_PRICE</code>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-98DF4013-324F-4E52-804F-1C6378E8563C__GUID-64DAA72D-ECFF-436A-9D50-CA59B5303251">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="creating-a-global-page-to-display-components-on-every-page.html#GUID-8ADAD109-F5D3-46EB-B9A1-3678CA116B2C" title="A global page functions as a master page.">Creating a Global Page to Display Components on Every Page</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25212"></a><div class="props_rev_3"><a id="GUID-A36B9E6C-A5A4-4548-B1E7-18D5FD42A20C" name="GUID-A36B9E6C-A5A4-4548-B1E7-18D5FD42A20C"></a><h3 id="HTMDB-GUID-A36B9E6C-A5A4-4548-B1E7-18D5FD42A20C" class="sect3"><span class="enumeration_section">17.5.5 </span>Creating an Application Process
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To create an application process:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Application Logic, select <span class="uicontrol bold">Application Processes</span>.</span><div>
+                           <p>The Application Processes page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                     <li class="stepexpand"><span>For Identification:</span><ol type="a">
+                           <li><span>Name - Enter a name for the application process.</span></li>
+                           <li><span>Sequence - Specify the sequence number for this process. The sequence number determines the order in which the process is evaluated relative to other processes that execute at the same point.</span></li>
+                           <li><span>Point - Identify the point during the processing of each page in the application that this process would run. Note the option, <span class="uicontrol bold">On Demand,</span> only runs when requested by a page process.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Source:</span><ol type="a">
+                           <li><span>PL/SQL code - Enter the PL/SQL code of your application process. The code will automatically be wrapped with a <code class="codeph">Begin</code> and <code class="codeph">End;</code>.</span></li>
+                           <li><span>Error Message - Enter the error message that displays if the process raises an error.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Conditionality:</span><ol type="a">
+                           <li><span>Condition Type - Select a condition type that must be met in order for this process to execute.</span></li>
+                           <li><span>Expression 1 and Expression 2 - Use these attributes to conditionally control whether the process executes. Enter values in this attribute based on the specific condition type you select. The process executes if the specified condition is met.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Create Process</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-A36B9E6C-A5A4-4548-B1E7-18D5FD42A20C__GUID-1265987E-4FFE-4859-B69C-D8F0FE82C6CC">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-application-processes.html#GUID-1C245BD7-424C-4A7F-BF9A-FFDE66EBDFEC">Creating Application Process Error Messages</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28662"></a><div class="props_rev_3"><a id="GUID-6B8E148E-841A-4358-A745-6B8B648C3CC8" name="GUID-6B8E148E-841A-4358-A745-6B8B648C3CC8"></a><h3 id="HTMDB-GUID-6B8E148E-841A-4358-A745-6B8B648C3CC8" class="sect3"><span class="enumeration_section">17.5.6 </span>Editing Application Process Attributes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To edit an existing page process: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application. </span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Logic, select <span class="uicontrol bold">Application Processes</span>. </span><div>
+                           <p>The Application Processes page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the process name. </span></li>
+                     <li class="stepexpand"><span>Edit the appropriate attributes. For more information, see field-level Help.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28663"></a><div class="props_rev_3"><a id="GUID-1C245BD7-424C-4A7F-BF9A-FFDE66EBDFEC" name="GUID-1C245BD7-424C-4A7F-BF9A-FFDE66EBDFEC"></a><h3 id="HTMDB-GUID-1C245BD7-424C-4A7F-BF9A-FFDE66EBDFEC" class="sect3"><span class="enumeration_section">17.5.7 </span>Creating Application Process Error Messages
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>If a process raises an error, you can define an error messages that displays to the user. How the error message displays depends upon the processing point. For processes with a processing point of <code class="codeph">On Submit - Before Computation and Validations</code> or <code class="codeph">On Submit - After Computations and Validations</code>, you can specify whether the error message displays inline on the current page (the default) or on a separate page. For all other application processes, error messages display on a separate error page.
+                     </p>
+                     <p>To create an application process error message: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Access the application process attributes. </span></li>
+                     <li><span>Edit the following attributes:</span><ol type="a">
+                           <li class="substepexpand"><span>Source, Process Error Message - Enter the message that displays when an unhandled exception is raised.</span></li>
+                           <li class="substepexpand"><span>Error message display location - Applies to processes with a processing point of <code class="codeph">On Submit - Before Computation and Validations</code> or <code class="codeph">On Submit - After Computations and Validations</code>, you can specify where the error message displays.</span><div>
+                                 <p> Select one of the following:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">Inline in Notification</span> - Error displays inline on the page in the "notification" area (defined as part of the page template). 
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">On Error Page</span> - Error displays on a separate error page.
+                                       </p>
+                                       <p>If the application contains a manually created tabular form (using <code class="codeph">APEX_ITEM</code> calls in the SQL statement), select <span class="uicontrol bold">On Error Page</span>. Otherwise, changes made by the user are discarded when the page is re-rendered. When errors are displayed on a separate error page, the user can use the browser's Back button to preserve the entered values.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1C245BD7-424C-4A7F-BF9A-FFDE66EBDFEC__GUID-7EE3C7B1-9550-482F-A026-A8DD76B0994D">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-application-processes.html#GUID-6B8E148E-841A-4358-A745-6B8B648C3CC8">Editing Application Process Attributes</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25214"></a><div class="props_rev_3"><a id="GUID-768D33A7-8342-4245-9B97-4B5F368F0879" name="GUID-768D33A7-8342-4245-9B97-4B5F368F0879"></a><h3 id="HTMDB-GUID-768D33A7-8342-4245-9B97-4B5F368F0879" class="sect3"><span class="enumeration_section">17.5.8 </span>Viewing the Application Processes History Report
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The Application Process History report displays recent modifications made to application processes.</p>
+                     <p>To access application processes History reports:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                           <li class="substepexpand"><span>Select an application.</span></li>
+                           <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                 <p>The Shared Components page appears. </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Logic, select <span class="uicontrol bold">Application Processes</span>. </span><div>
+                           <p>The Application Processes page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select the History tab at the top of the page.</span></li>
+                     <li class="stepexpand"><span>You can customize the appearance the page using the Search bar at the top of the page. Available controls include:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Select columns to search</span> - Resembles a magnifying glass. Click this icon to narrow your search. To search all columns, select <span class="uicontrol bold">All Columns</span>. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Text area</span> - Enter case insensitive search criteria (wildcard characters are implied) to search for a process by name and click <span class="uicontrol bold">Go</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Go button</span> - Executes a search or applies a filter.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Actions menu</span> - Use the Actions menu to customize the report view.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-768D33A7-8342-4245-9B97-4B5F368F0879__GUID-60F5FB3A-9139-4315-A2F1-73B91DC247C2">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="customizing-interactive-reports-as-an-end-user.html#GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE">About the Actions Menu</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

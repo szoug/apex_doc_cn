@@ -1,0 +1,495 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Viewing Object Reports">
+      <meta name="abstract" content="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">
+      <meta name="description" content="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">
+      <meta name="DC.subject" content="Object Reports, PL/SQL Source Code report, reports, PL/SQL Source Code, exception reports, Exception Reports, Security reports, Object Grants, database security, Column Privileges report, Role Privileges report, Role Privileges, System Privileges report, System Privileges, database objects, All Objects report, Invalid Objects, Object Counts by Type">
+      <meta name="keywords" content="Object Reports, PL/SQL Source Code report, reports, PL/SQL Source Code, exception reports, Exception Reports, Security reports, Object Grants, database security, Column Privileges report, Role Privileges report, Role Privileges, System Privileges report, System Privileges, database objects, All Objects report, Invalid Objects, Object Counts by Type">
+      <meta name="DC.Relation" scheme="URI" content="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5">
+      <meta name="DC.Relation" scheme="URI" content="viewing-object-reports.html#GUID-AD39D0A8-C186-45E1-AA74-E00C4C5E6559">
+      <meta name="DC.Relation" scheme="URI" content="viewing-object-reports.html#GUID-E40F4E4B-2E77-44DD-B33A-39E28A89E2F7">
+      <meta name="DC.Relation" scheme="URI" content="viewing-object-reports.html#GUID-9E5B9915-01A8-4F99-9E6C-60011D12DA43">
+      <meta name="DC.Relation" scheme="URI" content="viewing-object-reports.html#GUID-1393A4B8-26B6-41BF-921C-CE59A9901643">
+      <meta name="DC.Relation" scheme="URI" content="viewing-object-reports.html#GUID-E63075F6-C2A0-4F9A-B778-5B9F678F158B">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-1B7E4EB3-478F-445F-9850-B11299BB449E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">
+      <meta name="description" content="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">
+      <title>Viewing Object Reports</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="using-recycle-bin.html" title="Previous" type="text/html">
+      <link rel="next" href="viewing-db-details.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-recycle-bin.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="viewing-db-details.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-Oracle-application-express-utilities.html" property="item" typeof="WebPage"><span property="name"> Using Oracle Application Express Utilities</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Viewing Object Reports</li>
+            </ol>
+            <a id="GUID-1B7E4EB3-478F-445F-9850-B11299BB449E" name="GUID-1B7E4EB3-478F-445F-9850-B11299BB449E"></a><a id="AEUTL257"></a>
+            
+            <h2 id="AEUTL-GUID-1B7E4EB3-478F-445F-9850-B11299BB449E" class="sect2"><span class="enumeration_section">5.10 </span>Viewing Object Reports
+            </h2>
+         </header>
+         <div class="ind">
+            <p>SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="viewing-object-reports.html#GUID-AD39D0A8-C186-45E1-AA74-E00C4C5E6559">Viewing Table Reports</a><br>Use the Table reports to view specific details about the tables within your database.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-object-reports.html#GUID-E40F4E4B-2E77-44DD-B33A-39E28A89E2F7">Viewing PL/SQL Reports</a><br>Use the PL/SQL reports to view program unit arguments or unit line counts and also to search PL/SQL source code.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-object-reports.html#GUID-9E5B9915-01A8-4F99-9E6C-60011D12DA43">Viewing Exception Reports</a><br>Use the Exception Reports to view unindexed foreign keys and tables without primary keys, indexes, or triggers.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-object-reports.html#GUID-1393A4B8-26B6-41BF-921C-CE59A9901643">Viewing Security Reports</a><br>Use the Security reports to view object or column privileges granted on database objects owned by other schemas. 
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-object-reports.html#GUID-E63075F6-C2A0-4F9A-B778-5B9F678F158B">Viewing All Object Reports</a><br>Use the All Object reports to view objects for the selected schema. 
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5" title="Oracle Application Express provides utilities to build SQL queries, load and unload data from an Oracle database, generate DDL, view object reports, manage User Interface Defaults, restore dropped database objects, compare schemas, monitor the database, and view database details.">Using Oracle Application Express Utilities</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL258"></a><div class="props_rev_3"><a id="GUID-AD39D0A8-C186-45E1-AA74-E00C4C5E6559" name="GUID-AD39D0A8-C186-45E1-AA74-E00C4C5E6559"></a><h3 id="AEUTL-GUID-AD39D0A8-C186-45E1-AA74-E00C4C5E6559" class="sect3"><span class="enumeration_section">5.10.1 </span>Viewing Table Reports
+               </h3>
+               <div>
+                  <p>Use the Table reports to view specific details about the tables within your database.</p>
+                  <div class="section">
+                     <p>To view the Table reports:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Object Reports</span>.</span><div>
+                           <p>The Object Reports page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Table Reports, select a report to view:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Table Columns</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Table Comments</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Table Constraints</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Table Statistics</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Table Storage Sizes</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To filter a report, enter search criteria in the field provided and click <span class="uicontrol bold">Go</span>. </span></li>
+                     <li class="stepexpand"><span>To view reports for a different schema, select another schema from the Schema list.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-AD39D0A8-C186-45E1-AA74-E00C4C5E6559__GUID-0A645E08-AE10-4B03-9C67-9F738E68C401">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"Customizing an Interactive Report Using the Actions Menu"</span> in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User's Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-object-reports.html#GUID-1B7E4EB3-478F-445F-9850-B11299BB449E" title="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">Viewing Object Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL260"></a><div class="props_rev_3"><a id="GUID-E40F4E4B-2E77-44DD-B33A-39E28A89E2F7" name="GUID-E40F4E4B-2E77-44DD-B33A-39E28A89E2F7"></a><h3 id="AEUTL-GUID-E40F4E4B-2E77-44DD-B33A-39E28A89E2F7" class="sect3"><span class="enumeration_section">5.10.2 </span>Viewing PL/SQL Reports
+               </h3>
+               <p>Use the PL/SQL reports to view program unit arguments or unit line counts and also to search PL/SQL source code.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="viewing-object-reports.html#GUID-ADE5F7B4-B025-40FC-9EF0-51D509C02EF3">Viewing Package Input and Output Parameters</a><br>Use the Program Unit Arguments report to view package input and output parameters.
+                     </li>
+                     <li class="ulchildlink"><a href="viewing-object-reports.html#GUID-EBC12C9E-BD80-439F-891B-9FDC69120569">Viewing the Number of Lines of Code for an Object</a><br>Use the Unit Line Counts report to view the number of lines of code for each object. 
+                     </li>
+                     <li class="ulchildlink"><a href="viewing-object-reports.html#GUID-F6434217-96FA-48BD-88A0-DED8CC0C82EA">Searching PL/SQL Source Code</a><br>Use the Search PL/SQL Source code page to search the text within your PL/SQL code.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-object-reports.html#GUID-1B7E4EB3-478F-445F-9850-B11299BB449E" title="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">Viewing Object Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEUTL261"></a><div class="props_rev_3"><a id="GUID-ADE5F7B4-B025-40FC-9EF0-51D509C02EF3" name="GUID-ADE5F7B4-B025-40FC-9EF0-51D509C02EF3"></a><h4 id="AEUTL-GUID-ADE5F7B4-B025-40FC-9EF0-51D509C02EF3" class="sect4"><span class="enumeration_section">5.10.2.1 </span>Viewing Package Input and Output Parameters
+                  </h4>
+                  <div>
+                     <p>Use the Program Unit Arguments report to view package input and output parameters.</p>
+                     <div class="section">
+                        <p>To view the PL/SQL Unit Arguments report:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Object Reports</span>.</span><div>
+                              <p>The Object Reports page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under PL/SQL Reports, click <span class="uicontrol bold">Program Unit Arguments</span>.</span></li>
+                        <li class="stepexpand"><span>To filter a report, enter search criteria in the field provided and click <span class="uicontrol bold">Go</span>.</span></li>
+                        <li class="stepexpand"><span>To view reports for a different schema, select another schema from the Schema list.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-ADE5F7B4-B025-40FC-9EF0-51D509C02EF3__GUID-34437E6D-F980-4E7C-A9C7-DADE9968ABA6">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"Customizing an Interactive Report Using the Actions Menu"</span> in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User's Guide</span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="viewing-object-reports.html#GUID-E40F4E4B-2E77-44DD-B33A-39E28A89E2F7" title="Use the PL/SQL reports to view program unit arguments or unit line counts and also to search PL/SQL source code.">Viewing PL/SQL Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL262"></a><div class="props_rev_3"><a id="GUID-EBC12C9E-BD80-439F-891B-9FDC69120569" name="GUID-EBC12C9E-BD80-439F-891B-9FDC69120569"></a><h4 id="AEUTL-GUID-EBC12C9E-BD80-439F-891B-9FDC69120569" class="sect4"><span class="enumeration_section">5.10.2.2 </span>Viewing the Number of Lines of Code for an Object
+                  </h4>
+                  <div>
+                     <p>Use the Unit Line Counts report to view the number of lines of code for each object. </p>
+                     <div class="section">
+                        <p>Use this report to identify larger PL/SQL program units.</p>
+                        <p>To view the Unit Line Counts report:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Object Reports</span>.</span><div>
+                              <p>The Object Reports page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under PL/SQL Reports, click <span class="uicontrol bold">Unit Line Counts</span>. </span><div>
+                              <p>The PL/SQL Unit Line Counts report appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To view reports for a different schema, select another schema from the Schema list.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-EBC12C9E-BD80-439F-891B-9FDC69120569__GUID-869DA90F-E7C4-4AE7-9BCA-4B80211E7706">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"Customizing an Interactive Report Using the Actions Menu"</span> in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User's Guide</span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="viewing-object-reports.html#GUID-E40F4E4B-2E77-44DD-B33A-39E28A89E2F7" title="Use the PL/SQL reports to view program unit arguments or unit line counts and also to search PL/SQL source code.">Viewing PL/SQL Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL263"></a><div class="props_rev_3"><a id="GUID-F6434217-96FA-48BD-88A0-DED8CC0C82EA" name="GUID-F6434217-96FA-48BD-88A0-DED8CC0C82EA"></a><h4 id="AEUTL-GUID-F6434217-96FA-48BD-88A0-DED8CC0C82EA" class="sect4"><span class="enumeration_section">5.10.2.3 </span>Searching PL/SQL Source Code
+                  </h4>
+                  <div>
+                     <p>Use the Search PL/SQL Source code page to search the text within your PL/SQL code.</p>
+                     <div class="section">
+                        <p>Use this report to find references to tables or functions you might be thinking of deleting. You can also use this page to locate code when you can only recall a code snippet.</p>
+                        <p>To search for PL/SQL source code:</p>
+                        <ol>
+                           <li>
+                              <p>On the Workspace home page, click the <span class="uicontrol bold">Utilities</span> icon.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Click <span class="uicontrol bold">Object Reports</span>.
+                              </p>
+                              <p>The Object Reports page appears.</p>
+                           </li>
+                           <li>
+                              <p>Under PL/SQL Reports, click <span class="uicontrol bold">Search PL/SQL Source Code</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>To filter the report:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p>In From Line and To Line, enter the range of lines you want to search.</p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="uicontrol bold">Set</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>To filter the report, enter an object name and click <span class="uicontrol bold">Go</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li>
+                              <p>To view reports for a different schema, select another schema from the Schema list.</p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-F6434217-96FA-48BD-88A0-DED8CC0C82EA__GUID-5BDF018A-C301-446D-BA1D-9448922DB2E3">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"Customizing an Interactive Report Using the Actions Menu"</span> in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User's Guide</span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="viewing-object-reports.html#GUID-E40F4E4B-2E77-44DD-B33A-39E28A89E2F7" title="Use the PL/SQL reports to view program unit arguments or unit line counts and also to search PL/SQL source code.">Viewing PL/SQL Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEUTL264"></a><div class="props_rev_3"><a id="GUID-9E5B9915-01A8-4F99-9E6C-60011D12DA43" name="GUID-9E5B9915-01A8-4F99-9E6C-60011D12DA43"></a><h3 id="AEUTL-GUID-9E5B9915-01A8-4F99-9E6C-60011D12DA43" class="sect3"><span class="enumeration_section">5.10.3 </span>Viewing Exception Reports
+               </h3>
+               <div>
+                  <p>Use the Exception Reports to view unindexed foreign keys and tables without primary keys, indexes, or triggers.</p>
+                  <div class="section">
+                     <p>To view Exception reports:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Object Reports</span>.</span><div>
+                           <p>The Object Reports page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Exception Reports section, click the report you want to view.</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Tables without Primary Keys</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Tables without Indexes</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Unindexed Foreign Keys</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Tables without Triggers</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To filter the report, enter a table name and click <span class="uicontrol bold">Go</span>. </span></li>
+                     <li class="stepexpand"><span>To view reports for a different schema, select another schema from the Schema list.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-9E5B9915-01A8-4F99-9E6C-60011D12DA43__GUID-66E44495-AEF0-4561-832C-17321DA39716">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"Customizing an Interactive Report Using the Actions Menu"</span> in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User's Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-object-reports.html#GUID-1B7E4EB3-478F-445F-9850-B11299BB449E" title="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">Viewing Object Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL259"></a><div class="props_rev_3"><a id="GUID-1393A4B8-26B6-41BF-921C-CE59A9901643" name="GUID-1393A4B8-26B6-41BF-921C-CE59A9901643"></a><h3 id="AEUTL-GUID-1393A4B8-26B6-41BF-921C-CE59A9901643" class="sect3"><span class="enumeration_section">5.10.4 </span>Viewing Security Reports
+               </h3>
+               <div>
+                  <p>Use the Security reports to view object or column privileges granted on database objects owned by other schemas. </p>
+                  <div class="section">
+                     <p>You can also use these reports to view database role and system privileges. </p>
+                     <p>To view the Security reports:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Object Reports</span>.</span><div>
+                           <p>The Object Reports page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Security Reports, click the report you want to view:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Object Grants</span> - View the privileges for an existing schema and also understand what privileges have been granted from the selected schema to other schemas.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Column Privileges</span> - View the privileges for columns within your schema and also understand what privileges have been granted from the selected schema to other schemas.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Role Privileges</span> - View the database roles that have been granted to a selected schema. Roles are collections of various privileges.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">System Privileges</span> - View the database privileges that have been granted to a selected schema.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To filter a report, enter search criteria in the field provided and click <span class="uicontrol bold">Go</span>.</span></li>
+                     <li class="stepexpand"><span>To view reports for a different schema, select another schema from the Schema list.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-1393A4B8-26B6-41BF-921C-CE59A9901643__GUID-3B2079AE-6F6A-4C56-AB89-70EF672E4F6D">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"Customizing an Interactive Report Using the Actions Menu"</span> in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User's Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-object-reports.html#GUID-1B7E4EB3-478F-445F-9850-B11299BB449E" title="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">Viewing Object Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL265"></a><div class="props_rev_3"><a id="GUID-E63075F6-C2A0-4F9A-B778-5B9F678F158B" name="GUID-E63075F6-C2A0-4F9A-B778-5B9F678F158B"></a><h3 id="AEUTL-GUID-E63075F6-C2A0-4F9A-B778-5B9F678F158B" class="sect3"><span class="enumeration_section">5.10.5 </span>Viewing All Object Reports
+               </h3>
+               <div>
+                  <p>Use the All Object reports to view objects for the selected schema. </p>
+                  <div class="section">
+                     <p>To view the All Object reports:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Object Reports</span>. </span><div>
+                           <p>The Object Reports page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under All Object Reports, select a report to view:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a id="d31824e1031" class="indexterm-anchor"></a><span class="uicontrol bold">All Objects</span> - List all objects in the current schema. Displays creation date and when the last DDL (data definition language) was performed. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Invalid Objects</span> - View all invalid objects in the database by object type.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><a id="d31824e1045" class="indexterm-anchor"></a><span class="uicontrol bold">Object Creation Calendar</span> - View all objects in a calendar format based on the date each database object was created.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Object Counts by Type</span> - View the number of database objects by type for the selected schema.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><a id="d31824e1059" class="indexterm-anchor"></a><a id="d31824e1061" class="indexterm-anchor"></a><a id="d31824e1063" class="indexterm-anchor"></a><a id="d31824e1067" class="indexterm-anchor"></a><span class="uicontrol bold">Data Dictionary</span> - View the data dictionary for this database. 
+                                 </p>
+                                 <p>An Oracle data dictionary is a set of tables and views used as a read-only reference about the database. For example, a data dictionary stores information about both the logical and physical structure of the database.</p>
+                                 <p>A data dictionary also stores information about valid Oracle database users, integrity constraints for tables in the database, and the amount of space allocated for a schema object and the amount being used.</p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To filter a report, enter search criteria in the field provided and click <span class="uicontrol bold">Go</span>.</span></li>
+                     <li class="stepexpand"><span>To view reports for a different schema, select another schema from the Schema list.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E63075F6-C2A0-4F9A-B778-5B9F678F158B__GUID-BA5DFC51-2606-4609-B03C-F80E4285FC10">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"Customizing an Interactive Report Using the Actions Menu "</span> in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User's Guide</span></a></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=CNCPT002" target="_blank"><span class="italic">Oracle Database Concepts</span></a>"</span> for information about the data dictionary
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-object-reports.html#GUID-1B7E4EB3-478F-445F-9850-B11299BB449E" title="SQL Workshop Utilities includes a variety of object reports to help you better manage the objects in your database.">Viewing Object Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

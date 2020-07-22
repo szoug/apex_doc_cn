@@ -1,0 +1,269 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Performing Post Installation Tasks for Upgrade Installations">
+      <meta name="abstract" content="Remove schemas from prior Oracle Application Express installations.">
+      <meta name="description" content="Remove schemas from prior Oracle Application Express installations.">
+      <meta name="DC.subject" content="upgrade post installation tasks, removing prior installation, prior installations, removing when upgrading, verifying prior installation, removing schemas from prior installation, fixing invalid ACL, ACL, fixing invalid">
+      <meta name="keywords" content="upgrade post installation tasks, removing prior installation, prior installations, removing when upgrading, verifying prior installation, removing schemas from prior installation, fixing invalid ACL, ACL, fixing invalid">
+      <meta name="DC.Relation" scheme="URI" content="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81">
+      <meta name="DC.Relation" scheme="URI" content="post-installation-tasksfor-upgrade-installations.html#GUID-E618E72A-F480-42D8-B606-05B0219F8146">
+      <meta name="DC.Relation" scheme="URI" content="post-installation-tasksfor-upgrade-installations.html#GUID-6170BEC4-8C03-4FC6-B6A2-B1BAC3FCD032">
+      <meta name="DC.Relation" scheme="URI" content="post-installation-tasksfor-upgrade-installations.html#GUID-200286C8-03C9-42E7-A82B-F52CCA443E01">
+      <meta name="DC.Relation" scheme="URI" content="post-installation-tasksfor-upgrade-installations.html#GUID-73B7D234-DFBE-4056-B05C-83C158DC44BC">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Remove schemas from prior Oracle Application Express installations.">
+      <meta name="description" content="Remove schemas from prior Oracle Application Express installations.">
+      <title>Performing Post Installation Tasks for Upgrade Installations</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Remove schemas from prior Oracle Application Express installations.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="creating-workspaceadding-Oracle-AE-users.html" title="Previous" type="text/html">
+      <link rel="next" href="about-performanceoptimization-tasks.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="creating-workspaceadding-Oracle-AE-users.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-performanceoptimization-tasks.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html" property="item" typeof="WebPage"><span property="name"> Installing Application Express and
+    Configuring Legacy Web Listener &#x2013; Oracle HTTP Server  (Deprecated)</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Performing Post Installation Tasks for Upgrade Installations</li>
+            </ol>
+            <a id="GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3" name="GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3"></a><a id="HTMIG29416"></a>
+            
+            <h2 id="HTMIG-GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3" class="sect2"><span class="enumeration_section">B.11 </span>Performing Post Installation Tasks for Upgrade Installations
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Remove schemas from prior Oracle Application Express installations.</p>
+               <p>Once you have verified that your upgrade installation was successful and all upgraded applications function properly, you should remove schemas from prior Oracle Application Express installations.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="post-installation-tasksfor-upgrade-installations.html#GUID-E618E72A-F480-42D8-B606-05B0219F8146">About Removing Prior Oracle Application Express Installations</a><br>Learn about removing schemas from a prior installation by verifying if a prior installation exists.
+                  </li>
+                  <li class="ulchildlink"><a href="post-installation-tasksfor-upgrade-installations.html#GUID-6170BEC4-8C03-4FC6-B6A2-B1BAC3FCD032">Verifying if a Prior Installation Exists</a><br>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> and run the query.
+                  </li>
+                  <li class="ulchildlink"><a href="post-installation-tasksfor-upgrade-installations.html#GUID-200286C8-03C9-42E7-A82B-F52CCA443E01">Removing Schemas and SYS Objects from Prior Installations</a><br>Start SQL*Plus and connect to database and execute a statement to remove                 schemas and <code class="codeph">SYS</code> objects.
+                  </li>
+                  <li class="ulchildlink"><a href="post-installation-tasksfor-upgrade-installations.html#GUID-73B7D234-DFBE-4056-B05C-83C158DC44BC">Fixing Invalid ACL in Oracle Database 11g or Later</a><br>Learn how to fix an invalid ACL if you are running Oracle Database 11<span class="italic">g</span> or later.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3__GUID-91363489-981E-4901-B527-CBD97453BC8B">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="upgrading-from-previous-Oracle-application-express-release.html#GUID-802A767F-2528-4B98-AC4F-B683DF4E572B" title="Upgrading Oracle Application Express creates new database objects in a new schema and migrates the application metadata to the new release.">Upgrading from a Previous Oracle Application Express Release</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29417"></a><div class="props_rev_3"><a id="GUID-E618E72A-F480-42D8-B606-05B0219F8146" name="GUID-E618E72A-F480-42D8-B606-05B0219F8146"></a><h3 id="HTMIG-GUID-E618E72A-F480-42D8-B606-05B0219F8146" class="sect3"><span class="enumeration_section">B.11.1 </span>About Removing Prior Oracle Application Express Installations
+               </h3>
+               <div>
+                  <p>Learn about removing schemas from a prior installation by verifying if a prior installation exists.</p>
+                  <p>The database users associated with schemas from prior installations are privileged users and should be removed when they are no longer necessary. Removing schemas from a prior installation is a two step process. First you verify if a prior installation exists and then you remove the schemas.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="post-installation-tasksfor-upgrade-installations.html#GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3" title="Remove schemas from prior Oracle Application Express installations.">Performing Post Installation Tasks for Upgrade Installations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29418"></a><div class="props_rev_3"><a id="GUID-6170BEC4-8C03-4FC6-B6A2-B1BAC3FCD032" name="GUID-6170BEC4-8C03-4FC6-B6A2-B1BAC3FCD032"></a><h3 id="HTMIG-GUID-6170BEC4-8C03-4FC6-B6A2-B1BAC3FCD032" class="sect3"><span class="enumeration_section">B.11.2 </span>Verifying if a Prior Installation Exists
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> and run the query.
+                  </p>
+                  <div class="section">
+                     <p>To verify if a prior installation exists:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code>. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span> 
+</pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span> 
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run the following query:</span><div><pre class="oac_no_warn" dir="ltr">
+SELECT username  FROM dba_users  WHERE (  username LIKE 'FLOWS\_______' ESCAPE '\'       OR username LIKE 'APEX\_______' ESCAPE '\' )   AND USERNAME NOT IN ( SELECT SCHEMA                           FROM dba_registry                          WHERE comp_id = 'APEX' );
+</pre></div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <p>If the results contain entries in the form <code class="codeph">FLOWS_</code><span class="italic"><code class="codeph">XXXXXX</code></span> or <code class="codeph">APEX_</code><span class="italic"><code class="codeph">XXXXXX</code></span> where <span class="italic"><code class="codeph">XXXXXX</code></span> represents six numbers, those entries are candidates for removal. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="post-installation-tasksfor-upgrade-installations.html#GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3" title="Remove schemas from prior Oracle Application Express installations.">Performing Post Installation Tasks for Upgrade Installations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG838"></a><div class="props_rev_3"><a id="GUID-200286C8-03C9-42E7-A82B-F52CCA443E01" name="GUID-200286C8-03C9-42E7-A82B-F52CCA443E01"></a><h3 id="HTMIG-GUID-200286C8-03C9-42E7-A82B-F52CCA443E01" class="sect3"><span class="enumeration_section">B.11.3 </span>Removing Schemas and SYS Objects from Prior
+        Installations
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to database and execute a statement to remove
+                schemas and <code class="codeph">SYS</code> objects.
+                  </p>
+                  <div class="section">
+                     <p>To remove schemas and <code class="codeph">SYS</code> objects from prior installations:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span></code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Execute statements similar to the following example:</span><div>
+                           <pre class="pre codeblock"><code>DROP USER APEX_190100 CASCADE;
+DROP PACKAGE SYS.WWV_DBMS_SQL_APEX_190100;</code></pre>
+                           </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="post-installation-tasksfor-upgrade-installations.html#GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3" title="Remove schemas from prior Oracle Application Express installations.">Performing Post Installation Tasks for Upgrade Installations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-73B7D234-DFBE-4056-B05C-83C158DC44BC" name="GUID-73B7D234-DFBE-4056-B05C-83C158DC44BC"></a><h3 id="HTMIG-GUID-73B7D234-DFBE-4056-B05C-83C158DC44BC" class="sect3"><span class="enumeration_section">B.11.4 </span>Fixing Invalid ACL in Oracle Database 11<span class="italic">g</span> or Later
+               </h3>
+               <div>
+                  <p>Learn how to fix an invalid ACL if you are running Oracle Database 11<span class="italic">g</span> or later.
+                  </p>
+                  <div class="p">
+                     <p>After following the instructions in<span class="q">"<a href="performing-post-installation-tasks-for-upgrade-installations.html#GUID-29A20CF9-D658-4FCF-A320-BD5E6ABE4D03" title="Learn about removing schemas from a prior installation by verifying if a prior installation exists.">About Removing Prior Oracle Application Express Installations</a>,"</span> you may need to fix an invalid ACL if you are running Oracle Database 11<span class="italic">g</span> or later and you enabled network services for the prior Oracle Application Express schema. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To fix an invalid ACL:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to the <code class="codeph">apex</code> directory where you unzipped the installation software.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Execute a statement similar to the following:</span><div><pre class="pre codeblock"><code>EXEC DBMS_NETWORK_ACL_ADMIN.DELETE_PRIVILEGE('power_users.xml', 'APEX_040200');</code></pre></div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="post-installation-tasksfor-upgrade-installations.html#GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3" title="Remove schemas from prior Oracle Application Express installations.">Performing Post Installation Tasks for Upgrade Installations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

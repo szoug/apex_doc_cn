@@ -1,0 +1,512 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Configuring the Oracle HTTP Server">
+      <meta name="abstract" content="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">
+      <meta name="description" content="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">
+      <meta name="DC.subject" content="Oracle HTTP Server, configuring, installation, configuring Oracle HTTP Server, configuring, Oracle HTTP Server, about copying images directory, images, copying, copying images directory, OTN installation, copying images, copying when upgrading, upgrading, editing dads.conf, static file support, configuring, stopping and starting, Oracle XML DB Protocol server, disabling, configuring behind reverse proxy, configuring behind load balancer">
+      <meta name="keywords" content="Oracle HTTP Server, configuring, installation, configuring Oracle HTTP Server, configuring, Oracle HTTP Server, about copying images directory, images, copying, copying images directory, OTN installation, copying images, copying when upgrading, upgrading, editing dads.conf, static file support, configuring, stopping and starting, Oracle XML DB Protocol server, disabling, configuring behind reverse proxy, configuring behind load balancer">
+      <meta name="DC.Relation" scheme="URI" content="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81">
+      <meta name="DC.Relation" scheme="URI" content="configuring-Oracle-HTTP-server.html#GUID-4FA99583-765E-4483-821C-A327F107F71F">
+      <meta name="DC.Relation" scheme="URI" content="configuring-Oracle-HTTP-server.html#GUID-11B3AD1B-6FBD-4CDC-A648-ABF380C3375E">
+      <meta name="DC.Relation" scheme="URI" content="configuring-Oracle-HTTP-server.html#GUID-C931FB67-E5E3-47D5-88B5-0577802D2487">
+      <meta name="DC.Relation" scheme="URI" content="configuring-Oracle-HTTP-server.html#GUID-28FEB646-C8D3-4DB0-A9B7-4430E9240CC2">
+      <meta name="DC.Relation" scheme="URI" content="configuring-Oracle-HTTP-server.html#GUID-10E75779-B6D7-4CAF-8855-505C8E263FE9">
+      <meta name="DC.Relation" scheme="URI" content="configuring-Oracle-HTTP-server.html#GUID-BE5EDBFA-FC2A-45D6-B787-74FDF59A3886">
+      <meta name="DC.Relation" scheme="URI" content="configuring-Oracle-HTTP-server.html#GUID-15BF382E-1884-44C4-90ED-2DFA73629B08">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">
+      <meta name="description" content="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">
+      <title>Configuring the Oracle HTTP Server</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="downloading-and-installing-OracleAE.html" title="Previous" type="text/html">
+      <link rel="next" href="enabling-networkservices-in-Oracle-db-11g-or-later.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="downloading-and-installing-OracleAE.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="enabling-networkservices-in-Oracle-db-11g-or-later.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html" property="item" typeof="WebPage"><span property="name"> Installing Application Express and
+    Configuring Legacy Web Listener &#x2013; Oracle HTTP Server  (Deprecated)</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Configuring the Oracle HTTP Server</li>
+            </ol>
+            <a id="GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" name="GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8"></a><a id="HTMIG29258"></a>
+            
+            <h2 id="HTMIG-GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" class="sect2"><span class="enumeration_section">B.4 </span>Configuring the Oracle HTTP Server
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Configuring Oracle HTTP Server requires that you copy the images directory, edit the <code class="codeph">dads.conf</code> file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.
+               </p>
+               <p>This section describes how to configure Oracle HTTP Server with <code class="codeph">mod_plsql</code>.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-4FA99583-765E-4483-821C-A327F107F71F">About Copying the Images Directory</a><br>Learn about the importance of copying the images directory.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-11B3AD1B-6FBD-4CDC-A648-ABF380C3375E">Copying the Images Directory</a><br>Learn how to copy images directory.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-C931FB67-E5E3-47D5-88B5-0577802D2487">Editing the dads.conf File</a><br>Learn how to edit dads.conf file.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-28FEB646-C8D3-4DB0-A9B7-4430E9240CC2">Configuring Static File Support</a><br>Learn how to configure static file support in Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-10E75779-B6D7-4CAF-8855-505C8E263FE9">Stopping and Restarting Oracle HTTP Server</a><br>Learn how to stop and restart Oracle HTTP Server.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-BE5EDBFA-FC2A-45D6-B787-74FDF59A3886">Disabling Oracle XML DB Protocol Server</a><br>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">EXEC DBMS_XDB.SETHTTPPORT(0);</code> command.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-15BF382E-1884-44C4-90ED-2DFA73629B08">About Configuring Oracle HTTP Server Behind a Reverse Proxy or Load Balancer</a><br>Learn about configuring Oracle HTTP server behind a reverse proxy or load balancer.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29259"></a><div class="props_rev_3"><a id="GUID-4FA99583-765E-4483-821C-A327F107F71F" name="GUID-4FA99583-765E-4483-821C-A327F107F71F"></a><h3 id="HTMIG-GUID-4FA99583-765E-4483-821C-A327F107F71F" class="sect3"><span class="enumeration_section">B.4.1 </span>About Copying the Images Directory
+               </h3>
+               <div>
+                  <p>Learn about the importance of copying the images directory.</p>
+                  <p>Whether you are loading a new installation or upgrading from a previous release, you must copy the <code class="codeph">images</code> directory from the top level of the <code class="codeph">apex\images</code> directory, for example <code class="codeph">C:\TEMP</code>, to the location on the file system containing the Oracle home for Oracle HTTP Server.
+                  </p>
+                  <p>During an upgrade, you overwrite your existing images directory. Before you begin the upgrade, to ensure that you can revert to the previous version, Oracle recommends that you create a copy of your existing <code class="codeph">images</code> directory for Oracle Application Express, indicating the release number of the images (for example, <code class="codeph">images_3_1</code>). 
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" title="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">Configuring the Oracle HTTP Server</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29260"></a><div class="props_rev_3"><a id="GUID-11B3AD1B-6FBD-4CDC-A648-ABF380C3375E" name="GUID-11B3AD1B-6FBD-4CDC-A648-ABF380C3375E"></a><h3 id="HTMIG-GUID-11B3AD1B-6FBD-4CDC-A648-ABF380C3375E" class="sect3"><span class="enumeration_section">B.4.2 </span>Copying the Images Directory 
+               </h3>
+               <div>
+                  <p>Learn how to copy images directory.</p>
+                  <div class="section">
+                     <p>To locate the <code class="codeph">images</code> directory on the file system, review the following files for the text alias <code class="codeph">/i/</code>:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle HTTP Server distributed Oracle9i Release 2—see the
+                            <code class="codeph">httpd.conf</code> file.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle Application Server 10g—see the <code class="codeph">marvel.conf</code> or
+                            <code class="codeph">dads.conf</code> files.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle HTTP Server distributed with Oracle Database 11g or 12c —see the
+                            <code class="codeph">marvel.conf</code> or <code class="codeph">dads.conf</code> files.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>When you locate the images directory path, rename the existing images directory to a backup location. Doing so enables you to revert to the previous release, if that becomes necessary.</p>
+                     <p>Use the following command syntax to copy the <code class="codeph">apex\images</code> directory from the Oracle Database home to a path in the Oracle HTTP Server home:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle HTTP Server distributed with Oracle Database 12c or later:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Windows:</p><pre class="pre codeblock"><code>xcopy /E /I <span class="italic">APEX_HOME</span>\apex\images <span class="italic">ORACLE_HTTPSERVER_HOME</span>\user_projects\domains\base_domain\images
+</code></pre></li>
+                              <li>
+                                 <p>UNIX and Linux:</p><pre class="pre codeblock"><code>cp -rf $<span class="italic">APEX_HOME</span>/apex/images <span class="italic">ORACLE_HTTPSERVER_HOME</span>/user_projects/domains/base_domain
+</code></pre></li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <p>In the preceding syntax examples:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="italic"><code class="codeph">APEX_HOME</code></span> is the location of where the installation Zip file was unzipped
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">ORACLE_HTTPSERVER_HOME</code></span> is the existing Oracle Application Server or Oracle HTTP Server Oracle home
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" title="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">Configuring the Oracle HTTP Server</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29263"></a><div class="props_rev_3"><a id="GUID-C931FB67-E5E3-47D5-88B5-0577802D2487" name="GUID-C931FB67-E5E3-47D5-88B5-0577802D2487"></a><h3 id="HTMIG-GUID-C931FB67-E5E3-47D5-88B5-0577802D2487" class="sect3"><span class="enumeration_section">B.4.3 </span>Editing the dads.conf File
+               </h3>
+               <div>
+                  <p>Learn how to edit dads.conf file.</p>
+                  <div class="section">
+                     <p>The <code class="codeph">dads.conf</code> file contains the information about the Database Access Descriptor (DAD) to access Oracle Application Express.
+                     </p>
+                     <div class="infoboxnote" id="GUID-C931FB67-E5E3-47D5-88B5-0577802D2487__GUID-286BEB6C-F15E-4723-B50B-B6D5C5B07C94">
+                        <p class="notep1">Note:</p>
+                        <p>Within the context of this document, <code class="codeph">ORACLE_HTTPSERVER_HOME</code> is the location where Oracle HTTP Server is installed.
+                        </p>
+                     </div>
+                     <p>To edit the <code class="codeph">dads.conf</code> file:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Use a text editor and open the <code class="codeph">dads.conf.</code></span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a id="d25573e449" class="indexterm-anchor"></a>Oracle Application Server 10<span class="italic">g</span>:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Windows: </p><pre class="pre codeblock"><code><span class="italic">ORACLE_HTTPSERVER_HOME</span>\Apache\modplsql\conf\dads.conf
+</code></pre></li>
+                                    <li>
+                                       <p>UNIX and Linux: </p><pre class="pre codeblock"><code><span class="italic">ORACLE_HTTPSERVER_HOME</span>/Apache/modplsql/conf/dads.conf
+</code></pre></li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <p> <a id="d25573e475" class="indexterm-anchor"></a>Oracle HTTP Server distributed with Oracle Database 11<span class="italic">g</span>:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Windows: </p><pre class="pre codeblock"><code>ORACLE_INSTANCE\config\OHS/ohs&lt;1&gt;\mod_plsql
+</code></pre></li>
+                                    <li>
+                                       <p>UNIX and Linux: </p><pre class="pre codeblock"><code>ORACLE_INSTANCE/config/OHS/ohs&lt;1&gt;/mod_plsql
+</code></pre></li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <p><a id="d25573e496" class="indexterm-anchor"></a>Oracle HTTP Server 12<span class="italic">c</span>:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Windows: </p><pre class="pre codeblock"><code><span class="italic">ORACLE_HTTPSERVER_HOME</span>\user_projects\domains\base_domain\config\fmwconfig\components\OHS\instances\ohs1\mod_plsql\dads.conf
+</code></pre></li>
+                                    <li>
+                                       <p>UNIX and Linux: </p><pre class="pre codeblock"><code><span class="italic">ORACLE_HTTPSERVER_HOME</span>/user_projects/domains/base_domain/config/fmwconfig/components/OHS/instances/ohs1/mod_plsql/dads.conf
+</code></pre></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                           <div class="infoboxnote" id="GUID-C931FB67-E5E3-47D5-88B5-0577802D2487__GUID-0DC2D3AF-6483-4B50-90AB-EDC1ABA0F61D">
+                              <p class="notep1">Note:</p>
+                              <p>In the examples above, ohs1 refers to the name of the Oracle HTTP Server instance. When running the Oracle HTTP Server Configuration Wizard, the default name is ohs1. It may have been changed to a name other than ohs1.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the <code class="codeph">dads.conf</code> file, replace <code class="codeph">ORACLE_HTTPSERVER_HOME</code>, <code class="codeph">host</code>, <code class="codeph">port</code>, <code class="codeph">service_name</code>, and <code class="codeph">apex_public_user_password</code> with values appropriate for your environment. Note that the <code class="codeph">apex_public_user_password</code> is the password you changed in <code class="codeph">APEX_PUBLIC_USER</code> Account.</span><div>
+                           <p>Note that the path listed is only an example. The path in the <code class="codeph">dads.conf</code> file should reference the file system path described in <span>About Copying the Images
+                    Directory</span>.
+                           </p><pre class="pre codeblock"><code>Alias /i/ "<span class="italic">ORACLE_HTTPSERVER_HOME</span>/user_projects/domains/base_domain/images/"
+
+&lt;Location /pls/apex&gt;
+ Order deny,allow
+ AllowOverride None
+ PlsqlDatabaseConnectString     <span class="italic">host</span>:<span class="italic">port</span>:<span class="italic">service_name</span> ServiceNameFormat
+ PlsqlNLSLanguage               AMERICAN_AMERICA.AL32UTF8
+ PlsqlAuthenticationMode        Basic
+ SetHandler                     pls_handler
+ PlsqlDocumentTablename         wwv_flow_file_objects$
+ PlsqlDatabaseUsername          APEX_PUBLIC_USER
+ PlsqlDefaultPage               apex
+ PlsqlDatabasePassword          <span class="italic">apex_public_user_password</span>
+ PlsqlRequestValidationFunction wwv_flow_epg_include_modules.authorize
+ PlsqlPathAlias r
+ PlsqlPathAliasProcedure wwv_flow.resolve_friendly_url
+ Allow from all
+&lt;/Location&gt;
+</code></pre><div class="infoboxnote" id="GUID-C931FB67-E5E3-47D5-88B5-0577802D2487__GUID-0987AFE6-FCF5-40C4-81B6-1B5C5FE2F373">
+                              <p class="notep1">Note:</p>
+                              <p><code class="codeph">PlsqlPathAlias</code> and <code class="codeph">PlsqlPathAliasProcedure</code> are required new parameters that must be added to an existing DAD. This is important when upgrading to Application Express release 5.0.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Locate the line containing <code class="codeph">PlsqlNLSLanguage</code>. </span><div>
+                           <p>The <code class="codeph">PlsqlNLSLanguage</code> setting determines the language setting of the DAD. The character set portion of the <code class="codeph">PlsqlNLSLanguage</code> value must be set to <code class="codeph">AL32UTF8</code>, regardless of whether the database character set is <code class="codeph">AL32UTF8</code>. For example:
+                           </p><pre class="pre codeblock"><code>...
+PlsqlNLSLanguage            AMERICAN_AMERICA.AL32UTF8
+...
+</code></pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Save and exit the <code class="codeph">dads.conf</code> file.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C931FB67-E5E3-47D5-88B5-0577802D2487__GUID-9A6C7EEB-2DFB-4C0D-B0B0-E7202B8BE63D">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="downloading-and-installing-OracleAE.html#GUID-A882DF8C-8656-449F-BB43-F6A967614883" title="Change the password for the APEX_PUBLIC_USER account by running a SQL statement.">Changing the Password for the APEX_PUBLIC_USER Account</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="configuring-Oracle-HTTP-server.html#GUID-4FA99583-765E-4483-821C-A327F107F71F" title="Learn about the importance of copying the images directory.">About Copying the Images Directory</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" title="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">Configuring the Oracle HTTP Server</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29474"></a><div class="props_rev_3"><a id="GUID-28FEB646-C8D3-4DB0-A9B7-4430E9240CC2" name="GUID-28FEB646-C8D3-4DB0-A9B7-4430E9240CC2"></a><h3 id="HTMIG-GUID-28FEB646-C8D3-4DB0-A9B7-4430E9240CC2" class="sect3"><span class="enumeration_section">B.4.4 </span>Configuring Static File Support
+               </h3>
+               <div>
+                  <p>Learn how to configure static file support in Oracle Application Express.</p>
+                  <p>Oracle Application Express enables application developers to include static files with their applications. Static files can be associated with a workspace, an application, a plug-in, or an application theme. When using the Oracle HTTP Server as your web listener, static files are served using Path Aliasing functionality of the <code class="codeph">mod_plsql</code> plug-in.
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-28FEB646-C8D3-4DB0-A9B7-4430E9240CC2__GUID-75C1C702-444B-44CD-A8C5-BB8BC2580EA9">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="configuring-Oracle-HTTP-server.html#GUID-C931FB67-E5E3-47D5-88B5-0577802D2487" title="Learn how to edit dads.conf file.">Editing the dads.conf File</a>"</span> for the required configuration parameters
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" title="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">Configuring the Oracle HTTP Server</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29264"></a><div class="props_rev_3"><a id="GUID-10E75779-B6D7-4CAF-8855-505C8E263FE9" name="GUID-10E75779-B6D7-4CAF-8855-505C8E263FE9"></a><h3 id="HTMIG-GUID-10E75779-B6D7-4CAF-8855-505C8E263FE9" class="sect3"><span class="enumeration_section">B.4.5 </span>Stopping and Restarting Oracle HTTP Server
+               </h3>
+               <div>
+                  <p>Learn how to stop and restart Oracle HTTP Server.</p>
+                  <div class="section">
+                     <p>This section describes how to stop and restart Oracle HTTP Server.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-EE3A2660-92FB-4903-A1C1-EA22C7B7E6BA">Stopping and Restarting Oracle HTTP Server with Oracle Database 10g and Lower</a><br>Learn how to stop and restart Oracle HTTP Server.
+                     </li>
+                     <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-78C1D935-EDBF-4423-95A6-51A24605B129">Stopping and Restarting Oracle HTTP Server 12c</a><br>Learn how to stop and restart the Oracle HTTP Server distributed with Oracle Database 12<span class="italic">c</span> or later.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" title="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">Configuring the Oracle HTTP Server</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMIG29391"></a><div class="props_rev_3"><a id="GUID-EE3A2660-92FB-4903-A1C1-EA22C7B7E6BA" name="GUID-EE3A2660-92FB-4903-A1C1-EA22C7B7E6BA"></a><h4 id="HTMIG-GUID-EE3A2660-92FB-4903-A1C1-EA22C7B7E6BA" class="sect4"><span class="enumeration_section">B.4.5.1 </span>Stopping and Restarting Oracle HTTP Server with Oracle Database 10g and Lower
+                  </h4>
+                  <div>
+                     <p>Learn how to stop and restart Oracle HTTP Server.</p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-EE3A2660-92FB-4903-A1C1-EA22C7B7E6BA__GUID-CDB1F68D-A692-42BD-9668-259469B43C56">
+                           <p class="notep1">Note:</p>
+                           <p>Within the context of this document, <code class="codeph">ORACLE_HTTPSERVER_HOME</code> is the location where Oracle HTTP Server is installed.
+                           </p>
+                        </div>
+                        <p>To stop and restart Oracle HTTP Server:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Windows:</p>
+                              <p>Execute the following:</p><pre class="pre codeblock"><code><span class="italic">ORACLE_HTTPSERVER_HOME</span>\opmn\bin\opmnctl stopproc ias-component=HTTP_Server
+<span class="italic">ORACLE_HTTPSERVER_HOME</span>\opmn\bin\opmnctl startproc ias-component=HTTP_Server</code></pre></li>
+                           <li>
+                              <p>UNIX and Linux</p>
+                              <p>Execute the following:</p><pre class="pre codeblock"><code><span class="italic">ORACLE_HTTPSERVER_HOME</span>/opmn/bin/opmnctl stopproc ias-component=HTTP_Server
+<span class="italic">ORACLE_HTTPSERVER_HOME</span>/opmn/bin/opmnctl startproc ias-component=HTTP_Server
+</code></pre><pre class="oac_no_warn" dir="ltr"></pre></li>
+                        </ul>
+                        <div class="infoboxnote" id="GUID-EE3A2660-92FB-4903-A1C1-EA22C7B7E6BA__GUID-9D1335B0-D016-436A-9FC6-5AFCB3323F57">
+                           <p class="notep1">Note:</p>
+                           <p>If you are using Oracle HTTP Server that is included with Oracle Fusion Middleware 11.1.1, you may need to replace the ias-component name above if the name given to the component was something other than HTTP_Server when it was installed. The default name is ohs1.</p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-10E75779-B6D7-4CAF-8855-505C8E263FE9" title="Learn how to stop and restart Oracle HTTP Server.">Stopping and Restarting Oracle HTTP Server</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29392"></a><div class="props_rev_3"><a id="GUID-78C1D935-EDBF-4423-95A6-51A24605B129" name="GUID-78C1D935-EDBF-4423-95A6-51A24605B129"></a><h4 id="HTMIG-GUID-78C1D935-EDBF-4423-95A6-51A24605B129" class="sect4"><span class="enumeration_section">B.4.5.2 </span>Stopping and Restarting Oracle HTTP Server 12<span class="italic">c</span></h4>
+                  <div>
+                     <p>Learn how to stop and restart the Oracle HTTP Server distributed with Oracle Database 12<span class="italic">c</span> or later.
+                     </p>
+                     <div class="section">
+                        <p>To stop and restart the Oracle HTTP Server distributed with Oracle Database 12<span class="italic">c</span> or later, enter commands using the following syntax, where <span class="italic"><code class="codeph">DOMAIN_HOME</code></span> is the path to the Oracle HTTP Server domain:
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Windows:</p>
+                              <p>Execute the following:</p><pre class="pre codeblock"><code>%<span class="italic">DOMAIN_HOME</span>%\bin\stopComponent.cmd <span class="italic">componentName</span>
+%<span class="italic">DOMAIN_HOME</span>%\bin\startComponent.cmd <span class="italic">componentName</span>
+</code></pre></li>
+                           <li>
+                              <p>UNIX and Linux</p>
+                              <p>Execute the following:</p><pre class="pre codeblock"><code>$<span class="italic">DOMAIN_HOME</span>/bin/stopComponent.sh <span class="italic">componentName</span>
+$<span class="italic">DOMAIN_HOME</span>/bin/startComponent.sh <span class="italic">componentName</span>
+</code></pre></li>
+                        </ul>
+                        <p>In a default installation, <span class="italic"><code class="codeph">componentName</code></span> is <code class="codeph">ohs1</code> but may have been changed when running the Oracle HTTP Server Configuration Wizard.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-10E75779-B6D7-4CAF-8855-505C8E263FE9" title="Learn how to stop and restart Oracle HTTP Server.">Stopping and Restarting Oracle HTTP Server</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMIG29266"></a><div class="props_rev_3"><a id="GUID-BE5EDBFA-FC2A-45D6-B787-74FDF59A3886" name="GUID-BE5EDBFA-FC2A-45D6-B787-74FDF59A3886"></a><h3 id="HTMIG-GUID-BE5EDBFA-FC2A-45D6-B787-74FDF59A3886" class="sect3"><span class="enumeration_section">B.4.6 </span>Disabling Oracle XML DB Protocol Server
+               </h3>
+               <div>
+                  <p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role and run the <code class="codeph">EXEC DBMS_XDB.SETHTTPPORT(0);</code> command.
+                  </p>
+                  <div class="section">
+                     <p>If you were previously using the Embedded PL/SQL Gateway and now want to use Oracle HTTP server and mod_plsql, you need to disable the Oracle XML DB Protocol Server.</p>
+                     <p>To disable Oracle XML DB Protocol Server:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Run the following command:</span><div><pre class="pre codeblock"><code>EXEC DBMS_XDB.SETHTTPPORT(0);
+</code></pre></div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" title="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">Configuring the Oracle HTTP Server</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29393"></a><div class="props_rev_3"><a id="GUID-15BF382E-1884-44C4-90ED-2DFA73629B08" name="GUID-15BF382E-1884-44C4-90ED-2DFA73629B08"></a><h3 id="HTMIG-GUID-15BF382E-1884-44C4-90ED-2DFA73629B08" class="sect3"><span class="enumeration_section">B.4.7 </span>About Configuring Oracle HTTP Server Behind a Reverse Proxy or Load Balancer
+               </h3>
+               <div>
+                  <p>Learn about configuring Oracle HTTP server behind a reverse proxy or load balancer.</p>
+                  <p>When Oracle Application Express is running behind a reverse proxy or load balancer, it is important to communicate the original HTTP hostname and protocol as seen by user's browser to the Application Express engine. The engine will use this information to generate valid URL in HTML responses and HTTP redirects that user's browser can successfully follow. For Oracle HTTP server and mod_plsql, use <code class="codeph">PlsqlCGIEnvironmentList</code> directive in the dads.conf configuration file. For example:
+                  </p><pre class="pre codeblock"><code>PlsqlCGIEnvironmentList REQUEST_PROTOCOL=https
+PlsqlCGIEnvironmentList HTTP_HOST=www.example.com:443
+</code></pre></div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-15BF382E-1884-44C4-90ED-2DFA73629B08__GUID-E8676A37-FF0F-4E73-8601-77FC73C83608">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="configuring-Oracle-HTTP-server.html#GUID-C931FB67-E5E3-47D5-88B5-0577802D2487" title="Learn how to edit dads.conf file.">Editing the dads.conf File</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8" title="Configuring Oracle HTTP Server requires that you copy the images directory, edit the dads.conf file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.">Configuring the Oracle HTTP Server</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

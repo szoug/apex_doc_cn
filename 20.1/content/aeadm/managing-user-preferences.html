@@ -1,0 +1,495 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing User Preferences">
+      <meta name="abstract" content="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">
+      <meta name="description" content="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">
+      <meta name="DC.subject" content="user preferences, setting, viewing by user, viewing for current user, purging, preferences, purging for a specific user, purging for current user, removing programmatically, resetting using a page process">
+      <meta name="keywords" content="user preferences, setting, viewing by user, viewing for current user, purging, preferences, purging for a specific user, purging for current user, removing programmatically, resetting using a page process">
+      <meta name="DC.Relation" scheme="URI" content="workspace-and-application-administration.html#GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14">
+      <meta name="DC.Relation" scheme="URI" content="managing-user-preferences.html#GUID-DDEE2132-34E1-4487-AE8C-156D78AFE9C4">
+      <meta name="DC.Relation" scheme="URI" content="managing-user-preferences.html#GUID-819F0FC3-B1F6-4E6E-889D-12C3812010DB">
+      <meta name="DC.Relation" scheme="URI" content="managing-user-preferences.html#GUID-5765813E-01DE-432C-BDA1-E501528A3608">
+      <meta name="DC.Relation" scheme="URI" content="managing-user-preferences.html#GUID-1D199DE4-EC88-4D38-A3D5-9508A7A88D99">
+      <meta name="DC.Relation" scheme="URI" content="managing-user-preferences.html#GUID-517F64E7-7BAD-486D-B17C-CF95CEE9C2A8">
+      <meta name="DC.Relation" scheme="URI" content="managing-user-preferences.html#GUID-3ABDDFEA-1477-4235-9F83-6D73D6BE6053">
+      <meta name="DC.Relation" scheme="URI" content="managing-user-preferences.html#GUID-09DEBB14-979E-48A7-8470-2710457DB48F">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">
+      <meta name="description" content="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">
+      <title>Managing User Preferences</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-session-state-for-a-workspace.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-page-and-region-caching.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-session-state-for-a-workspace.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-page-and-region-caching.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="workspace-and-application-administration.html" property="item" typeof="WebPage"><span property="name">Workspace and Application Administration</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing User Preferences</li>
+            </ol>
+            <a id="GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" name="GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511"></a><a id="AEADM116"></a>
+            
+            <h2 id="AEADM-GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" class="sect2"><span class="enumeration_section">2.11 </span>Managing User Preferences
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-DDEE2132-34E1-4487-AE8C-156D78AFE9C4">Setting User Preferences</a><br>Developers can set user preferences within an application by creating a page         process, creating a preference item, or programmatically using a PL/SQL API.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-819F0FC3-B1F6-4E6E-889D-12C3812010DB">Viewing Preferences by User</a><br>View user preferences by user on the Preferences by User page.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-5765813E-01DE-432C-BDA1-E501528A3608">Viewing Current User Preferences</a><br>View current user preferences.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-1D199DE4-EC88-4D38-A3D5-9508A7A88D99">Purging Preferences for a Specific User</a><br>Purge preferences for a specific user on the Purge Preferences page.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-517F64E7-7BAD-486D-B17C-CF95CEE9C2A8">Purging Preferences for the Current User</a><br>Purge preferences for the current user on the Current User Preferences page.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-3ABDDFEA-1477-4235-9F83-6D73D6BE6053">Removing User Preferences Programmatically</a><br>Remove user preferences programmatically using a PL/SQL API.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-09DEBB14-979E-48A7-8470-2710457DB48F">Resetting User Preferences Using a Page Process</a><br>Reset user preferences by creating a page process. 
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="workspace-and-application-administration.html#GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14" title="In an Oracle Application Express development environment, users sign in to a shared work area called a workspace. Workspace administrators monitor and administer a shared work area called a workspace.">Workspace and Application Administration</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM119"></a><div class="props_rev_3"><a id="GUID-DDEE2132-34E1-4487-AE8C-156D78AFE9C4" name="GUID-DDEE2132-34E1-4487-AE8C-156D78AFE9C4"></a><h3 id="AEADM-GUID-DDEE2132-34E1-4487-AE8C-156D78AFE9C4" class="sect3"><span class="enumeration_section">2.11.1 </span>Setting User Preferences
+               </h3>
+               <p>Developers can set user preferences within an application by creating a page
+        process, creating a preference item, or programmatically using a PL/SQL API.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-86E96A9C-05E0-495A-9FB2-E2B83C0F1986">Setting User Preferences by Creating a Page Process</a><br>Set user preference values by creating a page process.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-7CC415DE-156A-430A-9182-D2452A3F49EC">Setting the Source of an Item Based on a User Preference</a><br>Set the source of an item based on a user preference by defining the item         source type as Preference.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-user-preferences.html#GUID-672B4DE8-9040-45CB-AA2E-6A77AB2A99D6">Setting User Preferences Programmatically</a><br>Set or reference user preferences programmatically using a PL/SQL API. 
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" title="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">Managing User Preferences</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEADM120"></a><div class="props_rev_3"><a id="GUID-86E96A9C-05E0-495A-9FB2-E2B83C0F1986" name="GUID-86E96A9C-05E0-495A-9FB2-E2B83C0F1986"></a><h4 id="AEADM-GUID-86E96A9C-05E0-495A-9FB2-E2B83C0F1986" class="sect4"><span class="enumeration_section">2.11.1.1 </span>Setting User Preferences by Creating a Page Process
+                  </h4>
+                  <div>
+                     <p>Set user preference values by creating a page process.</p>
+                     <div class="section">
+                        <p>To set user preference values by creating a page process:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer and click the <span class="uicontrol bold">Processing</span> tab.</span></li>
+                        <li class="stepexpand"><span>Under Processes, right-click and select <span class="uicontrol bold">Create Process</span>.</span><div>Process attributes display in the Property Editor.</div>
+                        </li>
+                        <li class="stepexpand"><span>Under Identification:</span><ol type="a" class="single-step">
+                              <li><span>Name - Enter the name of the process.</span></li>
+                           </ol>
+                           <ol type="a" class="single-step">
+                              <li><span>Type - Select <span class="uicontrol bold">User Preferences</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Settings, Type  - Select <span class="uicontrol bold">Reset Preferences (remove all preferences for current user)</span>.</span></li>
+                        <li class="stepexpand"><span>Under Execution Options:</span><ol type="a">
+                              <li><span>Sequence - Specify the sequence for this component. The sequence determines the order of execution.</span></li>
+                              <li><span>Point - Select the point at which the process executes.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Review and complete any additional attributes.</span><div>
+                              <div class="infobox-tip" id="GUID-86E96A9C-05E0-495A-9FB2-E2B83C0F1986__GUID-5E2839D6-A223-4536-866A-C43BD629B9BD">
+                                 <p class="notep1">Tip:</p>
+                                 <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the center pane.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-86E96A9C-05E0-495A-9FB2-E2B83C0F1986__GUID-5B1D11D7-21AF-41BE-BAF8-5D0BB0421F37">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="../htmdb/understanding-page-processes.html#HTMDB-GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947" target="_blank">Creating Page Processes</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-DDEE2132-34E1-4487-AE8C-156D78AFE9C4" title="Developers can set user preferences within an application by creating a page process, creating a preference item, or programmatically using a PL/SQL API.">Setting User Preferences</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM121"></a><div class="props_rev_3"><a id="GUID-7CC415DE-156A-430A-9182-D2452A3F49EC" name="GUID-7CC415DE-156A-430A-9182-D2452A3F49EC"></a><h4 id="AEADM-GUID-7CC415DE-156A-430A-9182-D2452A3F49EC" class="sect4"><span class="enumeration_section">2.11.1.2 </span>Setting the Source of an Item Based on a User Preference
+                  </h4>
+                  <div>
+                     <p>Set the source of an item based on a user preference by defining the item
+        source type as Preference.</p>
+                     <div class="section">
+                        <p>To define the source of item based on a user preference:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>View the page in Page Designer.</span></li>
+                        <li class="stepexpand"><span>Click the <span class="uicontrol bold">Rendering</span> tab.</span></li>
+                        <li class="stepexpand"><span>Locate the region to contain the item, right-click and select <span class="uicontrol bold">Create Page Item</span>.</span><div>Item attributes display in the Property Editor.
+                              <div class="infoboxnote" id="GUID-7CC415DE-156A-430A-9182-D2452A3F49EC__GUID-BBBD3CA1-59F3-4794-9312-B316718A708B">
+                                 <p class="notep1">Note:</p>
+                                 <p>To learn more about an attribute, select the attribute and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Identification:</span><ol type="a" class="single-step">
+                              <li><span>Name - Enter a name of the item.</span></li>
+                           </ol>
+                           <ol type="a" class="single-step">
+                              <li><span>Type - Select <span class="uicontrol bold">Hidden</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Settings, Value Protected - Specify whether the item is protected, preventing the value from being manipulated when the page is posted. Select <span class="uicontrol bold">Yes</span>. </span></li>
+                        <li class="stepexpand"><span>Under Layout:</span><ol type="a" class="single-step">
+                              <li><span>Sequence - Enter the display sequence for this item. The sequence and
+                            other layout settings determine where the item displays in relation to
+                            other items within the region.</span></li>
+                           </ol>
+                           <ol type="a" class="single-step">
+                              <li><span>Region - Select the region in which the item displays. All items should be specified in a region.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Source:</span><ol type="a">
+                              <li><span>Type - Select the source type the value of this item is based on.</span></li>
+                              <li><span>Used - Select which value takes precedence (that is, the value from session state or the item source value).</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Default, Type - Select a default value type for this item. </span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-DDEE2132-34E1-4487-AE8C-156D78AFE9C4" title="Developers can set user preferences within an application by creating a page process, creating a preference item, or programmatically using a PL/SQL API.">Setting User Preferences</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM122"></a><div class="props_rev_3"><a id="GUID-672B4DE8-9040-45CB-AA2E-6A77AB2A99D6" name="GUID-672B4DE8-9040-45CB-AA2E-6A77AB2A99D6"></a><h4 id="AEADM-GUID-672B4DE8-9040-45CB-AA2E-6A77AB2A99D6" class="sect4"><span class="enumeration_section">2.11.1.3 </span>Setting User Preferences Programmatically
+                  </h4>
+                  <div>
+                     <p>Set or reference user preferences programmatically using a PL/SQL API. </p>
+                     <div class="section">
+                        <p>User-level caching is available programmatically. You can use the <code class="codeph">SET_PREFERENCE</code> procedure to set a user level preference called <code class="codeph">NAMED_PREFERENCE</code>. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">APEX_UTIL.SET_PREFERENCE(
+ p_preference=&gt;'NAMED_PREFERENCE',
+ p_value =&gt;:ITEM_NAME);
+</pre><p>You can reference the value of a user preference using the function <code class="codeph">GET_PREFERENCE</code>. For example:
+                        </p><pre class="oac_no_warn" dir="ltr">NVL(APEX_UTIL.GET_PREFERENCE('NAMED_PREFERENCE'),15)
+</pre><p>In the previous example, the preference would default to the value 15 if the preference contained no value. </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-672B4DE8-9040-45CB-AA2E-6A77AB2A99D6__GUID-E3B72ED1-C394-4384-B2D2-2B49B535B561">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="../aeapi/GET_PREFERENCE-Function.html#AEAPI142" target="_blank">GET_PREFERENCE Function</a>"</span> and <span class="q">"<a href="../aeapi/SET_PREFERENCE-Procedure.html#AEAPI180" target="_blank">SET_PREFERENCE Procedure</a>"</span> in <span class="italic">Oracle
+      Application Express API Reference</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-DDEE2132-34E1-4487-AE8C-156D78AFE9C4" title="Developers can set user preferences within an application by creating a page process, creating a preference item, or programmatically using a PL/SQL API.">Setting User Preferences</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEADM118"></a><div class="props_rev_3"><a id="GUID-819F0FC3-B1F6-4E6E-889D-12C3812010DB" name="GUID-819F0FC3-B1F6-4E6E-889D-12C3812010DB"></a><h3 id="AEADM-GUID-819F0FC3-B1F6-4E6E-889D-12C3812010DB" class="sect3"><span class="enumeration_section">2.11.2 </span>Viewing Preferences by User
+               </h3>
+               <div>
+                  <p>View user preferences by user on the Preferences by User page.</p>
+                  <div class="section">
+                     <p>To view the preferences by user:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Meta Data, click <span class="uicontrol bold">Session State</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Preferences by User</span>. </span><div>
+                           <p>The Preferences by User page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>You can customize the appearance of the page using the Search bar at the top of the page.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" title="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">Managing User Preferences</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM349"></a><div class="props_rev_3"><a id="GUID-5765813E-01DE-432C-BDA1-E501528A3608" name="GUID-5765813E-01DE-432C-BDA1-E501528A3608"></a><h3 id="AEADM-GUID-5765813E-01DE-432C-BDA1-E501528A3608" class="sect3"><span class="enumeration_section">2.11.3 </span>Viewing Current User Preferences
+               </h3>
+               <div>
+                  <p>View current user preferences.</p>
+                  <div class="section">
+                     <p>To view current user preferences:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Meta Data, click <span class="uicontrol bold">Session State</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Current User Preferences</span>. </span><div>
+                           <p>The Current user Preferences page appears. </p>
+                           <p>You can customize the appearance of the page using the Search bar at the top of the page. </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" title="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">Managing User Preferences</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM125"></a><div class="props_rev_3"><a id="GUID-1D199DE4-EC88-4D38-A3D5-9508A7A88D99" name="GUID-1D199DE4-EC88-4D38-A3D5-9508A7A88D99"></a><h3 id="AEADM-GUID-1D199DE4-EC88-4D38-A3D5-9508A7A88D99" class="sect3"><span class="enumeration_section">2.11.4 </span>Purging Preferences for a Specific User
+               </h3>
+               <div>
+                  <p>Purge preferences for a specific user on the Purge Preferences page.</p>
+                  <div class="section">
+                     <p>To purge preferences for a specific user:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Meta Data, click <span class="uicontrol bold">Session State</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Purge Preferences by User</span>.</span></li>
+                     <li class="stepexpand"><span>On the Purge Preferences page, select a specific user and click
+                        <span class="uicontrol bold">Report</span>.</span><div>
+                           
+                           <p>A report appears at the bottom of the page.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To purge the displayed user preferences, click <span class="uicontrol bold">Purge User Preferences</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" title="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">Managing User Preferences</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM350"></a><div class="props_rev_3"><a id="GUID-517F64E7-7BAD-486D-B17C-CF95CEE9C2A8" name="GUID-517F64E7-7BAD-486D-B17C-CF95CEE9C2A8"></a><h3 id="AEADM-GUID-517F64E7-7BAD-486D-B17C-CF95CEE9C2A8" class="sect3"><span class="enumeration_section">2.11.5 </span>Purging Preferences for the Current User
+               </h3>
+               <div>
+                  <p>Purge preferences for the current user on the Current User Preferences page.</p>
+                  <div class="section">
+                     <p>To purge preferences for the current user:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The Workspace Administration home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Administration page, click <span class="uicontrol bold">Manage Service</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Meta Data, click <span class="uicontrol bold">Session State</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Purge Preferences for Current User</span>. </span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">View Preferences</span> or <span class="uicontrol bold">Reset Preferences</span>.</span></li>
+                     <li class="stepexpand"><span>If you select <span class="uicontrol bold">View Preferences</span>, the Current User Preferences page appears. To reset the user preferences, click <span class="uicontrol bold">Reset</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" title="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">Managing User Preferences</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM123"></a><div class="props_rev_3"><a id="GUID-3ABDDFEA-1477-4235-9F83-6D73D6BE6053" name="GUID-3ABDDFEA-1477-4235-9F83-6D73D6BE6053"></a><h3 id="AEADM-GUID-3ABDDFEA-1477-4235-9F83-6D73D6BE6053" class="sect3"><span class="enumeration_section">2.11.6 </span>Removing User Preferences Programmatically
+               </h3>
+               <div>
+                  <p>Remove user preferences programmatically using a PL/SQL API.</p>
+                  <div class="section">
+                     <p>To remove user preferences programmatically, use the <code class="codeph">REMOVE_PREFERENCE</code> procedure to remove a user level preference called <code class="codeph">NAMED_PREFERENCE</code>. For example:
+                     </p><pre class="oac_no_warn" dir="ltr">APEX_UTIL.REMOVE_PREFERENCE(
+p_preference=&gt;'NAMED_PREFERENCE');
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-3ABDDFEA-1477-4235-9F83-6D73D6BE6053__GUID-4F1EFB20-EE79-408D-AB73-4F45D62D3504">
+                     <p class="notep1">See Also:</p>
+                     <p>"REMOVE_PREFERENCE" in <a href="../aeapi/REMOVE_PREFERENCE-Procedure.html#AEAPI167" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" title="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">Managing User Preferences</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM124"></a><div class="props_rev_3"><a id="GUID-09DEBB14-979E-48A7-8470-2710457DB48F" name="GUID-09DEBB14-979E-48A7-8470-2710457DB48F"></a><h3 id="AEADM-GUID-09DEBB14-979E-48A7-8470-2710457DB48F" class="sect3"><span class="enumeration_section">2.11.7 </span>Resetting User Preferences Using a Page Process
+               </h3>
+               <div>
+                  <p>Reset user preferences by creating a page process. </p>
+                  <div class="section">
+                     <p>To reset user preferences using a page process:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer and click the <span class="uicontrol bold">Processing</span> tab.</span></li>
+                     <li class="stepexpand"><span>Under Processes, right-click and select <span class="uicontrol bold">Create Process</span>.</span><div>Process attributes display in the Property Editor.
+                           <div class="infobox-tip" id="GUID-09DEBB14-979E-48A7-8470-2710457DB48F__GUID-5E2839D6-A223-4536-866A-C43BD629B9BD">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the Help tab in the center pane.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Identification:</span><ol type="a" class="single-step">
+                           <li><span>Name - Enter the name of the process.</span></li>
+                        </ol>
+                        <ol type="a" class="single-step">
+                           <li><span>Type - Select <span class="uicontrol bold">Clear Session State</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Settings, Type - Select
+                                                  <span class="uicontrol bold">Clear Current
+                                                  Session</span>.</span></li>
+                     <li class="stepexpand"><span>Under Execution Options:</span><ol type="a">
+                           <li><span>Sequence - Specify the sequence for this component. The sequence determines the order of execution.</span></li>
+                           <li><span>Point - Select the point at which the process executes.</span></li>
+                           <li><span>Run Process - Select the frequency at which
+                                                  the process executes.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Review and complete any additional attributes.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-09DEBB14-979E-48A7-8470-2710457DB48F__GUID-8607D3A7-1D4F-4D74-8505-3D0B948D72AF">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="../htmdb/understanding-page-processes.html#GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947" target="_blank">Creating Page Processes</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-user-preferences.html#GUID-E1E4C6E0-1AB9-4FD7-8ED1-1B7B2B160511" title="Developers can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. Administrators can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.">Managing User Preferences</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

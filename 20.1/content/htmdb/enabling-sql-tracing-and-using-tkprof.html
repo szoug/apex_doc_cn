@@ -1,0 +1,139 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="task">
+      <meta name="DC.Title" content="Enabling SQL Tracing and Using TKPROF">
+      <meta name="abstract" content="Enable SQL tracing and then analyze the temporary file Oracle Application Express creates using the TKPROF utility.">
+      <meta name="description" content="Enable SQL tracing and then analyze the temporary file Oracle Application Express creates using the TKPROF utility.">
+      <meta name="DC.subject" content="SQL tracing, enabling, debugging, SQL tracing">
+      <meta name="keywords" content="SQL tracing, enabling, debugging, SQL tracing">
+      <meta name="DC.Relation" scheme="URI" content="debugging-an-application.html#GUID-2A0361B3-56AC-41F0-9FF3-C3DF15432762">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-273E71BB-712B-4D5A-B5F3-E5F87CC1F465">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Enable SQL tracing and then analyze the temporary file Oracle Application Express creates using the TKPROF utility.">
+      <meta name="description" content="Enable SQL tracing and then analyze the temporary file Oracle Application Express creates using the TKPROF utility.">
+      <title>Enabling SQL Tracing and Using TKPROF</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Enable SQL tracing and then analyze the temporary file Oracle Application Express creates using the TKPROF utility.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-monitoring-application-and-page-resource-use.html" title="Previous" type="text/html">
+      <link rel="next" href="utilizing-debug-mode.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-monitoring-application-and-page-resource-use.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="utilizing-debug-mode.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="debugging-an-application.html" property="item" typeof="WebPage"><span property="name">Debugging an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Enabling SQL Tracing and Using TKPROF</li>
+            </ol>
+            <a id="GUID-273E71BB-712B-4D5A-B5F3-E5F87CC1F465" name="GUID-273E71BB-712B-4D5A-B5F3-E5F87CC1F465"></a><a id="HTMDB10004"></a>
+            
+            <h2 id="HTMDB-GUID-273E71BB-712B-4D5A-B5F3-E5F87CC1F465" class="sect2"><span class="enumeration_section">24.4 </span>Enabling SQL Tracing and Using TKPROF
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Enable SQL tracing and then analyze the temporary file Oracle Application Express creates using the TKPROF utility. </p>
+               <div class="section">
+                  <p>Tracing your session can be a very effective way to debug an application. From a database perspective, each page request is a single database session. If you enable SQL tracing, then Oracle Application Express creates a temporary file you can then analyze using the TKPROF utility. </p>
+                  <p>You enable SQL tracing in Oracle Application Express by using <code class="codeph">f?p</code> syntax to set the argument <code class="codeph">p_trace=YES</code>. For example, to trace the display of page 1 in application 100, you would use the syntax: 
+                  </p><pre class="oac_no_warn" dir="ltr">http:/.../f?p=100:1&amp;p_trace=YES
+</pre><p>To use the TKPROF utility: </p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>Log in to SQL*Plus as a privileged user.</span></li>
+                  <li class="stepexpand"><span>Execute the following statement:</span><div><pre class="oac_no_warn" dir="ltr">show parameter USER_DUMP_DEST
+</pre></div>
+                  </li>
+                  <li class="stepexpand"><span>Navigate to the directory in which the trace file is created. </span></li>
+                  <li class="stepexpand"><span>Run the TKPROF utility from the operating system prompt using the following syntax:</span><div><pre class="oac_no_warn" dir="ltr">tkprof filename1 filename2 [waits=yes|no] [sort=option] [print=n]
+    [aggregate=yes|no] [insert=filename3] [sys=yes|no] [table=schema.table]
+    [explain=user/password] [record=filename4] [width=n]
+</pre><p>The input and output files are the only required arguments.</p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>To view online Help, invoke TKPROF without arguments.</span></li>
+               </ol>
+               <div class="section">
+                  <div class="infoboxnotealso" id="GUID-273E71BB-712B-4D5A-B5F3-E5F87CC1F465__GUID-C1071104-2E83-4EED-BD0F-03D217112ECF">
+                     <p class="notep1">See Also:</p>
+                     <p>"Tools for End-to-End Application Tracing" in <a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/htmdb&amp;id=TGSQL-GUID-31EF2BD5-28DB-488F-A855-8DA324F6970B" target="_blank"><span class="italic">Oracle Database SQL Tuning Guide</span></a> for information about using the TKPROF program
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="debugging-an-application.html#GUID-2A0361B3-56AC-41F0-9FF3-C3DF15432762" title="Learn about best practices for debugging an Oracle Application Express application.">Debugging an Application</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

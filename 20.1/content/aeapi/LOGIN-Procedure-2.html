@@ -1,0 +1,206 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="LOGIN Procedure">
+      <meta name="DC.subject" content="APEX_CUSTOM_AUTH, LOGIN, Login API">
+      <meta name="keywords" content="APEX_CUSTOM_AUTH, LOGIN, Login API">
+      <meta name="DC.Relation" scheme="URI" content="APEX_CUSTOM_AUTH.html#GUID-44772E73-B910-400C-869C-8CA23D3C88E0">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>LOGIN Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="IS_SESSION_VALID-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="LOGOUT-Procedure-DEPRECATED.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="IS_SESSION_VALID-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="LOGOUT-Procedure-DEPRECATED.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_CUSTOM_AUTH.html" property="item" typeof="WebPage"><span property="name"> APEX_CUSTOM_AUTH</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">LOGIN Procedure</li>
+            </ol>
+            <a id="GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD" name="GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD"></a><a id="AEAPI889"></a><a id="AEAPI890"></a><a id="AEAPI891"></a><a id="AEAPI892"></a><a id="AEAPI231"></a>
+            
+            <h2 id="AEAPI-GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD" class="sect2"><span class="enumeration_section">11.13 </span>LOGIN Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Also referred to as the "Login API," this procedure performs authentication and session registration.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD__GUID-F6A9EA8C-5503-408A-B4FE-D4EAF488B657">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_CUSTOM_AUTH.LOGIN(
+    p_uname                    IN  VARCHAR2  DEFAULT NULL,
+    p_password                 IN  VARCHAR2  DEFAULT NULL,
+    p_session_id               IN  VARCHAR2  DEFAULT NULL,
+    p_app_page                 IN  VARCHAR2  DEFAULT NULL,
+    p_entry_point              IN  VARCHAR2  DEFAULT NULL,
+    p_preserve_case            IN  BOOLEAN   DEFAULT FALSE);</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD__GUID-AB662E5F-683D-4159-981D-43B0F78D90BA">Parameter</p>
+                  <div class="tblformal" id="GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD__BABBIBGF">
+                     <p class="titleintable">Table 11-5 LOGIN Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="LOGIN Parameters" summary="Parameter descriptions for the LOGIN procedure." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d43404e75">Parameter</th>
+                              <th align="left" valign="bottom" width="69%" id="d43404e78">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d43404e83" headers="d43404e75 ">
+                                 <p><code class="codeph">p_uname</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d43404e83 d43404e78 ">
+                                 <p>Login name of the user.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d43404e91" headers="d43404e75 ">
+                                 <p><code class="codeph">p_password</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d43404e91 d43404e78 ">
+                                 <p>Clear text user password.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d43404e99" headers="d43404e75 ">
+                                 <p><code class="codeph">p_session_id</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d43404e99 d43404e78 ">
+                                 <p>Current Oracle Application Express session ID.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d43404e107" headers="d43404e75 ">
+                                 <p><code class="codeph">p_app_page</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d43404e107 d43404e78 ">
+                                 <p>Current application ID. After login page separated by a colon (:).</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d43404e115" headers="d43404e75 ">
+                                 <p><code class="codeph">p_entry_point</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d43404e115 d43404e78 ">
+                                 <p>Internal use only.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d43404e123" headers="d43404e75 ">
+                                 <p><code class="codeph">p_preserve_case</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d43404e123 d43404e78 ">
+                                 <p>If TRUE, do not upper <code class="codeph">p_uname</code> during session registration
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD__GUID-7EA97EC7-12F0-473B-BD9F-41B605E2252C">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example performs the user authentication and session registration.</p><pre class="pre codeblock"><code>BEGIN
+    APEX_CUSTOM_AUTH.LOGIN (
+        p_uname       =&gt; 'FRANK',
+        p_password    =&gt; 'secret99',
+        p_session_id  =&gt; V('APP_SESSION'),
+        p_app_page    =&gt; :APP_ID||':1');
+END;
+</code></pre><div class="infoboxnote" id="GUID-FCB0BBAE-9587-4052-87A5-5A6BA81FB1AD__GUID-BF032686-4F25-4CB0-8BF2-4B06F82E2A2C">
+                     <p class="notep1">Note:</p>
+                     <p>Do not use bind variable notations for <code class="codeph">p_session_id</code> argument.
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_CUSTOM_AUTH.html#GUID-44772E73-B910-400C-869C-8CA23D3C88E0">APEX_CUSTOM_AUTH</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

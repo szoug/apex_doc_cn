@@ -1,0 +1,358 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Automating the Oracle Application Express Installation Process">
+      <meta name="abstract" content="Automate the process of installing and configuring an Oracle Application Express instance.">
+      <meta name="description" content="Automate the process of installing and configuring an Oracle Application Express instance.">
+      <meta name="DC.Relation" scheme="URI" content="automating-the-Oracle-Application-Express-installation-process.html#GUID-F7ECBD78-287A-45BA-8AC1-BEA4D503FE27">
+      <meta name="DC.Relation" scheme="URI" content="automating-the-Oracle-Application-Express-installation-process.html#GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-C18CDE2A-F730-41D5-85DC-FA010A2CFCD4">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Automate the process of installing and configuring an Oracle Application Express instance.">
+      <meta name="description" content="Automate the process of installing and configuring an Oracle Application Express instance.">
+      <title>Automating the Oracle Application Express Installation Process</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Automate the process of installing and configuring an Oracle Application Express instance.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="converting-between-runtime-and-full-developmentenvironments.html" title="Previous" type="text/html">
+      <link rel="next" href="maximizing-uptime-during-an-application-express-upgrade.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="converting-between-runtime-and-full-developmentenvironments.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="maximizing-uptime-during-an-application-express-upgrade.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Automating the Oracle Application
+                                        Express Installation Process</li>
+            </ol>
+            <a id="GUID-C18CDE2A-F730-41D5-85DC-FA010A2CFCD4" name="GUID-C18CDE2A-F730-41D5-85DC-FA010A2CFCD4"></a>
+            
+            <h2 id="HTMIG-GUID-C18CDE2A-F730-41D5-85DC-FA010A2CFCD4" class="sect2"><span class="enumeration_chapter">C </span>Automating the <span>Oracle Application
+                                        Express</span> Installation Process
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Automate the process of installing and configuring an <span>Oracle Application
+                                        Express</span> instance.
+            </p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="automating-the-Oracle-Application-Express-installation-process.html#GUID-F7ECBD78-287A-45BA-8AC1-BEA4D503FE27">About apxsilentins.sql</a><br>Run the <code class="codeph">apxsilentins.sql</code> script to automate the         installation and configuration of an Oracle Application Expresss instance. 
+                  </li>
+                  <li class="ulchildlink"><a href="automating-the-Oracle-Application-Express-installation-process.html#GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190">Running apxsilentins.sql</a><br>Run the <code class="codeph">apxsilentins.sql</code> script. 
+                  </li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-F7ECBD78-287A-45BA-8AC1-BEA4D503FE27" name="GUID-F7ECBD78-287A-45BA-8AC1-BEA4D503FE27"></a><h3 id="HTMIG-GUID-F7ECBD78-287A-45BA-8AC1-BEA4D503FE27" class="sect3"><span class="enumeration_section">C.1 </span>About apxsilentins.sql
+               </h3>
+               <div>
+                  <p>Run the <code class="codeph">apxsilentins.sql</code> script to automate the
+        installation and configuration of an Oracle Application Expresss instance. 
+                  </p>
+                  <p>Traditionally you run the run the <code class="codeph">apexins.sql</code> script to install
+            Oracle Application Express and then perform a multiple other steps to configure the
+                <code class="codeph">APEX_PUBLIC_USER</code> account.  The <code class="codeph">apxsilentins.sql</code>
+            script simplifies the installation and configuation process.
+                <code class="codeph">apxsilentins.sql</code> accepts additional parameters so that passwords
+            can be passed for following database users associated with the Oracle Application
+            Express schema: <code class="codeph">APEX_PUBLIC_USER</code>, <code class="codeph">APEX_LISTENER</code>,
+                <code class="codeph">APEX_REST_PUBLIC_USER</code> and  the Oracle Application Express Instance
+            Administration user, <code class="codeph">ADMIN</code>. You can also use these passwords for the
+            configuration of middle tiers and other processes. <code class="codeph">apxsilentins.sql</code>
+            also completes other installation steps such as creating and setting the password for
+            the Instance Administration user, <code class="codeph">ADMIN</code>, configuring a network ACL, and
+            configuring Oracle REST Data Services.
+                  </p>
+                  <div class="p">By running the <code class="codeph">apxsilentins.sql</code> script, removes the need for
+            completing the following topics:
+                     <ul style="list-style-type: disc;" id="GUID-F7ECBD78-287A-45BA-8AC1-BEA4D503FE27__UL_GYQ_2GS_2JB">
+                        <li>
+                           
+                           <p><span class="q">"Installing Application Express"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"Creating or Updating Your Instance Administration
+                        Account"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"Configuring the APEX_PUBLIC_USER Account"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"Enabling Network Services in Oracle Database 11g or
+                        Later"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"Configuring Static File Support"</span>
+                            (<code class="codeph">apex_rest_config.sql</code>)
+                           </p>
+                           
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="automating-the-Oracle-Application-Express-installation-process.html#GUID-C18CDE2A-F730-41D5-85DC-FA010A2CFCD4" title="Automate the process of installing and configuring an Oracle Application Express instance.">Automating the Oracle Application Express Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190" name="GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190"></a><h3 id="HTMIG-GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190" class="sect3"><span class="enumeration_section">C.2 </span>Running apxsilentins.sql
+               </h3>
+               <div>
+                  <p>Run the <code class="codeph">apxsilentins.sql</code> script. 
+                  </p>
+                  <p>To run <code class="codeph">apxsilentins.sql</code>:
+                  </p>
+                  <ol>
+                     <li class="stepexpand"><span>Change your working directory to <code class="codeph">apex</code>.</span></li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect as user <code class="codeph">SYS</code> to the database where
+                    Oracle Application Express is installed. You will need to specify the
+                        <code class="codeph">SYSDBA</code> role. For example:</span><div>
+                           
+                           <ul style="list-style-type: disc;" id="GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190__UL_A2Q_43S_2JB">
+                              <li>
+                                 
+                                 <p>On Windows:</p>
+                                 <pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre>
+                                 </li>
+                              <li>
+                                 
+                                 <p>On UNIX and Linux:</p>
+                                 <pre class="oac_no_warn" dir="ltr">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre>
+                                 </li>
+                           </ul>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Disable any existing password complexity rules for the default profile. </span></li>
+                     <li class="stepexpand"><span>Run <code class="codeph">apxsilentins.sql</code> passing the following eight arguments in
+                    the order shown:</span><div>
+                           <pre class="oac_no_warn" dir="ltr">@apxsilentins.sql tablespace_apex tablespace_files tablespace_temp images
+      password_apex_pub_user password_apex_listener password_apex_rest_pub_user
+      password_internal_admin</pre>
+                           <p>Where:</p>
+                           
+                           <ul style="list-style-type: disc;" id="GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190__UL_G1P_DJS_2JB">
+                              <li>
+                                 
+                                 <p><span class="italic"><code class="codeph">tablespace_apex</code></span> is the name of
+                                the tablespace for the Oracle Application Express application user.
+                            
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><span class="italic"><code class="codeph">tablespace_files</code></span> is the name of
+                                the tablespace for the Oracle Application Express files user.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><span class="italic"><code class="codeph">tablespace_temp</code></span> is the name of
+                                the temporary tablespace or tablespace group.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><span class="italic"><code class="codeph">images</code></span> is the virtual directory
+                                for Oracle Application Express images. For installations using EPG,
+                                    <code class="codeph">/i/</code> is the required value for the images
+                                argument. To support future Oracle Application Express upgrades,
+                                define the virtual image directory as <code class="codeph">/i/</code>.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><code class="codeph">password_apex_pub_user</code> is the password
+                                for the <code class="codeph">APEX_PUBLIC_USER</code> database account.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><code class="codeph">password_apex_listener</code> is the password
+                                for the <code class="codeph">APEX_LISTENER</code> database account.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><code class="codeph">password_apex_rest_pub_user</code> is the
+                                password for the <code class="codeph">APEX_REST_PUBLIC_USER</code> database
+                                account.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><code class="codeph">password_internal_admin</code> is the password
+                                for the Instance Administration <code class="codeph">ADMIN</code> Application
+                                Express account. This password must meet the following requirements: 
+                                 </p>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190__UL_C5L_SMQ_3JB">
+                                    <li>
+                                       
+                                       <p>Contain at least 6 characters.</p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p>Contain at least one numeric character (0123456789).</p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p>Contain at least one punctuation character
+                                        (!"#$%&amp;()``*+,-/:;?_).</p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p>Contain at least one uppercase alphabetic
+                                        character.</p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="example" id="GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190__GUID-CBF7DCF1-0137-40E1-BFCB-ABDC996C710B">
+                     
+                     <p>For example:</p>
+                     <pre class="oac_no_warn" dir="ltr">@apxsilentins.sql SYSAUX SYSAUX TEMP /i/ Passw0rd!1 Passw0rd!2 Passw0rd!3 Passw0rd!4</pre>
+                     </div>
+                  <!-- class="example" -->
+                  <div class="section">
+                     
+                     <p>Once <code class="codeph">apxsilentins.sql</code> completes, you complete the steps
+                in <span class="q">"Downloading and Installing Oracle REST Services"</span> and <span class="q">"Configuring Oracle
+                    REST Data Services"</span> (except for <span class="q">"Configuring Static File
+                    Support."</span>)
+                     </p>
+                     
+                     <p>Use the passwords you supplied to <code class="codeph">apxsilentins.sql</code> when
+                completing these steps. Then, move on to <span class="q">"Creating a Workspace and
+                    Adding Oracle Application Express Users."</span></p>
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190__GUID-942EA18F-11A9-4AA3-81D4-6440140778E3">
+                     <p class="notep1">See Also:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-250648A9-B9E3-4D6C-AF0A-4054054CD190__UL_CZ4_DNT_2JB">
+                        <li>
+                           
+                           <p><span class="q">"<a href="downloading-installing-Oracle-REST-data-services.html#GUID-1F0064FB-7F00-4ACE-85BD-E9B2AF73A233" title="Learn about downloading and installing Oracle REST Data Services.">Downloading and Installing Oracle REST Data Services</a>"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"<a href="configuring-Oracle-REST-data-services.html#GUID-AD38DE06-A560-4D6D-BD50-6E5A8E513BBF" title="Configuring Oracle REST Data Services requires that you copy the images directory, run a configuration to configure RESTful Services, configure static files support, and secure Oracle REST data service.">Configuring Oracle REST Data Services</a>"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"<a href="creating-workspace-and-adding-Oracle-AE-users.html#GUID-EB1F45FA-29B3-4E9F-9493-13F16772742C" title="Before you can develop or install applications, you must create a workspace, add Oracle Application Express users, and sign in to your workspace.">Creating a Workspace and Adding Oracle Application Express Users</a>"</span></p>
+                           
+                        </li>
+                     </ul>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="automating-the-Oracle-Application-Express-installation-process.html#GUID-C18CDE2A-F730-41D5-85DC-FA010A2CFCD4" title="Automate the process of installing and configuring an Oracle Application Express instance.">Automating the Oracle Application Express Installation Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

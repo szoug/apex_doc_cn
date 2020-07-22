@@ -1,0 +1,568 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding BLOB Support in Forms and Reports">
+      <meta name="abstract" content="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">
+      <meta name="description" content="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">
+      <meta name="DC.subject" content="BLOBs, support, BLOB support in reports, about, providing download link, displaying the BLOB, APEX_UTIL.GET_BLOB_FILE_SRC, working with procedurally">
+      <meta name="keywords" content="BLOBs, support, BLOB support in reports, about, providing download link, displaying the BLOB, APEX_UTIL.GET_BLOB_FILE_SRC, working with procedurally">
+      <meta name="DC.Relation" scheme="URI" content="developing-reports.html#GUID-A63ECD33-D759-4725-9666-A02719FB35B8">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms-and-reports.html#GUID-2B481A51-5C0C-46C9-B3A2-E983A7C804EE">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms-and-reports.html#GUID-C663D7FC-A8D9-4567-9F1F-DFFC51B11522">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms-and-reports.html#GUID-29B60760-0BAC-44CB-BC42-8BB06F9FF44D">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms-and-reports.html#GUID-E39D5AD9-6351-467B-AA4D-5133DD255EA0">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">
+      <meta name="description" content="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">
+      <title>Understanding BLOB Support in Forms and Reports</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="printing-report-regions.html" title="Previous" type="text/html">
+      <link rel="next" href="developing-forms.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="printing-report-regions.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="developing-forms.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="developing-reports.html" property="item" typeof="WebPage"><span property="name">Developing Reports</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding BLOB Support in Forms and Reports</li>
+            </ol>
+            <a id="GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB" name="GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB"></a><a id="HTMDB29659"></a>
+            
+            <h2 id="HTMDB-GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB" class="sect2"><span class="enumeration_section">10.10 </span>Understanding BLOB Support in Forms and Reports
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Application Express includes declarative <code class="codeph">BLOB</code> support to enable developers to declaratively upload files in forms, and download or display files in reports. 
+               </p>
+               <p><code class="codeph">BLOB</code> display and download can also be authored procedurally using PL/SQL. This section describes how to upload, download and display files, and how to manage additional file attributes such as <code class="codeph">MIME</code> type and file name that are important for proper management of files stored in <code class="codeph">BLOB</code> columns. Using this functionality you can easily extend your Oracle Application Express applications to manage files including images, documents, videos, and so on.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms-and-reports.html#GUID-2B481A51-5C0C-46C9-B3A2-E983A7C804EE">About BLOB Support in Reports</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms-and-reports.html#GUID-C663D7FC-A8D9-4567-9F1F-DFFC51B11522">About Providing a Download Link</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms-and-reports.html#GUID-29B60760-0BAC-44CB-BC42-8BB06F9FF44D">About Displaying the BLOB</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms-and-reports.html#GUID-E39D5AD9-6351-467B-AA4D-5133DD255EA0">About Working With BLOBs Procedurally</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="developing-reports.html#GUID-A63ECD33-D759-4725-9666-A02719FB35B8" title="In Oracle Application Express, a report is the formatted result of a SQL query. You can generate the SQL query by selecting a table or view in a wizard, or by defining the SQL query manually.">Developing Reports</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29660"></a><div class="props_rev_3"><a id="GUID-2B481A51-5C0C-46C9-B3A2-E983A7C804EE" name="GUID-2B481A51-5C0C-46C9-B3A2-E983A7C804EE"></a><h3 id="HTMDB-GUID-2B481A51-5C0C-46C9-B3A2-E983A7C804EE" class="sect3"><span class="enumeration_section">10.10.1 </span>About BLOB Support in Reports
+               </h3>
+               <div>
+                  <p>Oracle Application Express includes <code class="codeph">BLOB</code> support for both classic and interactive reports. If you use a wizard to create a report and include a column of type <code class="codeph">BLOB</code>, basic support is included. Additional information should be added after generation to make the download capability more user friendly.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-blob-support-in-forms-and-reports.html#GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB" title="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">Understanding BLOB Support in Forms and Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29661"></a><div class="props_rev_3"><a id="GUID-C663D7FC-A8D9-4567-9F1F-DFFC51B11522" name="GUID-C663D7FC-A8D9-4567-9F1F-DFFC51B11522"></a><h3 id="HTMDB-GUID-C663D7FC-A8D9-4567-9F1F-DFFC51B11522" class="sect3"><span class="enumeration_section">10.10.2 </span>About Providing a Download Link
+               </h3>
+               <div>
+                  <p>To facilitate the inclusion of a download link in a report, the report includes the selection of the length of the <code class="codeph">BLOB</code> (for example,<code class="codeph"> dbms_lob.getlength(RESUME)</code>). If the length is 0, the <code class="codeph">BLOB</code> is <code class="codeph">NULL</code> and no download link is displayed. In the same way you specify a format mask for a date or number you can format a download link. The DOWNLOAD format is more complex however then other format masks in that you are required to specify at least three parameters, for example: 
+                  </p><pre class="oac_no_warn" dir="ltr">DOWNLOAD:EMP:RESUME:EMPNO
+</pre><p>The following table describes the parameters of the DOWNLOAD format:</p>
+                  <div class="tblformal" id="GUID-C663D7FC-A8D9-4567-9F1F-DFFC51B11522__GUID-57ED57F0-7D31-43C3-B03D-3CE5BE8D7380">
+                     <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table describes the parameters of the DOWNLOAD format." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="9%" id="d114795e259">Position</th>
+                              <th align="left" valign="bottom" width="23%" id="d114795e262">Attribute</th>
+                              <th align="left" valign="bottom" width="15%" id="d114795e265">Required</th>
+                              <th align="left" valign="bottom" width="52%" id="d114795e268">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e273" headers="d114795e259 ">
+                                 <p>1</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e273 d114795e262 ">
+                                 <p>DOWNLOAD</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e273 d114795e265 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e273 d114795e268 ">
+                                 <p>Identifies the DOWNLOAD report format mask.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e286" headers="d114795e259 ">
+                                 <p>2</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e286 d114795e262 ">
+                                 <p>Table Name</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e286 d114795e265 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e286 d114795e268 ">
+                                 <p>Case sensitive name of table containing target column of type <code class="codeph">BLOB</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e302" headers="d114795e259 ">
+                                 <p>3</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e302 d114795e262 ">
+                                 <p>Column containing BLOB</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e302 d114795e265 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e302 d114795e268 ">
+                                 <p>Case sensitive name of column of type <code class="codeph">BLOB</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e318" headers="d114795e259 ">
+                                 <p>4</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e318 d114795e262 ">
+                                 <p>Primary Key Column 1</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e318 d114795e265 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e318 d114795e268 ">
+                                 <p>Case sensitive name of primary key column 1.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e331" headers="d114795e259 ">
+                                 <p>5</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e331 d114795e262 ">
+                                 <p>Primary Key Column 2</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e331 d114795e265 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e331 d114795e268 ">
+                                 <p>Case sensitive name of primary key column 2.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e344" headers="d114795e259 ">
+                                 <p>6</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e344 d114795e262 ">
+                                 <p>MIME type Column</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e344 d114795e265 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e344 d114795e268 ">
+                                 <p>Case sensitive column name used to store the <code class="codeph">MIME</code> type.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e360" headers="d114795e259 ">
+                                 <p>7</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e360 d114795e262 ">
+                                 <p>Filename Column</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e360 d114795e265 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e360 d114795e268 ">
+                                 <p>Case sensitive column name used to store the filename of the <code class="codeph">BLOB</code>. If <code class="codeph">NULL</code>, the column name is used as the default when a user downloads the file.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e379" headers="d114795e259 ">
+                                 <p>8</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e379 d114795e262 ">
+                                 <p>Last Update Column</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e379 d114795e265 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e379 d114795e268 ">
+                                 <p>Case sensitive column name used to store the last update date of the <code class="codeph">BLOB</code>. If used, the HTTP header of the file download indicates the date of last modification and web browsers will be able to cache the <code class="codeph">BLOB</code>. If not specified, the browser may not be able to cache files.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e398" headers="d114795e259 ">
+                                 <p>9</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e398 d114795e262 ">
+                                 <p>Character Set Column</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e398 d114795e265 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e398 d114795e268 ">
+                                 <p>Case sensitive column name used to store the character set of the <code class="codeph">BLOB</code>. Most relevant for Asian languages which may need to maintain the character set encoding.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e414" headers="d114795e259 ">
+                                 <p>10</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e414 d114795e262 ">
+                                 <p>Content Disposition</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e414 d114795e265 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e414 d114795e268 ">
+                                 <p>Specify <code class="codeph">inline</code> or <code class="codeph">attachment</code>. All other values are ignored. If a <code class="codeph">MIME</code> type is provided and the file is a type that can be displayed, the file is displayed. If <code class="codeph">MIME</code> type is not provided, or the file cannot be displayed inline, the user is prompted to download.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e439" headers="d114795e259 ">
+                                 <p>11</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e439 d114795e262 ">
+                                 <p>Download Text</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e439 d114795e265 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e439 d114795e268 ">
+                                 <p>String used for the download link. If nothing is provided, <code class="codeph">Download</code> is used. Note that this supports substitutions (useful for translated applications).
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="9%" id="d114795e456" headers="d114795e259 ">
+                                 <p>12</p>
+                              </td>
+                              <td align="left" valign="top" width="23%" headers="d114795e456 d114795e262 ">
+                                 <p>Table Owner</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e456 d114795e265 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d114795e456 d114795e268 ">
+                                 <p>Identifies name of table owner containing target column of type BLOB.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p>Consider the following example:</p><pre class="oac_no_warn" dir="ltr">DOWNLOAD:EMP:RESUME:EMPNO::RESUME_MIMETYPE:RESUME_FILENAME:RESUME_LAST_UPDATE::attachment:Resume
+</pre><p>To be able to enter these parameters and create the format as described above. You have to select <span class="bold">Blob Format</span> for Number/Date format item. Once selected, the Blob Column attributes region displays and you can fill in all parameters as described above.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-blob-support-in-forms-and-reports.html#GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB" title="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">Understanding BLOB Support in Forms and Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29662"></a><div class="props_rev_3"><a id="GUID-29B60760-0BAC-44CB-BC42-8BB06F9FF44D" name="GUID-29B60760-0BAC-44CB-BC42-8BB06F9FF44D"></a><h3 id="HTMDB-GUID-29B60760-0BAC-44CB-BC42-8BB06F9FF44D" class="sect3"><span class="enumeration_section">10.10.3 </span>About Displaying the BLOB
+               </h3>
+               <div>
+                  <p>If the <code class="codeph">BLOB</code> you are working with is an image, you can display it in the report using the new report format mask of 'IMAGE'. Regardless of the <code class="codeph">MIME</code> type, the report always attempts to display the BLOB. If the BLOB cannot be rendered, a broken image is displayed.
+                  </p>
+                  <p>The following table describes the parameters of the IMAGE format mask:</p>
+                  <div class="tblformal" id="GUID-29B60760-0BAC-44CB-BC42-8BB06F9FF44D__GUID-D54C0511-D5AB-4CB5-B17C-65534D696491">
+                     <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table describes the parameters of the IMAGE format." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="13%" id="d114795e564">Position</th>
+                              <th align="left" valign="bottom" width="15%" id="d114795e567">Attribute</th>
+                              <th align="left" valign="bottom" width="15%" id="d114795e570">Required</th>
+                              <th align="left" valign="bottom" width="57%" id="d114795e573">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e578" headers="d114795e564 ">
+                                 <p>1</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e578 d114795e567 ">
+                                 <p>IMAGE</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e578 d114795e570 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e578 d114795e573 ">
+                                 <p>Identifies the IMAGE report format mask.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e591" headers="d114795e564 ">
+                                 <p>2</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e591 d114795e567 ">
+                                 <p>Table Name</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e591 d114795e570 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e591 d114795e573 ">
+                                 <p>Case sensitive name of table containing target column of type <code class="codeph">BLOB</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e607" headers="d114795e564 ">
+                                 <p>3</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e607 d114795e567 ">
+                                 <p>Column containing BLOB</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e607 d114795e570 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e607 d114795e573 ">
+                                 <p>Case sensitive name of column of type <code class="codeph">BLOB</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e623" headers="d114795e564 ">
+                                 <p>4</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e623 d114795e567 ">
+                                 <p>Primary Key Column 1</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e623 d114795e570 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e623 d114795e573 ">
+                                 <p>Case sensitive name of primary key column 1.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e636" headers="d114795e564 ">
+                                 <p>5</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e636 d114795e567 ">
+                                 <p>Primary Key Column 2</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e636 d114795e570 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e636 d114795e573 ">
+                                 <p>Case sensitive name of primary key column 2.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e649" headers="d114795e564 ">
+                                 <p>6</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e649 d114795e567 ">
+                                 <p>MIME type Column</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e649 d114795e570 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e649 d114795e573 ">
+                                 <p>Case sensitive column name used to store the <code class="codeph">MIME</code> type.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e665" headers="d114795e564 ">
+                                 <p>7</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e665 d114795e567 ">
+                                 <p>Filename Column</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e665 d114795e570 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e665 d114795e573 ">
+                                 <p>Not used for IMAGE format but left in so that the format can easily be changed between IMAGE and DOWNLOAD.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e678" headers="d114795e564 ">
+                                 <p>8</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e678 d114795e567 ">
+                                 <p>Last Update Column</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e678 d114795e570 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e678 d114795e573 ">
+                                 <p>Case sensitive column name used to store the last update date of the <code class="codeph">BLOB</code>. If used, the HTTP header of the file download indicates the date of last modification and web browsers will be able to cache the <code class="codeph">BLOB</code>. If not specified, the browser may not be able to cache files.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e697" headers="d114795e564 ">
+                                 <p>9</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e697 d114795e567 ">
+                                 <p>Character Set Column</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e697 d114795e570 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e697 d114795e573 ">
+                                 <p>Not used for IMAGE format but left in so that the format can easily be changed between IMAGE and DOWNLOAD.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e710" headers="d114795e564 ">
+                                 <p>10</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e710 d114795e567 ">
+                                 <p>Content Disposition</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e710 d114795e570 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e710 d114795e573 ">
+                                 <p>Not used for IMAGE format but left in so that the format can easily be changed between IMAGE and DOWNLOAD.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e723" headers="d114795e564 ">
+                                 <p>11</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e723 d114795e567 ">
+                                 <p>Alt Text</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e723 d114795e570 ">
+                                 <p>No</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e723 d114795e573 ">
+                                 <p>String used for the alt tag associated with the image.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="13%" id="d114795e737" headers="d114795e564 ">
+                                 <p>12</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e737 d114795e567 ">
+                                 <p>Table Owner</p>
+                              </td>
+                              <td align="left" valign="top" width="15%" headers="d114795e737 d114795e570 ">
+                                 <p>Yes</p>
+                              </td>
+                              <td align="left" valign="top" width="57%" headers="d114795e737 d114795e573 ">
+                                 <p>Identifies name of table owner containing target column of type BLOB.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p>Consider the following example:</p><pre class="oac_no_warn" dir="ltr">IMAGE:EMP:RESUME:EMPNO::RESUME_MIMETYPE:RESUME_FILENAME:RESUME_LAST_UPDATE::attachment:Resume
+</pre><p>To be able to enter these parameters and create the format as described above. You have to select Blob Format for Number/Date format item. Once selected, a new region, Blob Column attributes, displays and you can fill in all parameters as described above.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-blob-support-in-forms-and-reports.html#GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB" title="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">Understanding BLOB Support in Forms and Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29663"></a><div class="props_rev_3"><a id="GUID-E39D5AD9-6351-467B-AA4D-5133DD255EA0" name="GUID-E39D5AD9-6351-467B-AA4D-5133DD255EA0"></a><h3 id="HTMDB-GUID-E39D5AD9-6351-467B-AA4D-5133DD255EA0" class="sect3"><span class="enumeration_section">10.10.4 </span>About Working With BLOBs Procedurally
+               </h3>
+               <div>
+                  <p>As an alternative to using the built-in methods of providing a download link, you can use the <code class="codeph">APEX_UTIL.GET_BLOB_FILE_SRC</code> function. One advantage of this approach, is the ability to more specifically format the display of the image (with height and width tags). Note that this approach is only valid if called from a valid Oracle Application Express session. Also, this method requires that the parameters that describe the <code class="codeph">BLOB</code> to be listed as the format of a valid item within the application. That item is then referenced by the function.
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E39D5AD9-6351-467B-AA4D-5133DD255EA0__GUID-5F89D04D-40CB-48DC-A4E2-1C0D1E8273F8">
+                     <p class="notep1">See Also:</p>
+                     <p>"GET_BLOB_FILE_SRC Function" in the <a href="../aeapi/GET_BLOB_FILE_SRC-Function.html#AEAPI129" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-blob-support-in-forms-and-reports.html#GUID-C428EEED-3FF9-4A20-9731-1C17C10991DB" title="Oracle Application Express includes declarative BLOB support to enable developers to declaratively upload files in forms, and download or display files in reports.">Understanding BLOB Support in Forms and Reports</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

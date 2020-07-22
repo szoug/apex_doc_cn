@@ -1,0 +1,171 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Block to Page Region Mappings">
+      <meta name="DC.subject" content="Oracle Forms mappings, block to page region, single record block, tabular forms, master detail blocks, non-database blocks">
+      <meta name="keywords" content="Oracle Forms mappings, block to page region, single record block, tabular forms, master detail blocks, non-database blocks">
+      <meta name="DC.Relation" scheme="URI" content="understanding-Oracle-forms-modules.html#GUID-5B18910F-0F3B-4833-A19B-A3D0FFBA61D2">
+      <meta name="DC.Relation" scheme="URI" content="understanding-block-to-page-region-mappings.html#GUID-C0E6ADB8-D6F3-478F-8260-6F0A758FD1B1">
+      <meta name="DC.Relation" scheme="URI" content="understanding-block-to-page-region-mappings.html#GUID-70574AE2-20FC-46E1-AB7A-B8C8AEF2E8E5">
+      <meta name="DC.Relation" scheme="URI" content="understanding-block-to-page-region-mappings.html#GUID-81896469-B226-417E-AF5E-D8DDCB6CA75A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-block-to-page-region-mappings.html#GUID-B540E3B7-E6B6-4197-926E-7FDF881FF129">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-D99B94CB-397B-4B3B-8FB8-50440C1EA6EB">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Understanding Block to Page Region Mappings</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Application Migration Guide ">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Application Migration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-application-migration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-07T14:07:47-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2012, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24721-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-Oracl-forms-components.html" title="Previous" type="text/html">
+      <link rel="next" href="about-list-of-values-implementation.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Application Migration Guide">
+    <meta name="dcterms.isVersionOf" content="AEMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-Oracl-forms-components.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-list-of-values-implementation.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Application Migration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="comparing-Oracle-forms-to-Oracle-application-express-components.html" property="item" typeof="WebPage"><span property="name">Comparing Oracle Forms to Oracle Application Express Components</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-Oracle-forms-modules.html" property="item" typeof="WebPage"><span property="name">Understanding Oracle Forms Modules</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Block to Page Region Mappings</li>
+            </ol>
+            <a id="GUID-D99B94CB-397B-4B3B-8FB8-50440C1EA6EB" name="GUID-D99B94CB-397B-4B3B-8FB8-50440C1EA6EB"></a>
+            
+            <h2 id="AEMIG-GUID-D99B94CB-397B-4B3B-8FB8-50440C1EA6EB" class="sect2"><span class="enumeration_section">A.1.2 </span>Understanding Block to Page Region Mappings
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This section describes the differences between block and page region mappings. The section also explains different Oracle Forms block types and how they are mapped into an Oracle Application Express application.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-block-to-page-region-mappings.html#GUID-C0E6ADB8-D6F3-478F-8260-6F0A758FD1B1">About Single Record Blocks</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-block-to-page-region-mappings.html#GUID-70574AE2-20FC-46E1-AB7A-B8C8AEF2E8E5">About Tabular Forms</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-block-to-page-region-mappings.html#GUID-81896469-B226-417E-AF5E-D8DDCB6CA75A">About Master Detail Blocks</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-block-to-page-region-mappings.html#GUID-B540E3B7-E6B6-4197-926E-7FDF881FF129">About Non-Database Block</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-Oracle-forms-modules.html#GUID-5B18910F-0F3B-4833-A19B-A3D0FFBA61D2">Understanding Oracle Forms Modules</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-C0E6ADB8-D6F3-478F-8260-6F0A758FD1B1" name="GUID-C0E6ADB8-D6F3-478F-8260-6F0A758FD1B1"></a><h3 id="AEMIG-GUID-C0E6ADB8-D6F3-478F-8260-6F0A758FD1B1" class="sect3"><span class="enumeration_section">A.1.2.1 </span>About Single Record Blocks
+               </h3>
+               <div>
+                  <p>In Oracle Forms a single record block can be used for both querying data and updating the records returned. Within Oracle Application Express, standard updatable regions cannot also be used as query regions. An Oracle Forms block that is defined as being insertable, updatable, and has a primary key, is generally defined an interactive report with a form, or an editable interactive grid within Application Express. The interactive report enables you to query the records and the generated Edit link provides navigation to an individual record for update or deletion. An editable interactive grid allows multiple rows to be edited within the region, rather than going to a separate form page.</p>
+                  <p>If not all the conditions are satisfied, then only an interactive report is generated for a single record block. </p>
+                  <p>The interactive report uses the original query, enhanced query, or custom query defined within the project for the block. However, the form is based only on the underlying table. Items characteristics such as radio groups, check boxes, date pickers, editors and list of values will be generated where possible.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-block-to-page-region-mappings.html#GUID-D99B94CB-397B-4B3B-8FB8-50440C1EA6EB">Understanding Block to Page Region Mappings</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-70574AE2-20FC-46E1-AB7A-B8C8AEF2E8E5" name="GUID-70574AE2-20FC-46E1-AB7A-B8C8AEF2E8E5"></a><h3 id="AEMIG-GUID-70574AE2-20FC-46E1-AB7A-B8C8AEF2E8E5" class="sect3"><span class="enumeration_section">A.1.2.2 </span>About Tabular Forms
+               </h3>
+               <div>
+                  <p>A tabular form defined in Oracle Forms corresponds to an editable interactive grid in Application Express, you must implement item characteristics, such as select lists, manually after creating the initial application. </p>
+                  <p></p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-block-to-page-region-mappings.html#GUID-D99B94CB-397B-4B3B-8FB8-50440C1EA6EB">Understanding Block to Page Region Mappings</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-81896469-B226-417E-AF5E-D8DDCB6CA75A" name="GUID-81896469-B226-417E-AF5E-D8DDCB6CA75A"></a><h3 id="AEMIG-GUID-81896469-B226-417E-AF5E-D8DDCB6CA75A" class="sect3"><span class="enumeration_section">A.1.2.3 </span>About Master Detail Blocks
+               </h3>
+               <div>
+                  <p>Within Oracle Forms, master detail forms are defined using block relations. In Application Express you can also define master-detail relationships between interactive grid regions. In each child (detail) region, you define the region relationship to the parent (master) region, and then select the foreign key relationship columns in the child region. You can define and number of child relationships deep and any number of child relationships wide.</p>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-block-to-page-region-mappings.html#GUID-D99B94CB-397B-4B3B-8FB8-50440C1EA6EB">Understanding Block to Page Region Mappings</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-B540E3B7-E6B6-4197-926E-7FDF881FF129" name="GUID-B540E3B7-E6B6-4197-926E-7FDF881FF129"></a><h3 id="AEMIG-GUID-B540E3B7-E6B6-4197-926E-7FDF881FF129" class="sect3"><span class="enumeration_section">A.1.2.4 </span>About Non-Database Block
+               </h3>
+               <div>
+                  <p>A block that is not associated with a database table or view, a non-database block, typically holds menus, navigation bars, and buttons. Because these components are handled and defined very differently within Application Express, whereby the menus and navigation bar are defined at the application level and not positioned separately on each page.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-block-to-page-region-mappings.html#GUID-D99B94CB-397B-4B3B-8FB8-50440C1EA6EB">Understanding Block to Page Region Mappings</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

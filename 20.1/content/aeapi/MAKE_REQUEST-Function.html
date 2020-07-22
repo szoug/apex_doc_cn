@@ -1,0 +1,290 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="MAKE_REQUEST Function">
+      <meta name="DC.subject" content="APEX_WEB_SERVICE, MAKE_REQUEST function">
+      <meta name="keywords" content="APEX_WEB_SERVICE, MAKE_REQUEST function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_WEB_SERVICE.html#GUID-B95EA4B6-950D-419D-A2B0-CDB254E1E9F0">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-2973A635-6A7D-426B-8ED0-F458D96FD520">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>MAKE_REQUEST Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="MAKE_REQUEST-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="MAKE_REST_REQUEST-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="MAKE_REQUEST-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="MAKE_REST_REQUEST-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_WEB_SERVICE.html" property="item" typeof="WebPage"><span property="name"> APEX_WEB_SERVICE</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">MAKE_REQUEST Function</li>
+            </ol>
+            <a id="GUID-2973A635-6A7D-426B-8ED0-F458D96FD520" name="GUID-2973A635-6A7D-426B-8ED0-F458D96FD520"></a><a id="AEAPI1951"></a><a id="AEAPI1952"></a><a id="AEAPI1953"></a><a id="AEAPI1954"></a><a id="AEAPI1950"></a>
+            
+            <h2 id="AEAPI-GUID-2973A635-6A7D-426B-8ED0-F458D96FD520" class="sect2"><span class="enumeration_section">40.9 </span>MAKE_REQUEST Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Use this function to invoke a SOAP style Web service with the supplied SOAP envelope returning the results in an XMLTYPE.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-2973A635-6A7D-426B-8ED0-F458D96FD520__GUID-921247F7-5003-450C-8B61-BD7CF2950A97">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_WEB_SERVICE.MAKE_REQUEST (
+    p_url                  IN VARCHAR2,
+    p_action               IN VARCHAR2 DEFAULT NULL,
+    p_version              IN VARCHAR2 DEFAULT '1.1',
+    p_envelope             IN CLOB,
+    p_username             IN VARCHAR2 DEFAULT NULL,
+    p_password             IN VARCHAR2 DEFAULT NULL,
+    p_scheme               IN VARCHAR2 DEFAULT 'Basic',
+    p_proxy_override       IN VARCHAR2 DEFAULT NULL,
+    p_transfer_timeout     IN NUMBER   DEFAULT 180,
+    p_wallet_path          IN VARCHAR2 DEFAULT NULL,
+    p_wallet_pwd           IN VARCHAR2 DEFAULT NULL,
+    p_https_host           IN VARCHAR2 DEFAULT NULL,
+    p_credential_static_id IN VARCHAR2 DEFAULT NULL,
+    p_token_url            IN VARCHAR2 DEFAULT NULL )
+RETURN XMLTYPE;
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-2973A635-6A7D-426B-8ED0-F458D96FD520__GUID-940F7282-F0F1-430C-8FF5-82D7289E01B7">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-2973A635-6A7D-426B-8ED0-F458D96FD520__BABFGCAA">
+                  <p class="titleintable">Table 40-4 MAKE_REQUEST Function Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="MAKE_REQUEST Function Parameters" summary="Parameter descriptions for the MAKE_REQUEST function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d212299e73">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d212299e76">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e81" headers="d212299e73 ">
+                              <p><code class="codeph">p_url</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e81 d212299e76 ">
+                              <p>The URL endpoint of the Web service.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e89" headers="d212299e73 ">
+                              <p><code class="codeph">p_action</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e89 d212299e76 ">
+                              <p>The SOAP Action corresponding to the operation to be invoked.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e97" headers="d212299e73 ">
+                              <p><code class="codeph">p_version</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e97 d212299e76 ">
+                              <p>The SOAP version, 1.1 or 1.2. The default is 1.1.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e105" headers="d212299e73 ">
+                              <p><code class="codeph">p_envelope</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e105 d212299e76 ">
+                              <p>The SOAP envelope to post to the service.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e113" headers="d212299e73 ">
+                              <p><code class="codeph">p_username</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e113 d212299e76 ">
+                              <p>The username if basic authentication is required for this service.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e121" headers="d212299e73 ">
+                              <p><code class="codeph">p_password</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e121 d212299e76 ">
+                              <p>The password if basic authentication is required for this service</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e129" headers="d212299e73 ">
+                              <p><code class="codeph">p_scheme</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e129 d212299e76 ">
+                              <p>The authentication scheme, Basic (default) or AWS or Digest or <code class="codeph">OAUTH_CLIENT_CRED</code> if supported by your database release.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e140" headers="d212299e73 ">
+                              <p><code class="codeph">p_proxy_override</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e140 d212299e76 ">
+                              <p>The proxy to use for the request. The proxy supplied overrides the proxy defined in the application attributes.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e148" headers="d212299e73 ">
+                              <p><code class="codeph">p_transfer_timeout</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e148 d212299e76 ">
+                              <p>The amount of time in seconds to wait for a response.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e156" headers="d212299e73 ">
+                              <p><code class="codeph">p_wallet_path</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e156 d212299e76 ">
+                              <p>The file system path to a wallet if the URL endpoint is https. For example, file:/usr/home/oracle/WALLETS. The wallet path provided overrides the wallet defined in the instance settings.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e164" headers="d212299e73 ">
+                              <p><code class="codeph">p_wallet_pwd</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e164 d212299e76 ">
+                              <p>The password to access the wallet.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e173" headers="d212299e73 ">
+                              <p><code class="codeph">p_https_host</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e173 d212299e76 ">
+                              <p>The host name to be matched against the common name (CN) of the remote server's certificate for an HTTPS request.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e181" headers="d212299e73 ">
+                              <p><code class="codeph">p_credential_static_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e181 d212299e76 ">
+                              <p>The name of a Web Credential (configured in Shared Components) to be used.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d212299e189" headers="d212299e73 ">
+                              <p><code class="codeph">p_token_url</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d212299e189 d212299e76 ">
+                              <p>For token-based authentication flows (like OAuth2): The URL where to get the token from.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-2973A635-6A7D-426B-8ED0-F458D96FD520__GUID-C38B5444-8934-4374-8A4D-B8CD0D660B31">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example uses the <code class="codeph">make_request</code> function to invoke a SOAP style Web service that returns movie listings. The result is stored in an XMLTYPE.
+                  </p><pre class="pre codeblock"><code>declare
+    l_envelope CLOB;
+    l_xml	XMLTYPE;
+BEGIN
+	    l_envelope := ' &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:tns="http://www.ignyte.com/whatsshowing"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;soap:Body&gt;
+        &lt;tns:GetTheatersAndMovies&gt;
+            &lt;tns:zipCode&gt;43221&lt;/tns:zipCode&gt;
+            &lt;tns:radius&gt;5&lt;/tns:radius&gt;
+        &lt;/tns:GetTheatersAndMovies&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;';
+ 
+l_xml := apex_web_service.make_request(
+    p_url =&gt; ' http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx',
+   p_action =&gt; ' http://www.ignyte.com/whatsshowing/GetTheatersAndMovies',
+   p_envelope =&gt; l_envelope
+);
+END</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_WEB_SERVICE.html#GUID-B95EA4B6-950D-419D-A2B0-CDB254E1E9F0">APEX_WEB_SERVICE</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

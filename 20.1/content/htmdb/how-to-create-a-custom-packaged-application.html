@@ -1,0 +1,707 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="How to Create a Custom Application">
+      <meta name="abstract" content="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">
+      <meta name="description" content="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">
+      <meta name="DC.subject" content="custom application, creating with Supporting Objects utility, about, deployment, creating supporting objects, supporting objects, creating, about Supporting Objects page, prerequisites, substitutions strings, build options, validations, installation scripts, messages, upgrade messages, deinstallation scripts, adding access control list, testing installation scripts, installing supporting objects, deleting supporting object scripts, deleting messages, deleting installation options, defining an upgrade script, upgrading, deinstalling, viewing an install summary">
+      <meta name="keywords" content="custom application, creating with Supporting Objects utility, about, deployment, creating supporting objects, supporting objects, creating, about Supporting Objects page, prerequisites, substitutions strings, build options, validations, installation scripts, messages, upgrade messages, deinstallation scripts, adding access control list, testing installation scripts, installing supporting objects, deleting supporting object scripts, deleting messages, deleting installation options, defining an upgrade script, upgrading, deinstalling, viewing an install summary">
+      <meta name="DC.Relation" scheme="URI" content="deploying-an-application.html#GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-a-custom-packaged-application.html#GUID-A7EC1387-B27E-471C-BD0D-CFC755175F79">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-a-custom-packaged-application.html#GUID-0019D79F-1CFD-4808-9237-B2CDCA61CB33">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-a-custom-packaged-application.html#GUID-5413C2E7-543A-4A8D-A65D-C1F0B3E303CB">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-a-custom-packaged-application.html#GUID-0EB94EF2-9D80-4E49-AFB7-F513F4D3D092">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-a-custom-packaged-application.html#GUID-CDC89F20-3965-49E9-A8F8-BC2AAE8C587F">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-a-custom-packaged-application.html#GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-a-custom-packaged-application.html#GUID-A4C645A1-B476-4F24-B84D-FFA8EEF614AE">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-a-custom-packaged-application.html#GUID-E7CA11F8-65C6-47C6-B7EF-0654E2DC9584">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">
+      <meta name="description" content="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">
+      <title>How to Create a Custom Application</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="how-to-move-an-application-to-another-instance.html" title="Previous" type="text/html">
+      <link rel="next" href="using-build-options-to-control-configuration.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="how-to-move-an-application-to-another-instance.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-build-options-to-control-configuration.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="deploying-an-application.html" property="item" typeof="WebPage"><span property="name">Deploying an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">How to Create a Custom Application</li>
+            </ol>
+            <a id="GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" name="GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926"></a><a id="HTMDB11004"></a>
+            
+            <h2 id="HTMDB-GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" class="sect2"><span class="enumeration_section">25.4 </span>How to Create a Custom Application
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-A7EC1387-B27E-471C-BD0D-CFC755175F79">How Creating a Custom Application Simplifies Deployment</a><br></li>
+                  <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-0019D79F-1CFD-4808-9237-B2CDCA61CB33">Creating a Custom Application</a><br></li>
+                  <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-5413C2E7-543A-4A8D-A65D-C1F0B3E303CB">Adding an Access Control List to a Custom Application</a><br></li>
+                  <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-0EB94EF2-9D80-4E49-AFB7-F513F4D3D092">Installing Supporting Objects</a><br></li>
+                  <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-CDC89F20-3965-49E9-A8F8-BC2AAE8C587F">Deleting Supporting Objects Scripts, Messages, and Installation Options</a><br></li>
+                  <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D">Upgrading a Custom Application</a><br></li>
+                  <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-A4C645A1-B476-4F24-B84D-FFA8EEF614AE">Deinstalling Supporting Objects</a><br></li>
+                  <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-E7CA11F8-65C6-47C6-B7EF-0654E2DC9584">Viewing an Install Summary</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926__GUID-FB8A31B8-5565-40FC-90B2-98777DAFDB9B">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="how-to-move-an-application-to-another-instance.html#GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964">How to Move an Application to Another Instance</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="exporting-an-application-and-application-components.html#GUID-8D046D43-C033-4165-9C2B-6AB33A99CF75" title="Move a workspace, application, or related files by exporting it to another Application Express instance.">Exporting an Application and Application Components</a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="deploying-an-application.html#GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD" title="Learn about best practices for deploying an application. Deployment is the process of moving an application from the testing phase to the production phase.">Deploying an Application</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25801"></a><div class="props_rev_3"><a id="GUID-A7EC1387-B27E-471C-BD0D-CFC755175F79" name="GUID-A7EC1387-B27E-471C-BD0D-CFC755175F79"></a><h3 id="HTMDB-GUID-A7EC1387-B27E-471C-BD0D-CFC755175F79" class="sect3"><span class="enumeration_section">25.4.1 </span>How Creating a Custom Application Simplifies Deployment
+               </h3>
+               <div>
+                  <p>From a developer's perspective, importing and installing an application is a complicated process. First, you create the target database objects and seed data. Second, you import and install the application definition and all related files, including images, themes, and any other required static files.</p>
+                  <p>Creating a custom application using the Supporting Objects utility greatly simplifies this process. Instead of performing numerous steps to create the database objects and then import and install the application and all supporting files, you can define the supporting objects so that the application and supporting files can be migrated in a few easy steps.</p>
+                  <p>After users import and install the application definition, a wizard guides them through a few simple configuration steps. Then, the wizard asks whether to install the supporting application objects. Users have the option of installing the supporting application objects then or doing it later.</p>
+                  <p>From a developer's perspective, creating a custom application has the following advantages:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Ensures that the supporting objects are created in the correct order.</p>
+                     </li>
+                     <li>
+                        <p>Provides an automated process for deploying an application quickly using very few steps.</p>
+                     </li>
+                     <li>
+                        <p>Gives users the option to install supporting application objects when they import and install the application definition or at a later time.</p>
+                     </li>
+                     <li>
+                        <p>Enables users and developers with a convenient method for removing the application definition, supporting files, and all database objects.</p>
+                     </li>
+                     <li>
+                        <p>Provides users and developers with an easy way to upgrade a previously released custom application. </p>
+                     </li>
+                  </ul>
+                  <p>Plus, you can also take advantage of the Deinstall and Install features to quickly edit the underlying database objects that support an application. For example, you can deinstall and remove all database objects, edit the underlying database object creation scripts, and reinstall to create the redefined application objects.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-A7EC1387-B27E-471C-BD0D-CFC755175F79__GUID-D0A854FD-C1BF-4887-A1E1-0D38B145E3E3">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-0EB94EF2-9D80-4E49-AFB7-F513F4D3D092">Installing Supporting Objects</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-A4C645A1-B476-4F24-B84D-FFA8EEF614AE">Deinstalling Supporting Objects</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D">Upgrading a Custom Application</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25802"></a><div class="props_rev_3"><a id="GUID-0019D79F-1CFD-4808-9237-B2CDCA61CB33" name="GUID-0019D79F-1CFD-4808-9237-B2CDCA61CB33"></a><h3 id="HTMDB-GUID-0019D79F-1CFD-4808-9237-B2CDCA61CB33" class="sect3"><span class="enumeration_section">25.4.2 </span>Creating a Custom Application
+               </h3>
+               <div>
+                  <p>To create a custom application, you must create installation scripts that define your application's supporting objects (including database objects, images, and seed data) and any preinstallation validations. You define these objects and the installation and deinstallation scripts and the messages that display when the user installs or deinstalls on the Supporting Objects page.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-87046BA4-3F11-4789-9B6F-3F47ABB53ADC">Accessing the Supporting Objects Utility</a><br></li>
+                     <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-E40266CB-1629-48F6-B4F4-D617CD955C62">Supporting Objects Page</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB25803"></a><div class="props_rev_3"><a id="GUID-87046BA4-3F11-4789-9B6F-3F47ABB53ADC" name="GUID-87046BA4-3F11-4789-9B6F-3F47ABB53ADC"></a><h4 id="HTMDB-GUID-87046BA4-3F11-4789-9B6F-3F47ABB53ADC" class="sect4"><span class="enumeration_section">25.4.2.1 </span>Accessing the Supporting Objects Utility
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>You create a custom application on the Supporting Objects utility.</p>
+                        <p>To access the Supporting Objects Page utility: </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select the application.</span><div>
+                              <p>The Application home page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click the <span class="uicontrol bold">Supporting Objects</span> icon.</span><div>
+                              <p>The Supporting Objects page appears. </p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-0019D79F-1CFD-4808-9237-B2CDCA61CB33">Creating a Custom Application</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25804"></a><div class="props_rev_3"><a id="GUID-E40266CB-1629-48F6-B4F4-D617CD955C62" name="GUID-E40266CB-1629-48F6-B4F4-D617CD955C62"></a><h4 id="HTMDB-GUID-E40266CB-1629-48F6-B4F4-D617CD955C62" class="sect4"><span class="enumeration_section">25.4.2.2 </span>Supporting Objects Page
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The top of the Supporting Objects page displays the application name and indicates current selections for the following: Check for Objects, Verify System Privileges, Required Free KB, Prompt for License, and Include in Export. To learn more about these options, see field-level Help. </p>
+                        <p>To specify whether to include supporting objects with an application export, find
+                    <span class="uicontrol bold">Include in Export</span> at the top of the page, click either
+                    <span class="uicontrol bold">Yes</span> or <span class="uicontrol bold">No</span>. From the
+                    <span class="uicontrol bold">Include Supporting Object Definitions in Export</span> list,
+                make a new selection and click <span class="uicontrol bold">Apply Changes</span>. 
+                        </p>
+                        <div class="figure" id="GUID-E40266CB-1629-48F6-B4F4-D617CD955C62__GUID-AD7DCF97-C861-4285-9C52-215A2E08A05D"><img height="567" width="783" src="img/sup_object_sum.png" alt="Description of sup_object_sum.png follows" title="Description of sup_object_sum.png follows" longdesc="img_text/sup_object_sum.html"><br><a href="img_text/sup_object_sum.html">Description of the illustration sup_object_sum.png</a></div>
+                        <!-- class="figure" -->
+                        <p>The rest of the page is divided into the following categories: Installation, Upgrade, and Deinstallation.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-40871C9B-C9BA-4A77-B171-22B3560F40CF">Installation</a><br></li>
+                        <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-6053CA73-FC08-4C42-9837-2467C4A6CD6B">Upgrade</a><br></li>
+                        <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-513C896F-FA7D-4114-A350-2B53E6B1911D">Deinstallation</a><br></li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-E40266CB-1629-48F6-B4F4-D617CD955C62__GUID-921D2FDA-C92F-47BE-B435-4693CE68EF9D">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-oracle-application-express-documentation.html#GUID-86D5F514-0613-4A96-9400-B320B03699C9">Viewing Help</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-0019D79F-1CFD-4808-9237-B2CDCA61CB33">Creating a Custom Application</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <a id="HTMDB25805"></a><div class="props_rev_3"><a id="GUID-40871C9B-C9BA-4A77-B171-22B3560F40CF" name="GUID-40871C9B-C9BA-4A77-B171-22B3560F40CF"></a><h5 id="HTMDB-GUID-40871C9B-C9BA-4A77-B171-22B3560F40CF" class="sect5"><span class="enumeration_section">25.4.2.2.1 </span>Installation
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>Use the links under Installation to define the following types of information: </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Prerequisites</strong>. Defines built-in checks required before installing the application, such as required free disk space, required system privileges, and schema object restrictions. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Application Substitution Strings</strong>. Lists static substitution strings defined for the application. You can define static substitution strings for phrases or labels that occur in many places within an application. 
+                                 </p>
+                                 <p>When packaging an application, you can include prompts for substitution strings which users can specify when they install the custom application.</p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Build Options</strong>. Lists build options defined for this application. You can use build options to conditionally display specific functionality within an application. 
+                                 </p>
+                                 <p>When packaging an application, you can include prompts for specific build options which display when the application is installed. </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Pre-installation Validations</strong>. Lists validations defined for the custom application. Similar to normal page validations, these validations prevent a user from installing database objects if the user-defined conditions are not satisfied. To create a new validation, click <span class="bold">Create</span> and follow the on-screen instructions.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Installation Scripts</strong>. Enables a you to define multiple installation scripts that install supporting objects for the application. To create a new script, click <span class="uicontrol bold">Create</span> and follow the on-screen instructions. To edit an existing script, click the <span class="uicontrol bold">Edit</span> icon. To prevent another developer from editing a script, click the <span class="uicontrol bold">Lock</span> icon. If the script is locked, the Lock icon appears as a closed padlock. If the script is unlocked, the Lock icon appears as an open padlock.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Messages</strong>. <span class="bold"></span>Enables you to define messages that display when the user installs or deinstalls the application. Supported HTML tags include <code class="codeph">&lt;b&gt;</code>, <code class="codeph">&lt;i&gt;</code>, <code class="codeph">&lt;u&gt;</code>, <code class="codeph">&lt;p&gt;</code>, <code class="codeph">&lt;br&gt;</code>, <code class="codeph">&lt;hr&gt;</code>, <code class="codeph">&lt;ul&gt;</code>, <code class="codeph">&lt;ol&gt;</code>, <code class="codeph">&lt;li&gt;</code>, and <code class="codeph">&lt;pre&gt;</code>.
+                                 </p>
+                                 <p>When these messages display, only a limited set of HTML tags are recognized to prevent a cross site-scripting (XSS) attack.</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-40871C9B-C9BA-4A77-B171-22B3560F40CF__GUID-66BA2562-7F3A-4686-B9FC-3F5B814FD4B3">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="editing-application-attributes.html#GUID-87F799CC-3FE8-4026-ABBB-9F25786F4225">Substitutions</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="using-build-options-to-control-configuration.html#GUID-4422AB40-3BC9-4FC3-AAF9-4EC68403D3F2" title="Use build options to conditionally include or exclude application components and functionality.">Using Build Options to Control Configuration</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="exporting-build-options-or-status.html#GUID-03898420-4920-4C42-8B35-D21564C75407" title="Export build option status to toggle build options on or off within another environment.">Exporting Build Options or Build Option Status</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-E40266CB-1629-48F6-B4F4-D617CD955C62">Supporting Objects Page</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMDB25807"></a><div class="props_rev_3"><a id="GUID-6053CA73-FC08-4C42-9837-2467C4A6CD6B" name="GUID-6053CA73-FC08-4C42-9837-2467C4A6CD6B"></a><h5 id="HTMDB-GUID-6053CA73-FC08-4C42-9837-2467C4A6CD6B" class="sect5"><span class="enumeration_section">25.4.2.2.2 </span>Upgrade
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>Use the links under Upgrade to define the following types of information: </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Upgrade Scripts</span>. Click <a id="d296159e783" class="indexterm-anchor"></a><span class="uicontrol bold">Upgrade Scripts</span> to define scripts to upgrade database objects, images, and seed data when upgrading an existing application.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Upgrade Message</span>. Enables you to define messages that display when the user upgrades the application. Supported HTML tags include <code class="codeph">&lt;b&gt;</code>, <code class="codeph">&lt;i&gt;</code>, <code class="codeph">&lt;u&gt;</code>, <code class="codeph">&lt;p&gt;</code>, <code class="codeph">&lt;br&gt;</code>, <code class="codeph">&lt;hr&gt;</code>, <code class="codeph">&lt;ul&gt;</code>, <code class="codeph">&lt;ol&gt;</code>, <code class="codeph">&lt;li&gt;</code>, and <code class="codeph">&lt;pre&gt;</code>.
+                                 </p>
+                                 <p>When these messages display, only a limited set of HTML tags are recognized to prevent a cross site-scripting (XSS) attack. </p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-6053CA73-FC08-4C42-9837-2467C4A6CD6B__GUID-EE13DC62-B755-4EE1-A328-07FA527C2B51">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D">Upgrading a Custom Application</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a>"</span></p>
+                              </li>
+                           </ul>
+                           <p></p>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-E40266CB-1629-48F6-B4F4-D617CD955C62">Supporting Objects Page</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div><a id="HTMDB25808"></a><div class="props_rev_3"><a id="GUID-513C896F-FA7D-4114-A350-2B53E6B1911D" name="GUID-513C896F-FA7D-4114-A350-2B53E6B1911D"></a><h5 id="HTMDB-GUID-513C896F-FA7D-4114-A350-2B53E6B1911D" class="sect5"><span class="enumeration_section">25.4.2.2.3 </span>Deinstallation
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>Use the links under Deinstallation to define the following types of information: </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Deinstallation Script</span>. Click <span class="uicontrol bold">Deinstallation Script</span> to define a script to drop database objects and static files created by the installation scripts. To edit an existing script, click the <span class="uicontrol bold">Edit</span> icon.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Deinstallation Message</span>. Allows you to define messages that display when the user deinstalls the application. Supported HTML tags include <code class="codeph">&lt;b&gt;</code>, <code class="codeph">&lt;i&gt;</code>, <code class="codeph">&lt;u&gt;</code>, <code class="codeph">&lt;p&gt;</code>, <code class="codeph">&lt;br&gt;</code>, <code class="codeph">&lt;hr&gt;</code>, <code class="codeph">&lt;ul&gt;</code>, <code class="codeph">&lt;ol&gt;</code>, <code class="codeph">&lt;li&gt;</code>, and <code class="codeph">&lt;pre&gt;</code>.
+                                 </p>
+                                 <p>When these messages display, only a limited set of HTML tags are recognized to prevent a cross site-scripting (XSS) attack. </p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="infoboxnotealso" id="GUID-513C896F-FA7D-4114-A350-2B53E6B1911D__GUID-0AFBE9F2-2A27-4890-ABB7-BC332E8D549D">
+                           <p class="notep1">See Also:</p>
+                           <p><span class="q">"<a href="cross-site-scripting-protection.html#GUID-3E24746E-378C-478E-85F6-55DD8EC4A367" title="Protect your application from a cross site-scripting security breach.">Understanding Cross-Site Scripting Protection</a>"</span></p>
+                        </div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-E40266CB-1629-48F6-B4F4-D617CD955C62">Supporting Objects Page</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div><a id="HTMDB25810"></a><div class="props_rev_3"><a id="GUID-5413C2E7-543A-4A8D-A65D-C1F0B3E303CB" name="GUID-5413C2E7-543A-4A8D-A65D-C1F0B3E303CB"></a><h3 id="HTMDB-GUID-5413C2E7-543A-4A8D-A65D-C1F0B3E303CB" class="sect3"><span class="enumeration_section">25.4.3 </span>Adding an Access Control List to a Custom Application
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can control access to an application, individual pages, or page components by creating an access control list. </p>
+                     <p>To add an access control list of a custom application:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Create an access control list.</span></li>
+                     <li class="stepexpand"><span>Navigate to the Supporting Objects page:</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li class="substepexpand"><span>Select the application.</span><div>
+                                 <p>The Application home page appears.</p>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Supporting Objects</span>.</span><div>
+                                 <p>The Supporting Objects page appears.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Installation, click <span class="uicontrol bold">Installation Scripts</span>.</span><div>
+                           <p>The Installation Scripts page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                     <li class="stepexpand"><span>At the bottom of the page, expand the <span class="uicontrol bold">Tasks</span> region and click <span class="uicontrol bold">Create Scripts for Access Control Tables</span>.</span><div>
+                           <p>If Access Control tables are defined, the Create Script page displays the tables to be included.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Script</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5413C2E7-543A-4A8D-A65D-C1F0B3E303CB__GUID-DCFCCE6B-6FFC-45BD-AD06-D8973602675C">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="controlling-access-to-applications-pages-and-page-components.html#GUID-E700B9CA-34BB-4A8B-9765-1CB6B7D0993B" title="Control access to an application, individual pages, or page components by creating an access control list.">Controlling Access to Applications, Pages, and Page Components</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25811"></a><div class="props_rev_3"><a id="GUID-0EB94EF2-9D80-4E49-AFB7-F513F4D3D092" name="GUID-0EB94EF2-9D80-4E49-AFB7-F513F4D3D092"></a><h3 id="HTMDB-GUID-0EB94EF2-9D80-4E49-AFB7-F513F4D3D092" class="sect3"><span class="enumeration_section">25.4.4 </span>Installing Supporting Objects
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>After you edit your supporting objects and create the appropriate scripts, you can run your installation scripts by clicking <span class="bold">Install Supporting Objects</span> on the Tasks list. 
+                     </p>
+                     <p>End users can also use this feature if they elect to not install the custom application (or supporting objects) after they import and install the application definition.</p>
+                     <p>To install supporting objects:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select the application.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Supporting Objects</span>.</span><div>
+                           <p>The Supporting Objects page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Install Supporting Objects</span> on the Tasks list.</span></li>
+                     <li class="stepexpand"><span>To view details about the installation script before running it, expand the Tasks region and click <span class="uicontrol bold">Preview Installation Script</span>.</span><div>
+                           <p>The Preview Scripts page appears listing summary information, prerequisites, and the actual scripts to be run.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To exit the Preview Scripts page and continue, click <span class="uicontrol bold">Close</span>.</span></li>
+                     <li class="stepexpand"><span>From Install Supporting Objects, set to <span class="uicontrol bold">On</span> and click
+                        <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>Follow the on-screen instructions.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25812"></a><div class="props_rev_3"><a id="GUID-CDC89F20-3965-49E9-A8F8-BC2AAE8C587F" name="GUID-CDC89F20-3965-49E9-A8F8-BC2AAE8C587F"></a><h3 id="HTMDB-GUID-CDC89F20-3965-49E9-A8F8-BC2AAE8C587F" class="sect3"><span class="enumeration_section">25.4.5 </span>Deleting Supporting Objects Scripts, Messages, and Installation Options
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can delete the metadata that defines supporting object scripts, messages, and installation options associated with a custom application by clicking <span class="uicontrol bold">Remove Supporting Object Installation</span> on the Tasks list on the Supporting Objects page.
+                     </p>
+                     <p>To delete the metadata that defines supporting object scripts, messages, and installation options:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select an application.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Supporting Objects</span>.</span><div>
+                           <p>The Supporting Objects page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Tasks list on the right side of the page, click <span class="uicontrol bold">Remove Supporting Object Installation</span>.</span></li>
+                     <li class="stepexpand"><span>Follow the on-screen instructions.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25813"></a><div class="props_rev_3"><a id="GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D" name="GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D"></a><h3 id="HTMDB-GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D" class="sect3"><span class="enumeration_section">25.4.6 </span>Upgrading a Custom Application
+               </h3>
+               <div>
+                  <p>You can define scripts to upgrade a previously published application on the Upgrade page.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-DB0A3B74-72F6-4349-B933-B813E7CF0FE8">Defining an Upgrade Script</a><br></li>
+                     <li class="ulchildlink"><a href="how-to-create-a-custom-packaged-application.html#GUID-FD1C63C5-545F-485D-B1D4-4B24492F07FF">Upgrading a Custom Application</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB25814"></a><div class="props_rev_3"><a id="GUID-DB0A3B74-72F6-4349-B933-B813E7CF0FE8" name="GUID-DB0A3B74-72F6-4349-B933-B813E7CF0FE8"></a><h4 id="HTMDB-GUID-DB0A3B74-72F6-4349-B933-B813E7CF0FE8" class="sect4"><span class="enumeration_section">25.4.6.1 </span>Defining an Upgrade Script
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>You can use the Upgrade page to define scripts to upgrade database objects, images, and seed data when upgrading an existing application.</p>
+                        <p>To create an upgrade script:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Supporting Objects</span>.</span><div>
+                              <p>The Supporting Objects page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Under Upgrade, click <span class="uicontrol bold">Upgrade Scripts</span>.</span></li>
+                        <li class="stepexpand"><span>Use the Detect Existing Supporting Objects section to determine if the appropriate objects are installed or must be upgraded.</span></li>
+                        <li class="stepexpand"><span>In Query to Detect Existing Supporting Objects, enter a query in the field that returns at least one row if the supporting objects exist. </span><div>
+                              <p>This query determines whether the user who installs the custom application is prompted to run the installation scripts or the upgrade scripts.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To create a script, click <span class="uicontrol bold">Create</span>. </span><div>
+                              <div class="infobox-tip" id="GUID-DB0A3B74-72F6-4349-B933-B813E7CF0FE8__GUID-894A82C3-3852-4E98-93D1-96A298E0984A">
+                                 <p class="notep1">Tip:</p>
+                                 <p>To enable users to upgrade from various earlier versions of this application, you can add conditions to the upgrade scripts by going to the Script Properties page.</p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To prevent another developer from editing a script, click the <span class="uicontrol bold">Lock</span> icon. </span><div>
+                              <p>If the script is locked, the Lock icon appears as a closed padlock. If the script is unlocked, the Lock icon appears as an open padlock.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To edit an existing script, click the <span class="uicontrol bold">Edit</span> icon. </span></li>
+                        <li class="stepexpand"><span>Follow the on-screen instructions.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D">Upgrading a Custom Application</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25815"></a><div class="props_rev_3"><a id="GUID-FD1C63C5-545F-485D-B1D4-4B24492F07FF" name="GUID-FD1C63C5-545F-485D-B1D4-4B24492F07FF"></a><h4 id="HTMDB-GUID-FD1C63C5-545F-485D-B1D4-4B24492F07FF" class="sect4"><span class="enumeration_section">25.4.6.2 </span>Upgrading a Custom Application
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>After you create your upgrade script, you can test it by clicking <span class="uicontrol bold">Upgrade Supporting Objects</span> on Tasks list on the Supporting Object page. 
+                        </p>
+                        <p>End users can also use this feature to upgrade an existing custom application.</p>
+                        <p>To upgrade a custom application:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Import a new version of application to be upgraded (if applicable). </span></li>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select the application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Supporting Objects</span>.</span><div>
+                              <p>The Supporting Objects page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>From the Tasks list, click <span class="uicontrol bold">Upgrade Supporting Objects</span>.</span></li>
+                        <li class="stepexpand"><span>Follow the on-screen instructions.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-FD1C63C5-545F-485D-B1D4-4B24492F07FF__GUID-4BD1A67B-BA91-4631-B265-D2F015588561">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="importing-export-files.html#GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61" title="Import the Application, Page or Component Export on the Import page.">Importing an Application, Page or Component Export</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-2CFAA06A-B07A-4D5F-813D-04C23930D48D">Upgrading a Custom Application</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25816"></a><div class="props_rev_3"><a id="GUID-A4C645A1-B476-4F24-B84D-FFA8EEF614AE" name="GUID-A4C645A1-B476-4F24-B84D-FFA8EEF614AE"></a><h3 id="HTMDB-GUID-A4C645A1-B476-4F24-B84D-FFA8EEF614AE" class="sect3"><span class="enumeration_section">25.4.7 </span>Deinstalling Supporting Objects
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Once you create or install a custom application, you can deinstall it by either:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Clicking the <span class="uicontrol bold">Deinstall Supporting Objects</span> on the Supporting Objects page.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Clicking <span class="uicontrol bold">Delete this Application</span> on the Application home page.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>When you deinstall an application, you have the option of removing the current application definition and running the deinstallation script defined in the Supporting Objects.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To deinstall a custom application: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select the application.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Supporting Objects</span>.</span><div>
+                           <p>The Supporting Objects page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Tasks list, click <span class="uicontrol bold">Deinstall Supporting Objects</span>.</span></li>
+                     <li class="stepexpand"><span>Select a deinstallation option:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Remove Application Definition</span> removes the current application definition.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Deinstall Database Objects</span> runs the deinstallation script defined in the deployment attributes for this application. 
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Follow the on-screen instructions.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-A4C645A1-B476-4F24-B84D-FFA8EEF614AE__GUID-B81A9384-F6D3-48A9-99BE-9BCDC4F90752">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-0019D79F-1CFD-4808-9237-B2CDCA61CB33">Creating a Custom Application</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25817"></a><div class="props_rev_3"><a id="GUID-E7CA11F8-65C6-47C6-B7EF-0654E2DC9584" name="GUID-E7CA11F8-65C6-47C6-B7EF-0654E2DC9584"></a><h3 id="HTMDB-GUID-E7CA11F8-65C6-47C6-B7EF-0654E2DC9584" class="sect3"><span class="enumeration_section">25.4.8 </span>Viewing an Install Summary
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can view a log of recent installation and deinstallation by clicking <span class="uicontrol bold">View Install Summary</span> on the Tasks list on the Supporting Objects page. Note that this log only displays results from the most recent installation or deinstallation that occurred during the current Application Express session.
+                     </p>
+                     <p>To view the Install Summary: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                     <li class="stepexpand"><span>Select the application.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Supporting Objects</span>.</span><div>
+                           <p>The Supporting Objects page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Tasks list on the right side of the page, click <span class="uicontrol bold">View Install Summary</span>.</span><div>
+                           <p>A Summary page appears.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

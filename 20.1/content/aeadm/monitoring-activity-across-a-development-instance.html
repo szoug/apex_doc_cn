@@ -1,0 +1,334 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Monitoring Activity Across a Development Instance">
+      <meta name="abstract" content="Monitor all end user and developer activity for an Oracle Application Express instance.">
+      <meta name="description" content="Monitor all end user and developer activity for an Oracle Application Express instance.">
+      <meta name="DC.subject" content="monitor activity, Realtime Monitor Reports, Archived Activity, Dashboard, Top Applications, Top Workspaces, Activity Summary, Productivity and Sample App Installs, Page Views, Service Requests, Workspace Purge, Logs, Environment Reports, Login Attempts, Calendar Reports, Developer Activity">
+      <meta name="keywords" content="monitor activity, Realtime Monitor Reports, Archived Activity, Dashboard, Top Applications, Top Workspaces, Activity Summary, Productivity and Sample App Installs, Page Views, Service Requests, Workspace Purge, Logs, Environment Reports, Login Attempts, Calendar Reports, Developer Activity">
+      <meta name="DC.Relation" scheme="URI" content="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-activity-across-a-development-instance.html#GUID-E1F94093-EB86-4D08-8E2D-FF9798757EEA">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-activity-across-a-development-instance.html#GUID-2CF889A8-A91A-4601-9EF5-F32A62C52172">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-activity-across-a-development-instance.html#GUID-444D823B-81DA-4D5E-8342-DE76F1DEC70A">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Monitor all end user and developer activity for an Oracle Application Express instance.">
+      <meta name="description" content="Monitor all end user and developer activity for an Oracle Application Express instance.">
+      <title>Monitoring Activity Across a Development Instance</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Monitor all end user and developer activity for an Oracle Application Express instance.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-users-across-an-application-express-instance.html" title="Previous" type="text/html">
+      <link rel="next" href="dbms_scheduler-jobs.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-users-across-an-application-express-instance.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="dbms_scheduler-jobs.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Monitoring Activity Across a Development Instance</li>
+            </ol>
+            <a id="GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6" name="GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6"></a><a id="AEADM291"></a>
+            
+            <h2 id="AEADM-GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6" class="sect2"><span class="enumeration_section">3.17 </span>Monitoring Activity Across a Development Instance
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Monitor all end user and developer activity for an Oracle Application Express instance.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="monitoring-activity-across-a-development-instance.html#GUID-E1F94093-EB86-4D08-8E2D-FF9798757EEA">Monitoring Activity</a><br>Monitor all user activity for an instance on the Monitor Activity page.
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-activity-across-a-development-instance.html#GUID-2CF889A8-A91A-4601-9EF5-F32A62C52172">Viewing the Signup Survey Report</a><br>View the Signup Survey report to view the survey questions, answers, and the number of responses.
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-activity-across-a-development-instance.html#GUID-444D823B-81DA-4D5E-8342-DE76F1DEC70A">Viewing the Backup Log</a><br>Monitor the performance of a backup job by reviewing the Backup         Log.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6__GUID-69E58E8C-F465-40BD-8AE8-111E27D18D50">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="viewing-workspace-dashboards.html#GUID-E68D639F-60F2-495E-B74A-99B5E4EA9251" title="Use the Dashboard page to view details about the current workspace and monitor overall workspace activity.">Viewing Workspace Dashboards</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392" title="Instance administrators manage an entire Oracle Application Express hosted instance using the Oracle Application Express Administration Services (Administration Services) application.">Oracle Application Express Administration Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM502"></a><div class="props_rev_3"><a id="GUID-E1F94093-EB86-4D08-8E2D-FF9798757EEA" name="GUID-E1F94093-EB86-4D08-8E2D-FF9798757EEA"></a><h3 id="AEADM-GUID-E1F94093-EB86-4D08-8E2D-FF9798757EEA" class="sect3"><span class="enumeration_section">3.17.1 </span>Monitoring Activity
+               </h3>
+               <div>
+                  <p>Monitor all user activity for an instance on the Monitor Activity page.</p>
+                  <div class="section">
+                     <p>To monitor activity:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Monitor Activity</span>.</span><div>The Monitor Activity page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click the appropriate link to view reports across all workspaces.</span><div>
+                           <p>The Monitor Activity page is divided into the following sections:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Activity Summary</span> - View activity summaries including: 
+                                 </p>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-E1F94093-EB86-4D08-8E2D-FF9798757EEA__UL_NQ1_ZDF_4KB">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Top Applications</span> - Displays a bar
+                                        graph of the most active applications based on the criteria
+                                        specified.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Top Workspaces</span> - Displays a bar graph
+                                        the most active workspaces based on the criteria
+                                        specified.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Activity Summary</span> - Displays an
+                                        activity summary including Total page view, Active apps,
+                                        Active workspaces, Workspaces approved, Workspaces purged,
+                                        Total apps, Active users, and Total workspaces.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Productivity and Sample App Installs</span> -
+                                        Displays a bar graph of the most active productivity and
+                                        sample application installs.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Page Views</span> - View a Dashboard, Page Views by View, Page Views
+                                by Application and User, Page Views by Application and User, Page
+                                Views by Workspace and User, Page Views by User by Day, Page Views
+                                by Application, Page Views by Workspace, and Faceted Workspace
+                                Search.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Service Requests</span> - View New Service Requests or Signup Survey
+                                activity.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Workspace Purge</span> - View the Workspace Purge Dashboard,
+                                Inactive Workspaces, Workspaces Purged, Workspaces that became
+                                Active, or a Workspace Purge Log.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Logs</span> - Logs incude: Mail Log, Web Service Activity Log, Jobs,
+                                Automatic Delete Log, Monitor Productivity and Sample Application
+                                Installations, and Backup Log.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Environment Reports</span> - View a environment reports: Page Views
+                                by Operating System, Page Views by Browser, Page Views by User
+                                Agent, or Page Views by External Site.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Login Attempts</span> - View login reports: Login Attempts or
+                                Developer Last Login.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Calendar Reports</span> - View calendar reports: Workspace Last Used,
+                                Page Views by Day by Application and User, or Page Views By
+                                Hour.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Developer Activity</span> - View Application Changes by Developer,
+                                Application Changes by Workspace, Native Component Utilization
+                                Chart, Native Component Utilization Report, and Data Loading
+                                Jobs.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Archived Activity</span> - View archived activity reports.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-activity-across-a-development-instance.html#GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6" title="Monitor all end user and developer activity for an Oracle Application Express instance.">Monitoring Activity Across a Development Instance</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM458"></a><div class="props_rev_3"><a id="GUID-2CF889A8-A91A-4601-9EF5-F32A62C52172" name="GUID-2CF889A8-A91A-4601-9EF5-F32A62C52172"></a><h3 id="AEADM-GUID-2CF889A8-A91A-4601-9EF5-F32A62C52172" class="sect3"><span class="enumeration_section">3.17.2 </span>Viewing the Signup Survey Report
+               </h3>
+               <div>
+                  <p>View the Signup Survey report to view the survey questions, answers, and the number of responses.</p>
+                  <div class="section">Instance administrators can also include survey questions users must complete when
+            running the New Service Signup Wizard.</div>
+                  <!-- class="section" -->
+                  <p>To view the Signup Survey report: </p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Monitor Activity</span>.</span><div>The Monitor Activity page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Under Service Requests, click the <span class="uicontrol bold">Signup Survey</span>.</span><div>
+                           <p>The Signup Survey appears displaying the survey questions, answers, and the number of responses.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To clear the Signup Survey report, click <span class="uicontrol bold">Reset Report</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-2CF889A8-A91A-4601-9EF5-F32A62C52172__GUID-29926453-22FA-464E-93E2-7B089F24886C">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="including-an-agreement-or-survey-when-running-the-signup-wizard.html#GUID-3F253C79-359D-458B-BE64-F40C27A10E68" title="Instance administrators define a Service Signup Wizard on the Service Signup Wizard page.">Defining a Service Signup Wizard</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-activity-across-a-development-instance.html#GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6" title="Monitor all end user and developer activity for an Oracle Application Express instance.">Monitoring Activity Across a Development Instance</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-444D823B-81DA-4D5E-8342-DE76F1DEC70A" name="GUID-444D823B-81DA-4D5E-8342-DE76F1DEC70A"></a><h3 id="AEADM-GUID-444D823B-81DA-4D5E-8342-DE76F1DEC70A" class="sect3"><span class="enumeration_section">3.17.3 </span>Viewing the Backup Log
+               </h3>
+               <div>
+                  <p>Monitor the performance of a backup job by reviewing the Backup
+        Log.</p>
+                  <p>To view the Backup Log: </p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Monitor Activity</span>.</span><div>The Monitor Activity page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Under Logs, click the <span class="uicontrol bold">Backup Log</span>.</span><div>
+                           
+                           <p>The Backup Log appears displaying when a backup job ran, the
+                        number of applications backed up by the job, and the elapsed time required
+                        to backup the applications.</p>
+                           
+                           <p>The elapsed time displays as Hours, Minutes, Seconds, Milliseconds
+                        (HH:MI:SS.FF). For example, a job with a duration of 00:00:00.812 took
+                        eight-hundred-twelve milliseconds. A job with a duration of 00:02:16.956
+                        took two minutes, 16 seconds, nine-hundred-fifty-six milliseconds.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the Batch number to display the details.</span><div>The Backup Log dialog appears displaying the IDs of the
+                    applications backed up in the job and the duration. </div>
+                     </li>
+                     <li class="stepexpand"><span>To remove Backup Log data, click <span class="uicontrol bold">Truncate</span>.</span><div>All Backup Log information is immediately removed.</div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-444D823B-81DA-4D5E-8342-DE76F1DEC70A__GUID-29926453-22FA-464E-93E2-7B089F24886C">
+                     <p class="notep1">See Also:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-444D823B-81DA-4D5E-8342-DE76F1DEC70A__UL_WFH_4ZW_PKB">
+                        <li>
+                           
+                           <p><span class="q">"<a href="configuring-features.html#GUID-A61AAF17-D142-4F5E-8845-9811A8B88589" title="Configure the number of application backups.">Configuring the Number of Application Backups</a>"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"<a href="../htmdb/managing-application-backups.html#HTMDB-GUID-764CE12A-6EE1-457C-88A7-FDC0ED9FA827" target="_blank">Managing Application
+                                    Backups </a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                           
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-activity-across-a-development-instance.html#GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6" title="Monitor all end user and developer activity for an Oracle Application Express instance.">Monitoring Activity Across a Development Instance</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

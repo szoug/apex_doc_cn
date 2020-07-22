@@ -1,0 +1,159 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Database Objects with Object Browser">
+      <meta name="abstract" content="Object Browser enables developers to browse, create, and edit objects in a database.">
+      <meta name="description" content="Object Browser enables developers to browse, create, and edit objects in a database.">
+      <meta name="DC.Relation" scheme="URI" content="accessing-object-browser.html#GUID-886CD13B-FC90-4218-A75C-477A64D8C1D0">
+      <meta name="DC.Relation" scheme="URI" content="managing-object-browser.html#GUID-8505D114-4C47-4CA9-82D4-A4F930424152">
+      <meta name="DC.Relation" scheme="URI" content="managing-tables.html#GUID-B21034CD-D55E-47DF-9042-237C5F98A369">
+      <meta name="DC.Relation" scheme="URI" content="managing-views.html#GUID-CB975D7F-2C1B-4C48-9E55-5295F04F7F60">
+      <meta name="DC.Relation" scheme="URI" content="managing-indexes.html#GUID-BE6B0473-A3B0-4696-B4CE-A0B3FD11D7E9">
+      <meta name="DC.Relation" scheme="URI" content="managing-sequences.html#GUID-E177ACD2-7FCD-4536-974B-62D7E84576C3">
+      <meta name="DC.Relation" scheme="URI" content="managing-types.html#GUID-D56F71C3-8E5B-4899-BEF7-FE2D1103F492">
+      <meta name="DC.Relation" scheme="URI" content="managing-packages.html#GUID-9405C4B0-3DDB-48A3-98DA-6164967A80E8">
+      <meta name="DC.Relation" scheme="URI" content="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3">
+      <meta name="DC.Relation" scheme="URI" content="managing-functions.html#GUID-F08999A0-2780-4F2D-8A9F-766AA3A6D333">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-links.html#GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D">
+      <meta name="DC.Relation" scheme="URI" content="managing-materialized-views.html#GUID-9FFC8CB3-E485-4732-BC59-EFF347722F1A">
+      <meta name="DC.Relation" scheme="URI" content="managing-synonyms.html#GUID-63CBCF39-3274-444B-A64F-C95A133C518A">
+      <meta name="DC.Relation" scheme="URI" content="managing-SODA-collections.html#GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-04321951-FD96-4930-8F44-0D8441E8B731">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Object Browser enables developers to browse, create, and edit objects in a database.">
+      <meta name="description" content="Object Browser enables developers to browse, create, and edit objects in a database.">
+      <title>Managing Database Objects with Object Browser</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Object Browser enables developers to browse, create, and edit objects in a database.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="getting-started.html" title="Previous" type="text/html">
+      <link rel="next" href="accessing-object-browser.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="getting-started.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="accessing-object-browser.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> Managing Database Objects with Object Browser </li>
+            </ol>
+            <a id="GUID-04321951-FD96-4930-8F44-0D8441E8B731" name="GUID-04321951-FD96-4930-8F44-0D8441E8B731"></a><a id="AEUTL101"></a>
+            
+            <h2 id="AEUTL-GUID-04321951-FD96-4930-8F44-0D8441E8B731" class="sect2"><span class="enumeration_chapter">3 </span> Managing Database Objects with Object Browser 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Object Browser enables developers to browse, create, and edit objects in a database.</p>
+               <p>Oracle Application Express has many views defined to help you work with the underlying table structures. The views combine multiple base tables and use meaningful column names to minimize complexity and to be more intuitive to use. </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="accessing-object-browser.html#GUID-886CD13B-FC90-4218-A75C-477A64D8C1D0">Accessing Object Browser</a><br>Learn about how to access Object Browser.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-object-browser.html#GUID-8505D114-4C47-4CA9-82D4-A4F930424152">Managing Object Browser</a><br>Use Object Browser to review the database objects in your workspace.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-tables.html#GUID-B21034CD-D55E-47DF-9042-237C5F98A369">Managing Tables</a><br>You can create, browse, edit, or drop tables as well as view different table reports. 
+                  </li>
+                  <li class="ulchildlink"><a href="managing-views.html#GUID-CB975D7F-2C1B-4C48-9E55-5295F04F7F60">Managing Views</a><br>A view is a logical representation of another table or combination of tables. You can create, browse, edit, download, compile, drop a view and view reports.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-indexes.html#GUID-BE6B0473-A3B0-4696-B4CE-A0B3FD11D7E9">Managing Indexes</a><br>An index is an optional structure associated with tables and clusters. You can create, browse, drop an index and view reports.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-sequences.html#GUID-E177ACD2-7FCD-4536-974B-62D7E84576C3">Managing Sequences</a><br>A sequence generates a serial list of unique numbers for numeric columns of a database table. You can create, browse, drop, alter a sequence and view a report.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-types.html#GUID-D56F71C3-8E5B-4899-BEF7-FE2D1103F492">Managing Types</a><br>A type is a user-specified object or collection definition. You can create, browse, drop a type and view a report.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-packages.html#GUID-9405C4B0-3DDB-48A3-98DA-6164967A80E8">Managing Packages</a><br>A package is a database object that groups logically related PL/SQL types, items, functions and procedures. You can create, view, edit, compile, drop, download a package, and view a report.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-procedures.html#GUID-DCA6E47C-28CB-4919-BAB9-8E6D76D0D7C3">Managing Procedures</a><br>A procedure is a subprogram that performs a specific action. You can use Object Browser to view, create, edit, download, and drop procedures. 
+                  </li>
+                  <li class="ulchildlink"><a href="managing-functions.html#GUID-F08999A0-2780-4F2D-8A9F-766AA3A6D333">Managing Functions</a><br>A function is a subprogram that can take parameters and return a single value. You can use Object Browser to create, browse, edit, compile, download, drop functions and view report.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177">Managing Triggers</a><br>A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-db-links.html#GUID-81DA77BA-1E72-4467-AB08-930F79EE5C1D">Managing Database Links</a><br>A database link is a schema object in one database that enables you to access objects in another database. You can create, browse, drop a database link and view report.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-materialized-views.html#GUID-9FFC8CB3-E485-4732-BC59-EFF347722F1A">Managing Materialized Views</a><br>A materialized view provides indirect access to table data by storing the results of a query in a separate schema object. You can create, browse, drop a materialized view and view report.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-synonyms.html#GUID-63CBCF39-3274-444B-A64F-C95A133C518A">Managing Synonyms</a><br>A synonym is an alias for a schema object. You can create, view and drop a synonym.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-SODA-collections.html#GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE">Managing SODA Collections</a><br>Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-04321951-FD96-4930-8F44-0D8441E8B731__GUID-3DF47A41-A81C-4C45-9B94-C12D929ECC74">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=SQLRF-GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC" target="_blank"><span><cite>Oracle Database SQL Language Reference</cite></span></a></p>
+                     </li>
+                     <li>
+                        <p><a href="../aeapi/APEX_APPLICATION.html#AEAPI-GUID-46D9B879-3180-480D-B5D6-54AABDD146F6" target="_blank"><span><cite>Oracle Application Express API Reference</cite></span></a> for details of the views defined
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing SODA Collections">
+      <meta name="abstract" content="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">
+      <meta name="description" content="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731">
+      <meta name="DC.Relation" scheme="URI" content="managing-SODA-collections.html#GUID-6294924B-59FA-4617-913F-316D68A81287">
+      <meta name="DC.Relation" scheme="URI" content="managing-SODA-collections.html#GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F">
+      <meta name="DC.Relation" scheme="URI" content="managing-SODA-collections.html#GUID-064A329F-29FA-4AFA-A5B2-16A97C99E0E9">
+      <meta name="DC.Relation" scheme="URI" content="managing-SODA-collections.html#GUID-3EFACD57-A398-4F25-AE76-FDA615A2D1CA">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">
+      <meta name="description" content="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">
+      <title>Managing SODA Collections</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-synonyms.html" title="Previous" type="text/html">
+      <link rel="next" href="using-SQL-commands.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-synonyms.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-SQL-commands.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-db-objects-with-object-browser.html" property="item" typeof="WebPage"><span property="name"> Managing Database Objects with Object Browser </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing SODA Collections</li>
+            </ol>
+            <a id="GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE" name="GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE"></a>
+            
+            <h2 id="AEUTL-GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE" class="sect2"><span class="enumeration_section">3.15 </span>Managing SODA Collections
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.</p>
+               <p></p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-SODA-collections.html#GUID-6294924B-59FA-4617-913F-316D68A81287">About SODA Collections</a><br>You can load data to a SODA collection as JSON, TXT, or ZIP files.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-SODA-collections.html#GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F">Creating a SODA Collection</a><br>Use SQL Workshop to load documents to a new SODA collection.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-SODA-collections.html#GUID-064A329F-29FA-4AFA-A5B2-16A97C99E0E9">Viewing a SODA Collection</a><br>Access existing SODA collections in Object Browser.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-SODA-collections.html#GUID-3EFACD57-A398-4F25-AE76-FDA615A2D1CA">Editing or Dropping a SODA Collection</a><br>View a SODA collection in Object Browser, then use the Load Data to upload a new version of the data or click the Drop button to remove the SODA collection from the workspace.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731" title="Object Browser enables developers to browse, create, and edit objects in a database.">Managing Database Objects with Object Browser</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-6294924B-59FA-4617-913F-316D68A81287" name="GUID-6294924B-59FA-4617-913F-316D68A81287"></a><h3 id="AEUTL-GUID-6294924B-59FA-4617-913F-316D68A81287" class="sect3"><span class="enumeration_section">3.15.1 </span>About SODA Collections
+               </h3>
+               <div>
+                  <p>You can load data to a SODA collection as JSON, TXT, or ZIP files.</p>
+                  <p>SODA collections are an Object Type in Object Browser. You use Object Browser to view or edit existing SODA collections, including drop them from the workspace.</p>
+                  <div>
+                     <div class="section">
+                        <p class="subhead2" id="GUID-6294924B-59FA-4617-913F-316D68A81287__GUID-CABC064F-419B-4C83-9587-BC05C44D6B86">Requirements</p>
+                        <ul style="list-style-type: disc;" id="GUID-6294924B-59FA-4617-913F-316D68A81287__UL_KCG_VQQ_ZKB">
+                           <li>Database 18.3 or higher.</li>
+                           <li>The workspace user must have the <span class="bold">SODA_APP</span> role.
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="section">
+                        <p class="subhead2" id="GUID-6294924B-59FA-4617-913F-316D68A81287__GUID-4814BC17-77F1-4676-B52E-C98E2DF881E8">Supported Filetypes</p>
+                        <p>You can upload the following filetypes to a SODA collection:</p>
+                        <ul style="list-style-type: disc;" id="GUID-6294924B-59FA-4617-913F-316D68A81287__UL_EMZ_QQQ_ZKB">
+                           <li>
+                              <p><span class="bold">JSON files</span> - <span>Application Express</span> supports JSON files containing an array with multiple JSON objects. <span>Application Express</span> extracts each JSON object from the array and loads it as a single JSON document to the SODA collection. The array selector is auto-detected by default.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">JSON lists</span> - JSON lists are files containing multiple JSON documents, one per line, separated by line feeds.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">ZIP files</span> - ZIP files are automatically extracted and each file can be uploaded to a SODA collection. Depending on data load settings, non-JSON files within the ZIP archive are either skipped or also loaded to the collection. XML files can be converted to JSON before loading to the SODA collection.
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-SODA-collections.html#GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE" title="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">Managing SODA Collections</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F" name="GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F"></a><h3 id="AEUTL-GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F" class="sect3"><span class="enumeration_section">3.15.2 </span>Creating a SODA Collection
+               </h3>
+               <div>
+                  <p>Use SQL Workshop to load documents to a new SODA collection.</p>
+                  <p>To load documents to a new SODA collection:</p>
+                  <ol>
+                     <li class="stepexpand"><span>In Object Browser, click the <span class="uicontrol bold">Create</span> icon ( + ) (top-right).</span></li>
+                     <li class="stepexpand"><span>Select <span class="uicontrol bold">SODA Collection</span>.</span><div>The Load Data into SODA Collection dialog displays.
+                           <div class="infobox-tip" id="GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F__GUID-0064E316-DBCD-4736-BFF2-F26479C2BCF6">
+                              <p class="notep1">Tip:</p>You can also access the Load Data wizard dialog with the <span class="uicontrol bold">SODA Collection</span> shortcut in the Create Object column on various SQL Workshop pages.
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Do one of the following</span><ul id="GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F__CHOICES_QFJ_5Q1_1LB">
+                           <li>Drag and drop the desired JSON, TXT, or ZIP file into the dialog.</li>
+                           <li>Click <span class="uicontrol bold">Choose File</span>, browse your local system to the file location, and upload.
+                           </li>
+                        </ul>
+                        <div>The wizard prepares the next screen based on filetype.</div>
+                     </li>
+                     <li class="stepexpand"><span>Configure the options. For all filetypes, choose an upload option:</span><ul id="GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F__CHOICES_NSS_DX1_1LB">
+                           <li>To create a new collection (default), select <span class="uicontrol bold">New Collection</span>.
+                           </li>
+                           <li>To upload to an existing collection, select <span class="uicontrol bold">Existing Collection</span>.
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="stepexpand"><span>For SODA Collection Name, enter the name of the collection.</span><div>
+                           <div class="infobox-tip" id="GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F__GUID-17367777-3EA3-4C79-9984-1FB60C4E7963">
+                              <p class="notep1">Tip:</p>If Create Relational View is enabled, Relational View Name populates automatically based on SODA Collection Name. You can change the Relational View Name if desired.
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Load Data</span>.</span><div>The data loads. This may take some time.</div>
+                     </li>
+                     <li class="stepexpand"><span>When the upload completes, you can proceed in the following ways:</span><ul id="GUID-CBE5D57F-BBEA-4F9D-BB63-AC213A5BA74F__CHOICES_UJB_J1B_1LB">
+                           <li>To view the SODA collection in Object Browser, click <span class="uicontrol bold">View Collection</span>.
+                           </li>
+                           <li>To jump to the Create App wizard (App Builder), click <span class="uicontrol bold">Create Application</span>.
+                           </li>
+                           <li>To return to Object Browser, click the <span class="uicontrol bold">X</span> icon (top-right) or press <span class="uicontrol bold">Esc</span> to close the dialog.
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-SODA-collections.html#GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE" title="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">Managing SODA Collections</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-064A329F-29FA-4AFA-A5B2-16A97C99E0E9" name="GUID-064A329F-29FA-4AFA-A5B2-16A97C99E0E9"></a><h3 id="AEUTL-GUID-064A329F-29FA-4AFA-A5B2-16A97C99E0E9" class="sect3"><span class="enumeration_section">3.15.3 </span>Viewing a SODA Collection
+               </h3>
+               <div>
+                  <p>Access existing SODA collections in Object Browser.</p>
+                  <p>To access existing SODA collections:</p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Object Browser</span>.</span></li>
+                     <li class="stepexpand"><span>In the Object Selection Pane (left), click the <span class="uicontrol bold">Object Type dropdown menu</span> (Tables is selected by default).</span></li>
+                     <li class="stepexpand"><span>Select <span class="uicontrol bold">SODA Collections</span>.</span><div>A list of existing SODA collections displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click a collection to view it.</span><div>There are three tabs to view:
+                           <ul style="list-style-type: disc;" id="GUID-064A329F-29FA-4AFA-A5B2-16A97C99E0E9__UL_NVH_FZW_1LB">
+                              <li><span class="bold">Collection Contents</span> - View the general contents of the collection. Contains the <span class="uicontrol bold">Load Data</span> and <span class="uicontrol bold">Drop</span> buttons for the collection.
+                              </li>
+                              <li><span class="bold">Data Guide</span> - View the Relational Views and full JSON Data Guide associated with the collection. Contains the <span class="uicontrol bold">Drop Search Index</span> and <span class="uicontrol bold">Create Relational View</span> buttons for the relational view. (Clicking a view under View Name navigates to Views in Object Browser.)
+                              </li>
+                              <li><span class="bold">Collection Meta Data</span> - View the SODA REST Endpoint URL and full Collection Meta Data.
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-SODA-collections.html#GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE" title="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">Managing SODA Collections</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-3EFACD57-A398-4F25-AE76-FDA615A2D1CA" name="GUID-3EFACD57-A398-4F25-AE76-FDA615A2D1CA"></a><h3 id="AEUTL-GUID-3EFACD57-A398-4F25-AE76-FDA615A2D1CA" class="sect3"><span class="enumeration_section">3.15.4 </span>Editing or Dropping a SODA Collection
+               </h3>
+               <div>
+                  <p>View a SODA collection in Object Browser, then use the Load Data to upload a new version of the data or click the Drop button to remove the SODA collection from the workspace.</p>
+                  <p>To view a SODA collection in Object Browser:</p>
+                  <ol>
+                     <li class="stepexpand"><span>In Object Browser, click the <span class="uicontrol bold">Object Type dropdown menu</span> and select <span class="uicontrol bold">SODA Collections</span>.</span></li>
+                     <li class="stepexpand"><span>Select the SODA collection to update.</span></li>
+                  </ol>
+                  <p>To change a SODA collection:</p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Load Data</span> button.</span><div>The Data Upload wizard opens.</div>
+                     </li>
+                     <li class="stepexpand"><span>Proceed through the wizard, ensuring to select <span class="uicontrol bold">Existing Collection</span> for Load To.</span></li>
+                  </ol>
+                  <p>To drop a SODA collection:</p>
+                  <ol start="5">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Drop</span> button.</span><div>The confirmation screen displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Drop</span> button to confirm.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-SODA-collections.html#GUID-8E1A6C7B-423C-4EE9-ABA2-D6B19A7362FE" title="Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you create and store collections of documents in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.">Managing SODA Collections</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Resource Handlers">
+      <meta name="abstract" content="A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.">
+      <meta name="description" content="A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.">
+      <meta name="DC.subject" content="RESTful services, managing resource handlers, resource handler, adding, editing, deleting">
+      <meta name="keywords" content="RESTful services, managing resource handlers, resource handler, adding, editing, deleting">
+      <meta name="DC.Relation" scheme="URI" content="using-RESTful-services.html#GUID-9EF9F122-554D-40C3-B14D-70C3ACF1A48D">
+      <meta name="DC.Relation" scheme="URI" content="managing-resource-handlers.html#GUID-F29CA231-710C-44E4-8079-88F4100EA54D">
+      <meta name="DC.Relation" scheme="URI" content="managing-resource-handlers.html#GUID-C174D282-60A6-4305-A0F4-4DA77FE0F401">
+      <meta name="DC.Relation" scheme="URI" content="managing-resource-handlers.html#GUID-2B0117B8-43F9-41A4-9608-FEF0EC344B5A">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-07024EE8-4772-46D1-A23D-803666AB644F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.">
+      <meta name="description" content="A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.">
+      <title>Managing Resource Handlers</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-resource-templates.html" title="Previous" type="text/html">
+      <link rel="next" href="book-index.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-resource-templates.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="book-index.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-RESTful-services.html" property="item" typeof="WebPage"><span property="name">Enabling Data Exchange with RESTful Services </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Resource Handlers</li>
+            </ol>
+            <a id="GUID-07024EE8-4772-46D1-A23D-803666AB644F" name="GUID-07024EE8-4772-46D1-A23D-803666AB644F"></a><a id="AEUTL459"></a>
+            
+            <h2 id="AEUTL-GUID-07024EE8-4772-46D1-A23D-803666AB644F" class="sect2"><span class="enumeration_section">7.8 </span>Managing Resource Handlers
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.</p>
+               <p>Multiple resource handlers can be defined for a resource template, however only one resource handler can be defined for a HTTP method.</p>
+               <p>Parameters to a resource handler can be manually defined to bind HTTP headers to the resource handler, or to cast a URI template parameter to a specific data type. Parameters declared in the URI template are implicitly passed to the resource handler. For example, a resource handler might need to know the value of the HTTP Accept-Language header in order to localize the generated representation.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-resource-handlers.html#GUID-F29CA231-710C-44E4-8079-88F4100EA54D">Adding a Resource Handler</a><br>Learn how to add a resource handler to a resource template.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-resource-handlers.html#GUID-C174D282-60A6-4305-A0F4-4DA77FE0F401">Editing a Resource Handler</a><br>Learn how to edit a resource handler.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-resource-handlers.html#GUID-2B0117B8-43F9-41A4-9608-FEF0EC344B5A">Deleting a Resource Handler</a><br>Learn how to delete a resource handler.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-RESTful-services.html#GUID-9EF9F122-554D-40C3-B14D-70C3ACF1A48D" title="RESTful Services enable the declarative specification of RESTful services used to access the database.">Enabling Data Exchange with RESTful Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL461"></a><div class="props_rev_3"><a id="GUID-F29CA231-710C-44E4-8079-88F4100EA54D" name="GUID-F29CA231-710C-44E4-8079-88F4100EA54D"></a><h3 id="AEUTL-GUID-F29CA231-710C-44E4-8079-88F4100EA54D" class="sect3"><span class="enumeration_section">7.8.1 </span>Adding a Resource Handler
+               </h3>
+               <div>
+                  <p>Learn how to add a resource handler to a resource template.</p>
+                  <div class="section">
+                     <p>To add a resource handler to a resource template:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">RESTful Services</span>.</span><div>
+                           <p>The RESTful Services home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">ORDS Based RESTful Services</span>.</span><div>
+                           <p>The ORDS RESTful services page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the ORDS RESTful Service template you want to add the resource template to.</span><div>
+                           <p>The ORDS Template Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Resource Handlers on the right pane, click <span class="bold">Create Handler</span>.</span><div>
+                           <p>The ORDS Handler Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Fill in the appropriate fields and select the appropriate options. Mandatory fields are marked with a red asterisk (*). To learn more about a specific option, see the field-level help.</span></li>
+                     <li class="stepexpand"><span>Under Resource Handler, specify the following:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Method</span> - Specify the HTTP method to be used for the resource handler. See field-level help.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Source Type</span> - Identify the strategy type used to generate the resource. See field-level help.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Format</span> - Select the format to utilize for the result set.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Pagination Size</span> - Identify the size of the pagination window. For database queries, this is the number of rows to return.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Source, enter the SQL query or PL/SQL block responsible for handling the selected HTTP method.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Handler</span>. </span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-resource-handlers.html#GUID-07024EE8-4772-46D1-A23D-803666AB644F" title="A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.">Managing Resource Handlers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL462"></a><div class="props_rev_3"><a id="GUID-C174D282-60A6-4305-A0F4-4DA77FE0F401" name="GUID-C174D282-60A6-4305-A0F4-4DA77FE0F401"></a><h3 id="AEUTL-GUID-C174D282-60A6-4305-A0F4-4DA77FE0F401" class="sect3"><span class="enumeration_section">7.8.2 </span>Editing a Resource Handler
+               </h3>
+               <div>
+                  <p>Learn how to edit a resource handler.</p>
+                  <div class="section">
+                     <p>To edit a resource handler:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">RESTful Services</span>.</span><div>
+                           <p>The RESTful Services home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">ORDS Based RESTful Services</span>.</span><div>
+                           <p>The ORDS RESTful services page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the ORDS RESTful Service Handler you want to edit.</span><div>
+                           <p>The ORDS Handler Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Make the changes you want. </span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>. </span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-C174D282-60A6-4305-A0F4-4DA77FE0F401__GUID-09387DBA-1E55-4D09-97CA-985A84FC1466">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-resource-handlers.html#GUID-F29CA231-710C-44E4-8079-88F4100EA54D" title="Learn how to add a resource handler to a resource template.">Adding a Resource Handler</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-resource-handlers.html#GUID-07024EE8-4772-46D1-A23D-803666AB644F" title="A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.">Managing Resource Handlers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL463"></a><div class="props_rev_3"><a id="GUID-2B0117B8-43F9-41A4-9608-FEF0EC344B5A" name="GUID-2B0117B8-43F9-41A4-9608-FEF0EC344B5A"></a><h3 id="AEUTL-GUID-2B0117B8-43F9-41A4-9608-FEF0EC344B5A" class="sect3"><span class="enumeration_section">7.8.3 </span>Deleting a Resource Handler
+               </h3>
+               <div>
+                  <p>Learn how to delete a resource handler.</p>
+                  <div class="section">
+                     <p>To delete a resource handler:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">RESTful Services</span>.</span><div>
+                           <p>The RESTful Services home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">ORDS Based RESTful Services</span>.</span><div>
+                           <p>The ORDS RESTful services page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the ORDS RESTful Service Handler you want to delete.</span><div>
+                           <p>The ORDS Handler Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Make the changes you want.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Delete</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">OK</span> to confirm.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-resource-handlers.html#GUID-07024EE8-4772-46D1-A23D-803666AB644F" title="A resource handler is a query or an anonymous PL/SQL block responsible for handling a particular HTTP method.">Managing Resource Handlers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

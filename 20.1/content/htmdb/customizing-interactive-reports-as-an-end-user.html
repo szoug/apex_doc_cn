@@ -1,0 +1,636 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Customizing Interactive Reports in a Running Application">
+      <meta name="abstract" content="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">
+      <meta name="description" content="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">
+      <meta name="DC.subject" content="interactive reports, customizing in runtime, about Search bar, Actions menu, using filters, interactive report filters, showing and hiding details, enabling and disabling, editing, removing, saving, user save options, saving as public, saving as private, saving primary default, saving alternative, renaming public report, renaming private report, deleting public report, deleting private report">
+      <meta name="keywords" content="interactive reports, customizing in runtime, about Search bar, Actions menu, using filters, interactive report filters, showing and hiding details, enabling and disabling, editing, removing, saving, user save options, saving as public, saving as private, saving primary default, saving alternative, renaming public report, renaming private report, deleting public report, deleting private report">
+      <meta name="DC.Relation" scheme="URI" content="managing-interactive-reports.html#GUID-24C05873-1362-4CC5-A9E5-0252C388CC67">
+      <meta name="DC.Relation" scheme="URI" content="customizing-interactive-reports-as-an-end-user.html#GUID-E08C4872-7E22-4059-B35E-6B1B082733D0">
+      <meta name="DC.Relation" scheme="URI" content="customizing-interactive-reports-as-an-end-user.html#GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE">
+      <meta name="DC.Relation" scheme="URI" content="customizing-interactive-reports-as-an-end-user.html#GUID-B6CDDCE1-E89B-4C8A-894C-42E31F6979D6">
+      <meta name="DC.Relation" scheme="URI" content="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">
+      <meta name="description" content="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">
+      <title>Customizing Interactive Reports in a Running Application</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-interactive-report-column-attributes.html" title="Previous" type="text/html">
+      <link rel="next" href="linking-to-interactive-reports.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-interactive-report-column-attributes.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="linking-to-interactive-reports.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="developing-reports.html" property="item" typeof="WebPage"><span property="name">Developing Reports</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-interactive-reports.html" property="item" typeof="WebPage"><span property="name">Managing Interactive Reports</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Customizing Interactive Reports in a Running Application</li>
+            </ol>
+            <a id="GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61" name="GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61"></a><a id="HTMDB25950"></a>
+            
+            <h2 id="HTMDB-GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61" class="sect2"><span class="enumeration_section">10.7.6 </span>Customizing Interactive Reports in a Running Application
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-E08C4872-7E22-4059-B35E-6B1B082733D0">About the Search Bar</a><br></li>
+                  <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE">About the Actions Menu</a><br></li>
+                  <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-B6CDDCE1-E89B-4C8A-894C-42E31F6979D6">Using Interactive Report Filters</a><br></li>
+                  <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a><br></li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61__GUID-65BA6B39-347C-41D0-8C5C-FF4036347E28">
+                  <p class="notep1">See Also:</p>
+                  <p>"Customizing an Interactive Report Using the Actions Menu" in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User Guide</span></a></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-interactive-reports.html#GUID-24C05873-1362-4CC5-A9E5-0252C388CC67" title="An interactive report is the formatted result of a SQL query. End users can customize the report layout and data displayed by selecting options on the Actions menu.">Managing Interactive Reports</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB28326"></a><div class="props_rev_3"><a id="GUID-E08C4872-7E22-4059-B35E-6B1B082733D0" name="GUID-E08C4872-7E22-4059-B35E-6B1B082733D0"></a><h3 id="HTMDB-GUID-E08C4872-7E22-4059-B35E-6B1B082733D0" class="sect3"><span class="enumeration_section">10.7.6.1 </span>About the Search Bar
+               </h3>
+               <div>
+                  <div class="figure" id="GUID-E08C4872-7E22-4059-B35E-6B1B082733D0__GUID-1D0F8CBC-B36D-4CEA-87C1-6E85C8BD175C"><img height="326" width="827" src="img/ir_search.png" alt="Description of ir_search.png follows" title="Description of ir_search.png follows" longdesc="img_text/ir_search.html"><br><a href="img_text/ir_search.html">Description of the illustration ir_search.png</a></div>
+                  <!-- class="figure" -->
+                  <p>A search bar displays at the top of every interactive report and may include the following features:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Select Columns to Search</span> - This icon resembles a magnifying glass. Click this icon to narrow your search to specific columns. To search all columns, select <span class="bold">All Columns</span>. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Text Area</span> - Enter case insensitive search criteria (wildcard characters are implied) and click <span class="bold">Go</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Go Button</span> - Executes a search.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Reports</span> - Displays alternate default and saved private, or public reports. See <span class="q">"<a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a>."</span></p>
+                     </li>
+                     <li>
+                        <p><span class="bold">View Icons</span> - Switches between an View Icon, View Report and View Detail of the default report (if enabled). May also include Chart and Group By View (if defined).
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Actions menu</span> - Use the Actions menu to customize an interactive report. See <span class="q">"<a href="customizing-interactive-reports-as-an-end-user.html#GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE">About the Actions Menu</a>."</span></p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E08C4872-7E22-4059-B35E-6B1B082733D0__GUID-8C7EAEF7-AED0-45F8-B5E5-D59BA147389C">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-interactive-report-attributes.html#GUID-3C41F785-BAE7-48B5-BFAA-DFC1730D4A2A">Customizing the Interactive Report Search Bar</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61" title="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">Customizing Interactive Reports in a Running Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28328"></a><div class="props_rev_3"><a id="GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE" name="GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE"></a><h3 id="HTMDB-GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE" class="sect3"><span class="enumeration_section">10.7.6.2 </span>About the Actions Menu
+               </h3>
+               <div>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE__GUID-C1AAAFA1-B180-4606-B464-B134CA25E303">
+                        <p class="notep1">Note:</p>
+                        <p>The structure of the interactive report Actions menu has changed to be consistent
+                    with interactive grids. To alter an interactive report Actions menu to use the
+                    previous (or legacy) structure, go to <span class="uicontrol bold">Shared Components</span>,
+                        <span class="uicontrol bold">Component Settings</span>, and configure the
+                        <span class="uicontrol bold">Interactive Report</span> component. See <span class="q">"<a href="managing-component-settings.html#GUID-2D92DD59-8CF1-4D75-87C4-CAEFDD352D40" title="Developers can configure Component Settings, Interactive Report to use the new structure or keep the legacy structure from earlier releases.">Configuring Interactive Report Action Menu Structure</a>"</span>.
+                        </p>
+                     </div>
+                     <p>The Actions menu appears to the right of the Go button on the Search bar. End users use the Actions menu to customize an interactive report. </p>
+                     <div class="figure" id="GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE__GUID-B6CD3E74-5126-4637-948F-90739D8AB608"><img height="444" width="818" src="img/ir_action_menu.png" alt="Description of ir_action_menu.png follows" title="Description of ir_action_menu.png follows" longdesc="img_text/ir_action_menu.html"><br><a href="img_text/ir_action_menu.html">Description of the illustration ir_action_menu.png</a></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-0D7C560C-52CF-4B44-85A7-374CBCB77CEE__GUID-E3F7F407-4174-4EF6-8AB0-3B6E3424779B">
+                     <p class="notep1">See Also:</p>
+                     <p>"Customizing an Interactive Report Using the Actions Menu" in <a href="../aeeug/customizing-interactive-report-using-actions-menu.html#AEEUG461" target="_blank"><span class="italic">Oracle Application Express End User Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61" title="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">Customizing Interactive Reports in a Running Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30171"></a><div class="props_rev_3"><a id="GUID-B6CDDCE1-E89B-4C8A-894C-42E31F6979D6" name="GUID-B6CDDCE1-E89B-4C8A-894C-42E31F6979D6"></a><h3 id="HTMDB-GUID-B6CDDCE1-E89B-4C8A-894C-42E31F6979D6" class="sect3"><span class="enumeration_section">10.7.6.3 </span>Using Interactive Report Filters
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>When you customize an interactive report, a filter displays between the search bar
+                and the report. The following illustration shows an interactive report with one
+                filter, <code class="codeph">Project lead = 'Bernard Jackman'</code> .
+                     </p>
+                     <div class="figure" id="GUID-B6CDDCE1-E89B-4C8A-894C-42E31F6979D6__GUID-4A34D537-07AF-4AF7-BD22-BB1A51C54A81"><img height="409" width="822" src="img/ir_filter_show.png" alt="Description of ir_filter_show.png follows" title="Description of ir_filter_show.png follows" longdesc="img_text/ir_filter_show.html"><br><a href="img_text/ir_filter_show.html">Description of the illustration ir_filter_show.png</a></div>
+                     <!-- class="figure" -->
+                     <p>Other keys features of interactive report filters include:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Enable/Disable</span> - To enable and disable a filter, select and deselect the check box to the left of the filter name.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Filter Edit</span> - To edit a filter, click the filter name.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Remove Filter</span> - To remove a filter, select the <span class="uicontrol bold">Remove Filter</span> icon to the right of the filter name.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>By default, multiple filters display horizontally stacked on top of one another. To minimize the amount of information that displays and hide filter details, click the arrow to the left of the filter name. The following illustration shows the same report with the filter details hidden.</p>
+                     <div class="figure" id="GUID-B6CDDCE1-E89B-4C8A-894C-42E31F6979D6__GUID-69029FEF-4BDF-4DDB-9589-4A98DF7E416B"><img height="405" width="815" src="img/ir_filter_hide.png" alt="Description of ir_filter_hide.png follows" title="Description of ir_filter_hide.png follows" longdesc="img_text/ir_filter_hide.html"><br><a href="img_text/ir_filter_hide.html">Description of the illustration ir_filter_hide.png</a></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61" title="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">Customizing Interactive Reports in a Running Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29011"></a><div class="props_rev_3"><a id="GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F" name="GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F"></a><h3 id="HTMDB-GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F" class="sect3"><span class="enumeration_section">10.7.6.4 </span>Saving Interactive Reports
+               </h3>
+               <div>
+                  <p>All users can save a private or public interactive report. However, only the user who creates a private report can view, save, rename, or delete it. Developers have additional save capabilities in that they can save the report that initially displays, called the Primary Default, or create an Alternative Default report. </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-919FF439-598B-4442-809F-4C7F1ED178EB">About the User Type and Available Save Options</a><br></li>
+                     <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-D61F70A7-FFE2-42C7-B3E1-DDB4E62CFD6E">About Configuration Dependencies When Saving Interactive Reports</a><br></li>
+                     <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-8FA46FCB-A587-4869-AB29-43552D479F93">Saving a Public or Private Interactive Report</a><br></li>
+                     <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-F1D8A0F0-A79A-4E08-8A79-8B27E6067F63">Saving a Default Interactive Report</a><br></li>
+                     <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-3B9DA7AC-4523-4651-9052-D1A1AF0C5866">Renaming a Public or Private Interactive Report</a><br></li>
+                     <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-EDF1DE39-7325-4666-AA38-BC0140C0F05C">Deleting a Public or Private Interactive Report</a><br></li>
+                     <li class="ulchildlink"><a href="customizing-interactive-reports-as-an-end-user.html#GUID-02433137-1DDC-494B-A7E8-23A595586CAD">About Exporting Interactive Reports</a><br></li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F__GUID-37954831-67E1-4B9C-BE50-06D323EFB824">
+                     <p class="notep1">See Also:</p>
+                     <p>"管理已保存的互动式报表" in <a href="../aeadm/understanding-workspace-administration.html#AEADM294" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-69D9A5BA-76B0-4BE5-AA1F-8D631846EB61" title="When running an application, users (that is, both end users and developers) can alter the layout of interactive reports data by choosing the columns they are interested in, applying filters, highlighting, and sorting. They can also define breaks, aggregations, charts, group bys, and add their own computations.">Customizing Interactive Reports in a Running Application</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29013"></a><div class="props_rev_3"><a id="GUID-919FF439-598B-4442-809F-4C7F1ED178EB" name="GUID-919FF439-598B-4442-809F-4C7F1ED178EB"></a><h4 id="HTMDB-GUID-919FF439-598B-4442-809F-4C7F1ED178EB" class="sect4"><span class="enumeration_section">10.7.6.4.1 </span>About the User Type and Available Save Options
+                  </h4>
+                  <div>
+                     <p>An end user can save an interactive report in two ways:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Public Report</span> (End user and developer). This report is viewable by all users. However, only the user who creates a public report can save, rename, or delete it. Although all users can view a public report, they can only save it under a new report name.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Private Report</span> (End user and developer). Only the user who creates the private report can view, save, rename, or delete it.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>A developer can additionally save an interactive report in the following ways: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Primary Default</span> (Developer only). The Primary Default is the report that initially displays. Primary Default reports cannot be renamed or deleted.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Alternative Report</span> (Developer only). Enables developers to create multiple report layouts. Only developers can save, rename, or delete an Alternative Report.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>The following illustration shows the Reports list on the Search bar of an interactive report. </p>
+                     <div class="figure" id="GUID-919FF439-598B-4442-809F-4C7F1ED178EB__GUID-857CB79A-EB8F-4C46-A740-C9C42DD009A2"><img height="323" width="817" src="img/ir_report_list.png" alt="Description of ir_report_list.png follows" title="Description of ir_report_list.png follows" longdesc="img_text/ir_report_list.html"><br><a href="img_text/ir_report_list.html">Description of the illustration ir_report_list.png</a></div>
+                     <!-- class="figure" -->
+                     <p>This example shows two reports:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Default - Primary Report</span>. This is the initial report created by the application developer. Default, Primary reports cannot be renamed or deleted. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Private - 1. Bernard's Projects</span>. This is a Private report. Only the user who
+                    creates a private report can view, save, rename, or delete it.
+                           </p>
+                        </li>
+                     </ul>
+                     <div class="infobox-tip" id="GUID-919FF439-598B-4442-809F-4C7F1ED178EB__GUID-37DDBCAC-0982-4BC7-BCF1-10E02204D04B">
+                        <p class="notep1">Tip:</p>
+                        <p>You can view saved report activity from the Workspace Administration page. On the
+                Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and then
+                select <span class="uicontrol bold">Administration</span>, <span class="uicontrol bold">Monitor
+                    Activity</span>, and then under <span class="uicontrol bold">Page Views</span> select
+                    <span class="uicontrol bold">By Interactive Report</span>. 
+                        </p>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29014"></a><div class="props_rev_3"><a id="GUID-D61F70A7-FFE2-42C7-B3E1-DDB4E62CFD6E" name="GUID-D61F70A7-FFE2-42C7-B3E1-DDB4E62CFD6E"></a><h4 id="HTMDB-GUID-D61F70A7-FFE2-42C7-B3E1-DDB4E62CFD6E" class="sect4"><span class="enumeration_section">10.7.6.4.2 </span>About Configuration Dependencies When Saving
+                Interactive Reports
+                  </h4>
+                  <div>
+                     <p>Developers control how users can save an interactive report by editing report Attributes.</p>
+                     <p>To fully enable users to save private reports, a developer must:</p>
+                     <ol id="GUID-D61F70A7-FFE2-42C7-B3E1-DDB4E62CFD6E__OL_OMM_DF4_W3B">
+                        <li>
+                           
+                           <p>Define an authentication scheme for the current
+                                        application.</p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>Edit the following report Attributes:</p>
+                           
+                           <ul style="list-style-type: disc;" id="GUID-D61F70A7-FFE2-42C7-B3E1-DDB4E62CFD6E__UL_MK2_FF4_W3B">
+                              <li>
+                                 
+                                 <p><span class="uicontrol bold">Search Bar</span>,
+                                                  <span class="uicontrol bold">Reports Select List</span> — Set
+                                                  this attribute to <span class="uicontrol bold">On</span> to
+                                                  include a Reports select list in the Search
+                                                  bar.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><span class="uicontrol bold">Actions Menu</span>,
+                                                  <span class="uicontrol bold">Save Report</span> — Set this
+                                                  attribute to <span class="uicontrol bold">On</span> to enable
+                                                  end users to save their current report definition
+                                                  as a <span class="italic">Private</span> report.
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><span class="uicontrol bold">Actions Menu</span>,
+                                                  <span class="uicontrol bold">Save Public Report</span> — Set
+                                                  this attribute to <span class="uicontrol bold">On</span> to
+                                                  enable end users to save their current report
+                                                  definition as a  <span class="italic">Public</span> report. 
+                                 </p>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p><span class="uicontrol bold">Actions Menu</span>,
+                                                  <span class="uicontrol bold">Save Public Report
+                                                  Authorization</span> — Select an
+                                                  authorization scheme to restrict who can save
+                                                  public report definitions. To enable an end user
+                                                  to save a public report, this authorization scheme
+                                                  must evaluate to TRUE. If no authorization scheme
+                                                  is provided then reports may be saved by any
+                                                  user.
+                                 </p>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-D61F70A7-FFE2-42C7-B3E1-DDB4E62CFD6E__GUID-1ECE4DF0-2512-41EC-B5A8-22A5A6929946">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="establishing-user-identity-through-authentication.html#GUID-45C4B1CD-4231-4FE9-8B5B-C90611F5F57B" title="Use authentication to establish a user's identity to control access to an application. Authentication may require a user identify a user name and password or could involve the use of digital certificates or a secure key.">Establishing User Identity Through Authentication</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="managing-interactive-report-attributes.html#GUID-D185C117-5034-460B-A0DD-063F63B4F457">Customizing the Interactive Report Actions Menu</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="managing-interactive-report-attributes.html#GUID-3C41F785-BAE7-48B5-BFAA-DFC1730D4A2A">Customizing the Interactive Report Search Bar</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29015"></a><div class="props_rev_3"><a id="GUID-8FA46FCB-A587-4869-AB29-43552D479F93" name="GUID-8FA46FCB-A587-4869-AB29-43552D479F93"></a><h4 id="HTMDB-GUID-8FA46FCB-A587-4869-AB29-43552D479F93" class="sect4"><span class="enumeration_section">10.7.6.4.3 </span>Saving a Public or Private Interactive Report
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>End users can save an interactive report and classify it as being either public or private. Public reports can be viewed by all users. Private reports can only be viewed by the user who saves the report.</p>
+                        <div class="infobox-tip" id="GUID-8FA46FCB-A587-4869-AB29-43552D479F93__GUID-BDAC80F3-02B8-427B-ABF6-8EA798A87073">
+                           <p class="notep1">Tip:</p>
+                           <p>To save a public report, the developer must edit the report Attributes. In the
+                    Property Editor, locate <span class="uicontrol bold">Actions Menu</span> and set
+                        <span class="uicontrol bold">Save Public Report</span> to <span class="uicontrol bold">On</span>.
+                    Developers can also apply an authorization scheme to enable or disable
+                        <span class="uicontrol bold">Save Public Report</span>. See <span class="q">"<a href="customizing-interactive-reports-as-an-end-user.html#GUID-D61F70A7-FFE2-42C7-B3E1-DDB4E62CFD6E">About Configuration Dependencies When Saving Interactive Reports</a>."</span></p>
+                        </div>
+                        <p>To save a public or private interactive report:</p>
+                        <ol>
+                           <li>
+                              <p>Go to the page containing the interactive report you want to save.</p>
+                           </li>
+                           <li>
+                              <p>Customize the report (for example, hide columns, add filters, and so on). </p>
+                           </li>
+                           <li>
+                              <p>Click the <span class="uicontrol bold">Actions</span> menu and select <span class="uicontrol bold">Report</span> and then <span class="uicontrol bold">Save Report</span>.
+                              </p>
+                              <p>The Save Report dialog appears.</p>
+                           </li>
+                           <li>
+                              <p>For end users, the following Save Report dialog appears.</p>
+                              <div class="figure" id="GUID-8FA46FCB-A587-4869-AB29-43552D479F93__GUID-199925D2-C31A-45EC-890B-C27CE8B6B001"><img height="267" width="429" src="img/ir_save_user.png" alt="Description of ir_save_user.png follows" title="Description of ir_save_user.png follows" longdesc="img_text/ir_save_user.html"><br><a href="img_text/ir_save_user.html">Description of the illustration ir_save_user.png</a></div>
+                              <!-- class="figure" -->
+                              <p>In Save Report:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p><span class="bold">Name</span> - Enter a name for the report.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    
+                                    <p><span class="bold">Description</span> - Enter an optional description.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Public</span> - Select this check box to make the report viewable to all users.
+                                Deselect this check box to make the report private.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="bold">Apply</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li>
+                              <p>For developers, the following Save Report dialog appears.</p>
+                              <div class="figure" id="GUID-8FA46FCB-A587-4869-AB29-43552D479F93__GUID-3E0F237B-2B1C-4F25-9B40-24E443AC79C0"><img height="324" width="428" src="img/ir_save_dev.png" alt="Description of ir_save_dev.png follows" title="Description of ir_save_dev.png follows" longdesc="img_text/ir_save_dev.html"><br><a href="img_text/ir_save_dev.html">Description of the illustration ir_save_dev.png</a></div>
+                              <!-- class="figure" -->
+                              <p>In Save Report:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p><span class="bold">Save</span> - Select <span class="bold">As Named Report</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Name</span> - Enter a name for the report.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    
+                                    <p><span class="bold">Description</span> - Enter an optional description.
+                                    </p>
+                                    
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Public</span>- Select this check box to make the report viewable to all users. Deselect this check box to make the report private.
+                                    </p>
+                                    <div class="infobox-tip" id="GUID-8FA46FCB-A587-4869-AB29-43552D479F93__GUID-97432EA5-ACAE-4EFD-B82D-FABE7DFEE65B">
+                                       <p class="notep1">Tip:</p>
+                                       <p>The Public check box only displays if you have enabled the <span class="bold">Save Public Report </span>report attribute.
+                                       </p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="bold">Apply</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29016"></a><div class="props_rev_3"><a id="GUID-F1D8A0F0-A79A-4E08-8A79-8B27E6067F63" name="GUID-F1D8A0F0-A79A-4E08-8A79-8B27E6067F63"></a><h4 id="HTMDB-GUID-F1D8A0F0-A79A-4E08-8A79-8B27E6067F63" class="sect4"><span class="enumeration_section">10.7.6.4.4 </span>Saving a Default Interactive Report 
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Developers can save two types of default interactive report: <span class="uicontrol bold">primary</span> and <span class="uicontrol bold">alternative</span>. Both reports display on the Report list on the search bar. However, primary default reports cannot be renamed or deleted.
+                        </p>
+                        <p>To save a default interactive report:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Run the report as a developer.</span></li>
+                        <li class="stepexpand"><span>Customize the report (for example, hide columns, add filters, and so on).</span></li>
+                        <li class="stepexpand"><span>Click the <span class="uicontrol bold">Actions</span> menu and select <span class="uicontrol bold">Report</span> and then <span class="uicontrol bold">Save Report</span>.</span><div>
+                              <p>The Save Report dialog appears.</p>
+                              <div class="figure" id="GUID-F1D8A0F0-A79A-4E08-8A79-8B27E6067F63__GUID-9FD5A2D1-2E6D-4455-8CF9-3FEF27FE362B"><img height="324" width="428" src="img/ir_save_dev.png" alt="Description of ir_save_dev.png follows" title="Description of ir_save_dev.png follows" longdesc="img_text/ir_save_dev.html"><br><a href="img_text/ir_save_dev.html">Description of the illustration ir_save_dev.png</a></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>From Save, select <span class="bold">As Default Report Settings</span>. </span><div>
+                              <p>The Save Default Report dialog appears.</p>
+                              <div class="figure" id="GUID-F1D8A0F0-A79A-4E08-8A79-8B27E6067F63__GUID-62CD782E-D313-48B3-9D89-653881205E42"><img height="228" width="432" src="img/ir_save_rpt_dev2.png" alt="Description of ir_save_rpt_dev2.png follows" title="Description of ir_save_rpt_dev2.png follows" longdesc="img_text/ir_save_rpt_dev2.html"><br><a href="img_text/ir_save_rpt_dev2.html">Description of the illustration ir_save_rpt_dev2.png</a></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>For Default Report Type, select either:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="bold">Primary</span> - This report displays as the primary report when the page runs.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Alternative</span> - This report displays as an alternative option on the Reports list on the Search bar. If you select <span class="bold">Alternative</span>, enter a name.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="bold">Apply</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29017"></a><div class="props_rev_3"><a id="GUID-3B9DA7AC-4523-4651-9052-D1A1AF0C5866" name="GUID-3B9DA7AC-4523-4651-9052-D1A1AF0C5866"></a><h4 id="HTMDB-GUID-3B9DA7AC-4523-4651-9052-D1A1AF0C5866" class="sect4"><span class="enumeration_section">10.7.6.4.5 </span>Renaming a Public or Private Interactive Report
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To rename a public or private interactive report:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Run the report as a developer.</span></li>
+                        <li class="stepexpand"><span>Select the public or private interactive report to rename.</span></li>
+                        <li class="stepexpand"><span>Click the saved report link.</span><div>
+                              <div class="figure" id="GUID-3B9DA7AC-4523-4651-9052-D1A1AF0C5866__GUID-0AEF1D09-AFFA-4E32-803E-AF7B4B351F7C"><img height="432" width="815" src="img/ir_rename.png" alt="Description of ir_rename.png follows" title="Description of ir_rename.png follows" longdesc="img_text/ir_rename.html"><br><a href="img_text/ir_rename.html">Description of the illustration ir_rename.png</a></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In the Rename Report dialog, edit the attributes (for example, enter a new name) and click <span class="uicontrol bold">Apply</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29018"></a><div class="props_rev_3"><a id="GUID-EDF1DE39-7325-4666-AA38-BC0140C0F05C" name="GUID-EDF1DE39-7325-4666-AA38-BC0140C0F05C"></a><h4 id="HTMDB-GUID-EDF1DE39-7325-4666-AA38-BC0140C0F05C" class="sect4"><span class="enumeration_section">10.7.6.4.6 </span>Deleting a Public or Private Interactive Report
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To delete a public or private interactive report:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Run the report as a developer.</span></li>
+                        <li class="stepexpand"><span>Click the <span class="uicontrol bold">Remove Report</span> icon next to the report name link.</span><div>
+                              <div class="figure" id="GUID-EDF1DE39-7325-4666-AA38-BC0140C0F05C__GUID-3A579D5F-FE7D-4E6F-AA50-D58B5321E677"><img height="436" width="818" src="img/ir_delete.png" alt="Description of ir_delete.png follows" title="Description of ir_delete.png follows" longdesc="img_text/ir_delete.html"><br><a href="img_text/ir_delete.html">Description of the illustration ir_delete.png</a></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29019"></a><div class="props_rev_3"><a id="GUID-02433137-1DDC-494B-A7E8-23A595586CAD" name="GUID-02433137-1DDC-494B-A7E8-23A595586CAD"></a><h4 id="HTMDB-GUID-02433137-1DDC-494B-A7E8-23A595586CAD" class="sect4"><span class="enumeration_section">10.7.6.4.7 </span>About Exporting Interactive Reports
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>When you export an application, the Primary Default, Alternative Default, public
+                reports are included by default. Confgure the <span class="uicontrol bold">Export Public
+                    Reports</span> and <span class="uicontrol bold">Export Private Reports</span> attributes
+                to control the type of reports to include in your export.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-02433137-1DDC-494B-A7E8-23A595586CAD__GUID-FF06B2C7-B65C-48E0-AB3C-8A73A43D98E3">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="exporting-an-application.html#GUID-CA08D090-882F-4745-87D9-149373F285F1" title="Move or copy an application by exporting and then importing it into the target instance.">Exporting an Application</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="customizing-interactive-reports-as-an-end-user.html#GUID-07DD1F87-42BF-4F4F-BD43-921E9F38649F">Saving Interactive Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

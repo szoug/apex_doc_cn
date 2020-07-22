@@ -1,0 +1,229 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Web Listener Security Considerations">
+      <meta name="abstract" content="Review security considerations when choosing a Web listener to run with Oracle Application Express.">
+      <meta name="description" content="Review security considerations when choosing a Web listener to run with Oracle Application Express.">
+      <meta name="DC.subject" content="security best practices, Oracle HTTP Server, Oracle HTTP Server, about security, embedded PL/SQL gateway, embedded PL/SQL gateway, security practices">
+      <meta name="keywords" content="security best practices, Oracle HTTP Server, Oracle HTTP Server, about security, embedded PL/SQL gateway, embedded PL/SQL gateway, security practices">
+      <meta name="DC.Relation" scheme="URI" content="understanding-administrator-security-best-practices.html#GUID-F7EF538E-D12A-4623-A68C-6F8E6523B6B8">
+      <meta name="DC.Relation" scheme="URI" content="web-listener-security.html#GUID-5899599D-960E-488A-8BFC-6BC6377F7E11">
+      <meta name="DC.Relation" scheme="URI" content="web-listener-security.html#GUID-B6306606-E963-4AF6-9A00-4327FE19015A">
+      <meta name="DC.Relation" scheme="URI" content="web-listener-security.html#GUID-9FEFBCAD-FD15-416C-B7A9-E79F2B358CB6">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-ADC526DE-7AC5-4100-9095-948D8FD712B1">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Review security considerations when choosing a Web listener to run with Oracle Application Express.">
+      <meta name="description" content="Review security considerations when choosing a Web listener to run with Oracle Application Express.">
+      <title>Web Listener Security Considerations</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Review security considerations when choosing a Web listener to run with Oracle Application Express.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="administrator-roles.html" title="Previous" type="text/html">
+      <link rel="next" href="manging-instance-security.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="administrator-roles.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="manging-instance-security.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-security.html" property="item" typeof="WebPage"><span property="name">Managing Application Security</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-administrator-security-best-practices.html" property="item" typeof="WebPage"><span property="name">Understanding Administrator Security Best Practices</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Web Listener Security Considerations</li>
+            </ol>
+            <a id="GUID-ADC526DE-7AC5-4100-9095-948D8FD712B1" name="GUID-ADC526DE-7AC5-4100-9095-948D8FD712B1"></a>
+            
+            <h2 id="HTMDB-GUID-ADC526DE-7AC5-4100-9095-948D8FD712B1" class="sect2"><span class="enumeration_section">21.1.2 </span>Web Listener Security Considerations
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Review security considerations when choosing a Web listener to run with
+        Oracle Application Express.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="web-listener-security.html#GUID-5899599D-960E-488A-8BFC-6BC6377F7E11">About Configuring Oracle REST Data Services with Oracle Application Express</a><br>Oracle recommends using Oracle REST Data Services with Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="web-listener-security.html#GUID-B6306606-E963-4AF6-9A00-4327FE19015A">About Configuring Oracle HTTP Server with mod_plsql with Oracle Application Express</a><br>Because <code class="codeph">mod_plsql</code> is deprecated as of Oracle HTTP Server         12c (12.1.3), Oracle recommends using Oracle REST Data Services.
+                  </li>
+                  <li class="ulchildlink"><a href="web-listener-security.html#GUID-9FEFBCAD-FD15-416C-B7A9-E79F2B358CB6">About Security Considerations When Using the Embedded PL/SQL Gateway</a><br>Oracle does not recommend the embedded PL/SQL gateway for applications         running on the Internet.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-ADC526DE-7AC5-4100-9095-948D8FD712B1__GUID-8EBAF4F2-13DF-4E9C-B9F9-C02B0332E2F3">
+                  <p class="notep1">See Also:</p>
+                  
+                  <p><a href="../htmig/choosing-web-listener.html#HTMIG-GUID-450226C4-25BF-4124-A900-986DBBEB7406" target="_blank">Choosing a Web
+                                        Listener</a> in <span><cite>Oracle Application Express 安装指南</cite></span></p>
+                  
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="understanding-administrator-security-best-practices.html#GUID-F7EF538E-D12A-4623-A68C-6F8E6523B6B8" title="Learn about security best practices for Oracle Application Express administrators.">Understanding Administrator Security Best Practices</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB30033"></a><div class="props_rev_3"><a id="GUID-5899599D-960E-488A-8BFC-6BC6377F7E11" name="GUID-5899599D-960E-488A-8BFC-6BC6377F7E11"></a><h3 id="HTMDB-GUID-5899599D-960E-488A-8BFC-6BC6377F7E11" class="sect3"><span class="enumeration_section">21.1.2.1 </span>About Configuring Oracle REST Data Services with Oracle Application Express
+               </h3>
+               <div>
+                  <p>Oracle recommends using Oracle REST Data Services with Oracle Application Express.</p>
+                  <p>Oracle REST Data Services (formerly known as Oracle Oracle Application Express Listener) is a J2EE application which communicates with the Oracle Database by mapping browser requests to the Application Express engine database over a SQL*Net connection. Oracle REST Data Services is the strategic direction for Oracle Application Express and Oracle recommends using it in practically all circumstances. In a production environment, you deploy Oracle REST Data Services web archive files to a supported Java EE application server, like Oracle Web Logic Server. Each deployment can be configured individually and serves the same purpose as a <code class="codeph">mod_plsql</code> Database Access Descriptor, which is to communicate with an Oracle database. 
+                  </p>
+                  <p>An Oracle REST Data Services deployment configuration contains several security related parameters. In a configuration for Oracle Application Express, Oracle recommends to set the parameter <code class="codeph">security.requestValidationFunction</code> to <code class="codeph">wwv_flow_epg_include_modules.authorize</code>. This activates the white list of callable procedures which ships with Oracle Application Express and prohibits calls to other procedures. This can be extended using the validation functions shipped with Oracle Application Express. 
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5899599D-960E-488A-8BFC-6BC6377F7E11__GUID-33BA6741-9217-494A-821E-CDBEEEAD5FE7">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"Restricting Access to Oracle Application Express by Database Access Descriptor (DAD)"</span> in <a href="../aeadm/configuring-security.html#AEADM209" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="web-listener-security.html#GUID-ADC526DE-7AC5-4100-9095-948D8FD712B1" title="Review security considerations when choosing a Web listener to run with Oracle Application Express.">Web Listener Security Considerations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25967"></a><div class="props_rev_3"><a id="GUID-B6306606-E963-4AF6-9A00-4327FE19015A" name="GUID-B6306606-E963-4AF6-9A00-4327FE19015A"></a><h3 id="HTMDB-GUID-B6306606-E963-4AF6-9A00-4327FE19015A" class="sect3"><span class="enumeration_section">21.1.2.2 </span>About Configuring Oracle HTTP Server with mod_plsql with Oracle Application Express
+               </h3>
+               <div>
+                  <p>Because <code class="codeph">mod_plsql</code> is deprecated as of Oracle HTTP Server
+        12c (12.1.3), Oracle recommends using Oracle REST Data Services.
+                  </p>
+                  <div class="infobox-tip" id="GUID-B6306606-E963-4AF6-9A00-4327FE19015A__GUID-BCAB73B4-B25B-4C74-83A1-DCA211156955">
+                     <p class="notep1">Tip:</p>
+                     
+                     <p><code class="codeph">mod_plsql</code> is deprecated as of Oracle HTTP Server 12c
+                (12.1.3). For more information about this deprecation, please see My Oracle Support
+                Note 1576588.1. Oracle recommends using Oracle REST Data Services instead.
+                     </p>
+                     
+                  </div>
+                  <p>Oracle HTTP Server uses the <code class="codeph">mod_plsql</code> plug-in to communicate with the
+            Oracle Application Express engine within the Oracle database. <code class="codeph">mod_plsql</code>
+            functions act as a communication broker between the web server and the Oracle
+            Application Express engine in the Oracle database.
+                  </p>
+                  <p>Each <code class="codeph">mod_plsql</code> request is associated with a set of
+            configuration values used to access the database called a Database Access Descriptor
+            (DAD). <code class="codeph">mod_plsql</code> provides a DAD parameter called
+                <code class="codeph">PlsqlRequestValidationFunction</code> which enables you to allow or
+            disallow further processing of a requested procedure. You can utilize this parameter to
+            implement tighter security for your PL/SQL application by blocking package and procedure
+            calls which should not be allowed to run from the DAD. Oracle recommends a DAD
+            configuration for Oracle Application Express which utilizes the
+                <code class="codeph">PlsqlRequestValidationFunction</code> directive with a value of<code class="codeph">
+                wwv_flow_epg_include_modules.authorize</code>. 
+                  </p>
+                  <p>The purpose of the <code class="codeph">PlsqlRequestValidationFunction</code> parameter
+            is to control which procedures can be invoked through <code class="codeph">mod_plsql</code>. By
+            default, the only procedures permitted are the public entry points of Oracle Application
+            Express. This can be extended using the validation functions shipped with Oracle
+            Application Express. 
+                  </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-B6306606-E963-4AF6-9A00-4327FE19015A__GUID-5DCD90DC-B185-4868-813D-746EFF03AAAD">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p> "Restricting Access to Oracle Application Express by Database Access
+                Descriptor (DAD)" in <a href="../aeadm/configuring-security.html#AEADM209" target="_blank"><span class="italic">Oracle Application Express Administration
+                Guide</span></a></p>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="web-listener-security.html#GUID-ADC526DE-7AC5-4100-9095-948D8FD712B1" title="Review security considerations when choosing a Web listener to run with Oracle Application Express.">Web Listener Security Considerations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25966"></a><div class="props_rev_3"><a id="GUID-9FEFBCAD-FD15-416C-B7A9-E79F2B358CB6" name="GUID-9FEFBCAD-FD15-416C-B7A9-E79F2B358CB6"></a><h3 id="HTMDB-GUID-9FEFBCAD-FD15-416C-B7A9-E79F2B358CB6" class="sect3"><span class="enumeration_section">21.1.2.3 </span>About Security Considerations When Using the Embedded PL/SQL Gateway
+               </h3>
+               <div>
+                  <p>Oracle does not recommend the embedded PL/SQL gateway for applications
+        running on the Internet.</p>
+                  <p>The embedded PL/SQL gateway runs in the database as part of the Oracle XML DB HTTP
+            listener. The Oracle XML DB HTTP listener and embedded PL/SQL gateway provides the
+            equivalent core features of Oracle HTTP Server and <code class="codeph">mod_plsql</code>. Because
+            the HTTP Listener runs in the same database where Oracle Application Express is
+            installed, it is not possible to separate the HTTP listener from the database. For this
+            reason, Oracle does not recommend the embedded PL/SQL gateway for applications that run
+            on the Internet or for production applications. Oracle recommends using Oracle REST Data
+            Services instead. Additionally, the embedded PL/SQL gateway does not provide the same
+            flexibility of configuration and detailed logging as Oracle REST Data Services.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="web-listener-security.html#GUID-ADC526DE-7AC5-4100-9095-948D8FD712B1" title="Review security considerations when choosing a Web listener to run with Oracle Application Express.">Web Listener Security Considerations</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

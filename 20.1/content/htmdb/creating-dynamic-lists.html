@@ -1,0 +1,346 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating Dynamic Lists">
+      <meta name="abstract" content="A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.">
+      <meta name="description" content="A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.">
+      <meta name="DC.subject" content="list, about dynamic, dynamic list, about creating, syntax, syntax, for dynamic list, creating from scratch">
+      <meta name="keywords" content="list, about dynamic, dynamic list, about creating, syntax, syntax, for dynamic list, creating from scratch">
+      <meta name="DC.Relation" scheme="URI" content="creating-lists.html#GUID-0ABE095F-AE4D-438C-840E-3B47915E6109">
+      <meta name="DC.Relation" scheme="URI" content="creating-dynamic-lists.html#GUID-64E01ACF-B7EF-419D-8E29-8B8E13B0CA0A">
+      <meta name="DC.Relation" scheme="URI" content="creating-dynamic-lists.html#GUID-CC5C355C-E54E-474D-8F10-B1E7A1787C6E">
+      <meta name="DC.Relation" scheme="URI" content="creating-dynamic-lists.html#GUID-F96C6257-04A1-46F7-931A-F4CA1B3CD073">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-1B67A3C8-39FA-4868-9532-F68AFCD74651">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.">
+      <meta name="description" content="A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.">
+      <title>Creating Dynamic Lists</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="creating-static-lists.html" title="Previous" type="text/html">
+      <link rel="next" href="copying-list.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="creating-static-lists.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="copying-list.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-shared-components.html" property="item" typeof="WebPage"><span property="name">Managing Shared Components</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="creating-lists.html" property="item" typeof="WebPage"><span property="name">Creating Lists</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating Dynamic Lists</li>
+            </ol>
+            <a id="GUID-1B67A3C8-39FA-4868-9532-F68AFCD74651" name="GUID-1B67A3C8-39FA-4868-9532-F68AFCD74651"></a><a id="HTMDB28677"></a>
+            
+            <h2 id="HTMDB-GUID-1B67A3C8-39FA-4868-9532-F68AFCD74651" class="sect2"><span class="enumeration_section">18.11.3 </span>Creating Dynamic Lists
+            </h2>
+         </header>
+         <div class="ind">
+            <p>A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="creating-dynamic-lists.html#GUID-64E01ACF-B7EF-419D-8E29-8B8E13B0CA0A">About the Process of Creating a Dynamic List</a><br></li>
+                  <li class="ulchildlink"><a href="creating-dynamic-lists.html#GUID-CC5C355C-E54E-474D-8F10-B1E7A1787C6E">Understanding Dynamic List Syntax</a><br></li>
+                  <li class="ulchildlink"><a href="creating-dynamic-lists.html#GUID-F96C6257-04A1-46F7-931A-F4CA1B3CD073">Creating a Dynamic List from Scratch</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="creating-lists.html#GUID-0ABE095F-AE4D-438C-840E-3B47915E6109" title="Add a shared collection of links (or a list) to a database application. To add a list to a page, create a region and specify the region type as List. You control the appearance of a list through list templates.">Creating Lists</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29342"></a><div class="props_rev_3"><a id="GUID-64E01ACF-B7EF-419D-8E29-8B8E13B0CA0A" name="GUID-64E01ACF-B7EF-419D-8E29-8B8E13B0CA0A"></a><h3 id="HTMDB-GUID-64E01ACF-B7EF-419D-8E29-8B8E13B0CA0A" class="sect3"><span class="enumeration_section">18.11.3.1 </span>About the Process of Creating a Dynamic List
+               </h3>
+               <div>
+                  <p>A dynamic list enables you to create a List component based on items from a SQL query or a PL/SQL function returning a SQL query. These dynamic lists can then be rendered on a page using any List Template from your theme.</p>
+                  <p>The process of creating a dynamic list involves the following steps:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Step 1:</span> Create the list by running the Create <a id="d193003e143" class="indexterm-anchor"></a><a id="d193003e147" class="indexterm-anchor"></a>List Wizard. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Step 2:</span> Specify whether to create the list from scratch or by copying an existing list.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Step 3:</span> If creating a list from scratch, you are prompted to select a list type. Select <span class="bold">Dynamic</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Step 4:</span> Enter a SQL query or a PL/SQL function returning a SQL query.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Step 5:</span> Add the list to a page by creating a List region.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-64E01ACF-B7EF-419D-8E29-8B8E13B0CA0A__GUID-8761C8F3-D71B-460F-A058-87DE50B03F3C">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="adding-list-to-page.html#GUID-4F80A2AE-F91B-40E4-86B0-4094C7D70A2A" title="Once you create a list and list entries, the next step is to add it to a page by creating a list region.">Adding a List to a Page</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="editing-list-attributes.html#GUID-7644D8AD-0B99-4153-8C7D-E13BC65E8B1C" title="Once you create a list, you can edit it on the Lists page.">Editing List Attributes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="accessing-list-reports.html#GUID-041B67D2-B700-4641-A0B9-C981B921CC3D" title="You can view the Unused, Conditional Entries, Utilization, and History reports by clicking the appropriate tab at the top of the Lists page. Note that these reports only display after you create a list.">Accessing List Reports</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dynamic-lists.html#GUID-1B67A3C8-39FA-4868-9532-F68AFCD74651" title="A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.">Creating Dynamic Lists</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28679"></a><div class="props_rev_3"><a id="GUID-CC5C355C-E54E-474D-8F10-B1E7A1787C6E" name="GUID-CC5C355C-E54E-474D-8F10-B1E7A1787C6E"></a><h3 id="HTMDB-GUID-CC5C355C-E54E-474D-8F10-B1E7A1787C6E" class="sect3"><span class="enumeration_section">18.11.3.2 </span>Understanding Dynamic List Syntax
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You create a dynamic list using a SQL query or a function returning a SQL Query. </p>
+                     <p>Syntax for a SQL query:</p><pre class="oac_no_warn" dir="ltr">SELECT level, <span class="italic">labelValue</span> label, 
+       [<span class="italic">targetValue</span>]            target, 
+       [<span class="italic">is_current</span>]             is_current_list_entry,
+       [<span class="italic">imageValue</span>]             image, 
+       [<span class="italic">imageAttributeValue</span>]    image_attribute,
+       [<span class="italic">imageAltValue</span>]          image_alt_attribute,
+       [<span class="italic">attribute1</span>]             attribute1,
+       [<span class="italic">attribute2</span>]             attribute2,
+       [<span class="italic">attribute3</span>]             attribute3,
+       [<span class="italic">attribute4</span>]             attribute4,
+       [<span class="italic">attribute5</span>]             attribute5,
+       [<span class="italic">attribute6</span>]             attribute6,
+       [<span class="italic">attribute7</span>]             attribute7,
+       [<span class="italic">attribute8</span>]             attribute8,
+       [<span class="italic">attribute9</span>]             attribute9,
+       [<span class="italic">attribute10</span>]            attribute10
+FROM ...
+WHERE ...
+ORDER BY ...
+</pre><p>Syntax for a function returning a SQL query:</p><pre class="oac_no_warn" dir="ltr">RETURN
+'SELECT level, <span class="italic">labelValue</span> label,'||
+'       [<span class="italic">targetValue</span>]         target,'|| 
+'       [<span class="italic">is_current</span>]          is_current_list_entry,'||
+'       [<span class="italic">imageValue</span>]          image,'||
+'       [<span class="italic">imageAttributeValue</span>] image_attribute, '||
+'       [<span class="italic">imageAltValue</span>]       image_alt_attribute,'||
+'       [<span class="italic">attribute1</span>]          attribute1,'||
+'       [<span class="italic">attribute2</span>]          attribute2,'||
+'       [<span class="italic">attribute3</span>]          attribute3,'||
+'       [<span class="italic">attribute4</span>]          attribute4,'||
+'       [<span class="italic">attribute5</span>]          attribute5,'||
+'       [<span class="italic">attribute6</span>]          attribute6,'||
+'       [<span class="italic">attribute7</span>]          attribute7,'||
+'       [<span class="italic">attribute8</span>]          attribute8,'||
+'       [<span class="italic">attribute9</span>]          attribute9,'||
+'       [<span class="italic">attribute10</span>]         attribute10'||
+'FROM ...'||
+'WHERE ...'||
+'ORDER BY ...';
+</pre><p>Where: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="italic"><code class="codeph">level</code></span> and <span class="italic"><code class="codeph">labelvalue</code></span> are required.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">level</code></span> - For hierarchical lists, the <span class="italic"><code class="codeph">level</code></span> parameter should be supplied. For non-hierarchical lists, this parameter can be set to <code class="codeph">NULL</code>.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">labelvalue</code></span> - Text to appear as list entry.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">targetvalue</code></span> - Target URL to branch to when list entry is selected. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">is_current</code></span> - Controls the behavior of the list entry. Values include:
+                           </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><code class="codeph">NULL</code> - Currency of target is based upon Target URL.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">'YES'</code> - List entry is always current.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">'NO</code>' - List entry is not current.
+                                 </p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">imagevalue</code></span> - The name of image to be display on the list entry
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">imageattributevalue</code></span> - Attributes of the image, such as the width or height
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">imagealtvalue</code></span> - Value for Image <code class="codeph">ALT</code> tag, required for accessibility purposes in templates where the user must click the image.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="italic"><code class="codeph">attribute1</code></span> to <span class="italic"><code class="codeph">10</code></span>: These attributes tie in with the existing ten User Attributes exposed on the Static List Entry page.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dynamic-lists.html#GUID-1B67A3C8-39FA-4868-9532-F68AFCD74651" title="A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.">Creating Dynamic Lists</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB28680"></a><div class="props_rev_3"><a id="GUID-F96C6257-04A1-46F7-931A-F4CA1B3CD073" name="GUID-F96C6257-04A1-46F7-931A-F4CA1B3CD073"></a><h3 id="HTMDB-GUID-F96C6257-04A1-46F7-931A-F4CA1B3CD073" class="sect3"><span class="enumeration_section">18.11.3.3 </span>Creating a Dynamic List from Scratch
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To create a dynamic list:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Access the Create/Edit Lists Wizard:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span>  icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span></li>
+                           <li><span>Under Navigation, click <span class="uicontrol bold">Lists</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>Click <span class="uicontrol bold">From Scratch</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li><span>For Name and Type:</span><ol type="a">
+                           <li><span>Name - Enter a numeric or alphanumeric name for the list.</span></li>
+                           <li><span>Type - Select <span class="uicontrol bold">Dynamic</span>.</span></li>
+                           <li><span>Build Option - If applicable, select a build option for this component. Build options are predefined settings that determine whether components within an application are enabled.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>For Query or Static Values:</span><ol type="a">
+                           <li class="substepexpand"><span>Query Source Type - Select <span class="uicontrol bold">SQL Query</span> or <span class="uicontrol bold">Function Returning SQL Query</span>.</span></li>
+                           <li class="substepexpand"><span>Query - Enter a SQL query or function returning a SQL query. To view SQL Query examples, expand the Examples region. </span><div>
+                                 <p>Build Query - Click <span class="uicontrol bold">Build Query</span> to use a wizard to build a query on the table or view you select. Follow the on-screen instructions.
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>For Create List, specify whether to create a list region:</span><ol type="a">
+                           <li class="substepexpand"><span>If you select Create list region on current page, the following attribute display:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Region Position - If creating a new region, select the region position.</p>
+                                    </li>
+                                    <li>
+                                       <p>Region Template - If creating a new region, select a region template.</p>
+                                    </li>
+                                    <li>
+                                       <p>List Template - If creating a new region, select a list template.</p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Region Position - If creating a new region, select the region position.</span></li>
+                           <li class="substepexpand"><span>Region Template - If creating a new region, select a region template.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F96C6257-04A1-46F7-931A-F4CA1B3CD073__GUID-54481291-5FF2-4613-ACC2-8B9113AA761B">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="creating-dynamic-lists.html#GUID-CC5C355C-E54E-474D-8F10-B1E7A1787C6E">Understanding Dynamic List Syntax</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dynamic-lists.html#GUID-1B67A3C8-39FA-4868-9532-F68AFCD74651" title="A Dynamic List is based on a SQL query or a PL/SQL function executed at runtime.">Creating Dynamic Lists</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

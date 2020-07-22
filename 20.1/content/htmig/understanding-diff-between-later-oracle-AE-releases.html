@@ -1,0 +1,161 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding the Differences Between Later Oracle Application Express Releases">
+      <meta name="abstract" content="Learn about Oracle Database 11g Express Edition that includes Oracle Application Express 4.0 and the difference between 4.0 and later releases.">
+      <meta name="description" content="Learn about Oracle Database 11g Express Edition that includes Oracle Application Express 4.0 and the difference between 4.0 and later releases.">
+      <meta name="DC.Relation" scheme="URI" content="upgrading.html#GUID-38805604-3203-4365-B9E0-9347DE5D3D7A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-diff-between-later-oracle-AE-releases.html#GUID-E851C049-13F2-44EE-A1EF-336C12D9BA3E">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-25379123-3760-4F61-9759-DEA9E9702D4D">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about Oracle Database 11g Express Edition that includes Oracle Application Express 4.0 and the difference between 4.0 and later releases.">
+      <meta name="description" content="Learn about Oracle Database 11g Express Edition that includes Oracle Application Express 4.0 and the difference between 4.0 and later releases.">
+      <title>Understanding the Differences Between Later Oracle Application Express Releases</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about Oracle Database 11g Express Edition that includes Oracle Application Express 4.0 and the difference between 4.0 and later releases.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="upgrading-to-latest-AE-release.html" title="Previous" type="text/html">
+      <link rel="next" href="book-index.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="upgrading-to-latest-AE-release.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="book-index.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="upgrading.html" property="item" typeof="WebPage"><span property="name">Upgrading Oracle Application Express within Oracle Database Express Edition</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding the Differences Between Later Oracle Application Express Releases </li>
+            </ol>
+            <a id="GUID-25379123-3760-4F61-9759-DEA9E9702D4D" name="GUID-25379123-3760-4F61-9759-DEA9E9702D4D"></a><a id="HTMIG29431"></a>
+            
+            <h2 id="HTMIG-GUID-25379123-3760-4F61-9759-DEA9E9702D4D" class="sect2"><span class="enumeration_section">F.2 </span>Understanding the Differences Between Later Oracle Application Express Releases 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about Oracle Database 11g Express Edition that includes Oracle Application Express 4.0 and the difference between 4.0 and later releases.</p>
+               <p>Oracle Database 11g Express Edition includes Oracle Application Express 4.0. This section describes the differences between Oracle Application Express release 4.0 and later releases.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-diff-between-later-oracle-AE-releases.html#GUID-E851C049-13F2-44EE-A1EF-336C12D9BA3E">User Interface Differences</a><br>Learn about the differences between Oracle Application Express release 4.0 and later releases.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="upgrading.html#GUID-38805604-3203-4365-B9E0-9347DE5D3D7A" title="Learn about upgrading Oracle Application Express included with Oracle Database XE.">Upgrading Oracle Application Express within Oracle Database Express Edition</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29432"></a><div class="props_rev_3"><a id="GUID-E851C049-13F2-44EE-A1EF-336C12D9BA3E" name="GUID-E851C049-13F2-44EE-A1EF-336C12D9BA3E"></a><h3 id="HTMIG-GUID-E851C049-13F2-44EE-A1EF-336C12D9BA3E" class="sect3"><span class="enumeration_section">F.2.1 </span>User Interface Differences
+               </h3>
+               <div>
+                  <p>Learn about the differences between Oracle Application Express release 4.0 and later releases.</p>
+                  <div class="section">
+                     <p>This section describes the differences between Oracle Application Express release 4.0 and later releases: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="uicontrol bold">Workspace Home Page</span> - The Workspace home page displays differently in newer versions of Oracle Application Express. In the newer versions of Application Express, the components displayed on the Workspace home page are<span class="uicontrol bold"> App Builder</span>,<span class="uicontrol bold"> SQL Workshop</span>,<span class="uicontrol bold"> Team Development</span>, and<span class="uicontrol bold"> App Gallery</span> .
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">Administration</span> - In the newer versions of Oracle Application Express, <span class="uicontrol bold">Administration</span> appears as a menu on the Workspace home page.
+                           </p>
+                        </li>
+                        <li>
+                           <div class="p"><span class="uicontrol bold">Account</span> - In the newer versions of Oracle Application Express, the <span class="uicontrol bold">Account Menu</span> appears at the top of the Application Express home page and allows you to set the following preferences:
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Default Schema</p>
+                                 </li>
+                                 <li>
+                                    <p>Default Date Format</p>
+                                 </li>
+                                 <li>
+                                    <p>Enable Legacy Component View</p>
+                                 </li>
+                                 <li>
+                                    <p>Run application in new window - Specify how Application Express manages windows or tabs when running applications from Application Builder</p>
+                                 </li>
+                                 <li>
+                                    <p>Use single window to run all applications - Specify whether different applications reuse the same application runtime window or tab</p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">Accessibility Mode</span> - In the newer versions of Oracle Application Express, the Workspace home page includes Accessibility Mode list that allows you to select either <span class="uicontrol bold">Standard</span> or <span class="uicontrol bold">Screen Reader</span> mode.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-diff-between-later-oracle-AE-releases.html#GUID-25379123-3760-4F61-9759-DEA9E9702D4D" title="Learn about Oracle Database 11g Express Edition that includes Oracle Application Express 4.0 and the difference between 4.0 and later releases.">Understanding the Differences Between Later Oracle Application Express Releases</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

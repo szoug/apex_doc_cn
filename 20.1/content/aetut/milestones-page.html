@@ -1,0 +1,447 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Developing the Milestones Page">
+      <meta name="abstract" content="Use the Create Page Wizard and Page Designer to add an interactive grid page to the application so that users can manage project Milestones.">
+      <meta name="description" content="Use the Create Page Wizard and Page Designer to add an interactive grid page to the application so that users can manage project Milestones.">
+      <meta name="DC.subject" content="interactive grid, Shared Components, Navigation Menu, Dynamic LOV, Select List, lookup, Display Only, Appearance Template, Template, Appearance">
+      <meta name="keywords" content="interactive grid, Shared Components, Navigation Menu, Dynamic LOV, Select List, lookup, Display Only, Appearance Template, Template, Appearance">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Shakeeb Rahman">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-C777E544-3DBF-4386-B787-290CF6BA4982">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use the Create Page Wizard and Page Designer to add an interactive grid page to the application so that users can manage project Milestones.">
+      <meta name="description" content="Use the Create Page Wizard and Page Designer to add an interactive grid page to the application so that users can manage project Milestones.">
+      <title>Developing the Milestones Page</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Tutorial: Building an Application">
+      <meta property="og:description" content="Use the Create Page Wizard and Page Designer to add an interactive grid page to the application so that users can manage project Milestones.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Tutorial: Building an Application">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-tutorial-building-application.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-08T10:54:58-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24727-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="projects-page.html" title="Previous" type="text/html">
+      <link rel="next" href="tasks-page.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Tutorial: Building an Application">
+    <meta name="dcterms.isVersionOf" content="AETUT">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="projects-page.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="tasks-page.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Tutorial: Building an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Developing the Milestones Page</li>
+            </ol>
+            <a id="GUID-C777E544-3DBF-4386-B787-290CF6BA4982" name="GUID-C777E544-3DBF-4386-B787-290CF6BA4982"></a>
+            
+            <h2 id="AETUT-GUID-C777E544-3DBF-4386-B787-290CF6BA4982" class="sect2"><span class="enumeration_chapter">6 </span>Developing the Milestones Page
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use the Create Page Wizard and Page Designer to add an interactive grid page to the application so that users can manage project Milestones.</p>
+               <p>In this lesson, you use the Create Page Wizard to add a new <strong class="term">interactive grid</strong> page. Similar to the older interactive report, interactive grids do not require a paired form page to change the content displayed on the page.
+               </p>
+               <p>In addition to the <code class="codeph">EBA_PROJECTS</code> table, the app also contains the <code class="codeph">EBA_PROJECT_MILESTONES</code> and <code class="codeph">EBA_PROJECT_TASKS</code> tables. These two tables contain data for incremental milestones and tasks that help to track the progress of an entire project more precisely.
+               </p>
+               <p>Currently, your app only supports changes to the status of entire projects. Develop the Milestones interactive grid so that your users can view and change the status of these tasks and milestones.</p>
+               <p>Add and configure a Milestones entry in the <strong class="term">Desktop Navigation Menu</strong> so it displays across the entire app.
+               </p>
+               <p>Use <strong class="term">Dynamic LOVs</strong> (or <strong class="term">lookups</strong>) to intelligently substitute information from another table by checking against the ID of the content in the original table.
+               </p>
+               <p>Repeat some familiar tasks to clean up the interactive grid in Page Designer and in the runtime to make it more user-friendly.</p>
+            </div>
+            <div class="sect2"><a id="GUID-4FDA4E48-C714-49F3-B383-C6D21C3A1D9F" name="GUID-4FDA4E48-C714-49F3-B383-C6D21C3A1D9F"></a><h3 id="AETUT-GUID-4FDA4E48-C714-49F3-B383-C6D21C3A1D9F" class="sect3"><span class="enumeration_section">6.1 </span>Creating an Interactive Grid Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Start by using the Create Page Wizard to add a new page.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To add an interactive grid page to the application:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">Create Page</span>.</span><div>
+                           <p>The Create Page Wizard displays.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Report</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Interactive Grid</span>.</span></li>
+                     <li class="stepexpand"><span>Enter the following:</span><ol type="a" id="GUID-4FDA4E48-C714-49F3-B383-C6D21C3A1D9F__SUBSTEPS_GSR_JQF_RHB">
+                           <li><span>Page Number - enter <kbd class="userinput">5</kbd></span></li>
+                           <li><span>Page Name - enter <kbd class="userinput">Milestones</kbd></span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Navigation Menu, click <span class="uicontrol bold">Create a new navigation menu entry</span>.</span></li>
+                     <li class="stepexpand"><span>Use the default settings and click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>For Report Source, enter the following:</span><ol type="a" id="GUID-4FDA4E48-C714-49F3-B383-C6D21C3A1D9F__SUBSTEPS_YN1_VQF_RHB">
+                           <li class="substepexpand"><span>Editing Enabled - click to <span class="uicontrol bold">enable</span>.</span></li>
+                           <li class="substepexpand"><span>Table / View Name - click the <span class="uicontrol bold">LOV icon</span> and select <span class="uicontrol bold">EBA_PROJECT_MILESTONES (table)</span></span><div>
+                                 <div class="figure" id="GUID-4FDA4E48-C714-49F3-B383-C6D21C3A1D9F__FIG_J2V_4YR_J3B"><br><div class="imageleft"><img class="imageleft" id="GUID-4FDA4E48-C714-49F3-B383-C6D21C3A1D9F__IMAGE_K2V_4YR_J3B" height="461" width="814" src="img/create_app_add_interactive_grid.png" alt="Description of create_app_add_interactive_grid.png follows" title="Description of create_app_add_interactive_grid.png follows" longdesc="img_text/create_app_add_interactive_grid.html"><br><a href="img_text/create_app_add_interactive_grid.html">Description of the illustration create_app_add_interactive_grid.png</a></div><br></div>
+                                 <!-- class="figure" -->
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The new Milestones page loads in Page Designer.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span></li>
+                  </ol>
+                  <div class="section">The Milestones report displays in the runtime.</div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B" name="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B"></a><h3 id="AETUT-GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B" class="sect3"><span class="enumeration_section">6.2 </span>Updating the Navigation Menu for Milestones
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>On the Milestones page in the runtime, examine the Milestones entry in the navigation sidebar (click the menu icon in the top-left to expand the menu).</p>
+                     <p>Elements that appear on all pages (such as the Navigation Menu) are controlled in Shared Components.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To view the Navigation Menu in Shared Components:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Edit Page 5</span> on the Runtime Developer toolbar to return to Page Designer.</span></li>
+                     <li class="stepexpand"><span>Do one of the following:</span><ul id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__CHOICES_ORZ_J1G_RHB">
+                           <li>
+                              <p>Above the Rendering tab, click the <span class="uicontrol bold">Shared Components</span> tab. Click <span class="uicontrol bold">Desktop Navigation Menu</span> and in Property Editor click <span class="uicontrol bold">Edit Component</span>.
+                              </p><br><div class="imageleft"><img class="imageleft" id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__IMAGE_PKS_H1S_J3B" height="291" width="376" src="img/page_designer_shared_components_tab.png" alt="Description of page_designer_shared_components_tab.png follows" title="Description of page_designer_shared_components_tab.png follows" longdesc="img_text/page_designer_shared_components_tab.html"><br><a href="img_text/page_designer_shared_components_tab.html">Description of the illustration page_designer_shared_components_tab.png</a></div><br></li>
+                           <li>Near the Save button, click the <span class="uicontrol bold">Shared Components</span> icon (<img id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__IMAGE_YGJ_ZBS_J3B" height="41" width="52" src="img/page_designer_shared_components_icon.png" alt="Shared Components" title="Shared Components">). Under Navigation, click <span class="uicontrol bold">Navigation Menu</span>, and click <span class="uicontrol bold">Desktop Navigation Menu</span>.
+                              <div class="figure" id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__FIG_UBL_ZCS_J3B"><br><div class="imageleft"><img class="imageleft" id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__IMAGE_VBL_ZCS_J3B" height="394" width="1050" src="img/shared_components_list_details.png" alt="Description of shared_components_list_details.png follows" title="Description of shared_components_list_details.png follows" longdesc="img_text/shared_components_list_details.html"><br><a href="img_text/shared_components_list_details.html">Description of the illustration shared_components_list_details.png</a></div><br></div>
+                              <!-- class="figure" -->
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>Update the sequence and the icon from the blank default for Milestones.</p>
+                     <p>To update the Milestones list entry:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Milestones</span>.</span></li>
+                     <li class="stepexpand"><span>Enter the following:</span><ol type="a" id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__SUBSTEPS_XGR_TDG_RHB">
+                           <li class="substepexpand"><span>Sequence - enter <kbd class="userinput">50</kbd></span><div>
+                                 <p>Use <code class="codeph">50</code> to stay in sync with the page number (5).
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Image/Class - click the <span class="uicontrol bold">LOV</span> icon and select <span class="uicontrol bold">fa-table-pointer</span></span><div>
+                                 <div class="infobox-tip" id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__GUID-6A2BAF88-9182-4778-A955-91A73EC85286">
+                                    <p class="notep1">Tip:</p>
+                                    <p>Use the search function in your browser to find the icon easily (Ctrl + F or Cmd + F).</p>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Run</span> icon (<img id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__IMAGE_NBX_Q2S_J3B" height="32" width="54" src="img/run_icon.png" alt="Run icon" title="Run icon">) in the top-right corner to run the app. Note the changes to the navigation sidebar.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-F8163EEF-7598-4D6B-8538-9C31CD57240B__IMAGE_JBN_52S_J3B" height="336" width="233" src="img/runtime_milestones_nav_menu.png" alt="Description of runtime_milestones_nav_menu.png follows" title="Description of runtime_milestones_nav_menu.png follows" longdesc="img_text/runtime_milestones_nav_menu.html"><br><a href="img_text/runtime_milestones_nav_menu.html">Description of the illustration runtime_milestones_nav_menu.png</a></div><br></div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9" name="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9"></a><h3 id="AETUT-GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9" class="sect3"><span class="enumeration_section">6.3 </span>Hiding Columns in the Application Runtime
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Develop the Milestones interactive grid on page 5 in the application runtime by hiding several columns from view and moving the Due Date column.</p>
+                     <div class="infobox-tip" id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__GUID-DCCEA431-0BF0-4E83-BE3C-A6800377C816">
+                        <p class="notep1">Tip:</p>Oracle recommends hiding columns rather than deleting them in case you need them in the future.
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>In the runtime, you can hide columns using the Column Heading menu or the Actions menu.</p>
+                     <p>To quickly hide a column in an interactive grid:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Id</span> column heading and select <span class="uicontrol bold">Hide</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__IMAGE_MXR_TG3_K3B" height="234" width="339" src="img/runtime_column_heading_menu_hide_milestones.png" alt="Description of runtime_column_heading_menu_hide_milestones.png follows" title="Description of runtime_column_heading_menu_hide_milestones.png follows" longdesc="img_text/runtime_column_heading_menu_hide_milestones.html"><br><a href="img_text/runtime_column_heading_menu_hide_milestones.html">Description of the illustration runtime_column_heading_menu_hide_milestones.png</a></div><br></div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To hide multiple columns in an interactive grid:</p>
+                  <p></p>
+                  <ol start="2">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Actions</span> menu and select <span class="uicontrol bold">Columns</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__IMAGE_MT5_FH3_K3B" height="453" width="556" src="img/runtime_milestones_actions_menu_columns.png" alt="Description of runtime_milestones_actions_menu_columns.png follows" title="Description of runtime_milestones_actions_menu_columns.png follows" longdesc="img_text/runtime_milestones_actions_menu_columns.html"><br><a href="img_text/runtime_milestones_actions_menu_columns.html">Description of the illustration runtime_milestones_actions_menu_columns.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>In the list of columns on the left, click the check boxes adjacent to the following columns to deselect them:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Created</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Created By</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Updated</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Updated By</span></p>
+                              </li>
+                           </ul><br><div class="imageleft"><img class="imageleft" id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__IMAGE_IGY_4H3_K3B" height="314" width="280" src="img/milestones_columns_dialog.png" alt="Description of milestones_columns_dialog.png follows" title="Description of milestones_columns_dialog.png follows" longdesc="img_text/milestones_columns_dialog.html"><br><a href="img_text/milestones_columns_dialog.html">Description of the illustration milestones_columns_dialog.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <p>Rearrange the columns in the interactive grid to prioritize the Due Date over other information.</p>
+                  <ol start="5">
+                     <li class="stepexpand"><span>To move a column, do one of the following:</span><ul id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__CHOICES_JQ4_QCF_THB">
+                           <li>
+                              <p><span class="bold">Drag and Drop Column Heading</span></p>
+                              <div class="p">
+                                 <ol type="a" id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__OL_FGJ_1DF_THB">
+                                    <li>
+                                       <p>Hover the mouse over the Due Date column heading. Note the thin dotted columns that display at the start of the heading. These are the grip handle.</p><br><div class="imageleft"><img class="imageleft" id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__IMAGE_F14_PBL_WLB" height="287" width="460" src="img/runtime_column_heading_grip_handle.png" alt="Description of runtime_column_heading_grip_handle.png follows" title="Description of runtime_column_heading_grip_handle.png follows" longdesc="img_text/runtime_column_heading_grip_handle.html"><br><a href="img_text/runtime_column_heading_grip_handle.html">Description of the illustration runtime_column_heading_grip_handle.png</a></div><br></li>
+                                    <li>
+                                       <p>Click and hold the grip handle and drag and drop the Due Date column between Project Id and Name.</p>
+                                    </li>
+                                 </ol>
+                              </div>
+                           </li>
+                           <li>
+                              <p><span class="bold">Columns Dialog in Actions Menu</span></p>
+                              <div class="p">
+                                 <ol type="a" id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__OL_W15_DDF_THB">
+                                    <li>
+                                       <p>Click the <span class="uicontrol bold">Actions</span> menu and select <span class="uicontrol bold">Columns</span>.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Click the <span class="uicontrol bold">Due Date</span> column to select it. (Do not click the check box.)
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Use the Move Up and Move Down buttons below the list to move Due Date below Project Id.</p>
+                                    </li>
+                                    <li>Click <span class="uicontrol bold">Save</span>.
+                                    </li>
+                                 </ol>
+                              </div>
+                           </li>
+                        </ul>
+                        <div><br><div class="imageleft"><img class="imageleft" id="GUID-18AA6292-867B-4C60-B10E-AE675ECF8CE9__IMAGE_T24_5BL_WLB" height="241" width="647" src="img/runtime_milestones_due_date_column_sorted.png" alt="Description of runtime_milestones_due_date_column_sorted.png follows" title="Description of runtime_milestones_due_date_column_sorted.png follows" longdesc="img_text/runtime_milestones_due_date_column_sorted.html"><br><a href="img_text/runtime_milestones_due_date_column_sorted.html">Description of the illustration runtime_milestones_due_date_column_sorted.png</a></div><br></div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To save your changes to the report:</p>
+                  <p></p>
+                  <ol start="6">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Actions</span>, select <span class="uicontrol bold">Report</span>, and click <span class="uicontrol bold">Save</span>.</span><div>The message <span class="q">"Default report saved for all users"</span> displays.
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-C3F0B6A5-5555-4305-A460-182AD2E93830" name="GUID-C3F0B6A5-5555-4305-A460-182AD2E93830"></a><h3 id="AETUT-GUID-C3F0B6A5-5555-4305-A460-182AD2E93830" class="sect3"><span class="enumeration_section">6.4 </span>Adding Project Names to the Milestones Interactive Grid
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>While the Milestones interactive grid is based on <code class="codeph">EBA_PROJECT_MILESTONES</code>, note that none of the columns provide alphabetical names for the projects. Project names are stored in another table: the <code class="codeph">NAME</code> column in <code class="codeph">EBA_PROJECTS</code>. Report regions can query other tables with a Dynamic LOV. This is also called a <strong class="term">lookup</strong>.
+                     </p>
+                     <p>First, create the Dynamic LOV in Shared Components and configure it to query <code class="codeph">EBA_PROJECTS</code>.
+                     </p>
+                     <p>Then use Page Designer to convert the <code class="codeph">PROJECT_ID</code> column to a Select List, and choose the Dynamic LOV / lookup to display the alphanumerical name of the referenced project instead of the numerical ID.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To return to Page Designer:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Edit Page 5</span> on the Runtime Developer Toolbar.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>To create a new Dynamic LOV lookup:</p>
+                  <p></p>
+                  <ol start="2">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Shared Components</span> icon <img id="GUID-C3F0B6A5-5555-4305-A460-182AD2E93830__IMAGE_YGJ_ZBS_J3B" height="41" width="52" src="img/page_designer_shared_components_icon.png" alt="Shared Components" title="Shared Components"> (top-right).</span></li>
+                     <li class="stepexpand"><span>Under Other Components, click <span class="uicontrol bold">List of Values</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                     <li class="stepexpand"><span>Select <span class="uicontrol bold">From Scratch</span> and click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>For Name and Type:</span><ol type="a" id="GUID-C3F0B6A5-5555-4305-A460-182AD2E93830__SUBSTEPS_LQ1_RCS_YHB">
+                           <li><span>Name - enter <kbd class="userinput">Project Name</kbd></span></li>
+                           <li><span>Type - select <span class="uicontrol bold">Dynamic</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Source Type, select <span class="uicontrol bold">SQL Query</span>.</span></li>
+                     <li class="stepexpand"><span>Copy and paste the following code:</span><div><pre class="pre codeblock"><code>select NAME d, ID r
+from EBA_PROJECTS
+order by NAME</code></pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span><div>
+                           <p>The Lists of Values screen redisplays with the <code class="codeph">Project Name</code> LOV present.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Edit Page 5</span> icon in the top-right to return to the Milestones page in Page Designer.</span><div>
+                           <p><img id="GUID-C3F0B6A5-5555-4305-A460-182AD2E93830__IMAGE_GQL_WH3_K3B" height="32" width="72" src="img/edit_page_5_button.png" alt="Edit Page 5" title="Edit Page 5"></p>
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To convert a column to a Select List:</p>
+                  <p></p>
+                  <ol start="12">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Rendering tab</span> icon to switch back to it.</span></li>
+                     <li class="stepexpand"><span>In the Rendering tab, under Milestones, expand <span class="uicontrol bold">Columns</span> and select <span class="uicontrol bold">PROJECT_ID</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-C3F0B6A5-5555-4305-A460-182AD2E93830__SUBSTEPS_NRY_B3K_VHB">
+                           <li class="substepexpand"><span>Identification: Type - select <span class="uicontrol bold">Select List</span></span></li>
+                           <li class="substepexpand"><span>Heading: Heading - enter <kbd class="userinput">Project</kbd></span></li>
+                           <li class="substepexpand"><span>List of Values: Type - select <span class="uicontrol bold">Shared Component</span></span></li>
+                           <li class="substepexpand"><span>List of Values: List of Values - select <span class="uicontrol bold">Project Name</span></span></li>
+                           <li class="substepexpand"><span>List of Values: Display Extra Values - click to <span class="uicontrol bold">disable</span></span></li>
+                           <li class="substepexpand"><span>List of Values: Null Display Value - enter the following: </span><div><pre class="pre codeblock"><code>- Select Project -</code></pre></div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-C3F0B6A5-5555-4305-A460-182AD2E93830__IMAGE_OZR_G33_K3B" height="375" width="490" src="img/runtime_milestones_project_lookup.png" alt="Description of runtime_milestones_project_lookup.png follows" title="Description of runtime_milestones_project_lookup.png follows" longdesc="img_text/runtime_milestones_project_lookup.html"><br><a href="img_text/runtime_milestones_project_lookup.html">Description of the illustration runtime_milestones_project_lookup.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Review your changes to the Project column in the Runtime. When finished, click <span class="uicontrol bold">Edit Page 5</span> to return to Page Designer.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28" name="GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28"></a><h3 id="AETUT-GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28" class="sect3"><span class="enumeration_section">6.5 </span>Changing the Appearance of an Interactive Grid in Page Designer
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">
+                     <p>Perform some routine clean-up tasks to make the interactive grid more user-friendly:</p>
+                     <ul style="list-style-type: disc;" id="GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28__UL_P4F_3FB_ZHB">
+                        <li>
+                           <p>Change the heading of the <code class="codeph">Name</code> column to instead refer specifically to Milestones.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Convert the audit columns to Display Only to prevent end users from changing the contents.</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To change a column heading:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>In the Rendering tab, under Milestones, expand <span class="uicontrol bold">Columns</span>.</span></li>
+                     <li class="stepexpand"><span>Select <span class="uicontrol bold">NAME</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28__SUBSTEPS_JDS_DQS_YHB">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Text Field</span></span></li>
+                           <li><span>Heading: Heading - enter <kbd class="userinput">Milestone</kbd></span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To change multiple columns to Display Only:</p>
+                  <p></p>
+                  <ol start="4">
+                     <li class="stepexpand"><span>Hold <span class="uicontrol bold">Ctrl</span> and select the following columns:</span><ol type="a" id="GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28__SUBSTEPS_TFX_Z4S_YHB">
+                           <li><span><span class="uicontrol bold">CREATED</span></span></li>
+                           <li><span><span class="uicontrol bold">CREATED_BY</span></span></li>
+                           <li><span><span class="uicontrol bold">UPDATED</span></span></li>
+                           <li><span><span class="uicontrol bold">UPDATED_BY</span></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" class="single-step" id="GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28__SUBSTEPS_EW2_2PS_YHB">
+                           <li><span>Identification: Type - select <span class="uicontrol bold">Display Only</span></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span> to enter the runtime.</span><div>
+                           <div class="figure" id="GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28__FIG_KMC_KJ3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-7C4FB0CB-F966-4842-A926-4AF24F1ADB28__IMAGE_LMC_KJ3_K3B" height="440" width="979" src="img/runtime_milestones_appearance_after_page_designer.png" alt="Description of runtime_milestones_appearance_after_page_designer.png follows" title="Description of runtime_milestones_appearance_after_page_designer.png follows" longdesc="img_text/runtime_milestones_appearance_after_page_designer.html"><br><a href="img_text/runtime_milestones_appearance_after_page_designer.html">Description of the illustration runtime_milestones_appearance_after_page_designer.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-C9651444-9B96-4489-9F7E-C82D44DB2E5E" name="GUID-C9651444-9B96-4489-9F7E-C82D44DB2E5E"></a><h3 id="AETUT-GUID-C9651444-9B96-4489-9F7E-C82D44DB2E5E" class="sect3"><span class="enumeration_section">6.6 </span>Finalizing the Milestones Interactive Grid in the Runtime
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Perform some routine clean-up tasks to complete the default Milestones report:</p>
+                     <ul style="list-style-type: disc;" id="GUID-C9651444-9B96-4489-9F7E-C82D44DB2E5E__UL_WG2_LHB_ZHB">
+                        <li>
+                           <p>Sort the report so that it displays projects alphabetically.</p>
+                        </li>
+                        <li>
+                           <p>Save your changes to the report layout as the new default.</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To set multiple columns to sort ascending:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Hover over the Project column heading and click the <span class="uicontrol bold">Sort Ascending</span> icon (up arrow).</span></li>
+                     <li class="stepexpand"><span>Hold the <span class="uicontrol bold">Shift</span> key, hover over the Due Date column heading, and click the <span class="uicontrol bold">Sort Ascending</span> icon (up arrow).</span><div>
+                           <p>Icons display next to the Project and Due Date column names indicating their sort order.</p><br><div class="imageleft"><img class="imageleft" id="GUID-C9651444-9B96-4489-9F7E-C82D44DB2E5E__IMAGE_HTG_1K3_K3B" height="110" width="582" src="img/runtime_milestones_columns_sorted.png" alt="Description of runtime_milestones_columns_sorted.png follows" title="Description of runtime_milestones_columns_sorted.png follows" longdesc="img_text/runtime_milestones_columns_sorted.html"><br><a href="img_text/runtime_milestones_columns_sorted.html">Description of the illustration runtime_milestones_columns_sorted.png</a></div><br></div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To save the report layout as the new default:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Actions</span> menu, select <span class="uicontrol bold">Report</span>, and select <span class="uicontrol bold">Save</span>.</span><div>
+                           <p>You cannot use the Save button at the top of the report for this step because it does not overwrite the report default.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Application #####</span> on the Runtime Developer toolbar to return to the Application home page.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>The Milestones page is complete. Proceed to the next lesson.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

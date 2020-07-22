@@ -1,0 +1,315 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Controlling the Number of Concurrent Jobs">
+      <meta name="abstract" content="Learn about specifying the number of concurrently running jobs.">
+      <meta name="description" content="Learn about specifying the number of concurrently running jobs.">
+      <meta name="DC.subject" content="installation, managing JOB_QUEUE_PROCESSES, JOB_QUEUE_PROCESSES, viewing number of, viewing in installation log, viewing on About page, viewing from SQL*Plus, changing number of">
+      <meta name="keywords" content="installation, managing JOB_QUEUE_PROCESSES, JOB_QUEUE_PROCESSES, viewing number of, viewing in installation log, viewing on About page, viewing from SQL*Plus, changing number of">
+      <meta name="DC.Relation" scheme="URI" content="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91">
+      <meta name="DC.Relation" scheme="URI" content="controlling-concurrent-jobs.html#GUID-A4705F4A-444D-4267-862E-190287B3F748">
+      <meta name="DC.Relation" scheme="URI" content="controlling-concurrent-jobs.html#GUID-4C1EBD00-2EA6-47AB-A148-71D6976D6D3B">
+      <meta name="DC.Relation" scheme="URI" content="controlling-concurrent-jobs.html#GUID-0D38E3D3-8A0F-4F51-BE4A-607AE1FECB3B">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-F32497A7-D2C7-4147-8CE2-1E227A144865">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about specifying the number of concurrently running jobs.">
+      <meta name="description" content="Learn about specifying the number of concurrently running jobs.">
+      <title>Controlling the Number of Concurrent Jobs</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about specifying the number of concurrently running jobs.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="performing-security-task.html" title="Previous" type="text/html">
+      <link rel="next" href="running-OracleAE-in-other-languages.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="performing-security-task.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="running-OracleAE-in-other-languages.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Installing-AE-and-configuring-PLSQL-gateway.html" property="item" typeof="WebPage"><span property="name">Installing Application Express and Configuring
+                Web Listener - Embedded PL/SQL Gateway  (Deprecated)</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Controlling the Number of Concurrent Jobs</li>
+            </ol>
+            <a id="GUID-F32497A7-D2C7-4147-8CE2-1E227A144865" name="GUID-F32497A7-D2C7-4147-8CE2-1E227A144865"></a><a id="HTMIG29165"></a>
+            
+            <h2 id="HTMIG-GUID-F32497A7-D2C7-4147-8CE2-1E227A144865" class="sect2"><span class="enumeration_section">A.7 </span>Controlling the Number of Concurrent Jobs
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn about specifying the number of concurrently running jobs.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="controlling-concurrent-jobs.html#GUID-A4705F4A-444D-4267-862E-190287B3F748">About Managing the Number of Concurrent Jobs</a><br>Learn about managing maximum number of concurrently running jobs.
+                  </li>
+                  <li class="ulchildlink"><a href="controlling-concurrent-jobs.html#GUID-4C1EBD00-2EA6-47AB-A148-71D6976D6D3B">Viewing the Number of JOB_QUEUE_PROCESSES</a><br>You can view number of <code class="codeph">JOB_QUEUE_PROCESSES</code> in three ways.
+                  </li>
+                  <li class="ulchildlink"><a href="controlling-concurrent-jobs.html#GUID-0D38E3D3-8A0F-4F51-BE4A-607AE1FECB3B">Changing the Number of JOB_QUEUE_PROCESSES</a><br>You can change the number of <code class="codeph">JOB_QUEUE_PROCESSES</code> by running a SQL statement in SQL*Plus.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMIG29166"></a><div class="props_rev_3"><a id="GUID-A4705F4A-444D-4267-862E-190287B3F748" name="GUID-A4705F4A-444D-4267-862E-190287B3F748"></a><h3 id="HTMIG-GUID-A4705F4A-444D-4267-862E-190287B3F748" class="sect3"><span class="enumeration_section">A.7.1 </span>About Managing the Number of Concurrent Jobs
+               </h3>
+               <div>
+                  <p>Learn about managing maximum number of concurrently running jobs.</p>
+                  <p><code class="codeph">JOB_QUEUE_PROCESSES</code> determine the maximum number of concurrently running jobs. In Oracle Application Express transactional support and SQL scripts require jobs. If <code class="codeph">JOB_QUEUE_PROCESSES</code> is not enabled and working properly, you cannot successfully execute a script.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="controlling-concurrent-jobs.html#GUID-F32497A7-D2C7-4147-8CE2-1E227A144865" title="Learn about specifying the number of concurrently running jobs.">Controlling the Number of Concurrent Jobs</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMIG29167"></a><div class="props_rev_3"><a id="GUID-4C1EBD00-2EA6-47AB-A148-71D6976D6D3B" name="GUID-4C1EBD00-2EA6-47AB-A148-71D6976D6D3B"></a><h3 id="HTMIG-GUID-4C1EBD00-2EA6-47AB-A148-71D6976D6D3B" class="sect3"><span class="enumeration_section">A.7.2 </span>Viewing the Number of JOB_QUEUE_PROCESSES
+               </h3>
+               <p>You can view number of <code class="codeph">JOB_QUEUE_PROCESSES</code> in three ways.
+               </p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="controlling-concurrent-jobs.html#GUID-3EEF5020-8BFE-4C85-88F7-BF2BF3F8259C">Viewing JOB_QUEUE_PROCESSES in the Installation Log File</a><br>View <code class="codeph">JOB_QUEUE_PROCESSES</code> in the installation log         files.
+                     </li>
+                     <li class="ulchildlink"><a href="controlling-concurrent-jobs.html#GUID-0528F256-6487-439F-BAFA-E36D494599A3">Viewing JOB_QUEUE_PROCESSES in Oracle Application Express</a><br>View the number of <code class="codeph">JOB_QUEUE_PROCESSES</code> on the About                 Application Express page.
+                     </li>
+                     <li class="ulchildlink"><a href="controlling-concurrent-jobs.html#GUID-CEC88825-0BC6-49F5-A999-3AE4DA0BD49D">Viewing JOB_QUEUE_PROCESSES from SQL*Plus</a><br>View the number of <code class="codeph">JOB_QUEUE_PROCESSES</code> from         SQL*Plus.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="controlling-concurrent-jobs.html#GUID-F32497A7-D2C7-4147-8CE2-1E227A144865" title="Learn about specifying the number of concurrently running jobs.">Controlling the Number of Concurrent Jobs</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMIG29168"></a><div class="props_rev_3"><a id="GUID-3EEF5020-8BFE-4C85-88F7-BF2BF3F8259C" name="GUID-3EEF5020-8BFE-4C85-88F7-BF2BF3F8259C"></a><h4 id="HTMIG-GUID-3EEF5020-8BFE-4C85-88F7-BF2BF3F8259C" class="sect4"><span class="enumeration_section">A.7.2.1 </span>Viewing JOB_QUEUE_PROCESSES in the Installation Log File
+                  </h4>
+                  <div>
+                     <p>View <code class="codeph">JOB_QUEUE_PROCESSES</code> in the installation log
+        files.
+                     </p>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-3EEF5020-8BFE-4C85-88F7-BF2BF3F8259C__GUID-AE7C1EFD-0755-4C7B-A3FC-38B39784DE48">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="reviewing-log-of-installation-session.html#GUID-E6FF6A64-5F6D-42AE-81CC-8BEB3F989551" title="The apexins.sql script creates a log file in the apex directory using the naming convention installYYYY-MM-DD_HH24-MI-SS.log.">Reviewing a Log of an Installation Session</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="controlling-concurrent-jobs.html#GUID-4C1EBD00-2EA6-47AB-A148-71D6976D6D3B" title="You can view number of JOB_QUEUE_PROCESSES in three ways.">Viewing the Number of JOB_QUEUE_PROCESSES</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29169"></a><div class="props_rev_3"><a id="GUID-0528F256-6487-439F-BAFA-E36D494599A3" name="GUID-0528F256-6487-439F-BAFA-E36D494599A3"></a><h4 id="HTMIG-GUID-0528F256-6487-439F-BAFA-E36D494599A3" class="sect4"><span class="enumeration_section">A.7.2.2 </span>Viewing JOB_QUEUE_PROCESSES in Oracle Application Express
+                  </h4>
+                  <div>
+                     <p>View the number of <code class="codeph">JOB_QUEUE_PROCESSES</code> on the About
+                Application Express page.
+                     </p>
+                     <div class="section">
+                        <p>To view the About Application Express page:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Sign in to Oracle Application Express.</span></li>
+                        <li class="stepexpand"><span>Locate the Help menu at the top of the page.</span></li>
+                        <li class="stepexpand"><span>From the Help menu, select <span class="uicontrol bold">About</span>. </span><div>
+                              
+                              <p>The About Application Express page appears.
+                                        </p>
+                              
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Scroll down and find <code class="codeph">JOB_QUEUE_PROCESSES</code> at
+                                        the bottom of the page.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-0528F256-6487-439F-BAFA-E36D494599A3__GUID-5DBB5C64-40D5-480B-9CBE-93AFBE7C4073">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="creating-workspace-and-adding-Oracle-AE-users.html#GUID-7A8123F6-21D2-4981-A75A-2E94C9CD8BD1" title="Learn how to sign in to a workspace using the Oracle REST Data Services.">Signing into a Workspace Using Oracle REST Data Services</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="controlling-concurrent-jobs.html#GUID-4C1EBD00-2EA6-47AB-A148-71D6976D6D3B" title="You can view number of JOB_QUEUE_PROCESSES in three ways.">Viewing the Number of JOB_QUEUE_PROCESSES</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMIG29170"></a><div class="props_rev_3"><a id="GUID-CEC88825-0BC6-49F5-A999-3AE4DA0BD49D" name="GUID-CEC88825-0BC6-49F5-A999-3AE4DA0BD49D"></a><h4 id="HTMIG-GUID-CEC88825-0BC6-49F5-A999-3AE4DA0BD49D" class="sect4"><span class="enumeration_section">A.7.2.3 </span>Viewing JOB_QUEUE_PROCESSES from SQL*Plus
+                  </h4>
+                  <div>
+                     <p>View the number of <code class="codeph">JOB_QUEUE_PROCESSES</code> from
+        SQL*Plus.
+                     </p>
+                     <p>To view the number of <code class="codeph">JOB_QUEUE_PROCESSES</code>
+                from SQL*Plus:
+                     </p>
+                     <ol id="GUID-CEC88825-0BC6-49F5-A999-3AE4DA0BD49D__STEPS_SLR_T4B_LKB">
+                        <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is
+                    installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code>
+                    role:</span><div>
+                              
+                              <ul style="list-style-type: disc;" id="GUID-CEC88825-0BC6-49F5-A999-3AE4DA0BD49D__UL_N5N_44B_LKB">
+                                 <li>
+                                    
+                                    <p>On Windows:</p>
+                                    <pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span></code></pre>
+                                    </li>
+                                 <li>
+                                    
+                                    <p>On UNIX and Linux:</p>
+                                    <pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span></code></pre>
+                                    </li>
+                              </ul>
+                              
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Run the appropriate SQL statement. For example:</span><div>
+                              <pre class="pre codeblock"><code>SELECT VALUE FROM v$parameter WHERE NAME = 'job_queue_processes'</code></pre>
+                              </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="controlling-concurrent-jobs.html#GUID-4C1EBD00-2EA6-47AB-A148-71D6976D6D3B" title="You can view number of JOB_QUEUE_PROCESSES in three ways.">Viewing the Number of JOB_QUEUE_PROCESSES</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMIG29171"></a><div class="props_rev_3"><a id="GUID-0D38E3D3-8A0F-4F51-BE4A-607AE1FECB3B" name="GUID-0D38E3D3-8A0F-4F51-BE4A-607AE1FECB3B"></a><h3 id="HTMIG-GUID-0D38E3D3-8A0F-4F51-BE4A-607AE1FECB3B" class="sect3"><span class="enumeration_section">A.7.3 </span>Changing the Number of JOB_QUEUE_PROCESSES
+               </h3>
+               <div>
+                  <p>You can change the number of <code class="codeph">JOB_QUEUE_PROCESSES</code> by running a SQL statement in SQL*Plus.
+                  </p>
+                  <div class="section">
+                     <p>To update the number of <code class="codeph">JOB_QUEUE_PROCESSES</code>:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code class="codeph">SYS</code> specifying the <code class="codeph">SYSDBA</code> role:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>On Windows:</p><pre class="pre codeblock"><code><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span></code></pre></li>
+                              <li>
+                                 <p>On UNIX and Linux:</p><pre class="pre codeblock"><code>$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span></code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In SQL*Plus run the following SQL statement:</span><div><pre class="pre codeblock"><code>ALTER SYSTEM SET JOB_QUEUE_PROCESSES = &lt;number&gt;
+</code></pre><p>For example, running the statement <code class="codeph">ALTER SYSTEM SET JOB_QUEUE_PROCESSES = 20</code> sets <code class="codeph">JOB_QUEUE_PROCESSES</code> to 20. 
+                           </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="controlling-concurrent-jobs.html#GUID-F32497A7-D2C7-4147-8CE2-1E227A144865" title="Learn about specifying the number of concurrently running jobs.">Controlling the Number of Concurrent Jobs</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

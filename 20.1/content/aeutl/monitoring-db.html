@@ -1,0 +1,625 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Monitoring the Database">
+      <meta name="abstract" content="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">
+      <meta name="description" content="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">
+      <meta name="DC.subject" content="database, monitoring, Database Monitor, Sessions, Session report, session, killing, Locks, Locks report, Waits, Waits report, I/O, I/O report, SQL, SQL report, Open Cursors, Open Cursors report, Top SQL, Long Operations">
+      <meta name="keywords" content="database, monitoring, Database Monitor, Sessions, Session report, session, killing, Locks, Locks report, Waits, Waits report, I/O, I/O report, SQL, SQL report, Open Cursors, Open Cursors report, Top SQL, Long Operations">
+      <meta name="DC.Relation" scheme="URI" content="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-db.html#GUID-73BDE346-5F03-4EF1-9C43-5E0D596D1357">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-db.html#GUID-14A4DEDE-9E22-4E0B-9B9E-BA294B5C613D">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-db.html#GUID-2E25022D-3A26-4EB0-A067-DDF95397C157">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-db.html#GUID-9B9C6BBB-3F41-49FE-82B4-9873D8F81773">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-db.html#GUID-5FCC34EE-DF96-41A5-95B5-444A899141C6">
+      <meta name="DC.Relation" scheme="URI" content="monitoring-db.html#GUID-96AD4A90-7E2F-479B-BAA5-1C6075920F97">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">
+      <meta name="description" content="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">
+      <title>Monitoring the Database</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="viewing-db-details.html" title="Previous" type="text/html">
+      <link rel="next" href="using-SQL-scripts.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="viewing-db-details.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-SQL-scripts.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-Oracle-application-express-utilities.html" property="item" typeof="WebPage"><span property="name"> Using Oracle Application Express Utilities</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Monitoring the Database</li>
+            </ol>
+            <a id="GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" name="GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F"></a><a id="AEUTL271"></a>
+            
+            <h2 id="AEUTL-GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" class="sect2"><span class="enumeration_section">5.12 </span>Monitoring the Database
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.</p>
+               <p>You can use these reports to identify poorly performing SQL and to better understand the workload of the database.</p>
+               <div class="infobox-tip" id="GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F__GUID-A71394CD-36F0-46BA-BC28-3416B2B248BC">
+                  <p class="notep1">Tip:</p>
+                  <p>To access any of the icons on the Database Monitor page, you must have a database account that has been granted a database administrator (DBA) role.</p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E">Accessing Session Page Reports</a><br>A session is the connection of a user to an Oracle database instance. 
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-db.html#GUID-73BDE346-5F03-4EF1-9C43-5E0D596D1357">System Statistics</a><br>Displays the System Statistics page statistics.
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-db.html#GUID-14A4DEDE-9E22-4E0B-9B9E-BA294B5C613D">Viewing System Statistics</a><br>Learn how to view the System Statistics page.
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-db.html#GUID-2E25022D-3A26-4EB0-A067-DDF95397C157">About Top SQL Page</a><br>The top SQL statements represent the SQL statements that are executed most often, that use more system resources than other SQL statements, or that use system resources more frequently than other SQL statements. 
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-db.html#GUID-9B9C6BBB-3F41-49FE-82B4-9873D8F81773">Viewing Top SQL Page</a><br>Use the Top SQL page to identify poorly performing SQL.
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-db.html#GUID-5FCC34EE-DF96-41A5-95B5-444A899141C6">About Long Operations Page</a><br>The Long Operations page displays the status of various operations that run for longer than 6 seconds (in absolute time).
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-db.html#GUID-96AD4A90-7E2F-479B-BAA5-1C6075920F97">Viewing the Long Operations Page</a><br>Learn how to view the Long Operations page.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5" title="Oracle Application Express provides utilities to build SQL queries, load and unload data from an Oracle database, generate DDL, view object reports, manage User Interface Defaults, restore dropped database objects, compare schemas, monitor the database, and view database details.">Using Oracle Application Express Utilities</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL29168"></a><div class="props_rev_3"><a id="GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" name="GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E"></a><h3 id="AEUTL-GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" class="sect3"><span class="enumeration_section">5.12.1 </span>Accessing Session Page Reports
+               </h3>
+               <div>
+                  <p>A session is the connection of a user to an Oracle database instance. </p>
+                  <p>A session lasts from the time the user connects until the time the user disconnects or exits the database application.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="monitoring-db.html#GUID-4A2DD256-A504-4B0E-B1CB-A5F28E9BC821">Accessing Reports on the Session Page</a><br>You must have database administrator privileges to access the Sessions page.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-db.html#GUID-4D12F990-3F83-4D99-B798-D3F5097D32C2">Creating Sessions Reports</a><br>The Sessions Report displays information about the current sessions in the database. 
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-db.html#GUID-34791249-9B65-49F8-BD76-C71EBC2745FC">Controlling the Number of Rows for Locks Reports</a><br>The Locks report displays a report of sessions which have locks that are blocking other session(s).
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-db.html#GUID-4D4A7E2D-58E4-4800-A0D3-0DE1F56BBD08">Creating Waits Reports</a><br>The Waits report displays the wait events for each session.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-db.html#GUID-AF43E71B-0564-4714-8A63-F5C6F8BEC490">Creating I/O Reports</a><br>The I/0 report displays details about the I/O for each session. 
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-db.html#GUID-25FD5906-F811-44F3-B4D0-3A57471FE1A4">Creating SQL Reports</a><br>The SQL report displays details about the current or last SQL statement executed for each session. 
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-db.html#GUID-C16A144D-5BA3-4DDD-B52A-897E72DD54B2">Creating Open Cursors Report</a><br>The Open Cursors report displays details about the number of open cursors for each session. 
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" title="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">Monitoring the Database</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEUTL272"></a><div class="props_rev_3"><a id="GUID-4A2DD256-A504-4B0E-B1CB-A5F28E9BC821" name="GUID-4A2DD256-A504-4B0E-B1CB-A5F28E9BC821"></a><h4 id="AEUTL-GUID-4A2DD256-A504-4B0E-B1CB-A5F28E9BC821" class="sect4"><span class="enumeration_section">5.12.1.1 </span>Accessing Reports on the Session Page
+                  </h4>
+                  <div>
+                     <p>You must have database administrator privileges to access the Sessions page.</p>
+                     <div class="section">
+                        <p>A session is the connection of a user to an Oracle database instance. A session lasts from the time the user connects until the time the user disconnects or exits the database application.</p>
+                        <p></p>
+                        <p>To access reports on the Sessions page:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Database Monitor</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Sessions</span>.</span></li>
+                        <li class="stepexpand"><span>If prompted, enter the appropriate database administrator user name and password and click <span class="uicontrol bold">Login</span>.</span><div>
+                              <p>The Sessions page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To view a report, select one of the following tabs at the top of the page:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><strong class="term">Sessions</strong></p>
+                                 </li>
+                                 <li>
+                                    <p><strong class="term">Locks</strong></p>
+                                 </li>
+                                 <li>
+                                    <p><strong class="term">Waits</strong></p>
+                                 </li>
+                                 <li>
+                                    <p><strong class="term">I/O</strong></p>
+                                 </li>
+                                 <li>
+                                    <p><strong class="term">SQL</strong></p>
+                                 </li>
+                                 <li>
+                                    <p><strong class="term">Open Cursors</strong></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" title="A session is the connection of a user to an Oracle database instance.">Accessing Session Page Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL273"></a><div class="props_rev_3"><a id="GUID-4D12F990-3F83-4D99-B798-D3F5097D32C2" name="GUID-4D12F990-3F83-4D99-B798-D3F5097D32C2"></a><h4 id="AEUTL-GUID-4D12F990-3F83-4D99-B798-D3F5097D32C2" class="sect4"><span class="enumeration_section">5.12.1.2 </span>Creating Sessions Reports
+                  </h4>
+                  <div>
+                     <p>The Sessions Report displays information about the current sessions in the database. </p>
+                     <div class="section">
+                        <p>Use the controls at the top of page to narrow the view:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="uicontrol bold">Search</span>. Enter search criteria and click <span class="uicontrol bold">Go</span>. For search details, click the Search label.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Status</span>. Select a status and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Show</span>. Select how many columns to display and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Rows</span>. Select the number of rows to appear in the report and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, navigate to the Session Details page and click <span class="uicontrol bold">Kill Session</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" title="A session is the connection of a user to an Oracle database instance.">Accessing Session Page Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL274"></a><div class="props_rev_3"><a id="GUID-34791249-9B65-49F8-BD76-C71EBC2745FC" name="GUID-34791249-9B65-49F8-BD76-C71EBC2745FC"></a><h4 id="AEUTL-GUID-34791249-9B65-49F8-BD76-C71EBC2745FC" class="sect4"><span class="enumeration_section">5.12.1.3 </span>Controlling the Number of Rows for Locks Reports
+                  </h4>
+                  <div>
+                     <p>The Locks report displays a report of sessions which have locks that are blocking other session(s).</p>
+                     <div class="section">
+                        <p>To control the number of rows that appear, make a selection from the Rows list and click <span class="uicontrol bold">Go</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" title="A session is the connection of a user to an Oracle database instance.">Accessing Session Page Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL275"></a><div class="props_rev_3"><a id="GUID-4D4A7E2D-58E4-4800-A0D3-0DE1F56BBD08" name="GUID-4D4A7E2D-58E4-4800-A0D3-0DE1F56BBD08"></a><h4 id="AEUTL-GUID-4D4A7E2D-58E4-4800-A0D3-0DE1F56BBD08" class="sect4"><span class="enumeration_section">5.12.1.4 </span>Creating Waits Reports
+                  </h4>
+                  <div>
+                     <p>The Waits report displays the wait events for each session.</p>
+                     <div class="section">
+                        <p>Use the controls at the top of page to narrow the view:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="uicontrol bold">Search</span>. Enter search criteria and click <span class="uicontrol bold">Go</span>. For search details, click the Search label.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Status</span>. Select a status and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Show</span>. Select how many columns to display and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Rows</span>. Select the number of rows to appear in the report and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, click <span class="uicontrol bold">Kill Session</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" title="A session is the connection of a user to an Oracle database instance.">Accessing Session Page Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL276"></a><div class="props_rev_3"><a id="GUID-AF43E71B-0564-4714-8A63-F5C6F8BEC490" name="GUID-AF43E71B-0564-4714-8A63-F5C6F8BEC490"></a><h4 id="AEUTL-GUID-AF43E71B-0564-4714-8A63-F5C6F8BEC490" class="sect4"><span class="enumeration_section">5.12.1.5 </span>Creating I/O Reports
+                  </h4>
+                  <div>
+                     <p>The I/0 report displays details about the I/O for each session. </p>
+                     <div class="section">
+                        <p>Use the controls at the top of page to narrow the view:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="uicontrol bold">Search</span>. Enter search criteria and click <span class="uicontrol bold">Go</span>. For search details, click the Search label.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Rows</span>. Select the number of rows to appear in the report and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, click <span class="uicontrol bold">Kill Session</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" title="A session is the connection of a user to an Oracle database instance.">Accessing Session Page Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL277"></a><div class="props_rev_3"><a id="GUID-25FD5906-F811-44F3-B4D0-3A57471FE1A4" name="GUID-25FD5906-F811-44F3-B4D0-3A57471FE1A4"></a><h4 id="AEUTL-GUID-25FD5906-F811-44F3-B4D0-3A57471FE1A4" class="sect4"><span class="enumeration_section">5.12.1.6 </span>Creating SQL Reports
+                  </h4>
+                  <div>
+                     <p>The SQL report displays details about the current or last SQL statement executed for each session. </p>
+                     <div class="section">
+                        <p>Use the controls at the top of page to narrow the view:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="uicontrol bold">Search</span>. Enter search criteria and click <span class="uicontrol bold">Go</span>. For search details, click the Search label.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Status</span>. Select a status and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Show</span>. Select how many columns to display and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Rows</span>. Select the number of rows to appear in the report and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, click <span class="uicontrol bold">Kill Session</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" title="A session is the connection of a user to an Oracle database instance.">Accessing Session Page Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEUTL278"></a><div class="props_rev_3"><a id="GUID-C16A144D-5BA3-4DDD-B52A-897E72DD54B2" name="GUID-C16A144D-5BA3-4DDD-B52A-897E72DD54B2"></a><h4 id="AEUTL-GUID-C16A144D-5BA3-4DDD-B52A-897E72DD54B2" class="sect4"><span class="enumeration_section">5.12.1.7 </span>Creating Open Cursors Report
+                  </h4>
+                  <div>
+                     <p>The Open Cursors report displays details about the number of open cursors for each session. </p>
+                     <div class="section">
+                        <p>Use the controls at the top of page to narrow the view:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="uicontrol bold">Search</span>. Enter search criteria and click <span class="uicontrol bold">Go</span>. For search details, click the Search label.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Status</span>. Select a status and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="uicontrol bold">Rows</span>. Select the number of rows to appear in the report and click <span class="uicontrol bold">Go</span>.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>To view details about a specific open cursor count, click the numeric link under the Open Cursor Count column.</p>
+                        <p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, click <span class="uicontrol bold">Kill Session</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-F88A5ABD-BDAB-40AB-B473-CD76BB9A997E" title="A session is the connection of a user to an Oracle database instance.">Accessing Session Page Reports</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEUTL279"></a><div class="props_rev_3"><a id="GUID-73BDE346-5F03-4EF1-9C43-5E0D596D1357" name="GUID-73BDE346-5F03-4EF1-9C43-5E0D596D1357"></a><h3 id="AEUTL-GUID-73BDE346-5F03-4EF1-9C43-5E0D596D1357" class="sect3"><span class="enumeration_section">5.12.2 </span>System <span class="italic"><code class="codeph"></code></span>Statistics
+               </h3>
+               <div>
+                  <p>Displays the System Statistics page statistics.</p>
+                  <div class="section">
+                     <p>The System Statistics page displays statistics for:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="uicontrol bold">Physical I/O</span>. A physical I/O is an I/O that requires disk access. This report displays disk access statistics for physical reads and writes.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">Logical I/O</span>. A logical I/O is an I/O that is satisfied in memory or disk. Displays the sum of buffer reads which might be consistent gets or current mode gets. Redo is the buffer in the SGA that contains information about changes.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">Memory Statistics</span>. Displays memory consumption of the database.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">Time Statistics</span>. Shows various times consumed by the database.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">SQL Cursor Statistics</span>. Displays statistics about the cursors in the Oracle database. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">Transaction Statistics</span>. Shows the number of transactions performed.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" title="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">Monitoring the Database</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29169"></a><div class="props_rev_3"><a id="GUID-14A4DEDE-9E22-4E0B-9B9E-BA294B5C613D" name="GUID-14A4DEDE-9E22-4E0B-9B9E-BA294B5C613D"></a><h3 id="AEUTL-GUID-14A4DEDE-9E22-4E0B-9B9E-BA294B5C613D" class="sect3"><span class="enumeration_section">5.12.3 </span>Viewing System Statistics
+               </h3>
+               <div>
+                  <p>Learn how to view the System Statistics page.</p>
+                  <div class="section">
+                     <p>To view the System Statistics page:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Database Monitor</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">System Statistics</span>.</span></li>
+                     <li class="stepexpand"><span>If prompted, enter the appropriate administrator user name and password and click <span class="uicontrol bold">Login</span>.</span><div>
+                           <p>The System Statistics page appears.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <p>Additional controls on the System Statistics page include:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="uicontrol bold">Refresh Report</span> - Refreshes the System Statistics report.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">Save Statistics</span> - Saves the current report.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="uicontrol bold">Show delta between current and saved values</span> - Click this check box to display actual statistic values, or display deltas between a saved value and the current value.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-14A4DEDE-9E22-4E0B-9B9E-BA294B5C613D__GUID-D79B7B22-E9BF-499B-9B91-E232DE69C5EB">
+                              <p class="notep1">See Also:</p>
+                              <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=TGDBA-GUID-DD122227-0E55-49DB-8DF0-0F321D03800F" target="_blank"><span><cite>Oracle Database Performance Tuning Guide</cite></span></a>"</span></p>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" title="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">Monitoring the Database</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL280"></a><div class="props_rev_3"><a id="GUID-2E25022D-3A26-4EB0-A067-DDF95397C157" name="GUID-2E25022D-3A26-4EB0-A067-DDF95397C157"></a><h3 id="AEUTL-GUID-2E25022D-3A26-4EB0-A067-DDF95397C157" class="sect3"><span class="enumeration_section">5.12.4 </span>About Top SQL Page
+               </h3>
+               <div>
+                  <p>The top SQL statements represent the SQL statements that are executed most often, that use more system resources than other SQL statements, or that use system resources more frequently than other SQL statements. </p>
+                  <p>Use the Top SQL page to identify poorly performing SQL.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" title="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">Monitoring the Database</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29170"></a><div class="props_rev_3"><a id="GUID-9B9C6BBB-3F41-49FE-82B4-9873D8F81773" name="GUID-9B9C6BBB-3F41-49FE-82B4-9873D8F81773"></a><h3 id="AEUTL-GUID-9B9C6BBB-3F41-49FE-82B4-9873D8F81773" class="sect3"><span class="enumeration_section">5.12.5 </span>Viewing Top SQL Page
+               </h3>
+               <div>
+                  <p>Use the Top SQL page to identify poorly performing SQL.</p>
+                  <div class="section">
+                     <p>To view the Top SQL page:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop.</span></span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Database Monitor</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Top SQL</span>.</span></li>
+                     <li class="stepexpand"><span>If prompted, enter the appropriate administrator user name and password and click <span class="uicontrol bold">Login</span>.</span><div>
+                           <p>The Top SQL page appears. Use the search fields and lists and the top of the page and click <span class="uicontrol bold">Go</span> to narrow the display. For details on each field or list, click the label.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To access the SQL Plan page, click the <span class="uicontrol bold">View</span> icon.</span><div>
+                           <p>The SQL Plan page appears, containing the following sections:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Query Plan</span> - Contains a color coded explain plan. Note that unindexed columns display in red.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">SQL Text</span> - Displays the full text of the SQL statement.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Indexes</span> - Displays all indexes on the table in the query. There is a checkmark when that index is used in the query.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Table Columns</span> - Shows all columns on all tables or views in the query.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" title="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">Monitoring the Database</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL281"></a><div class="props_rev_3"><a id="GUID-5FCC34EE-DF96-41A5-95B5-444A899141C6" name="GUID-5FCC34EE-DF96-41A5-95B5-444A899141C6"></a><h3 id="AEUTL-GUID-5FCC34EE-DF96-41A5-95B5-444A899141C6" class="sect3"><span class="enumeration_section">5.12.6 </span>About Long Operations Page
+               </h3>
+               <div>
+                  <p>The Long Operations page displays the status of various operations that run for longer than 6 seconds (in absolute time).</p>
+                  <p>These operations currently include many backup and recovery functions, statistics gathering, and query execution, and more operations are added for every Oracle release. </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" title="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">Monitoring the Database</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29171"></a><div class="props_rev_3"><a id="GUID-96AD4A90-7E2F-479B-BAA5-1C6075920F97" name="GUID-96AD4A90-7E2F-479B-BAA5-1C6075920F97"></a><h3 id="AEUTL-GUID-96AD4A90-7E2F-479B-BAA5-1C6075920F97" class="sect3"><span class="enumeration_section">5.12.7 </span>Viewing the Long Operations Page
+               </h3>
+               <div>
+                  <p>Learn how to view the Long Operations page.</p>
+                  <div class="section">
+                     <p>To view the Long Operations page:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click the <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Database Monitor.</span></span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Long Operations</span>.</span></li>
+                     <li class="stepexpand"><span>If prompted, enter the appropriate administrator user name and password and click <span class="uicontrol bold">Login</span>.</span><div>
+                           <div class="infoboxnotealso" id="GUID-96AD4A90-7E2F-479B-BAA5-1C6075920F97__GUID-1C20CC4D-0776-49B5-8A46-FF0BA7BEA6AE">
+                              <p class="notep1">See Also:</p>
+                              <p><span class="q">"V$SESSION_LONGOPS"</span>in <a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=REFRN30227" target="_blank"><span class="italic">Oracle Database Reference</span></a></p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="monitoring-db.html#GUID-4894E6E8-F2BA-4675-AEE5-E200EB1E154F" title="The reports available on the Database Monitor page provide a database-wide view of the database sessions, system statistics, SQL statements, and longer operations.">Monitoring the Database</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

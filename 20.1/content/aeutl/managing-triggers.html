@@ -1,0 +1,533 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Triggers">
+      <meta name="abstract" content="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">
+      <meta name="description" content="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">
+      <meta name="DC.subject" content="Object Browser, managing triggers, trigger, creating, browsing, editing, compiling, downloading, dropping, disabling, enabling">
+      <meta name="keywords" content="Object Browser, managing triggers, trigger, creating, browsing, editing, compiling, downloading, dropping, disabling, enabling">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-2E0F7EFB-4A07-46E7-998E-8C1AA47EAFEC">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-891ECF70-39CD-44C8-AD66-0ADDBE94CB44">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-594E6478-D70C-4FBA-A684-5431AD9E9AED">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-45B2DF12-F9F2-47B8-97F8-4CEE1AD74562">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-2DF8A1A1-8378-4ED1-ADF2-E48EEFF5EB3F">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-FE0639A8-C0F5-4DDD-8086-CA0A29899AFC">
+      <meta name="DC.Relation" scheme="URI" content="managing-triggers.html#GUID-64A534B3-ED06-4B1B-933C-2EAF29ED7151">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-2054B50C-53E6-4C92-9334-A055AF653177">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">
+      <meta name="description" content="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">
+      <title>Managing Triggers</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-functions.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-db-links.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-functions.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-db-links.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-db-objects-with-object-browser.html" property="item" typeof="WebPage"><span property="name"> Managing Database Objects with Object Browser </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Triggers</li>
+            </ol>
+            <a id="GUID-2054B50C-53E6-4C92-9334-A055AF653177" name="GUID-2054B50C-53E6-4C92-9334-A055AF653177"></a><a id="AEUTL167"></a>
+            
+            <h2 id="AEUTL-GUID-2054B50C-53E6-4C92-9334-A055AF653177" class="sect2"><span class="enumeration_section">3.11 </span>Managing Triggers
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.</p>
+               <p> The trigger can be called once, for example when an event occurs, or many times, for example for each row affected by an INSERT, UPDATE, or DELETE statement. </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-2E0F7EFB-4A07-46E7-998E-8C1AA47EAFEC">Creating Triggers</a><br>Create a trigger using Object Browser.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-891ECF70-39CD-44C8-AD66-0ADDBE94CB44">Browsing a Trigger</a><br>Select a trigger from the Object Selection pane and view different reports about the trigger.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2">Reports for Triggers</a><br>Alternative views available when viewing a trigger in Object Browser.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-594E6478-D70C-4FBA-A684-5431AD9E9AED">Editing a Trigger Manually</a><br>Select a trigger from the Object Selection pane and click Code.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-45B2DF12-F9F2-47B8-97F8-4CEE1AD74562">Compiling a Trigger</a><br>Select a trigger from the Object Selection pane and click Save &amp; Compile.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-2DF8A1A1-8378-4ED1-ADF2-E48EEFF5EB3F">Downloading a Trigger</a><br>Select a trigger from the Object Selection pane and click Download Source to save the current trigger as a file.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-FE0639A8-C0F5-4DDD-8086-CA0A29899AFC">Dropping a Trigger</a><br>Select a trigger from the Object Selection pane and click Drop.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-triggers.html#GUID-64A534B3-ED06-4B1B-933C-2EAF29ED7151">Disabling and Enabling a Trigger</a><br>Select a trigger from the Object Selection pane and click Disable or Enable.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-2054B50C-53E6-4C92-9334-A055AF653177__GUID-04C99016-6557-4131-8ADB-97DE44ABC84F">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=CNCPT-GUID-A42A6EF0-20F8-4F4B-AFF7-09C100AE581E" target="_blank"><span><cite>Oracle Database Concepts</cite></span></a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeutl&amp;id=ADFNS-GUID-9E3D5BB0-9896-488A-8AAB-9F24C23B4938" target="_blank"><span class="italic">Oracle Database Advanced Application Developer's Guide</span></a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731" title="Object Browser enables developers to browse, create, and edit objects in a database.">Managing Database Objects with Object Browser</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL168"></a><div class="props_rev_3"><a id="GUID-2E0F7EFB-4A07-46E7-998E-8C1AA47EAFEC" name="GUID-2E0F7EFB-4A07-46E7-998E-8C1AA47EAFEC"></a><h3 id="AEUTL-GUID-2E0F7EFB-4A07-46E7-998E-8C1AA47EAFEC" class="sect3"><span class="enumeration_section">3.11.1 </span>Creating Triggers
+               </h3>
+               <div>
+                  <p>Create a trigger using Object Browser.</p>
+                  <div class="section">
+                     <p>To create a trigger in Object Browser:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Create</span> icon.</span></li>
+                     <li class="stepexpand"><span>From the list of object types, select <span class="uicontrol bold">Trigger</span>.</span></li>
+                     <li class="stepexpand"><span>Select a table name and click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>Select the appropriate trigger attributes, enter the trigger body, and click <span class="bold">Next</span>.</span><div>
+                           <p>A confirmation page appears, which displays the SQL used to create the trigger.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Trigger</span>. </span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177" title="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">Managing Triggers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL169"></a><div class="props_rev_3"><a id="GUID-891ECF70-39CD-44C8-AD66-0ADDBE94CB44" name="GUID-891ECF70-39CD-44C8-AD66-0ADDBE94CB44"></a><h3 id="AEUTL-GUID-891ECF70-39CD-44C8-AD66-0ADDBE94CB44" class="sect3"><span class="enumeration_section">3.11.2 </span>Browsing a Trigger
+               </h3>
+               <div>
+                  <p>Select a trigger from the Object Selection pane and view different reports about the trigger.</p>
+                  <div class="section">
+                     <p>To browse a trigger in Object Browser:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Triggers</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a trigger.</span><div>
+                           <p>The Object Details view appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the tabs at the top of the page to view different reports about the trigger. </span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-891ECF70-39CD-44C8-AD66-0ADDBE94CB44__GUID-BD3B2ABC-774E-4257-BE51-4BC80907DA40">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-triggers.html#GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2" title="Alternative views available when viewing a trigger in Object Browser.">Reports for Triggers</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177" title="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">Managing Triggers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL336"></a><a id="AEUTL170"></a><div class="props_rev_3"><a id="GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2" name="GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2"></a><h3 id="AEUTL-GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2" class="sect3"><span class="enumeration_section">3.11.3 </span>Reports for Triggers
+               </h3>
+               <div>
+                  <p>Alternative views available when viewing a trigger in Object Browser.</p>
+                  <div class="section">
+                     <p><a href="managing-triggers.html#GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2__CHDGGFBB" title="This table describes the alternative views available when viewing a trigger in Object Browser.">Table 3-10</a> describes all available reports for triggers.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2__CHDGGFBB">
+                     <p class="titleintable">Table 3-10 Available Reports for Triggers</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Available Reports for Triggers" summary="This table describes the alternative views available when viewing a trigger in Object Browser." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d13926e421">View </th>
+                              <th align="left" valign="bottom" width="69%" id="d13926e424">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d13926e429" headers="d13926e421 ">
+                                 <p>Object Details</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d13926e429 d13926e424 ">
+                                 <p>(Default) Lists of the details about the current trigger. Actions you can perform include:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">Compile</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Download</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Drop</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Disable</span></p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d13926e453" headers="d13926e421 ">
+                                 <p>Code</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d13926e453 d13926e424 ">
+                                 <p>Displays the source code for the trigger. You can edit the code in this view. Actions you can perform in this view include:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Edit the code manually</p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Save &amp; Compile</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Find</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Replace</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Auto Complete</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Undo</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Redo</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Download Source</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Drop</span></p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d13926e496" headers="d13926e421 ">
+                                 <p>Errors</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d13926e496 d13926e424 ">
+                                 <p>Displays errors related to the current trigger.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d13926e503" headers="d13926e421 ">
+                                 <p>SQL</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d13926e503 d13926e424 ">
+                                 <p>Displays the SQL necessary to re-create the trigger.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E92D3F31-62FB-4E78-A702-07C4C08B6DE2__GUID-AE07C8F8-6537-4E9A-84CC-B00ED769E91B">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="managing-triggers.html#GUID-594E6478-D70C-4FBA-A684-5431AD9E9AED" title="Select a trigger from the Object Selection pane and click Code.">Editing a Trigger Manually</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-triggers.html#GUID-45B2DF12-F9F2-47B8-97F8-4CEE1AD74562" title="Select a trigger from the Object Selection pane and click Save &amp; Compile.">Compiling a Trigger</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-triggers.html#GUID-2DF8A1A1-8378-4ED1-ADF2-E48EEFF5EB3F" title="Select a trigger from the Object Selection pane and click Download Source to save the current trigger as a file.">Downloading a Trigger</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-triggers.html#GUID-FE0639A8-C0F5-4DDD-8086-CA0A29899AFC" title="Select a trigger from the Object Selection pane and click Drop.">Dropping a Trigger</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177" title="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">Managing Triggers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL171"></a><div class="props_rev_3"><a id="GUID-594E6478-D70C-4FBA-A684-5431AD9E9AED" name="GUID-594E6478-D70C-4FBA-A684-5431AD9E9AED"></a><h3 id="AEUTL-GUID-594E6478-D70C-4FBA-A684-5431AD9E9AED" class="sect3"><span class="enumeration_section">3.11.4 </span>Editing a Trigger Manually
+               </h3>
+               <div>
+                  <p>Select a trigger from the Object Selection pane and click Code.</p>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Triggers</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a trigger.</span><div>
+                           <p>The Object Details view appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click Code tab.</span></li>
+                     <li class="stepexpand"><span>You can edit the code in this view. Other edit controls include:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Find</strong></p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Replace</strong></p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Auto Complete</strong></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <p>When you edit a trigger you can edit the code manually, perform a search and replace, and compile the trigger.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177" title="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">Managing Triggers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL173"></a><div class="props_rev_3"><a id="GUID-45B2DF12-F9F2-47B8-97F8-4CEE1AD74562" name="GUID-45B2DF12-F9F2-47B8-97F8-4CEE1AD74562"></a><h3 id="AEUTL-GUID-45B2DF12-F9F2-47B8-97F8-4CEE1AD74562" class="sect3"><span class="enumeration_section">3.11.5 </span>Compiling a Trigger
+               </h3>
+               <div>
+                  <p>Select a trigger from the Object Selection pane and click Save &amp; Compile.</p>
+                  <div class="section">
+                     <p>If you edit and make changes to a function, you must compile to save your changes. There is no save function because this is just a view of the object within the database. Compiling re-creates the object in the database. </p>
+                     <p>To compile a trigger in Object Browser:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Triggers</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a trigger.</span><div>
+                           <p>The Details view appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To compile the current trigger:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Under Object Details, click <span class="uicontrol bold">Compile</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Under Code, click <span class="uicontrol bold">Save &amp; Compile</span>.
+                                 </p>
+                              </li>
+                           </ul>
+                           <p>If the compilation fails, an error message displays above the code.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177" title="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">Managing Triggers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL174"></a><div class="props_rev_3"><a id="GUID-2DF8A1A1-8378-4ED1-ADF2-E48EEFF5EB3F" name="GUID-2DF8A1A1-8378-4ED1-ADF2-E48EEFF5EB3F"></a><h3 id="AEUTL-GUID-2DF8A1A1-8378-4ED1-ADF2-E48EEFF5EB3F" class="sect3"><span class="enumeration_section">3.11.6 </span>Downloading a Trigger
+               </h3>
+               <div>
+                  <p>Select a trigger from the Object Selection pane and click Download Source to save the current trigger as a file.</p>
+                  <div class="section">
+                     <p>To save the current trigger as a file:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Triggers</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a trigger.</span><div>
+                           <p>The Details view appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Download Source</span> to save the current trigger as a file.</span></li>
+                     <li class="stepexpand"><span>To download the current trigger:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Under Object Details, click <span class="uicontrol bold">Download</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Under Code, click <span class="uicontrol bold">Download Source</span>.
+                                 </p>
+                              </li>
+                           </ul>
+                           <p>If the compilation fails, an error message displays above the code.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177" title="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">Managing Triggers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL175"></a><div class="props_rev_3"><a id="GUID-FE0639A8-C0F5-4DDD-8086-CA0A29899AFC" name="GUID-FE0639A8-C0F5-4DDD-8086-CA0A29899AFC"></a><h3 id="AEUTL-GUID-FE0639A8-C0F5-4DDD-8086-CA0A29899AFC" class="sect3"><span class="enumeration_section">3.11.7 </span>Dropping a Trigger
+               </h3>
+               <div>
+                  <p>Select a trigger from the Object Selection pane and click Drop.</p>
+                  <div class="section">
+                     <p>To drop a trigger in Object Browser:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Triggers</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a trigger.</span><div>
+                           <p>The Details view appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Drop</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177" title="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">Managing Triggers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-64A534B3-ED06-4B1B-933C-2EAF29ED7151" name="GUID-64A534B3-ED06-4B1B-933C-2EAF29ED7151"></a><h3 id="AEUTL-GUID-64A534B3-ED06-4B1B-933C-2EAF29ED7151" class="sect3"><span class="enumeration_section">3.11.8 </span>Disabling and Enabling a Trigger
+               </h3>
+               <div>
+                  <p>Select a trigger from the Object Selection pane and click Disable or Enable.</p>
+                  <div class="section">
+                     <p>To disable and enable a trigger in Object Browser:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>From the Object list, select <span class="uicontrol bold">Triggers</span>.</span></li>
+                     <li class="stepexpand"><span>From the Object Selection pane, select a trigger.</span><div>
+                           <p>The Details view appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Disable</span>.</span><div>
+                           <div class="infoboxnote" id="GUID-64A534B3-ED06-4B1B-933C-2EAF29ED7151__GUID-28E894CF-2E06-4E75-9927-A6B3C043843D">
+                              <p class="notep1">Note:</p>The Enable button is activated. If you want to enable the trigger, click <span class="uicontrol bold">Enable</span>.
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-triggers.html#GUID-2054B50C-53E6-4C92-9334-A055AF653177" title="A database trigger is a stored subprogram associated with a database table, view, or event. You can create, browse, edit, compile, download, drop, disable or enable a trigger and view report.">Managing Triggers</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

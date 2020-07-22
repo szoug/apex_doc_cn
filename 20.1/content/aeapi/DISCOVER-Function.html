@@ -1,0 +1,328 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="DISCOVER Function">
+      <meta name="DC.subject" content="APEX_DATA_PARSER, DISCOVER">
+      <meta name="keywords" content="APEX_DATA_PARSER, DISCOVER">
+      <meta name="DC.Relation" scheme="URI" content="APEX_DATA_PARSER.html#GUID-07E9397C-DF26-40F7-AC73-F46961E1088A">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>DISCOVER Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="APEX_DATA_PARSER-Data-Types.html" title="Previous" type="text/html">
+      <link rel="next" href="GET_COLUMNS-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="APEX_DATA_PARSER-Data-Types.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="GET_COLUMNS-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_DATA_PARSER.html" property="item" typeof="WebPage"><span property="name"> APEX_DATA_PARSER</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">DISCOVER Function</li>
+            </ol>
+            <a id="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894" name="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894"></a>
+            
+            <h2 id="AEAPI-GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894" class="sect2"><span class="enumeration_section">12.3 </span>DISCOVER Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This is a function to discover the column profile of a file. This function calls <code class="codeph">parse()</code> and then returns the generated file profile. This function is a shortcut which can be used instead of first calling <code class="codeph">parse()</code> and then <code class="codeph">get_file_profile()</code>. 
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894__GUID-8FE94E45-3979-4867-B82A-ABB8EE1DDFEF">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>FUNCTION DISCOVER(
+    p_content             IN BLOB,
+    p_file_name           IN VARCHAR2,
+    p_decimal_char        IN VARCHAR2                                     DEFAULT NULL,
+    p_xlsx_sheet_name     IN VARCHAR2                                     DEFAULT NULL,
+    p_row_selector        IN VARCHAR2                                     DEFAULT NULL,
+    p_csv_row_delimiter   IN VARCHAR2                                     DEFAULT LF,
+    p_csv_col_delimiter   IN VARCHAR2                                     DEFAULT NULL,
+    p_csv_enclosed        IN VARCHAR2                                     DEFAULT '"',
+    p_file_charset        IN VARCHAR2                                     DEFAULT 'AL32UTF8',
+    p_max_rows            IN NUMBER                                       DEFAULT 200 ) RETURN CLOB;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894__GUID-97DEA74F-5C9B-449B-B11D-6DBC85B7DCC5">Parameter</p>
+                  <div class="tblformal" id="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894__BABJFIBC">
+                     <p class="titleintable">Table 12-1 DISCOVER Function Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DISCOVER Function Parameters" summary="Parameter descriptions for the DISCOVER function." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d45019e77">Parameter</th>
+                              <th align="left" valign="bottom" width="69%" id="d45019e80">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e85" headers="d45019e77 ">
+                                 <p><code class="codeph">p_content</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e85 d45019e80 ">
+                                 <p>The file content to be parsed as a BLOB</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e93" headers="d45019e77 ">
+                                 <p><code class="codeph">P_FILE_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e93 d45019e80 ">
+                                 <p>The name of the file used to derive the file type.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e101" headers="d45019e77 ">
+                                 <p><code class="codeph">P_DECIMAL_CHAR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e101 d45019e80 ">
+                                 <p>Use this decimal character when trying to detect <code class="codeph">NUMBER</code> data types. If not specified, the procedure will auto-detect the decimal character.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e112" headers="d45019e77 ">
+                                 <p><code class="codeph">P_XLSX_SHEET_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e112 d45019e80 ">
+                                 <p>For XLSX workbooks. The name of the worksheet to parse. If omitted, the function uses the first worksheet found.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e120" headers="d45019e77 ">
+                                 <p><code class="codeph">P_ROW_SELECTOR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e120 d45019e80 ">
+                                 <p>Whether to detect data types (<code class="codeph">NUMBER, DATE, TIMESTAMP</code>) during parsing. If set to <code class="codeph">'Y'</code>, the function will compute the file profile and also add data type information to it. If set to <code class="codeph">'N'</code>, no data types will be detected and all columns will be <code class="codeph">VARCHAR2</code>. Default is <code class="codeph">'Y'</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e143" headers="d45019e77 ">
+                                 <p><code class="codeph">P_DECIMAL_CHAR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e143 d45019e80 ">
+                                 <p>Use this decimal character when trying to detect <code class="codeph">NUMBER</code> data types. If not specified,the procedure will auto-detect the decimal character.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e154" headers="d45019e77 ">
+                                 <p><code class="codeph">P_XLSX_SHEET_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e154 d45019e80 ">
+                                 <p>For XLSX workbooks. The name of the worksheet to parse. If omitted, the function uses the first worksheet found.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e162" headers="d45019e77 ">
+                                 <p><code class="codeph">P_ROW_SELECTOR </code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e162 d45019e80 ">
+                                 <div class="p">For JSON and XML files. Pointer to the array / list of rows within the JSON or XML file. If omitted, the function will: 
+                                    <ul style="list-style-type: disc;" id="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894__UL_WWB_BYY_PGB">
+                                       <li>For XML files: Use "/*/*" (first tag under the root tag) as the row selector.</li>
+                                       <li>For JSON files: Look for a JSON array and use the first array found.</li>
+                                    </ul>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e175" headers="d45019e77 ">
+                                 <p><code class="codeph">P_CSV_ROW_DELIMITER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e175 d45019e80 ">
+                                 <p>Override the default row delimiter for CSV parsing.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e183" headers="d45019e77 ">
+                                 <p><code class="codeph">P_CSV_ROW_DELIMITER </code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e183 d45019e80 ">
+                                 <p>Override the default row delimiter for CSV parsing.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e191" headers="d45019e77 ">
+                                 <p><code class="codeph">P_CSV_COL_DELIMITER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e191 d45019e80 ">
+                                 <p>Use a specific CSV column delimiter. If omitted, the function detects the column delimiter based on the first row contents.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e200" headers="d45019e77 ">
+                                 <p><code class="codeph">P_CSV_ENCLOSED </code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e200 d45019e80 ">
+                                 <p>Override the default enclosure character for CSV parsing.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e208" headers="d45019e77 ">
+                                 <p><code class="codeph">P_FILE_CHARSET </code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e208 d45019e80 ">
+                                 <p>File encoding, if not <code class="codeph">UTF-8 (AL32UTF8)</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d45019e219" headers="d45019e77 ">
+                                 <p><code class="codeph">P_MAX_ROWS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d45019e219 d45019e80 ">
+                                 <p>Stop discovery after <code class="codeph">P_MAX_ROWS</code> rows have been processed.
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894__GUID-E491CB2E-7EFD-4955-9224-2C8437AC5F62">Returns</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>Returns a CLOB containing the file profile in JSON format.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-D0DC85D9-A731-4EC0-A1F1-E662B30C6894__GUID-51C0EC26-463F-4244-AF94-03333D4E41CC">Example</p><pre class="pre codeblock"><code>select apex_data_parser.discover(
+           p_content =&gt; {BLOB containing XLSX file},
+           p_file_name=&gt;'large.xlsx' ) as profile_json
+from dual;
+
+
+PROFILE_JSON
+-----------------------------------------------------------
+{
+    "file-encoding" : "AL32UTF8",
+    "single-row" : false,
+    "file-type" : 1,
+    "parsed-rows" : 2189,
+    "columns" : [
+       {
+          "name" : "C0",
+          "format-mask" : "",
+          "selector" : "",
+          "data-type" : 2
+       },
+       {
+          "selector" : "",
+          "format-mask" : "",
+          "data-type" : 1,
+          "name" : "FIRST_NAME"
+       },
+       {
+          "name" : "LAST_NAME",
+          "format-mask" : "",
+          "selector" : "",
+          "data-type" : 1
+       },
+
+       :
+
+       {
+          "name" : "DATE_",
+          "format-mask" : "DD\"/\"MM\"/\"YYYY",
+          "data-type" : 3,
+          "selector" : ""
+       },
+       {
+          "format-mask" : "",
+          "selector" : "",
+          "data-type" : 2,
+          "name" : "ID"
+       }
+    ],
+    "row-selector" : "",
+    "headings-in-first-row" : true,
+    "xslx-worksheet" : "sheet1.xml",
+    "csv-delimiter" : ""
+ }</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_DATA_PARSER.html#GUID-07E9397C-DF26-40F7-AC73-F46961E1088A">APEX_DATA_PARSER</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Application Translation and Globalization Support">
+      <meta name="abstract" content="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">
+      <meta name="description" content="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">
+      <meta name="DC.subject" content="application, translating, globalization, understanding, translation, applications, globalization support, language preference, language, preference, language identification, rules, translation rendering, understanding application rendering, translatable components, shortcuts, supporting translatable messages, messages, shortcuts, dynamic text strings, dynamic translations, region titles, region titles, marking as translatable, Page Designer, marking region titles as translatable, templates">
+      <meta name="keywords" content="application, translating, globalization, understanding, translation, applications, globalization support, language preference, language, preference, language identification, rules, translation rendering, understanding application rendering, translatable components, shortcuts, supporting translatable messages, messages, shortcuts, dynamic text strings, dynamic translations, region titles, region titles, marking as translatable, Page Designer, marking region titles as translatable, templates">
+      <meta name="DC.Relation" scheme="URI" content="managing-application-globalization.html#GUID-19BD5CD3-596D-46A4-BEA7-3CB1411AC89A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-translation-and-globalization-support.html#GUID-43F83854-07CD-4E7D-A17B-19D804D0F2F6">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-translation-and-globalization-support.html#GUID-80A1840E-A487-4597-8572-F1C25DD65BC4">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-translation-and-globalization-support.html#GUID-60B18A47-4B83-4A74-BEBA-D7EB478A6D13">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-translation-and-globalization-support.html#GUID-F707565D-64C9-489E-81A9-04988A132FC3">
+      <meta name="DC.Relation" scheme="URI" content="understanding-application-translation-and-globalization-support.html#GUID-B6A05901-9955-419C-A8B2-30D851A92A5A">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">
+      <meta name="description" content="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">
+      <title>Understanding Application Translation and Globalization Support</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-application-globalization.html" title="Previous" type="text/html">
+      <link rel="next" href="specifying-the-primary-language-for-application.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-application-globalization.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="specifying-the-primary-language-for-application.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-globalization.html" property="item" typeof="WebPage"><span property="name">Managing Application Globalization</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Application Translation and Globalization Support</li>
+            </ol>
+            <a id="GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257" name="GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257"></a><a id="HTMDB14001"></a>
+            
+            <h2 id="HTMDB-GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257" class="sect2"><span class="enumeration_section">22.1 </span>Understanding Application Translation and Globalization Support
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.</p>
+               <p>You can develop applications in <span>App Builder</span> that can run concurrently in different languages. 
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-43F83854-07CD-4E7D-A17B-19D804D0F2F6">About the Translation Process</a><br>Learn about translating an application built in App Builder.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-80A1840E-A487-4597-8572-F1C25DD65BC4">About Language Identification</a><br>After you create an application, you specify a language preference. Then you select a primary application language and determine how the Application Express engine determines the application language. The application primary language can be static, derived from the Web browser language, or determined from a user preference or item.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-60B18A47-4B83-4A74-BEBA-D7EB478A6D13">About the Rules for Translating Database Applications</a><br>Learn about rules for translating database applications.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-F707565D-64C9-489E-81A9-04988A132FC3">How Translated Applications Are Rendered</a><br>After Oracle Application Express determines the language for an application, the Application Express engine alters the database language for a specific page request. It then looks for a translated application in the appropriate language. If the Application Express engine finds that language, it renders the application using that definition. Otherwise, it renders the application in the base (or primary) application language. 
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-B6A05901-9955-419C-A8B2-30D851A92A5A">Making Application Attributes Translatable</a><br>Learn about best practices to make application attributes within your application translatable.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-application-globalization.html#GUID-19BD5CD3-596D-46A4-BEA7-3CB1411AC89A" title="You can run applications built in App Builder concurrently in different languages.">Managing Application Globalization</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29470"></a><div class="props_rev_3"><a id="GUID-43F83854-07CD-4E7D-A17B-19D804D0F2F6" name="GUID-43F83854-07CD-4E7D-A17B-19D804D0F2F6"></a><h3 id="HTMDB-GUID-43F83854-07CD-4E7D-A17B-19D804D0F2F6" class="sect3"><span class="enumeration_section">22.1.1 </span>About the Translation Process
+               </h3>
+               <div>
+                  <p>Learn about translating an application built in App Builder.</p>
+                  <p>In general, translating an application built in <span>App Builder</span> involves the following steps:
+                  </p>
+                  <ol>
+                     <li>
+                        <p>Map the primary and target application IDs.</p>
+                     </li>
+                     <li>
+                        <p>Seed and export the text to a file for translation.</p>
+                     </li>
+                     <li>
+                        <p>Translate the text in the file.</p>
+                     </li>
+                     <li>
+                        <p>Apply the translated file.</p>
+                     </li>
+                     <li>
+                        <p>Publish the translated file.</p>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-43F83854-07CD-4E7D-A17B-19D804D0F2F6__GUID-17F57996-C2C3-4B95-8670-A67738AF2DCC">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-the-translation-process.html#GUID-50AFFADA-E439-4738-A072-F1ACB402AD85" title="To translate an application developed in App Builder, you must map the primary and target language, seed and export text to a translation file, translate the text, apply the translation file, and publish the translated application.">Understanding the Translation Process</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257" title="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">Understanding Application Translation and Globalization Support</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25912"></a><div class="props_rev_3"><a id="GUID-80A1840E-A487-4597-8572-F1C25DD65BC4" name="GUID-80A1840E-A487-4597-8572-F1C25DD65BC4"></a><h3 id="HTMDB-GUID-80A1840E-A487-4597-8572-F1C25DD65BC4" class="sect3"><span class="enumeration_section">22.1.2 </span>About Language Identification
+               </h3>
+               <div>
+                  <p>After you create an application, you specify a language preference. Then you select a primary application language and determine how the Application Express engine determines the application language. The application primary language can be static, derived from the Web browser language, or determined from a user preference or item.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-80A1840E-A487-4597-8572-F1C25DD65BC4__GUID-B435E486-53BB-4890-A721-45D89BCE4EC2">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="specifying-the-primary-language-for-application.html#GUID-342FD509-66F7-4EED-99CA-26DD6C05FE2A" title="Globalization attributes specify how the Application Express engine determines the primary language of an application.">Specifying the Primary Language for an Application</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257" title="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">Understanding Application Translation and Globalization Support</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25913"></a><div class="props_rev_3"><a id="GUID-60B18A47-4B83-4A74-BEBA-D7EB478A6D13" name="GUID-60B18A47-4B83-4A74-BEBA-D7EB478A6D13"></a><h3 id="HTMDB-GUID-60B18A47-4B83-4A74-BEBA-D7EB478A6D13" class="sect3"><span class="enumeration_section">22.1.3 </span>About the Rules for Translating Database Applications
+               </h3>
+               <div>
+                  <p>Learn about rules for translating database applications.</p>
+                  <p>Use the following rules to determine which translated version to use:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Look for an exact match between the user language preference and the language code of the translated application.</p>
+                     </li>
+                     <li>
+                        <p>Look for a truncated match. That is, see if the language and locale exist. For example, if the user language preference is <code class="codeph">en-us</code> and the translated version of <code class="codeph">en-us</code> does not exist, look for a translated application that has the language code <code class="codeph">en</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Use the primary application language.</p>
+                     </li>
+                  </ul>
+                  <p>For example, suppose you create an application with the primary language of German, <code class="codeph">de</code>, and you create a translated version of the application with a language code of <code class="codeph">en-us</code>. Users accessing this application with a browser language of <code class="codeph">en-us</code> execute the English <code class="codeph">en-us</code> version of the application. Users accessing the application with a browser language of <code class="codeph">en-gb</code> view the application in the application's primary language, that is, in German. For this example, you should create the translated English version using language code <code class="codeph">en</code> to encompass all variations of <code class="codeph">en</code>.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257" title="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">Understanding Application Translation and Globalization Support</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25914"></a><div class="props_rev_3"><a id="GUID-F707565D-64C9-489E-81A9-04988A132FC3" name="GUID-F707565D-64C9-489E-81A9-04988A132FC3"></a><h3 id="HTMDB-GUID-F707565D-64C9-489E-81A9-04988A132FC3" class="sect3"><span class="enumeration_section">22.1.4 </span>How Translated Applications Are Rendered 
+               </h3>
+               <div>
+                  <p>After Oracle Application Express determines the language for an application, the Application Express engine alters the database language for a specific page request. It then looks for a translated application in the appropriate language. If the Application Express engine finds that language, it renders the application using that definition. Otherwise, it renders the application in the base (or primary) application language. </p>
+                  <p>Note that the text that displays within an application is not translated on the fly. Oracle Application Express dynamically collects page attributes from either a base language application definition or an alternative application definition. </p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F707565D-64C9-489E-81A9-04988A132FC3__GUID-FF29AEB8-9E10-47B1-BC03-025DC9343495">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="understanding-application-translation-and-globalization-support.html#GUID-8A251BE0-6476-4B03-A015-7EACD466E9DB">About Dynamic Translation Text Strings</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="translating-data-that-supports-list-of-values.html#GUID-E3D85D48-1F6F-4EC5-8330-48B8C8A48B6F" title="You create a dynamic translation to translate dynamic pieces of data. For example, you might use a dynamic translation on a list of values based on a database query.">Translating Data That Supports List of Values</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257" title="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">Understanding Application Translation and Globalization Support</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25915"></a><div class="props_rev_3"><a id="GUID-B6A05901-9955-419C-A8B2-30D851A92A5A" name="GUID-B6A05901-9955-419C-A8B2-30D851A92A5A"></a><h3 id="HTMDB-GUID-B6A05901-9955-419C-A8B2-30D851A92A5A" class="sect3"><span class="enumeration_section">22.1.5 </span>Making Application Attributes Translatable
+               </h3>
+               <div>
+                  <p>Learn about best practices to make application attributes within your application translatable.</p>
+                  <p>When you build an application in <span>App Builder</span>, you define a large number of declarative attributes such as field labels, region headings, page header text, and so on.
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-4D640789-8A36-4CC8-8914-03CBFC3BB0B8">About Shortcuts that Support Translatable Messages</a><br></li>
+                     <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-BD9EE0CC-D8F0-4CEF-80BE-DB17F1A2FDB3">About Messages</a><br></li>
+                     <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-8A251BE0-6476-4B03-A015-7EACD466E9DB">About Dynamic Translation Text Strings</a><br></li>
+                     <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-B836C112-B618-401C-A5C5-5982C60BEE0E">About Translating Region Titles</a><br></li>
+                     <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-1719D448-B1D2-47B6-AAC3-904E36ABB19B">About Translating Templates</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-C5CBC233-7557-49E2-8D4C-CCA952D47257" title="A single Oracle database instance and Oracle Application Express can support multiple database sessions customized to support different languages.">Understanding Application Translation and Globalization Support</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29471"></a><div class="props_rev_3"><a id="GUID-4D640789-8A36-4CC8-8914-03CBFC3BB0B8" name="GUID-4D640789-8A36-4CC8-8914-03CBFC3BB0B8"></a><h4 id="HTMDB-GUID-4D640789-8A36-4CC8-8914-03CBFC3BB0B8" class="sect4"><span class="enumeration_section">22.1.5.1 </span>About Shortcuts that Support Translatable Messages
+                  </h4>
+                  <div>
+                     <p><span>App Builder</span> includes two shortcut types that enable you to reference translatable messages:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Message</span>. Use this shortcut to reference a translatable message at runtime. Note that the name of the shortcut must match the corresponding message name. At runtime, the name of the shortcut expands to the text of the translatable message for the current language.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Message with JavaScript Escaped Single Quotes</span>. Use this shortcut to reference a shortcut inside of a JavaScript literal string and reference a translatable message at runtime. This shortcut defines a text string. When the shortcut is referenced, it escapes the single quotation marks required for JavaScript.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-4D640789-8A36-4CC8-8914-03CBFC3BB0B8__GUID-E146999F-CCEF-4D8F-9A8A-3A174FEC9AC7">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-shortcuts.html#GUID-7CB0CF60-92AF-483C-BE0C-D8E975022742" title="Use shortcuts to avoid repetitive coding of HTML or PL/SQL functions.">Using Shortcuts</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-B6A05901-9955-419C-A8B2-30D851A92A5A" title="Learn about best practices to make application attributes within your application translatable.">Making Application Attributes Translatable</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25917"></a><div class="props_rev_3"><a id="GUID-BD9EE0CC-D8F0-4CEF-80BE-DB17F1A2FDB3" name="GUID-BD9EE0CC-D8F0-4CEF-80BE-DB17F1A2FDB3"></a><h4 id="HTMDB-GUID-BD9EE0CC-D8F0-4CEF-80BE-DB17F1A2FDB3" class="sect4"><span class="enumeration_section">22.1.5.2 </span>About Messages
+                  </h4>
+                  <div>
+                     <p>If your application includes PL/SQL regions or PL/SQL processes, you must translate any generated HTML or text. You may also need to translate messages used in reports if your application uses a language that is not one of the ten languages into which Oracle Application Express is translated.</p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-BD9EE0CC-D8F0-4CEF-80BE-DB17F1A2FDB3__GUID-66326413-4F24-4F71-8331-51B02B45F9E2">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="translating-messages.html#GUID-3557FD3D-EC89-4F18-91B7-E8E304459266" title="Learn when and how to translate messages is an Oracle Application Express application.">Translating Messages</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-B6A05901-9955-419C-A8B2-30D851A92A5A" title="Learn about best practices to make application attributes within your application translatable.">Making Application Attributes Translatable</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25918"></a><div class="props_rev_3"><a id="GUID-8A251BE0-6476-4B03-A015-7EACD466E9DB" name="GUID-8A251BE0-6476-4B03-A015-7EACD466E9DB"></a><h4 id="HTMDB-GUID-8A251BE0-6476-4B03-A015-7EACD466E9DB" class="sect4"><span class="enumeration_section">22.1.5.3 </span>About Dynamic Translation Text Strings
+                  </h4>
+                  <div>
+                     <p>Dynamic translations are used for database data that must be translated at runtime. For example, you might use a dynamic translation to translate a list of values based on a database query. A dynamic translation consists of a translate-from language string, a language code, and a translate-to string. You can also use the <code class="codeph">APEX_LANG.LANG</code> API to retrieve dynamic translations programmatically. 
+                     </p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-8A251BE0-6476-4B03-A015-7EACD466E9DB__GUID-B135C23B-BC98-4B09-8188-0532435E264D">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="translating-data-that-supports-list-of-values.html#GUID-E3D85D48-1F6F-4EC5-8330-48B8C8A48B6F" title="You create a dynamic translation to translate dynamic pieces of data. For example, you might use a dynamic translation on a list of values based on a database query.">Translating Data That Supports List of Values</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-B6A05901-9955-419C-A8B2-30D851A92A5A" title="Learn about best practices to make application attributes within your application translatable.">Making Application Attributes Translatable</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25919"></a><div class="props_rev_3"><a id="GUID-B836C112-B618-401C-A5C5-5982C60BEE0E" name="GUID-B836C112-B618-401C-A5C5-5982C60BEE0E"></a><h4 id="HTMDB-GUID-B836C112-B618-401C-A5C5-5982C60BEE0E" class="sect4"><span class="enumeration_section">22.1.5.4 </span>About Translating Region Titles
+                  </h4>
+                  <div>
+                     <p>By default, page region titles are included in the generated translation file. However, you can mark a region title as not translatable.</p>
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="understanding-application-translation-and-globalization-support.html#GUID-5D743CD9-33BB-4B0E-9506-BCE782BC1482">Marking a Region as Not Translatable in Page Designer</a><br></li>
+                     </ul>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-B6A05901-9955-419C-A8B2-30D851A92A5A" title="Learn about best practices to make application attributes within your application translatable.">Making Application Attributes Translatable</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <a id="HTMDB30268"></a><div class="props_rev_3"><a id="GUID-5D743CD9-33BB-4B0E-9506-BCE782BC1482" name="GUID-5D743CD9-33BB-4B0E-9506-BCE782BC1482"></a><h5 id="HTMDB-GUID-5D743CD9-33BB-4B0E-9506-BCE782BC1482" class="sect5"><span class="enumeration_section">22.1.5.4.1 </span>Marking a Region as Not Translatable in Page Designer
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To mark a region title as not translatable:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                                 <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                                 <li><span>Select an application.</span></li>
+                                 <li><span>Select a page.</span></li>
+                              </ol>
+                              <div>Page Designer appears. </div>
+                           </li>
+                           <li class="stepexpand"><span>In the Rendering tab, select the region.</span><div>The Property Editor displays the region attributes. Attributes are
+                    organized in groups.</div>
+                           </li>
+                           <li class="stepexpand"><span>Find and expand the <span class="uicontrol bold">Advanced</span> group. </span></li>
+                           <li class="stepexpand"><span>For <span class="uicontrol bold">For Exclude Title from Translation</span>, select
+                        <span class="uicontrol bold">On</span> to exclude this title from translation. This
+                    attribute has no effect, except when translating the application into another
+                    language.</span></li>
+                           <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </div>
+                     <div>
+                        <div class="familylinks">
+                           <div class="parentlink">
+                              <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-B836C112-B618-401C-A5C5-5982C60BEE0E">About Translating Region Titles</a></p>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div><a id="HTMDB25920"></a><div class="props_rev_3"><a id="GUID-1719D448-B1D2-47B6-AAC3-904E36ABB19B" name="GUID-1719D448-B1D2-47B6-AAC3-904E36ABB19B"></a><h4 id="HTMDB-GUID-1719D448-B1D2-47B6-AAC3-904E36ABB19B" class="sect4"><span class="enumeration_section">22.1.5.5 </span>About Translating Templates
+                  </h4>
+                  <div>
+                     <p>By default, templates are not translatable, and therefore are not included in the generated translation file. Generally, templates do not and should not contain translatable text. However, if you must mark a template as translatable, select the Translatable check box on the Edit Page Template page.</p>
+                     <p>To identify a template as translatable: </p>
+                     <ol>
+                        <li>
+                           <p>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Select an application. </p>
+                        </li>
+                        <li>
+                           <p>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Under User Interface, select <span class="uicontrol bold">Templates</span>. 
+                           </p>
+                           <p>The Templates page appears. </p>
+                        </li>
+                        <li>
+                           <p>Locate the template you want to edit and select the template name.</p>
+                        </li>
+                        <li>
+                           <p>Under Name, select <span class="uicontrol bold">Translatable</span>.
+                           </p>
+                        </li>
+                     </ol>
+                     <p>You can include translatable text at the application-level by defining the translatable text using static substitution strings. Because application-level attributes are translated, any text defined as a static substitution string is included in the generated translation file.</p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-1719D448-B1D2-47B6-AAC3-904E36ABB19B__GUID-4B81E051-06EB-429B-B325-D9E90F43B01C">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="creating-custom-themes.html#GUID-CB755CDA-67EA-4CF8-943D-80E2CDCC2E3E" title="Create a custom theme by modifying existing templates.">Creating Custom Themes</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="editing-application-attributes.html#GUID-87F799CC-3FE8-4026-ABBB-9F25786F4225">Substitutions</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="understanding-application-translation-and-globalization-support.html#GUID-B6A05901-9955-419C-A8B2-30D851A92A5A" title="Learn about best practices to make application attributes within your application translatable.">Making Application Attributes Translatable</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

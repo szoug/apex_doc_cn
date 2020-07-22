@@ -1,0 +1,175 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Purging Inactive Workspaces">
+      <meta name="abstract" content="Inactive workspaces consume valuable storage space and degrade system performance. Instance administrator can configure an instance to periodically purge inactive workspaces.">
+      <meta name="description" content="Inactive workspaces consume valuable storage space and degrade system performance. Instance administrator can configure an instance to periodically purge inactive workspaces.">
+      <meta name="DC.subject" content="workspace, purging inactive, workspace purge, enabling, language, Administration Email Address, Summary Email To, Days Until Purge, Reminder Days in Advance, Days Inactive, Grace Period, Maximum Execution Time, Maximum Number of Workspaces, Maximum Number of Emails">
+      <meta name="keywords" content="workspace, purging inactive, workspace purge, enabling, language, Administration Email Address, Summary Email To, Days Until Purge, Reminder Days in Advance, Days Inactive, Grace Period, Maximum Execution Time, Maximum Number of Workspaces, Maximum Number of Emails">
+      <meta name="DC.Relation" scheme="URI" content="managing-instance-settings.html#GUID-9B020EF4-A4B4-4FDC-91E6-0B70D19FB296">
+      <meta name="DC.Relation" scheme="URI" content="purging-inactive-workspaces.html#GUID-E31840EA-D364-4951-9AA7-A5E3F304E5D3">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-31534DD1-50AF-4DFE-9FD7-409C73437D20">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Inactive workspaces consume valuable storage space and degrade system performance. Instance administrator can configure an instance to periodically purge inactive workspaces.">
+      <meta name="description" content="Inactive workspaces consume valuable storage space and degrade system performance. Instance administrator can configure an instance to periodically purge inactive workspaces.">
+      <title>Purging Inactive Workspaces</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Inactive workspaces consume valuable storage space and degrade system performance. Instance administrator can configure an instance to periodically purge inactive workspaces.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="configuring-instance-settings.html" title="Previous" type="text/html">
+      <link rel="next" href="viewing-rest-usage.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="configuring-instance-settings.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="viewing-rest-usage.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-instance-settings.html" property="item" typeof="WebPage"><span property="name">Managing Instance Settings</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Purging Inactive Workspaces</li>
+            </ol>
+            <a id="GUID-31534DD1-50AF-4DFE-9FD7-409C73437D20" name="GUID-31534DD1-50AF-4DFE-9FD7-409C73437D20"></a><a id="AEADM309"></a>
+            
+            <h2 id="AEADM-GUID-31534DD1-50AF-4DFE-9FD7-409C73437D20" class="sect2"><span class="enumeration_section">3.5.4 </span>Purging Inactive Workspaces
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Inactive workspaces consume valuable storage space and degrade system performance. Instance administrator can configure an instance to periodically purge inactive workspaces.</p>
+               <p>By enabling Workspace Purge Settings, you can configure Oracle Application Express to purge inactive workspaces. If a workspace is designated as inactive, Oracle Application Express sends notification email to each workspace administrator explaining that the workspace will be purged in a specific number of days. The workspace administrator can prevent the workspace from being purged by following an embedded link and following the online instructions.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="purging-inactive-workspaces.html#GUID-E31840EA-D364-4951-9AA7-A5E3F304E5D3">Configuring Workspace Purge Settings</a><br>Configure workspace purge settings on the Workspace Purge Settings page.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-31534DD1-50AF-4DFE-9FD7-409C73437D20__GUID-B5937CE2-ED8E-4CD9-8180-70AFF88666B8">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="monitoring-activity-across-a-development-instance.html#GUID-57123911-C427-4C9E-96A7-A91D54A2B9C6" title="Monitor all end user and developer activity for an Oracle Application Express instance.">Monitoring Activity Across a Development Instance</a>"</span> to view reports concerning purging workspaces and <span class="q">"<a href="../htmdb/sending-email-from-an-application.html#HTMDB-GUID-5579DEA8-699C-41F0-B08F-9AB565F76D77" target="_blank">Sending Email from an Application</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span>
+                     
+                  </p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-instance-settings.html#GUID-9B020EF4-A4B4-4FDC-91E6-0B70D19FB296" title="Use the Instance settings region of the Manage Instance page to configure feature availability, security, instance settings (that is, general workspace behavior), and workspace purge settings.">Managing Instance Settings</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM411"></a><div class="props_rev_3"><a id="GUID-E31840EA-D364-4951-9AA7-A5E3F304E5D3" name="GUID-E31840EA-D364-4951-9AA7-A5E3F304E5D3"></a><h3 id="AEADM-GUID-E31840EA-D364-4951-9AA7-A5E3F304E5D3" class="sect3"><span class="enumeration_section">3.5.4.1 </span>Configuring Workspace Purge Settings
+               </h3>
+               <div>
+                  <p>Configure workspace purge settings on the Workspace Purge Settings page.</p>
+                  <div class="p">If a workspace is designated as inactive, <span>Oracle Application
+                                        Express</span> sends a notification email to each workspace administrator explaining that the
+            workspace will be purged in a specific number of days. In order for this email
+            notification to work, you must configure email for your instance. See <span class="q">"<a href="configuring-instance-settings.html#GUID-FEC98D5E-3C89-423E-9603-4CD2E553BA34" title="To enable Oracle Application Express to send mail, an instance administrator must configure instance-level email settings.">Configuring Email</a>."</span></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To configure workspace purge settings:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li><span>Under Instance Settings, click <span class="uicontrol bold">Workspace Purge Settings</span>.</span></li>
+                     <li><span>On the Workspace Purge Settings, configure the following:</span><ol type="a">
+                           <li class="substepexpand"><span>Enabled - Select <span class="uicontrol bold">Yes</span> to enable the workspace purge process. Select <span class="uicontrol bold">No</span> to disable the workspace purge process.</span></li>
+                           <li class="substepexpand"><span>Language - Select the language of the text of emails sent to workspace administrators of inactive workspaces. Note that only one language can be selected for each instance.</span></li>
+                           <li class="substepexpand"><span>Purge Administration Email Address - Enter the email address (or From address) from which emails are sent to workspace administrators.</span></li>
+                           <li class="substepexpand"><span>Send Summary Email To - Enter a list of email addresses separated by commas. Recipients will receive a daily email summary of the purge process.</span></li>
+                           <li class="substepexpand"><span>Days Until Purge - Enter the number of days before a workspace is physically purged. For example, entering <code class="codeph">10</code> means a workspace will be purged 10 days after it is added to the inactive list.</span></li>
+                           <li class="substepexpand"><span>Reminder Days in Advance - Enter the number of days before the purge date to send a reminder email to workspace administrators. Reminder email criteria includes:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>The workspace is on the inactive list.</p>
+                                    </li>
+                                    <li>
+                                       <p>There has been no activity in the workspace.</p>
+                                    </li>
+                                    <li>
+                                       <p>The workspace administrator has not chosen to follow the link in the email to prevent the workspace from being purged.</p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Days Inactive - Enter the number of days of inactivity before a workspace is classified as inactive. Inactivity includes not logging into the workspace and the no runtime activity of any application in the workspace.</span></li>
+                           <li class="substepexpand"><span>Grace Period (Days) - Enter the number of days for the grace period. The grace period starts after workspace administrators click the link in the email to not have their workspace purged. If there is no activity during the grace period, the workspace is added back to the list of inactive workspaces.</span></li>
+                           <li class="substepexpand"><span>Maximum Execution Time (Hours) - Enter the number limiting the number of hours that the purge process may execute per run of the workspace purge job</span></li>
+                           <li class="substepexpand"><span>Maximum Number of Workspaces - Enter the maximum number of workspaces to be purged per run of the workspace purge job.</span></li>
+                           <li class="substepexpand"><span>Maximum Number of Emails - Enter the maximum number of reminder emails and workspace inactive emails to be send per run of the workspace purge job.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="purging-inactive-workspaces.html#GUID-31534DD1-50AF-4DFE-9FD7-409C73437D20" title="Inactive workspaces consume valuable storage space and degrade system performance. Instance administrator can configure an instance to periodically purge inactive workspaces.">Purging Inactive Workspaces</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

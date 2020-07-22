@@ -1,0 +1,350 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating the Initial Application">
+      <meta name="DC.subject" content="Create Application Wizard, Add Page function, Cards page, Dashboard page, Create Application wizard, Advanced Settings, Settings, Features, runtime, application runtime, Save and Run Page">
+      <meta name="keywords" content="Create Application Wizard, Add Page function, Cards page, Dashboard page, Create Application wizard, Advanced Settings, Settings, Features, runtime, application runtime, Save and Run Page">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Shakeeb Rahman">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-39009076-BF52-47FE-A100-91F8C811F23B">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Creating the Initial Application</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Tutorial: Building an Application">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Tutorial: Building an Application">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-tutorial-building-application.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-08T10:54:58-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24727-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="populating-workspace.html" title="Previous" type="text/html">
+      <link rel="next" href="projects-page.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Tutorial: Building an Application">
+    <meta name="dcterms.isVersionOf" content="AETUT">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="populating-workspace.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="projects-page.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Tutorial: Building an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating the Initial Application</li>
+            </ol>
+            <a id="GUID-39009076-BF52-47FE-A100-91F8C811F23B" name="GUID-39009076-BF52-47FE-A100-91F8C811F23B"></a>
+            
+            <h2 id="AETUT-GUID-39009076-BF52-47FE-A100-91F8C811F23B" class="sect2"><span class="enumeration_chapter">4 </span>Creating the Initial Application
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p class="subhead1" id="GUID-39009076-BF52-47FE-A100-91F8C811F23B__GUID-27EEB472-0070-4642-B5DA-E0F1F842F7E2">About This Lesson</p>
+                  <p>In this lesson, you use the <strong class="term">Create Application Wizard</strong> to build the foundational pages of your application based on the sample dataset.
+                  </p>
+                  <p>After you build the foundation of your app, use Page Designer’s <strong class="term">Create Page Wizard</strong> to add a new page to an existing app and run the app for the first time.
+                  </p>
+                  <div class="infoboxnotewarn" id="GUID-39009076-BF52-47FE-A100-91F8C811F23B__GUID-73FC5ED5-F331-411B-B7B5-C3FE5594A97F">
+                     <p class="notep1">WARNING:</p>
+                     <p>It is important to complete this chapter in one sitting. You cannot save your work until the end. If you stop before completion and your session times out, all your progress will be lost, and you will have to start the chapter again.</p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-C702998C-5121-4C1F-BC2B-56A409E54F17" name="GUID-C702998C-5121-4C1F-BC2B-56A409E54F17"></a><h3 id="AETUT-GUID-C702998C-5121-4C1F-BC2B-56A409E54F17" class="sect3"><span class="enumeration_section">4.1 </span>Running the Create Application Wizard
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>With the tables populated in your workspace, you can get started quickly with the <strong class="term">Create Application Wizard</strong>.
+                     </p>
+                     <p>The Create Application Wizard enables you to create many different types of pages, including reports, forms, and a master detail.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To create the initial application:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">App Builder</span> and select <span class="uicontrol bold">Create</span>.</span><div>
+                           <p>The Create Application Wizard appears.</p>
+                           <div class="infobox-tip" id="GUID-C702998C-5121-4C1F-BC2B-56A409E54F17__GUID-5465CD82-DCEF-4828-81A9-784AA05DAA51">
+                              <p class="notep1">Tip:</p>You can also click the down arrow icon on the tabs at the top of the screen to view a list of shortcuts to wizard and other pages.
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">New Application</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>To customize your app name and appearance:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>In Name, enter <kbd class="userinput">Demo Projects</kbd></span><div>
+                           <div class="infoboxnote" id="GUID-C702998C-5121-4C1F-BC2B-56A409E54F17__GUID-F178F2FA-0DD4-4C7B-88F1-3D107E0A0035">
+                              <p class="notep1">Note:</p>The Create Application wizard creates a Home page automatically.
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Set Appearance</span> icon.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-C702998C-5121-4C1F-BC2B-56A409E54F17__IMAGE_WCC_VN2_FHB" height="121" width="582" src="img/create_app_set_appearance_icon.png" alt="Set Appearance icon" title="Set Appearance icon"><br><a href="img_text/create_app_set_appearance_icon.html">Description of the illustration create_app_set_appearance_icon.png</a></div><br></div>
+                        <div>The Appearance dialog displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Vita - Red</span>.</span></li>
+                     <li class="stepexpand"><span>For Application Icon, click <span class="uicontrol bold">Choose New Icon</span>.</span><div>
+                           <p>The Choose Application Icon dialog displays.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">red circle</span> icon.</span></li>
+                     <li class="stepexpand"><span>Choose a new application icon, such as the trio of people.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-C702998C-5121-4C1F-BC2B-56A409E54F17__IMAGE_WJB_BP2_FHB" height="566" width="759" src="img/create_app_set_appearance_app_icon.png" alt="Choose Application Icon" title="Choose Application Icon"><br><a href="img_text/create_app_set_appearance_app_icon.html">Description of the illustration create_app_set_appearance_app_icon.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Set Application Icon</span> and click <span class="uicontrol bold">Save Changes</span>.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-7651C3FB-F965-4E2A-8126-EC7FE377A5F4" name="GUID-7651C3FB-F965-4E2A-8126-EC7FE377A5F4"></a><h3 id="AETUT-GUID-7651C3FB-F965-4E2A-8126-EC7FE377A5F4" class="sect3"><span class="enumeration_section">4.2 </span>Adding a Cards Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Often at the beginning of development, you only know some of the pages that your application requires. You can create as few or as many pages as you want in the Create Application Wizard. Save some time by generating a small batch of pages now. You can always add more later with a different wizard (the Create Page Wizard).</p>
+                     <div class="p">Start with a cards page that enables employees to quickly view and maintain their contact information.
+                        <div class="infoboxnote" id="GUID-7651C3FB-F965-4E2A-8126-EC7FE377A5F4__GUID-5A2DF52D-6F58-4882-A779-C635107C0BD0">
+                           <p class="notep1">Note:</p>A cards page consists of individual boxes, which resemble index cards, laid out on a page. Each card holds up to three pieces of information.
+                        </div>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To add a cards page based on the <code class="codeph">EBA_PROJECTS</code> table:
+                     </p>
+                  <p></p>
+                  <ol id="GUID-7651C3FB-F965-4E2A-8126-EC7FE377A5F4__STEPS_CKP_BNS_4LB">
+                     <li><span>In the Pages section, click <span class="uicontrol bold">Add Page</span>.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Cards</span>.</span></li>
+                     <li><span>Enter the following:</span><ol type="a" id="GUID-7651C3FB-F965-4E2A-8126-EC7FE377A5F4__SUBSTEPS_LL1_JV5_DGB">
+                           <li class="substepexpand"><span>Page Name - enter <code class="codeph">Projects</code></span></li>
+                           <li class="substepexpand"><span>Table or View - click the <span class="uicontrol bold">LOV</span> icon (bullet points and lines) and select <span class="uicontrol bold">EBA_PROJECTS</span></span></li>
+                           <li class="substepexpand"><span>Card Title - select <span class="uicontrol bold">NAME</span></span></li>
+                           <li class="substepexpand"><span>Description Column - select <span class="uicontrol bold">DESCRIPTION</span></span></li>
+                           <li class="substepexpand"><span>Additional Text Column - select <span class="uicontrol bold">BUDGET</span></span><div><br><div class="imageleft"><img class="imageleft" id="GUID-7651C3FB-F965-4E2A-8126-EC7FE377A5F4__IMAGE_GK1_R52_FHB" height="410" width="798" src="img/create_app_add_cards.png" alt="Add Cards Page" title="Add Cards Page"><br><a href="img_text/create_app_add_cards.html">Description of the illustration create_app_add_cards.png</a></div><br></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Add Page</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-A2BB28F8-51DD-4737-B559-259AF99A80F8" name="GUID-A2BB28F8-51DD-4737-B559-259AF99A80F8"></a><h3 id="AETUT-GUID-A2BB28F8-51DD-4737-B559-259AF99A80F8" class="sect3"><span class="enumeration_section">4.3 </span>Adding a Dashboard Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Next, add a dashboard page. A dashboard page consists of up to four charts. As a developer you can specify the specifics of each chart or leave the default sample charts, then update the page later.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To add a dashboard page:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Add Page</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Dashboard</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>Dashboard pages come populated with useful metrics. Configure two of the charts for tracking project budget and project status, and leave the other two unconfigured. You can evaluate whether to keep them later.</p>
+                     <p>To configure the charts:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>Enter the following for <strong class="term">Chart 1</strong>:</span><ol type="a" id="GUID-A2BB28F8-51DD-4737-B559-259AF99A80F8__SUBSTEPS_JJW_XGJ_2GB">
+                           <li><span>Chart Type - click <span class="uicontrol bold">Bar</span></span></li>
+                           <li><span>Chart Name - enter <kbd class="userinput">Project Costs</kbd></span></li>
+                           <li><span>Table or View - select <span class="uicontrol bold">EBA_PROJECTS_V</span></span></li>
+                           <li><span>Label Column - select <span class="uicontrol bold">NAME</span></span></li>
+                           <li><span>Aggregate Type - click <span class="uicontrol bold">Column Value</span></span></li>
+                           <li><span>Value Column - select <span class="uicontrol bold">COST</span></span></li>
+                        </ol>
+                        <div><br><div class="imageleft"><img class="imageleft" id="GUID-A2BB28F8-51DD-4737-B559-259AF99A80F8__IMAGE_C4L_KZ2_FHB" height="639" width="798" src="img/create_app_dashboard_chart_1.png" alt="Chart 1" title="Chart 1"><br><a href="img_text/create_app_dashboard_chart_1.html">Description of the illustration create_app_dashboard_chart_1.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Chart 2</span>.</span></li>
+                     <li class="stepexpand"><span>Enter the following:</span><ol type="a" id="GUID-A2BB28F8-51DD-4737-B559-259AF99A80F8__SUBSTEPS_NR4_LJJ_2GB">
+                           <li class="substepexpand"><span>Chart Type - click <span class="uicontrol bold">Pie</span></span></li>
+                           <li class="substepexpand"><span>Chart Name - enter <kbd class="userinput">Project Status</kbd></span></li>
+                           <li class="substepexpand"><span>Table or View - select <span class="uicontrol bold">EBA_PROJECTS</span></span></li>
+                           <li class="substepexpand"><span>Label Column - select <span class="uicontrol bold">STATUS_ID</span></span></li>
+                           <li class="substepexpand"><span>Aggregate Type - click <span class="uicontrol bold">Count</span></span><div><br><div class="imageleft"><img class="imageleft" id="GUID-A2BB28F8-51DD-4737-B559-259AF99A80F8__IMAGE_HJC_SZ2_FHB" height="635" width="788" src="img/create_app_dashboard_chart_2.png" alt="Chart 2" title="Chart 2"><br><a href="img_text/create_app_dashboard_chart_2.html">Description of the illustration create_app_dashboard_chart_2.png</a></div><br></div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Add Page</span>.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-B86C8DD9-4DC0-4999-94FE-0E6E7298D960" name="GUID-B86C8DD9-4DC0-4999-94FE-0E6E7298D960"></a><h3 id="AETUT-GUID-B86C8DD9-4DC0-4999-94FE-0E6E7298D960" class="sect3"><span class="enumeration_section">4.4 </span>Moving Pages in the Create Application Wizard
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Once you create a page, you can click the Edit icon to edit the page name, change the icon that displays in the navigation menu, edit Advanced options, or delete the page. In addition to the Edit button, you can change the order of pages by dragging and dropping.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To move a page in the Create Application Wizard:</p>
+                  <p></p>
+                  <ol id="GUID-B86C8DD9-4DC0-4999-94FE-0E6E7298D960__STEPS_LCZ_VMS_4LB">
+                     <li class="stepexpand"><span>For the Dashboard page, adjacent to the Edit button, click and hold the <span class="uicontrol bold">menu icon</span> (horizontal lines).</span><div><img id="GUID-B86C8DD9-4DC0-4999-94FE-0E6E7298D960__IMAGE_YHW_5BF_FHB" height="47" width="90" src="img/hamburger_icon.png" alt="Hamburger Icon" title="Hamburger Icon"></div>
+                     </li>
+                     <li class="stepexpand"><span>Drag the Dashboard page above the Projects page and release the mouse.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-B86C8DD9-4DC0-4999-94FE-0E6E7298D960__IMAGE_RHQ_YCF_FHB" height="224" width="606" src="img/create_app_drag_and_drop.png" alt="Drag and Drop" title="Drag and Drop"><br><a href="img_text/create_app_drag_and_drop.html">Description of the illustration create_app_drag_and_drop.png</a></div><br></div>
+                        <div>The Dashboard page snaps into place.</div>
+                     </li>
+                     <li class="stepexpand"><span>Verify that your list contains three pages in the following order:</span><div>
+                           <ol type="a" id="GUID-B86C8DD9-4DC0-4999-94FE-0E6E7298D960__UL_GX5_NMJ_2GB">
+                              <li>
+                                 <p>Home, Blank</p>
+                              </li>
+                              <li>
+                                 <p>Dashboard, Dashboard</p>
+                              </li>
+                              <li>
+                                 <p>Projects, Cards (<code class="codeph">eba_projects</code>)
+                                 </p>
+                              </li>
+                           </ol><br><div class="imageleft"><img class="imageleft" id="GUID-B86C8DD9-4DC0-4999-94FE-0E6E7298D960__IMAGE_JKL_YTC_J3B" height="338" width="485" src="img/create_app_pages_complete.png" alt="Description of create_app_pages_complete.png follows" title="Description of create_app_pages_complete.png follows" longdesc="img_text/create_app_pages_complete.html"><br><a href="img_text/create_app_pages_complete.html">Description of the illustration create_app_pages_complete.png</a></div><br></div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-081378A7-8BDF-4196-AD20-4BA9F4A94DBE" name="GUID-081378A7-8BDF-4196-AD20-4BA9F4A94DBE"></a><h3 id="AETUT-GUID-081378A7-8BDF-4196-AD20-4BA9F4A94DBE" class="sect3"><span class="enumeration_section">4.5 </span>Configuring Features and Advanced Settings
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Features provide application-level functionality and are typically added once per application. Features broaden the application's capabilities, making it more suitable for wide distribution, rather than just being suitable for a proof-of-concept.</p>
+                     <div class="infobox-tip" id="GUID-081378A7-8BDF-4196-AD20-4BA9F4A94DBE__GUID-6C6426EC-2DBE-4773-A9B3-1AA40E5C95F0">
+                        <p class="notep1">Tip:</p>
+                        <p>While sometimes more complicated, you can also add Features to an existing app later with the Create Page Wizard.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To add Features to the application:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Next to the Features heading, click <span class="uicontrol bold">Check All</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-081378A7-8BDF-4196-AD20-4BA9F4A94DBE__IMAGE_EX5_C2F_FHB" height="175" width="1017" src="img/create_app_features_check_all_button.png" alt="Check All button" title="Check All button"></div><br></div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>Settings are application-wide and define attributes used to generate the application.</p>
+                     <p>To edit advanced settings:</p>
+                  <p></p>
+                  <ol start="2">
+                     <li class="stepexpand"><span>In the Settings section, in the Advanced Settings field, click the <span class="uicontrol bold">Define Advanced Settings</span> icon (arrow in box).</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-081378A7-8BDF-4196-AD20-4BA9F4A94DBE__IMAGE_XMX_W2F_FHB" height="82" width="348" src="img/create_app_define_advanced_settings_icon.png" alt="Define Advanced Settings icon" title="Define Advanced Settings icon"></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Under the Description section, enter the following:</span><ol type="a" id="GUID-081378A7-8BDF-4196-AD20-4BA9F4A94DBE__SUBSTEPS_YFY_5RJ_2GB">
+                           <li class="substepexpand"><span>Short Description - enter <code class="codeph">Maintain project details</code></span></li>
+                           <li class="substepexpand"><span>Description - enter <code class="codeph">This application is used to maintain project details for the team. Projects include milestones, where you can define due dates. Tasks can be defined against a milestone or directly against the project. As well as tracking dates, this application also tracks budget, for the project, and costs against each task.</code></span><div><br><div class="imageleft"><img class="imageleft" id="GUID-081378A7-8BDF-4196-AD20-4BA9F4A94DBE__IMAGE_ZRX_ZFF_FHB" height="206" width="694" src="img/create_app_advanced_settings.png" alt="Advanced Settings" title="Advanced Settings"><br><a href="img_text/create_app_advanced_settings.html">Description of the illustration create_app_advanced_settings.png</a></div><br></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save Changes</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-EC8FABEB-B9EB-4B11-A975-90412DBA977D" name="GUID-EC8FABEB-B9EB-4B11-A975-90412DBA977D"></a><h3 id="AETUT-GUID-EC8FABEB-B9EB-4B11-A975-90412DBA977D" class="sect3"><span class="enumeration_section">4.6 </span>Completing the Create Application Wizard
+               </h3>
+               <div>
+                  <p>
+                     </p><p>To complete the Create Application wizard:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Compare your app with the following screenshot:</span><div>
+                           <div class="figure" id="GUID-EC8FABEB-B9EB-4B11-A975-90412DBA977D__FIG_K23_LHF_FHB"><br><div class="imageleft"><img class="imageleft" id="GUID-EC8FABEB-B9EB-4B11-A975-90412DBA977D__IMAGE_L23_LHF_FHB" height="921" width="778" src="img/create_app_complete.png" alt="Create Application Wizard" title="Create Application Wizard"><br><a href="img_text/create_app_complete.html">Description of the illustration create_app_complete.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Application</span>.</span><div>
+                           <p>A progress bar displays. When complete, <span>Application Express</span> navigates to the Application home page in App Builder.
+                           </p>
+                           <div class="infoboxnote" id="GUID-EC8FABEB-B9EB-4B11-A975-90412DBA977D__GUID-CE719A6F-F47A-42F7-92A5-6D033200DBC1">
+                              <p class="notep1">Note:</p>
+                              <p>Page <code class="codeph">0</code> is a global page where you can define components to be displayed on all pages. Page <code class="codeph">9999</code> is the Sign In page where end users authenticate when first accessing the application (enter their username and password). Pages <code class="codeph">1000</code> and greater are administrative pages created for the features that you selected.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6" name="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6"></a><h3 id="AETUT-GUID-8939706D-F264-40B4-8E09-FCD0F95294A6" class="sect3"><span class="enumeration_section">4.7 </span>Running the Application for the First Time
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Your app is functionally ready to run.</p>
+                     <p>When you <span class="q">"run"</span> an app, you are telling <span>Application Express</span> to open a new browser window and render the app. The rendered app is called the <span class="q">"application runtime"</span> (or just <span class="q">"runtime"</span>). As you create new pages, you can run them individually, or run an entire application.
+                     </p>
+                     <p>Run the app for the first time from the Application home page and review the application runtime.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To run the application from the Application home page:</p>
+                  <p></p>
+                  <ol id="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6__STEPS_HX5_W2Q_SLB">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Run Application</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6__IMAGE_ZRN_1JF_FHB" height="402" width="925" src="img/application_home_page_run.png" alt="Run Application" title="Run Application"><br><a href="img_text/application_home_page_run.html">Description of the illustration application_home_page_run.png</a></div><br></div>
+                        <div>A Sign In page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Enter your Application Express credentials and click <span class="uicontrol bold">Sign In</span>.</span><div>
+                           <p>Your application opens to the Home page.</p>
+                           <div class="figure" id="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6__FIG_GYD_KLF_FHB"><br><div class="imageleft"><img class="imageleft" id="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6__IMAGE_HYD_KLF_FHB" height="646" width="1136" src="img/runtime_app_home_page.png" alt="Home Page" title="Home Page"><br><a href="img_text/runtime_app_home_page.html">Description of the illustration runtime_app_home_page.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">menu</span> icon (top-left) to view the navigation menu.</span><div>
+                           <div class="figure" id="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6__FIG_O4N_V1L_WLB"><br><div class="imageleft"><img class="imageleft" id="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6__IMAGE_P4N_V1L_WLB" height="648" width="1138" src="img/runtime_app_home_page_menu.png" alt="Description of runtime_app_home_page_menu.png follows" title="Description of runtime_app_home_page_menu.png follows" longdesc="img_text/runtime_app_home_page_menu.html"><br><a href="img_text/runtime_app_home_page_menu.html">Description of the illustration runtime_app_home_page_menu.png</a></div><br></div>
+                           <!-- class="figure" --><br><div class="imageleft"><img class="imageleft" id="GUID-8939706D-F264-40B4-8E09-FCD0F95294A6__IMAGE_MLS_BBL_WLB" height="258" width="514" src="img/runtime_app_home_page_menu_icon.png" alt="Description of runtime_app_home_page_menu_icon.png follows" title="Description of runtime_app_home_page_menu_icon.png follows" longdesc="img_text/runtime_app_home_page_menu_icon.html"><br><a href="img_text/runtime_app_home_page_menu_icon.html">Description of the illustration runtime_app_home_page_menu_icon.png</a></div><br></div>
+                        <div>Memorize the location of the menu icon. You use it throughout the rest of the tutorial to navigate the app.</div>
+                     </li>
+                     <li class="stepexpand"><span>Explore the application by clicking on menu items and navigating to different pages in the navigation pane. </span><div>
+                           <p>The sample tables and data display on various pages in a raw format. The rest of this tutorial guides you through the development process to improve both the presentation and functionality of this data for your end users.</p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <p>Proceed to the next lesson.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Converting an Oracle Forms Application">
+      <meta name="DC.subject" content="Oracle Forms conversion, about, Oracle Forms, migrating to Oracle Application Express">
+      <meta name="keywords" content="Oracle Forms conversion, about, Oracle Forms, migrating to Oracle Application Express">
+      <meta name="DC.Relation" scheme="URI" content="how-to-convert-application.html#GUID-5BA25BE4-2F5A-46BF-978A-5824543DBD13">
+      <meta name="DC.Relation" scheme="URI" content="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E">
+      <meta name="DC.Relation" scheme="URI" content="converting-oracle-forms-to-XML.html#GUID-FB0CE2F0-7A93-453C-A302-3BD35753FD11">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspace-and-adding-users.html#GUID-B69A94EE-2B27-496C-A7AA-C80DB4CD59E2">
+      <meta name="DC.Relation" scheme="URI" content="uploading-db-objects-with-your-workspace.html#GUID-5657F1F8-B414-4760-BA4B-CD1857C46F1C">
+      <meta name="DC.Relation" scheme="URI" content="creating-conversion-project.html#GUID-F5AA4172-D5D1-433B-ABFE-E8253E8F8E2D">
+      <meta name="DC.Relation" scheme="URI" content="reviewing-and-editing-forms-metadata.html#GUID-133A7E05-DC2B-438C-B564-113870EE450C">
+      <meta name="DC.Relation" scheme="URI" content="deleting-migration-project.html#GUID-058AC3C3-1348-487F-A683-674388B57F7E">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-4D68922E-E13E-47E8-9EFC-0AC993F1AB64">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Converting an Oracle Forms Application</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Application Migration Guide ">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Application Migration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-application-migration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-07T14:07:47-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2012, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24721-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="creating-Oracle-application-express-migration.html" title="Previous" type="text/html">
+      <link rel="next" href="how-to-convert-application.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Application Migration Guide">
+    <meta name="dcterms.isVersionOf" content="AEMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="creating-Oracle-application-express-migration.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="how-to-convert-application.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Application Migration Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">    Converting an Oracle Forms Application</li>
+            </ol>
+            <a id="GUID-4D68922E-E13E-47E8-9EFC-0AC993F1AB64" name="GUID-4D68922E-E13E-47E8-9EFC-0AC993F1AB64"></a><a id="AEMIG163"></a>
+            
+            <h2 id="AEMIG-GUID-4D68922E-E13E-47E8-9EFC-0AC993F1AB64" class="sect2"><span class="enumeration_chapter">4 </span>    Converting an Oracle Forms Application
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The steps to convert applications from Oracle Forms to Oracle Application Express involve the following:</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="how-to-convert-application.html#GUID-5BA25BE4-2F5A-46BF-978A-5824543DBD13">How to Convert Your Application</a><br></li>
+                  <li class="ulchildlink"><a href="Converting_FormModules_ObjectLibraries_MenuModules_to_XML.html#GUID-B8DBF57D-F91A-4375-B3CD-E17B9502614E">Converting FormModules, ObjectLibraries, or MenuModules to XML</a><br></li>
+                  <li class="ulchildlink"><a href="converting-oracle-forms-to-XML.html#GUID-FB0CE2F0-7A93-453C-A302-3BD35753FD11">Converting Oracle Forms to XML</a><br></li>
+                  <li class="ulchildlink"><a href="creating-workspace-and-adding-users.html#GUID-B69A94EE-2B27-496C-A7AA-C80DB4CD59E2">About Creating a Workspace and Adding Oracle Application Express Users</a><br></li>
+                  <li class="ulchildlink"><a href="uploading-db-objects-with-your-workspace.html#GUID-5657F1F8-B414-4760-BA4B-CD1857C46F1C">Uploading Database Objects into the Schema Associated with Your Workspace</a><br></li>
+                  <li class="ulchildlink"><a href="creating-conversion-project.html#GUID-F5AA4172-D5D1-433B-ABFE-E8253E8F8E2D">Creating a Conversion Project</a><br></li>
+                  <li class="ulchildlink"><a href="reviewing-and-editing-forms-metadata.html#GUID-133A7E05-DC2B-438C-B564-113870EE450C">Reviewing and Editing Forms Metadata</a><br></li>
+                  <li class="ulchildlink"><a href="deleting-migration-project.html#GUID-058AC3C3-1348-487F-A683-674388B57F7E">Deleting a Migration Project</a><br></li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

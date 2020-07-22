@@ -1,0 +1,235 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Maximizing Uptime During an Application Express Upgrade">
+      <meta name="abstract" content="Learn how to maximize uptime during an Application Express upgrade.">
+      <meta name="description" content="Learn how to maximize uptime during an Application Express upgrade.">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-DE1EEE34-E79A-4937-8B5E-B405BE23F1B5">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn how to maximize uptime during an Application Express upgrade.">
+      <meta name="description" content="Learn how to maximize uptime during an Application Express upgrade.">
+      <title>Maximizing Uptime During an Application Express Upgrade</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn how to maximize uptime during an Application Express upgrade.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="automating-the-Oracle-Application-Express-installation-process.html" title="Previous" type="text/html">
+      <link rel="next" href="troubleshooting.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="automating-the-Oracle-Application-Express-installation-process.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="troubleshooting.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Maximizing Uptime During an Application Express Upgrade</li>
+            </ol>
+            <a id="GUID-DE1EEE34-E79A-4937-8B5E-B405BE23F1B5" name="GUID-DE1EEE34-E79A-4937-8B5E-B405BE23F1B5"></a>
+            
+            <h2 id="HTMIG-GUID-DE1EEE34-E79A-4937-8B5E-B405BE23F1B5" class="sect2"><span class="enumeration_chapter">D </span>Maximizing Uptime During an Application Express Upgrade
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn how to maximize uptime during an Application Express upgrade.</p>
+               <p>Previously, Oracle Application Express could only be upgraded by completely disabling application usage for an extended length of time. The following is an overview of the additional steps you can take to keep your applications usable for end users during most portions of an Oracle Application Express upgrade.</p>
+               <p>This advanced procedure is an alternative to the following “Installing Application Express” subsections of the <span><cite>Oracle Application Express 安装指南</cite></span>:
+               </p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     
+                     <p><a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a></p>
+                     
+                  </li>
+                  <li>
+                     
+                     <p><a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a></p>
+                     
+                  </li>
+                  <li>
+                     <p><a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a></p>
+                  </li>
+               </ul>
+               <div class="p">To upgrade the instance, administrators typically run these phases in one step by executing one of the following:
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>For full development environment:</p>
+                        <p><code class="codeph">@apexins.sql <span class="codeinlineitalic">tablespace_apex</span> <span class="codeinlineitalic">tablespace_files</span> <span class="codeinlineitalic">tablespace_temp</span> <span class="codeinlineitalic">images</span></code></p>
+                     </li>
+                     <li>
+                        <p>For runtime-only environment:</p>
+                        <p><code class="codeph">@apxrtins.sql <span class="codeinlineitalic">tablespace_apex</span> <span class="codeinlineitalic">tablespace_files</span> <span class="codeinlineitalic">tablespace_temp</span> <span class="codeinlineitalic">images</span></code></p>
+                     </li>
+                  </ul>
+               </div>
+               <p>Where:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><span class="italic"><code class="codeph">tablespace_apex</code></span> is the name of the tablespace for the Oracle Application Express application user.
+                     </p>
+                  </li>
+                  <li>
+                     <p><span class="italic"><code class="codeph">tablespace_files</code></span> is the name of the tablespace for the Oracle Application Express files user.
+                     </p>
+                  </li>
+                  <li>
+                     <p><span class="italic"><code class="codeph">tablespace_temp</code></span> is the name of the temporary tablespace or tablespace group.
+                     </p>
+                  </li>
+                  <li>
+                     <p><span class="italic"><code class="codeph">images</code></span> is the virtual directory for Oracle Application Express images.
+                     </p>
+                  </li>
+               </ul>
+               <p>The upgrade of an Application Express instance runs in four phases:</p>
+               <ol>
+                  <li>
+                     <p>Create database schemas and database objects (tables, packages).</p>
+                  </li>
+                  <li>
+                     <p>Migrate application metadata.</p>
+                  </li>
+                  <li>
+                     <p>Migrate data that runtime applications modify and switch to the new version.</p>
+                  </li>
+                  <li>
+                     <p>Migrate additional log and summary data.</p>
+                  </li>
+               </ol>
+               <p>Phases 1 and 4 do not disable end users using the instance. Phase 2 only affects developers who modify applications. Phase 3 affects all access to Application Express.</p>
+               <p> Oracle now also provides alternative upgrade scripts to run the phases independently. Administrators can use these scripts instead of <code class="codeph">apexins.sql</code> and <code class="codeph">apxrtins.sql</code>, to reduce the effective downtime of an Application Express instance from potentially hours to just a few minutes (depending on hardware performance).
+               </p>
+               <div class="infoboxnote" id="GUID-DE1EEE34-E79A-4937-8B5E-B405BE23F1B5__GUID-E95005E1-F766-4835-A128-0C428AE9F2AE">
+                  <p class="notep1">Note:</p>This feature is not supported when Application Express is installed in <code class="codeph">CDB$ROOT</code>.
+               </div>
+               <p>Administrators must sequentially execute the following scripts to start phases 1, 2 and 3, respectively. At the end of phase 3, a scheduler job automatically starts to execute phase 4.</p>
+               <p>To reduce downtime during an Oracle Application Express upgrade:</p>
+               <ol>
+                  <li>
+                     <p>Execute phase 1 script: Development and runtime usage is not affected.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>For full development environment:</p>
+                           <p><code class="codeph">@apexins1.sql <span class="codeinlineitalic">tablespace_apex</span> <span class="codeinlineitalic">tablespace_files</span> <span class="codeinlineitalic">tablespace_temp</span> <span class="codeinlineitalic">images</span></code></p>
+                        </li>
+                        <li>
+                           <p>For runtime-only environment:</p>
+                           <p><code class="codeph">@apxrtins1.sql <span class="codeinlineitalic">tablespace_apex</span> <span class="codeinlineitalic">tablespace_files</span> <span class="codeinlineitalic">tablespace_temp</span> <span class="codeinlineitalic">images</span></code></p>
+                        </li>
+                     </ul>
+                     <p>Example: <code class="codeph">@apexins1.sql sysaux sysaux temp /i/</code></p>
+                  </li>
+                  <li>
+                     <p>Execute phase 2 script: Development is disabled, but runtime usage is not affected.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>For full development environment:</p>
+                           <p><code class="codeph">@apexins2.sql <span class="codeinlineitalic">tablespace_apex</span> <span class="codeinlineitalic">tablespace_files</span> <span class="codeinlineitalic">tablespace_temp</span> <span class="codeinlineitalic">images</span></code></p>
+                        </li>
+                        <li>
+                           <p>For runtime-only environment:</p>
+                           <p><code class="codeph">@apxrtins2.sql <span class="codeinlineitalic">tablespace_apex</span> <span class="codeinlineitalic">tablespace_files</span> <span class="codeinlineitalic">tablespace_temp</span> <span class="codeinlineitalic">images</span></code></p>
+                        </li>
+                     </ul>
+                     <p>Example: <code class="codeph">@apexins2.sql sysaux sysaux temp /i/</code></p>
+                  </li>
+                  <li>
+                     <p>Disable web access for the web listener (Oracle REST Data Services, Embedded PL/SQL Gateway, or Oracle HTTP Server).</p>
+                  </li>
+                  <li>
+                     <p>Execute phase 3 script: Application Express can not be used.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>For full development environment:</p>
+                           <p><code class="codeph">@apexins3.sql <span class="codeinlineitalic">tablespace_apex</span> <span class="codeinlineitalic">tablespace_files</span> <span class="codeinlineitalic">tablespace_temp</span> <span class="codeinlineitalic">images</span></code></p>
+                        </li>
+                        <li>
+                           <p>For runtime-only environment:</p>
+                           <p><code class="codeph">@apxrtins3.sql <span class="codeinlineitalic">tablespace_apex</span> <span class="codeinlineitalic">tablespace_files</span> <span class="codeinlineitalic">tablespace_temp</span> <span class="codeinlineitalic">images</span></code></p>
+                        </li>
+                     </ul>
+                     <p>Example: <code class="codeph">@apexins3.sql sysaux sysaux temp /i/</code></p>
+                  </li>
+                  <li>
+                     <p>Install images of the new Application Express version in your web listener. Administrators can do this while phase 3 is running or even earlier, if the new version's images directory is different to the previous Application Express version's ( for example: <span class="italic">/i51/</span> for the new version vs. <span class="italic">/i50/</span> for the old version).
+                     </p>
+                     <p>For details refer to the installation instructions for Oracle REST Data Services, Embedded PL/SQL Gateway, or Oracle HTTP Server.</p>
+                  </li>
+                  <li>
+                     <p>Re-enable web access for the web listener (restart Oracle REST Data Services, Embedded PL/SQL Gateway, or Oracle HTTP Server).</p>
+                  </li>
+               </ol>
+               <p>After web access is restarted, developers and users can access the instance again, while phase 4 finishes in the background.</p>
+               <div class="infoboxnotealso" id="GUID-DE1EEE34-E79A-4937-8B5E-B405BE23F1B5__GUID-3F635E47-5792-4A6E-89AB-03964F4B2EFB">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

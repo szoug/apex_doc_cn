@@ -1,0 +1,5081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Widget: interactiveGrid</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.created" content="2020-03-24T20:11:56+00:00">
+    <meta name="dcterms.title" content="Oracle Application Express JavaScript API Reference">
+    <meta name="dcterms.category" content="database">
+    <meta name="dcterms.isVersionOf" content="AEXJS">
+    <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+    <meta name="dcterms.identifier" content="F24723-01">
+    <meta name="dcterms.release" content="Release 20.1">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}} </script>
+    </head>
+
+<body>
+<a href="#main-content" id="skipToContent">Skip to Main Content</a>
+
+<nav id="nav" data-current-item="nav_2">
+    <h2 id="navIndex"><a href="index.html">Index</a></h2><h3>Widgets</h3><ul><li id="nav_0"><a href="grid.html">grid</a></li><li id="nav_1"><a href="iconList.html">iconList</a></li><li id="nav_2"><a href="interactiveGrid.html">interactiveGrid</a></li><li id="nav_3"><a href="menu.html">menu</a></li><li id="nav_4"><a href="menuButton.html">menuButton</a></li><li id="nav_5"><a href="recordView.html">recordView</a></li><li id="nav_6"><a href="tableModelView.html">tableModelView</a></li><li id="nav_7"><a href="tableModelViewBase.html">tableModelViewBase</a></li><li id="nav_8"><a href="treeView.html">treeView</a></li></ul><h3>Namespaces</h3><ul><li id="nav_9"><a href="apex.html">apex</a></li><li id="nav_10"><a href="apex.actions.html">apex.actions</a></li><li id="nav_11"><a href="apex.da.html">apex.da</a></li><li id="nav_12"><a href="apex.debug.html">apex.debug</a></li><li id="nav_13"><a href="apex.event.html">apex.event</a></li><li id="nav_14"><a href="apex.item.html">apex.item</a></li><li id="nav_15"><a href="apex.lang.html">apex.lang</a></li><li id="nav_16"><a href="apex.locale.html">apex.locale</a></li><li id="nav_17"><a href="apex.message.html">apex.message</a></li><li id="nav_18"><a href="apex.model.html">apex.model</a></li><li id="nav_19"><a href="apex.navigation.html">apex.navigation</a></li><li id="nav_20"><a href="apex.navigation.dialog.html">apex.navigation.dialog</a></li><li id="nav_21"><a href="apex.navigation.popup.html">apex.navigation.popup</a></li><li id="nav_22"><a href="apex.page.html">apex.page</a></li><li id="nav_23"><a href="apex.region.html">apex.region</a></li><li id="nav_24"><a href="apex.server.html">apex.server</a></li><li id="nav_25"><a href="apex.storage.html">apex.storage</a></li><li id="nav_26"><a href="apex.theme.html">apex.theme</a></li><li id="nav_27"><a href="apex.util.html">apex.util</a></li><li id="nav_28"><a href="apex.util.delayLinger.html">apex.util.delayLinger</a></li><li id="nav_29"><a href="apex.widget.html">apex.widget</a></li></ul><h3>Interfaces</h3><ul><li id="nav_30"><a href="actions.html">actions</a></li><li id="nav_31"><a href="htmlBuilder.html">htmlBuilder</a></li><li id="nav_32"><a href="interactiveGridView.html">interactiveGridView</a></li><li id="nav_33"><a href="item.html">item</a></li><li id="nav_34"><a href="model.html">model</a></li><li id="nav_35"><a href="region.html">region</a></li><li id="nav_36"><a href="treeNodeAdapter.html">treeNodeAdapter</a></li></ul><h3><a href="global.html">Non-namespace APIs</a></h3>
+</nav>
+
+<div id="main">
+
+
+
+    <h1 class="page-title">Widget: interactiveGrid</h1>
+
+    
+
+
+
+
+<section id="quick-nav">
+    <header><h2>QuickNav</h2></header>
+    
+    <div class="quick-nav-section">
+        <h3> <a href="#members-section">Options</a></h3>
+        <ul class="subList">
+            
+                <li><a href="#defaultDetailViewOptions">defaultDetailViewOptions</a></li>
+            
+                <li><a href="#defaultGridViewOptions">defaultGridViewOptions</a></li>
+            
+                <li><a href="#defaultIconViewOptions">defaultIconViewOptions</a></li>
+            
+                <li><a href="#defaultModelOptions">defaultModelOptions</a></li>
+            
+                <li><a href="#defaultSingleRowOptions">defaultSingleRowOptions</a></li>
+            
+                <li><a href="#editable">editable</a></li>
+            
+                <li><a href="#features">features</a></li>
+            
+                <li><a href="#initActions">initActions</a></li>
+            
+                <li><a href="#initialSelection">initialSelection</a></li>
+            
+                <li><a href="#reportSettingsArea">reportSettingsArea</a></li>
+            
+                <li><a href="#saveLoadingIndicator">saveLoadingIndicator</a></li>
+            
+                <li><a href="#saveLoadingIndicatorPosition">saveLoadingIndicatorPosition</a></li>
+            
+                <li><a href="#toolbar">toolbar</a></li>
+            
+                <li><a href="#toolbarData">toolbarData</a></li>
+            
+                <li><a href="#trackParentSelection">trackParentSelection</a></li>
+            
+        </ul>
+    </div>
+    
+    
+    <div class="quick-nav-section">
+        <h3><a href="#events-section">Events</a></h3>
+        <ul class="subList">
+            
+            <li><a href="#event:modechange">modechange</a></li>
+            
+            <li><a href="#event:reportchange">reportchange</a></li>
+            
+            <li><a href="#event:reportsettingschange">reportsettingschange</a></li>
+            
+            <li><a href="#event:save">save</a></li>
+            
+            <li><a href="#event:selectionchange">selectionchange</a></li>
+            
+            <li><a href="#event:viewchange">viewchange</a></li>
+            
+            <li><a href="#event:viewmodelcreate">viewmodelcreate</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+    <div class="quick-nav-section">
+        <h3><a href="#methods-section">Methods</a></h3>
+        <ul class="subList">
+            
+                <li><a href="#.copyDefaultToolbar">copyDefaultToolbar</a></li>
+            
+                <li><a href="#focus">focus</a></li>
+            
+                <li><a href="#getActions">getActions</a></li>
+            
+                <li><a href="#getCurrentView">getCurrentView</a></li>
+            
+                <li><a href="#getCurrentViewId">getCurrentViewId</a></li>
+            
+                <li><a href="#getSelectedRecords">getSelectedRecords</a></li>
+            
+                <li><a href="#getToolbar">getToolbar</a></li>
+            
+                <li><a href="#getViews">getViews</a></li>
+            
+                <li><a href="#gotoCell">gotoCell</a></li>
+            
+                <li><a href="#refresh">refresh</a></li>
+            
+                <li><a href="#resize">resize</a></li>
+            
+                <li><a href="#setMasterRecord">setMasterRecord</a></li>
+            
+                <li><a href="#setSelectedRecords">setSelectedRecords</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+    <div class="quick-nav-section">
+        <h3><a href="#typedefs-section">Type Definitions</a></h3>
+        <ul class="subList">
+            
+                <li><a href="#.toolbarData">toolbarData</a></li>
+            
+        </ul>
+    </div>
+    
+</section>
+
+
+<section id="main-content">
+
+<header>
+    
+    
+        <h2>interactiveGrid</h2>
+        
+            <div class="class-description"><div class="hw">
+    <h3 class="name" id="overview-section">Overview</h3>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Overview" href="#overview-section"></a>
+</div>
+<p>A jQuery UI widget for the Interactive Grid component of Application Express. It is a modern component
+combining powerful reporting features, with easy multi-row editing. It is exposed as a native region type in
+APEX, and has a number of declarative features available for customization in Page Designer. In addition to
+what is declaratively available, there is tremendous scope for performing further JavaScript customizations, to
+achieve more specific functionality.</p>
+<p>This widget is used as the main interface with APEX, and is comprised of a number of other widgets and
+making use of a number of other JavaScript modules including its own data model layer, which are important to
+understand when performing customizations.
+The Interactive Grid widget uses the following:
+<ul>
+    <li><a href="grid.html">grid widget</a></li>
+    <li><a href="recordView.html">recordView widget</a></li>
+    <li><a href="tableModelView.html">tableModelView widget</a></li>
+    <li><a href="tableModelViewBase.html">tableModelViewBase widget</a></li>
+    <li>toolbar widget (see widget.toolbar.js file for further information)</li>
+    <li><a href="menu.html">menu widget</a></li>
+    <li><a href="iconList.html">iconList widget</a></li>
+    <li><a href="apex.actions.html">apex.actions module</a></li>
+    <li><a href="apex.model.html">apex.model module</a></li>
+    <li><a href="apex.item.html">apex.item module</a></li>
+</ul>
+See each for further details, although the interactiveGrid widget documentation will make numerous mention
+of them to demonstrate certain concepts.
+</p>
+<p>The intention is not to enable developers to create their own Interactive Grid instances, as this would create
+great burden in developing supporting functionality, for example the model layer. Rather, that
+developers can easily customize the Interactive Grid beyond what is declaratively possible, in a documented and
+supported way, using the standard APEX Interactive Grid region type and the options, methods and events documented
+here, and in related documentation.
+</p>
+<div class="hw">
+    <h3 class="name" id="actions-section">Actions</h3>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Actions" href="#actions-section"></a>
+</div>
+<p><a href="apex.actions.html">Actions</a> are used extensively both by the Interactive Grid widget, and by the other widgets it
+orchestrates. Below we list all the actions pre-defined by the Interactive Grid widget, along with the type of action,
+and a description of the functionality the action handles.</p>
+<p>
+Note: To find out more about a specific action, you can lookup the action as follows:
+</p>
+<p>
+<code class="prettyprint">apex.region( "[region static ID] " ).call( "getActions" ).lookup( "[action name]" );</code>
+</p>
+<table>
+<caption>Pre-defined actions used by the Interactive Grid widget</caption>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Type</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tr>
+<th scope="row">search</th>
+<td>Action</td>
+<td>Handles the main search functionality available from the search field in the toolbar.</td>
+</tr>
+<tr>
+<th scope="row">search-case-sensitive</th>
+<td>Toggle</td>
+<td>Toggle whether the search is case-sensitive.</td>
+</tr>
+<tr>
+<th scope="row">filter-column</th>
+<td>Radio</td>
+<td>Constrain search to a specific column.</td>
+</tr>
+<tr>
+<th scope="row">change-report</th>
+<td>Radio</td>
+<td>Switch to a different saved report.</td>
+</tr>
+<tr>
+<th scope="row">change-view</th>
+<td>Action</td>
+<td>Switch to a different view (eg grid, icon, detail, etc.).</td>
+</tr>
+<tr>
+<th scope="row">chart-view</th>
+<td>Action</td>
+<td>Switch to the chart view. Note: This is handled differently to other views because this is user-defined and may not be configured.</td>
+</tr>
+<tr>
+<th scope="row">show-columns-dialog</th>
+<td>Action</td>
+<td>Show the columns dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-filter-dialog</th>
+<td>Action</td>
+<td>Show the filter dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-sort-dialog</th>
+<td>Action</td>
+<td>Show the sort dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-aggregate-dialog</th>
+<td>Action</td>
+<td>Show the aggregate dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-flashback-dialog</th>
+<td>Action</td>
+<td>Show the flashback dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-highlight-dialog</th>
+<td>Action</td>
+<td>Show the highlight dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-control-break-dialog</th>
+<td>Action</td>
+<td>Show the control break dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-download-dialog</th>
+<td>Action</td>
+<td>Show the download dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-help-dialog</th>
+<td>Action</td>
+<td>Show the help dialog.</td>
+</tr>
+<tr>
+<th scope="row">stretch-columns</th>
+<td>Toggle</td>
+<td>Toggle if columns are set to stretch to their available width (for views that support it).</td>
+</tr>
+<tr>
+<th scope="row">change-rows-per-page</th>
+<td>Radio</td>
+<td>Set the number of grid rows displayed for the current page.</td>
+</tr>
+<tr>
+<th scope="row">save-report</th>
+<td>Action</td>
+<td>Save the current report settings.</td>
+</tr>
+<tr>
+<th scope="row">show-save-report-as-dialog</th>
+<td>Action</td>
+<td>Show the 'Save Report As' dialog.</td>
+</tr>
+<tr>
+<th scope="row">show-edit-report-dialog</th>
+<td>Action</td>
+<td>Show the 'Edit Report' dialog.</td>
+</tr>
+<tr>
+<th scope="row">delete-report</th>
+<td>Action</td>
+<td>Delete the current saved report.</td>
+</tr>
+<tr>
+<th scope="row">reset-report</th>
+<td>Action</td>
+<td>Reset the current report settings.</td>
+</tr>
+<tr>
+<th scope="row">row-add-row</th>
+<td>Action</td>
+<td>Insert a row straight after the current row.</td>
+</tr>
+<tr>
+<th scope="row">row-duplicate</th>
+<td>Action</td>
+<td>Duplicate the current row.</td>
+</tr>
+<tr>
+<th scope="row">row-delete</th>
+<td>Action</td>
+<td>Delete the current row.</td>
+</tr>
+<tr>
+<th scope="row">row-refresh</th>
+<td>Action</td>
+<td>Refresh the current row.</td>
+</tr>
+<tr>
+<th scope="row">row-revert</th>
+<td>Action</td>
+<td>Revert the current row to its original state when the Interactive Grid region was refreshed.</td>
+</tr>
+<tr>
+<th scope="row">selection-mode</th>
+<td>Toggle</td>
+<td>Toggle the current selection mode (true for row selection, false for cell selection).</td>
+</tr>
+<tr>
+<th scope="row">selection-duplicate</th>
+<td>Action</td>
+<td>Duplicate the current selected rows. Note: Interactive Grid must be editable.</td>
+</tr>
+<tr>
+<th scope="row">selection-delete</th>
+<td>Action</td>
+<td>Delete the current selected rows. Note: Interactive Grid must be editable.</td>
+</tr>
+<tr>
+<th scope="row">selection-refresh</th>
+<td>Action</td>
+<td>Refresh the current selected rows from the server. Note: Interactive Grid must be editable.</td>
+</tr>
+<tr>
+<th scope="row">selection-revert</th>
+<td>Action</td>
+<td>Revert the current selected rows to their original state when the Interactive Grid region was refreshed.
+Note: Interactive Grid must be editable.</td>
+</tr>
+<tr>
+<th scope="row">selection-copy</th>
+<td>Action</td>
+<td>Copy the current selection to the clipboard. Note: Interactive Grid must be editable.</td>
+</tr>
+<tr>
+<th scope="row">selection-add-row</th>
+<td>Action</td>
+<td>Insert a row straight after any selected rows. If no rows are selected, or if cell selection mode is enabled, the new row
+will be added at the beginning.</td>
+</tr>
+<tr>
+<th scope="row">selection-copy-down</th>
+<td>Action</td>
+<td>Copy cell values from columns in the first selected row to all the other selected rows within the same columns.
+Note: Interactive Grid must be editable, and only supported in 'Grid' view.</td>
+</tr>
+<tr>
+<th scope="row">selection-clear</th>
+<td>Action</td>
+<td>Clear all cells in the current selection.
+Note: Interactive Grid must be editable, and only supported in 'Grid' view.</td>
+</tr>
+<tr>
+<th scope="row">selection-fill</th>
+<td>Action</td>
+<td>Fill all cells in the current selection with the value provided.
+Note: Interactive Grid must be editable, and only supported in 'Grid' view.</td>
+</tr>
+<tr>
+<th scope="row">refresh</th>
+<td>Action</td>
+<td>Refresh the Interactive Grid region.</td>
+</tr>
+<tr>
+<th scope="row">edit</th>
+<td>Toggle</td>
+<td>Toggle the current edit mode.</td>
+</tr>
+<tr>
+<th scope="row">save</th>
+<td>Action</td>
+<td>Save the current data changes. Note: Interactive Grid must be editable.</td>
+</tr>
+<tr>
+<th scope="row">single-row-view</th>
+<td>Action</td>
+<td>Change to single row view. Note: The current view must support single row view.</td>
+</tr>
+<tr>
+<th scope="row">close-single-row-view</th>
+<td>Action</td>
+<td>Change from single row view. Note: The current view must support single row view.</td>
+</tr>
+</table>
+<p></p>
+
+<div class="hw">
+    <h3 class="name" id="note-about-options-section">Additional Information about options</h3>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Additional Information about options" href="#note-about-options-section"></a>
+</div>
+<p>Please bear the following in mind when dealing with interactiveGrid widget options:</p>
+<ul>
+<li>The options documented here can only be set on initialization and not after initialization
+(unless otherwise stated in the specific option documentation). Setting them after initialization will have no effect.</li>
+<li>The format of the option examples listed for this widget differ from examples you may have seen in other widget documentation. Here,
+they are documented for intended use in the 'Advanced JavaScript Code' attribute of the Interactive Grid region in
+APEX, thus the format documented matches what is required for that attribute.</li>
+<li>One important note when looking at the option examples, is that for options that use nested object
+structures (for example 'options.toolbar.searchField'), your code should never assume that any of the parent objects already
+exist. APEX, by design will only send what it needs to from the server (so default option values will not be sent for example), to keep
+the size of the information transmitted to a minimum. Some options therefore will not be present in the option's
+object structure passed into the 'Advanced JavaScript Code' attribute. You must therefore code defensively when working
+with these nested option structures, to avoid the risk of JavaScript errors.
+<p>For example, for the 'options.toolbar.searchField' option, you could do the following:
+<pre>
+function( options ) {
+
+    // As options.toolbar may not exist, let's first check and if it doesn't exist, create it
+    if ( !options.toolbar ) {
+        options.toolbar = {};
+    }
+
+    // Then we can safely set the 'searchField' property of the options.toolbar object
+    options.toolbar.searchField = false;
+
+    return options;
+}
+</pre>
+</p>
+<p>A simpler way to accomplish the same is to use the <a href="apex.util.html#.getNestedObject">apex.util.getNestedObject</a> which creates
+any needed objects automatically. The following example is equvelent to the previous one:
+<pre>
+function( options ) {
+
+    apex.util.getNestedObject( options, "toolbar" ).searchField = false;
+
+    return options;
+}
+</pre>
+</p>
+<p>Note: For brevity, the examples listed for this widget's documentation do not include such checks, but where any nested structures are
+used, these checks should be added.</p></li></ul></div>
+        
+    
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>5.1</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <div class="hw">
+        <h3 id="members-section" class="subsection-title">
+            Options
+        </h3>
+            <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Options" href="#members-section"></a>
+        </div>
+
+        
+            
+<div class="hw">
+<h4 class="name" id="defaultDetailViewOptions"><span class="type-signature"></span>defaultDetailViewOptions<span class="type-signature"> :Object</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark defaultDetailViewOptions" href="#defaultDetailViewOptions"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>This option allows passing options to the underlying tableModelView widget for detail view.
+参见 <a href="tableModelView.html">tableModelView</a> for the options it supports.
+Interactive Grid may override some of these settings. Some settings may interfere
+with the proper functioning of Interactive Grid.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the defaultDetailViewOptions option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.defaultDetailViewOptions = {
+        footer: false
+    };
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="defaultGridViewOptions"><span class="type-signature"></span>defaultGridViewOptions<span class="type-signature"> :Object</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark defaultGridViewOptions" href="#defaultGridViewOptions"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>This option allows passing options to the underlying grid widget for grid view.
+参见 <a href="grid.html">grid</a> for the options it supports.
+Interactive Grid may override some of these settings. Some settings may interfere
+with the proper functioning of Interactive Grid.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the defaultGridViewOptions option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.defaultGridViewOptions = {
+        multiple: true,
+        allowInsert: false
+    };
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="defaultIconViewOptions"><span class="type-signature"></span>defaultIconViewOptions<span class="type-signature"> :Object</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark defaultIconViewOptions" href="#defaultIconViewOptions"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>This option allows passing options to the underlying tableModelView widget for icon view.
+参见 <a href="tableModelView.html">tableModelView</a> for the options it supports.
+Interactive Grid may override some of these settings. Some settings may interfere
+with the proper functioning of Interactive Grid.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the defaultIconViewOptions option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.defaultIconViewOptions = {
+        footer: false
+    };
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="defaultModelOptions"><span class="type-signature"></span>defaultModelOptions<span class="type-signature"> :Object</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark defaultModelOptions" href="#defaultModelOptions"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>This option allows passing options not explicitly set by Interactive Grid to the underlying view models.
+参见 <a href="apex.model.html#.create">apex.model.create</a> for the supported model options. Some settings may interfere
+with the proper functioning of Interactive Grid.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the defaultModelOptions option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.defaultModelOptions = {
+        pageSize: 200
+    };
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="defaultSingleRowOptions"><span class="type-signature"></span>defaultSingleRowOptions<span class="type-signature"> :Object</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark defaultSingleRowOptions" href="#defaultSingleRowOptions"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>This option allows passing options to the underlying recordView widget for the single row view of grid view.
+参见 <a href="recordView.html">recordView</a> for the options it supports.
+Interactive Grid may override some of these settings. Some settings may interfere
+with the proper functioning of Interactive Grid.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the defaultSingleRowOptions option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.defaultSingleRowOptions = {
+        alwaysEdit: true
+    };
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="editable"><span class="type-signature"></span>editable<span class="type-signature"> :boolean</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark editable" href="#editable"></a>
+</div>
+
+
+
+
+<div class="description">
+    Controls if the Interactive Grid is editable.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>false</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the editable option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.editable = true;
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="features"><span class="type-signature"></span>features<span class="type-signature"> :Object</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark features" href="#features"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>Controls which general features of the Interactive Grid are enabled.</p>
+<p>Note: This only deals with general features for the Interactive Grid, not features only specific
+to certain views. For specific view feature configuration, see the 'views' option object.
+</p></div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>filter</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Controls if filtering is available for the Interactive Grid</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>flashback</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Controls if flashback is available for the Interactive Grid</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li><pre>
+{
+    filter: true,
+    flashback: true
+}
+</pre></li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the features option specified in the
+Interactive Grid region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.features.filter = false;
+    options.features.flashback = false;
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="initActions"><span class="type-signature"></span>initActions<span class="type-signature"> :function</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark initActions" href="#initActions"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>Allows you to add or modify <em>actions</em>. <code class="prettyprint">function( actions )</code>
+Function has one argument 'actions', which is the Interactive Grid's action's interface object. Note: Within
+the function, the actions.context property can be used to access the main interactiveGrid widget element
+(the context for the actions).</p>
+<p>Please see interactiveGrid#actions-section for a listing of all the predefined actions used by
+the Interactive Grid widget, and <a href="actions.html">actions</a> for further general information about actions.
+</p></div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">function</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>null</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the initActions option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.initActions = function( actions ) {
+
+        // Hide all elements associated with the show help dialog action
+        actions.hide( "show-help-dialog" );
+
+        // Add a keyboard shortcut to the show filter dialog action
+        actions.lookup( "show-filter-dialog" ).shortcut = "Ctrl+Alt+F";
+        actions.update( "show-filter-dialog" );
+
+        // Add new actions, either singularly passing in an actions object as shown here, or in
+        // multiple by passing an array of action objects
+        actions.add( {
+            name: "my-action",
+            label: "Hello",
+            action: function( event, focusElement ) {
+                alert( "Hello World!" );
+            }
+        } );
+    };
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="initialSelection"><span class="type-signature"></span>initialSelection<span class="type-signature"> :boolean</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark initialSelection" href="#initialSelection"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>Controls if the Interactive Grid has an initial selection.</p>
+<p>Note: This is only applicable where the current view supports selection, views that do not
+support selection will ignore this setting.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>true</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the initialSelection option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.initialSelection = false;
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="reportSettingsArea"><span class="type-signature"></span>reportSettingsArea<span class="type-signature"> :boolean</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark reportSettingsArea" href="#reportSettingsArea"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>Controls if the report settings area displays for the Interactive Grid. The report settings area
+shows information such as filters, control breaks and highlights applied to the current report.
+Pass <em>false</em> to hide the report settings area, however you should not rely on this being
+set to <em>true</em> to display report settings, it just needs to evaluate to truthy.</p>
+<p>Note: For the case where report settings are displayed, this could change in the future to be an
+object, defining greater configurability (such as whether the controls are enabled, or if this should
+be collapsed by default), so please bear this in mind if using this option.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>true</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the reportSettingsArea option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.reportSettingsArea = false;
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="saveLoadingIndicator"><span class="type-signature"></span>saveLoadingIndicator<span class="type-signature"> :string|jQuery|Element|function</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark saveLoadingIndicator" href="#saveLoadingIndicator"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>A loading indicator suitable for the <a href="apex.server.html#.plugin">apex.server.plugin</a>
+<code class="prettyprint">loadingIndicator</code> option to be used during the save action.</p>
+<p>This overrides the default model loading indicator that shows a progress spinner for any
+related visible models that have changes.</p>
+<p>This is most useful for master Interactive Grid regions where detail models may not be visible
+and therefore won't show progress.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+|
+
+<span class="param-type">jQuery</span>
+|
+
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">function</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>undefined</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="saveLoadingIndicatorPosition"><span class="type-signature"></span>saveLoadingIndicatorPosition<span class="type-signature"> :string</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark saveLoadingIndicatorPosition" href="#saveLoadingIndicatorPosition"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>A loading indicator position suitable for the <a href="apex.server.html#.plugin">apex.server.plugin</a>
+<code class="prettyprint">loadingIndicatorPosition</code> option to be used during the save action.</p>
+<p>This overrides the default model loading indicator that shows a progress spinner for any
+related visible models that have changes.</p>
+<p>This is most useful for master Interactive Grid regions where detail models may not be visible
+and therefore won't show progress.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>undefined</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the saveLoadingIndicatorPosition option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.saveLoadingIndicatorPosition = "page";
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="toolbar"><span class="type-signature"></span>toolbar<span class="type-signature"> :Object</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark toolbar" href="#toolbar"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>Controls which functionality of the default Interactive Grid toolbar is displayed.
+If false or null, there will be no toolbar.</p>
+<p>Note: To make further customizations to the toolbar including adding new buttons, please see
+<a href="interactiveGrid.html#toolbarData">interactiveGrid#toolbarData</a>.
+</p></div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>actionMenu</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Hide or show the actions menu.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>columnSelection</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Hide or show the column selection menu, to allow column-specific searches.</p>
+<p>Note: Ignored if toolbar.searchField is <em>false</em>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>editing</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Hide or show the edit button.</p><p>Note: This does not prevent the Interactive Grid
+from being edited, merely hides the button from the toolbar. If you wish to control whether the
+Interactive Grid can be edited at all, please see the <a href="interactiveGrid.html#editable">interactiveGrid#editable</a> option.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>reset</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Hide or show the reset button.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>save</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Hide or show the save button.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>savedReports</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Hide or show the select list showing any saved reports.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>searchField</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Hide or show the search controls (affects the column selection menu, search input field and go button).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li><pre>
+{
+    actionMenu: true,
+    columnSelection: true,
+    editing: true,
+    reset: true,
+    save: true,
+    savedReports: true,
+    searchField: true
+}
+</pre></li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the toolbar option specified in the
+Interactive Grid region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.toolbar.actionMenu = false;
+    options.toolbar.columnSelection = false;
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="toolbarData"><span class="type-signature"></span>toolbarData<span class="type-signature"> :Array</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark toolbarData" href="#toolbarData"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>Contains the metadata for the toolbar displayed at the top of the Interactive Grid. If no value is
+provided, the toolbar defaults to the standard toolbar required in APEX.</p>
+<p>To customize the default toolbar used by the Interactive Grid in APEX, typically you would start
+with a copy of the default toolbar metadata. Please see <a href="interactiveGrid.html#.copyDefaultToolbar">interactiveGrid.copyDefaultToolbar</a>
+for details on how to do this.</p>
+
+<p>See toolbar widget for further details about what metadata is required.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>Return value from <a href="interactiveGrid.html#.copyDefaultToolbar">interactiveGrid.copyDefaultToolbar</a></li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the toolbarData option specified in the
+Interactive Grid region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    var $ = apex.jQuery,
+        toolbarData = $.apex.interactiveGrid.copyDefaultToolbar(),               // Make a copy of the default toolbar
+        reportsGroupControls = toolbarData.toolbarFind( "reports" ).controls;    // Locate the reports group
+
+    // Add new buttons after the default report controls. Note the toolbar is action driven, so
+    // we just need to define the correct action name with the button.
+    reportsGroupControls.push({
+        type: "BUTTON",
+        action: "save-report",
+        iconOnly: true
+    });
+    reportsGroupControls.push({
+        type: "BUTTON",
+        action: "show-save-report-as-dialog",
+        iconOnly: true
+    });
+    reportsGroupControls.push({
+        type: "BUTTON",
+        action: "show-edit-report-dialog",
+        iconOnly: true
+    });
+    reportsGroupControls.push({
+        type: "BUTTON",
+        action: "delete-report",
+        iconOnly: true
+    });
+
+    // Assign new toolbar data back to toolbarData configuration property
+    options.toolbarData = toolbarData;
+
+    // Return the options
+    return options;
+}</code></pre>
+    
+
+
+        
+            
+<div class="hw">
+<h4 class="name" id="trackParentSelection"><span class="type-signature"></span>trackParentSelection<span class="type-signature"> :boolean</span></h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark trackParentSelection" href="#trackParentSelection"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>Determines if a detail Interactive Grid will change the detail instance automatically when the
+selection in the master region changes. When true, the default, this detail Interactive Grid
+creates a selection change event handler for the master region and updates the data shown in this
+region to correspond to the selected row of the master region. Set to false to manually control
+the detail instance shown in this region using the <a href="interactiveGrid.html#setMasterRecord">interactiveGrid#setMasterRecord</a> method.</p><p>
+
+</p><p>This option only applies if this Interactive Grid has a master region defined.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>true</li>
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Initialize the interactiveGrid with the trackParentSelection option specified in the Interactive Grid  region JavaScript Initialization Code attribute.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+    options.trackParentSelection = false;
+    return options;
+}</code></pre>
+    
+
+
+        
+    
+
+    
+        <div class="hw">
+        <h3 id="events-section" class="subsection-title">
+            Events
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Events" href="#events-section"></a>
+        </div>
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="event:modechange">modechange</h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark modechange" href="#event:modechange"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Triggered when edit mode is changed (works for both grid view and single row view).
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="event:reportchange">reportchange</h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark reportchange" href="#event:reportchange"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Triggered when the current report is changed.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="event:reportsettingschange">reportsettingschange</h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark reportsettingschange" href="#event:reportsettingschange"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Triggered when the current report settings are changed.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="event:save">save</h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark save" href="#event:save"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Triggered after the Interactive Grid data has been saved.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="event:selectionchange">selectionchange</h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark selectionchange" href="#event:selectionchange"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Triggered when the selection state changes and will work for all views that support
+selection (grid, icon, etc.).</p>
+<p>Note: This event is also exposed declaratively through Dynamic Actions, see the 'Selection Change'
+event for Interactive Grid regions. If all you want to do is respond to this event and no other code,
+you may be able to use Dynamic Actions instead.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>event</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">event</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><code class="prettyprint">jQuery</code> event object.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>data</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Additional data for the event.
+                <h6>Properties</h6>
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>selectedRecords</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array containing the underlying data model records corresponding
+to the current selection in the current view. See (@link interactiveGrid#getSelectedRecords) for further information
+on how to deal with these records.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>model</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The underlying data model for the current view. 参见 <a href="apex.model.html">apex.model</a> for further information.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Bind an event listener to the <code class="prettyprint">interactivegridselectionchange</code> event.</p>
+    
+        <pre class="prettyprint"><code>// Define in the 'Execute when Page Loads' page attribute
+$( ".selector" ).on( "interactivegridselectionchange", function( event, data ) {
+    // add code to fire on selection change
+} );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="event:viewchange">viewchange</h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark viewchange" href="#event:viewchange"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Triggered when the view changes.</p>
+<p>Note: This event is also exposed declaratively through Dynamic Actions, see the 'View Change'
+event for Interactive Grid regions. If all you want to do is respond to this event and no other code,
+you may be able to use Dynamic Actions instead.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>event</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">event</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><code class="prettyprint">jQuery</code> event object.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>data</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Additional data for the event.
+                <h6>Properties</h6>
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>view</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Identifier for the current view.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>created</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">If true this indicates the view has just been created (or viewed for the first time).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Bind an event listener to the <code class="prettyprint">interactivegridviewchange</code> event.</p>
+    
+        <pre class="prettyprint"><code>// Define in the 'Function and Global Variable Declaration' page attribute (not 'Execute when Page Loads'),
+// in order to be active by the time the Interactive Grid is initialized.
+$( ".selector" ).on( "interactivegridviewchange", function( event, data ) {
+    // add code to fire on view change
+} );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="event:viewmodelcreate">viewmodelcreate</h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark viewmodelcreate" href="#event:viewmodelcreate"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Triggered when the model for the given view is created. Listen to this to subscribe to model notifications.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <div class="hw">
+        <h3 id="methods-section" class="subsection-title">
+            Methods
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Methods" href="#methods-section"></a>
+        </div>
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".copyDefaultToolbar"><span class="type-signature">(static) </span>copyDefaultToolbar<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="interactiveGrid.html#.toolbarData">interactiveGrid.toolbarData</a>}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark copyDefaultToolbar() returns {interactiveGrid.toolbarData}" href="#.copyDefaultToolbar"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Returns a copy of the default Interactive Grid toolbar data structure.
+This is a copy of the array that will be used as the data option when the Interactive Grid's toolbar is created.
+This is typically used from the Advanced JavaScript code function to customize the
+return value of this function and then assign to the <a href="interactiveGrid.html#toolbarData">interactiveGrid#toolbarData</a> config property.</p>
+
+<p>Note the array returned has additional methods to make it easier to find and manipulate the toolbar
+structure. 参见 <a href="interactiveGrid.html#.toolbarData">interactiveGrid.toolbarData</a> for details.</p>
+
+<p>See toolbar widget for details.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Returns an array containing a copy of the default Interactive Grid toolbar metadata.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="interactiveGrid.html#.toolbarData">interactiveGrid.toolbarData</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">The following example shows how to make the download dialog more easily accessible, by adding a
+button to the toolbar to open it.</p>
+    
+        <pre class="prettyprint"><code>function( options ) {
+   var $ = apex.jQuery,
+       toolbarData = $.apex.interactiveGrid.copyDefaultToolbar(), // Make a copy of the default toolbar
+       actionsMenuGroup = toolbarData.toolbarFind( "actions1" );  // Locate the actions menu group
+
+   // Array position denotes displayed position in the toolbar, so let's add the new download button directly
+   // after the actions menu group in the array, such that it displays directly after the actions menu in the
+   // toolbar.
+   // Note: The toolbar is action-driven, so integrates easily with the Interactive Grid. To show the dialog, we
+   // just define the appropriate action for showing the download dialog (show-download-dialog).
+   actionsMenuGroup.controls.push( {
+       type: "BUTTON",
+       action: "show-download-dialog",
+       iconBeforeLabel: true
+   } );
+
+   // Assign new toolbar data back to toolbarData configuration property
+   options.toolbarData = toolbarData;
+
+   // Return the options
+   return options;
+}</code></pre>
+    
+        <p class="code-caption">This example is similar to the previous one except that the Download menu item is removed
+from the Actions menu and inserted as a toolbar button after the Actions menu button.</p>
+    
+        <pre class="prettyprint"><code>function( options) {
+    var download,
+        toolbarData = $.apex.interactiveGrid.copyDefaultToolbar();
+
+    // Move download menu item to its own button on the toolbar
+    download = toolbarData.toolbarRemove( "show-download-dialog" );
+    // download is a menu item; change it to a toolbar button component
+    download.type = "BUTTON";
+    download.iconBeforeLabel = true;
+    // inset it after the Actions menu button
+    toolbarData.toolbarInsertAfter( "actions_button", download );
+
+   // Assign new toolbar data back to toolbarData configuration property
+   options.toolbarData = toolbarData;
+
+   // Return the options
+   return options;
+}</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="focus"><span class="type-signature"></span>focus<span class="signature">()</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark focus()" href="#focus"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Sets focus to the search field if present, and if not delegates to the current view's focus handling.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getActions"><span class="type-signature"></span>getActions<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="apex.actions.html">apex.actions</a>}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getActions() returns {apex.actions}" href="#getActions"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Returns the actions context for this Interactive Grid instance
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the actions context
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="apex.actions.html">apex.actions</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <pre class="prettyprint"><code>apex.region("emp").widget().interactiveGrid("getActions").invoke("save");</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getCurrentView"><span class="type-signature"></span>getCurrentView<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="interactiveGridView.html">interactiveGridView</a>}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getCurrentView() returns {interactiveGridView}" href="#getCurrentView"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Return the current Interactive Grid view interface.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    View interface.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="interactiveGridView.html">interactiveGridView</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getCurrentViewId"><span class="type-signature"></span>getCurrentViewId<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getCurrentViewId() returns {string}" href="#getCurrentViewId"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Return the view id of the current view.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    view id.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getSelectedRecords"><span class="type-signature"></span>getSelectedRecords<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getSelectedRecords() returns {Array}" href="#getSelectedRecords"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Return the underlying data model records corresponding to the current selection in the current view.
+Use the apex.model API to manipulate these records. Make sure you are using the model for the current
+view for example: apex.region(<static-id>).widget().interactiveGrid("getCurrentView").model
+
+Note: Depending on the view and the submitSelectedRows option the selected records returned could
+span multiple pages. To get just the records that are selected in the current page requires
+using view widget specific methods.
+</static-id></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    array of records from the model corresponding to the selected rows/records
+Returns empty array if there is no selection. Returns null if the current view doesn't support
+selection.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getToolbar"><span class="type-signature"></span>getToolbar<span class="signature">()</span><span class="type-signature"> &rarr; {jQuery}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getToolbar() returns {jQuery}" href="#getToolbar"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Returns the toolbar widget element.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    jQuery object of the interactive grid toolbar or null if there is no toolbar
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">jQuery</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="getViews"><span class="type-signature"></span>getViews<span class="signature">(pViewId<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="interactiveGridView.html">interactiveGridView</a>}</span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark getViews(pViewId) returns {interactiveGridView}" href="#getViews"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Return the Interactive Grid view interface for the given view id or if no view id is given return a
+map of all the view interfaces.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for getViews">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pViewId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Id of the view to get. For example "grid" or "chart".</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    View interface.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="interactiveGridView.html">interactiveGridView</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="gotoCell"><span class="type-signature"></span>gotoCell<span class="signature">(pModelInstanceId<span class="signature-attributes">opt</span>, pRecordId, pColumn<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark gotoCell(pModelInstanceId, pRecordId, pColumn)" href="#gotoCell"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Put focus in the cell (or field etc.) given by pRecordId and pColumn. This is used to focus rows or cells
+that have errors. This will switch to the "editable" view.
+This delegates to the view. Not all views will support going to a cell.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for gotoCell">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pModelInstanceId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">model instance id. only needed if using multiple models such as in master
+                                 detail and the model has not already been set correctly by the master.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pRecordId</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the record id of the row to go to.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pColumn</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">column in the record row to go to.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="refresh"><span class="type-signature"></span>refresh<span class="signature">()</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark refresh()" href="#refresh"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Cause the Interactive Grid to get fresh data from the server.
+A warning is given if the model has any outstanding changes and the user can choose to allow the refresh or not.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="resize"><span class="type-signature"></span>resize<span class="signature">()</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark resize()" href="#resize"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Call this method when the size of the widget element changes. This can happen if the browser window
+changes for example. This will resize the current view.
+Note: Most of the time it is not necessary to call this method as Interactive Grid detects when its
+size changes.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="setMasterRecord"><span class="type-signature"></span>setMasterRecord<span class="signature">(pMasterModel, pMasterRecord)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark setMasterRecord(pMasterModel, pMasterRecord)" href="#setMasterRecord"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Set the instance of this Interactive Grid to correspond to the specified master record.
+Normally this is done automatically when the master region selection changes. However it can
+also be done manually when the <a href="interactiveGrid.html#trackParentSelection">interactiveGrid#trackParentSelection</a> option is false.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for setMasterRecord">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pMasterModel</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="model.html">model</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The model of the master region.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pMasterRecord</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="model.html#.Record">model.Record</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The record of the master region that determines which records this
+  detail region will show.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id="setSelectedRecords"><span class="type-signature"></span>setSelectedRecords<span class="signature">(pRecords, pFocus<span class="signature-attributes">opt</span>, pNoNotify<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark setSelectedRecords(pRecords, pFocus, pNoNotify)" href="#setSelectedRecords"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    Set the current selection to the records specified. Only applies for views that support selection.
+
+Note that the records or record ids given may not yet exist in the model or may not be visible in the view.
+
+Note if you set pNoNotify to true then any detail regions will not get updated to reflect the current selection.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for setSelectedRecords">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pRecords</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">an array of model records or an array of model record ids as returned by model
+                 getRecordId. If this is an empty array then the selection is cleared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pFocus</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">if true the first cell of the selection is given focus</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pNoNotify</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">if true the selection change event will be suppressed</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <div class="hw">
+        <h3 id="typedefs-section" class="subsection-title">
+            Type Definitions
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Type Definitions" href="#typedefs-section"></a>
+        </div>
+
+        
+                
+<div class="hw">
+<h4 class="name" id=".toolbarData">toolbarData</h4>
+<a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark toolbarData" href="#.toolbarData"></a>
+</div>
+
+
+
+
+<div class="description">
+    <p>Toolbar widget metadata returned by <a href="interactiveGrid.html#.copyDefaultToolbar">interactiveGrid.copyDefaultToolbar</a>.</p>
+<p>The toolbar data structure is an array of control groups for different parts of the toolbar. These
+control groups all have unique IDs, which can be used in conjunction with the the functions defined below
+to assist in customizing the toolbar. See toolbar widget for details on the structure of the toolbar
+data. See option <a href="interactiveGrid.html#toolbarData">interactiveGrid#toolbarData</a> and method <a href="interactiveGrid.html#.copyDefaultToolbar">interactiveGrid.copyDefaultToolbar</a>
+for examples of customizing the toolbar.
+<table>
+<caption>Control group IDs defined in the default toolbar data structure</caption>
+<thead>
+<th scope="col">Control Group ID</th>
+<th scope="col">Contents</th>
+</thead>
+<tr><th scope="row">search</th><td>All search controls (column search menu, search field and go button)</td></tr>
+<tr><th scope="row">reports</th><td>Saved report select list</td></tr>
+<tr><th scope="row">views</th><td>View selection pill buttons</td></tr>
+<tr><th scope="row">actions1</th><td>Actions menu button</td></tr>
+<tr><th scope="row">actions2</th><td>Edit and Save buttons</td></tr>
+<tr><th scope="row">actions3</th><td>Add Row button</td></tr>
+<tr><th scope="row">actions4</th><td>Reset report button</td></tr>
+</table>
+</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props" aria-label="Properties">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>toolbarFind(id)</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Returns a control group, control or menu item found by id.
+    The id is the id of a control group, control, or menu item or an action name. Unlike the find method
+    of the toolbar widget this toolbarFind method works before the widget is created.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>toolbarInsertAfter(id,</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">item) Inserts the given item after the id if found. The id
+    argument can be the id of a control group, control, or menu item or an action name. If the id is
+    not found then nothing is inserted. The item to insert is an object that is appropriate for the
+    kind of id. If the id is for an action name or a menu item id then the item should be a menu item or
+    toolbar control. If the id is for a control group the item should be a control group object.
+    If the id is for a control then the item should be a control.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>toolbarRemove(id)</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Removes a control group, control or menu item found by id.
+    The id is the id of a control group, control, or menu item or an action name. The item removed is
+    returned. Note: removing a button or menu item does not remove the corresponding functionality. For example
+    removing the menu item for "show-filter-dialog" does not prevent showing the filter dialog by invoking
+    the "show-filter-dialog" action some other way such as from the report settings area.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+    
+
+</article>
+
+</section>
+
+
+
+
+
+    <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Feb 27 2020 23:50:22 GMT-0800 (Pacific Standard Time)
+      <br>
+      <span class="product-docs-footer">Oracle Application Express Release 20.1, JavaScript API Reference</span>
+      <br>
+      <span class="product-docs-footer">Copyright &copy; 2003, 2020, Oracle and/or its affiliates. All rights reserved.</span>
+    </footer>
+</div>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+<script>
+(function() {
+    // make skip link work for mobile browsers
+    document.getElementById("skipToContent").addEventListener("click", function(e) {
+        var target = document.getElementById("main-content");
+        e.preventDefault();
+        target.setAttribute("tabindex", "-1");
+        target.addEventListener("blur", function(e) {
+            target.removeAttribute("tabindex");
+        });
+        target.focus();
+    });
+
+    var nav = document.getElementById("nav");
+    var currentId = nav.getAttribute("data-current-item");
+    if (!currentId) {
+        return;
+    }
+    var link = document.getElementById(currentId);
+    if (!link) {
+        return;
+    }
+    link.className = link.className ? link.className + " current-nav-item" : "current-nav-item";
+    nav.scrollTop = link.offsetTop + (link.offsetHeight - nav.offsetHeight)/2;
+})();
+</script>
+
+</body>
+</html>

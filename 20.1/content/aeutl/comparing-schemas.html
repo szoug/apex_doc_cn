@@ -1,0 +1,162 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="task">
+      <meta name="DC.Title" content="Comparing Schemas">
+      <meta name="abstract" content="You can run a report that compares database objects in two schemas, displaying differences between them. You can compare all objects in the schemas or limit your report to specific objects.">
+      <meta name="description" content="You can run a report that compares database objects in two schemas, displaying differences between them. You can compare all objects in the schemas or limit your report to specific objects.">
+      <meta name="DC.Relation" scheme="URI" content="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-9951C644-C7BB-4D8E-962E-3C64124C4379">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can run a report that compares database objects in two schemas, displaying differences between them. You can compare all objects in the schemas or limit your report to specific objects.">
+      <meta name="description" content="You can run a report that compares database objects in two schemas, displaying differences between them. You can compare all objects in the schemas or limit your report to specific objects.">
+      <title>Comparing Schemas</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="You can run a report that compares database objects in two schemas, displaying differences between them. You can compare all objects in the schemas or limit your report to specific objects.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-user-interface-defaults.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-methods-on-tables.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-user-interface-defaults.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-methods-on-tables.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-Oracle-application-express-utilities.html" property="item" typeof="WebPage"><span property="name"> Using Oracle Application Express Utilities</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Comparing Schemas</li>
+            </ol>
+            <a id="GUID-9951C644-C7BB-4D8E-962E-3C64124C4379" name="GUID-9951C644-C7BB-4D8E-962E-3C64124C4379"></a><a id="AEUTL270"></a>
+            
+            <h2 id="AEUTL-GUID-9951C644-C7BB-4D8E-962E-3C64124C4379" class="sect2"><span class="enumeration_section">5.7 </span>Comparing Schemas
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can run a report that compares database objects in two schemas, displaying differences between them. You can compare all objects in the schemas or limit your report to specific objects.</p>
+               <div class="section">
+                  <p>To compare two schemas, both must be available to your workspace.</p>
+                  <p>Examples:</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Compare <code class="codeph">DEMO_ objects</code> by searching for that naming convention. The report indicates if the object exists in each of the two schemas. 
+                        </p>
+                     </li>
+                     <li>
+                        <p>Analyze the object details in the two schemas to determine why one implementation is different. For example, the report might show that an index in one schema has an additional column or a column with a different data type. </p>
+                     </li>
+                  </ul>
+                  <p>To compare schemas:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span>.</span></li>
+                  <li class="stepexpand"><span>Click <span class="uicontrol bold">Utilities</span>.</span></li>
+                  <li class="stepexpand"><span>Click <span class="uicontrol bold">Schema Comparison</span>.</span></li>
+                  <li class="stepexpand"><span>On the Schema Comparison page, make the appropriate selections to run the comparison:</span><div>
+                        <ol type="a">
+                           <li>
+                              <p><strong class="term">Schema 1 and Schema 2</strong> - Select the schemas to compare.
+                              </p>
+                           </li>
+                           <li>
+                              <p><strong class="term">Compare</strong> - Restrict the report to show one object type or select <span class="uicontrol bold">All</span> to show all database objects.
+                              </p>
+                           </li>
+                           <li>
+                              <p><strong class="term">Search</strong> - Enter a case insensitive query for the object name.
+                              </p>
+                           </li>
+                           <li>
+                              <p><strong class="term">Rows</strong> - To change the number of rows that appear in the report, make a selection from the Display list.
+                              </p>
+                           </li>
+                           <li>
+                              <p><strong class="term">Compare</strong> - Click <span class="uicontrol bold">Go</span> to find the results matching your selections.
+                              </p>
+                           </li>
+                           <li>
+                              <p><strong class="term">Show Differences Only or Show Details</strong> - Select the type of information you want to review.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Click <span class="uicontrol bold">Compare</span>.
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                  </li>
+               </ol>
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-Oracle-application-express-utilities.html#GUID-DC79742E-1BCE-43EF-B4E2-F2EC3D4376F5" title="Oracle Application Express provides utilities to build SQL queries, load and unload data from an Oracle database, generate DDL, view object reports, manage User Interface Defaults, restore dropped database objects, compare schemas, monitor the database, and view database details.">Using Oracle Application Express Utilities</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

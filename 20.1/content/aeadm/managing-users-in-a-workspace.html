@@ -1,0 +1,934 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Users in a Workspace">
+      <meta name="abstract" content="Create new user accounts, manage existing user accounts, and change user passwords.">
+      <meta name="description" content="Create new user accounts, manage existing user accounts, and change user passwords.">
+      <meta name="DC.subject" content="Application Express users, managing, administrator roles, user roles, developer, Workspace administrator, Oracle Application Express administrator, creating, creating multiple, editing accounts, changing user password, deleting accounts, deleting multiple users, groups, managing Application Express users, grouping, Application Express user groups, editing, removing users, adding users, assigning to another group">
+      <meta name="keywords" content="Application Express users, managing, administrator roles, user roles, developer, Workspace administrator, Oracle Application Express administrator, creating, creating multiple, editing accounts, changing user password, deleting accounts, deleting multiple users, groups, managing Application Express users, grouping, Application Express user groups, editing, removing users, adding users, assigning to another group">
+      <meta name="DC.Relation" scheme="URI" content="workspace-and-application-administration.html#GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-895477F9-EA90-4B26-8B45-1ED0FFC9D8A3">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-70B2C393-2B2C-4DF2-91C5-C6D7A03B0183">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-3969ECD4-353E-4E01-B74E-5899A6744182">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-BCE76C01-78AE-47E6-BDE4-A3663E06175B">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-810CCBFB-BBE2-4210-9592-EED4067CCE81">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-BC5A7347-2562-4040-8B5D-B03E4245175D">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-4A6EF44C-9609-469C-B29F-80936B3B7B06">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-65813057-A491-4E86-ACE1-FBDC48079A93">
+      <meta name="DC.Relation" scheme="URI" content="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Create new user accounts, manage existing user accounts, and change user passwords.">
+      <meta name="description" content="Create new user accounts, manage existing user accounts, and change user passwords.">
+      <title>Managing Users in a Workspace</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Create new user accounts, manage existing user accounts, and change user passwords.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="defining-a-workspace-message-in-workspace-administration.html" title="Previous" type="text/html">
+      <link rel="next" href="accessing-data-dictionary-cache-from-workspace-administration.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="defining-a-workspace-message-in-workspace-administration.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="accessing-data-dictionary-cache-from-workspace-administration.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="workspace-and-application-administration.html" property="item" typeof="WebPage"><span property="name">Workspace and Application Administration</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Users in a Workspace</li>
+            </ol>
+            <a id="GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" name="GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC"></a><a id="AEADM149"></a>
+            
+            <h2 id="AEADM-GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" class="sect2"><span class="enumeration_section">2.7 </span>Managing Users in a Workspace
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Create new user accounts, manage existing user accounts, and change user passwords.</p>
+               <div class="infobox-tip" id="GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC__YOUCANACCESSMANYWORKSPACEADMINISTRA-B693BD25">
+                  <p class="notep1">Tip:</p>
+                  <p>You can access many workspace administration functions (such as <span class="uicontrol bold">Manage Service, Manage Users and Groups</span>) from both the Administration menu and the Workspace Administration home page. For consistency, this section navigates the user to the Workspace Administration home page.
+                  </p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-895477F9-EA90-4B26-8B45-1ED0FFC9D8A3">About Application Accounts Authentication</a><br>Application Express Accounts authentication is a built-in authentication         method in which user accounts are created and managed in the Oracle Application Express user         repository. User accounts are particularly useful if your application is using Application         Express Accounts         authentication.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-70B2C393-2B2C-4DF2-91C5-C6D7A03B0183">About Application Express User Roles</a><br>Oracle Application Express users are divided into four roles.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-3969ECD4-353E-4E01-B74E-5899A6744182">Creating User Accounts</a><br>Workspace administrators can create new user accounts one at a time, or create multiple accounts in a single operation.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-BCE76C01-78AE-47E6-BDE4-A3663E06175B">Editing Existing User Accounts</a><br>Edit existing user accounts on the Manage Users and Groups page.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-810CCBFB-BBE2-4210-9592-EED4067CCE81">Locking and Unlocking a User Account</a><br>Control access to a workspace by locking and unlocking a user account. 
+                  </li>
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-BC5A7347-2562-4040-8B5D-B03E4245175D">Changing a User Account Password</a><br>Change user account passwords on the Manage Users and Groups page.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-4A6EF44C-9609-469C-B29F-80936B3B7B06">Deleting User Accounts</a><br>Workspace administrators can delete user accounts one at a time or delete multiple accounts in a single operation.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-65813057-A491-4E86-ACE1-FBDC48079A93">Viewing the Users Dashboard</a><br>The Users Dashboard displays a summary of your account information, users in the current workspace, defined user groups, recently created users, and user status
+                  </li>
+                  <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4">Using Groups to Manage Application Express Users</a><br>Workspace administrators can create and manage Application Express users         using groups. Groups enable administrators to categorize and manage user         privileges.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC__GUID-8675B107-FC29-411C-8635-B6C91F8C5A58">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="configuring-workspace-preferences.html#GUID-F432BD64-26B0-47D4-8514-7F7176E66D43" title="Configure workspace account login controls such as account expiration and locking, maximum number of failed login attempts, and end user account password lifetime.">Managing Workspace Account Login Controls</a>"</span> and <span class="q">"<a href="managing-users-across-an-application-express-instance.html#GUID-AC77C488-E9CC-4279-9D5F-C4C864EF3683" title="An Instance administrator manages all user accounts within an Oracle Application Express instance on the Manage Developers and Users page.">Managing Users Across an Application Express Instance</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="workspace-and-application-administration.html#GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14" title="In an Oracle Application Express development environment, users sign in to a shared work area called a workspace. Workspace administrators monitor and administer a shared work area called a workspace.">Workspace and Application Administration</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM29146"></a><div class="props_rev_3"><a id="GUID-895477F9-EA90-4B26-8B45-1ED0FFC9D8A3" name="GUID-895477F9-EA90-4B26-8B45-1ED0FFC9D8A3"></a><h3 id="AEADM-GUID-895477F9-EA90-4B26-8B45-1ED0FFC9D8A3" class="sect3"><span class="enumeration_section">2.7.1 </span>About Application Accounts Authentication
+               </h3>
+               <div>
+                  <p>Application Express Accounts authentication is a built-in authentication
+        method in which user accounts are created and managed in the Oracle Application Express user
+        repository. User accounts are particularly useful if your application is using Application
+        Express Accounts
+        authentication.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-895477F9-EA90-4B26-8B45-1ED0FFC9D8A3__GUID-A2329E0D-46A4-4549-B015-111B4C67F6BC">
+                     <p class="notep1">See Also:</p>
+                     <p>"Application Express Account Credentials" in <a href="../htmdb/preconfigured-authentication-schemes.html#HTMDB25768" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM103"></a><div class="props_rev_3"><a id="GUID-70B2C393-2B2C-4DF2-91C5-C6D7A03B0183" name="GUID-70B2C393-2B2C-4DF2-91C5-C6D7A03B0183"></a><h3 id="AEADM-GUID-70B2C393-2B2C-4DF2-91C5-C6D7A03B0183" class="sect3"><span class="enumeration_section">2.7.2 </span>About Application Express User Roles
+               </h3>
+               <div>
+                  <p>Oracle Application Express users are divided into four roles.</p>
+                  <p>To access the Oracle Application Express development environment, users sign in to a shared work area called a workspace. Users are divided into the following primary roles: </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">End users</span> do not have access to development or administrative capabilities.
+                    End users cannot sign into a workspace and create applications. End users can
+                    only run existing database or Websheet applications.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Developers</span> are users who create and edit applications, monitor workspace activity, and view dashboards.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Workspace administrators</span> are users who perform administrator tasks specific to a workspace such as managing user accounts, monitoring workspace activity, and viewing log files.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Instance administrators</span> are superusers that manage an entire hosted instance using the Application Express Administration Services application. Instance administrators manage workspace provisioning, configure features and instance settings, and manage security.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM150"></a><div class="props_rev_3"><a id="GUID-3969ECD4-353E-4E01-B74E-5899A6744182" name="GUID-3969ECD4-353E-4E01-B74E-5899A6744182"></a><h3 id="AEADM-GUID-3969ECD4-353E-4E01-B74E-5899A6744182" class="sect3"><span class="enumeration_section">2.7.3 </span>Creating User Accounts
+               </h3>
+               <p>Workspace administrators can create new user accounts one at a time, or create multiple accounts in a single operation.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-8948A3BC-3FA5-467F-A655-2E12033CF59F">Creating a New User Account</a><br>Create new user accounts from the Manage Users and Groups page.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-AE3D9DC5-6987-452F-9E96-2DF2C0670954">Creating Multiple Users Simultaneously</a><br>Create multiple new user accounts simultaneously.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEADM29147"></a><div class="props_rev_3"><a id="GUID-8948A3BC-3FA5-467F-A655-2E12033CF59F" name="GUID-8948A3BC-3FA5-467F-A655-2E12033CF59F"></a><h4 id="AEADM-GUID-8948A3BC-3FA5-467F-A655-2E12033CF59F" class="sect4"><span class="enumeration_section">2.7.3.1 </span>Creating a New User Account
+                  </h4>
+                  <div>
+                     <p>Create new user accounts from the Manage Users and Groups page.</p>
+                     <div class="section">
+                        <p>To create a new user account:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>The Workspace Administration home page appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create User</span>.</span><div>The Create User page appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>Under User Identification, enter:</span><ol type="a">
+                              <li class="substepexpand"><span><span class="uicontrol bold">Username</span> - Enter the username used to sign in to
+                            the system. Restrictions include:</span><div>
+                                    
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          
+                                          <p>Maximum length of 100 characters</p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p>No spaces</p>
+                                          
+                                       </li>
+                                       <li>
+                                          
+                                          <p>Only these special characters are permitted:
+                                        ampersand (&amp;) and period (.)</p>
+                                          
+                                       </li>
+                                    </ul>
+                                    
+                                    <p>The username may also be used to reference user activity using the
+                                monitor applications. The bind variable <code class="codeph">:app_user</code>
+                                returns the value of the current user when building
+                                applications.
+                                    </p>
+                                    
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span><span class="uicontrol bold">Email Address</span> - Enter the valid email address
+                            for this user.</span></li>
+                              <li class="substepexpand"><span><span class="uicontrol bold">First Name</span> - Enter the first or given name to
+                            further identify the user (optional).</span></li>
+                              <li class="substepexpand"><span><span class="uicontrol bold">Last Name</span> - Enter the last or family name to
+                            further identify the user (optional). </span></li>
+                              <li class="substepexpand"><span><span class="uicontrol bold">Description</span> - Enter comments about this user
+                            (optional).</span></li>
+                              <li class="substepexpand"><span><span class="uicontrol bold">Default Date Format</span> - Specify the default Oracle
+                            date format for the user. This option controls the default date format
+                            within SQL Workshop.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Account Privileges:</span><ol type="a">
+                              <li><span><span class="uicontrol bold">Default Schema</span> - Specify the default schema used
+                            for data browsing, application creation, and SQL script execution. When
+                            using workspaces that have more than one schema available, this schema
+                            is the default. This setting does not control security, only the user's
+                            preference.</span></li>
+                              <li><span><span class="uicontrol bold">Accessible Schemas (null for all)</span> - Leave this
+                            blank to enable the end user to access all schemas associated with the
+                            workspace.</span></li>
+                              <li><span><span class="uicontrol bold">User is a workspace administrator</span> - Select
+                                <span class="uicontrol bold">Yes</span> or <span class="uicontrol bold">No</span> to specify
+                            if this user should have workspace administrator privileges.
+                            Administrators are given access to all components. Additionally, they
+                            can manage user accounts, groups, and development services. Components
+                            may not be available if they are switched off by Instance
+                            administrators.</span></li>
+                              <li><span><span class="uicontrol bold">User is a developer</span> - Select
+                                <span class="uicontrol bold">Yes</span> or <span class="uicontrol bold">No</span> to specify
+                            if this user should have developer privileges. Developers must have
+                            access to either the App Builder, SQL Workshop, or both. Components may
+                            not be available if they are switched off by Instance Administrators.
+                        </span></li>
+                              <li><span><span class="uicontrol bold">App Builder Access</span> - Determines whether a
+                            developer has access to <span>App Builder</span>. </span></li>
+                              <li><span><span class="uicontrol bold">SQL Workshop Access</span> - Determines whether a
+                            developer has access to the SQL Workshop.</span></li>
+                              <li><span><span class="uicontrol bold">Team Development Access</span> - Determines whether a
+                            developer has access to the Team Development.</span></li>
+                              <li><span><span class="uicontrol bold">Set Account Availability</span> - Select
+                                <span class="uicontrol bold">Locked</span> to prevent the account from being
+                            used. Select <span class="uicontrol bold">Unlocked</span> to allow the account to be
+                            used. If the user has exceeded the maximum login failures allowed as
+                            defined in Workspace Preferences, then the account is locked
+                            automatically.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Password:</span><ol type="a">
+                              <li><span><span class="uicontrol bold">Password</span> - Enter a case-sensitive
+                            password.</span></li>
+                              <li><span><span class="uicontrol bold">Confirm Password</span> - Enter the password
+                            again.</span></li>
+                              <li><span><span class="uicontrol bold">Require Change of Password On First Use</span> - Select
+                                <span class="uicontrol bold">Yes</span> to require the user to change the
+                            password immediately when logging in the first time. Select
+                                <span class="uicontrol bold">No</span> to allow the user to use the same password
+                            until it expires. </span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Group Assignments, specify the groups to which this user belongs. To assign a user to a group, select the group and click Move. To select multiple groups, press and hold the <span class="bold">CTRL</span> key and then click <span class="uicontrol bold">Move All</span>. To remove a user from a group, select the group and click <span class="uicontrol bold">Remove</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create User</span> or <span class="uicontrol bold">Create and Create Another</span>.</span></li>
+                     </ol>
+                     <div class="section">
+                        <div class="infobox-tip" id="GUID-8948A3BC-3FA5-467F-A655-2E12033CF59F__GUID-E066AC96-7A54-4532-A271-A2F9178F7C8C">
+                           <p class="notep1">Tip:</p>
+                           <p>An Instance administrator can configure these settings for an entire Oracle Application Express instance and define password complexity policies. See <span class="q">"<a href="configuring-security.html#GUID-6F7061FC-605C-4F82-A713-18CEF2CB150A" title="Administrators can configure authentication controls for an entire instance or for each individual workspace.">About Authentication Controls</a>,"</span> <span class="q">"<a href="configuring-security.html#GUID-4DDD66BA-678C-4AA9-AF10-61767EF54910" title="Manage password policy for Application Express users (workspace administrators, developers, and end users) in all workspaces.">About Strong Password Policies</a>,"</span> and <span class="q">"<a href="configuring-security.html#GUID-02722AC1-469A-4143-B7FF-51C84E4CD389" title="Manage password policy for Application Express users (workspace administrators, developers, and end users) in all workspaces.">Configuring Password Policies</a>."</span></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-8948A3BC-3FA5-467F-A655-2E12033CF59F__GUID-F298D86C-1D62-42DF-9B51-8FE237916761">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a>"</span> and <span class="q">"<a href="managing-users-in-a-workspace.html#GUID-3BA148AA-855E-4B9F-89DE-72D8B7333AC9" title="Add and remove user groups on the Edit User page.">Adding and Removing Users from a Group</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-3969ECD4-353E-4E01-B74E-5899A6744182" title="Workspace administrators can create new user accounts one at a time, or create multiple accounts in a single operation.">Creating User Accounts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM341"></a><div class="props_rev_3"><a id="GUID-AE3D9DC5-6987-452F-9E96-2DF2C0670954" name="GUID-AE3D9DC5-6987-452F-9E96-2DF2C0670954"></a><h4 id="AEADM-GUID-AE3D9DC5-6987-452F-9E96-2DF2C0670954" class="sect4"><span class="enumeration_section">2.7.3.2 </span>Creating Multiple Users Simultaneously
+                  </h4>
+                  <div>
+                     <p>Create multiple new user accounts simultaneously.</p>
+                     <div class="section">
+                        
+                        <p>To create multiple users at once, enter or copy and paste email addresses separated
+                by commas, semicolons, or new lines.Note that the password you specify will be
+                assigned to each user and users will need to change their passwords upon login.</p>
+                        
+                        <p>To create multiple user accounts simultaneously:</p>
+                        
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>The Workspace Administration home page appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Multiple Users</span>.</span><div>The Create Multiple Users page appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>List of Email Addresses - Enter or copy and paste email addresses separated by commas, semicolons, or new lines. Note that if you copy and paste email addresses from email messages, extraneous text will be filtered out.</span></li>
+                        <li class="stepexpand"><span>Usernames - Specify whether to include or exclude the domain name. Select one of the following:</span><ul>
+                              <li><span class="uicontrol bold">Set username to full email address </span> - Includes the full email address.
+                              </li>
+                              <li><span class="uicontrol bold">Exclude @ domain as part of the username</span> - Removes all text after the @ symbol (for example, <code class="codeph">user1@xyz.com</code> becomes <code class="codeph">user1</code>)
+                              </li>
+                           </ul>
+                        </li>
+                        <li class="stepexpand"><span>Under Account Privileges:</span><ol type="a">
+                              <li><span><span class="uicontrol bold">Default Schema</span> - Specify the default schema used
+                            for data browsing, application creation, and SQL script execution. When
+                            using workspaces that have more than one schema available, this schema
+                            is the default. This setting does not control security, only the user's
+                            preference.</span></li>
+                              <li><span><span class="uicontrol bold">Accessible Schemas (null for all)</span> - Enter a
+                            colon-delimited list of schemas for which this developer has permissions
+                            when using the SQL Workshop. The list of schemas you enter here
+                            restricts the user to a subset of the full set of schemas provisioned
+                            for the workspace and determines what schema names the user sees in SQL
+                            Workshop.</span></li>
+                              <li><span><span class="uicontrol bold">Uses are workspace administrators</span> - Select
+                                <span class="bold">Yes</span> or <span class="bold">No</span>. Specify if these users should have
+                            workspace administrator privileges. Like developers, workspace
+                            administrators can create and modify applications and database objects.
+                            Additionally, they can also manage user accounts, groups, and
+                            development services.</span></li>
+                              <li><span><span class="uicontrol bold">Users are developers</span> - Select <span class="bold">Yes</span> or
+                                <span class="bold">No</span>. Specify if these users should have developer privileges.
+                            Developers can create and modify applications and database
+                            objects.</span></li>
+                              <li><span><span class="uicontrol bold">App Builder Access</span> Access - Determines whether a
+                            developer has access to <span>App Builder</span>. An administrator always has access to the <span>App Builder</span>. A Developer must have access to either the <span>App Builder</span>, the SQL Workshop, or both.</span></li>
+                              <li><span><span class="uicontrol bold">SQL Workshop Access</span> - Determines whether a
+                            developer has access to the SQL Workshop. An administrator always has
+                            access to SQL Workshop. A Developer must have access to either the <span>App Builder</span>, the SQL Workshop, or both.</span></li>
+                              <li><span><span class="uicontrol bold">Team Development Access</span> - Determines whether a
+                            developer has access to the Team Development. An administrator always
+                            has access to Team Development.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Password:</span><ul>
+                              <li><span class="uicontrol bold">Password</span> - Specify a password. Passwords are
+                        case-sensitive. Developers can change their own passwords. Developers with
+                        Administrator privilege can change the passwords of users within the same
+                        workspace.
+                              </li>
+                              <li><span class="uicontrol bold">Confirm Password</span> - Enter the password again. 
+                              </li>
+                           </ul>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Valid Users</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-AE3D9DC5-6987-452F-9E96-2DF2C0670954__GUID-021609EF-0F3B-440B-A1A7-7C7D4A81F5E2">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a>"</span> and <span class="q">"<a href="managing-users-in-a-workspace.html#GUID-3BA148AA-855E-4B9F-89DE-72D8B7333AC9" title="Add and remove user groups on the Edit User page.">Adding and Removing Users from a Group</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-3969ECD4-353E-4E01-B74E-5899A6744182" title="Workspace administrators can create new user accounts one at a time, or create multiple accounts in a single operation.">Creating User Accounts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEADM151"></a><div class="props_rev_3"><a id="GUID-BCE76C01-78AE-47E6-BDE4-A3663E06175B" name="GUID-BCE76C01-78AE-47E6-BDE4-A3663E06175B"></a><h3 id="AEADM-GUID-BCE76C01-78AE-47E6-BDE4-A3663E06175B" class="sect3"><span class="enumeration_section">2.7.4 </span>Editing Existing User Accounts
+               </h3>
+               <div>
+                  <p>Edit existing user accounts on the Manage Users and Groups page.</p>
+                  <div class="section">
+                     <p>To edit an existing user account:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>The Workspace Administration home page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                     <li class="stepexpand"><span>Select a user.</span><div>The Edit User page appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Edit the appropriate attributes. To learn more, see field-level Help.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-BCE76C01-78AE-47E6-BDE4-A3663E06175B__GUID-81322027-F286-4939-ABEB-8C6DDDDA5B4A">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a>"</span> and <span class="q">"<a href="managing-users-in-a-workspace.html#GUID-3BA148AA-855E-4B9F-89DE-72D8B7333AC9" title="Add and remove user groups on the Edit User page.">Adding and Removing Users from a Group</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29148"></a><div class="props_rev_3"><a id="GUID-810CCBFB-BBE2-4210-9592-EED4067CCE81" name="GUID-810CCBFB-BBE2-4210-9592-EED4067CCE81"></a><h3 id="AEADM-GUID-810CCBFB-BBE2-4210-9592-EED4067CCE81" class="sect3"><span class="enumeration_section">2.7.5 </span>Locking and Unlocking a User Account
+               </h3>
+               <div>
+                  <p>Control access to a workspace by locking and unlocking a user account. </p>
+                  <div class="section">
+                     <p>To lock or unlock a user account:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>The Workspace Administration home page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                     <li class="stepexpand"><span>Select a user.</span><div>The Edit User page appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Scroll down to Account Privileges.</span></li>
+                     <li class="stepexpand"><span>Under Account Privileges, Account Availability:</span><ul>
+                           <li><span class="uicontrol bold">Locked</span> - Select this option to make the account
+                        unavailable.
+                           </li>
+                           <li><span class="uicontrol bold">Unlocked</span> - Select this option to make the account
+                        available.
+                           </li>
+                        </ul>
+                        <div>
+                           <div class="infobox-tip" id="GUID-810CCBFB-BBE2-4210-9592-EED4067CCE81__GUID-8330C12E-77F1-42DA-BBEA-8DC7EC3A9BA3">
+                              <p class="notep1">Tip:</p>
+                              <p>If the user exceeds the maximum login failures specified in Workspace Preferences, then the account is locked automatically. Instance administrators can configure these settings for an entire Oracle Application Express instance. </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Apply Changes</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-810CCBFB-BBE2-4210-9592-EED4067CCE81__GUID-7333BFE6-5A5F-4C52-A960-6F402E1DA3FD">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="configuring-security.html#GUID-5EC277A4-20BD-47CF-9448-46680C75593E" title="Instance administrators can configure instance security, including service-level security, configuring support for Real Application Security, configuring session time out, preventing browser attacks by isolating workspaces, excluding domains from regions and Web services, configuring authentication controls, creating strong password policies, restricting access by Database Access Descriptor (DAD), and managing authorized URLs.">Configuring Security</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM153"></a><div class="props_rev_3"><a id="GUID-BC5A7347-2562-4040-8B5D-B03E4245175D" name="GUID-BC5A7347-2562-4040-8B5D-B03E4245175D"></a><h3 id="AEADM-GUID-BC5A7347-2562-4040-8B5D-B03E4245175D" class="sect3"><span class="enumeration_section">2.7.6 </span>Changing a User Account Password
+               </h3>
+               <div>
+                  <p>Change user account passwords on the Manage Users and Groups page.</p>
+                  <div class="section">
+                     <p>To change a user account password:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>The Workspace Administration home page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                     <li class="stepexpand"><span>Select a user.</span><div>The Edit User page appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>Scroll down to Password. Under Password:</span><ol type="a">
+                           <li><span>Password - Enter a case-sensitive password.</span></li>
+                           <li><span>Confirm Password - Enter the password again.</span></li>
+                           <li><span>Require Change of Password On First Use - Select <span class="uicontrol bold">No</span> to allow the user to use the same password until it expires. Select&nbsp;<span class="uicontrol bold">Yes</span>&nbsp;to require the user of this account to change the password immediately after logging in the first time using the current password. This rule applies to the use of this account for workspace administration or development as well as to use of this account to sign in to running applications.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-BC5A7347-2562-4040-8B5D-B03E4245175D__GUID-DCE20E00-656C-4F27-AAD5-6EF950B17A97">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-workspace-administration.html#GUID-306659AA-6D7C-4F72-97C7-379E5A09DC7E" title="Reset your password by clicking Change My Password under Tasks on the Workspace Administration page.">Resetting Your Password</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM152"></a><div class="props_rev_3"><a id="GUID-4A6EF44C-9609-469C-B29F-80936B3B7B06" name="GUID-4A6EF44C-9609-469C-B29F-80936B3B7B06"></a><h3 id="AEADM-GUID-4A6EF44C-9609-469C-B29F-80936B3B7B06" class="sect3"><span class="enumeration_section">2.7.7 </span>Deleting User Accounts
+               </h3>
+               <p>Workspace administrators can delete user accounts one at a time or delete multiple accounts in a single operation.</p>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-2D6F2442-409A-44FA-BFA4-C193A8C26910">Deleting a Single User Account</a><br>Delete single user accounts on the Manage Users and Groups page.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-BA36CFB6-E8A9-46D5-90AB-A3823E93EDB3">Deleting Multiple Users at Once</a><br>Delete multiple user accounts at once on the Manage Users and Groups page.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEADM29149"></a><div class="props_rev_3"><a id="GUID-2D6F2442-409A-44FA-BFA4-C193A8C26910" name="GUID-2D6F2442-409A-44FA-BFA4-C193A8C26910"></a><h4 id="AEADM-GUID-2D6F2442-409A-44FA-BFA4-C193A8C26910" class="sect4"><span class="enumeration_section">2.7.7.1 </span>Deleting a Single User Account
+                  </h4>
+                  <div>
+                     <p>Delete single user accounts on the Manage Users and Groups page.</p>
+                     <div class="section">
+                        <p>To delete a user account:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>The Workspace Administration home page appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Select a user.</span><div>The Edit User page appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Delete User</span>.</span></li>
+                        <li class="stepexpand"><span>Confirm your selection and click <span class="uicontrol bold">OK</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-4A6EF44C-9609-469C-B29F-80936B3B7B06" title="Workspace administrators can delete user accounts one at a time or delete multiple accounts in a single operation.">Deleting User Accounts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM342"></a><div class="props_rev_3"><a id="GUID-BA36CFB6-E8A9-46D5-90AB-A3823E93EDB3" name="GUID-BA36CFB6-E8A9-46D5-90AB-A3823E93EDB3"></a><h4 id="AEADM-GUID-BA36CFB6-E8A9-46D5-90AB-A3823E93EDB3" class="sect4"><span class="enumeration_section">2.7.7.2 </span>Deleting Multiple Users at Once
+                  </h4>
+                  <div>
+                     <p>Delete multiple user accounts at once on the Manage Users and Groups page.</p>
+                     <div class="section">
+                        <p>To delete multiple user accounts in a single operation:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>
+                              <p>The Workspace Administration home page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>On the Tasks list, click <span class="uicontrol bold">Delete Multiple Users</span>.</span><div>The Delete Multiple Users page appears. </div>
+                        </li>
+                        <li class="stepexpand"><span>Select the users to be deleted. </span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Delete Users</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-4A6EF44C-9609-469C-B29F-80936B3B7B06" title="Workspace administrators can delete user accounts one at a time or delete multiple accounts in a single operation.">Deleting User Accounts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEADM343"></a><div class="props_rev_3"><a id="GUID-65813057-A491-4E86-ACE1-FBDC48079A93" name="GUID-65813057-A491-4E86-ACE1-FBDC48079A93"></a><h3 id="AEADM-GUID-65813057-A491-4E86-ACE1-FBDC48079A93" class="sect3"><span class="enumeration_section">2.7.8 </span>Viewing the Users Dashboard
+               </h3>
+               <div>
+                  <p>The Users Dashboard displays a summary of your account information, users in the current workspace, defined user groups, recently created users, and user status</p>
+                  <div class="section">
+                     <p>To view the Users Dashboard:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express.</span></li>
+                           <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                        </ol>
+                        <div>The Workspace Administration home page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Dashboards</span>.</span><div>
+                           <p>The Dashboard page appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Users</span>.</span><div>
+                           <p>The Users Dashboard appears listing the following information:</p>
+                        </div>
+                        <ul>
+                           <li><span class="uicontrol bold">Your Account</span> lists information about your account including your username, workspace, account credentials, and email address.
+                           </li>
+                           <li><span class="uicontrol bold">Workspace Users</span> lists statistics about all users in the current workspace.
+                           </li>
+                           <li><span class="uicontrol bold">User Groups</span> lists all currently defined user groups.
+                           </li>
+                           <li><span class="uicontrol bold">Recently Created</span> lists recently created users.
+                           </li>
+                           <li><span class="uicontrol bold">User Status</span> lists valid passwords, expired passwords, locked accounts, unlocked accounts, and any accounts for which no email address is defined.
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-65813057-A491-4E86-ACE1-FBDC48079A93__GUID-1193D569-D539-4E0D-8181-E3295A04AB70">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="viewing-workspace-dashboards.html#GUID-E68D639F-60F2-495E-B74A-99B5E4EA9251" title="Use the Dashboard page to view details about the current workspace and monitor overall workspace activity.">Viewing Workspace Dashboards</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM154"></a><div class="props_rev_3"><a id="GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" name="GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4"></a><h3 id="AEADM-GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" class="sect3"><span class="enumeration_section">2.7.9 </span>Using Groups to Manage Application Express Users
+               </h3>
+               <div>
+                  <p>Workspace administrators can create and manage Application Express users
+        using groups. Groups enable administrators to categorize and manage user
+        privileges.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-0C575851-A5F3-4747-96D9-F2F854AF8987">About Groups</a><br>Administrators can create user groups to restrict access to various parts of an application.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-DBAFACAC-DD14-4CC5-B7FA-3B591F0F9851">Creating a Group</a><br>Create user groups on the Groups page.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-7BF35013-2557-4171-A3E1-B8475834BFAF">Editing an Existing User Group</a><br>Edit user groups on the Groups page.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-3BA148AA-855E-4B9F-89DE-72D8B7333AC9">Adding and Removing Users from a Group</a><br>Add and remove user groups on the Edit User page.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-80803C15-29ED-44CB-B194-86ABB3377E11">Assigning a Group to Another Group</a><br>Manage privileges by assigning application groups to user groups.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-users-in-a-workspace.html#GUID-838A3B99-5E56-4C67-82B2-617E10B30EC1">Viewing Group Assignments</a><br>The Group Assignments page lists groups assigned to users and other groups.         Use groups to categorize and manage privileges.
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4__GUID-7A08EE00-8C15-48DF-97D8-3C51FCDFE6E7">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a>"</span> and <a href="managing-users-in-a-workspace.html#GUID-895477F9-EA90-4B26-8B45-1ED0FFC9D8A3" title="Application Express Accounts authentication is a built-in authentication method in which user accounts are created and managed in the Oracle Application Express user repository. User accounts are particularly useful if your application is using Application Express Accounts authentication.">About Application Accounts Authentication</a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-DF7FEC59-E25F-4DC9-88F0-DBE1ADADA8BC" title="Create new user accounts, manage existing user accounts, and change user passwords.">Managing Users in a Workspace</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEADM29245"></a><div class="props_rev_3"><a id="GUID-0C575851-A5F3-4747-96D9-F2F854AF8987" name="GUID-0C575851-A5F3-4747-96D9-F2F854AF8987"></a><h4 id="AEADM-GUID-0C575851-A5F3-4747-96D9-F2F854AF8987" class="sect4"><span class="enumeration_section">2.7.9.1 </span>About Groups
+                  </h4>
+                  <div>
+                     <p>Administrators can create user groups to restrict access to various parts of an application.</p>
+                     <p>Creating user groups enables administrators to:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Control access to application components.</p>
+                        </li>
+                        <li>
+                           <p>Manage the privileges for a group of users. You can assign application groups to user groups to control user access.</p>
+                        </li>
+                     </ul>
+                     <p>User groups are not portable over different authentication schemes and are primarily useful when using Application Express Account Credentials authentication.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM155"></a><div class="props_rev_3"><a id="GUID-DBAFACAC-DD14-4CC5-B7FA-3B591F0F9851" name="GUID-DBAFACAC-DD14-4CC5-B7FA-3B591F0F9851"></a><h4 id="AEADM-GUID-DBAFACAC-DD14-4CC5-B7FA-3B591F0F9851" class="sect4"><span class="enumeration_section">2.7.9.2 </span>Creating a Group
+                  </h4>
+                  <div>
+                     <p>Create user groups on the Groups page.</p>
+                     <div class="section">
+                        <p>To create a new group:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>The Workspace Administration home page appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="bold">Create User Group</span>.</span><div>
+                              <p>On the User Group Page:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p>Group Name - Enter a name for group to be created.</p>
+                                 </li>
+                                 <li>
+                                    <p>Description - Enter a description for the group to be created.</p>
+                                 </li>
+                                 <li>
+                                    <p>Group Grants - The current group is a member of the groups on the right. To make the current group a member of an additional group, select the group and click <span class="bold">Move</span>. To remove group membership, select the group and click <span class="bold">Remove</span>.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Group</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM156"></a><div class="props_rev_3"><a id="GUID-7BF35013-2557-4171-A3E1-B8475834BFAF" name="GUID-7BF35013-2557-4171-A3E1-B8475834BFAF"></a><h4 id="AEADM-GUID-7BF35013-2557-4171-A3E1-B8475834BFAF" class="sect4"><span class="enumeration_section">2.7.9.3 </span>Editing an Existing User Group
+                  </h4>
+                  <div>
+                     <p>Edit user groups on the Groups page.</p>
+                     <div class="section">
+                        <p>To edit an existing group assignment:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>The Workspace Administration home page appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>You can customize the appearance of the page using the Search bar at the top of the page.</span></li>
+                        <li class="stepexpand"><span>Select a group.</span><div>The User Group page appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>Make the appropriate edits and click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM158"></a><div class="props_rev_3"><a id="GUID-3BA148AA-855E-4B9F-89DE-72D8B7333AC9" name="GUID-3BA148AA-855E-4B9F-89DE-72D8B7333AC9"></a><h4 id="AEADM-GUID-3BA148AA-855E-4B9F-89DE-72D8B7333AC9" class="sect4"><span class="enumeration_section">2.7.9.4 </span>Adding and Removing Users from a Group
+                  </h4>
+                  <div>
+                     <p>Add and remove user groups on the Edit User page.</p>
+                     <div class="section">
+                        <p>To add or remove a user from a group:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>
+                              <p>The Workspace Administration home page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Select a user.</span><div>
+                              <p>The Edit User page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Scroll down to Group Assignments.</span><div>
+                              <p>Each user belongs to the groups on the right.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>To add a user to a group, select the group and click <span class="uicontrol bold">Move</span>. </span></li>
+                        <li class="stepexpand"><span>To remove a user from a group, select the group and click <span class="uicontrol bold">Remove</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM29246"></a><div class="props_rev_3"><a id="GUID-80803C15-29ED-44CB-B194-86ABB3377E11" name="GUID-80803C15-29ED-44CB-B194-86ABB3377E11"></a><h4 id="AEADM-GUID-80803C15-29ED-44CB-B194-86ABB3377E11" class="sect4"><span class="enumeration_section">2.7.9.5 </span>Assigning a Group to Another Group
+                  </h4>
+                  <div>
+                     <p>Manage privileges by assigning application groups to user groups.</p>
+                     <div class="section">
+                        <p>To assign a group to another group:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>
+                              <p>The Workspace Administration home page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Select the user group.</span></li>
+                        <li class="stepexpand"><span>Scroll down to Group Grants.</span><div>
+                              <p>The current group is a member of the groups on the right. To make the current group a member of an additional group, select the group and click <span class="uicontrol bold">Move</span>. To remove group membership, select the group and click <span class="uicontrol bold">Remove</span>.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM29247"></a><div class="props_rev_3"><a id="GUID-838A3B99-5E56-4C67-82B2-617E10B30EC1" name="GUID-838A3B99-5E56-4C67-82B2-617E10B30EC1"></a><h4 id="AEADM-GUID-838A3B99-5E56-4C67-82B2-617E10B30EC1" class="sect4"><span class="enumeration_section">2.7.9.6 </span>Viewing Group Assignments
+                  </h4>
+                  <div>
+                     <p>The Group Assignments page lists groups assigned to users and other groups.
+        Use groups to categorize and manage privileges.</p>
+                     <div class="section">
+                        <p>To view group assignments:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Workspace Administration page:</span><ol type="a">
+                              <li><span>Sign in to Oracle Application Express.</span></li>
+                              <li><span>At the top of the Workspace home page, click the <span class="uicontrol bold">Administration</span> menu and select <span class="uicontrol bold">Administration</span>.</span></li>
+                           </ol>
+                           <div>The Workspace Administration home page appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Users and Groups</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Group Assignments</span>.</span></li>
+                        <li class="stepexpand"><span>Select the grantee to edit.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-users-in-a-workspace.html#GUID-0FD7B406-8A83-40C0-A3E7-EF19BBDEA5A4" title="Workspace administrators can create and manage Application Express users using groups. Groups enable administrators to categorize and manage user privileges.">Using Groups to Manage Application Express Users</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

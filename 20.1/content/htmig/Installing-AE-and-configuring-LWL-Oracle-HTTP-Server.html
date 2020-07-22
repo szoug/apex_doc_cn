@@ -1,0 +1,161 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)">
+      <meta name="abstract" content="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">
+      <meta name="description" content="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">
+      <meta name="DC.subject" content="Oracle HTTP Server, installing, configuring, Web listener">
+      <meta name="keywords" content="Oracle HTTP Server, installing, configuring, Web listener">
+      <meta name="DC.Relation" scheme="URI" content="Oracle-database-requirement.html#GUID-ED8FE111-A861-4A54-938B-CB3664D49C68">
+      <meta name="DC.Relation" scheme="URI" content="pre-installation-tasks-for-Oracle-AE.html#GUID-C23A11DD-869B-480E-B05D-20B9045E0E0B">
+      <meta name="DC.Relation" scheme="URI" content="downloading-and-installing-OracleAE.html#GUID-62D3B164-A521-48A6-BA33-CE888EF031FC">
+      <meta name="DC.Relation" scheme="URI" content="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8">
+      <meta name="DC.Relation" scheme="URI" content="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-8D125731-989A-4A51-AFFE-00181729F87F">
+      <meta name="DC.Relation" scheme="URI" content="performingsecurity-tasks.html#GUID-24A00920-2793-4B8D-8978-E9882658568B">
+      <meta name="DC.Relation" scheme="URI" content="controlling-numberof-concurrent-jobs.html#GUID-F32497A7-D2C7-4147-8CE2-1E227A144865">
+      <meta name="DC.Relation" scheme="URI" content="runningOracle-AE-in-otherlanguages.html#GUID-D1354D2E-326E-4795-9463-E5E4D05AC6DF">
+      <meta name="DC.Relation" scheme="URI" content="installing-translatedversions-of-Oracle-AE.html#GUID-D5DA11ED-2230-4B3E-91B1-410C6BCD3AA0">
+      <meta name="DC.Relation" scheme="URI" content="creating-workspaceadding-Oracle-AE-users.html#GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B">
+      <meta name="DC.Relation" scheme="URI" content="post-installation-tasksfor-upgrade-installations.html#GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3">
+      <meta name="DC.Relation" scheme="URI" content="about-performanceoptimization-tasks.html#GUID-C39904F1-CE4F-4EBA-B4DD-CA478C02EC32">
+      <meta name="DC.Relation" scheme="URI" content="converting-between-runtime-and-full-developmentenvironments.html#GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">
+      <meta name="description" content="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">
+      <title>Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="converting-between-runtime-and-fulldevelopment-environments.html" title="Previous" type="text/html">
+      <link rel="next" href="Oracle-database-requirement.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="converting-between-runtime-and-fulldevelopment-environments.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="Oracle-database-requirement.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> Installing Application Express and
+    Configuring Legacy Web Listener &#x2013; Oracle HTTP Server  (Deprecated)</li>
+            </ol>
+            <a id="GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" name="GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81"></a>
+            
+            <h2 id="HTMIG-GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" class="sect2"><span class="enumeration_chapter">B </span> Installing Application Express and
+    Configuring Legacy Web Listener &#x2013; Oracle HTTP Server  (Deprecated)
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Install or upgrade Oracle Application Express by downloading a ZIP file from
+        the Oracle Application Express download page and then configuring legacy Web listener Oracle
+        HTTP Server with <code class="codeph">mod_plsql</code>. These instructions apply to both new and
+        upgrade installations.
+               </p>
+               <div class="infoboxnote" id="GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81__GUID-15AB3AE4-1D0A-4E3B-BB6D-ACD24838EE93">
+                  <p class="notep1">Note:</p>
+                  <p><code class="codeph">mod_plsql</code> is deprecated as of Oracle HTTP Server 12c (12.1.3). For
+                                                  more information, see My Oracle Support Note
+                                                  1576588.1. Oracle recommends using Oracle REST
+                                                  Data Services. See <span class="q">"<a href="installing-AE-and-configuring-Oracle-REST-data-services.html#GUID-8EE981AD-B1F9-46C2-BB5A-C9FE60CCD4AA" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then downloading and installing Oracle REST Data Services (ORDS). These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Oracle REST Data Services</a>."</span></p>
+               </div>
+               <p>Oracle HTTP Server with <code class="codeph">mod_plsql</code> is distributed with Oracle
+      Database 11g or Oracle Application Server 10g and Oracle Database 12c or later. These
+      instructions apply to both new and upgrade installations.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="Oracle-database-requirement.html#GUID-ED8FE111-A861-4A54-938B-CB3664D49C68">Oracle Database Requirements</a><br><span>Oracle                                         Application Express release 20.1 requires an Oracle Database                                         release 11.2.0.4 or later, including Enterprise Edition and                                         Express Edition (Oracle Database XE).</span> Oracle Application Express can be installed in single-instance database and in Oracle         Real Application Clusters (Oracle RAC) database. 
+                  </li>
+                  <li class="ulchildlink"><a href="pre-installation-tasks-for-Oracle-AE.html#GUID-C23A11DD-869B-480E-B05D-20B9045E0E0B">Performing Pre-installation Tasks for Oracle Application Express</a><br>Review and perform pre-installation tasks before installing Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="downloading-and-installing-OracleAE.html#GUID-62D3B164-A521-48A6-BA33-CE888EF031FC">Downloading and Installing Oracle Application Express</a><br>Learn about downloading and installing Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-Oracle-HTTP-server.html#GUID-0FA61F60-A187-418C-AA53-01DF261B4FC8">Configuring the Oracle HTTP Server</a><br>Configuring Oracle HTTP Server requires that you copy the images directory, edit the <code class="codeph">dads.conf</code> file, configure static files support, stop and restart Oracle HTTP Server, disable Oracle XML DB Protocol Server, and configuring Oracle HTTP server behind a reverse proxy or load balancer.
+                  </li>
+                  <li class="ulchildlink"><a href="enabling-networkservices-in-Oracle-db-11g-or-later.html#GUID-8D125731-989A-4A51-AFFE-00181729F87F">Enabling Network Services in Oracle Database 11g or Later</a><br>You must enable network services in Oracle Database 11g or later versions to         send outbound mail, use Web services, or use PDF report printing in Oracle Application         Express.
+                  </li>
+                  <li class="ulchildlink"><a href="performingsecurity-tasks.html#GUID-24A00920-2793-4B8D-8978-E9882658568B">Performing Security Tasks</a><br>Oracle recommends configuring and using Secure Sockets Layer (SSL) to ensure         that passwords and other sensitive data are not transmitted in clear text in HTTP         requests.
+                  </li>
+                  <li class="ulchildlink"><a href="controlling-numberof-concurrent-jobs.html#GUID-F32497A7-D2C7-4147-8CE2-1E227A144865">Controlling the Number of Concurrent Jobs</a><br>Learn about specifying the number of concurrently running jobs.
+                  </li>
+                  <li class="ulchildlink"><a href="runningOracle-AE-in-otherlanguages.html#GUID-D1354D2E-326E-4795-9463-E5E4D05AC6DF">About Running Oracle Application Express in Other Languages</a><br>You can install a single instance of Oracle Application Express with one or more of translated versions.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-translatedversions-of-Oracle-AE.html#GUID-D5DA11ED-2230-4B3E-91B1-410C6BCD3AA0">Installing Translated Versions of Oracle Application Express</a><br>Learn about installing translated versions of Oracle Application Express.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-workspaceadding-Oracle-AE-users.html#GUID-F839B1EA-6779-42F2-9E0D-0D05AD7E040B">Creating a Workspace and Adding Oracle Application Express Users</a><br>Learn about creating workspace and adding Oracle Application Express users.
+                  </li>
+                  <li class="ulchildlink"><a href="post-installation-tasksfor-upgrade-installations.html#GUID-9D2CD46E-A535-4BF5-BDF7-7777E6BF4FC3">Performing Post Installation Tasks for Upgrade Installations</a><br>Remove schemas from prior Oracle Application Express installations.
+                  </li>
+                  <li class="ulchildlink"><a href="about-performanceoptimization-tasks.html#GUID-C39904F1-CE4F-4EBA-B4DD-CA478C02EC32">About Performance Optimization Tasks</a><br>Learn about performance optimization.
+                  </li>
+                  <li class="ulchildlink"><a href="converting-between-runtime-and-full-developmentenvironments.html#GUID-BEE559BC-CCAD-4E02-AC93-1DD97AB6A6B3">Converting Between Runtime and Full Development Environments</a><br>Learn how to convert between runtime and full development environments.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81__GUID-02C00043-84A3-41EA-B5FA-C1B2C196A363">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="Oracle-AE-installation-requirements.html#GUID-848EF7A3-07D0-427E-A080-694144570136" title="Oracle Application Express requires access to a Web listener.">Web Listener Requirements</a>"</span> 
+                  </p>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

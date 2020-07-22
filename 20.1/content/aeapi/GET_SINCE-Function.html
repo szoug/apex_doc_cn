@@ -1,0 +1,212 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="GET_SINCE Function">
+      <meta name="DC.subject" content="APEX_UTIL, GET_SINCE function">
+      <meta name="keywords" content="APEX_UTIL, GET_SINCE function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>GET_SINCE Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="GET_SESSION_TIME_ZONE-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="GET_SUPPORTING_OBJECT_SCRIPT-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="GET_SESSION_TIME_ZONE-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="GET_SUPPORTING_OBJECT_SCRIPT-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">GET_SINCE Function</li>
+            </ol>
+            <a id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E" name="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E"></a><a id="AEAPI30230"></a><a id="AEAPI30231"></a><a id="AEAPI30232"></a><a id="AEAPI30233"></a><a id="AEAPI30229"></a>
+            
+            <h2 id="AEAPI-GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E" class="sect2"><span class="enumeration_section">39.67 </span>GET_SINCE Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This function returns the relative date in words (for example, 2 days from now, 30 minutes ago). It also accepts a second optional <code class="codeph">p_short</code> parameter and returns "in 2d", "30m". This function is equivalent to using the <code class="codeph">SINCE</code> and <code class="codeph">SINCE_SHORT</code> format mask available within Oracle Application Express and is useful within SQL queries or PL/SQL routines.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E__GUID-B82A6DC5-7D78-4CA8-BDD2-A6EF69866F3B">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.GET_SINCE (
+   p_date  DATE )
+   p_short in [ BOOLEAN DEFAULT FALSE | VARCHAR2 DEFAULT 'N' ] )  
+RETURN VARCHAR2; 
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E__GUID-6CED5880-7900-40F1-8517-80A876F69134">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E__GUID-C1AD9B40-114A-4CC0-A0C0-74744026E94F">
+                  <p class="titleintable">Table 39-58 GET_SINCE Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="GET_SINCE Parameters" summary="Parameter descriptions for the GET_SINCE function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d192383e82">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d192383e85">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d192383e90" headers="d192383e82 ">
+                              <p><code class="codeph">p_date</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d192383e90 d192383e85 ">
+                              <p>The date you want formatted.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d192383e98" headers="d192383e82 ">
+                              <p><code class="codeph">p_short</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d192383e98 d192383e85 ">
+                              <p> Boolean or ‘Y’ / ’N’ to indicate whether to return a short version of relative date.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E__GUID-CB222730-9348-4368-893D-1E15E4FFBC6D">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>select application_id, application_name,apex_util.get_since(last_updated_on) last_update 
+  from apex_applications 
+ order by application_id 
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E__GUID-8D20CB67-C26B-4846-AA56-8BEEA7C2981C">Syntax</p><pre class="pre codeblock"><code>APEX_UTIL.GET_SINCE (
+   p_value in [ timestamp | timestamp with time zone | timestamp with local time zone ],
+   p_short in [ boolean default false | varchar2 default 'N' ] )
+RETURN VARCHAR2; 
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E__GUID-05372266-38CA-49A6-8E2C-BFE4C9E4A24D">Parameters</p>
+                  <div class="tblformal" id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E__GUID-FE4A1C19-4813-4239-B709-85B31274ACA5">
+                     <table cellpadding="4" cellspacing="0" class="Formal" title summary="Parameter description." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" id="d192383e127">Parameter</th>
+                              <th align="left" valign="bottom" id="d192383e130">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d192383e135" headers="d192383e127 ">
+                                 <p><code class="codeph">p_value</code></p>
+                              </td>
+                              <td align="left" valign="top" headers="d192383e135 d192383e130 ">
+                                 <p>The TIMESTAMP, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH LOCAL TIME ZONE you want formatted.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d192383e143" headers="d192383e127 ">
+                                 <p><code class="codeph">p_short</code></p>
+                              </td>
+                              <td align="left" valign="top" headers="d192383e143 d192383e130 ">
+                                 <p>Boolean or ‘Y’ / ’N’ to indicate whether to return a short version of relative date.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B9BF0204-15FB-4DBA-94CD-0EDB316D5B2E__GUID-B4109415-1641-4861-A840-4799EFE56A64">Example</p>
+                  <p>This returns the <code class="codeph">LAST_UPDATE</code> column with the normal formatting.
+                  </p><pre class="pre codeblock"><code>select application_id, application_name, apex_util.get_since( last_updated_on ) last_update
+  from apex_applications
+ order by application_id;</code></pre><p>This returns the <code class="codeph">LAST_UPDATE</code> column with the short formatting. 
+                  </p><pre class="pre codeblock"><code>select application_id, application_name, apex_util.get_since( last_updated_on, p_short =&gt; 'Y' ) last_update
+  from apex_applications
+ order by application_id</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

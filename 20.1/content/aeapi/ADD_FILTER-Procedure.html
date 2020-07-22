@@ -1,0 +1,409 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="ADD_FILTER Procedure">
+      <meta name="DC.subject" content="APEX_EXEC, ADD_FILTER Procedure">
+      <meta name="keywords" content="APEX_EXEC, ADD_FILTER Procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ADD_FILTER Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="ADD_DML_ROW-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="ADD_ORDERBY-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ADD_DML_ROW-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ADD_ORDERBY-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_EXEC.html" property="item" typeof="WebPage"><span property="name"> APEX_EXEC</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">ADD_FILTER Procedure </li>
+            </ol>
+            <a id="GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F" name="GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F"></a>
+            
+            <h2 id="AEAPI-GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F" class="sect2"><span class="enumeration_section">16.5 </span>ADD_FILTER Procedure 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure adds a filter to the filter collection.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F__TITLE-1321-F94BDADF">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_value             IN            apex_t_varchar2,
+    p_null_result       IN            BOOLEAN  DEFAULT FALSE,
+    p_is_case_sensitive IN            BOOLEAN  DEFAULT TRUE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_from_value        IN            VARCHAR2,
+    p_to_value          IN            VARCHAR2,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE,
+    p_is_case_sensitive IN            BOOLEAN DEFAULT TRUE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_values            IN            apex_t_varchar2,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE,
+    p_is_case_sensitive IN            BOOLEAN DEFAULT TRUE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_value             IN            number,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_from_value        IN            NUMBER,
+    p_to_value          IN            NUMBER,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_values            IN            apex_t_number,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_value             IN            DATE,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_from_value        IN            DATE,
+    p_to_value          IN            DATE,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_value             IN            TIMESTAMP,
+    p_null_result       in            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_from_value        IN            TIMESTAMP,
+    p_to_value          IN            TIMESTAMP,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_value             IN            TIMESTAMP WITH TIME ZONE,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_from_value        IN            TIMESTAMP WITH TIME ZONE,
+    p_to_value          IN            TIMESTAMP WITH TIME ZONE,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_value             IN            TIMESTAMP WITH LOCAL TIME ZONE,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_from_value        IN            TIMESTAMP WITH LOCAL TIME ZONE,
+    p_to_value          IN            TIMESTAMP WITH LOCAL TIME ZONE,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_filter_type       IN            t_filter_type,
+    p_column_name       IN            t_column_name,
+    p_interval          IN            PLS_INTEGER,
+    p_interval_type     IN            t_filter_interval_type,
+    p_null_result       IN            BOOLEAN DEFAULT FALSE );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_search_columns    IN            t_columns,
+    p_is_case_sensitive IN            BOOLEAN DEFAULT FALSE,
+    p_value             IN            VARCHAR2 );
+
+PROCEDURE ADD_FILTER (
+    p_filters           IN OUT NOCOPY t_filters,
+    p_sql_expression    IN            VARCHAR2 );</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F__TITLE-1341-F94C107A">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F__WRITEPROCEDUREPARAMETERS-F94C1E2F">
+                  <p class="titleintable">Table 16-3 ADD_FILTER Procedure Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="ADD_FILTER Procedure Parameters" summary="Parameter descriptions for the ADD_FILTER procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="34%" id="d60905e68">Parameter</th>
+                           <th align="left" valign="bottom" width="66%" id="d60905e71">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e76" headers="d60905e68 ">
+                              <p><code class="codeph">p_filters</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e76 d60905e71 ">
+                              <p>Filters array.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e84" headers="d60905e68 ">
+                              <p><code class="codeph">p_filter_type</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e84 d60905e71 ">
+                              <p>Type of filter - use one of the <code class="codeph">t_filter_type</code> constants.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e95" headers="d60905e68 ">
+                              <p><code class="codeph">p_column_name</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e95 d60905e71 ">
+                              <p>Column to apply this filter on.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e103" headers="d60905e68 ">
+                              
+                              <p><code class="codeph">p_value</code></p>
+                              
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e103 d60905e71 ">
+                              
+                              <p>Value for filters requiring one value (for example,
+                                equals or greater than).</p>
+                              
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e115" headers="d60905e68 ">
+                              <p><code class="codeph">p_values</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e115 d60905e71 ">
+                              <p>Value array for <code class="codeph">IN</code> or <code class="codeph">NOT IN</code> filters.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e129" headers="d60905e68 ">
+                              <p><code class="codeph">p_from_value</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e129 d60905e71 ">
+                              <p>Lower value for filters requiring a range (for example, between).</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e137" headers="d60905e68 ">
+                              <p><code class="codeph">p_to_value</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e137 d60905e71 ">
+                              <p>Upper value for filters requiring a range (for example, between).</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e145" headers="d60905e68 ">
+                              <p><code class="codeph">p_interval </code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e145 d60905e71 ">
+                              <p>Interval for date filters (for example, last X months).</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e153" headers="d60905e68 ">
+                              <p><code class="codeph">p_interval_type</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e153 d60905e71 ">
+                              <p>Interval type for date filters (months, dates).</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e161" headers="d60905e68 ">
+                              <p><code class="codeph">p_sql_expression</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e161 d60905e71 ">
+                              <p>Generic SQL expression to use as filter.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e169" headers="d60905e68 ">
+                              <p><code class="codeph">p_null_result </code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e169 d60905e71 ">
+                              <p>Result to return when the actual column value is <code class="codeph">NULL</code>.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e181" headers="d60905e68 ">
+                              <p><code class="codeph">p_is_case_sensitive</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e181 d60905e71 ">
+                              <p>Whether this filter should work case-sensitive or not.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d60905e189" headers="d60905e68 ">
+                              
+                              <p><code class="codeph">p_search_columns</code></p>
+                              
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d60905e189 d60905e71 ">
+                              
+                              <p>List of columns to apply the row search filter on.</p>
+                              
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F__TITLE-1361-F94C98D8">Example</p><pre class="pre codeblock"><code>declare
+    l_filters     apex_exec.t_filters;
+    l_context     apex_exec.t_context;
+begin
+    apex_exec.add_filter(
+        p_filters     =&gt; l_filters,
+        p_filter_type =&gt; apex_exec.c_filter_eq,
+        p_column_name =&gt; 'ENAME',
+        p_value       =&gt; 'KING' );
+
+   apex_exec.add_filter(
+       p_filters     =&gt; l_filters,
+       p_filter_type =&gt; apex_exec.c_filter_gt,
+       p_column_name =&gt; 'SAL',
+       p_value       =&gt; 2000 );
+
+   l_context := apex_exec.open_web_source_query(
+       p_module_static_id =&gt; '{web source module static ID}', 
+       p_filters          =&gt; l_filters
+       p_max_rows         =&gt; 1000 );
+
+       while apex_exec.next_row( l_context ) loop
+           -- process rows here ...
+       end loop;
+
+  apex_exec.close( l_context );
+exception
+     when others then
+        apex_exec.close( l_context );
+        raise;    
+end;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">APEX_EXEC</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

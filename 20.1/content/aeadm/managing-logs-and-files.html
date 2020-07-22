@@ -1,0 +1,494 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Logs and Files">
+      <meta name="abstract" content="Delete log entries and configure log intervals.">
+      <meta name="description" content="Delete log entries and configure log intervals.">
+      <meta name="DC.subject" content="Oracle Application Express administrator, deleting log entries, log entries, deleting, SQL Workshop, deleting logs, SQL statements, deleting, SQL Commands, deleting history, logs, deleting SQL Workshop logs, Page View Activity logs, deleting, deleting Page View Activity logs, Developer activity log, deleting, deleting Developer Activity log, Developer Log Retention, Retention, External click counting log, deleting, deleting External Clicks Counting log, Web Service log, deleting, deleting Web Service Log Entries, Login Access log, deleting entries, deleting Login Access log, managing intervals, archiving the Activity Log">
+      <meta name="keywords" content="Oracle Application Express administrator, deleting log entries, log entries, deleting, SQL Workshop, deleting logs, SQL statements, deleting, SQL Commands, deleting history, logs, deleting SQL Workshop logs, Page View Activity logs, deleting, deleting Page View Activity logs, Developer activity log, deleting, deleting Developer Activity log, Developer Log Retention, Retention, External click counting log, deleting, deleting External Clicks Counting log, Web Service log, deleting, deleting Web Service Log Entries, Login Access log, deleting entries, deleting Login Access log, managing intervals, archiving the Activity Log">
+      <meta name="DC.Relation" scheme="URI" content="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-7C56EA2E-25E9-46BC-A5E0-D6C252327F00">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-F2108225-57E6-4205-A9AF-013E4A5FDA68">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-E5F74EA8-63C3-470E-B219-F9CDEE8CCEB1">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-785F7D0D-5880-42C1-829A-649D2C8FEF5C">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-CB34689B-E05D-4514-A73A-7607575A1132">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-962A0304-5E17-4F0E-AD40-A1D60A0B8D51">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-649EC5F2-9C01-4F2C-BBF7-6F994B6A8812">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-5EC816A3-6CD1-4186-9126-AA2D7528F4EF">
+      <meta name="DC.Relation" scheme="URI" content="managing-logs-and-files.html#GUID-D42E60B0-7422-4813-85D2-8919C211F2A8">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Delete log entries and configure log intervals.">
+      <meta name="description" content="Delete log entries and configure log intervals.">
+      <title>Managing Logs and Files</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Delete log entries and configure log intervals.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="communicating-with-Users-using-messages-and-task-lists.html" title="Previous" type="text/html">
+      <link rel="next" href="including-an-agreement-or-survey-when-running-the-signup-wizard.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="communicating-with-Users-using-messages-and-task-lists.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="including-an-agreement-or-survey-when-running-the-signup-wizard.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Logs and Files</li>
+            </ol>
+            <a id="GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" name="GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2"></a><a id="AEADM29194"></a>
+            
+            <h2 id="AEADM-GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" class="sect2"><span class="enumeration_section">3.11 </span>Managing Logs and Files
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Delete log entries and configure log intervals.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-7C56EA2E-25E9-46BC-A5E0-D6C252327F00">Deleting SQL Workshop Logs</a><br>Delete SQL Workshop log entries. The SQL Workshop maintains a history of SQL statements run in the SQL Commands.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-F2108225-57E6-4205-A9AF-013E4A5FDA68">Deleting Page View Activity Log Entries</a><br>Delete Page View Activity Log entries. Page View Activity Logs track user activity for an application.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-E5F74EA8-63C3-470E-B219-F9CDEE8CCEB1">Deleting Developer Activity Log Entries</a><br>Delete Developer Activity Log entries.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-785F7D0D-5880-42C1-829A-649D2C8FEF5C">Managing Developer Log Retention</a><br>Manage Developer Log retention.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-CB34689B-E05D-4514-A73A-7607575A1132">Deleting Click Counting Log Entries</a><br>Delete External Clicks Counting Log entries.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-962A0304-5E17-4F0E-AD40-A1D60A0B8D51">Deleting Web Service Log Entries</a><br>Delete Web Service Log entries.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-649EC5F2-9C01-4F2C-BBF7-6F994B6A8812">Deleting the Login Access Log</a><br>Delete Login Access Log entries.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-5EC816A3-6CD1-4186-9126-AA2D7528F4EF">Managing Log Intervals</a><br>Use the Manage Log Interval page to set the minimum number of days to retain log information for log files.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-D42E60B0-7422-4813-85D2-8919C211F2A8">Archiving the Activity Log</a><br>Archiving the Activity log takes the Oracle Application Express Activity log, summarizes it, and writes the results to an archived activity log
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="oracle-application-express-administration-services.html#GUID-3E40D63B-D9C4-42B9-87D7-88A015762392" title="Instance administrators manage an entire Oracle Application Express hosted instance using the Oracle Application Express Administration Services (Administration Services) application.">Oracle Application Express Administration Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM29196"></a><div class="props_rev_3"><a id="GUID-7C56EA2E-25E9-46BC-A5E0-D6C252327F00" name="GUID-7C56EA2E-25E9-46BC-A5E0-D6C252327F00"></a><h3 id="AEADM-GUID-7C56EA2E-25E9-46BC-A5E0-D6C252327F00" class="sect3"><span class="enumeration_section">3.11.1 </span>Deleting SQL Workshop Logs
+               </h3>
+               <div>
+                  <p>Delete SQL Workshop log entries. The SQL Workshop maintains a history of SQL statements run in the SQL Commands.</p>
+                  <div class="section">
+                     <p>To delete SQL Workshop log entries:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">SQL Workshop Log</span>.</span></li>
+                     <li class="stepexpand"><span>On the SQL Workshop Logs page, click one of the following:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="uicontrol bold">Script File executions log entries</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">SQL Command Processor history entries</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On the Clean up Logs page, click one of the following:</span><ol type="a">
+                           <li class="substepexpand"><span>For Delete entries this number of days and older - Select the number of days.</span></li>
+                           <li class="substepexpand"><span>Click one of the following:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">Truncate Log</span> - Deletes all entries.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">Delete Entries</span> - Deletes entries by age, specify the age of
+                                        the entries to be deleted.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ol>
+                        <div></div>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-7C56EA2E-25E9-46BC-A5E0-D6C252327F00__GUID-F4FF7990-90F9-4E79-B071-59C063BFC6FC">
+                     <p class="notep1">See Also:</p>
+                     <p>"Accessing a Command from Command History" in <a href="../aeutl/SQL-command-history.html#AEUTL235" target="_blank"><span class="italic">Oracle Application Express SQL Workshop Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29197"></a><div class="props_rev_3"><a id="GUID-F2108225-57E6-4205-A9AF-013E4A5FDA68" name="GUID-F2108225-57E6-4205-A9AF-013E4A5FDA68"></a><h3 id="AEADM-GUID-F2108225-57E6-4205-A9AF-013E4A5FDA68" class="sect3"><span class="enumeration_section">3.11.2 </span>Deleting Page View Activity Log Entries
+               </h3>
+               <div>
+                  <p>Delete Page View Activity Log entries. Page View Activity Logs track user activity for an application.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-ED7B007A-93B3-4D95-8DB3-70454C7D6418">About Page View Activity Logs</a><br>Page View Activity Logs track user activity for an application.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-logs-and-files.html#GUID-BCAC0624-7507-40CC-ABA9-146C9FA7AC8B">Truncating Page View Activity Logs Manually</a><br>Delete Page View Activity logs manually.
+                     </li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="AEADM29212"></a><div class="props_rev_3"><a id="GUID-ED7B007A-93B3-4D95-8DB3-70454C7D6418" name="GUID-ED7B007A-93B3-4D95-8DB3-70454C7D6418"></a><h4 id="AEADM-GUID-ED7B007A-93B3-4D95-8DB3-70454C7D6418" class="sect4"><span class="enumeration_section">3.11.2.1 </span>About Page View Activity Logs
+                  </h4>
+                  <div>
+                     <p>Page View Activity Logs track user activity for an application.</p>
+                     <p>The Application Express engine uses two logs to track user activity. At any given time, one log is designated as current. For each rendered page view, the Application Express engine inserts one row into the log file. A log switch occurs at the interval listed on the Page View Activity Logs page. At that point, the Application Express engine removes all entries in the noncurrent log and designates it as current. </p>
+                     <div class="infobox-tip" id="GUID-ED7B007A-93B3-4D95-8DB3-70454C7D6418__GUID-A69C8D11-50B1-4060-8686-361A2405104E">
+                        <p class="notep1">Tip:</p>
+                        <p>Developers enable logging within their application using the Logging attribute on the Edit Application Definition page. </p>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-ED7B007A-93B3-4D95-8DB3-70454C7D6418__GUID-0B5FEE0A-2740-4509-B77F-4AC452279200">
+                        <p class="notep1">See Also:</p>
+                        <p>"Editing the Application Definition" in <a href="../htmdb/editing-application-attributes.html#HTMDB25068" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-F2108225-57E6-4205-A9AF-013E4A5FDA68" title="Delete Page View Activity Log entries. Page View Activity Logs track user activity for an application.">Deleting Page View Activity Log Entries</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="AEADM29213"></a><div class="props_rev_3"><a id="GUID-BCAC0624-7507-40CC-ABA9-146C9FA7AC8B" name="GUID-BCAC0624-7507-40CC-ABA9-146C9FA7AC8B"></a><h4 id="AEADM-GUID-BCAC0624-7507-40CC-ABA9-146C9FA7AC8B" class="sect4"><span class="enumeration_section">3.11.2.2 </span>Truncating Page View Activity Logs Manually
+                  </h4>
+                  <div>
+                     <p>Delete Page View Activity logs manually.</p>
+                     <div class="section">
+                        <p>To truncate the activity logs manually:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                        <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">Page View Activity Log</span>.</span><div>
+                              <p>The Page View Activity Logs page appears. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Truncate Logs</span>.</span></li>
+                        <li class="stepexpand"><span>Click either <span class="uicontrol bold">Truncate Log 1</span> or <span class="uicontrol bold">Truncate Log 2</span>.</span></li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-BCAC0624-7507-40CC-ABA9-146C9FA7AC8B__GUID-42A522C6-0EFA-44BA-ABB6-5EFA5F32CEA4">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="viewing-workspace-dashboards.html#GUID-E68D639F-60F2-495E-B74A-99B5E4EA9251" title="Use the Dashboard page to view details about the current workspace and monitor overall workspace activity.">Viewing Workspace Dashboards</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-F2108225-57E6-4205-A9AF-013E4A5FDA68" title="Delete Page View Activity Log entries. Page View Activity Logs track user activity for an application.">Deleting Page View Activity Log Entries</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="AEADM29198"></a><div class="props_rev_3"><a id="GUID-E5F74EA8-63C3-470E-B219-F9CDEE8CCEB1" name="GUID-E5F74EA8-63C3-470E-B219-F9CDEE8CCEB1"></a><h3 id="AEADM-GUID-E5F74EA8-63C3-470E-B219-F9CDEE8CCEB1" class="sect3"><span class="enumeration_section">3.11.3 </span>Deleting Developer Activity Log Entries
+               </h3>
+               <div>
+                  <p>Delete Developer Activity Log entries.</p>
+                  <div class="section">The Developer Activity log tracks changes to applications within an individual workspace. </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To delete Developer Activity Log entries manually:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">Developer Activity Log</span>.</span><div>
+                           <p>The Developer Activity Log page appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Specify the age of the entries to be deleted and click <span class="uicontrol bold">Delete Entries</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E5F74EA8-63C3-470E-B219-F9CDEE8CCEB1__GUID-953127F6-0688-4AB2-9E5D-4A6D09E4D3F0">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="viewing-workspace-dashboards.html#GUID-EF747B87-4E1C-4575-B6CC-007F0A7B0D4C" title="View a summary of developer application and page changes for the selected time frame.">Developer Activity Dashboard</a>"</span> for information about the Developer Activity Log 
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-785F7D0D-5880-42C1-829A-649D2C8FEF5C" name="GUID-785F7D0D-5880-42C1-829A-649D2C8FEF5C"></a><h3 id="AEADM-GUID-785F7D0D-5880-42C1-829A-649D2C8FEF5C" class="sect3"><span class="enumeration_section">3.11.4 </span>Managing Developer Log Retention
+               </h3>
+               <div>
+                  <p>Manage Developer Log retention.</p>
+                  <div class="section">The Developer Activity log tracks changes to applications within an individual workspace. You can specify the number of days to retain log entries.</div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To specify the number of days to retain log entries:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">Developer Activity Log</span>.</span><div>
+                           <p>The Developer Activity Log page appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Specify the number of days to retain developer log entries and click
+                        <span class="uicontrol bold">Save Retention Setting</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-785F7D0D-5880-42C1-829A-649D2C8FEF5C__GUID-953127F6-0688-4AB2-9E5D-4A6D09E4D3F0">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="viewing-workspace-dashboards.html#GUID-EF747B87-4E1C-4575-B6CC-007F0A7B0D4C" title="View a summary of developer application and page changes for the selected time frame.">Developer Activity Dashboard</a>"</span> for information about the Developer Activity Log 
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29199"></a><div class="props_rev_3"><a id="GUID-CB34689B-E05D-4514-A73A-7607575A1132" name="GUID-CB34689B-E05D-4514-A73A-7607575A1132"></a><h3 id="AEADM-GUID-CB34689B-E05D-4514-A73A-7607575A1132" class="sect3"><span class="enumeration_section">3.11.5 </span>Deleting Click Counting Log Entries
+               </h3>
+               <div>
+                  <p>Delete External Clicks Counting Log entries.</p>
+                  <div class="section">The External Clicks Counting log counts clicks from an Oracle Application Express application to an external site. You can implement this functionality using the <code class="codeph">APEX_UTIL.COUNT_CLICK</code> procedure.
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To delete External Clicks Counting log entries:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">External Click Counting Log</span>.</span><div>
+                           <p>The External Click Counting Log page appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Specify the age of the entries to be deleted and click <span class="uicontrol bold">Delete Entries</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-CB34689B-E05D-4514-A73A-7607575A1132__GUID-E10FF99D-286F-4BE2-851F-DD1ECCA2E5A8">
+                     <p class="notep1">See Also:</p>
+                     <p>"COUNT_CLICK Procedure" in <a href="../aeapi/COUNT_CLICK-Procedure.html#AEAPI112" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-962A0304-5E17-4F0E-AD40-A1D60A0B8D51" name="GUID-962A0304-5E17-4F0E-AD40-A1D60A0B8D51"></a><h3 id="AEADM-GUID-962A0304-5E17-4F0E-AD40-A1D60A0B8D51" class="sect3"><span class="enumeration_section">3.11.6 </span>Deleting Web Service Log Entries
+               </h3>
+               <div>
+                  <p>Delete Web Service Log entries.</p>
+                  <div class="section">The Web Service Activity Log records all web service requests initiated from the Application Express instance.</div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To delete Web Service Activity log entries:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">Web Service Activity Log</span>.</span><div>
+                           <p>The Web Service Activity Log page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Specify the age of the entries to be deleted and click <span class="uicontrol bold">Delete Entries</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29200"></a><div class="props_rev_3"><a id="GUID-649EC5F2-9C01-4F2C-BBF7-6F994B6A8812" name="GUID-649EC5F2-9C01-4F2C-BBF7-6F994B6A8812"></a><h3 id="AEADM-GUID-649EC5F2-9C01-4F2C-BBF7-6F994B6A8812" class="sect3"><span class="enumeration_section">3.11.7 </span>Deleting the Login Access Log
+               </h3>
+               <div>
+                  <p>Delete Login Access Log entries.</p>
+                  <div class="section">The Login Access log records authentication events by developers and administrators accessing the Oracle Application Express environment and by end users of Oracle Application Express applications that use the built-in login APIs available to developers. Log entries are aged out of the log tables and purged periodically.</div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To truncate the Login Access log:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">Login Access Log</span>.</span><div>
+                           <p>The Login Access Log page appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Specify the age of the entries to be deleted and click <span class="uicontrol bold">Delete Entries</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29201"></a><div class="props_rev_3"><a id="GUID-5EC816A3-6CD1-4186-9126-AA2D7528F4EF" name="GUID-5EC816A3-6CD1-4186-9126-AA2D7528F4EF"></a><h3 id="AEADM-GUID-5EC816A3-6CD1-4186-9126-AA2D7528F4EF" class="sect3"><span class="enumeration_section">3.11.8 </span>Managing Log Intervals
+               </h3>
+               <div>
+                  <p>Use the Manage Log Interval page to set the minimum number of days to retain log information for log files.</p>
+                  <div class="section">
+                     <p>To manage the log interval:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">Manage Log Interval</span>.</span><div>
+                           <p>The Manage Log Interval page appears. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For each log type, enter the duration of the interval in days. </span><div>
+                           <p>The maximum value that can be specified is 180 days, with a default value of 14 days. Keeping log information for longer periods can degrade runtime performance.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5EC816A3-6CD1-4186-9126-AA2D7528F4EF__GUID-0C646B80-78A0-48F3-838D-3F9E2880DE17">
+                     <p class="notep1">See Also:</p>
+                     <p>SET_LOG_SWITCH_INTERVAL Procedure in <a href="../aeapi/SET_LOG_SWITCH_INTERVAL-Procedure.html#AEAPI29322" target="_blank"><span class="italic">Oracle Application Express API Reference</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29264"></a><div class="props_rev_3"><a id="GUID-D42E60B0-7422-4813-85D2-8919C211F2A8" name="GUID-D42E60B0-7422-4813-85D2-8919C211F2A8"></a><h3 id="AEADM-GUID-D42E60B0-7422-4813-85D2-8919C211F2A8" class="sect3"><span class="enumeration_section">3.11.9 </span>Archiving the Activity Log
+               </h3>
+               <div>
+                  <p>Archiving the Activity log takes the Oracle Application Express Activity log, summarizes it, and writes the results to an archived activity log</p>
+                  <div class="section">Archiving the Activity log takes the Oracle Application Express Activity log, summarizes it, and writes the results to an archived activity log.</div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To archive the Oracle Application Express Activity log:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Manage Logs and Files, click <span class="uicontrol bold">Archive Activity Log</span>. </span><div>
+                           <p>The Archive Activity Log page appears listing the last archive date, archive day count, and workspace count. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Archive Activity Summary</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-logs-and-files.html#GUID-70E4334C-2368-4797-BE73-5DEBBEC479D2" title="Delete log entries and configure log intervals.">Managing Logs and Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

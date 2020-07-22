@@ -1,0 +1,349 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Exporting Workspaces, Apps, and Related Files from a Command-line">
+      <meta name="abstract" content="Export workspaces, applications, and related files from a command-line using the APEXExport utility.">
+      <meta name="description" content="Export workspaces, applications, and related files from a command-line using the APEXExport utility.">
+      <meta name="DC.subject" content="applications, exporting from command line, workspace, exporting from command line, exporting from command line, Oracle Application Express administrator, APEXExport program, export, APEXExport, APEXExport, about, APEXExport, using">
+      <meta name="keywords" content="applications, exporting from command line, workspace, exporting from command line, exporting from command line, Oracle Application Express administrator, APEXExport program, export, APEXExport, APEXExport, about, APEXExport, using">
+      <meta name="DC.Relation" scheme="URI" content="managing-existing-workspaces.html#GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9">
+      <meta name="DC.Relation" scheme="URI" content="exporting-from-a-command-line.html#GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E">
+      <meta name="DC.Relation" scheme="URI" content="exporting-from-a-command-line.html#GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Export workspaces, applications, and related files from a command-line using the APEXExport utility.">
+      <meta name="description" content="Export workspaces, applications, and related files from a command-line using the APEXExport utility.">
+      <title>Exporting Workspaces, Apps, and Related Files from a Command-line</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Export workspaces, applications, and related files from a command-line using the APEXExport utility.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="exporting-and-importing-a-workspace.html" title="Previous" type="text/html">
+      <link rel="next" href="changing-app-build-status-in-administration-services.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="exporting-and-importing-a-workspace.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="changing-app-build-status-in-administration-services.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-existing-workspaces.html" property="item" typeof="WebPage"><span property="name">Managing Existing Workspaces</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Exporting Workspaces, Apps, and Related Files
+        from a Command-line</li>
+            </ol>
+            <a id="GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC" name="GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC"></a>
+            
+            <h2 id="AEADM-GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC" class="sect2"><span class="enumeration_section">3.15.15 </span>Exporting Workspaces, Apps, and Related Files
+        from a Command-line
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Export workspaces, applications, and related files from a command-line
+        using the <code class="codeph">APEXExport</code> utility.
+               </p>
+               <div class="infobox-tip" id="GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC__SEELIFECYCLEMANAGEMENTWITHORACLEAPP-41920F28">
+                  <p class="notep1">Tip:</p>
+                  <p>To review recommendations about optimizing the development and deployment of <span>Application Express</span> applications, see <span class="q">"<span id="GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC__LIFECYCLEAPEX"><a href="http://www.oracle.com/technetwork/developer-tools/apex/learnmore/apex-life-cycle-management-wp-3030229.pdf" target="_blank">Life Cycle Management with Oracle Application
+                            Express</a></span>."</span>.
+                  </p>
+                  
+                  <p>To review a tutorial that demonstrates deployment options, go to the
+                Oracle Online Learning Library at <a href="http://www.oracle.com/oll/apex" target="_blank">http://www.oracle.com/oll/apex</a> and search for <span class="italic">Advanced Deployment of
+                    Your Application</span>. 
+                  </p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="exporting-from-a-command-line.html#GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E">About APEXExport</a><br>Learn about the <code class="codeph">APEXExport</code> utility.
+                  </li>
+                  <li class="ulchildlink"><a href="exporting-from-a-command-line.html#GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B">Using APEXExport</a><br>Use the <code class="codeph">APEXExport</code> program to export workspaces,         applications, and related files from a command-line. Use the <code class="codeph">-split</code> option         to export files into separate SQL scripts.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC__GUID-5F542E6C-E644-47BC-981E-17E83092FE1C">
+                  <p class="notep1">See Also:</p>
+                  
+                  <p><span class="q">"<a href="../htmdb/deploying-an-application.html#HTMDB-GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD" target="_blank">Deploying an Application</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                  
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-existing-workspaces.html#GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9" title="Instance administrators can manage existing workspaces within an Oracle Application Express instance.">Managing Existing Workspaces</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E" name="GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E"></a><h3 id="AEADM-GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E" class="sect3"><span class="enumeration_section">3.15.15.1 </span>About APEXExport
+               </h3>
+               <div>
+                  <p>Learn about the <code class="codeph">APEXExport</code> utility.
+                  </p>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E__GUID-B52E2A20-75E8-412B-81FE-BC9CA9600CD9">Program Requirements</p>
+                     
+                     
+                     <p>The <code class="codeph">APEXExport</code> program requires:
+                     </p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E__UL_XCM_4YN_MKB">
+                        <li>
+                           
+                           <p>JDK (Java Development Kit) release 1.6 or higher</p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p>Oracle JDBC class libraries must be in your CLASSPATH</p>
+                           
+                        </li>
+                     </ul>
+                     
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E__GUID-A9188060-E30E-426E-B2EB-9814D9BA19D5">About APEXExport</p>
+                     
+                     
+                     <p><code class="codeph">APEXExport</code> is a command-line utility for exporting workspaces,
+        applications, and related files. Use the <code class="codeph">-split</code> option to export files into
+        separate files. Splitting application, page, and component exports into separate SQL files
+        enables you to manage just the files with changes instead of exporting, inporting, and
+        installing entire applications.
+                     </p>
+                     
+                     <p>The <strong class="term">Export as Zip</strong> option in the App Builder enables you to create
+        an archive with the same directory structure and files as using the <code class="codeph">-split</code>
+        option.
+                     </p>
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-8826A9A5-6C4C-46DA-B045-3E5DA315843E__GUID-C9D8980C-4276-41E5-AACF-CDF35CE8C2F7">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><span class="q">"<a href="../htmdb/splitting-export-files-into-separate-scripts.html#HTMDB-GUID-9DEE06EA-01C4-40FF-AE36-3C97A96C3DF4" target="_blank">Splitting Export Files into Separate
+              Scripts</a>"</span> and <span class="q">"<a href="../htmdb/directory-structure-when-splitting-export-files.html#HTMDB-GUID-DB991910-79AB-4EF6-94C9-B37F4DAD7438" target="_blank">Directory Structure When Splitting Export Files into Separate
+              Scripts</a>"</span> in <span><cite>Oracle Application Express App Builder User’s Guide</cite></span></p>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="exporting-from-a-command-line.html#GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC" title="Export workspaces, applications, and related files from a command-line using the APEXExport utility.">Exporting Workspaces, Apps, and Related Files from a Command-line</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B" name="GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B"></a><h3 id="AEADM-GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B" class="sect3"><span class="enumeration_section">3.15.15.2 </span>Using APEXExport
+               </h3>
+               <div>
+                  <p>Use the <code class="codeph">APEXExport</code> program to export workspaces,
+        applications, and related files from a command-line. Use the <code class="codeph">-split</code> option
+        to export files into separate SQL scripts.
+                  </p>
+                  <p>To use <code class="codeph">APEXExport</code>:
+                  </p>
+                  <ol>
+                     <li class="stepexpand"><span>Set the CLASSPATH. </span><div>
+                           
+                           <div class="infoboxnote" id="GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B__GUID-AD274F22-C511-4B37-8EFD-90B18F241710">
+                              <p class="notep1">Note:</p>
+                              
+                              <p>If your NLS character set is not one of <code class="codeph">US7ASCII</code>,
+                                <code class="codeph">WE8DEC</code>,
+                                <code class="codeph">WE8ISO8859P1</code>,<code class="codeph">WE8MSWIN1252</code> or
+                                <code class="codeph">UTF8</code>, you must also include
+                                <code class="codeph">orai18n.jar</code> from the samedirectory path in the
+                            CLASSPATH.
+                              </p>
+                              
+                           </div>
+                           
+                           <p>For example:</p>
+                           
+                           <ul style="list-style-type: disc;" id="GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B__UL_JF4_RSN_MKB">
+                              <li>
+                                 
+                                 <p>On UNIX and Linux:</p>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B__UL_JSB_SR5_RGB">
+                                    <li>
+                                       
+                                       <p>Issue the command:</p>
+                                       
+                                       <p><code class="codeph">export
+                                            CLASSPATH=.:${ORACLE_HOME}/jdbc/lib/ojdbc6.jar
+                                        </code></p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p>From the <code class="codeph">apex/utilities</code>
+                                        directory, issue the command:
+                                       </p>
+                                       
+                                       <p><code class="codeph">java oracle.apex.APEXExport</code></p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>
+                                 
+                                 <p>On Windows:</p>
+                                 
+                                 <ul style="list-style-type: disc;" id="GUID-9E47810A-C82A-49B3-8C82-7D5113B3332B__UL_B44_FS5_RGB">
+                                    <li>
+                                       
+                                       <p>From the Bash shell:</p>
+                                       
+                                       <p><code class="codeph">set
+                                            CLASSPATH=%CLASSPATH%;.\;%ORACLE_HOME%\jdbc\lib\ojdbc6.jar</code></p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p>From the <code class="codeph">apex/utilities</code>
+                                        directory, issue the command:
+                                       </p>
+                                       
+                                       <p><code class="codeph">java oracle.apex.APEXExport</code></p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Returns the following output with both usage directions and examples.</span><div>
+                           <pre class="pre codeblock"><code>Usage APEXExport -db  -user  -password  -applicationid  -workspaceid -instance -expWorkspace -expMinimal -expFiles -skipExportDate 
+-expPubReports -expSavedReports -expIRNotif -expTranslations -expTeamdevdata -expFeedback -deploymentSystem -expFeedbackSince 
+-expOriginalIds -debug -expNoSubscriptions -expComments -expSupportingObjects -nochecksum -split   
+ -db:                   Database connect url in JDBC format
+ -user:                 Database username
+ -password:             Database password
+ -applicationid:        ID for application to be exported
+ -workspaceid:          Workspace ID for which all applications to be exported or the workspace to be exported
+ -instance:             Export all applications
+ -expWorkspace:         Export workspace identified by -workspaceid or all workspaces if -workspaceid not specified
+ -expMinimal:           Only export workspace definition, users, and groups
+ -expFiles:             Export all workspace files identified by -workspaceid
+ -skipExportDate:       Exclude export date from application export files
+ -expPubReports:        Export all user saved public interactive reports
+ -expSavedReports:      Export all user saved interactive reports
+ -expIRNotif:           Export all interactive report notifications
+ -expTranslations:      Export the translation mappings and all text from the translation repository
+ -expFeedback:          Export team development feedback for all workspaces or identified by -workspaceid to development or deployment
+ -expTeamdevdata:       Export team development data for all workspaces or identified by -workspaceid
+ -deploymentSystem:     Deployment system for exported feedback
+ -expFeedbackSince:     Export team development feedback since date in the format YYYYMMDD
+ -expOriginalIds:       If specified, the application export will emit ids as they were when the application was imported
+ -expNoSubscriptions:   Do not export references to subscribed components &nbsp;&nbsp;&nbsp;&nbsp;
+ -expComments:          Export developer comments &nbsp;&nbsp;&nbsp;&nbsp;
+ -expSupportingObjects: Pass (Y)es, (N)o or (I)nstall to override the default &nbsp;&nbsp;&nbsp;&nbsp;
+ -expACLAssignments:    Export ACL User Role Assignments
+ -dir:                  Save all files in the given directory, e.g. -dir some/sub/directory
+ -list:                 List all changed applications in the workspace or components in the application
+ -changesSince:         Expects date parameter (yyyy-mm-dd). Limit -list values to changes since the given date
+ -changesBy:            Expects string parameter. Limit -list values to changes by the given user
+ -expComponents:        Export application components. All remaining parameters must be of form TYPE:ID
+ -debug:                Print debug output
+ -nochecksum:           Overwrite existing files even if the contents have not changed
+ -split:                Split applications into multiple files</code></pre>
+                           <pre class="pre codeblock"><code>Application Example: 
+   APEXExport -db localhost:1521:ORCL -user scott -password scotts_password -applicationid 31500 
+Workspace  Example: 
+   APEXExport -db localhost:1521:ORCL -user scott -password scotts_password -workspaceid 9999 
+Instance Example:
+   APEXExport -db localhost:1521:ORCL -user system -password systems_password -instance 
+Components Example:
+   APEXExport -db localhost:1521:ORCL -user scott -password scotts_password -applicationid 31500 -expComponents PAGE:1 PAGE:2 AUTHORIZATION:12345678
+List Example:
+   APEXExport -db localhost:1521:ORCL -user scott -password scotts_password -workspaceid 9999 -list -changesSince 2019-07-29
+   APEXExport -db localhost:1521:ORCL -user scott -password scotts_password -applicationid 31500 -list -changesBy EXAMPLE_USER
+Export All Workspaces Example:
+   APEXExport -db localhost:1521:ORCL -user system -password systems_password -expWorkspace 
+Export Feedback to development environment:
+  APEXExport -db localhost:1521:ORCL -user scott -password scotts_password -workspaceid 9999 -expFeedback 
+Export Feedback to deployment environment EA2 since 20100308:
+  APEXExport -db localhost:1521:ORCL -user scott -password scotts_password -workspaceid 9999 -expFeedback -deploymentSystem EA2 -expFeedbackSince 20100308 </code></pre>
+                           </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="exporting-from-a-command-line.html#GUID-7C70BD79-3AA0-4B70-A386-D611D3CB12AC" title="Export workspaces, applications, and related files from a command-line using the APEXExport utility.">Exporting Workspaces, Apps, and Related Files from a Command-line</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

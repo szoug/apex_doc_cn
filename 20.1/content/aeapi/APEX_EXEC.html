@@ -1,0 +1,335 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="APEX_EXEC">
+      <meta name="DC.subject" content="APEX_EXEC, APIs">
+      <meta name="keywords" content="APEX_EXEC, APIs">
+      <meta name="DC.Relation" scheme="URI" content="Global-Constants1-APEX_EXEC.html#GUID-DC49AC73-4DEA-4937-B59F-14F0211D9804">
+      <meta name="DC.Relation" scheme="URI" content="Data-Types1_APEX_EXEC.html#GUID-8BE94A0F-E511-4CB5-831F-46B5E2FCC4A3">
+      <meta name="DC.Relation" scheme="URI" content="ADD_COLUMN-Procedure.html#GUID-2AD6B830-7815-4554-9076-C05709CC8D42">
+      <meta name="DC.Relation" scheme="URI" content="ADD_DML_ROW-Procedure.html#GUID-774A49F8-C0AD-4917-A2A8-6E7A5B0F56B1">
+      <meta name="DC.Relation" scheme="URI" content="ADD_FILTER-Procedure.html#GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F">
+      <meta name="DC.Relation" scheme="URI" content="ADD_ORDERBY-Procedure.html#GUID-3AA67C0E-3049-4846-B277-C6B123CE515A">
+      <meta name="DC.Relation" scheme="URI" content="ADD_ORDER_BY-Procedure.html#GUID-F58D89B4-8AA0-4F77-B31A-C7BDF7055AD9">
+      <meta name="DC.Relation" scheme="URI" content="CLEAR_DML_ROWS-Procedure.html#GUID-36EEB170-F52C-4647-8BC7-29F3831E5DA5">
+      <meta name="DC.Relation" scheme="URI" content="CLOSE-Procedure.html#GUID-0CC0037C-443B-4669-9282-D08DB7103281">
+      <meta name="DC.Relation" scheme="URI" content="COPY_DATA-Procedure.html#GUID-BEEFB3C1-00CD-4C0F-84FC-E4F7F62F3462">
+      <meta name="DC.Relation" scheme="URI" content="EXECUTE_DML-Procedure.html#GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313">
+      <meta name="DC.Relation" scheme="URI" content="EXECUTE_PLSQL-Procedure.html#GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06">
+      <meta name="DC.Relation" scheme="URI" content="EXECUTE_REMOTE_PLSQL-Procedure.html#GUID-EE9E3F1F-F40D-4CCD-84CF-C1CF6DC2B45B">
+      <meta name="DC.Relation" scheme="URI" content="EXECUTE_WEB_SOURCE-Procedure.html#GUID-30272C98-EA7B-4220-A26B-63DFF9DFCD1F">
+      <meta name="DC.Relation" scheme="URI" content="GET-Functions-1.html#GUID-7B51CA5F-753E-4437-880C-43BC5C6073BB">
+      <meta name="DC.Relation" scheme="URI" content="GET_COLUMN-FUNCTION.html#GUID-45137DEB-F9F2-4F9F-BD3A-98FA5677096A">
+      <meta name="DC.Relation" scheme="URI" content="GET_COLUMN_COUNT-FUNCTION.html#GUID-6B4EB17B-E6BA-4359-AA65-7627C71B38A1">
+      <meta name="DC.Relation" scheme="URI" content="GET_COLUMN_POSITION-FUNCTION.html#GUID-972DC4E1-A732-45C3-A322-3CAC65306ED9">
+      <meta name="DC.Relation" scheme="URI" content="GET_DATA_TYPE-Function.html#GUID-D380E6A6-759D-4A68-8BF5-26A4B3AF7EB9">
+      <meta name="DC.Relation" scheme="URI" content="GET-Functions.html#GUID-D59C7753-A9CF-41BC-AAB9-06DB32CA3361">
+      <meta name="DC.Relation" scheme="URI" content="GET_DML_STATUS_CODE-Function.html#GUID-7FA74357-5178-4192-A74B-EF10F615D62C">
+      <meta name="DC.Relation" scheme="URI" content="GET_DML_STATUS_MESSAGE-Function.html#GUID-C7B59752-4E8B-44D6-8EAB-1C4A55C65C07">
+      <meta name="DC.Relation" scheme="URI" content="GET_PARAMETERS-Function.html#GUID-15420F6D-CECA-4BAB-86A5-AFDC032E4833">
+      <meta name="DC.Relation" scheme="URI" content="GET_ROW_VERSION_CHECKSUM-Function.html#GUID-982B244F-C322-4421-AEB2-153B8410EB6D">
+      <meta name="DC.Relation" scheme="URI" content="GET_TOTAL_ROW_COUNT-FUNCTION.html#GUID-A7DD0D6B-0842-4CA7-8F7F-FA1E01A9A949">
+      <meta name="DC.Relation" scheme="URI" content="HAS_ERROR-Function.html#GUID-BF3BC9CB-87FF-4379-8219-927834E7DAA2">
+      <meta name="DC.Relation" scheme="URI" content="IS_REMOTE_SQL_AUTH_VALID-Function.html#GUID-F72C8319-BB56-4175-B9DC-F9C740566C75">
+      <meta name="DC.Relation" scheme="URI" content="NEXT_ROW-Function.html#GUID-A2FDA960-4826-4FCD-B39A-5C491651BD3D">
+      <meta name="DC.Relation" scheme="URI" content="OPEN_LOCAL_DML_CONTEXT-Function.html#GUID-D3CAB370-8CA4-4371-A5EE-72FDA4AFE30C">
+      <meta name="DC.Relation" scheme="URI" content="OPEN_REMOTE_DML_CONTEXT-Function.html#GUID-1D856CD4-906A-404A-A541-66534CF3E0A9">
+      <meta name="DC.Relation" scheme="URI" content="OPEN_REMOTE_SQL_QUERY-Function.html#GUID-75BF9671-7289-40A9-9896-394DCD3FB482">
+      <meta name="DC.Relation" scheme="URI" content="OPEN_QUERY_CONTEXT-Procedure.html#GUID-0EFB6FF7-15B1-4E25-A78E-9F482408F638">
+      <meta name="DC.Relation" scheme="URI" content="APEX_EXEC-OPEN_QUERY_CONTEXT-Function.html#GUID-9C0BF735-0749-44F6-B7E2-731070D0E9DE">
+      <meta name="DC.Relation" scheme="URI" content="OPEN_WEB_SOURCE_DML_CONTEXT-Function.html#GUID-A805DA13-F33D-4927-8D51-EB49F79A4A34">
+      <meta name="DC.Relation" scheme="URI" content="OPEN_WEB_SOURCE_QUERY-Function.html#GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6">
+      <meta name="DC.Relation" scheme="URI" content="PURGE_WEB_SOURCE_CACHE-Procedure.html#GUID-A2D048D6-68D7-4FA6-AB2C-78ECD796D377">
+      <meta name="DC.Relation" scheme="URI" content="SET_NULL-Procedure.html#GUID-659FE8D4-B561-4DBA-9BA6-8F0BAC820593">
+      <meta name="DC.Relation" scheme="URI" content="SET_VALUE1-Procedure.html#GUID-377EA347-647F-479B-B407-53B9C397EC20">
+      <meta name="DC.Relation" scheme="URI" content="SET_VALUES-Procedure.html#GUID-E5152786-4376-4DFB-9856-A77562AF2C09">
+      <meta name="DC.Relation" scheme="URI" content="SET_ROW_VERSION_CHECKSUM-Procedure.html#GUID-DE0D6BB4-1D37-4026-9A27-49EB072523E4">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>APEX_EXEC</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="INIT_ERROR_RESULT-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="Global-Constants1-APEX_EXEC.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="INIT_ERROR_RESULT-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="Global-Constants1-APEX_EXEC.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> APEX_EXEC</li>
+            </ol>
+            <a id="GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169" name="GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169"></a>
+            
+            <h2 id="AEAPI-GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169" class="sect2"><span class="enumeration_chapter">16 </span> APEX_EXEC
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <code class="codeph">APEX_EXEC</code> package encapsulates data processing and querying capabilities and provides an abstraction from the data source to Application Express components and plug-ins. It contains procedures and functions to execute queries or procedural calls on local and remote data sources as well as web source modules. It can be used for plug-in development as well as for procedural PL/SQL processing in applications or within packages and procedures.
+               </p>
+               <p>All procedures require an <span>Application Express</span> session to be set up. In a pure SQL or PL/SQL context, use the
+                <code class="codeph">APEX_SESSION</code> package to initialize a new session.
+               </p>
+               <p>The typical call sequence depends on the used data source.</p>
+               <ol>
+                  <li>
+                     <p>REST Enabled SQL Data Sources</p>
+                     <ol type="a">
+                        <li>
+                           <p>Prepare bind variables with [optional]</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Create a variable of <code class="codeph">APEX_EXEC.T_PARAMETERS</code> type
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Add bind values with <code class="codeph">APEX_EXEC.ADD_PARAMETER</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Execute the remote query call</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.OPEN_REMOTE_SQL_QUERY</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Get column indexes for result column names</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.OPEN_WEB_SOURCE_QUERY</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Loop until the result set is exhausted</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.NEXT_ROW</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Retrieve column values for each column by position</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>call <code class="codeph">APEX_EXEC.GET_VARCHAR2</code>, <code class="codeph">APEX_EXEC.GET_NUMBER</code>, <code class="codeph">APEX_EXEC.GET_DATE</code>, ...
+                                 </p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Finally ALWAYS close the query context - IMPORTANT</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.CLOSE</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                     </ol>
+                  </li>
+                  <li>
+                     <p>Web source module</p>
+                     <ol type="a">
+                        <li>
+                           <p>Prepare web source parameters variables with [optional]</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Create a variable of <code class="codeph">APEX_EXEC.T_PARAMETERS</code> type
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Add bind values with <code class="codeph">APEX_EXEC.ADD_PARAMETER</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Prepare filters to be passed to the web source (if supported by the web source)</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Create a variable of <code class="codeph">APEX_EXEC.T_FILTERS</code> type
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Add bind values with <code class="codeph">APEX_EXEC.ADD_FILTER</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Prepare order by expressions to be passed to the web source (if supported by the web source)</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Create a variable of <code class="codeph">APEX_EXEC.T_ORDER_BYS</code> type
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Add bind values with <code class="codeph">APEX_EXEC.ADD_ORDER_BY</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Execute the remote query call</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.OPEN_WEB_SOURCE_QUERY</code></p>
+                              </li>
+                              <li>
+                                 <p>Pass in filters, order bys and parameters previously prepared</p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Get column indexes for result column names</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.GET_COLUMN_POSITION</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Loop until the result set is exhausted</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.NEXT_ROW</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Retrieve column values for each column by position</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.GET_VARCHAR2</code>, <code class="codeph">APEX_EXEC.GET_NUMBER</code>, <code class="codeph">APEX_EXEC.GET_DATE</code>, ...
+                                 </p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Finally ALWAYS close the query context - IMPORTANT</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Call <code class="codeph">APEX_EXEC.CLOSE</code></p>
+                              </li>
+                           </ul>
+                        </li>
+                     </ol>
+                  </li>
+               </ol>
+               <div class="infoboxnote" id="GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169__GUID-098865A2-AD57-4B87-9DD5-BAE56F573DFC">
+                  <p class="notep1">Note:</p>
+                  <p>Always add an exception handler to your procedure or function to ensure that  <code class="codeph">APEX_EXEC.CLOSE</code> is being called in any case. This is important to release server resources like database cursors, temporary lobs and others.
+                  </p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="Global-Constants1-APEX_EXEC.html#GUID-DC49AC73-4DEA-4937-B59F-14F0211D9804">Global Constants</a><br></li>
+                  <li class="ulchildlink"><a href="Data-Types1_APEX_EXEC.html#GUID-8BE94A0F-E511-4CB5-831F-46B5E2FCC4A3">Data Types</a><br></li>
+                  <li class="ulchildlink"><a href="ADD_COLUMN-Procedure.html#GUID-2AD6B830-7815-4554-9076-C05709CC8D42">ADD_COLUMN Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="ADD_DML_ROW-Procedure.html#GUID-774A49F8-C0AD-4917-A2A8-6E7A5B0F56B1">ADD_DML_ROW Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="ADD_FILTER-Procedure.html#GUID-995DF2C9-4448-4613-A7C1-FA5F7F45B25F">ADD_FILTER Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="ADD_ORDERBY-Procedure.html#GUID-3AA67C0E-3049-4846-B277-C6B123CE515A">ADD_ORDER_BY Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="ADD_ORDER_BY-Procedure.html#GUID-F58D89B4-8AA0-4F77-B31A-C7BDF7055AD9">ADD_PARAMETER Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CLEAR_DML_ROWS-Procedure.html#GUID-36EEB170-F52C-4647-8BC7-29F3831E5DA5">CLEAR_DML_ROWS Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CLOSE-Procedure.html#GUID-0CC0037C-443B-4669-9282-D08DB7103281">CLOSE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="COPY_DATA-Procedure.html#GUID-BEEFB3C1-00CD-4C0F-84FC-E4F7F62F3462">COPY_DATA Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="EXECUTE_DML-Procedure.html#GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313">EXECUTE_DML Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="EXECUTE_PLSQL-Procedure.html#GUID-53BF190A-464A-4BFD-B2A8-A8936E8EAC06">EXECUTE_PLSQL Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="EXECUTE_REMOTE_PLSQL-Procedure.html#GUID-EE9E3F1F-F40D-4CCD-84CF-C1CF6DC2B45B">EXECUTE_REMOTE_PLSQL Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="EXECUTE_WEB_SOURCE-Procedure.html#GUID-30272C98-EA7B-4220-A26B-63DFF9DFCD1F">EXECUTE_WEB_SOURCE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="GET-Functions-1.html#GUID-7B51CA5F-753E-4437-880C-43BC5C6073BB">GET Functions</a><br></li>
+                  <li class="ulchildlink"><a href="GET_COLUMN-FUNCTION.html#GUID-45137DEB-F9F2-4F9F-BD3A-98FA5677096A">GET_COLUMN Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_COLUMN_COUNT-FUNCTION.html#GUID-6B4EB17B-E6BA-4359-AA65-7627C71B38A1">GET_COLUMN_COUNT Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_COLUMN_POSITION-FUNCTION.html#GUID-972DC4E1-A732-45C3-A322-3CAC65306ED9">GET_COLUMN_POSITION Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DATA_TYPE-Function.html#GUID-D380E6A6-759D-4A68-8BF5-26A4B3AF7EB9">GET_DATA_TYPE Functions</a><br></li>
+                  <li class="ulchildlink"><a href="GET-Functions.html#GUID-D59C7753-A9CF-41BC-AAB9-06DB32CA3361">GET Functions</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DML_STATUS_CODE-Function.html#GUID-7FA74357-5178-4192-A74B-EF10F615D62C">GET_DML_STATUS_CODE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DML_STATUS_MESSAGE-Function.html#GUID-C7B59752-4E8B-44D6-8EAB-1C4A55C65C07">GET_DML_STATUS_MESSAGE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_PARAMETERS-Function.html#GUID-15420F6D-CECA-4BAB-86A5-AFDC032E4833">GET_PARAMETER Functions</a><br></li>
+                  <li class="ulchildlink"><a href="GET_ROW_VERSION_CHECKSUM-Function.html#GUID-982B244F-C322-4421-AEB2-153B8410EB6D">GET_ROW_VERSION_CHECKSUM Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_TOTAL_ROW_COUNT-FUNCTION.html#GUID-A7DD0D6B-0842-4CA7-8F7F-FA1E01A9A949">GET_TOTAL_ROW_COUNT Function</a><br></li>
+                  <li class="ulchildlink"><a href="HAS_ERROR-Function.html#GUID-BF3BC9CB-87FF-4379-8219-927834E7DAA2">HAS_ERROR Function</a><br></li>
+                  <li class="ulchildlink"><a href="IS_REMOTE_SQL_AUTH_VALID-Function.html#GUID-F72C8319-BB56-4175-B9DC-F9C740566C75">IS_REMOTE_SQL_AUTH_VALID Function</a><br></li>
+                  <li class="ulchildlink"><a href="NEXT_ROW-Function.html#GUID-A2FDA960-4826-4FCD-B39A-5C491651BD3D">NEXT_ROW Function</a><br></li>
+                  <li class="ulchildlink"><a href="OPEN_LOCAL_DML_CONTEXT-Function.html#GUID-D3CAB370-8CA4-4371-A5EE-72FDA4AFE30C">OPEN_LOCAL_DML_CONTEXT Function</a><br></li>
+                  <li class="ulchildlink"><a href="OPEN_REMOTE_DML_CONTEXT-Function.html#GUID-1D856CD4-906A-404A-A541-66534CF3E0A9">OPEN_REMOTE_DML_CONTEXT Function</a><br></li>
+                  <li class="ulchildlink"><a href="OPEN_REMOTE_SQL_QUERY-Function.html#GUID-75BF9671-7289-40A9-9896-394DCD3FB482">OPEN_REMOTE_SQL_QUERY Function</a><br></li>
+                  <li class="ulchildlink"><a href="OPEN_QUERY_CONTEXT-Procedure.html#GUID-0EFB6FF7-15B1-4E25-A78E-9F482408F638">OPEN_QUERY_CONTEXT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_EXEC-OPEN_QUERY_CONTEXT-Function.html#GUID-9C0BF735-0749-44F6-B7E2-731070D0E9DE">OPEN_QUERY_CONTEXT Function</a><br></li>
+                  <li class="ulchildlink"><a href="OPEN_WEB_SOURCE_DML_CONTEXT-Function.html#GUID-A805DA13-F33D-4927-8D51-EB49F79A4A34">OPEN_WEB__SOURCE_DML_CONTEXT Function</a><br></li>
+                  <li class="ulchildlink"><a href="OPEN_WEB_SOURCE_QUERY-Function.html#GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6">OPEN_WEB_SOURCE_QUERY Function</a><br></li>
+                  <li class="ulchildlink"><a href="PURGE_WEB_SOURCE_CACHE-Procedure.html#GUID-A2D048D6-68D7-4FA6-AB2C-78ECD796D377">PURGE_WEB_SOURCE_CACHE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_NULL-Procedure.html#GUID-659FE8D4-B561-4DBA-9BA6-8F0BAC820593">SET_NULL Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_VALUE1-Procedure.html#GUID-377EA347-647F-479B-B407-53B9C397EC20">SET_VALUE Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_VALUES-Procedure.html#GUID-E5152786-4376-4DFB-9856-A77562AF2C09">SET_VALUES Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="SET_ROW_VERSION_CHECKSUM-Procedure.html#GUID-DE0D6BB4-1D37-4026-9A27-49EB072523E4">SET_ROW_VERSION_CHECKSUM Procedure</a><br></li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

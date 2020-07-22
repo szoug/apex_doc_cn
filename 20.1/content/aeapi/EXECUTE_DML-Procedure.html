@@ -1,0 +1,164 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="EXECUTE_DML Procedure">
+      <meta name="DC.subject" content="APEX_EXEC, EXCECUTE_DML Procedure">
+      <meta name="keywords" content="APEX_EXEC, EXCECUTE_DML Procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>EXECUTE_DML Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="COPY_DATA-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="EXECUTE_PLSQL-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="COPY_DATA-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="EXECUTE_PLSQL-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_EXEC.html" property="item" typeof="WebPage"><span property="name"> APEX_EXEC</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">EXECUTE_DML Procedure </li>
+            </ol>
+            <a id="GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313" name="GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313"></a>
+            
+            <h2 id="AEAPI-GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313" class="sect2"><span class="enumeration_section">16.11 </span>EXECUTE_DML Procedure 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <div class="p">This procedure executes the DML context . This procedure is called after:
+                     <ul style="list-style-type: disc;" id="GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313__UL_U4D_W1T_NGB">
+                        <li>After the context has been opened (<code class="codeph">open_dml_context</code>) .
+                        </li>
+                        <li>One or many DML rows have been added with <code class="codeph">add_dml_row</code>.
+                        </li>
+                        <li>Column values have been set with <code class="codeph">set_values</code>, <code class="codeph">set_null</code> or <code class="codeph">set_value</code>.
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313__TITLE-1321-F94BDADF">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>PROCEDURE EXECUTE_DML(
+    p_context               IN t_context,
+    p_continue_on_error     IN BOOLEAN DEFAULT FALSE );</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313__TITLE-1341-F94C107A">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313__WRITEPROCEDUREPARAMETERS-F94C1E2F">
+                  <p class="titleintable">Table 16-9 EXECUTE_DML Procedure Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="EXECUTE_DML Procedure Parameters" summary="Parameter descriptions for the EXECUTE_DML Procedure procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="34%" id="d62721e90">Parameter</th>
+                           <th align="left" valign="bottom" width="66%" id="d62721e93">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d62721e98" headers="d62721e90 ">
+                              <p><code class="codeph">p_context</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d62721e98 d62721e93 ">
+                              <p>Context object obtained with one of the OPEN_ functions.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d62721e106" headers="d62721e90 ">
+                              <p><code class="codeph">p_continue_on_error</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d62721e106 d62721e93 ">
+                              <p>Whether to continue executing DML for the remaining rows after an error occurred (defaults to false).</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-6445280E-BFD2-49B4-A114-AE1DFB88E313__TITLE-1361-F94C98D8">Example</p>
+                  <p> See <span class="q">"<a href="SET_ROW_VERSION_CHECKSUM-Procedure.html#GUID-DE0D6BB4-1D37-4026-9A27-49EB072523E4">SET_ROW_VERSION_CHECKSUM Procedure</a>"</span>, <span class="q">"<a href="OPEN_WEB_SOURCE_DML_CONTEXT-Function.html#GUID-A805DA13-F33D-4927-8D51-EB49F79A4A34">OPEN_WEB__SOURCE_DML_CONTEXT Function</a>"</span>,<span class="q">"<a href="OPEN_LOCAL_DML_CONTEXT-Function.html#GUID-D3CAB370-8CA4-4371-A5EE-72FDA4AFE30C">OPEN_LOCAL_DML_CONTEXT Function</a>"</span>, and <span class="q">"<a href="OPEN_REMOTE_DML_CONTEXT-Function.html#GUID-1D856CD4-906A-404A-A541-66534CF3E0A9">OPEN_REMOTE_DML_CONTEXT Function</a>"</span></p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">APEX_EXEC</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

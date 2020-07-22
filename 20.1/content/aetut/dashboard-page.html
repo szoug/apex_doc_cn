@@ -1,0 +1,379 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Developing the Dashboard Page">
+      <meta name="abstract" content="Update and add new regions to the Dashboard page with Page Designer.">
+      <meta name="description" content="Update and add new regions to the Dashboard page with Page Designer.">
+      <meta name="DC.subject" content=", Quick Edit, Live Template Options, App Gallery, Classic Report">
+      <meta name="keywords" content=", Quick Edit, Live Template Options, App Gallery, Classic Report">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Shakeeb Rahman">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-C86AF412-3434-4E82-B94C-F890A1042F84">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Update and add new regions to the Dashboard page with Page Designer.">
+      <meta name="description" content="Update and add new regions to the Dashboard page with Page Designer.">
+      <title>Developing the Dashboard Page</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Tutorial: Building an Application">
+      <meta property="og:description" content="Update and add new regions to the Dashboard page with Page Designer.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Tutorial: Building an Application">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-tutorial-building-application.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-08T10:54:58-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24727-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="tasks-page.html" title="Previous" type="text/html">
+      <link rel="next" href="task-overview-page.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Tutorial: Building an Application">
+    <meta name="dcterms.isVersionOf" content="AETUT">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="tasks-page.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="task-overview-page.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Tutorial: Building an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Developing the Dashboard Page</li>
+            </ol>
+            <a id="GUID-C86AF412-3434-4E82-B94C-F890A1042F84" name="GUID-C86AF412-3434-4E82-B94C-F890A1042F84"></a>
+            
+            <h2 id="AETUT-GUID-C86AF412-3434-4E82-B94C-F890A1042F84" class="sect2"><span class="enumeration_chapter">8 </span>Developing the Dashboard Page
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Update and add new regions to the Dashboard page with Page Designer.</p>
+               <div class="section">
+                  <p class="subhead1" id="GUID-C86AF412-3434-4E82-B94C-F890A1042F84__GUID-3F370CF9-6907-4F97-8DC5-190858723043">About This Lesson</p>
+                  <p>In this lesson, you modify the regions of an existing page without the aid of a wizard.</p>
+                  <p>You develop the Dashboard page generated by the Create App Wizard by deleting all but one of the existing chart regions. You update the <strong class="term">series</strong>, <strong class="term">attributes</strong>, and <strong class="term">Template Options</strong> of the remaining chart region to improve usability and appearance.
+                  </p>
+                  <p>You add a new report region from scratch using the <strong class="term">Gallery</strong> instead of a wizard. Reconfigure the report's SQL query and Template Options.
+                  </p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6" name="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6"></a><h3 id="AETUT-GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6" class="sect3"><span class="enumeration_section">8.1 </span>Deleting Regions in Page Designer
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You created multiple charts for the Dashboard in the Create App Wizard. Review the output in the runtime.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To view the runtime:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>On the Application home page, click <span class="uicontrol bold">2 - Dashboard</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span></li>
+                  </ol>
+                  <p>
+                     </p><p>Note the four charts on the page. You decide that the bar chart is the best way to present Costs info rather than a line or pie chart (Chart 3 and Chart 4). You also decide to replace one chart (Project Status) with a report later.</p><span class="figure" id="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6__FIG_DZZ_243_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6__IMAGE_EZZ_243_K3B" height="765" width="811" src="img/runtime_dashboard_charts.png" alt="Description of runtime_dashboard_charts.png follows" title="Description of runtime_dashboard_charts.png follows" longdesc="img_text/runtime_dashboard_charts.html"><br><a href="img_text/runtime_dashboard_charts.html">Description of the illustration runtime_dashboard_charts.png</a></div><br></span>
+                     <!-- class="figure" --><p>Start by deleting the charts you no longer want, then update the remaining chart with another series to display more budget information.</p>
+                     <p>To delete multiple regions in Page Designer:</p>
+                  <p></p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Edit Page 2</span> on the Runtime Developer toolbar.</span></li>
+                     <li class="stepexpand"><span>In Page Designer, hold Ctrl and click the three following items to select them:</span><div>
+                           <ul style="list-style-type: disc;" id="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6__UL_XWJ_CGY_23B">
+                              <li>
+                                 <p><span class="uicontrol bold">Project Status</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Chart 3</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="uicontrol bold">Chart 4</span></p>
+                              </li>
+                           </ul>
+                           <div class="figure" id="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6__FIG_JM1_443_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6__IMAGE_KM1_443_K3B" height="452" width="979" src="img/page_designer_dashboard_charts_selected.png" alt="Description of page_designer_dashboard_charts_selected.png follows" title="Description of page_designer_dashboard_charts_selected.png follows" longdesc="img_text/page_designer_dashboard_charts_selected.html"><br><a href="img_text/page_designer_dashboard_charts_selected.html">Description of the illustration page_designer_dashboard_charts_selected.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>With the three chart regions selected, do one of the following: </span><ul id="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6__CHOICES_D2B_KGY_23B">
+                           <li>
+                              <p>Press <span class="uicontrol bold">Delete</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Right-click one of the selected chart regions and select <span class="uicontrol bold">Delete</span>.
+                              </p>
+                           </li>
+                        </ul>
+                        <div>
+                           <p>Only Project Costs remains in Content Body.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-DB280803-6A92-4071-9C47-E23BDE78FAB6__IMAGE_FC5_WXB_NJB" height="529" width="930" src="img/runtime_dashboard_charts_deleted.png" alt="Description of runtime_dashboard_charts_deleted.png follows" title="Description of runtime_dashboard_charts_deleted.png follows" longdesc="img_text/runtime_dashboard_charts_deleted.html"><br><a href="img_text/runtime_dashboard_charts_deleted.html">Description of the illustration runtime_dashboard_charts_deleted.png</a></div><br></div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1" name="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1"></a><h3 id="AETUT-GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1" class="sect3"><span class="enumeration_section">8.2 </span>Updating the Series in the Project Costs Chart
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The Project Costs chart only displays costs. This chart would be more meaningful if it also displayed project budgets for comparison.</p>
+                     <p>First, update the SQL for the existing series in the chart to change the display order of the columns (among other updates), then create a new series in the chart to display project budgets.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To update the first series:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Edit Page 2</span> on the Runtime Developer toolbar.</span></li>
+                     <li class="stepexpand"><span>In the Layout or Rendering tab, click <span class="uicontrol bold">Project Costs</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" class="single-step" id="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1__SUBSTEPS_KXH_KKY_23B">
+                           <li><span>Identification: Title - enter <kbd class="userinput">Project Budgets and Costs</kbd></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In the Rendering tab, under Series, click <span class="uicontrol bold">Series 1</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1__SUBSTEPS_SS3_MQY_23B">
+                           <li class="substepexpand"><span>Identification: Name - enter <kbd class="userinput">Costs</kbd></span></li>
+                           <li class="substepexpand"><span>Source: SQL Query - click the <span class="uicontrol bold">Code Editor</span> icon (<img id="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1__IMAGE_WFB_WNM_FHB" height="19" width="20" src="img/sql_query_icon.png" alt="SQL Query" title="SQL Query">).</span></li>
+                           <li class="substepexpand"><span>Copy and paste the following code:</span><div><pre class="pre codeblock"><code>select p.name, sum(cost) value
+from eba_project_tasks t
+, eba_projects p
+where p.id = t.project_id
+group by p.name
+order by 1</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">OK</span>.</span><div>
+                                 <p>An error message displays under Column Mapping: Value.</p>
+                                 <div class="infoboxnote" id="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1__GUID-C9F089CD-A214-48A2-B12F-97A40FD7BBC4">
+                                    <p class="notep1">Note:</p>The above SQL is a significant update to the old code. This revised SQL joins the <code class="codeph">EBA_PROJECT_TASKS</code> and <code class="codeph">EBA_PROJECTS</code> tables so the chart displays the project name instead of the project ID. This requires including the <code class="codeph">where</code> condition to link the primary key column from Projects <code class="codeph">(p.id)</code> with the foreign key column from Tasks <code class="codeph">(t.project_id)</code>. Finally, the <code class="codeph">group by</code> clause was updated because the specified column (<code class="codeph">PROJECT_ID</code>) no longer displays (changed to <code class="codeph">p.name</code>).
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Column Mapping: Value - select <span class="uicontrol bold">VALUE</span></span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To add a series to a chart:</p>
+                  <p></p>
+                  <ol start="6">
+                     <li class="stepexpand"><span>In the Rendering tab, right-click <span class="uicontrol bold">Series</span> and select <span class="uicontrol bold">Create Series</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1__SUBSTEPS_FZK_J5Y_23B">
+                           <li><span>Identification: Name - enter <kbd class="userinput">Budgets</kbd></span></li>
+                           <li><span>Source: Table Name - click the <span class="uicontrol bold">LOV</span> icon.</span></li>
+                           <li><span>Select <span class="uicontrol bold">EBA_PROJECTS</span>.</span></li>
+                           <li><span>Column Mapping: Label - select <span class="uicontrol bold">NAME</span></span></li>
+                           <li><span>Column Mapping: Value - select <span class="uicontrol bold">BUDGET</span></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>. Review the changes to the labels along the X-axis and the new columns for each project. You can also mouse over each column for more details.</span><div>
+                           <div class="figure" id="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1__FIG_GWB_CP3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-535471B5-3EA0-440E-8FE1-ABCE84903EE1__IMAGE_HWB_CP3_K3B" height="367" width="898" src="img/runtime_dashboard_chart_budget_series.png" alt="Description of runtime_dashboard_chart_budget_series.png follows" title="Description of runtime_dashboard_chart_budget_series.png follows" longdesc="img_text/runtime_dashboard_chart_budget_series.html"><br><a href="img_text/runtime_dashboard_chart_budget_series.html">Description of the illustration runtime_dashboard_chart_budget_series.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-E72F4726-2C75-48B8-82E2-012ADD6A23D5" name="GUID-E72F4726-2C75-48B8-82E2-012ADD6A23D5"></a><h3 id="AETUT-GUID-E72F4726-2C75-48B8-82E2-012ADD6A23D5" class="sect3"><span class="enumeration_section">8.3 </span>Updating the Appearance of the Dashboard Chart
+               </h3>
+               <div>
+                  <div class="section">
+                     <div class="p">While the chart is more usable now, it still needs some aesthetic improvements:
+                        <ul style="list-style-type: disc;" id="GUID-E72F4726-2C75-48B8-82E2-012ADD6A23D5__UL_JHF_CWF_F3B">
+                           <li>
+                              <p>The labels are too constrained by the space.</p>
+                           </li>
+                           <li>
+                              <p>The chart lacks a legend to indicate which column represents which value (cost or budget).</p>
+                           </li>
+                           <li>
+                              <p>The chart does not fit vertically in the region (note the scroll bar).</p>
+                           </li>
+                           <li>
+                              <p>The cost and budget values lack a dollar sign.</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <p>These changes are in the region attributes and axis properties for the chart.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To change the attributes of a region:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Edit Page 2</span> on the Runtime Developer toolbar.</span></li>
+                     <li class="stepexpand"><span>In the Rendering tab, under Project Budgets and Costs, click <span class="uicontrol bold">Attributes</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-E72F4726-2C75-48B8-82E2-012ADD6A23D5__SUBSTEPS_ZHP_JYF_F3B">
+                           <li><span>Layout: Height - enter <kbd class="userinput">600</kbd></span></li>
+                           <li><span>Legend: Show - click to <span class="uicontrol bold">enable</span></span></li>
+                           <li><span>Legend: Position - select <span class="uicontrol bold">Top</span></span></li>
+                           <li><span>Legend: Hide and Show Behavior - select <span class="uicontrol bold">No Rescaling</span></span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>To change the properties of an axis:</p>
+                  <p></p>
+                  <ol start="4">
+                     <li class="stepexpand"><span>In the Rendering tab, under Axes, click <span class="uicontrol bold">y</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-E72F4726-2C75-48B8-82E2-012ADD6A23D5__SUBSTEPS_WZC_4ZF_F3B">
+                           <li><span>Value: Format - select <span class="uicontrol bold">Currency</span></span></li>
+                           <li><span>Value: Currency - enter <kbd class="userinput">$</kbd></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span><div>The runtime reloads, but you must scroll down within the region to see your changes to the chart.</div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-D9A0B6CA-CF94-4464-B249-BAD6D71CCABA" name="GUID-D9A0B6CA-CF94-4464-B249-BAD6D71CCABA"></a><h3 id="AETUT-GUID-D9A0B6CA-CF94-4464-B249-BAD6D71CCABA" class="sect3"><span class="enumeration_section">8.4 </span>Updating the Live Template Options for the Dashboard Chart
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>If you scroll down the chart region in the runtime, you can see your changes. (You may need to maximize your window to view all the labels properly.) The individual elements look good, but obviously you must alter the way the region displays on the page.</p>
+                     <p>The final changes you need to make are in the <strong class="term">Live Template Options</strong>, which you access using Quick Edit on the Runtime Developer toolbar.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To open Live Template Options:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Quick Edit</span> on the Runtime Developer toolbar.</span><div>
+                           <p>You enter Quick Edit mode (screen darkens, mouse cursor becomes a crosshair).</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Mouse over the Project Budgets and Costs chart region and click the <span class="uicontrol bold">wrench icon</span> (top-right).</span><div>
+                           <div class="figure" id="GUID-D9A0B6CA-CF94-4464-B249-BAD6D71CCABA__FIG_OYX_VP3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-D9A0B6CA-CF94-4464-B249-BAD6D71CCABA__IMAGE_PYX_VP3_K3B" height="388" width="843" src="img/runtime_dashboard_quick_edit.png" alt="Description of runtime_dashboard_quick_edit.png follows" title="Description of runtime_dashboard_quick_edit.png follows" longdesc="img_text/runtime_dashboard_quick_edit.html"><br><a href="img_text/runtime_dashboard_quick_edit.html">Description of the illustration runtime_dashboard_quick_edit.png</a></div><br></div>
+                           <!-- class="figure" -->
+                           <p>The Live Template Options dialog displays.</p>
+                           <div class="figure" id="GUID-D9A0B6CA-CF94-4464-B249-BAD6D71CCABA__FIG_LWV_JQ3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-D9A0B6CA-CF94-4464-B249-BAD6D71CCABA__IMAGE_MWV_JQ3_K3B" height="622" width="402" src="img/runtime_dashboard_live_template_options.png" alt="Description of runtime_dashboard_live_template_options.png follows" title="Description of runtime_dashboard_live_template_options.png follows" longdesc="img_text/runtime_dashboard_live_template_options.html"><br><a href="img_text/runtime_dashboard_live_template_options.html">Description of the illustration runtime_dashboard_live_template_options.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In Live Template Options:</span><ol type="a" id="GUID-D9A0B6CA-CF94-4464-B249-BAD6D71CCABA__SUBSTEPS_JD5_5CG_F3B">
+                           <li><span>Body Height - select <span class="uicontrol bold">Auto - Default</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <p>The dashboard chart is complete.</p>
+                     <p>Next, add a report region to replace the Project Status chart you deleted.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D" name="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D"></a><h3 id="AETUT-GUID-58F2E346-80B0-441A-82D4-5EA829AF893D" class="sect3"><span class="enumeration_section">8.5 </span>Adding a Classic Report Region from Gallery
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Add a report to the page to display incomplete tasks.</p>
+                     <p>Located beneath the central Layout tab, the <strong class="term">Gallery</strong> is a quick way to peruse your options for a variety of elements.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To add a classic report region from the Gallery:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Edit Page 2</span> on the Runtime Developer toolbar to return to Page Designer.</span></li>
+                     <li class="stepexpand"><span>In the Gallery, click <span class="uicontrol bold">Regions</span>.</span></li>
+                     <li class="stepexpand"><span>Right-click <span class="uicontrol bold">Classic Report</span>, select <span class="uicontrol bold">Add To</span>, select <span class="uicontrol bold">Content Body</span>, select <span class="uicontrol bold">Project Budgets and Costs</span>, and select <span class="uicontrol bold">After</span>.</span><div>
+                           <div class="infobox-tip" id="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D__GUID-D533D0CF-4760-48BB-A641-5A1F79CEBCD2">
+                              <p class="notep1">Tip:</p>You can also add elements from the Gallery with the mouse using drag and drop.
+                           </div>
+                        </div>
+                        <div>
+                           <div class="figure" id="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D__FIG_G1W_HR3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D__IMAGE_H1W_HR3_K3B" height="586" width="875" src="img/page_designer_dashboard_new_report.png" alt="Description of page_designer_dashboard_new_report.png follows" title="Description of page_designer_dashboard_new_report.png follows" longdesc="img_text/page_designer_dashboard_new_report.html"><br><a href="img_text/page_designer_dashboard_new_report.html">Description of the illustration page_designer_dashboard_new_report.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D__SUBSTEPS_S5T_QFG_F3B">
+                           <li class="substepexpand"><span>Identification: Title - enter <kbd class="userinput">Incomplete Tasks</kbd></span></li>
+                           <li class="substepexpand"><span>Source: Type - select <span class="uicontrol bold">SQL Query</span></span></li>
+                           <li class="substepexpand"><span>Source: SQL Query - copy and paste the following code:</span><div><pre class="pre codeblock"><code>select p.name project
+, m.name milestone
+, m.due_date
+, t.name task
+, t.start_date
+, t.end_date
+from eba_projects p
+, eba_project_milestones m
+, eba_project_tasks t
+where p.id = m.project_id
+and p.id = t.project_id
+and t.milestone_id = m.id (+)
+and nvl(t.is_complete_yn, 'N') = 'N'</code></pre></div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>. Scroll down to view the report in the runtime.</span><div>
+                           <div class="figure" id="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D__FIG_W5Y_RR3_K3B"><br><div class="imageleft"><img class="imageleft" id="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D__IMAGE_X5Y_RR3_K3B" height="692" width="1107" src="img/runtime_dashboard_report_initial.png" alt="Description of runtime_dashboard_report_initial.png follows" title="Description of runtime_dashboard_report_initial.png follows" longdesc="img_text/runtime_dashboard_report_initial.html"><br><a href="img_text/runtime_dashboard_report_initial.html">Description of the illustration runtime_dashboard_report_initial.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                  </ol>
+                  <p>
+                     </p><p>The report displays an appropriate amount of information and columns, but it has some residual layout problems. You can change this value in Live Template Options.</p>
+                     <p>To open Live Template Options in the runtime:</p>
+                  <p></p>
+                  <ol start="6">
+                     <li class="stepexpand"><span>On the Runtime Developer toolbar, click <span class="uicontrol bold">Quick Edit</span>.</span></li>
+                     <li class="stepexpand"><span>Mouse over the Incomplete Tasks region and click the <span class="uicontrol bold">wrench icon</span> (top-right).</span></li>
+                     <li class="stepexpand"><span>In Live Template Options:</span><ol type="a" id="GUID-58F2E346-80B0-441A-82D4-5EA829AF893D__SUBSTEPS_ZBQ_VGG_F3B">
+                           <li><span>General - check <span class="uicontrol bold">Remove Body Padding</span></span></li>
+                           <li><span>Click the <span class="uicontrol bold">Attributes</span> tab (top).</span></li>
+                           <li><span>General - check <span class="uicontrol bold">Stretch Report</span></span></li>
+                           <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Application #####</span> on the Runtime Developer toolbar to return to the Application home page.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>The report is finished and the Dashboard is complete.</p>
+                     <p>Proceed to the next lesson.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

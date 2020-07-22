@@ -1,0 +1,305 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Filtering an Interactive Grid">
+      <meta name="abstract" content="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">
+      <meta name="description" content="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">
+      <meta name="DC.subject" content="interactive grid filters, interactive grids, filters, disabling">
+      <meta name="keywords" content="interactive grid filters, interactive grids, filters, disabling">
+      <meta name="DC.Relation" scheme="URI" content="customizing-interactive-grid.html#GUID-2B41DC68-31FD-4191-B1DE-82BA05277013">
+      <meta name="DC.Relation" scheme="URI" content="filtering-interactive-grid.html#GUID-83914BDA-7E5C-4A13-8DD2-F4BDF0A2D5DF">
+      <meta name="DC.Relation" scheme="URI" content="filtering-interactive-grid.html#GUID-705E1B46-3251-498F-9300-FCE38EEA5F3E">
+      <meta name="DC.Relation" scheme="URI" content="filtering-interactive-grid.html#GUID-966FBB18-1B7E-4B28-8B98-67C5A1138DB1">
+      <meta name="DC.Relation" scheme="URI" content="filtering-interactive-grid.html#GUID-4D0F8E07-5A30-4EC6-88AC-A6523676CC07">
+      <meta name="DC.Relation" scheme="URI" content="filtering-interactive-grid.html#GUID-81CEC4D4-E73C-4442-BE1B-7A52A285421A">
+      <meta name="DC.Relation" scheme="URI" content="filtering-interactive-grid.html#GUID-6C65EE21-E34F-4F69-BB41-61190C3E6D08">
+      <meta name="DC.Contributor" content="Terri Jennings">
+      <meta name="DC.Contributor" content="Christina Cho">
+      <meta name="DC.Contributor" content="Hilary Farrell">
+      <meta name="DC.Contributor" content="David Peake">
+      <meta name="DC.Contributor" content="Patrick Maniraho">
+      <meta name="DC.Contributor" content="Carsten Czarski">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">
+      <meta name="description" content="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">
+      <title>Filtering an Interactive Grid</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="End User's Guide ">
+      <meta property="og:description" content="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="End User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-end-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:25-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2012, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24720-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="selecting-columns-display-interactive-grid.html" title="Previous" type="text/html">
+      <link rel="next" href="select-column-sort-order-interactive-grid.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express End User's Guide">
+    <meta name="dcterms.isVersionOf" content="AEEUG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="selecting-columns-display-interactive-grid.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="select-column-sort-order-interactive-grid.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">End User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-interactive-grids-ch.html" property="item" typeof="WebPage"><span property="name">Using Interactive Grids</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="customizing-interactive-grid.html" property="item" typeof="WebPage"><span property="name">Customizing an Interactive Grid with the Actions Menu</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Filtering an Interactive Grid</li>
+            </ol>
+            <a id="GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA" name="GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA"></a>
+            
+            <h2 id="AEEUG-GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA" class="sect2"><span class="enumeration_section">3.4.2 </span>Filtering an Interactive Grid
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Filter an interactive grid by column, row, or both, with text strings and using operators such as <span class="italic">contains</span> and <span class="italic">equals</span>.
+            </p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="filtering-interactive-grid.html#GUID-83914BDA-7E5C-4A13-8DD2-F4BDF0A2D5DF">About Filters in Interactive Grids</a><br>You can narrow the contents of an interactive grid by applying a filter to it. Once applied, filters can be temporarily enabled or disabled or removed permanently directly in the interactive grid. You can also click the filter name for quick reconfiguration.
+                  </li>
+                  <li class="ulchildlink"><a href="filtering-interactive-grid.html#GUID-705E1B46-3251-498F-9300-FCE38EEA5F3E">Creating a Row Filter in an Interactive Grid</a><br>Create a row filter to limit the number of rows returned in an interactive grid. Filtering by row filters for a term in any filterable column.
+                  </li>
+                  <li class="ulchildlink"><a href="filtering-interactive-grid.html#GUID-966FBB18-1B7E-4B28-8B98-67C5A1138DB1">Creating a Column Filter in an Interactive Grid</a><br>Filter a column in an interactive grid with a specified operator and value.
+                  </li>
+                  <li class="ulchildlink"><a href="filtering-interactive-grid.html#GUID-4D0F8E07-5A30-4EC6-88AC-A6523676CC07">Editing a Filter in an Interactive Grid</a><br>Edit a filter by clicking the name of a filter to open the Filters dialog. The Filters dialog enables you to edit properties of any filter.
+                  </li>
+                  <li class="ulchildlink"><a href="filtering-interactive-grid.html#GUID-81CEC4D4-E73C-4442-BE1B-7A52A285421A">Disabling a Filter in an Interactive Grid</a><br>Disable a filter by clicking the check box adjacent to the name of the filter.
+                  </li>
+                  <li class="ulchildlink"><a href="filtering-interactive-grid.html#GUID-6C65EE21-E34F-4F69-BB41-61190C3E6D08">Removing a Filter from an Interactive Grid</a><br>Remove a filter by deleting it in the Filters dialog or by clicking the adjacent Remove Filter icon (X).
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="customizing-interactive-grid.html#GUID-2B41DC68-31FD-4191-B1DE-82BA05277013" title="Reconfigure and augment how an interactive grid displays data by using the Actions menu.">Customizing an Interactive Grid with the Actions Menu</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-83914BDA-7E5C-4A13-8DD2-F4BDF0A2D5DF" name="GUID-83914BDA-7E5C-4A13-8DD2-F4BDF0A2D5DF"></a><h3 id="AEEUG-GUID-83914BDA-7E5C-4A13-8DD2-F4BDF0A2D5DF" class="sect3"><span class="enumeration_section">3.4.2.1 </span>About Filters in Interactive Grids
+               </h3>
+               <div>
+                  <p>You can narrow the contents of an interactive grid by applying a filter to it. Once applied, filters can be temporarily enabled or disabled or removed permanently directly in the interactive grid. You can also click the filter name for quick reconfiguration.</p>
+                  <div class="figure" id="GUID-83914BDA-7E5C-4A13-8DD2-F4BDF0A2D5DF__GUID-CD45C6AB-528B-4B41-89B7-BAF9C546259C"><img height="307" width="509" src="img/ig_filters.png" alt="Description of ig_filters.png follows" title="Description of ig_filters.png follows" longdesc="img_text/ig_filters.html"><br><a href="img_text/ig_filters.html">Description of the illustration ig_filters.png</a></div>
+                  <!-- class="figure" -->
+                  <p>Existing filters display between the search bar and the grid.</p>
+                  <p>Rather than deleting a filter, you can disable it by deselecting the adjacent checkbox. You can leave a filter disabled and save your report to preserve it for future usage.</p>
+                  <p>To edit a filter, you can click its name or open the Filters dialog and select it in the list.</p>
+                  <p>You can permanently remove a filter by clicking the adjacent <span class="uicontrol bold">Remove Filter</span> icon (X) or by removing it from the list in the Filters dialog.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="filtering-interactive-grid.html#GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA" title="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">Filtering an Interactive Grid</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-705E1B46-3251-498F-9300-FCE38EEA5F3E" name="GUID-705E1B46-3251-498F-9300-FCE38EEA5F3E"></a><h3 id="AEEUG-GUID-705E1B46-3251-498F-9300-FCE38EEA5F3E" class="sect3"><span class="enumeration_section">3.4.2.2 </span>Creating a Row Filter in an Interactive Grid
+               </h3>
+               <div>
+                  <p>Create a row filter to limit the number of rows returned in an interactive grid. Filtering by row filters for a term in any filterable column.</p>
+                  <p>To add a filter to the rows in an interactive grid:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Actions</span> menu.</span></li>
+                     <li class="stepexpand"><span>Select <span class="uicontrol bold">Filter</span>.</span><div>The Filters dialog displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>In the Filters dialog:</span><ol type="a">
+                           <li><span>Type - Select <span class="uicontrol bold">Row</span>.</span></li>
+                           <li><span>Search - Enter the text string to filter.</span></li>
+                           <li><span>Case Sensitive - Enable to make the filter case sensitive.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section">The interactive grid applies the filter.</div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="filtering-interactive-grid.html#GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA" title="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">Filtering an Interactive Grid</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-966FBB18-1B7E-4B28-8B98-67C5A1138DB1" name="GUID-966FBB18-1B7E-4B28-8B98-67C5A1138DB1"></a><h3 id="AEEUG-GUID-966FBB18-1B7E-4B28-8B98-67C5A1138DB1" class="sect3"><span class="enumeration_section">3.4.2.3 </span>Creating a Column Filter in an Interactive Grid
+               </h3>
+               <div>
+                  <p>Filter a column in an interactive grid with a specified operator and value.</p>
+                  <p>To add a filter to a column in an interactive grid:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Actions</span> menu.</span></li>
+                     <li class="stepexpand"><span>Select <span class="uicontrol bold">Filter</span>.</span><div>The Filters dialog displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>In the Filters dialog:</span><ol type="a">
+                           <li><span>Type - Select <span class="uicontrol bold">Column</span>.</span></li>
+                           <li><span>Column - Choose the column to filter.</span></li>
+                           <li><span>Operator - Choose the filter logic.</span></li>
+                           <li><span>Value - Enter the filter criterion.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section">The filter is added to the grid.</div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="filtering-interactive-grid.html#GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA" title="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">Filtering an Interactive Grid</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-4D0F8E07-5A30-4EC6-88AC-A6523676CC07" name="GUID-4D0F8E07-5A30-4EC6-88AC-A6523676CC07"></a><h3 id="AEEUG-GUID-4D0F8E07-5A30-4EC6-88AC-A6523676CC07" class="sect3"><span class="enumeration_section">3.4.2.4 </span>Editing a Filter in an Interactive Grid
+               </h3>
+               <div>
+                  <p>Edit a filter by clicking the name of a filter to open the Filters dialog. The Filters dialog enables you to edit properties of any filter.</p>
+                  <p>To edit an existing filter:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Click the name of a filter.</span><div>The Filters dialog displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>Edit the filter by selecting new values.</span><div>
+                           <p>Editable parameters include:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>the filter type (row, column)</p>
+                              </li>
+                              <li>
+                                 <p>the name of the row or column the filter applies to</p>
+                              </li>
+                              <li>
+                                 <p>the filter operator</p>
+                              </li>
+                              <li>
+                                 <p>the filtered value</p>
+                              </li>
+                           </ul>
+                           <p>Other filters can also be added, edited, enabled, and removed in this dialog.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To add a new filter:</span><ol type="a">
+                           <li class="substepexpand"><span>Click the <span class="uicontrol bold">Add</span> button (+) adjacent to the Filters list.</span><div><br><div class="imageleft"><img class="imageleft" id="GUID-4D0F8E07-5A30-4EC6-88AC-A6523676CC07__IMAGE_QPP_JSG_MJB" height="244" width="277" src="img/ig_add_filter.png" alt="Description of ig_add_filter.png follows" title="Description of ig_add_filter.png follows" longdesc="img_text/ig_add_filter.html"><br><a href="img_text/ig_add_filter.html">Description of the illustration ig_add_filter.png</a></div><br></div>
+                           </li>
+                           <li class="substepexpand"><span>Configure the appropriate fields.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span> to apply your changes.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="filtering-interactive-grid.html#GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA" title="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">Filtering an Interactive Grid</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-81CEC4D4-E73C-4442-BE1B-7A52A285421A" name="GUID-81CEC4D4-E73C-4442-BE1B-7A52A285421A"></a><h3 id="AEEUG-GUID-81CEC4D4-E73C-4442-BE1B-7A52A285421A" class="sect3"><span class="enumeration_section">3.4.2.5 </span>Disabling a Filter in an Interactive Grid
+               </h3>
+               <div>
+                  <p>Disable a filter by clicking the check box adjacent to the name of the filter.</p>
+                  <div class="section">Disabling a filter is often preferable to deleting it because disabling saves the time of recreating and reconfiguring the same filter.</div>
+                  <!-- class="section" -->
+                  <p>To disable a filter in an interactive grid:</p>
+                  <ul>
+                     <li><span>Click the check box adjacent to the name of the filter.</span></li>
+                  </ul>
+                  <div class="section">The interactive grid reloads and the check box unchecks.</div>
+                  <!-- class="section" -->
+                  <div class="section">To re-enable the filter, click the check box again.</div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="filtering-interactive-grid.html#GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA" title="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">Filtering an Interactive Grid</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-6C65EE21-E34F-4F69-BB41-61190C3E6D08" name="GUID-6C65EE21-E34F-4F69-BB41-61190C3E6D08"></a><h3 id="AEEUG-GUID-6C65EE21-E34F-4F69-BB41-61190C3E6D08" class="sect3"><span class="enumeration_section">3.4.2.6 </span>Removing a Filter from an Interactive Grid
+               </h3>
+               <div>
+                  <p>Remove a filter by deleting it in the Filters dialog or by clicking the adjacent Remove Filter icon (X).</p>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-6C65EE21-E34F-4F69-BB41-61190C3E6D08__GUID-94122032-F519-47DE-B6E7-C76EB66E28D7">
+                        <p class="notep1">Tip:</p>To temporarily disable a filter, deselect the adjacent check box either within the Filters dialog or above the interactive grid.
+                     </div>
+                     <p>To remove a filter, do one of the following:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ul>
+                     <li class="stepexpand"><span> Open the Filters dialog and delete it:</span><ol>
+                           <li class="substepexpand"><span>Click the <span class="uicontrol bold">Actions</span> menu and select <span class="uicontrol bold">Filter</span>.</span><div>The Filters dialog appears.</div>
+                           </li>
+                           <li class="substepexpand"><span>In the list of filters, select the filter to remove.</span></li>
+                           <li class="substepexpand"><span>Click the <span class="uicontrol bold">Delete</span> button (-).</span><div><br><img height="382" width="602" src="img/ig_filters_dialog_delete.png" alt="Delete filter from list" title="Delete filter from list"><br></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Above the interactive grid, click the <span class="uicontrol bold">Remove Filter </span> icon (X) adjacent to a filter.</span><div><br><img height="134" width="581" src="img/ig_filter_remove.png" alt="Remove Filter" title="Remove Filter"><br></div>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="filtering-interactive-grid.html#GUID-FEA7CDD7-063D-41BF-BFF1-2B6AA8D0D8AA" title="Filter an interactive grid by column, row, or both, with text strings and using operators such as contains and equals.">Filtering an Interactive Grid</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

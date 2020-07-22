@@ -1,0 +1,210 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating a SQL Script">
+      <meta name="abstract" content="Learn about different ways of creating a SQL script.">
+      <meta name="description" content="Learn about different ways of creating a SQL script.">
+      <meta name="DC.Relation" scheme="URI" content="using-SQL-scripts.html#GUID-7288B4B4-E00C-4DC4-89EA-5FA52623A1EF">
+      <meta name="DC.Relation" scheme="URI" content="creating-SQL-script.html#GUID-9C6F1E7D-6BB7-4285-AB15-62EFF24DF96E">
+      <meta name="DC.Relation" scheme="URI" content="creating-SQL-script.html#GUID-F1CA58DD-410F-403C-BF3C-FAF707DCB238">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-86439466-5EEF-4FF9-9AFE-B3D2683305C1">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about different ways of creating a SQL script.">
+      <meta name="description" content="Learn about different ways of creating a SQL script.">
+      <title>Creating a SQL Script</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Learn about different ways of creating a SQL script.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-tasks-list.html" title="Previous" type="text/html">
+      <link rel="next" href="using-script-editor.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-tasks-list.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-script-editor.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-SQL-scripts.html" property="item" typeof="WebPage"><span property="name"> Using SQL Scripts </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating a SQL Script</li>
+            </ol>
+            <a id="GUID-86439466-5EEF-4FF9-9AFE-B3D2683305C1" name="GUID-86439466-5EEF-4FF9-9AFE-B3D2683305C1"></a><a id="AEUTL194"></a>
+            
+            <h2 id="AEUTL-GUID-86439466-5EEF-4FF9-9AFE-B3D2683305C1" class="sect2"><span class="enumeration_section">6.5 </span>Creating a SQL Script
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn about different ways of creating a SQL script.</p>
+               <p>You can create a script in the Script Repository by:</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="creating-SQL-script.html#GUID-9C6F1E7D-6BB7-4285-AB15-62EFF24DF96E">Creating a SQL Script in the Script Editor</a><br>Learn how to create SQL script in the Script Editor.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-SQL-script.html#GUID-F1CA58DD-410F-403C-BF3C-FAF707DCB238">Uploading a SQL Script</a><br>Learn how to upload  a SQL script from your local file system.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-SQL-scripts.html#GUID-7288B4B4-E00C-4DC4-89EA-5FA52623A1EF" title="Use SQL scripts to create, edit, view, run, and delete script files.">Using SQL Scripts</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL195"></a><div class="props_rev_3"><a id="GUID-9C6F1E7D-6BB7-4285-AB15-62EFF24DF96E" name="GUID-9C6F1E7D-6BB7-4285-AB15-62EFF24DF96E"></a><h3 id="AEUTL-GUID-9C6F1E7D-6BB7-4285-AB15-62EFF24DF96E" class="sect3"><span class="enumeration_section">6.5.1 </span>Creating a SQL Script in the Script Editor
+               </h3>
+               <div>
+                  <p>Learn how to create SQL script in the Script Editor.</p>
+                  <div class="section">
+                     <p>To create<a id="d35299e121" class="indexterm-anchor"></a><a id="d35299e125" class="indexterm-anchor"></a> an SQL script in the Script Editor:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">SQL Scripts</span>.</span><div>
+                           <p>The SQL Scripts page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Create</span> button.</span><div>
+                           <p>The Script Editor appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In Script Name, enter a name for the script. Script name extensions are optional. </span></li>
+                     <li class="stepexpand"><span>Enter the SQL statements, PL/SQL blocks you want to include in your script. </span><div>
+                           <p>Remember that SQL*Plus commands are ignored at runtime. </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span><div>
+                           <p>The SQL Scripts page appears listing your newly saved script. </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-SQL-script.html#GUID-86439466-5EEF-4FF9-9AFE-B3D2683305C1" title="Learn about different ways of creating a SQL script.">Creating a SQL Script</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL196"></a><div class="props_rev_3"><a id="GUID-F1CA58DD-410F-403C-BF3C-FAF707DCB238" name="GUID-F1CA58DD-410F-403C-BF3C-FAF707DCB238"></a><h3 id="AEUTL-GUID-F1CA58DD-410F-403C-BF3C-FAF707DCB238" class="sect3"><span class="enumeration_section">6.5.2 </span>Uploading a SQL Script
+               </h3>
+               <div>
+                  <p>Learn how to upload  a SQL script from your local file system.</p>
+                  <div class="section">
+                     <p>To upload<a id="d35299e230" class="indexterm-anchor"></a><a id="d35299e234" class="indexterm-anchor"></a> a script from your local file system: 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">SQL Scripts</span>.</span><div>
+                           <p>The SQL Scripts page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Upload</span> button.</span><div>
+                           <p>The Upload Script dialog appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For Upload Script:</span><div>
+                           <ol type="a">
+                              <li>
+                                 <p>File - Browse to locate the script you want to upload.</p>
+                              </li>
+                              <li>
+                                 <p>Script Name - Optionally enter a new name in the Script Name field. This name displays in the Script Repository.</p>
+                              </li>
+                              <li>
+                                 <p>File Character Set - Select the character set in which the script is encoded.</p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="uicontrol bold">Upload</span>.
+                                 </p>
+                              </li>
+                           </ol>
+                           <p>The SQL Scripts page appears listing your newly uploaded script. </p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="infobox-tip" id="GUID-F1CA58DD-410F-403C-BF3C-FAF707DCB238__GUID-A127DB87-DC35-427A-8DD3-F104A9EBCE0D">
+                        <p class="notep1">Tip:</p>
+                        <p>The script is parsed during runtime. When parsed, ignored statements such as SQL*PLUS commands are listed. Any invalid SQL is identified only in results. If a script of the same name exists, you are prompted to rename it. </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F1CA58DD-410F-403C-BF3C-FAF707DCB238__GUID-F75482C0-A4E7-4EB1-9F0D-0F3DE823DB75">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="creating-SQL-script.html#GUID-9C6F1E7D-6BB7-4285-AB15-62EFF24DF96E" title="Learn how to create SQL script in the Script Editor.">Creating a SQL Script in the Script Editor</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-SQL-script.html#GUID-86439466-5EEF-4FF9-9AFE-B3D2683305C1" title="Learn about different ways of creating a SQL script.">Creating a SQL Script</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

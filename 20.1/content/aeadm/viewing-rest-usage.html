@@ -1,0 +1,349 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Using the REST Administration Interface to View Usage Statistics">
+      <meta name="abstract" content="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">
+      <meta name="description" content="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">
+      <meta name="DC.subject" content="REST Administration Interface, viewing usage statistics, enabling, registering REST clients applications, viewing REST clients details, removing REST clients details, disabling">
+      <meta name="keywords" content="REST Administration Interface, viewing usage statistics, enabling, registering REST clients applications, viewing REST clients details, removing REST clients details, disabling">
+      <meta name="DC.Relation" scheme="URI" content="managing-instance-settings.html#GUID-9B020EF4-A4B4-4FDC-91E6-0B70D19FB296">
+      <meta name="DC.Relation" scheme="URI" content="viewing-rest-usage.html#GUID-9B37A1E5-9BB1-4B4B-9DEA-5258192E8C19">
+      <meta name="DC.Relation" scheme="URI" content="viewing-rest-usage.html#GUID-D40E4197-6786-4E68-B1BA-F6F9DA112838">
+      <meta name="DC.Relation" scheme="URI" content="viewing-rest-usage.html#GUID-817C6AFA-D94C-4A9D-8BBB-0804DE738E4F">
+      <meta name="DC.Relation" scheme="URI" content="viewing-rest-usage.html#GUID-434228E8-58B2-40BA-B14D-C30E7D108F10">
+      <meta name="DC.Relation" scheme="URI" content="viewing-rest-usage.html#GUID-3712A083-8C2C-48AE-9220-55143CC1CBC2">
+      <meta name="DC.Relation" scheme="URI" content="viewing-rest-usage.html#GUID-BC2A3093-262C-400F-862F-3A0810CDE051">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-63D4B307-B069-4B9F-BBE7-E4C685846781">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">
+      <meta name="description" content="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">
+      <title>Using the REST Administration Interface to View Usage Statistics</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="purging-inactive-workspaces.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-custom-applications-packaged-applications-and-public-themes.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="purging-inactive-workspaces.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-custom-applications-packaged-applications-and-public-themes.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-instance-settings.html" property="item" typeof="WebPage"><span property="name">Managing Instance Settings</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Using the REST Administration Interface to View Usage Statistics</li>
+            </ol>
+            <a id="GUID-63D4B307-B069-4B9F-BBE7-E4C685846781" name="GUID-63D4B307-B069-4B9F-BBE7-E4C685846781"></a>
+            
+            <h2 id="AEADM-GUID-63D4B307-B069-4B9F-BBE7-E4C685846781" class="sect2"><span class="enumeration_section">3.5.5 </span>Using the REST Administration Interface to View Usage Statistics
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client. </p>
+               <div class="infobox-tip" id="GUID-63D4B307-B069-4B9F-BBE7-E4C685846781__GUID-3625FCDF-F306-4DDD-9EC3-A2122EC7D565">
+                  <p class="notep1">Tip:</p>
+                  <p>The REST Administration Interface requires Oracle REST Data Services (ORDS) release 3.0.5 or later.</p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="viewing-rest-usage.html#GUID-9B37A1E5-9BB1-4B4B-9DEA-5258192E8C19">About the REST Administration Interface</a><br>To use the REST Administration Interface, you first register a REST client application and then review client details to obtain an access token following the OAuth Client Credentials authentication flow.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-rest-usage.html#GUID-D40E4197-6786-4E68-B1BA-F6F9DA112838">Enabling the REST Administration Interface</a><br>After installation, the REST Administration Interface is disabled. To enable it, an instance administrator must sign in to Oracle Application Express Administration Services.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-rest-usage.html#GUID-817C6AFA-D94C-4A9D-8BBB-0804DE738E4F">Registering REST Client Applications</a><br>In order for REST clients to connect, an internal administrator must register the REST Client applications.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-rest-usage.html#GUID-434228E8-58B2-40BA-B14D-C30E7D108F10">Viewing REST Client Details</a><br>View REST client details in the REST Administration Interface dialog.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-rest-usage.html#GUID-3712A083-8C2C-48AE-9220-55143CC1CBC2">Removing a REST Client</a><br>Remove a REST client while viewing the ORDS Client Details dialog.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-rest-usage.html#GUID-BC2A3093-262C-400F-862F-3A0810CDE051">Disabling the REST Administration Interface</a><br>Disable the REST Administration Interface in the REST Administration Interface dialog.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-63D4B307-B069-4B9F-BBE7-E4C685846781__GUID-11569C54-B037-4783-BDCC-EF96AD33B6D4">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>
+                           <span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeadm&amp;id=AELIG-GUID-1E914685-2E05-4380-955D-F8232815E365" target="_blank">Tutorial: Protecting and
+                                Accessing Resources</a>"</span> in <span><cite>Oracle REST Data Services Installation, Configuration, and Development Guide</cite></span> to learn more about using OAuth
+                        flow features
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="../aeapi/Using-REST-Administration-Interface-API.html#AEAPI-GUID-9C4E35A9-E312-4242-BC76-C3D38956BD10" target="_blank">Using REST Administration Interface API</a>"</span>
+                        in <span><cite>Oracle Application Express API Reference</cite></span></p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-instance-settings.html#GUID-9B020EF4-A4B4-4FDC-91E6-0B70D19FB296" title="Use the Instance settings region of the Manage Instance page to configure feature availability, security, instance settings (that is, general workspace behavior), and workspace purge settings.">Managing Instance Settings</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-9B37A1E5-9BB1-4B4B-9DEA-5258192E8C19" name="GUID-9B37A1E5-9BB1-4B4B-9DEA-5258192E8C19"></a><h3 id="AEADM-GUID-9B37A1E5-9BB1-4B4B-9DEA-5258192E8C19" class="sect3"><span class="enumeration_section">3.5.5.1 </span>About the REST Administration Interface
+               </h3>
+               <div>
+                  <p>To use the REST Administration Interface, you first register a REST client application and then review client details to obtain an access token following the OAuth Client Credentials authentication flow.</p>
+                  <p>To provide the REST administration interface, Oracle Application Express creates the
+            database user <code class="codeph">APEX_INSTANCE_ADMIN_USER</code> during installation. This
+            low-privileged schema only has the <code class="codeph">CREATE SESSION</code> system privilege and
+            is locked after installation. To use the REST Administration Interface, the
+                <code class="codeph">APEX_INSTANCE_ADMIN_USER</code> user must first be unlocked. The service
+            modules for the REST administration interface are being stored in the
+                <code class="codeph">APEX_INSTANCE_ADMIN_USER</code> schema. Oracle does not require or
+            recommend direct logins into <code class="codeph">APEX_INSTANCE_ADMIN_USER</code>.
+                  </p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-rest-usage.html#GUID-63D4B307-B069-4B9F-BBE7-E4C685846781" title="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">Using the REST Administration Interface to View Usage Statistics</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-D40E4197-6786-4E68-B1BA-F6F9DA112838" name="GUID-D40E4197-6786-4E68-B1BA-F6F9DA112838"></a><h3 id="AEADM-GUID-D40E4197-6786-4E68-B1BA-F6F9DA112838" class="sect3"><span class="enumeration_section">3.5.5.2 </span>Enabling the REST Administration Interface
+               </h3>
+               <div>
+                  <p>After installation, the REST Administration Interface is disabled. To enable it, an instance administrator must sign in to Oracle Application Express Administration Services.</p>
+                  <div class="section">
+                     <p>To enable the REST Administration Interface:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Unlock the <code class="codeph">APEX_INSTANCE_ADMIN_USER</code> database user in the APEX
+                    database.</span></li>
+                     <li><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li><span>Under Instance Settings, click <span class="uicontrol bold">REST Administration Interface</span>.</span></li>
+                     <li><span>In the REST Administration Interface dialog, click <span class="uicontrol bold">Enable Services</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-rest-usage.html#GUID-63D4B307-B069-4B9F-BBE7-E4C685846781" title="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">Using the REST Administration Interface to View Usage Statistics</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-817C6AFA-D94C-4A9D-8BBB-0804DE738E4F" name="GUID-817C6AFA-D94C-4A9D-8BBB-0804DE738E4F"></a><h3 id="AEADM-GUID-817C6AFA-D94C-4A9D-8BBB-0804DE738E4F" class="sect3"><span class="enumeration_section">3.5.5.3 </span>Registering  REST Client Applications
+               </h3>
+               <div>
+                  <p>In order for REST clients to connect, an internal administrator must register the REST Client applications.</p>
+                  <div class="section">
+                     <p>To register REST client applications:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Instance Settings, click <span class="uicontrol bold">REST Administration Interface</span>.</span></li>
+                     <li class="stepexpand"><span>In the REST Administration Interface dialog, click <span class="uicontrol bold">Create OAuth Client</span>.</span></li>
+                     <li class="stepexpand"><span>In the Create New OAuth Client dialog, enter the following:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Client Name</p>
+                              </li>
+                              <li>
+                                 <p>Contact Email Address</p>
+                              </li>
+                              <li>
+                                 <p>Client Role</p>
+                              </li>
+                           </ul>
+                           <p>Credentials for the OAuth Client Credentials Flow is automatically created (Client ID and Client Secret). With these credentials, a REST client can connect to the REST Administration Interface and execute services.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create OAuth Client</span>.</span><div>
+                           <p>The client appears in the OAuth Clients list.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-rest-usage.html#GUID-63D4B307-B069-4B9F-BBE7-E4C685846781" title="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">Using the REST Administration Interface to View Usage Statistics</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-434228E8-58B2-40BA-B14D-C30E7D108F10" name="GUID-434228E8-58B2-40BA-B14D-C30E7D108F10"></a><h3 id="AEADM-GUID-434228E8-58B2-40BA-B14D-C30E7D108F10" class="sect3"><span class="enumeration_section">3.5.5.4 </span>Viewing REST Client Details
+               </h3>
+               <div>
+                  <p>View REST client details in the REST Administration Interface dialog.</p>
+                  <div class="section">
+                     <p>Developers can use REST Client Details to obtain an access token following the OAuth Client Credentials authentication flow. </p>
+                     <div class="infobox-tip" id="GUID-434228E8-58B2-40BA-B14D-C30E7D108F10__GUID-6B129F66-3AFE-4045-B50F-8A9BFEC3D20A">
+                        <p class="notep1">Tip:</p>
+                        <p>To learn more about using OAuth flow features, see <span class="q">"<a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/application-express/20.1/aeadm&amp;id=AELIG-GUID-1E914685-2E05-4380-955D-F8232815E365" target="_blank">Tutorial: Protecting and Accessing
+                                                  Resources</a>"</span> in <span><cite>Oracle REST Data Services Installation, Configuration, and Development Guide</cite></span>.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>To view REST client details:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Instance Settings, click <span class="uicontrol bold">REST Administration Interface</span>.</span><div>
+                           <p>The REST Administration Interface dialog appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the REST Administration Interface dialog, click the client name.</span><div>
+                           <p>The ORDS Client Details dialog appears displaying the client name, contact email address, OAuth Client ID, and OAuth Client Secret.<br><img height="473" width="797" src="img/client_details.png" alt="Description of client_details.png follows" title="Description of client_details.png follows" longdesc="img_text/client_details.html"><br><a href="img_text/client_details.html">Description of the illustration client_details.png</a><br></p>
+                        </div>
+                        <div>
+                           <div class="infoboxnotealso" id="GUID-434228E8-58B2-40BA-B14D-C30E7D108F10__GUID-5651E8A1-445E-4ACB-A4C4-04D4D1507D84">
+                              <p class="notep1">See Also:</p>
+                              <p>To remove the current client, click <span class="uicontrol bold">Remove Client</span>.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To return to the previous screen <span class="uicontrol bold">Back</span>.</span><div>
+                           
+                           <div class="infoboxnotealso" id="GUID-434228E8-58B2-40BA-B14D-C30E7D108F10__GUID-79C83504-845D-43B9-A8FF-AD106A671DA4">
+                              <p class="notep1">See Also:</p><span class="q">"<a href="../aeapi/Using-REST-Administration-Interface-API.html#AEAPI-GUID-9C4E35A9-E312-4242-BC76-C3D38956BD10" target="_blank">Using REST Administration Interface
+                                API</a>"</span> in <span><cite>Oracle Application Express API Reference</cite></span></div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-rest-usage.html#GUID-63D4B307-B069-4B9F-BBE7-E4C685846781" title="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">Using the REST Administration Interface to View Usage Statistics</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-3712A083-8C2C-48AE-9220-55143CC1CBC2" name="GUID-3712A083-8C2C-48AE-9220-55143CC1CBC2"></a><h3 id="AEADM-GUID-3712A083-8C2C-48AE-9220-55143CC1CBC2" class="sect3"><span class="enumeration_section">3.5.5.5 </span>Removing a REST Client
+               </h3>
+               <div>
+                  <p>Remove a REST client while viewing the ORDS Client Details dialog.</p>
+                  <div class="section">
+                     <p>To remove a REST client:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li class="stepexpand"><span>Under Instance Settings, click <span class="uicontrol bold">REST Administration Interface</span>.</span><div>
+                           <p>The REST Administration Interface dialog appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the REST Administration Interface dialog, click the client name.</span><div>
+                           <p>The ORDS Client Details dialog appears.</p><br><img height="473" width="797" src="img/client_details.png" alt="Description of client_details.png follows" title="Description of client_details.png follows" longdesc="img_text/client_details.html"><br><a href="img_text/client_details.html">Description of the illustration client_details.png</a><br></div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Remove Client</span>.</span></li>
+                     <li class="stepexpand"><span>To return to the previous screen <span class="uicontrol bold">Back</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-rest-usage.html#GUID-63D4B307-B069-4B9F-BBE7-E4C685846781" title="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">Using the REST Administration Interface to View Usage Statistics</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-BC2A3093-262C-400F-862F-3A0810CDE051" name="GUID-BC2A3093-262C-400F-862F-3A0810CDE051"></a><h3 id="AEADM-GUID-BC2A3093-262C-400F-862F-3A0810CDE051" class="sect3"><span class="enumeration_section">3.5.5.6 </span>Disabling the REST Administration Interface
+               </h3>
+               <div>
+                  <p>Disable the REST Administration Interface in the REST Administration Interface dialog.</p>
+                  <div class="section">
+                     <p>To disable the REST Administration Interface:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Manage Instance</span>.</span></li>
+                     <li><span>Under Instance Settings, click <span class="uicontrol bold">REST Administration Interface</span>.</span></li>
+                     <li><span>In the REST Administration Interface dialog, click <span class="uicontrol bold">Disable Services</span> or <span class="uicontrol bold">Disable Services and Remove Clients</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="viewing-rest-usage.html#GUID-63D4B307-B069-4B9F-BBE7-E4C685846781" title="The REST Administration Interface enables Instance administrators to automatically fetch usage metrics for an Oracle Application Express instance with a REST client.">Using the REST Administration Interface to View Usage Statistics</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

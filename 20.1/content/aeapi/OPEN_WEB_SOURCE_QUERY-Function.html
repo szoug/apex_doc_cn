@@ -1,0 +1,276 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="OPEN_WEB_SOURCE_QUERY Function">
+      <meta name="DC.subject" content="APEX_EXEC, OPEN_WEB_SOURCE_QUERY Function">
+      <meta name="keywords" content="APEX_EXEC, OPEN_WEB_SOURCE_QUERY Function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>OPEN_WEB_SOURCE_QUERY Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="OPEN_WEB_SOURCE_DML_CONTEXT-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="PURGE_WEB_SOURCE_CACHE-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="OPEN_WEB_SOURCE_DML_CONTEXT-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PURGE_WEB_SOURCE_CACHE-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_EXEC.html" property="item" typeof="WebPage"><span property="name"> APEX_EXEC</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">OPEN_WEB_SOURCE_QUERY Function </li>
+            </ol>
+            <a id="GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6" name="GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6"></a>
+            
+            <h2 id="AEAPI-GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6" class="sect2"><span class="enumeration_section">16.35 </span>OPEN_WEB_SOURCE_QUERY Function 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This function opens a Web Source query context. Based on the provided web source static ID, the operation matched to the <code class="codeph">FETCH_COLLECTION</code> database operation will be selected.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6__TITLE-1321-F94BDADF">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>FUNCTION OPEN_WEB_SOURCE_QUERY(
+    p_module_static_id       IN VARCHAR2,
+    p_parameters             IN t_parameters DEFAULT c_empty_parameters,
+    --
+    p_filters                IN t_filters    DEFAULT c_empty_filters,
+    p_order_bys              IN t_order_bys  DEFAULT c_empty_order_bys,
+    p_columns                IN t_columns    DEFAULT c_empty_columns,
+    --
+    p_first_row              IN PLS_INTEGER  DEFAULT NULL,
+    p_max_rows               IN PLS_INTEGER  DEFAULT NULL,
+    --
+    p_external_filter_expr   IN VARCHAR2     DEFAULT NULL,
+    p_external_order_by_expr IN VARCHAR2     DEFAULT NULL,
+    p_total_row_count        IN BOOLEAN      DEFAULT FALSE )
+    RETURN t_context;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6__TITLE-1341-F94C107A">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6__WRITEPROCEDUREPARAMETERS-F94C1E2F">
+                  <p class="titleintable">Table 16-33 OPEN_WEB_SOURCE_QUERY Function Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="OPEN_WEB_SOURCE_QUERY Function Parameters" summary="Parameter descriptions for the OPEN_WEB_SOURCE_QUERY function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="34%" id="d71437e71">Parameter</th>
+                           <th align="left" valign="bottom" width="66%" id="d71437e74">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e79" headers="d71437e71 ">
+                              <p><code class="codeph">p_module_static_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e79 d71437e74 ">
+                              <p>Static ID of the web source module to invoke.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e87" headers="d71437e71 ">
+                              <p><code class="codeph"> p_parameters</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e87 d71437e74 ">
+                              <p>Parameter values to be passed to the web source.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e95" headers="d71437e71 ">
+                              <p><code class="codeph"> p_filters </code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e95 d71437e74 ">
+                              <p>Filters to be passed to the web source.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e103" headers="d71437e71 ">
+                              <p><code class="codeph"> p_order_bys</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e103 d71437e74 ">
+                              <p>Order by expressions to be passed to the web source.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e111" headers="d71437e71 ">
+                              <p><code class="codeph">p_columns</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e111 d71437e74 ">
+                              <p>Columns to be selected from the web source.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e119" headers="d71437e71 ">
+                              <p><code class="codeph">p_first_row</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e119 d71437e74 ">
+                              <p>First row to be fetched from the web source.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e127" headers="d71437e71 ">
+                              <p><code class="codeph"> p_max_rows</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e127 d71437e74 ">
+                              <p> Maximum amount of rows to be fetched from the web source.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e135" headers="d71437e71 ">
+                              <p><code class="codeph">p_external_filter_expr </code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e135 d71437e74 ">
+                              <p>Filter expression to be passed 1:1 to the external web service. Depends on the actual web service being used.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e143" headers="d71437e71 ">
+                              <p><code class="codeph">p_external_order_by_expr</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e143 d71437e74 ">
+                              <p>Order by expression to be passed 1:1 to the external web service. Depends on the actual web service being used.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="34%" id="d71437e151" headers="d71437e71 ">
+                              <p><code class="codeph">p_total_row_count</code></p>
+                           </td>
+                           <td align="left" valign="top" width="66%" headers="d71437e151 d71437e74 ">
+                              <p>whether to determine the total row count (only supported when the <code class="codeph">"allow fetch all rows"</code> attribute is set to <code class="codeph">Yes</code>).
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6__GUID-8CE6BC29-C75B-4177-8BE8-300D18B04212">Returns</p>
+                  <p>The context object representing a <code class="codeph">"cursor"</code> for the web source query
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-B0B2F973-BB25-4F6E-9AC8-37864CC8FDA6__GUID-7954C706-7216-44E8-99A0-196014B9279B">Example</p>
+                  <p>The following example assumes a Web Source module with the static ID <code class="codeph">"USGS"</code> to be created in Shared Components, based on the URL endpoint <code class="codeph">https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson</code>. The    example invokes the REST service and prints out the result set. This example code could be used within a plug-in or within a <code class="codeph">"Execute PL/SQL"</code> region. 
+                  </p><pre class="pre codeblock"><code>declare 
+    l_context apex_exec.t_context;
+    l_filters apex_exec.t_filters;
+    l_columns apex_exec.t_columns;
+
+    l_row     pls_integer := 1;
+
+    l_magidx  pls_integer;
+    l_titidx  pls_integer;
+    l_plcidx  pls_integer;
+    l_timidx  pls_integer;
+    l_ididx   pls_integer;
+begin
+    l_context := apex_exec.open_web_source_query(
+        p_module_static_id =&gt; 'USGS',            
+        p_max_rows         =&gt; 1000 );
+
+    l_titidx := apex_exec.get_column_position( l_context, 'TITLE' );
+    l_magidx := apex_exec.get_column_position( l_context, 'MAG' );
+    l_plcidx := apex_exec.get_column_position( l_context, 'PLACE' );
+    l_timidx := apex_exec.get_column_position( l_context, 'TIME' );
+    l_ididx  := apex_exec.get_column_position( l_context, 'ID' );
+
+    while apex_exec.next_row( l_context ) loop
+
+        htp.p( 'ID:    ' || apex_exec.get_varchar2( l_context, l_ididx  ) );
+        htp.p( 'MAG:   ' || apex_exec.get_varchar2( l_context, l_magidx ) );
+        htp.p( 'PLACE: ' || apex_exec.get_varchar2( l_context, l_plcidx ) );
+        htp.p( 'TITLE: ' || apex_exec.get_varchar2( l_context, l_titidx ) );
+        htp.p( 'TIME:  ' || apex_exec.get_varchar2( l_context, l_timidx ) );
+     end loop;
+
+     apex_exec.close( l_context );
+exception
+     when others then
+         apex_exec.close( l_context );
+     raise;    
+end;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_EXEC.html#GUID-3CF1D2DD-AEA4-4982-9857-548567AB7169">APEX_EXEC</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

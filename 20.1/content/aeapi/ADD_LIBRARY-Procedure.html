@@ -1,0 +1,243 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="ADD_LIBRARY Procedure">
+      <meta name="DC.subject" content="APEX_JAVASCRIPT, ADD_LIBRARY procedure">
+      <meta name="keywords" content="APEX_JAVASCRIPT, ADD_LIBRARY procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_JAVASCRIPT.html#GUID-D43D6DA7-9A22-4B53-8138-AC97C00C7622">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-702E89BC-5E65-4758-B0F8-52BD0C45AC06">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ADD_LIBRARY Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="ADD_INLINE_CODE-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="ADD_REQUIREJS-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ADD_INLINE_CODE-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ADD_REQUIREJS-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_JAVASCRIPT.html" property="item" typeof="WebPage"><span property="name"> APEX_JAVASCRIPT</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">ADD_LIBRARY Procedure</li>
+            </ol>
+            <a id="GUID-702E89BC-5E65-4758-B0F8-52BD0C45AC06" name="GUID-702E89BC-5E65-4758-B0F8-52BD0C45AC06"></a><a id="AEAPI1116"></a><a id="AEAPI1117"></a><a id="AEAPI1118"></a><a id="AEAPI1119"></a><a id="AEAPI1115"></a>
+            
+            <h2 id="AEAPI-GUID-702E89BC-5E65-4758-B0F8-52BD0C45AC06" class="sect2"><span class="enumeration_section">22.7 </span>ADD_LIBRARY Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure adds the script tag to load a JavaScript library. If a library has been added, it is not added a second time.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-702E89BC-5E65-4758-B0F8-52BD0C45AC06__GUID-E561210F-4EF5-47D1-A1D5-7C1A64C7DB72">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_JAVASCRIPT.ADD_LIBRARY (
+    p_name                    IN VARCHAR2,
+    p_directory               IN VARCHAR2,
+    p_version                 IN VARCHAR2 DEFAULT NULL,
+    p_check_to_add_minified   IN BOOLEAN DEFAULT FALSE,
+    p_skip_extension          IN BOOLEAN  DEFAULT FALSE,
+    p_ie_condition            IN VARCHAR2 DEFAULT NULL,
+    p_requirejs_module        IN VARCHAR2 DEFAULT NULL,
+    p_requirejs_js_expression IN VARCHAR2 DEFAULT NULL,
+    p_requirejs_required      IN BOOLEAN DEFAULT FALSE,
+    p_key                     IN VARCHAR2 DEFAULT NULL);
+
+
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-702E89BC-5E65-4758-B0F8-52BD0C45AC06__GUID-8AC04E9E-BB12-410C-BB97-0EB5A8F260F8">Parameters</p>
+                  <div class="tblformal" id="GUID-702E89BC-5E65-4758-B0F8-52BD0C45AC06__BCEEIADD">
+                     <p class="titleintable">Table 22-7 ADD_LIBRARY Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="ADD_LIBRARY Parameters" summary="Parameter descriptions for the ADD_LIBRARY procedure." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="33%" id="d107109e73">Parameter</th>
+                              <th align="left" valign="bottom" width="67%" id="d107109e76">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e81" headers="d107109e73 ">
+                                 <p><code class="codeph">p_name</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e81 d107109e76 ">
+                                 <p>Name of the JavaScript file. Must not use <code class="codeph">.js</code> when specifying.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e93" headers="d107109e73 ">
+                                 <p><code class="codeph">p_directory</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e93 d107109e76 ">
+                                 <p>Directory where JavaScript library is loaded. Must have a trailing slash.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e102" headers="d107109e73 ">
+                                 <p><code class="codeph">p_version</code></p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e102 d107109e76 ">
+                                 <p>Version identifier. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e110" headers="d107109e73 ">
+                                 <p><code class="codeph">p_check_to_add_minified</code></p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e110 d107109e76 ">
+                                 <p>If TRUE, the procedure tests if it is appropriate to add <code class="codeph">.min</code> extension and add it if appropriate. This is added if an application is not running in DEBUG mode, and omitted when in DEBUG mode.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e121" headers="d107109e73 ">
+                                 <p><code class="codeph">p_skip_extension</code></p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e121 d107109e76 ">
+                                 <p>If TRUE the extension <code class="codeph">.js</code> is NOT added.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e132" headers="d107109e73 ">
+                                 <p><code class="codeph">p_ie_condition</code></p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e132 d107109e76 ">
+                                 <p>Condition which is used as Internet Explorer condition.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e140" headers="d107109e73 ">
+                                 <p><code class="codeph">p_requirejs_module</code></p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e140 d107109e76 ">
+                                 <p>Module name which is used to expose the library to RequireJS.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e148" headers="d107109e73 ">
+                                 <p><code class="codeph">p_requirejs_js_expression</code></p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e148 d107109e76 ">
+                                 <p>JavaScript expression which is used to expose the library to the RequireJS module.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e156" headers="d107109e73 ">
+                                 <p><code class="codeph">p_requirejs_required</code></p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e156 d107109e76 ">
+                                 <p>This has to be true if the library uses RequireJS in its code to loading other JavaScript files.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107109e164" headers="d107109e73 ">
+                                 <p><code class="codeph">p_key</code></p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107109e164 d107109e76 ">
+                                 <p>Name used to indicate if the library has already been loaded. If not specified, defaults to <code class="codeph">p_directory||p_name||p_version</code>.
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-702E89BC-5E65-4758-B0F8-52BD0C45AC06__GUID-5D45C276-A5B1-48C0-926E-F31754028FF1">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example includes the JavaScript library file named <code class="codeph">hammer-2.0.4.min.js</code> (if the application  has not been started from the Builder), or <code class="codeph">hammer-2.0.4.js</code> (if the application has been started from the Builder  or is running in DEBUG mode), from the directory specified by <code class="codeph">p_plugin.file_prefix</code>. Since <code class="codeph">p_skip_extension</code> is not specified, this defaults to <code class="codeph">.js</code>. Also, since <code class="codeph">p_key</code> is not specified, the key defaults to <code class="codeph">p_plugin.file_prefix||hammer-2.0.4</code>. Hammer is a JavaScript library which exposes itself to <code class="codeph">RequireJS</code> using <code class="codeph">hammerjs</code> as module name.
+                  </p><pre class="pre codeblock"><code>apex_javascript.add_library (
+    p_name                    =&gt; 'hammer-2.0.4#MIN#',
+    p_directory               =&gt; p_plugin.file_prefix,
+    p_requirejs_module        =&gt; 'hammerjs',
+    p_requirejs_js_expression =&gt; 'Hammer' );    </code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_JAVASCRIPT.html#GUID-D43D6DA7-9A22-4B53-8138-AC97C00C7622">APEX_JAVASCRIPT</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

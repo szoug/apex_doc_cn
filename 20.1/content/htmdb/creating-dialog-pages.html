@@ -1,0 +1,473 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Creating Dialog Pages">
+      <meta name="abstract" content="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">
+      <meta name="description" content="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">
+      <meta name="DC.subject" content="dialog pages, about supported, Modal Dialog, non-modal dialog, using dialog page template, creating a dialog page template, dialog page template, defining, generating a Cancel dynamic action, generating a close dialog page process, About branching, handling refresh actions">
+      <meta name="keywords" content="dialog pages, about supported, Modal Dialog, non-modal dialog, using dialog page template, creating a dialog page template, dialog page template, defining, generating a Cancel dynamic action, generating a close dialog page process, About branching, handling refresh actions">
+      <meta name="DC.Relation" scheme="URI" content="managing-pages-in-a-database-application.html#GUID-83926801-6C69-4709-B6C3-C22C192B5A11">
+      <meta name="DC.Relation" scheme="URI" content="creating-dialog-pages.html#GUID-3904345F-B760-48D1-ADB0-C82ECB9A5151">
+      <meta name="DC.Relation" scheme="URI" content="creating-dialog-pages.html#GUID-F502582E-950E-46BD-B516-B54B00BF1723">
+      <meta name="DC.Relation" scheme="URI" content="creating-dialog-pages.html#GUID-58EA16DB-BD5D-4F3A-9EFD-5F698535121C">
+      <meta name="DC.Relation" scheme="URI" content="creating-dialog-pages.html#GUID-284D90E0-1C11-4A79-BD35-606F746907E9">
+      <meta name="DC.Relation" scheme="URI" content="creating-dialog-pages.html#GUID-8D16C20E-C86F-43C1-AAB5-A1C7E4A82251">
+      <meta name="DC.Relation" scheme="URI" content="creating-dialog-pages.html#GUID-5B404B7A-A36E-46F8-93B2-02F536F18937">
+      <meta name="DC.Relation" scheme="URI" content="creating-dialog-pages.html#GUID-8035260D-EB88-4CB0-93C7-7574E7750D3B">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">
+      <meta name="description" content="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">
+      <title>Creating Dialog Pages</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="page-types-create-page-wizard.html" title="Previous" type="text/html">
+      <link rel="next" href="copying-database-app-pages.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="page-types-create-page-wizard.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="copying-database-app-pages.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-pages-in-a-database-application.html" property="item" typeof="WebPage"><span property="name">Managing Pages in a Database Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating Dialog Pages</li>
+            </ol>
+            <a id="GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" name="GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E"></a><a id="HTMDB30095"></a>
+            
+            <h2 id="HTMDB-GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" class="sect2"><span class="enumeration_section">8.4 </span>Creating Dialog Pages
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page. </p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-3904345F-B760-48D1-ADB0-C82ECB9A5151">About Supported Dialogs</a><br></li>
+                  <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-F502582E-950E-46BD-B516-B54B00BF1723">Using a Dialog Page Template</a><br></li>
+                  <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-58EA16DB-BD5D-4F3A-9EFD-5F698535121C">Defining a Dialog Page in Page Designer</a><br></li>
+                  <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-284D90E0-1C11-4A79-BD35-606F746907E9">Generating a Cancel Dialog Dynamic Action on the Dialog Page</a><br></li>
+                  <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-8D16C20E-C86F-43C1-AAB5-A1C7E4A82251">Generating a Close Dialog Page Process on the Dialog Page</a><br></li>
+                  <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-5B404B7A-A36E-46F8-93B2-02F536F18937">About Branching with Dialog Pages</a><br></li>
+                  <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-8035260D-EB88-4CB0-93C7-7574E7750D3B">Handling Refresh Actions on Parent Page</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-pages-in-a-database-application.html#GUID-83926801-6C69-4709-B6C3-C22C192B5A11" title="A page is the basic building block of an application. Developers add pages to an application by running the Create Page Wizard.">Managing Pages in a Database Application</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB30096"></a><div class="props_rev_3"><a id="GUID-3904345F-B760-48D1-ADB0-C82ECB9A5151" name="GUID-3904345F-B760-48D1-ADB0-C82ECB9A5151"></a><h3 id="HTMDB-GUID-3904345F-B760-48D1-ADB0-C82ECB9A5151" class="sect3"><span class="enumeration_section">8.4.1 </span>About Supported Dialogs
+               </h3>
+               <div>
+                  <p>When you create a new page, the wizard prompts you to select a Page Mode. The Page Mode determines if the page is a <strong class="term">normal</strong> application page or a <strong class="term">dialog</strong> page. Oracle Application Express supports two types of dialog pages:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Modal Dialog</span> - A modal dialog is an overlay window positioned within the within the same browser window. A modal dialog remains active and focused until the user has finished with it and closes it. While a modal dialog is active, the user is unable to interact with the rest of the page until the dialog is closed.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Non-modal Dialog</span> - A non-modal dialog displays a separate popup browser window. A user can interact with a non-modal dialog and content on the page. Use a non-modal dialog when the requested information is not essential to continue. This type of window can be left open while work continues elsewhere.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" title="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">Creating Dialog Pages</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30098"></a><div class="props_rev_3"><a id="GUID-F502582E-950E-46BD-B516-B54B00BF1723" name="GUID-F502582E-950E-46BD-B516-B54B00BF1723"></a><h3 id="HTMDB-GUID-F502582E-950E-46BD-B516-B54B00BF1723" class="sect3"><span class="enumeration_section">8.4.2 </span>Using a Dialog Page Template
+               </h3>
+               <div>
+                  <p>Oracle Application Express includes dialog page templates in the <span class="italic">Universal Theme - 42</span>. When you set the Page Mode to either <span class="bold">Modal</span> or <span class="bold">Non-Modal</span>, Oracle Application Express automatically uses the default dialog page template. This section describes how to create a dialog template if your theme does not include one and how to edit dialog template attributes.
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-4003C77C-8F55-4888-9942-7DF5F0FA3BC2">Creating a Dialog Page Template</a><br></li>
+                     <li class="ulchildlink"><a href="creating-dialog-pages.html#GUID-1E5C8E7B-9048-4FF1-BC74-78811CBF23AC">About Defining Dialog Page Template Attributes</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" title="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">Creating Dialog Pages</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB30099"></a><div class="props_rev_3"><a id="GUID-4003C77C-8F55-4888-9942-7DF5F0FA3BC2" name="GUID-4003C77C-8F55-4888-9942-7DF5F0FA3BC2"></a><h4 id="HTMDB-GUID-4003C77C-8F55-4888-9942-7DF5F0FA3BC2" class="sect4"><span class="enumeration_section">8.4.2.1 </span>Creating a Dialog Page Template
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>If you are using an existing application and the theme does not contain such a dialog page template, then you must create one. While you can create one from scratch, the easiest option is to copy an existing dialog template.</p>
+                        <p>To create a dialog page template:</p>
+                        <ol>
+                           <li>
+                              <p>Copy the dialog page template from the Sample Database application:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Select the application to which you want to copy the template. </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="bold">Shared Components</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Under User Interface, select <span class="bold">Templates</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="bold">Create</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>In the Create Template Wizard:</p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p>Template Type - Select <span class="bold">Page</span> and click <span class="bold">Next</span>.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p>Creation Method - Select <span class="bold">As a Copy of an Existing Template</span> and click <span class="bold">Next</span>.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p>Copy From - Select <span class="bold">Sample Database Application</span> and click <span class="bold">Next</span>.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p>Identify Theme - Select the theme you are copying from and the theme you are copying to and click <span class="bold">Next</span>.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p>New Template - Locate the Modal Dialog template. Under Copy, select <span class="bold">Yes</span>.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p>Select Create <span class="bold">Copy Page Templates</span>.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li>
+                              <p>Verify the dialog page template is active in the current theme.</p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-4003C77C-8F55-4888-9942-7DF5F0FA3BC2__GUID-3593CEB3-D009-4874-8DCD-61B86563C29D">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="selecting-defaul-page-template.html#GUID-1E615D51-95CA-45CD-8239-31D885E73718" title="Select a default page template by either selecting a default page template within a specific theme, or by selecting a specific page template on a page-by-page basis.">Selecting a Default Page Template</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-F502582E-950E-46BD-B516-B54B00BF1723">Using a Dialog Page Template</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB30100"></a><div class="props_rev_3"><a id="GUID-1E5C8E7B-9048-4FF1-BC74-78811CBF23AC" name="GUID-1E5C8E7B-9048-4FF1-BC74-78811CBF23AC"></a><h4 id="HTMDB-GUID-1E5C8E7B-9048-4FF1-BC74-78811CBF23AC" class="sect4"><span class="enumeration_section">8.4.2.2 </span>About Defining Dialog Page Template Attributes
+                  </h4>
+                  <div>
+                     <p>The dialog page template contains JavaScript function calls that handle the initialization, closure, and cancellation of a dialog page. When you create a dialog page template you must define these and other Dialog Page Templates attributes.</p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-1E5C8E7B-9048-4FF1-BC74-78811CBF23AC__GUID-2EE9778C-2D8C-4A27-A429-D458E798AC61">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="page-templates.html#GUID-896F1569-2408-4BDF-8A0E-C71B92E3F310">Required Dialog Page Template Attributes</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-F502582E-950E-46BD-B516-B54B00BF1723">Using a Dialog Page Template</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB30280"></a><div class="props_rev_3"><a id="GUID-58EA16DB-BD5D-4F3A-9EFD-5F698535121C" name="GUID-58EA16DB-BD5D-4F3A-9EFD-5F698535121C"></a><h3 id="HTMDB-GUID-58EA16DB-BD5D-4F3A-9EFD-5F698535121C" class="sect3"><span class="enumeration_section">8.4.3 </span>Defining a Dialog Page in Page
+        Designer
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To define a page as a dialog in Page Designer:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. Attributes are organized in groups.</div>
+                     </li>
+                     <li class="stepexpand"><span>In Page Designer locate the <span class="uicontrol bold">Appearance</span> group.</span></li>
+                     <li class="stepexpand"><span>For Page Mode, select one of the following:</span><ul>
+                           <li><span class="uicontrol bold">Modal Dialog</span> - The page is presented as a modal dialog. A modal dialog is an overlay window positioned within the viewport, which remains active and focused until the end user dismisses (closes) it. The underlying page is grayed out and the end user is prevented from interacting with the rest of the page until the dialog is closed.
+                           </li>
+                           <li><span class="uicontrol bold">Non-Modal Dialog</span> - The page is presented as a non-modal dialog. A non-modal dialog is an overlay window positioned within the viewport, where the end user can interact with the dialog, and content on the page that launched the dialog. A non-modal dialog can be used when the requested information is not essential to continue, work can continue elsewhere while the window is still open.
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="stepexpand"><span>Edit other <span class="uicontrol bold">Appearance</span> attributes as needed. </span><div>
+                           
+                           <div class="infobox-tip" id="GUID-58EA16DB-BD5D-4F3A-9EFD-5F698535121C__GUID-0694736A-3274-4C6F-BD94-A1B7443EB6D2">
+                              <p class="notep1">Tip:</p>
+                              
+                              <p>To learn more about an attribute, see field-level Help.</p>
+                              
+                           </div>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Dialog, edit the appropriate attributes:</span><ol type="a">
+                           <li><span><span class="uicontrol bold">Width</span> - Enter the width of the dialog, in pixels
+                            or a percentage. The substitution string <code class="codeph">#DIALOG_WIDTH#</code>
+                            in the dialog initialization code of the page template is replaced with
+                            the value entered in this item. For a page using a Desktop user
+                            interface, the value is set in pixels, such as 500.</span></li>
+                           <li><span><span class="uicontrol bold">Height</span> - Enter the height of the dialog, in pixels, for example, 500. The substitution string <code class="codeph">#DIALOG_HEIGHT#</code> in the dialog initialization code of the page template is replaced with the value entered.</span></li>
+                           <li><span><span class="uicontrol bold">Maximum Width</span> - Enter the maximum width of the dialog in pixels. The substitution string <code class="codeph">#DIALOG_MAX_WIDTH#</code> in the dialog initialization code of the page template is replaced with the value entered in this item. </span></li>
+                           <li><span><span class="uicontrol bold">Attributes</span> - Dialog support varies depending on the user interface of the page. A subset of dialog attributes are declaratively supported: height, width, and maximum width. To define any additional attributes for the dialog, enter the name/value pairings in a comma separated list.  The substitution string <code class="codeph">#DIALOG_ATTRIBUTES#</code> in the dialog initialization code defined at page template level, is replaced by any value(s) entered in this item. </span></li>
+                           <li><span><span class="uicontrol bold">CSS Classes</span> - Enter classes to add to this component. You may add multiple classes by separating them with spaces.</span></li>
+                           <li><span><span class="uicontrol bold">Chained</span> - Select <span class="uicontrol bold">On</span> if
+                            this dialog is opened by another dialog, and should reuse the same
+                            dialog window. For example, if this dialog is part of a multiple page
+                            dialog wizard and you wish to reuse the dialog window for each step of
+                            the wizard. Select <span class="uicontrol bold">Off</span> if this dialog is opened
+                            by another dialog and should be opened in a new dialog window. For
+                            example, when this dialog is modal, and you wish to open it within a
+                            parent modal dialog window.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To save your changes, click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-58EA16DB-BD5D-4F3A-9EFD-5F698535121C__GUID-DE6FDC5C-E27A-4BD6-B844-B7573AF199BC">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="about-creating-pages-in-app.html#GUID-F6D7DE04-BD1A-4F3A-8FD8-D0E5AE10340C" title="Developers add pages to an application by running the Create Page Wizard.">About Creating New Pages</a>"</span> 
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" title="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">Creating Dialog Pages</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30101"></a><div class="props_rev_3"><a id="GUID-284D90E0-1C11-4A79-BD35-606F746907E9" name="GUID-284D90E0-1C11-4A79-BD35-606F746907E9"></a><h3 id="HTMDB-GUID-284D90E0-1C11-4A79-BD35-606F746907E9" class="sect3"><span class="enumeration_section">8.4.4 </span>Generating a Cancel Dialog Dynamic Action on the Dialog Page 
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>If your dialog page contains a Cancel button, then you must generate a dynamic action based upon the Click of that button, with its True Action event being set to <span class="bold">Cancel Dialog</span>. This dynamic action will use the cancellation JavaScript call contained in the page template (<code class="codeph">apex.navigation.dialog.cancel</code>) to handle the cancelling the dialog.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-284D90E0-1C11-4A79-BD35-606F746907E9__GUID-C8EC7D3A-544B-4C19-B665-A2D3DACCE002">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" title="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">Creating Dialog Pages</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30102"></a><div class="props_rev_3"><a id="GUID-8D16C20E-C86F-43C1-AAB5-A1C7E4A82251" name="GUID-8D16C20E-C86F-43C1-AAB5-A1C7E4A82251"></a><h3 id="HTMDB-GUID-8D16C20E-C86F-43C1-AAB5-A1C7E4A82251" class="sect3"><span class="enumeration_section">8.4.5 </span>Generating a Close Dialog Page Process on the Dialog Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You close a dialog page in Oracle Application Express by creating a Close Dialog page process. In previous releases, this page process was referred to as a <code class="codeph">Close Popup Window</code>. This dialog will use the closure JavaScript call contained in the page template (<code class="codeph">apex.navigation.dialog.close)</code>, to handle the closing of the dialog. The page process also supports the return of dialog page items, which you may wish to reference on the parent page. To view examples, edit any of the Dialog pages in the <span class="italic">Sample Database Application</span>.
+                     </p>
+                     <div class="infobox-tip" id="GUID-8D16C20E-C86F-43C1-AAB5-A1C7E4A82251__GUID-5A3A3B62-4025-454A-B3E3-BE69CC697350">
+                        <p class="notep1">Tip:</p>
+                        <p>You can also close a dialog page with the Close Dialog dynamic action. Both the dynamic action and the process support returning dialog page items. Use the page process when the page needs to be submitted and use the dynamic action when the page does not need to be submitted. Both end up calling the closure JavaScript call. Alternatively, you can create a page branch, which will close a dialog page and redirect to the page specified in the branch.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-8D16C20E-C86F-43C1-AAB5-A1C7E4A82251__GUID-82F5D3A9-F426-4B44-8A30-128288A6E775">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" title="Create page processes to perform an action at a specified point during the rendering or submission of the page.">Understanding Page Processes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="understanding-sample-database-app.html#GUID-1A6EF26E-4015-4BA3-B539-7706AA8CB8E5" title="Sample Database Application is a sample application that highlights common design concepts and demonstrates the use of reports, charts, calendars, maps, and trees.">了解数据库应用示例</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="controlling-navigation-using-branches.html#GUID-AE2164D3-6D95-4EB3-BF12-60C2278A1D0E" title="Add navigation to application pages by creating branches. A branch is an instruction to link to a specific page, procedure, or URL after a given page is submitted.">Controlling Navigation Using Branches</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" title="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">Creating Dialog Pages</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-5B404B7A-A36E-46F8-93B2-02F536F18937" name="GUID-5B404B7A-A36E-46F8-93B2-02F536F18937"></a><h3 id="HTMDB-GUID-5B404B7A-A36E-46F8-93B2-02F536F18937" class="sect3"><span class="enumeration_section">8.4.6 </span>About Branching with Dialog Pages
+               </h3>
+               <div>
+                  <p>You can open dialog pages using buttons or links. Dialog pages support the following branching options:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Dialog page to dialog page.</p>
+                        <p>You can branch from one dialog page to another dialog page if:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Both pages have the same Page Mode, for example Modal Dialog and the dialog Chained
+                            attribute is set to <span class="uicontrol bold">On</span>. Setting the Chained
+                            attribute to <span class="uicontrol bold">On</span> enables support for chained or
+                            nested dialogs such as the dialogs that appear many internal Application
+                            Express wizards. Chained or nested dialogs enable you to re-use a dialog
+                            window to display each page.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p>Dialog page to Normal page.</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>When branching from a dialog page to a normal page, the dialog page is closed and the user navigates to a new page in the browser. The new page can be parent (or launching) page or another Normal page in an application.</p>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" title="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">Creating Dialog Pages</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30103"></a><div class="props_rev_3"><a id="GUID-8035260D-EB88-4CB0-93C7-7574E7750D3B" name="GUID-8035260D-EB88-4CB0-93C7-7574E7750D3B"></a><h3 id="HTMDB-GUID-8035260D-EB88-4CB0-93C7-7574E7750D3B" class="sect3"><span class="enumeration_section">8.4.7 </span>Handling Refresh Actions on Parent Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>If you have generated a Close Dialog page process on the dialog page, you must implement refresh actions on the parent page using the new <code class="codeph">Dialog Closed</code> dynamic action event type. You can use the set type Dialog Return Item when creating a Set Value True Action, to set a single value, based on the return item of a dialog.
+                     </p>
+                     <p>To see an example, go to the Products page in the <span class="italic">Sample Database Application</span>. On the Products page, the Create Product button has an associated dynamic action that launches the dialog. Closing the dialog triggers the <code class="codeph">Dialog Closed</code> dynamic action. You can use this type of dynamic action for whatever True Actions you wish to define. In this example, it refreshes the report on the parent page and submits the page.
+                     </p>
+                     <div class="infobox-tip" id="GUID-8035260D-EB88-4CB0-93C7-7574E7750D3B__GUID-3310E516-175C-4F8A-AC28-8723D5944A3A">
+                        <p class="notep1">Tip:</p>
+                        <p> For a partial page refresh of a parent page, implement the close dialog with dynamic action (for example, for report and form pages where you want to edit data in a modal dialog form and only want the report refreshed on close). In contrast, branching is the best approach if you have a multi step modal wizard or if you have several possible target pages when closing the dialog.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-8035260D-EB88-4CB0-93C7-7574E7750D3B__GUID-16090F33-1CD4-4DD0-91F7-C27C194494A5">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="installing-and-running-sample-database-application.html#GUID-548D7CEA-AD39-46C8-BAFE-9707292FB3B2" title="Install sample applications such as Sample Database Application on the App Gallery page.">安装和运行数据库应用示例</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE" title="Dynamic actions enable developers to define complex client-side behavior declaratively without the need for JavaScript.">Managing Dynamic Actions</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="understanding-sample-database-app.html#GUID-1A6EF26E-4015-4BA3-B539-7706AA8CB8E5" title="Sample Database Application is a sample application that highlights common design concepts and demonstrates the use of reports, charts, calendars, maps, and trees.">了解数据库应用示例</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="creating-dialog-pages.html#GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E" title="Oracle Application Express includes support for modal and non-modal dialog pages. Modal and non-modal dialog pages are only supported if the current application theme contains at least one page template of template type Dialog Page.">Creating Dialog Pages</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

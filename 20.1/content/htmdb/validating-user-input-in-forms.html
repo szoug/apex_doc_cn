@@ -1,0 +1,203 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Validating User Input in Forms">
+      <meta name="abstract" content="Developers can create validation and an associated error message to check the data a user enters before processing.">
+      <meta name="description" content="Developers can create validation and an associated error message to check the data a user enters before processing.">
+      <meta name="DC.subject" content="forms, validating input, validations, creating with error messages, associating with item">
+      <meta name="keywords" content="forms, validating input, validations, creating with error messages, associating with item">
+      <meta name="DC.Relation" scheme="URI" content="developing-forms.html#GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E">
+      <meta name="DC.Relation" scheme="URI" content="validating-user-input-in-forms.html#GUID-95CAD1CE-CB8F-4A4E-9CAA-2E62924A018F">
+      <meta name="DC.Relation" scheme="URI" content="validating-user-input-in-forms.html#GUID-68548DC5-604E-455C-B260-FDF5B0F05929">
+      <meta name="DC.Relation" scheme="URI" content="validating-user-input-in-forms.html#GUID-CBA07975-2284-4103-9AD5-5F7144905352">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Developers can create validation and an associated error message to check the data a user enters before processing.">
+      <meta name="description" content="Developers can create validation and an associated error message to check the data a user enters before processing.">
+      <title>Validating User Input in Forms</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Developers can create validation and an associated error message to check the data a user enters before processing.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-master-detail-forms.html" title="Previous" type="text/html">
+      <link rel="next" href="understanding-blob-support-in-forms.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-master-detail-forms.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="understanding-blob-support-in-forms.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="developing-forms.html" property="item" typeof="WebPage"><span property="name">Developing Forms</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Validating User Input in Forms</li>
+            </ol>
+            <a id="GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A" name="GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A"></a><a id="HTMDB30070"></a>
+            
+            <h2 id="HTMDB-GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A" class="sect2"><span class="enumeration_section">11.6 </span>Validating User Input in Forms
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Developers can create validation and an associated error message to check the data a user enters before processing.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="validating-user-input-in-forms.html#GUID-95CAD1CE-CB8F-4A4E-9CAA-2E62924A018F">About Creating Validations and Error Messages</a><br></li>
+                  <li class="ulchildlink"><a href="validating-user-input-in-forms.html#GUID-68548DC5-604E-455C-B260-FDF5B0F05929">Associating a Validation with a Specific Item</a><br></li>
+                  <li class="ulchildlink"><a href="validating-user-input-in-forms.html#GUID-CBA07975-2284-4103-9AD5-5F7144905352">About the Error Message Display Location</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="developing-forms.html#GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E" title="Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.">Developing Forms</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB30071"></a><div class="props_rev_3"><a id="GUID-95CAD1CE-CB8F-4A4E-9CAA-2E62924A018F" name="GUID-95CAD1CE-CB8F-4A4E-9CAA-2E62924A018F"></a><h3 id="HTMDB-GUID-95CAD1CE-CB8F-4A4E-9CAA-2E62924A018F" class="sect3"><span class="enumeration_section">11.6.1 </span>About Creating Validations and Error Messages
+               </h3>
+               <div>
+                  <p>You can use validations to check data a user enters before processing. Once you create a validation and the associated error message, you can associate it with a specific item. You can choose to have validation error messages display inline (that is, on the page where the validation is performed) or on a separate error page. </p>
+                  <p>Creating an inline error message involves these steps:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Step 1 - Create a validation and specify error message text. To learn more, see <span class="q">"<a href="understanding-validations.html#GUID-082832A1-FA94-4FB3-805A-78CB15C297B4" title="Use validations to create edit checks on specific items, pages, or columns.">Understanding Validations</a>."</span></p>
+                     </li>
+                     <li>
+                        <p>Step 2 - Associate the validation with a specific item.</p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="validating-user-input-in-forms.html#GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A" title="Developers can create validation and an associated error message to check the data a user enters before processing.">Validating User Input in Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30072"></a><div class="props_rev_3"><a id="GUID-68548DC5-604E-455C-B260-FDF5B0F05929" name="GUID-68548DC5-604E-455C-B260-FDF5B0F05929"></a><h3 id="HTMDB-GUID-68548DC5-604E-455C-B260-FDF5B0F05929" class="sect3"><span class="enumeration_section">11.6.2 </span>Associating a Validation with a Specific Item 
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To associate an item with a validation and specify error message text: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>Select an application.</span></li>
+                           <li><span>Select a page.</span></li>
+                        </ol>
+                        <div>Page Designer appears. </div>
+                     </li>
+                     <li class="stepexpand"><span>In Page Designer, select the Processing tab in the left pane.</span></li>
+                     <li class="stepexpand"><span>Under Validating, select the validation you want to associate. </span><div>
+                           <p>The Property Editor displays Validation attributes.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Validation, edit the following attributes:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Error, Error Message - Enter the text to be displayed in the event that the validation does not pass.</p>
+                              </li>
+                              <li>
+                                 <p>Error, Display Location - Select where the error message displays for this validation. Validation error messages display on a separate error page, or inline with the existing page. Inline error messages display underneath the&nbsp;associated item&nbsp;label or in a notification area defined as part of the page template.</p>
+                              </li>
+                              <li>
+                                 <p>Error, Associated Item - Select the item where this validation error message displays. .</p>
+                              </li>
+                           </ul>
+                           <div class="infobox-tip" id="GUID-68548DC5-604E-455C-B260-FDF5B0F05929__TOLEARNMOREABOUTANATTRIBUTESELECTTH-6734A068">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="bold">Help</span> tab in the central pane.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="validating-user-input-in-forms.html#GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A" title="Developers can create validation and an associated error message to check the data a user enters before processing.">Validating User Input in Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB30074"></a><div class="props_rev_3"><a id="GUID-CBA07975-2284-4103-9AD5-5F7144905352" name="GUID-CBA07975-2284-4103-9AD5-5F7144905352"></a><h3 id="HTMDB-GUID-CBA07975-2284-4103-9AD5-5F7144905352" class="sect3"><span class="enumeration_section">11.6.3 </span>About the Error Message Display Location
+               </h3>
+               <div>
+                  <p>The error message display location identifies where a validation error message displays. Validation error messages can display on an error page or inline within the existing page. Inline error messages can display in a notification area (defined as part of the page template) or within the field label.</p>
+                  <p>To create a hard error that stops processes, including any remaining validations, you must display the error on an error page.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="validating-user-input-in-forms.html#GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A" title="Developers can create validation and an associated error message to check the data a user enters before processing.">Validating User Input in Forms</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

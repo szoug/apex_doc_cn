@@ -1,0 +1,225 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding the Deployment Process">
+      <meta name="abstract" content="Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.">
+      <meta name="description" content="Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.">
+      <meta name="DC.subject" content="application, deploying, deployment, of an application, understanding the process, options">
+      <meta name="keywords" content="application, deploying, deployment, of an application, understanding the process, options">
+      <meta name="DC.Relation" scheme="URI" content="deploying-an-application.html#GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-deployment-process.html#GUID-3F2A4E08-0B80-41E4-9FF4-6E9AFE2347EA">
+      <meta name="DC.Relation" scheme="URI" content="understanding-the-deployment-process.html#GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6">
+      <meta name="DC.Relation" scheme="URI" content="how-to-move-an-application-to-another-instance.html#GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-EFB553A8-C47F-4663-9D99-95C59C8276CE">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.">
+      <meta name="description" content="Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.">
+      <title>Understanding the Deployment Process</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="system-development-life-cycle-methodologies-to-consider.html" title="Previous" type="text/html">
+      <link rel="next" href="how-to-move-an-application-to-another-instance.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="system-development-life-cycle-methodologies-to-consider.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="how-to-move-an-application-to-another-instance.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="deploying-an-application.html" property="item" typeof="WebPage"><span property="name">Deploying an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding the Deployment Process</li>
+            </ol>
+            <a id="GUID-EFB553A8-C47F-4663-9D99-95C59C8276CE" name="GUID-EFB553A8-C47F-4663-9D99-95C59C8276CE"></a><a id="HTMDB11002"></a>
+            
+            <h2 id="HTMDB-GUID-EFB553A8-C47F-4663-9D99-95C59C8276CE" class="sect2"><span class="enumeration_section">25.3 </span>Understanding the Deployment Process
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-the-deployment-process.html#GUID-3F2A4E08-0B80-41E4-9FF4-6E9AFE2347EA">About Moving an Application to Another Instance</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-the-deployment-process.html#GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6">Deployment Options to Consider</a><br></li>
+                  <li class="ulchildlink"><a href="how-to-move-an-application-to-another-instance.html#GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964">How to Move an Application to Another Instance</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="deploying-an-application.html#GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD" title="Learn about best practices for deploying an application. Deployment is the process of moving an application from the testing phase to the production phase.">Deploying an Application</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29430"></a><div class="props_rev_3"><a id="GUID-3F2A4E08-0B80-41E4-9FF4-6E9AFE2347EA" name="GUID-3F2A4E08-0B80-41E4-9FF4-6E9AFE2347EA"></a><h3 id="HTMDB-GUID-3F2A4E08-0B80-41E4-9FF4-6E9AFE2347EA" class="sect3"><span class="enumeration_section">25.3.1 </span>About Moving an Application to Another Instance
+               </h3>
+               <div>
+                  <p>To move an application from one Oracle Application Express instance to another, you must move both the metadata and supporting objects used by the application as follows:</p>
+                  <ol>
+                     <li>
+                        <p>Move the application definition and all associated files. </p>
+                     </li>
+                     <li>
+                        <p>Move the supporting objects. Review the Database Object Dependencies report to determine what objects to move. </p>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-3F2A4E08-0B80-41E4-9FF4-6E9AFE2347EA__GUID-5E58E283-EE0E-4184-AF55-5037158D68B6">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="how-to-move-an-application-to-another-instance.html#GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964">How to Move an Application to Another Instance</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="accessing-application-utilities.html#GUID-4415ECD6-5FEE-4941-B86D-3BC6CB676B9B" title="The Database Object Dependencies report identifies database objects referenced by the current application. Review this report to determine what objects to move when deploying an application.">Using the Database Object Dependencies Report</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-the-deployment-process.html#GUID-EFB553A8-C47F-4663-9D99-95C59C8276CE" title="Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.">Understanding the Deployment Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25795"></a><div class="props_rev_3"><a id="GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6" name="GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6"></a><h3 id="HTMDB-GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6" class="sect3"><span class="enumeration_section">25.3.2 </span>Deployment Options to Consider
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>When you develop an application, you create the application within a specific workspace. Each workspace has a unique ID and name. A common scenario is to create the application in a development instance and then deploy it to a production instance. </p>
+                     <p>Deployment options to consider include:</p>
+                     <ol>
+                        <li>
+                           <p><span class="bold">Use the same workspace and same schema.</span> Export and then import the application and install it using a different application ID. This approach works well when there are few changes to the underlying objects, but frequent changes to the application functionality.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Use a different workspace and same schema.</span> Export and then import the application into a different workspace. This is an effective way to prevent a production application from being modified by developers.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Use a different workspace and different schema.</span> Export and then import the application into a different workspace and install it so that it uses a different schema. This new schema needs to have the database objects required by your application. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Use a different database with all its variations.</span> Export and then import the application into a different Oracle Application Express instance and install it using a different workspace, schema, and database.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6__GUID-FBA1FA7E-67BA-4E0A-BD1A-EEECF462133C">Whether to Copy the Workspace</p>
+                     <p>Deciding whether to copy an existing workspace is a matter of preference. Keep in mind that the production version must have access to all the appropriate objects. For example, you might want to copy a workspace in the following situations:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>When you want to keep the same application identifiers between development and other environments.</p>
+                        </li>
+                        <li>
+                           <p>When the application relies on Oracle Application Express authentication. Copying the workspace automatically migrates all the required user data.</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6__GUID-3019CC45-4B4C-4CF6-9A71-7D66CE60DE86">Whether to Copy the Database</p>
+                     <p>When deciding whether to copy the database, remember that the schema against which the application runs must have access to the same objects as the development instance. The actual name of the schema is unimportant. You can change it during the import process.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6__GUID-EEC3D36C-0324-4DDA-AD0C-1FC8FA370459">About the Application ID</p>
+                     <p>It is not necessary to have matching application IDs for a development version and production version of an application. In fact, as a best practice never hard code the application ID into your application. Instead, use the application alias (defined on the Edit Application page), or use a built-in substitution string (such as <code class="codeph">APP_ID</code> and <code class="codeph">APP_ALIAS</code>). Using a substitution string is the better approach because it enables you to change the application ID without affecting any application functionality.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-FA4184CB-1171-40E8-AA8A-3D05325B9CD6__GUID-CAF82607-9F13-423B-964B-702D09F1B5AC">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="accessing-application-utilities.html#GUID-4415ECD6-5FEE-4941-B86D-3BC6CB676B9B" title="The Database Object Dependencies report identifies database objects referenced by the current application. Review this report to determine what objects to move when deploying an application.">Using the Database Object Dependencies Report</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="editing-application-attributes.html#GUID-4C7EB51C-C36A-4A52-86BE-60FEC6FCAB71">Name</a>"</span> for information about defining an application alias
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="understanding-substitution-strings.html#GUID-34118202-1B85-4D38-8C27-F819679504DB">使用内置的替代字符串</a>"</span> for information about using <code class="codeph">APP_ID</code> and <code class="codeph">APP_ALIAS</code></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-the-deployment-process.html#GUID-EFB553A8-C47F-4663-9D99-95C59C8276CE" title="Oracle recommends developing Oracle Application Express applications in separate environments: development, testing, and finally production. Learn about different approaches and best practices during when deploying applications.">Understanding the Deployment Process</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

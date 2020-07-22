@@ -1,0 +1,423 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="EDIT_USER Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, EDIT_USER procedure, user account, altering">
+      <meta name="keywords" content="APEX_UTIL, EDIT_USER procedure, user account, altering">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-4AD804FC-F209-489F-9F46-A79327F3632E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>EDIT_USER Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-4.html" title="Previous" type="text/html">
+      <link rel="next" href="END_USER_ACCOUNT_DAYS_LEFT-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DOWNLOAD_PRINT_DOCUMENT-Procedure-Signature-4.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="END_USER_ACCOUNT_DAYS_LEFT-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">EDIT_USER Procedure</li>
+            </ol>
+            <a id="GUID-4AD804FC-F209-489F-9F46-A79327F3632E" name="GUID-4AD804FC-F209-489F-9F46-A79327F3632E"></a><a id="AEAPI1556"></a><a id="AEAPI1557"></a><a id="AEAPI1558"></a><a id="AEAPI1559"></a><a id="AEAPI117"></a>
+            
+            <h2 id="AEAPI-GUID-4AD804FC-F209-489F-9F46-A79327F3632E" class="sect2"><span class="enumeration_section">39.23 </span>EDIT_USER Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure enables a user account record to be altered. To execute this procedure, the current user must have administrative privileges in the workspace.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-4AD804FC-F209-489F-9F46-A79327F3632E__GUID-3BFC7533-A870-41B1-93B8-7AB0390C62D4">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.EDIT_USER (
+    p_user_id                      IN                   NUMBER,
+    p_user_name                    IN                   VARCHAR2,
+    p_first_name                   IN                   VARCHAR2    DEFAULT NULL,
+    p_last_name                    IN                   VARCHAR2    DEFAULT NULL,
+    p_web_password                 IN                   VARCHAR2    DEFAULT NULL,
+    p_new_password                 IN                   VARCHAR2    DEFAULT NULL,
+    p_email_address                IN                   VARCHAR2    DEFAULT NULL,
+    p_start_date                   IN                   VARCHAR2    DEFAULT NULL,
+    p_end_date                     IN                   VARCHAR2    DEFAULT NULL,
+    p_employee_id                  IN                   VARCHAR2    DEFAULT NULL,
+    p_allow_access_to_schemas      IN                   VARCHAR2    DEFAULT NULL,
+    p_person_type                  IN                   VARCHAR2    DEFAULT NULL,
+    p_default_schema               IN                   VARCHAR2    DEFAULT NULL,
+    p_group_ids                    IN                   VARCHAR2    DEFAULT NULL,
+    p_developer_roles              IN                   VARCHAR2    DEFAULT NULL,
+    p_description                  IN                   VARCHAR2    DEFAULT NULL,
+    p_account_expiry               IN                   DATE        DEFAULT NULL,
+    p_account_locked               IN                   VARCHAR2    DEFAULT 'N',
+    p_failed_access_attempts       IN                   NUMBER      DEFAULT 0,
+    p_change_password_on_first_use IN                   VARCHAR2    DEFAULT 'Y',
+    p_first_password_use_occurred  IN                   VARCHAR2    DEFAULT 'N');</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-4AD804FC-F209-489F-9F46-A79327F3632E__GUID-57818F5E-D915-41B1-9E11-346E04681BF8">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-4AD804FC-F209-489F-9F46-A79327F3632E__GUID-C39C2AE6-44D5-4829-8A50-60057C76BCC9">
+                  <p class="titleintable">Table 39-21 EDIT_USER Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="EDIT_USER Parameters" summary="Parameter descriptions for the EDIT_USER procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="40%" id="d180170e77">Parameter</th>
+                           <th align="left" valign="bottom" width="60%" id="d180170e80">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e85" headers="d180170e77 ">
+                              <p><code class="codeph">p_user_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e85 d180170e80 ">
+                              <p>Numeric primary key of the user account.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e93" headers="d180170e77 ">
+                              <p><code class="codeph">p_user_name</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e93 d180170e80 ">
+                              <p>Alphanumeric name used for login. </p>
+                              <p><span class="bold">See Also</span>: <span class="q">"<a href="SET_USERNAME-Procedure.html#GUID-011204BC-D14B-4F1B-BF89-EB5AA454D5D9">SET_USERNAME Procedure</a>"</span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e108" headers="d180170e77 ">
+                              <p><code class="codeph">p_first_name</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e108 d180170e80 ">
+                              <p>Informational. </p>
+                              <p><span class="bold">See Also</span>: <span class="q">"<a href="SET_FIRST_NAME-Procedure.html#GUID-BC4570FB-1201-490B-8D8A-4651D613D856">SET_FIRST_NAME Procedure</a>"</span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e123" headers="d180170e77 ">
+                              <p><code class="codeph">p_last_name</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e123 d180170e80 ">
+                              <p>Informational.</p>
+                              <p><span class="bold">See Also</span>: <span class="q">"<a href="SET_LAST_NAME-Procedure.html#GUID-E892B650-A885-4D73-84D2-344BC62C5F85">SET_LAST_NAME Procedure</a>"</span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e138" headers="d180170e77 ">
+                              <p><code class="codeph">p_web_password</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e138 d180170e80 ">
+                              <p>Clear text password. If using this procedure to update the password for the user, values for both <code class="codeph">p_web_password</code> and <code class="codeph">p_new_password</code> must not be null and must be identical.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e152" headers="d180170e77 ">
+                              <p><code class="codeph">p_new_password</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e152 d180170e80 ">
+                              <p>Clear text new password. If using this procedure to update the password for the user, values for both <code class="codeph">p_web_password</code> and <code class="codeph">p_new_password</code> must not be null and must be identical.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e166" headers="d180170e77 ">
+                              <p><code class="codeph">p_email_address</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e166 d180170e80 ">
+                              <p>Informational. </p>
+                              <p><span class="bold">See Also</span>: <span class="q">"<a href="SET_EMAIL-Procedure.html#GUID-02386891-586E-49E2-847A-A5504E65095E">SET_EMAIL Procedure</a>"</span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e181" headers="d180170e77 ">
+                              <p><code class="codeph">p_start_date</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e181 d180170e80 ">
+                              <p>Unused.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e189" headers="d180170e77 ">
+                              <p><code class="codeph">p_end_date</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e189 d180170e80 ">
+                              <p>Unused.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e197" headers="d180170e77 ">
+                              <p><code class="codeph">p_employee_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e197 d180170e80 ">
+                              <p>Unused.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e205" headers="d180170e77 ">
+                              <p><code class="codeph">p_allow_access_to_schemas</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e205 d180170e80 ">
+                              <p>A list of schemas assigned to the user's workspace to which the user is restricted.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e214" headers="d180170e77 ">
+                              <p><code class="codeph">p_person_type</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e214 d180170e80 ">
+                              <p>Unused.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e222" headers="d180170e77 ">
+                              <p><code class="codeph">p_default_schema</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e222 d180170e80 ">
+                              <p>A database schema assigned to the user's workspace, used by default for browsing.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e230" headers="d180170e77 ">
+                              <p><code class="codeph">p_group_ids</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e230 d180170e80 ">
+                              <p>Colon-separated list of numeric group IDs.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e238" headers="d180170e77 ">
+                              <p><code class="codeph">p_developer_roles</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e238 d180170e80 ">
+                              <p>Colon-separated list of developer privileges. The following are acceptable values for this parameter:</p>
+                              <p>·	<span class="bold">null</span> - To update the user to be an end user (a user who can only authenticate to developed applications).
+                              </p>
+                              <p>·	<span class="bold">CREATE:DATA_LOADER:EDIT:HELP:MONITOR:SQL </span>- To update the user to have developer privilege.
+                              </p>
+                              <p><span class="bold">·	ADMIN:CREATE:DATA_LOADER:EDIT:HELP:MONITOR:SQL</span> - To update the user to have full workspace administrator and developer privilege.
+                              </p>
+                              <p><span class="bold">Note</span>: Currently this parameter is named inconsistently between the CREATE_USER, EDIT_USER and FETCH_USER APIs, although they all relate to the DEVELOPER_ROLE field stored in the named user account record. CREATE_USER uses p_developer_privs, EDIT_USER uses p_developer_roles and FETCH_USER uses p_developer_role.
+                              </p>
+                              <p><span class="bold">See Also</span>: <span class="q">"<a href="GET_USER_ROLES-Function.html#GUID-A2DB0D79-3FD4-4297-93D4-92836E426175">GET_USER_ROLES Function</a>"</span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e271" headers="d180170e77 ">
+                              <p><code class="codeph">p_description</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e271 d180170e80 ">
+                              <p>Informational.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e279" headers="d180170e77 ">
+                              <p><code class="codeph">p_account_expiry</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e279 d180170e80 ">
+                              <p>Date password was last updated. </p>
+                              <p><span class="bold">See Also</span>: <span class="q">"<a href="EXPIRE_END_USER_ACCOUNT-Procedure.html#GUID-71C0F84E-EBF1-4793-A416-48A3AF0E6947">EXPIRE_END_USER_ACCOUNT Procedure</a>"</span>, <span class="q">"<a href="EXPIRE_WORKSPACE_ACCOUNT-Procedure.html#GUID-BEF1EE02-CCE0-431D-8189-12439FC9F508">EXPIRE_WORKSPACE_ACCOUNT Procedure</a>"</span>, <span class="q">"<a href="UNEXPIRE_END_USER_ACCOUNT-Procedure.html#GUID-ABF5D38E-5156-436D-814A-B38A13DA8FA8">UNEXPIRE_END_USER_ACCOUNT Procedure</a>"</span>, <span class="q">"<a href="UNEXPIRE_WORKSPACE_ACCOUNT-Procedure.html#GUID-8CAD70A4-B7D7-4431-80E3-17195986258B">UNEXPIRE_WORKSPACE_ACCOUNT Procedure</a>"</span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e306" headers="d180170e77 ">
+                              <p><code class="codeph">p_account_locked</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e306 d180170e80 ">
+                              <p>'Y' or 'N' indicating if account is locked or unlocked.</p>
+                              <p> <span class="bold">See Also</span>: <span class="q">"<a href="LOCK_ACCOUNT-Procedure.html#GUID-630379B6-6C06-4C06-9535-8DBE9DE5E24E">LOCK_ACCOUNT Procedure</a>"</span>, <span class="q">"<a href="UNLOCK_ACCOUNT-Procedure.html#GUID-0867626D-9B3B-49AA-97C9-2C45443188BC">UNLOCK_ACCOUNT Procedure</a>"</span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e326" headers="d180170e77 ">
+                              <p><code class="codeph">p_failed_access_attempts</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e326 d180170e80 ">
+                              <p>Number of consecutive login failures that have occurred.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e334" headers="d180170e77 ">
+                              <p><code class="codeph">p_change_password_on_first_use</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e334 d180170e80 ">
+                              <p>'Y' or 'N' to indicate whether password must be changed on first use.</p>
+                              <p><span class="bold">See Also</span>: <span class="q">"<a href="CHANGE_PASSWORD_ON_FIRST_USE-Function.html#GUID-72EDA90E-BF49-454E-BF79-B5DAE19D35E7">CHANGE_PASSWORD_ON_FIRST_USE Function</a>"</span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="40%" id="d180170e349" headers="d180170e77 ">
+                              <p><code class="codeph">p_first_password_use_occurred</code></p>
+                           </td>
+                           <td align="left" valign="top" width="60%" headers="d180170e349 d180170e80 ">
+                              <p>'Y' or 'N' to indicate whether login has occurred since password change.</p>
+                              <p><span class="bold">See Also</span>: <span class="q">"<a href="PASSWORD_FIRST_USE_OCCURRED-Function.html#GUID-5BC0A4F7-1C06-4DA3-A394-684A828DFC79">PASSWORD_FIRST_USE_OCCURRED Function</a>"</span></p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-4AD804FC-F209-489F-9F46-A79327F3632E__GUID-C59C961B-6221-448E-9D6B-8DC2DD447CF1">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example shows how to use the <code class="codeph">EDIT_USER</code> procedure to update a user account. This example shows how you can use the <code class="codeph">EDIT_USER</code> procedure to change the user 'FRANK' from a user with just developer privilege to a user with workspace administrator and developer privilege. Firstly, the <code class="codeph">FETCH_USER</code> procedure is called to assign account details for the user 'FRANK' to local variables. These variables are then used in the call to <code class="codeph">EDIT_USER</code> to preserve the details of the account, with the exception of the value for the <code class="codeph">p_developer_roles</code> parameter, which is set to '<code class="codeph">ADMIN:CREATE:DATA_LOADER:EDIT:HELP:MONITOR:SQL</code>'. 
+                  </p><pre class="pre codeblock"><code>DECLARE
+    l_user_id                       NUMBER;
+    l_workspace                     VARCHAR2(255);
+    l_user_name                     VARCHAR2(100);
+    l_first_name                    VARCHAR2(255);
+    l_last_name                     VARCHAR2(255);
+    l_web_password                  VARCHAR2(255);
+    l_email_address                 VARCHAR2(240);
+    l_start_date                    DATE;
+    l_end_date                      DATE;
+    l_employee_id                   NUMBER(15,0);
+    l_allow_access_to_schemas       VARCHAR2(4000);
+    l_person_type                   VARCHAR2(1);
+    l_default_schema                VARCHAR2(30);
+    l_groups                        VARCHAR2(1000);
+    l_developer_role                VARCHAR2(60);
+    l_description                   VARCHAR2(240);
+    l_account_expiry                DATE;
+    l_account_locked                VARCHAR2(1);
+    l_failed_access_attempts        NUMBER;
+    l_change_password_on_first_use  VARCHAR2(1);
+    l_first_password_use_occurred   VARCHAR2(1);
+BEGIN
+    l_user_id := APEX_UTIL.GET_USER_ID('FRANK');
+
+APEX_UTIL.FETCH_USER(
+    p_user_id                       =&gt; l_user_id,
+    p_workspace                     =&gt; l_workspace,
+    p_user_name                     =&gt; l_user_name,
+    p_first_name                    =&gt; l_first_name,
+    p_last_name                     =&gt; l_last_name,
+    p_web_password                  =&gt; l_web_password,
+    p_email_address                 =&gt; l_email_address,
+    p_start_date                    =&gt; l_start_date,
+    p_end_date                      =&gt; l_end_date,
+    p_employee_id                   =&gt; l_employee_id,
+    p_allow_access_to_schemas       =&gt; l_allow_access_to_schemas,
+    p_person_type                   =&gt; l_person_type,
+    p_default_schema                =&gt; l_default_schema,
+    p_groups                        =&gt; l_groups,
+    p_developer_role                =&gt; l_developer_role,
+    p_description                   =&gt; l_description,
+    p_account_expiry                =&gt; l_account_expiry,
+    p_account_locked                =&gt; l_account_locked,
+    p_failed_access_attempts        =&gt; l_failed_access_attempts,
+    p_change_password_on_first_use  =&gt; l_change_password_on_first_use,
+    p_first_password_use_occurred   =&gt; l_first_password_use_occurred);
+APEX_UTIL.EDIT_USER (
+    p_user_id                       =&gt; l_user_id,
+    p_user_name                     =&gt; l_user_name,
+    p_first_name                    =&gt; l_first_name,
+    p_last_name                     =&gt; l_last_name,
+    p_web_password                  =&gt; l_web_password,
+    p_new_password                  =&gt; l_web_password,
+    p_email_address                 =&gt; l_email_address,
+    p_start_date                    =&gt; l_start_date,
+    p_end_date                      =&gt; l_end_date,
+    p_employee_id                   =&gt; l_employee_id,
+    p_allow_access_to_schemas       =&gt; l_allow_access_to_schemas,
+    p_person_type                   =&gt; l_person_type,
+    p_default_schema                =&gt; l_default_schema,
+    p_group_ids                     =&gt; l_groups,
+    p_developer_roles               =&gt; 'ADMIN:CREATE:DATA_LOADER:EDIT:HELP:MONITOR:SQL',
+    p_description                   =&gt; l_description,
+    p_account_expiry                =&gt; l_account_expiry,
+    p_account_locked                =&gt; l_account_locked,
+    p_failed_access_attempts        =&gt; l_failed_access_attempts,
+    p_change_password_on_first_use  =&gt; l_change_password_on_first_use,
+    p_first_password_use_occurred   =&gt; l_first_password_use_occurred);
+END;
+
+</code></pre><div class="infoboxnotealso" id="GUID-4AD804FC-F209-489F-9F46-A79327F3632E__GUID-DC85DF5C-E215-453F-8998-36E6E76C6872">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="FETCH_USER-Procedure-Signature-3.html#GUID-C7483EF7-D7B7-4476-8DF4-FCEDFCE4CA9F">FETCH_USER Procedure Signature 3</a>"</span></p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

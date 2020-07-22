@@ -1,0 +1,247 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Oracle JET Integration with Oracle Application Express">
+      <meta name="abstract" content="Oracle Application Express includes the Oracle JET (JavaScript Extension Toolkit) library. This section provides information about JET and how it is integrated with Oracle Application Express.">
+      <meta name="description" content="Oracle Application Express includes the Oracle JET (JavaScript Extension Toolkit) library. This section provides information about JET and how it is integrated with Oracle Application Express.">
+      <meta name="DC.subject" content="Oracle JET, integration, about, integrated with Oracle Application Express">
+      <meta name="keywords" content="Oracle JET, integration, about, integrated with Oracle Application Express">
+      <meta name="DC.Relation" scheme="URI" content="managing-database-application-components.html#GUID-E7598ABE-5077-4A1F-A3F9-1C89EE2B2CE8">
+      <meta name="DC.Relation" scheme="URI" content="Understanding-Oracle-JET-Integration-with-Oracle-Application-Express.html#GUID-2514EEAB-9E29-464B-A308-913D2DD6B8CC">
+      <meta name="DC.Relation" scheme="URI" content="Understanding-Oracle-JET-Integration-with-Oracle-Application-Express.html#GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-FD5B3839-EBB2-4C5C-984F-4C90BE46684B">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Application Express includes the Oracle JET (JavaScript Extension Toolkit) library. This section provides information about JET and how it is integrated with Oracle Application Express.">
+      <meta name="description" content="Oracle Application Express includes the Oracle JET (JavaScript Extension Toolkit) library. This section provides information about JET and how it is integrated with Oracle Application Express.">
+      <title>Understanding Oracle JET Integration with Oracle Application Express</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Oracle Application Express includes the Oracle JET (JavaScript Extension Toolkit) library. This section provides information about JET and how it is integrated with Oracle Application Express.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-database-application-components.html" title="Previous" type="text/html">
+      <link rel="next" href="switching-AnyChart-to-JET-Chart.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-database-application-components.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="switching-AnyChart-to-JET-Chart.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-database-application-components.html" property="item" typeof="WebPage"><span property="name">Managing Database Application Components</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Oracle JET Integration with Oracle Application Express</li>
+            </ol>
+            <a id="GUID-FD5B3839-EBB2-4C5C-984F-4C90BE46684B" name="GUID-FD5B3839-EBB2-4C5C-984F-4C90BE46684B"></a>
+            
+            <h2 id="HTMDB-GUID-FD5B3839-EBB2-4C5C-984F-4C90BE46684B" class="sect2"><span class="enumeration_section">12.1 </span>Understanding Oracle JET Integration with Oracle Application Express
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Application Express includes the Oracle JET (JavaScript Extension Toolkit) library. This section provides information about JET and how it is integrated with Oracle Application Express.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="Understanding-Oracle-JET-Integration-with-Oracle-Application-Express.html#GUID-2514EEAB-9E29-464B-A308-913D2DD6B8CC">About Oracle JET</a><br></li>
+                  <li class="ulchildlink"><a href="Understanding-Oracle-JET-Integration-with-Oracle-Application-Express.html#GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F">How Oracle JET is integrated with Oracle Application Express</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-database-application-components.html#GUID-E7598ABE-5077-4A1F-A3F9-1C89EE2B2CE8" title="Oracle Application Express supports the creation the following database application components: calendars, maps, charts, and application Help.">Managing Database Application Components</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-2514EEAB-9E29-464B-A308-913D2DD6B8CC" name="GUID-2514EEAB-9E29-464B-A308-913D2DD6B8CC"></a><h3 id="HTMDB-GUID-2514EEAB-9E29-464B-A308-913D2DD6B8CC" class="sect3"><span class="enumeration_section">12.1.1 </span>About Oracle JET
+               </h3>
+               <div>
+                  <p>Oracle JET (JavaScript Extension Toolkit) is a collection of open source JavaScript libraries with a set of Oracle contributed JavaScript libraries. Oracle JET is targeted at intermediate and advanced JavaScript developers and provides a rich set of UI components that can be easily integrated into Oracle Application Express. Oracle JET is a modular toolkit which enables developers to use as much or as little of the features that they desire.&nbsp;</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-2514EEAB-9E29-464B-A308-913D2DD6B8CC__GUID-2FB63193-201A-4381-A453-B21DC59A2772">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="http://www.oracle.com/webfolder/technetwork/jet/index.html" target="_blank">Oracle JET Homepage</a>"</span> to learn more about Oracle JET.
+                     </p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Understanding-Oracle-JET-Integration-with-Oracle-Application-Express.html#GUID-FD5B3839-EBB2-4C5C-984F-4C90BE46684B" title="Oracle Application Express includes the Oracle JET (JavaScript Extension Toolkit) library. This section provides information about JET and how it is integrated with Oracle Application Express.">Understanding Oracle JET Integration with Oracle Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F" name="GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F"></a><h3 id="HTMDB-GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F" class="sect3"><span class="enumeration_section">12.1.2 </span>How Oracle JET is integrated with Oracle Application Express
+               </h3>
+               <div>
+                  <p>Currently Oracle Application Express integrates some parts of Oracle JET , primarily with <code class="codeph">Chart</code> region types, and <code class="codeph">Text field with Autocomplete</code> item types.
+                  </p>
+                  <div class="infoboxnote" id="GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F__GUID-A9F1B1E2-2D75-4DA6-A930-366A49BA8EC1">
+                     <p class="notep1">Note:</p>
+                     <p>Although Oracle JET provides two-way data binding (using <code class="codeph">knockout.js</code>), currently Oracle Application Express does not natively utilize this aspect of the toolkit.
+                     </p>
+                  </div>
+                  <p>Oracle JET uses a module loader (<code class="codeph">RequireJS</code>) to only load modules that are required for specific functionality to work. This means that you do not have to load the entire Oracle JET library for certain functionality and also enables each module to define it’s own dependencies. At runtime, when a module is requested, the module loader looks at the module being requested for any dependencies to other modules. If there are any dependencies, these will also be loaded. 
+                  </p>
+                  <p>Module loader can however result in a large number of additional resources being individually loaded at runtime, which can have a negative performance impact. For this reason, Oracle Application Express makes use of the <code class="codeph">RequireJS Optimization Tool</code>, which:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>provides a way to determine all the dependencies for modules either at design time or as part of a standard build process</p>
+                     </li>
+                     <li>
+                        <p>bundles them up into one combined, minified file</p>
+                     </li>
+                  </ul>
+                  <p><code class="codeph">RequireJS Optimization Tool</code> is loaded at runtime to avoid the need for all the additional requests.
+                  </p>
+                  <p>Find the list of the bundles used for <code class="codeph">Chart</code> and <code class="codeph">Text field with Autocomplete</code> native types.
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">jetCommonBundle.min.js</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">inputSearchBundle.min.js</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">chartBundle.min.js</code></p>
+                     </li>
+                  </ul>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F__GUID-0515DCEE-1471-48F9-B4FB-873AD36D5052">jetCommonBundle.min.js</p>
+                     <div class="infoboxnote" id="GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F__GUID-1242FB01-E1A8-443F-AA57-B587A05A0C16">
+                        <p class="notep1">Note:</p>
+                        <p>You can utilize the Common bundle <code class="codeph">jetCommonBundle.min.js</code> in your plug-ins. This Common Bundle gets included on any Oracle Application Express page as soon as a file is included with your plug-in, which defines the <code class="codeph">[require jet]</code> prefix. This means that any  module your plug-in uses that is already included in the common bundle does not need to be refetched by <code class="codeph">requireJS</code>.
+                        </p>
+                     </div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Directory</span>: <code class="codeph">/images/libraries/apex/minified/</code></p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Included when</span>: When a JavaScript file is requested that defines itself as requiring JET, by using the <code class="codeph">[require jet]</code> prefix in Oracle Application Express, and the page is not in Debug mode 
+                           </p>
+                           <p>When debugging, the bundle is not loaded and <code class="codeph">requireJS</code> loads all the individual resources separately.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F__GUID-CD20F64D-393E-494E-B67F-3660FA9E035F">inputSearchBundle.min.js</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Directory</span>: <code class="codeph">/images/libraries/apex/minified/</code></p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Included when</span>: A <code class="codeph">Text Field with Autocomplete</code> item is included on a page, and the page is not in debug mode.
+                           </p>
+                           <p>When debugging, the bundle is not loaded and <code class="codeph">requireJS</code> loads all the individual resources separately.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F__GUID-5405CE35-3BBF-439A-8B76-7519CFB4A6B4">chartBundle.min.js</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Directory</span>: <code class="codeph">/images/libraries/apex/minified/</code></p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Included when</span>: A JET chart is included on a page (for example, when a <code class="codeph">Chart</code> region, or <code class="codeph">Interactive Grid</code> region is added to a page), and the page is not in debug mode. 
+                           </p>
+                           <p>When debugging, the bundle is not loaded and <code class="codeph">requireJS</code> loads all the individual resources separately.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-7B9FE9A5-A605-4B14-AB38-6CD273CD4C4F__GUID-2FB63193-201A-4381-A453-B21DC59A2772">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="http://requirejs.org/" target="_blank">requireJS homepage</a>"</span> to learn more about RequireJS
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="http://requirejs.org/docs/optimization.html" target="_blank">RequireJS Optimization Tool</a>"</span> to learn more about RequireJS Optimization Tool
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="Understanding-Oracle-JET-Integration-with-Oracle-Application-Express.html#GUID-FD5B3839-EBB2-4C5C-984F-4C90BE46684B" title="Oracle Application Express includes the Oracle JET (JavaScript Extension Toolkit) library. This section provides information about JET and how it is integrated with Oracle Application Express.">Understanding Oracle JET Integration with Oracle Application Express</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

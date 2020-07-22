@@ -1,0 +1,274 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Isolating a Workspace to Prevent Browser Attacks">
+      <meta name="abstract" content="Instance administrators can configure limits to isolate a workspace and prevent browser attacks.">
+      <meta name="description" content="Instance administrators can configure limits to isolate a workspace and prevent browser attacks.">
+      <meta name="DC.subject" content="workspace, isolating to prevent browser attacks, Workspace Isolation, configuring attributes">
+      <meta name="keywords" content="workspace, isolating to prevent browser attacks, Workspace Isolation, configuring attributes">
+      <meta name="DC.Relation" scheme="URI" content="managing-existing-workspaces.html#GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9">
+      <meta name="DC.Relation" scheme="URI" content="isolating-workspace-to-prevent-browser-attacks.html#GUID-D7EED8D0-7329-4054-B503-BE8FA80B44AB">
+      <meta name="DC.Relation" scheme="URI" content="isolating-workspace-to-prevent-browser-attacks.html#GUID-39A99209-B587-44DE-8C5D-19B9906C7D94">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Uvarov">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-8BF9FF41-1CA7-44E7-A82E-42B927F42CF9">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Instance administrators can configure limits to isolate a workspace and prevent browser attacks.">
+      <meta name="description" content="Instance administrators can configure limits to isolate a workspace and prevent browser attacks.">
+      <title>Isolating a Workspace to Prevent Browser Attacks</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administration Guide ">
+      <meta property="og:description" content="Instance administrators can configure limits to isolate a workspace and prevent browser attacks.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administration Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-administration-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-20T19:23:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24718-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="performing-a-workspace-search.html" title="Previous" type="text/html">
+      <link rel="next" href="viewing-workspace-details-report.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Administration Guide">
+    <meta name="dcterms.isVersionOf" content="AEADM">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="performing-a-workspace-search.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="viewing-workspace-details-report.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administration Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-application-express-administration-services.html" property="item" typeof="WebPage"><span property="name">Oracle Application Express Administration Services</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-existing-workspaces.html" property="item" typeof="WebPage"><span property="name">Managing Existing Workspaces</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Isolating a Workspace to Prevent Browser Attacks</li>
+            </ol>
+            <a id="GUID-8BF9FF41-1CA7-44E7-A82E-42B927F42CF9" name="GUID-8BF9FF41-1CA7-44E7-A82E-42B927F42CF9"></a><a id="AEADM479"></a>
+            
+            <h2 id="AEADM-GUID-8BF9FF41-1CA7-44E7-A82E-42B927F42CF9" class="sect2"><span class="enumeration_section">3.15.8 </span>Isolating a Workspace to Prevent Browser Attacks
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Instance administrators can configure limits to isolate a workspace and prevent browser attacks.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="isolating-workspace-to-prevent-browser-attacks.html#GUID-D7EED8D0-7329-4054-B503-BE8FA80B44AB">About Isolating a Workspace to Prevent Browser Attacks</a><br>Isolating workspaces is an effective approach to preventing browser attacks.
+                  </li>
+                  <li class="ulchildlink"><a href="isolating-workspace-to-prevent-browser-attacks.html#GUID-39A99209-B587-44DE-8C5D-19B9906C7D94">Configuring Workspace Isolation Attributes</a><br>Configure Workspace Isolation attributes.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-8BF9FF41-1CA7-44E7-A82E-42B927F42CF9__GUID-BD9DCFE0-295C-49BA-B6CE-B7F9D8EE4605">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="configuring-security.html#GUID-B3BD09CF-D003-4837-A7D2-91A6E756D72E" title="Instance administrators can prevent browser attacks by isolating a workspace.">Isolating All Workspaces in an Instance</a>"</span></p>
+                     </li>
+                     <li>
+                        <p>"About Isolating Workspaces" in <a href="../htmdb/manging-instance-security.html#HTMDB29979" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-existing-workspaces.html#GUID-ACCB0B3A-C7DE-40F7-BD57-716417FD71A9" title="Instance administrators can manage existing workspaces within an Oracle Application Express instance.">Managing Existing Workspaces</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEADM29238"></a><div class="props_rev_3"><a id="GUID-D7EED8D0-7329-4054-B503-BE8FA80B44AB" name="GUID-D7EED8D0-7329-4054-B503-BE8FA80B44AB"></a><h3 id="AEADM-GUID-D7EED8D0-7329-4054-B503-BE8FA80B44AB" class="sect3"><span class="enumeration_section">3.15.8.1 </span>About Isolating a Workspace to Prevent Browser Attacks
+               </h3>
+               <div>
+                  <p>Isolating workspaces is an effective approach to preventing browser attacks.</p>
+                  <p>The only way to truly isolate a workspace is to enforce different domains in the URL by configuring the Allow Hostnames attribute. When the URLs of the attacker and the victim have different domains and hostnames, the browser's same-origin policy prevents attacks.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="isolating-workspace-to-prevent-browser-attacks.html#GUID-8BF9FF41-1CA7-44E7-A82E-42B927F42CF9" title="Instance administrators can configure limits to isolate a workspace and prevent browser attacks.">Isolating a Workspace to Prevent Browser Attacks</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEADM29240"></a><a id="AEADM29239"></a><div class="props_rev_3"><a id="GUID-39A99209-B587-44DE-8C5D-19B9906C7D94" name="GUID-39A99209-B587-44DE-8C5D-19B9906C7D94"></a><h3 id="AEADM-GUID-39A99209-B587-44DE-8C5D-19B9906C7D94" class="sect3"><span class="enumeration_section">3.15.8.2 </span>Configuring Workspace Isolation Attributes
+               </h3>
+               <div>
+                  <p>Configure Workspace Isolation attributes.</p>
+                  <div class="section">
+                     <p>To configure Workspace Isolation attributes:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the existing workspace:</span><ol type="a">
+                           <li><span>Sign in to Oracle Application Express Administration Services.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Manage Workspaces</span>.</span></li>
+                           <li><span>Under Workspace Reports, click <span class="uicontrol bold">Existing Workspaces</span>.</span></li>
+                           <li><span>Click a workspace name. </span></li>
+                        </ol>
+                        <div>The Edit Information page appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Locate Workspace Isolation and edit the attributes as described in the following table.</span><div>
+                           <div class="infobox-tip" id="GUID-39A99209-B587-44DE-8C5D-19B9906C7D94__GUID-098DBEDC-052B-42B2-BD34-B36F06499B38">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute and view examples, see field-level Help.</p>
+                           </div>
+                           <div class="tblformal" id="GUID-39A99209-B587-44DE-8C5D-19B9906C7D94__BABJBEEC">
+                              <p class="titleintable">Table 3-5 Workspace Isolation Attributes</p>
+                              <table cellpadding="4" cellspacing="0" class="Formal" title="Workspace Isolation Attributes" summary="This table describes the Workspace Isolation attributes on the Edit Workspace Information page." width="90%" frame="hsides" border="1" rules="rows">
+                                 <thead>
+                                    <tr align="left" valign="top">
+                                       <th align="left" valign="bottom" width="33%" id="d43051e245">Attribute</th>
+                                       <th align="left" valign="bottom" width="67%" id="d43051e248">Description</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e253" headers="d43051e245 ">
+                                          <p>Allow Hostnames </p><a id="d43051e256" class="indexterm-anchor"></a><a id="d43051e260" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e253 d43051e248 ">
+                                          <p>Enter a comma separated list of hostnames that can be used to access this workspace. If you leave this attribute empty, the instance-level value applies. If you enter one or more hostnames, the incoming HTTP request URL's hostname part must match one of the listed hostnames. </p>
+                                          <p>To learn more, see field-level Help.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e270" headers="d43051e245 ">
+                                          <p>Resource Consumer Group</p><a id="d43051e273" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e270 d43051e248 ">
+                                          <p>Specify the Database Resource Manager consumer group to be used for all page events associated with this workspace. If you leave this attribute empty, the instance-level value applies. At the beginning of every request, the Application Express engine switches the current consumer group of the current database session to the workspace's consumer group. This applies to both executing applications and any of the applications used within the Application Express development environment.</p>
+                                          <p>The privilege to switch to this consumer group must be granted to either PUBLIC or the Application Express schema. This privilege is typically granted using the procedure <code class="codeph">DBMS_RESOURCE_MANAGER_PRIVS.GRANT_SWITCH_CONSUMER_GROUP</code>.
+                                          </p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e286" headers="d43051e245 ">
+                                          <p>Maximum Concurrent Workspace Requests</p><a id="d43051e289" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e286 d43051e248 ">
+                                          <p>Enter the maximum number of concurrent page events that Oracle Application Express supports for all applications of this workspace. If you leave this attribute empty, the instance-level value applies. Instead of processing a page event, Application Express shows an error message when the limit is already reached.</p>
+                                          <p>Application Express keeps track of session requests by querying the <code class="codeph">CLIENT_INFO</code> column of <code class="codeph">GV$SESSION</code>. This tracking will not work if developers overwrite <code class="codeph">CLIENT_INFO</code>, e.g. with a call to <code class="codeph">DBMS_APPLICATION_INFO.SET_CLIENT_INFO</code>.
+                                          </p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e311" headers="d43051e245 ">
+                                          <p>Maximum Concurrent Session Requests</p><a id="d43051e314" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e311 d43051e248 ">
+                                          <p>Enter the maximum number of concurrent page events that Oracle Application Express supports for each session of this workspace's applications. Instead of processing a new page event, Application Express shows an error message when the limit is already reached. Alternatively, use the Concurrent Session Requests Kill Timeout attribute to kill an active database session, to process the new page event. </p>
+                                          <p>Application Express keeps track of session requests by querying the <code class="codeph">CLIENT_IDENTIFIER</code> column of <code class="codeph">GV$SESSION</code>. This tracking will not work if developers overwrite <code class="codeph">CLIENT_IDENTIFIER</code>, for example with a call to <code class="codeph">DBMS_SESSION.SET_IDENTIFIER</code>.
+                                          </p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e336" headers="d43051e245 ">
+                                          <p>Concurrent Session Requests Kill Timeout</p><a id="d43051e339" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e336 d43051e248 ">
+                                          <p>If a new page event comes in that is outside the limits of <span class="uicontrol bold">Maximum Concurrent Session Requests</span>, Application Express can execute <code class="codeph">alter system kill session</code> on the oldest active database session which processes another page event for this Application Express session. This attribute specifies the number of seconds a database process has to be active, before it can be killed. If you leave this attribute empty, the instance-level value applies.
+                                          </p>
+                                          <p><span class="bold">Warning</span>: Killing sessions can cause problems with the application server's database session pool.
+                                          </p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e357" headers="d43051e245 ">
+                                          <p>Maximum Size of Files in Workspace</p><a id="d43051e360" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e357 d43051e248 ">
+                                          <p>Enter the total size (in bytes) of all files that can be uploaded to this workspace.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e368" headers="d43051e245 ">
+                                          <p>Maximum Email Messages</p><a id="d43051e371" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e368 d43051e248 ">
+                                          <p>Enter the maximum number of email messages that can be sent with the <code class="codeph">APEX_MAIL API</code> per 24 hour period. 
+                                          </p>
+                                          <p>This value overrides the instance-level setting.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e384" headers="d43051e245 ">
+                                          <p>Maximum Web Service Requests</p><a id="d43051e387" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e384 d43051e248 ">
+                                          <p>Enter the maximum number of web service requests that can be sent per 24 hour period. </p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e395" headers="d43051e245 ">
+                                          <p>Content Cache target size</p><a id="d43051e398" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e395 d43051e248 ">
+                                          <p>Denotes the target size for the content cache on workspace level. </p>
+                                          <p>This value overrides the instance-level setting.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" width="33%" id="d43051e408" headers="d43051e245 ">
+                                          <p>Content Cache maximum entry size</p><a id="d43051e411" class="indexterm-anchor"></a></td>
+                                       <td align="left" valign="top" width="67%" headers="d43051e408 d43051e248 ">
+                                          <p>Denotes the maximum size for content to be placed into the content cache.</p>
+                                          <p>This value overrides the instance-level setting.</p>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <!-- class="inftblhruleinformal" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="isolating-workspace-to-prevent-browser-attacks.html#GUID-8BF9FF41-1CA7-44E7-A82E-42B927F42CF9" title="Instance administrators can configure limits to isolate a workspace and prevent browser attacks.">Isolating a Workspace to Prevent Browser Attacks</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

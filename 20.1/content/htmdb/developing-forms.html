@@ -1,0 +1,145 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Developing Forms">
+      <meta name="abstract" content="Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.">
+      <meta name="description" content="Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.">
+      <meta name="DC.Relation" scheme="URI" content="understanding-forms-types.html#GUID-003D4596-6A9B-4D17-A730-DAFB2D8B805F">
+      <meta name="DC.Relation" scheme="URI" content="using-a-wizard-to-create-a-form.html#GUID-BA645F6E-B988-4346-92EB-25C7F3614691">
+      <meta name="DC.Relation" scheme="URI" content="configuring-lost-update-detection.html#GUID-7A0F4D6F-24D7-478F-B796-C5A403FA63E2">
+      <meta name="DC.Relation" scheme="URI" content="about-making-grids-editable.html#GUID-0A317D17-5B12-4F4A-B5C8-68807DB5A4C1">
+      <meta name="DC.Relation" scheme="URI" content="managing-master-detail-forms.html#GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB">
+      <meta name="DC.Relation" scheme="URI" content="validating-user-input-in-forms.html#GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-blob-support-in-forms.html#GUID-206633B5-F761-4CCB-AE71-2CF8539B482E">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.">
+      <meta name="description" content="Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.">
+      <title>Developing Forms</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="understanding-blob-support-in-forms-and-reports.html" title="Previous" type="text/html">
+      <link rel="next" href="understanding-forms-types.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="understanding-blob-support-in-forms-and-reports.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="understanding-forms-types.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Developing Forms</li>
+            </ol>
+            <a id="GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E" name="GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E"></a><a id="HTMDB29664"></a>
+            
+            <h2 id="HTMDB-GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E" class="sect2"><span class="enumeration_chapter">11 </span>Developing Forms
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Developers can create a variety of different application forms either manually or by using wizards. Some forms enable users to update a single row in a table, while other forms enable users to update multiple rows in a table.</p>
+               <div class="infobox-tip" id="GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E__GUID-82A71276-7510-4459-B85E-54CC242778F4">
+                  <p class="notep1">Tip:</p>
+                  
+                  <p>Run the <span class="uicontrol bold">Upgrade Application</span> utility to automatically upgrade
+                legacy forms to the new form region. See <span class="q">"<a href="accessing-application-utilities.html#GUID-4844F58C-84DB-446B-A0B0-0F572ED34A0E" title="Upgrade an existing application to include new components available in the current release.">Upgrading an Application to Include New Components</a>."</span></p>
+                  
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-forms-types.html#GUID-003D4596-6A9B-4D17-A730-DAFB2D8B805F">Understanding Form Types</a><br>When creating a database application, developers can create four basic form         types: editable interactive grid, form, report with form, or master detail.
+                  </li>
+                  <li class="ulchildlink"><a href="using-a-wizard-to-create-a-form.html#GUID-BA645F6E-B988-4346-92EB-25C7F3614691">Creating a Form</a><br>Developers can create forms using  the Create Application Wizard and Create         Page Wizard. 
+                  </li>
+                  <li class="ulchildlink"><a href="configuring-lost-update-detection.html#GUID-7A0F4D6F-24D7-478F-B796-C5A403FA63E2">Configuring Lost Update Detection</a><br>Prevent form users from overwriting one another by configuring the Lost Update         Detection.
+                  </li>
+                  <li class="ulchildlink"><a href="about-making-grids-editable.html#GUID-0A317D17-5B12-4F4A-B5C8-68807DB5A4C1">About Making an Interactive Grid Editable</a><br>Developers determine whether the underlying data is read-only or editable by users. An interactive grid presents users a set of data in a searchable, customizable report. In an editable interactive grid, users can also add to, modify, and refresh the data set directly on the page. 
+                  </li>
+                  <li class="ulchildlink"><a href="managing-master-detail-forms.html#GUID-6143A5AE-FCAB-4D7F-8B8C-7EFBE39359FB">Creating Master Detail Forms</a><br>Developers can create a master detail form with either the Create Application Wizard or the Create Page Wizard.
+                  </li>
+                  <li class="ulchildlink"><a href="validating-user-input-in-forms.html#GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A">Validating User Input in Forms</a><br>Developers can create validation and an associated error message to check the data a user enters before processing.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-blob-support-in-forms.html#GUID-206633B5-F761-4CCB-AE71-2CF8539B482E">Understanding BLOB Support in Forms</a><br>Oracle Application Express includes BLOB support to enable developers to declaratively upload and download files in forms.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-FDB1159B-21B7-47BE-8640-2C92CCE2389E__GUID-7B6913E8-062B-4986-B90C-5BC33BE382F9">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="creating-legacy-master-detail.html#GUID-95ADACFB-337B-4929-9959-4444F740DE72" title="Create a legacy master detail form by running the Create Page Wizard and selecting Legacy Page and then Legacy Master Detail.">Creating a Legacy Master Detail Form</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="managing-tabular-forms.html#GUID-020DF499-0AC4-4EAB-AAD5-5E166A20AB1B" title="Create a legacy tabular form by running the Create Page Wizard and selecting Legacy Page and then Tabular Form.">Managing Legacy Tabular Forms</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="developing-reports.html#GUID-A63ECD33-D759-4725-9666-A02719FB35B8" title="In Oracle Application Express, a report is the formatted result of a SQL query. You can generate the SQL query by selecting a table or view in a wizard, or by defining the SQL query manually.">Developing Reports</a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Report Output">
+      <meta name="abstract" content="Learn how to print a report region by defining a report query and how to use a report layout to format a report region.">
+      <meta name="description" content="Learn how to print a report region by defining a report query and how to use a report layout to format a report region.">
+      <meta name="DC.subject" content="report queries, about, creating, editing, copying, report layouts, options">
+      <meta name="keywords" content="report queries, about, creating, editing, copying, report layouts, options">
+      <meta name="DC.Relation" scheme="URI" content="managing-shared-components.html#GUID-04D43728-0539-4817-9FBB-DEFFA616E916">
+      <meta name="DC.Relation" scheme="URI" content="managing-report-output.html#GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274">
+      <meta name="DC.Relation" scheme="URI" content="managing-report-output.html#GUID-3835B68D-D38A-4523-BDAC-9CAB42121013">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-28DF9A7C-F82F-46F6-9428-BE0FE94FC75E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn how to print a report region by defining a report query and how to use a report layout to format a report region.">
+      <meta name="description" content="Learn how to print a report region by defining a report query and how to use a report layout to format a report region.">
+      <title>Managing Report Output</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Learn how to print a report region by defining a report query and how to use a report layout to format a report region.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="managing-navigation-bar.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-application-data.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-navigation-bar.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-application-data.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-shared-components.html" property="item" typeof="WebPage"><span property="name">Managing Shared Components</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Report Output</li>
+            </ol>
+            <a id="GUID-28DF9A7C-F82F-46F6-9428-BE0FE94FC75E" name="GUID-28DF9A7C-F82F-46F6-9428-BE0FE94FC75E"></a><a id="HTMDB29878"></a>
+            
+            <h2 id="HTMDB-GUID-28DF9A7C-F82F-46F6-9428-BE0FE94FC75E" class="sect2"><span class="enumeration_section">18.12 </span>Managing Report Output
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn how to print a report region by defining a report query and how to use a report layout to format a report region.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-report-output.html#GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274">Printing a Report Region by Defining a Report Query</a><br></li>
+                  <li class="ulchildlink"><a href="managing-report-output.html#GUID-3835B68D-D38A-4523-BDAC-9CAB42121013">Formatting a Report Region or Report Query Using Report Layouts</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-shared-components.html#GUID-04D43728-0539-4817-9FBB-DEFFA616E916" title="Shared components can display or be applied on any page within an application. Developers can use the tools and wizards on the Shared Components page either at the application-level or on specific pages.">Managing Shared Components</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25376"></a><div class="props_rev_3"><a id="GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274" name="GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274"></a><h3 id="HTMDB-GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274" class="sect3"><span class="enumeration_section">18.12.1 </span>Printing a Report Region by Defining a Report  Query
+               </h3>
+               <div>
+                  <p>Print a report region by defining a report query.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-2A94F2A9-F07B-4F6F-9354-4C0C0442F5BD">About Report Queries</a><br></li>
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-92719C5B-2926-4BCB-8D58-58D53C525E12">Creating a Report Query</a><br></li>
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-F5E40A35-1C48-4264-9131-3DAC81852469">Editing a Report Query</a><br></li>
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-F5A93456-E612-4EAD-80A8-3B11899E6448">Copying a Report Query</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-28DF9A7C-F82F-46F6-9428-BE0FE94FC75E" title="Learn how to print a report region by defining a report query and how to use a report layout to format a report region.">Managing Report Output</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29302"></a><div class="props_rev_3"><a id="GUID-2A94F2A9-F07B-4F6F-9354-4C0C0442F5BD" name="GUID-2A94F2A9-F07B-4F6F-9354-4C0C0442F5BD"></a><h4 id="HTMDB-GUID-2A94F2A9-F07B-4F6F-9354-4C0C0442F5BD" class="sect4"><span class="enumeration_section">18.12.1.1 </span>About Report Queries
+                  </h4>
+                  <div>
+                     <p>You can print a report region by defining a report query as a Shared Component. A report query identifies the data to be extracted. Unlike SQL statements contained in regions, report queries contain SQL statements that are validated when you save the query. Note that report queries must be SQL statements, not functions returning SQL statements. </p>
+                     <p>You can associate a report query with a report layout and download it as a formatted document. If no report layout is selected, a generic layout is used. The generic layout is intended to be used to test and verify a report query. When using the generic layout option and multiple source queries are defined, only the first result set is included in the print document. The reports can include session state of the current application.</p>
+                     <p>To make these reports available to end users, you then integrate them with an application. For example, you can associate a report query with a button, list item, branch, or other navigational component that enables you to use URLs as targets. Selecting that item then initiates the printing process.</p>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274">Printing a Report Region by Defining a Report Query</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25377"></a><div class="props_rev_3"><a id="GUID-92719C5B-2926-4BCB-8D58-58D53C525E12" name="GUID-92719C5B-2926-4BCB-8D58-58D53C525E12"></a><h4 id="HTMDB-GUID-92719C5B-2926-4BCB-8D58-58D53C525E12" class="sect4"><span class="enumeration_section">18.12.1.2 </span>Creating a Report Query
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Note that the availability of the report query options depends on how your service administrator configures report printing for your instance. All options described in these steps may not be available to you. </p>
+                        <p>To create a report query:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                    <p>The Shared Components page appears. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Reports, click <span class="uicontrol bold">Report Queries</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                        <li class="stepexpand"><span>For Query, specify the following information:</span><ol type="a">
+                              <li class="substepexpand"><span>Report Query Name - Enter a name to identify the report query. When referencing a report query as a link target, the report query name is part of the request string.</span></li>
+                              <li class="substepexpand"><span>Output Format - Select the report output format. Valid options include:</span><div>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p>PDF - Adobe Portable Document Format.</p>
+                                       </li>
+                                       <li>
+                                          <p>Word - Microsoft Word Rich Text Format.</p>
+                                       </li>
+                                       <li>
+                                          <p>Excel - Microsoft Excel format. Note that this is not a true <code class="codeph">.xls</code> file because the content is HTML-based. 
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p>HTML</p>
+                                       </li>
+                                       <li>
+                                          <p>XML - Extensible Markup Language.</p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>Item - Select the item to hold the format value. You can use this item to determine the output format at runtime.</span></li>
+                              <li class="substepexpand"><span>View File As - Select how the web browser opens the report query document. Options include:</span><div>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><span class="uicontrol bold">Attachment</span> - Displays a File Open/Save dialog box when the user clicks the report query download button.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="uicontrol bold">Inline</span> - Displays the report query document inside the Browser window.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>Session State - Select this check box to reference session state values, such as the values of page items in the XML structure of your report.</span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For SQL Query, enter a SQL statement directly or click <span class="uicontrol bold">Query Builder</span> to build a SQL statement by clicking and pointing.</span><div>
+                              <p>To reference applications and page items in the SQL statement, reference them as bind variables. Click <span class="uicontrol bold">Set Bind Variables</span> to be able to enter in values for each bind variable and test the query to ensure the expected output is returned.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>For Download Definition, specify the following: </span><ol type="a">
+                              <li class="substepexpand"><span>Data Source for Report Layout - Use this option to download a report definition export file.</span><div>
+                                    <div class="infobox-tip" id="GUID-92719C5B-2926-4BCB-8D58-58D53C525E12__GUID-73769D01-AD8E-4EF7-BE6D-FAB72C9C984C">
+                                       <p class="notep1">Tip:</p>
+                                       <p>The report query definition is what a developer would use as the source for tools like BI Publisher Desktop or Altova Stylevision to create the report layout. Some tools accept both an XML export of the data as well as an XML scheme definitions as source, other tools may only accept one or the other. If the source query does not return data at design time, then XML schema provides a way to export the definition without data.</p>
+                                    </div>
+                                 </div>
+                                 <div>
+                                    <p>Select <span class="uicontrol bold">XML Data</span> or <span class="uicontrol bold">XML Schema</span> and click <span class="uicontrol bold">Download</span>.
+                                    </p>
+                                    <p>XML Schema creates XSD file (that is, a XML schema definition of your XML structure.)</p>
+                                 </div>
+                              </li>
+                              <li class="substepexpand"><span>Add Query - Click this button to add another query to the report query. Adding another query enables the production of complex reports with more than one output component (for example, a chart and a report based on two different queries).</span></li>
+                              <li class="substepexpand"><span>Create Report Query - Click this button to exit the wizard early. The Report Layout Source defaults to use the generic report layout.</span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Upload Report Layout, specify the following: </span><ol type="a">
+                              <li><span>Report Layout Source - Specify how the report layout is derived. If you choose the report based file layout then the layout name and report layout file must be provided.</span></li>
+                              <li><span>Layout Name - Enter a layout name (optional). The default is the report query name.</span></li>
+                              <li><span>Report Layout File - Click <span class="uicontrol bold">Browse</span> and select a Rich Text Format (RTF).</span></li>
+                              <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>For Confirm: </span><ol type="a">
+                              <li class="substepexpand"><span>Query Name - Identifies the query. </span></li>
+                              <li class="substepexpand"><span>Report Layout - Identifies the report layout you selected.</span></li>
+                              <li class="substepexpand"><span>Output Format - Identifies the format for this report query. </span></li>
+                              <li class="substepexpand"><span>Derive from Item - Identifies the item to hold the format information.</span></li>
+                              <li class="substepexpand"><span>URL - To integrate this report with your application, use the displayed URL as the target for a button, list item, link, or other navigational component. End users can click a button, for example, to start the printing process. </span></li>
+                              <li class="substepexpand"><span>Test Report - Click this to preview your report. If you have chosen to use a generic report layout then the Test Report does not produce an output.</span></li>
+                              <li class="substepexpand"><span>Click <span class="uicontrol bold">Finish</span>. </span><div>
+                                    <p>The Report Query is created and saved to Shared Components. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-92719C5B-2926-4BCB-8D58-58D53C525E12__GUID-3B2CBCAB-E0B1-42E9-9B53-99AAC34FC1B1">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="printing-report-regions.html#GUID-BBC0ECE1-2130-417E-AE33-4128588C5BA1">About Report Printing Configuration Options</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274">Printing a Report Region by Defining a Report Query</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25378"></a><div class="props_rev_3"><a id="GUID-F5E40A35-1C48-4264-9131-3DAC81852469" name="GUID-F5E40A35-1C48-4264-9131-3DAC81852469"></a><h4 id="HTMDB-GUID-F5E40A35-1C48-4264-9131-3DAC81852469" class="sect4"><span class="enumeration_section">18.12.1.3 </span>Editing a Report Query
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To edit a report query:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>Navigate to the Shared Components page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                    <p>The Shared Components page appears. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li><span>Under Reports, click <span class="uicontrol bold">Report Queries</span>.</span></li>
+                        <li><span>Select the appropriate report query. </span></li>
+                        <li><span>On the Edit page, edit the appropriate attributes.</span></li>
+                        <li><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274">Printing a Report Region by Defining a Report Query</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25379"></a><div class="props_rev_3"><a id="GUID-F5A93456-E612-4EAD-80A8-3B11899E6448" name="GUID-F5A93456-E612-4EAD-80A8-3B11899E6448"></a><h4 id="HTMDB-GUID-F5A93456-E612-4EAD-80A8-3B11899E6448" class="sect4"><span class="enumeration_section">18.12.1.4 </span>Copying a Report Query
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To copy a report query:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                              <li class="substepexpand"><span>Select an application.</span></li>
+                              <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                    <p>The Shared Components page appears. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Reports, click <span class="uicontrol bold">Report Queries</span>.</span></li>
+                        <li class="stepexpand"><span>On the Report Queries page, click <span class="uicontrol bold">Copy</span>.</span></li>
+                        <li class="stepexpand"><span>On the Copy Report Query, select the query you want to copy, enter a name for the report query, and click <span class="uicontrol bold">Copy</span>.</span><div>
+                              <p>The copy appears in the query list.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-A4EF85FA-9B7D-4CE3-A240-C069935AF274">Printing a Report Region by Defining a Report Query</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB25380"></a><div class="props_rev_3"><a id="GUID-3835B68D-D38A-4523-BDAC-9CAB42121013" name="GUID-3835B68D-D38A-4523-BDAC-9CAB42121013"></a><h3 id="HTMDB-GUID-3835B68D-D38A-4523-BDAC-9CAB42121013" class="sect3"><span class="enumeration_section">18.12.2 </span>Formatting a Report Region or Report Query Using Report Layouts
+               </h3>
+               <div>
+                  <p>Create a report layout to format a report region or report layout.</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-F6920368-D8EC-4C69-B790-5E1786902B13">About Report Layouts</a><br></li>
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-4AB7C90F-D49C-441E-9BD2-2697CFAB4D27">About Report Layout Options</a><br></li>
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-19A1F139-AA8A-4016-9C4B-51308E292B1A">Creating a Report Layout</a><br></li>
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-1698D50D-4AE5-45AB-8C99-B567AD618D77">Editing a Report Layout</a><br></li>
+                     <li class="ulchildlink"><a href="managing-report-output.html#GUID-DCD5E4DB-37DE-4B5A-B101-1C7B828D65FF">Copying a Report Layout</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-28DF9A7C-F82F-46F6-9428-BE0FE94FC75E" title="Learn how to print a report region by defining a report query and how to use a report layout to format a report region.">Managing Report Output</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29303"></a><div class="props_rev_3"><a id="GUID-F6920368-D8EC-4C69-B790-5E1786902B13" name="GUID-F6920368-D8EC-4C69-B790-5E1786902B13"></a><h4 id="HTMDB-GUID-F6920368-D8EC-4C69-B790-5E1786902B13" class="sect4"><span class="enumeration_section">18.12.2.1 </span>About Report Layouts
+                  </h4>
+                  <div>
+                     <p>To format either a classic report region or report query, you associate it with a report layout. Using report layouts renders the data in a printer-friendly format. If you do not select a report layout, a default XSL-FO layout is used. The default XSL-FO layout is always used for rendering Interactive Report regions.</p>
+                     <p>When creating and using report layouts, you can:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Take advantage of the default layouts for report regions and generic layouts for report queries provided with Oracle Application Express.</p>
+                        </li>
+                        <li>
+                           <p>Utilize the built-in XSL-FO-based layouts for report regions by copying and customizing the code. You can edit several attributes for report regions that control page size, fonts, colors, and so on.</p>
+                        </li>
+                        <li>
+                           <p>Create RTF or XSL-FO report layouts to customize the report look and feel. To use RTF report layouts, your Oracle Application Express service administrator must select the Advanced setting for your site. </p>
+                        </li>
+                     </ul>
+                     <div class="infoboxnote" id="GUID-F6920368-D8EC-4C69-B790-5E1786902B13__GUID-10093DB4-B6D1-4410-997D-6EB9A7DD2F33">
+                        <p class="notep1">Note:</p>
+                        <p>Interactive reports do not support a custom report layout.</p>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-F6920368-D8EC-4C69-B790-5E1786902B13__GUID-76B2FB0D-FD31-46A2-A44C-2595AA5146B1">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"Configuring Report Printing"</span> in <a href="../aeadm/configuring-instance-settings.html#AEADM219" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-3835B68D-D38A-4523-BDAC-9CAB42121013">Formatting a Report Region or Report Query Using Report Layouts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25381"></a><div class="props_rev_3"><a id="GUID-4AB7C90F-D49C-441E-9BD2-2697CFAB4D27" name="GUID-4AB7C90F-D49C-441E-9BD2-2697CFAB4D27"></a><h4 id="HTMDB-GUID-4AB7C90F-D49C-441E-9BD2-2697CFAB4D27" class="sect4"><span class="enumeration_section">18.12.2.2 </span>About Report Layout Options
+                  </h4>
+                  <div>
+                     <p>You can create a report layout based on one of these options:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Generic Columns</span> - A generic report layout works with most query result sets. With this layout, the number of columns is automatically adjusted when generating the printable document. 
+                           </p>
+                           <p>Many report layout attributes can be defined declaratively for report regions using the built-in XSL-FO default layout. This step allows for creating customizable copies of the built-in default XSL-FO layout, if additional control over the report layout is needed.</p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Named Columns</span> - A named column report layout is a query-specific report layout designed to work with a defined list of columns in the query result set. This type of layout is used for custom-designed layouts when precise control of the positioning of page items and query columns is required. 
+                           </p>
+                        </li>
+                     </ul>
+                     <p>Note that the availability of the Report Layout options depends on how your site administrator configured the report printing settings at your site. All options described in these steps may not be available to you.</p>
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-4AB7C90F-D49C-441E-9BD2-2697CFAB4D27__GUID-F5AD9936-D671-4093-88F1-AED522C5E7CC">
+                        <p class="notep1">See Also:</p>
+                        <p>"Configuring Report Printing" in <a href="../aeadm/configuring-instance-settings.html#AEADM219" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a>.
+                        </p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-3835B68D-D38A-4523-BDAC-9CAB42121013">Formatting a Report Region or Report Query Using Report Layouts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25382"></a><div class="props_rev_3"><a id="GUID-19A1F139-AA8A-4016-9C4B-51308E292B1A" name="GUID-19A1F139-AA8A-4016-9C4B-51308E292B1A"></a><h4 id="HTMDB-GUID-19A1F139-AA8A-4016-9C4B-51308E292B1A" class="sect4"><span class="enumeration_section">18.12.2.3 </span>Creating a Report Layout
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To create a report layout:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                    <p>The Shared Components page appears. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Reports, click <span class="uicontrol bold">Report Layouts</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span><div>
+                              <p>The Create Report Layout wizard appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>For Report Layout Type, select an option and click <span class="uicontrol bold">Next</span>:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Generic Columns (XSL-FO) - Uses the default template to populate the report. In the next step, you can customize the default code.</p>
+                                 </li>
+                                 <li>
+                                    <p>Named Columns (XSL-FO) - Requires that you upload an XSL-FO or RTF file in the next step.</p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>For Layout Source, review and edit the appropriate information. The options that appear on this page depend on the layout type you select: </span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>If you selected <span class="uicontrol bold">Generic Columns</span>:
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                           <ol type="a">
+                              <li class="substepexpand"><span>Report Layout Name - Enter a name to identify the report layout when associating it with a report query or report region.</span></li>
+                              <li class="substepexpand"><span>Report Layout - The report layout is the XSL-FO based definition of the page formatting. All attributes defining page size, orientation, fonts, styles, and so on, are defined in this section. </span></li>
+                              <li class="substepexpand"><span>Report Column Heading - Defines the look of each cell in the report heading row.</span></li>
+                              <li class="substepexpand"><span>Report Column - Defines the look of each cell for all report rows. </span></li>
+                              <li class="substepexpand"><span>Report Column Width - This width is computed at runtime or can be derived from the report column definition of a report region. </span><div>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p>If you selected Named Columns:</p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </li>
+                           </ol>
+                           <ol type="a">
+                              <li><span>Layout Name - Enter a name to identify the report layout when associating it with a report query or report region.</span></li>
+                              <li><span>Report Layout File - Upload the file containing the report layout.</span></li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Layout</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-3835B68D-D38A-4523-BDAC-9CAB42121013">Formatting a Report Region or Report Query Using Report Layouts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25383"></a><div class="props_rev_3"><a id="GUID-1698D50D-4AE5-45AB-8C99-B567AD618D77" name="GUID-1698D50D-4AE5-45AB-8C99-B567AD618D77"></a><h4 id="HTMDB-GUID-1698D50D-4AE5-45AB-8C99-B567AD618D77" class="sect4"><span class="enumeration_section">18.12.2.4 </span>Editing a Report Layout
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>You can edit a generic column report layout directly in Application Express. However, to edit a named column report layout, you must download the current file, edit it, and then upload it again.</p>
+                        <p>To edit a report layout:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                              <li class="substepexpand"><span>Select an application.</span></li>
+                              <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                    <p>The Shared Components page appears. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Reports, click <span class="uicontrol bold">Report Layouts</span>.</span></li>
+                        <li class="stepexpand"><span>On the Report Layouts page, select the layout you want to edit.</span></li>
+                        <li class="stepexpand"><span>For generic column layouts, edit the layout directly on the Edit Report Layout page and click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                        <li class="stepexpand"><span>For named column layouts, click <span class="uicontrol bold">Download</span> and save the file to your computer.</span><div>
+                              <p>Edit the file and then upload the updated version as a new report layout.</p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-3835B68D-D38A-4523-BDAC-9CAB42121013">Formatting a Report Region or Report Query Using Report Layouts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB25384"></a><div class="props_rev_3"><a id="GUID-DCD5E4DB-37DE-4B5A-B101-1C7B828D65FF" name="GUID-DCD5E4DB-37DE-4B5A-B101-1C7B828D65FF"></a><h4 id="HTMDB-GUID-DCD5E4DB-37DE-4B5A-B101-1C7B828D65FF" class="sect4"><span class="enumeration_section">18.12.2.5 </span>Copying a Report Layout
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>You can copy a report layout to edit and save.</p>
+                        <p>To copy a report layout:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the Shared Components page:</span><ol type="a">
+                              <li class="substepexpand"><span>On the Workspace home page, click <span><span class="uicontrol bold">App
+                                        Builder</span></span>.</span></li>
+                              <li class="substepexpand"><span>Select an application. </span></li>
+                              <li class="substepexpand"><span>On the Application home page, click <span class="uicontrol bold">Shared Components</span>.</span><div>
+                                    <p>The Shared Components page appears. </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                        <li class="stepexpand"><span>Under Reports, click <span class="uicontrol bold">Report Layouts</span>.</span></li>
+                        <li class="stepexpand"><span>On the Report Layouts page, click <span class="uicontrol bold">Copy</span>.</span></li>
+                        <li class="stepexpand"><span>On the Copy Report Layout page, select the layout you want to copy, enter a name for the copy, and click <span class="uicontrol bold">Copy</span>.</span><div>
+                              <p>The copy appears in the layout list.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>On Copy Report Layout:</span><ol type="a">
+                              <li><span>Copy Report Layout - Select the layout you want to copy.</span></li>
+                              <li><span>Report Layout Name - Enter a name for the copy.</span></li>
+                              <li><span>Click <span class="uicontrol bold">Copy</span>.</span></li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="managing-report-output.html#GUID-3835B68D-D38A-4523-BDAC-9CAB42121013">Formatting a Report Region or Report Query Using Report Layouts</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

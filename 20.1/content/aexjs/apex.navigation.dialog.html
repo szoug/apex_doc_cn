@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: dialog</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.created" content="2020-03-24T20:11:56+00:00">
+    <meta name="dcterms.title" content="Oracle Application Express JavaScript API Reference">
+    <meta name="dcterms.category" content="database">
+    <meta name="dcterms.isVersionOf" content="AEXJS">
+    <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+    <meta name="dcterms.identifier" content="F24723-01">
+    <meta name="dcterms.release" content="Release 20.1">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}} </script>
+    </head>
+
+<body>
+<a href="#main-content" id="skipToContent">Skip to Main Content</a>
+
+<nav id="nav" data-current-item="nav_20">
+    <h2 id="navIndex"><a href="index.html">Index</a></h2><h3>Widgets</h3><ul><li id="nav_0"><a href="grid.html">grid</a></li><li id="nav_1"><a href="iconList.html">iconList</a></li><li id="nav_2"><a href="interactiveGrid.html">interactiveGrid</a></li><li id="nav_3"><a href="menu.html">menu</a></li><li id="nav_4"><a href="menuButton.html">menuButton</a></li><li id="nav_5"><a href="recordView.html">recordView</a></li><li id="nav_6"><a href="tableModelView.html">tableModelView</a></li><li id="nav_7"><a href="tableModelViewBase.html">tableModelViewBase</a></li><li id="nav_8"><a href="treeView.html">treeView</a></li></ul><h3>Namespaces</h3><ul><li id="nav_9"><a href="apex.html">apex</a></li><li id="nav_10"><a href="apex.actions.html">apex.actions</a></li><li id="nav_11"><a href="apex.da.html">apex.da</a></li><li id="nav_12"><a href="apex.debug.html">apex.debug</a></li><li id="nav_13"><a href="apex.event.html">apex.event</a></li><li id="nav_14"><a href="apex.item.html">apex.item</a></li><li id="nav_15"><a href="apex.lang.html">apex.lang</a></li><li id="nav_16"><a href="apex.locale.html">apex.locale</a></li><li id="nav_17"><a href="apex.message.html">apex.message</a></li><li id="nav_18"><a href="apex.model.html">apex.model</a></li><li id="nav_19"><a href="apex.navigation.html">apex.navigation</a></li><li id="nav_20"><a href="apex.navigation.dialog.html">apex.navigation.dialog</a></li><li id="nav_21"><a href="apex.navigation.popup.html">apex.navigation.popup</a></li><li id="nav_22"><a href="apex.page.html">apex.page</a></li><li id="nav_23"><a href="apex.region.html">apex.region</a></li><li id="nav_24"><a href="apex.server.html">apex.server</a></li><li id="nav_25"><a href="apex.storage.html">apex.storage</a></li><li id="nav_26"><a href="apex.theme.html">apex.theme</a></li><li id="nav_27"><a href="apex.util.html">apex.util</a></li><li id="nav_28"><a href="apex.util.delayLinger.html">apex.util.delayLinger</a></li><li id="nav_29"><a href="apex.widget.html">apex.widget</a></li></ul><h3>Interfaces</h3><ul><li id="nav_30"><a href="actions.html">actions</a></li><li id="nav_31"><a href="htmlBuilder.html">htmlBuilder</a></li><li id="nav_32"><a href="interactiveGridView.html">interactiveGridView</a></li><li id="nav_33"><a href="item.html">item</a></li><li id="nav_34"><a href="model.html">model</a></li><li id="nav_35"><a href="region.html">region</a></li><li id="nav_36"><a href="treeNodeAdapter.html">treeNodeAdapter</a></li></ul><h3><a href="global.html">Non-namespace APIs</a></h3>
+</nav>
+
+<div id="main">
+
+
+
+    <h1 class="page-title">Namespace: dialog</h1>
+
+    
+
+
+
+
+<section id="quick-nav">
+    <header><h2>QuickNav</h2></header>
+    
+    
+
+    
+    <div class="quick-nav-section">
+        <h3><a href="#methods-section">Functions</a></h3>
+        <ul class="subList">
+            
+                <li><a href="#.cancel">cancel</a></li>
+            
+                <li><a href="#.close">close</a></li>
+            
+                <li><a href="#.fireCloseHandler">fireCloseHandler</a></li>
+            
+                <li><a href="#.registerCloseHandler">registerCloseHandler</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+</section>
+
+
+<section id="main-content">
+
+<header>
+    
+    
+        <h2>
+            <span class="ancestors"><a href="apex.html">apex</a><a href="apex.navigation.html">.navigation</a>.</span>dialog</h2>
+        
+    
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>This namespace contains functions related to a dialog opened with <a href="apex.navigation.html#.fn:dialog">apex.navigation.dialog</a>.
+All of the functions in the <a href="apex.navigation.html#.fn:dialog">apex.navigation.dialog</a> namespace need to be run in the context of the specified dialog page.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+        <div class="hw">
+        <h3 id="methods-section" class="subsection-title">
+            Functions
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Functions" href="#methods-section"></a>
+        </div>
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".cancel"><span class="type-signature">(static) </span>cancel<span class="signature">(pIsModal)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark cancel(pIsModal)" href="#.cancel"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Closes the dialog window.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for cancel">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pIsModal</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">If true, then the dialog is identified as being modal. If false, then the dialog is identified as being non-modal.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example demonstrates closing a modal dialog page</p>
+    
+        <pre class="prettyprint"><code>apex.navigation.dialog.cancel( true );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".close"><span class="type-signature">(static) </span>close<span class="signature">(pIsModal, pAction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark close(pIsModal, pAction)" href="#.close"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Executes an action and then closes the dialog window.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for close">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pIsModal</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true, then the dialog is identified as being modal. If false, then the dialog is identified as being non-modal.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pAction</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">function</span>
+|
+
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The action can be one of the following:
+   <ul>
+       <li>a URL which will trigger a redirect in the parent page</li>
+       <li>a function to redirect to a different dialog page</li>
+       <li>false to cancel the dialog</li>
+       <li>an object of page items and values which will be exposed in the apexafterclosedialog event</li>
+       <li>an array of page item names, the values will be gathered from the page items to create
+        an object of page item values to be exposed in the apexafterclosedialog event</li>
+   </ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">This example demonstrates chaining from one modal dialog page to another, where the <code class="prettyprint">pAction</code> parameter is
+a function that redirects to a different modal dialog page, specified in the URL:</p>
+    
+        <pre class="prettyprint"><code>apex.navigation.dialog.close( true, function( pDialog ) {
+    apex.navigation.dialog(
+        url,
+        {
+            title: "About",
+            height: "480",
+            width: "800",
+            maxWidth: "1200",
+            modal: true,
+            dialog: pDialog,
+            resizable: false
+        },
+        "a-Dialog--uiDialog",
+        $( "#mybutton_static_id" ) );
+} );</code></pre>
+    
+        <p class="code-caption">This example demonstrates closing a modal dialog page, and returning an array of page items,
+<code class="prettyprint">P3_EMPNO</code> and <code class="prettyprint">P3_ENAME</code>.  The values from the page items can then be used by the
+page that launched the modal dialog, via a <code class="prettyprint">Dialog Closed</code> Dynamic Action event.</p>
+    
+        <pre class="prettyprint"><code>apex.navigation.dialog.close( true, ["P3_EMPNO","P3_ENAME"] );</code></pre>
+    
+        <p class="code-caption">This example demonstrates closing a modal dialog page, and returning an object of page item,
+<code class="prettyprint">dialogPageId</code> and its value of <code class="prettyprint">3</code>.  The returned value can be used by the
+page that launched the modal dialog, via a <code class="prettyprint">Dialog Closed</code> Dynamic Action event, to identify the
+page ID of the modal dialog that triggered the event.</p>
+    
+        <pre class="prettyprint"><code>apex.navigation.dialog.close( true, { dialogPageId: 3 } );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".fireCloseHandler"><span class="type-signature">(static) </span>fireCloseHandler<span class="signature">(pHandler$, pAction)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark fireCloseHandler(pHandler$, pAction)" href="#.fireCloseHandler"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Fires the internal "close" event of a dialog which was registered with the registerCloseHandler when the dialog
+was opened.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for fireCloseHandler">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pHandler$</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">jQuery</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A jQuery object which has been used in the call to registerCloseHandler.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pAction</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The value which is passed into the navigation.dialog.close function.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since version 18.2</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example demonstrates a call to close a dialog page, returning an array of page items from the dialog page.
+The variable <code class="prettyprint">myTriggeringElement</code> is used
+to define the triggering element of the dialog, a button named <code class="prettyprint">myButton</code>.
+The page items <code class="prettyprint">P3_EMPNO</code> and
+<code class="prettyprint">P3_ENAME</code> are returned to the launching page. The values from the page items can then be used by the
+page that launched the modal dialog, via a <code class="prettyprint">Dialog Closed</code> Dynamic Action event.</p>
+    
+        <pre class="prettyprint"><code>var myTriggeringElement;
+myTriggeringElement = apex.jQuery( '#myButton' );
+
+navigation.dialog.fureCloseHandler( myTriggeringElement, ["P3_EMPNO”,”P3_ENAME”] );</code></pre>
+    
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".registerCloseHandler"><span class="type-signature">(static) </span>registerCloseHandler<span class="signature">(pOptions)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark registerCloseHandler(pOptions)" href="#.registerCloseHandler"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Registers the internal "close" event of a dialog. The event will be triggered by fireCloseEvent and depending on
+the passed in <code class="prettyprint">pAction</code> will:</p>
+
+<ul>
+    <li>Re-use the existing dialog and navigate to a different dialog page</li>
+    <li>Navigate to a different page in the caller</li>
+    <li>Cancel the dialog</li>
+    <li>Close the dialog and trigger the "apexafterclosedialog" event</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for registerCloseHandler">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pOptions</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Has to contain the following attributes:
+                <h6>Properties</h6>
+                
+
+<table class="params" aria-label="Parameters for pOptions">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+        <th scope="col">Attributes</th>
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>handler$</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">jQuery object where the event will be registered for.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>dialog</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+|
+
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">DOM Element/jQuery/... object of the current dialog instance which will be passed into the open dialog call if the existing dialog should be re-used.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>closeFunction</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Function which is used to close the dialog.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>since version 18.2</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">This example demonstrates a call to open the url in a named popup window, "Information".
+The new window can be accessed from variable <code class="prettyprint">myPopupWindow</code>.
+Some additional parameters are also set in the call, to control scrolling, resizing and the visibility of a toolbar.
+The variable <code class="prettyprint">myTriggeringElement</code> is used to define the triggering element of the popup,
+a button named <code class="prettyprint">myButton</code>. Using a call to <a href="apex.navigation.dialog.html#.registerCloseHandler">apex.navigation.dialog.registerCloseHandler</a>,
+a new handler can be defined, to associate the close action of the dialog with the button.</p>
+    
+        <pre class="prettyprint"><code>var myTriggeringElement,
+    myPopupWindow;
+
+myTriggeringElement = apex.jQuery( '#myButton' );
+
+myPopupWindow = apex.navigation.popup ( {
+    url:       "f?p=102:2:&amp;APP_SESSION.:::2::",
+    name:      "Information",
+    scroll:    "no",
+    resizable: "no",
+    toolbar:   "yes"
+} );
+
+navigation.dialog.registerCloseHandler( {
+    handler$:           myTriggeringElement,
+    dialog:             myPopupWindow,
+    triggeringElement$: myTriggeringElement,
+    closeFunction:      function() {
+        myPopupWindow.close();
+    }
+});</code></pre>
+    
+
+
+        
+    
+
+    
+
+</article>
+
+</section>
+
+
+
+
+
+    <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Feb 27 2020 23:50:22 GMT-0800 (Pacific Standard Time)
+      <br>
+      <span class="product-docs-footer">Oracle Application Express Release 20.1, JavaScript API Reference</span>
+      <br>
+      <span class="product-docs-footer">Copyright &copy; 2003, 2020, Oracle and/or its affiliates. All rights reserved.</span>
+    </footer>
+</div>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+<script>
+(function() {
+    // make skip link work for mobile browsers
+    document.getElementById("skipToContent").addEventListener("click", function(e) {
+        var target = document.getElementById("main-content");
+        e.preventDefault();
+        target.setAttribute("tabindex", "-1");
+        target.addEventListener("blur", function(e) {
+            target.removeAttribute("tabindex");
+        });
+        target.focus();
+    });
+
+    var nav = document.getElementById("nav");
+    var currentId = nav.getAttribute("data-current-item");
+    if (!currentId) {
+        return;
+    }
+    var link = document.getElementById(currentId);
+    if (!link) {
+        return;
+    }
+    link.className = link.className ? link.className + " current-nav-item" : "current-nav-item";
+    nav.scrollTop = link.offsetTop + (link.offsetHeight - nav.offsetHeight)/2;
+})();
+</script>
+
+</body>
+</html>

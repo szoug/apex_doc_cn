@@ -1,0 +1,356 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="SUBMIT_FEEDBACK Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, SUBMIT_FEEDBACK procedure">
+      <meta name="keywords" content="APEX_UTIL, SUBMIT_FEEDBACK procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SUBMIT_FEEDBACK Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="STRONG_PASSWORD_VALIDATION-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="SUBMIT_FEEDBACK_FOLLOWUP-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="STRONG_PASSWORD_VALIDATION-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SUBMIT_FEEDBACK_FOLLOWUP-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SUBMIT_FEEDBACK Procedure</li>
+            </ol>
+            <a id="GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE" name="GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE"></a><a id="AEAPI1898"></a><a id="AEAPI1899"></a><a id="AEAPI1900"></a><a id="AEAPI1901"></a><a id="AEAPI516"></a>
+            
+            <h2 id="AEAPI-GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE" class="sect2"><span class="enumeration_section">39.139 </span>SUBMIT_FEEDBACK Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure enables you to write a procedure to submit feedback, rather than using the page that can be generated by create page of type feedback.      </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE__GUID-1E82DDC7-9E69-4FCC-A1DB-DB0C8DA0AF58">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.SUBMIT_FEEDBACK (
+    p_comment          IN VARCHAR2 DEFAULT NULL,
+    p_type             IN NUMBER   DEFAULT '1',
+    p_application_id   IN VARCHAR2 DEFAULT NULL,
+    p_page_id          IN VARCHAR2 DEFAULT NULL,
+    p_email            IN VARCHAR2 DEFAULT NULL,
+    p_screen_width     IN VARCHAR2 DEFAULT NULL,
+    p_screen_height    IN VARCHAR2 DEFAULT NULL,
+    p_attribute_01     IN VARCHAR2 DEFAULT NULL,
+    p_attribute_02     IN VARCHAR2 DEFAULT NULL,
+    p_attribute_03     IN VARCHAR2 DEFAULT NULL,
+    p_attribute_04     IN VARCHAR2 DEFAULT NULL,
+    p_attribute_05     IN VARCHAR2 DEFAULT NULL,
+    p_attribute_06     IN VARCHAR2 DEFAULT NULL,
+    p_attribute_07     IN VARCHAR2 DEFAULT NULL,
+    p_attribute_08     IN VARCHAR2 DEFAULT NULL,
+    p_label_01         IN VARCHAR2 DEFAULT NULL,
+    p_label_02         IN VARCHAR2 DEFAULT NULLl,
+    p_label_03         IN VARCHAR2 DEFAULT NULL,
+    p_label_04         IN VARCHAR2 DEFAULT NULL,
+    p_label_05         IN VARCHAR2 DEFAULT NULL,
+    p_label_06         IN VARCHAR2 DEFAULT NULL,
+    p_label_07         IN VARCHAR2 DEFAULT NULL,
+    p_label_08         IN VARCHAR2 DEFAULT NULL);</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE__GUID-43FEA9D3-5FD8-41A9-BD74-50D3AC4ED367">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE__GUID-F033C1B6-6611-4E9E-ADEF-37961E1B9120">
+                  <p class="titleintable">Table 39-119 SUBMIT_FEEDBACK Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="SUBMIT_FEEDBACK Parameters" summary="Parameter descriptions for the SUBMIT_FEEDBACK procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="41%" id="d208099e73">Parameter</th>
+                           <th align="left" valign="bottom" width="59%" id="d208099e76">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e81" headers="d208099e73 ">
+                              <p><code class="codeph">p_comment</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e81 d208099e76 ">
+                              <p>Comment to be submitted.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e89" headers="d208099e73 ">
+                              <p><code class="codeph">p_type</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e89 d208099e76 ">
+                              <p>Type of feedback (1 is General Comment, 2 is Enhancement Request, 3 is Bug).</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e97" headers="d208099e73 ">
+                              <p><code class="codeph">p_application_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e97 d208099e76 ">
+                              <p>ID of application related to the feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e105" headers="d208099e73 ">
+                              <p><code class="codeph">p_page_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e105 d208099e76 ">
+                              <p>ID of page related to the feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e113" headers="d208099e73 ">
+                              <p><code class="codeph">p_email</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e113 d208099e76 ">
+                              <p>Email of the user providing the feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e121" headers="d208099e73 ">
+                              <p><code class="codeph">p_screen_width</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e121 d208099e76 ">
+                              <p>Width of screen at time feedback was provided.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e129" headers="d208099e73 ">
+                              <p><code class="codeph">p_screen_height</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e129 d208099e76 ">
+                              <p>Height of screen at time feedback was provided.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e137" headers="d208099e73 ">
+                              <p><code class="codeph">p_attribute_01</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e137 d208099e76 ">
+                              <p>Custom attribute for collecting feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e145" headers="d208099e73 ">
+                              <p><code class="codeph">p_attribute_02</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e145 d208099e76 ">
+                              <p>Custom attribute for collecting feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e153" headers="d208099e73 ">
+                              <p><code class="codeph">p_attribute_03</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e153 d208099e76 ">
+                              <p>Custom attribute for collecting feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e161" headers="d208099e73 ">
+                              <p><code class="codeph">p_attribute_04</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e161 d208099e76 ">
+                              <p>Custom attribute for collecting feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e170" headers="d208099e73 ">
+                              <p><code class="codeph">p_attribute_05</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e170 d208099e76 ">
+                              <p>Custom attribute for collecting feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e178" headers="d208099e73 ">
+                              <p><code class="codeph">p_attribute_06</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e178 d208099e76 ">
+                              <p>Custom attribute for collecting feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e186" headers="d208099e73 ">
+                              <p><code class="codeph">p_attribute_07</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e186 d208099e76 ">
+                              <p>Custom attribute for collecting feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e194" headers="d208099e73 ">
+                              <p><code class="codeph">p_attribute_08</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e194 d208099e76 ">
+                              <p>Custom attribute for collecting feedback.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e202" headers="d208099e73 ">
+                              <p><code class="codeph">p_label_01</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e202 d208099e76 ">
+                              <p>Label for corresponding custom attribute.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e210" headers="d208099e73 ">
+                              <p><code class="codeph">p_label_02</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e210 d208099e76 ">
+                              <p>Label for corresponding custom attribute.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e218" headers="d208099e73 ">
+                              <p><code class="codeph">p_label_03</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e218 d208099e76 ">
+                              <p>Label for corresponding custom attribute.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e226" headers="d208099e73 ">
+                              <p><code class="codeph">p_label_04</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e226 d208099e76 ">
+                              <p>Label for corresponding custom attribute.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e234" headers="d208099e73 ">
+                              <p><code class="codeph">p_label_05</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e234 d208099e76 ">
+                              <p>Label for corresponding custom attribute.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e242" headers="d208099e73 ">
+                              <p><code class="codeph">p_label_06</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e242 d208099e76 ">
+                              <p>Label for corresponding custom attribute.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e250" headers="d208099e73 ">
+                              <p><code class="codeph">p_label_07</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e250 d208099e76 ">
+                              <p>Label for corresponding custom attribute.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d208099e259" headers="d208099e73 ">
+                              <p><code class="codeph">p_label_08</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d208099e259 d208099e76 ">
+                              <p>Label for corresponding custom attribute.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-94353F7F-E1CA-409C-A673-D38AF6D1EFDE__GUID-C5206362-82C8-4C10-9B07-63D4F57D404A">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example submits a bug about page 22 within application 283.</p><pre class="pre codeblock"><code>begin
+    apex_util.submit_feedback (
+       p_comment        =&gt; 'This page does not render properly for me',
+       p_type           =&gt; 3,
+       p_application_id =&gt; 283,
+       p_page_id        =&gt; 22,
+       p_email          =&gt; 'user@xyz.corp',
+       p_attribute_01   =&gt; 'Charting',
+       p_label_01       =&gt; 'Component' );
+end;
+/</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

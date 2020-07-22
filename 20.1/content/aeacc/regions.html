@@ -1,0 +1,379 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Developing Accessible Regions">
+      <meta name="abstract" content="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">
+      <meta name="description" content="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">
+      <meta name="DC.subject" content="regions, headings, region titles, interactive grids, interactive reports, classic reports, tabular forms, charts">
+      <meta name="keywords" content="regions, headings, region titles, interactive grids, interactive reports, classic reports, tabular forms, charts">
+      <meta name="DC.Relation" scheme="URI" content="developing-accessible-apps.html#GUID-47223FBF-FE74-4E49-BE73-9E83B824D8C8">
+      <meta name="DC.Relation" scheme="URI" content="regions.html#GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88">
+      <meta name="DC.Relation" scheme="URI" content="regions.html#GUID-D00B8EAE-02F4-4DA4-B0B5-4C5A245ADA94">
+      <meta name="DC.Relation" scheme="URI" content="regions.html#GUID-25F65F66-1588-43F6-88B2-9F03B4D32642">
+      <meta name="DC.Relation" scheme="URI" content="regions.html#GUID-278F7C26-F0A0-481F-ABF4-084651022770">
+      <meta name="DC.Relation" scheme="URI" content="regions.html#GUID-73DBBE29-7DAC-462E-A208-36EB41750594">
+      <meta name="DC.Relation" scheme="URI" content="regions.html#GUID-9A2D4158-DAF7-4DD2-ADBE-04112010AB53">
+      <meta name="DC.Contributor" content="Anthony Rayner">
+      <meta name="DC.Contributor" content="Chaitanya Koratamaddi">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">
+      <meta name="description" content="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">
+      <title>Developing Accessible Regions</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Accessibility Guide">
+      <meta property="og:description" content="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Accessibility Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-accessibility-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:33:15-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24717-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="pages.html" title="Previous" type="text/html">
+      <link rel="next" href="form-pages-and-items.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Accessibility Guide">
+    <meta name="dcterms.isVersionOf" content="AEACC">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="pages.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="form-pages-and-items.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Accessibility Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="developing-accessible-apps.html" property="item" typeof="WebPage"><span property="name">Developing Accessible Apps</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Developing Accessible Regions</li>
+            </ol>
+            <a id="GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C" name="GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C"></a>
+            
+            <h2 id="AEACC-GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C" class="sect2"><span class="enumeration_section">4.3 </span>Developing Accessible Regions
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Ensure the regions on a page provide sufficient navigational information for users of assistive technology.</p>
+               <p></p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="regions.html#GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88">Accessible Page Structure</a><br></li>
+                  <li class="ulchildlink"><a href="regions.html#GUID-D00B8EAE-02F4-4DA4-B0B5-4C5A245ADA94">Accessible Interactive Grid Regions</a><br></li>
+                  <li class="ulchildlink"><a href="regions.html#GUID-25F65F66-1588-43F6-88B2-9F03B4D32642">Accessible Interactive Report Regions</a><br></li>
+                  <li class="ulchildlink"><a href="regions.html#GUID-278F7C26-F0A0-481F-ABF4-084651022770">Accessible Classic Report Regions</a><br></li>
+                  <li class="ulchildlink"><a href="regions.html#GUID-73DBBE29-7DAC-462E-A208-36EB41750594">Accessible Tabular Forms Regions</a><br></li>
+                  <li class="ulchildlink"><a href="regions.html#GUID-9A2D4158-DAF7-4DD2-ADBE-04112010AB53">Accessible JET Chart Regions</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="developing-accessible-apps.html#GUID-47223FBF-FE74-4E49-BE73-9E83B824D8C8" title="This section provides guidelines for creating an accessible app with Oracle Application Express.">Developing Accessible Apps</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88" name="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88"></a><h3 id="AEACC-GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88" class="sect3"><span class="enumeration_section">4.3.1 </span>Accessible Page Structure
+               </h3>
+               <div>
+                  <p>Users of assistive technology require a clearly defined structure on every page. After a page loads, screen reader users review all of the heading elements on the page. Correctly defined headings orientate your users by providing a structural overview of the page. You should nest page headings so that there is one H1 on a page to uniquely identify the page contents, then nest H2s, H3s, and so forth accordingly.</p>
+                  <p>You achieve this structure with regions in <span>Oracle Application
+                                        Express</span>. Follow one or more of the following guidances as best practices for structuring pages in your app.
+                  </p>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-ABF063A1-87CF-420A-B4E3-0B448AE332E8">H1 Headings</p>
+                     <p>Include a breadcrumb region on your pages to create a unique H1. You can use the Create Application Wizard to generate breadcrumbs automatically based on the hierarchy of pages defined in the wizard, or you can configure the breadcrumbs in your app manually. By default, the last breadcrumb entry on a page is the H1.</p>
+                     <p>Alternatively, use the Hero region template in Universal Theme. This region template renders the region title as the H1 text on the page by default, which is useful if your current app layout and design does not warrant breadcrumbs. </p>
+                     <div class="infobox-tip" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-22BC19A1-9FBF-4F16-B777-8D6578272521">
+                        <p class="notep1">Tip:</p>
+                        <p>Only use one Hero region per page to avoid creating more than one H1 element.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-E7BA144D-F648-4BE4-954E-53FDE0B1C65D">H2 Headings</p>
+                     <p>After the H1, most region templates in Universal Theme render other content on the page with an H2 around the region title</p><br><div class="imageleft"><img class="imageleft" height="283" width="585" src="img/h2_regions.png" alt="Description of h2_regions.png follows" title="Description of h2_regions.png follows" longdesc="img_text/h2_regions.html"><br><a href="img_text/h2_regions.html">Description of the illustration h2_regions.png</a></div><br><div class="p"> H2s are appropriate for non-nested regions on a page, such as the following example heading structure:<pre class="pre codeblock"><code>H1: Charts
+	H2: region 1
+	H2: region 2
+	H2: region 3
+	H2: region 4</code></pre>This semantic structure helps all users scan the current page, both visually using the eyes and audibly using a screen reader.</div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-B78B39E6-AEC7-48F2-AD99-283DA41CF12B">H3 and Other Sub-Region Headings</p>
+                     <p>Universal Theme does not automatically support headings beyond H2, such as when you have sub-regions nested within an H2 region.</p><img height="382" width="589" src="img/h2_regions_with_h3_regions.png" alt="Description of h2_regions_with_h3_regions.png follows" title="Description of h2_regions_with_h3_regions.png follows" longdesc="img_text/h2_regions_with_h3_regions.html"><br><a href="img_text/h2_regions_with_h3_regions.html">Description of the illustration h2_regions_with_h3_regions.png</a><p>By default, <span>Application Express</span> applies H2s to nested sub-regions (regions 4.1 and 4.2 in the above example) in the Standard region template. This creates an accessibility problem because screen reader users may incorrectly believe that these sub-regions are of similar importance to the parent region or that the regions are not ancestral to the parent region.
+                     </p><pre class="pre codeblock"><code>H1: Charts
+	H2: region 1
+	H2: region 2
+	H2: region 3
+	H2: region 4
+	H2: region 4.1
+	H2: region 4.2</code></pre><p>To properly structure these sub-regions, you must duplicate the Standard region template, then use the Code Editor to manually replace the H2 tags with H3s in the template’s definition.</p>
+                     <div class="infobox-tip" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-E0576D2D-E9DA-45D3-B59D-AC70806FCE6F">
+                        <p class="notep1">Tip:</p>
+                        <p>To copy a region, see <span class="q">"Creating a New Template"</span> in the <a href="../htmdb/creating-new-template.html#HTMDB-GUID-E35E6CDB-0DC1-481D-8F3E-80A5B5EC7BD7" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a> and select the <span class="uicontrol bold">As a Copy of an Existing Template</span> option.
+                        </p>
+                     </div>
+                     <p>Changing the sub-regions to H3s only affects the structure of the element (not the style), which is what we want for accessibility.</p><br><div class="imageleft"><img class="imageleft" height="419" width="858" src="img/region_definition.png" alt="Description of region_definition.png follows" title="Description of region_definition.png follows" longdesc="img_text/region_definition.html"><br><a href="img_text/region_definition.html">Description of the illustration region_definition.png</a></div><br><p>This results in the following heading structure:</p><pre class="pre codeblock"><code>H1: Charts
+	H2: region 1
+	H2: region 2
+	H2: region 3
+	H2: region 4
+		H3: region 4.1
+		H3: region 4.2</code></pre><div class="infoboxnote" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-DBBC3AA5-62AB-47F5-A302-667B4016924E">
+                        <p class="notep1">Important:</p>
+                        <div class="p">Be aware of the following issues when copying the Standard region template:
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>While a copied template keeps the theme subscription (which enables you to refresh the theme when <span>Oracle Application
+                                        Express</span> is upgraded), the copied template does not upgrade automatically on refresh. You may need to manually change or re-copy the template post-refresh if there are any markup changes in that template.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>You must manually add an additional template for every deeper heading level in your app (H3, H4, H5...). We plan to make it easier to control the heading level without requiring an additional template in a future <span>Oracle Application
+                                        Express</span> release.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-03081F87-70FD-467E-BB0A-3CDF1501877F">Region Titles</p>
+                     <p>You should define meaningful titles for most region types because Universal Theme uses the region title as the heading text for the region.</p>
+                     <p>Descriptive titles are essential for accessibility. By default, titles are visible on screen. However, sometimes you may not want a title for a region, such as when sighted users can quickly discern the region’s content from surrounding page content at a glance. In such cases, you must still provide heading text for screen reader users. To make such a page accessible, select the region, in Property Editor open the Template Options, and set the Header attribute to <span class="uicontrol bold">Hidden but accessible</span>.
+                     </p>
+                     <div class="infobox-tip" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-F87AD054-1A9C-484C-96BC-3AA2754C4597">
+                        <p class="notep1">Tip:</p>
+                        <p>You can review and update all region titles in an app with the Grid Edit of all Region Titles page. You should review all titles for accuracy and meaning, especially regions with the same title on the same page which may be an issue depending on the context.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-771B7B3F-62FF-4463-AD8D-ADA4CE6DAD88__GUID-F8F79701-F439-4980-AC77-DE6E7B5842A8">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"Accessing Page Specific Utilities"</span> in the <a href="../htmdb/accessing-application-utilities.html#HTMDB-GUID-08369FB1-451F-4A53-8185-11C39B83BBEA" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="regions.html#GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C" title="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">Developing Accessible Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-D00B8EAE-02F4-4DA4-B0B5-4C5A245ADA94" name="GUID-D00B8EAE-02F4-4DA4-B0B5-4C5A245ADA94"></a><h3 id="AEACC-GUID-D00B8EAE-02F4-4DA4-B0B5-4C5A245ADA94" class="sect3"><span class="enumeration_section">4.3.2 </span>Accessible Interactive Grid Regions
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Introduced in <span>Oracle Application
+                                        Express</span> 5.1, interactive grids combine powerful reporting with grid-based editing in a single component. Users can access all interactive grid functionality with just a keyboard, enabling all users to navigate around the grid and edit their data using the keyboard. For a complete list of keyboard support in interactive grids, see <a href="accessing-oracle-application-express-using-a-keyboard.html#GUID-8791F911-9CC6-4CC3-BC47-7D41F2E60E26">Keyboard Shortcuts in Interactive Grid Regions</a>.
+                     </p>
+                     <p>Interactive grids do contain some accessibility bugs affecting screen reader users. All bugs are listed in the current VPAT.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="regions.html#GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C" title="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">Developing Accessible Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-25F65F66-1588-43F6-88B2-9F03B4D32642" name="GUID-25F65F66-1588-43F6-88B2-9F03B4D32642"></a><h3 id="AEACC-GUID-25F65F66-1588-43F6-88B2-9F03B4D32642" class="sect3"><span class="enumeration_section">4.3.3 </span>Accessible Interactive Report Regions
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-25F65F66-1588-43F6-88B2-9F03B4D32642__GUID-7ECEE3A8-CC6E-4886-A655-6416B89B00B8">Data Table Accessible Label</p>
+                     <p>You must enable screen reader mode to ensure the underlying data table rendered by interactive reports has an accessible label. Once enabled, <span>Oracle Application
+                                        Express</span> generates the following SUMMARY text for the rendered data table:
+                     </p>
+                     <p><code class="codeph">Region = [region title], Report = [current saved report name], View = [current View], Displayed Rows Start = [current start of rows displayed, Displayed Rows End = [current end of rows displayed], Total Rows = [total number of rows]</code></p>
+                     <p>This text identifies the data table, and therefore provides a great deal of contextual information to users of assistive technology.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-25F65F66-1588-43F6-88B2-9F03B4D32642__GUID-554D7191-0C4B-4AB1-A8D6-57E7DE29531A">Edit Icon Link Text</p>
+                     <p>When creating a Report and Form, <span>Oracle Application
+                                        Express</span> generates the links between the two pages to allow you to edit specific records. The link text generated  for all rows is <code class="codeph">Edit</code> by default. You should make this text a meaningful label so that screen reader users (who listen to all the links on the current page) can understand the purpose of the link and where it takes them. The link text should be specific to the current row in the report. For example, for a report of customers, the link text could be <code class="codeph">Edit Customer: SMITH</code>. 
+                     </p>
+                     <p>You can define the link text of an interactive report region by selecting the Attributes node, then in the Property Editor expand the Link column, set Link Column to <span class="uicontrol bold">Link to Single Row View</span> or <span class="uicontrol bold">Link to Custom Target</span>, and update the alt text in the Link Icon field.
+                     </p>
+                     <p>Because there is no visible link text used, the link uses the inline image’s alt text as the text for the link. Note that you can use a substitution string such as #CUSTOMER_NAME# to target the column that best identifies the current row.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-25F65F66-1588-43F6-88B2-9F03B4D32642__GUID-684F6CC6-59F5-4F16-A2DB-1B0E15E65EDC">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"Editing Interactive Report Attributes"</span> in the <a href="../htmdb/managing-interactive-report-attributes.html#HTMDB-GUID-DFDC930D-1600-4616-8017-0DD95AE644B4" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="regions.html#GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C" title="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">Developing Accessible Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-278F7C26-F0A0-481F-ABF4-084651022770" name="GUID-278F7C26-F0A0-481F-ABF4-084651022770"></a><h3 id="AEACC-GUID-278F7C26-F0A0-481F-ABF4-084651022770" class="sect3"><span class="enumeration_section">4.3.4 </span>Accessible Classic Report Regions
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-278F7C26-F0A0-481F-ABF4-084651022770__GUID-5E0FCBAB-3B9B-455B-9F40-1C7D92775B32">Data Table</p>
+                     <p>By default, <span>Oracle Application
+                                        Express</span> generates SUMMARY text equal to the region title. This identifies the data table to users of assistive technology.
+                     </p>
+                     <div class="infoboxnote" id="GUID-278F7C26-F0A0-481F-ABF4-084651022770__GUID-D423E285-7264-46EE-89D7-AD75091E11B7">
+                        <p class="notep1">Note:</p>
+                        <p>Unlike interactive reports, classic reports do not provide any additional information about the report state. This may limit your app’s functionality.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-278F7C26-F0A0-481F-ABF4-084651022770__GUID-26114A74-FDD6-450C-9B1E-31FDCE3880C3">Edit Link Text</p>
+                     <p>When creating a Report and Form, <span>Oracle Application
+                                        Express</span> generates the links between the two pages to allow you to edit specific records. The link text generated  for all rows is <code class="codeph">Edit</code> by default. You should make this text a meaningful label so that screen reader users (who listen to all the links on the current page) can understand the purpose of the link and where it takes them. The link text should be specific to the current row in the report. For example, for a report of customers, the link text could be <code class="codeph">Edit Customer: SMITH</code></p>
+                     <p>You can define the link text of an interactive report region by selecting the Attributes node, then in the Property Editor expand the Link column, set Link Column to <span class="uicontrol bold">Link to Single Row View</span> or <span class="uicontrol bold">Link to Custom Target</span>, and update the alt text in the Link Icon field.
+                     </p>
+                     <p>Because there is no visible link text used, the link uses the inline image’s alt text as the text for the link. Note that you can use a substitution string such as #ENAME# to target the column that best identifies the current row.</p>
+                     <div class="infoboxnote" id="GUID-278F7C26-F0A0-481F-ABF4-084651022770__GUID-B59CCFE4-0A5E-452D-8ED3-5BBD04656756">
+                        <p class="notep1">Note:</p>
+                        <p>Although classic report regions support column headers in the report, currently <span>Oracle Application
+                                        Express</span> does not support the ability to define a row header column in the report. Row headers are important for accessibility of data tables because screen readers announce the row header when navigating to a new row in the report (in the above example, that would be the ENAME value). See the VPAT for more details and the related bug number.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="regions.html#GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C" title="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">Developing Accessible Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-73DBBE29-7DAC-462E-A208-36EB41750594" name="GUID-73DBBE29-7DAC-462E-A208-36EB41750594"></a><h3 id="AEACC-GUID-73DBBE29-7DAC-462E-A208-36EB41750594" class="sect3"><span class="enumeration_section">4.3.5 </span>Accessible Tabular Forms Regions
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Tabular forms provide simple multi-row editing capability in your apps.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-73DBBE29-7DAC-462E-A208-36EB41750594__GUID-BA407EA9-FF41-4804-AA90-3A44A425C868">Data Table</p>
+                     <p>By default, <span>Oracle Application
+                                        Express</span> generates SUMMARY text equal to the region title. This identifies the data table to users of assistive technology.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-73DBBE29-7DAC-462E-A208-36EB41750594__GUID-A96CEB2F-AE64-44F7-A29B-06BDED65329F">Use as Row Header</p>
+                     <p>Specify if a column should be used as the heading for the row. Including the column value can greatly improve accessibility for form fields rendered in the tabular form. When specified, <span>Oracle Application
+                                        Express</span> uses the Row Header together with the Column Header to render unique labels for the form fields in the report in the following format:&nbsp;<code class="codeph">&lt;Column Header&gt; : &lt;Row Header&gt;</code></p>
+                     <p>For example, you define the ENAME column as the Row Header for a report on the EMP table. For a row where ENAME is <span class="q">"'JONES,"</span> the label for the Salary field in that row would be <code class="codeph">Salary : JONES</code>. This approach enables a screen reader user to navigate by the form fields in the report and still understand which form fields relate to which row.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="regions.html#GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C" title="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">Developing Accessible Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-9A2D4158-DAF7-4DD2-ADBE-04112010AB53" name="GUID-9A2D4158-DAF7-4DD2-ADBE-04112010AB53"></a><h3 id="AEACC-GUID-9A2D4158-DAF7-4DD2-ADBE-04112010AB53" class="sect3"><span class="enumeration_section">4.3.6 </span>Accessible JET Chart Regions
+               </h3>
+               <div>
+                  <div class="section">
+                     <p><span>Oracle Application
+                                        Express</span> 5.1 introduced charts based on the Oracle JET Data Visualization components (JET charts). Releases prior to 5.1 used charts based on AnyChart, where there were many accessibility issues.
+                     </p>
+                     <p>For more information about accessibility of Oracle JET Data Visualization components including support for keyboard and touch, see the <a href="http://www.oracle.com/webfolder/technetwork/jet/jsdocs/oj.ojChart.html#a11y-section" target="_blank">Oracle JET documentation</a>.
+                     </p>
+                     <p>The following sections detail some chart settings that are particularly useful for ensuring chart accessibility.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-9A2D4158-DAF7-4DD2-ADBE-04112010AB53__GUID-BB6E4FFD-EF06-40E1-BFE8-3B9024D99B59">Chart Title</p>
+                     <p>The chart title displays in the chart region next to the chart. It is also the accessible label for the chart page section. In Page Designer, the chart title is defined in the chart Attributes node.</p>
+                     <p>If there is only one chart displayed within a region, consider hiding the region title to avoid visual duplication. You can hide the region title by changing the Header region appearance setting in the Template Options dialog to <span class="uicontrol bold">Hidden but accessible</span>. This removes the region title from the page but preserves the heading for assistive technologies (if users scan the current headings on the page to orientate themselves, they can perceive this title).
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-9A2D4158-DAF7-4DD2-ADBE-04112010AB53__GUID-C62527C4-DD55-4211-9C91-4CA65C0DFA52">Tooltip</p>
+                     <p>The tooltip displays when the mouse hovers over a specific chart section or the keyboard has focus on this section. In addition, the tooltip is the accessible label for that section of the chart. For example, when screen reader users navigate around the chart sections, this tooltip is announced.</p>
+                     <div class="p">To display the tooltip, select the chart Attributes node in the Rendering tree; in the Property Editor, set the Show field to <span class="uicontrol bold">Yes</span>; and finally, select what information to include in the tooltip. You can define this in two ways:
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Adjust the other attributes displayed in the Tooltip group in Page Designer. This allows you to control display of Series Name, Group Name, Value, and Label information where applicable for your chart. For example, if the chart only has one series, then you may want to exclude the series name in the tooltip, so you would set Show Series Name to <span class="uicontrol bold">No</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>For a highly customized tooltip, set a column in your database table to be used as the source for the tooltip. You can configure this on the individual Series node nested under the chart in the Rendering tree.</p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="regions.html#GUID-AFC815AA-75C0-4EB5-82E5-D137F30D747C" title="Ensure the regions on a page provide sufficient navigational information for users of assistive technology.">Developing Accessible Regions</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

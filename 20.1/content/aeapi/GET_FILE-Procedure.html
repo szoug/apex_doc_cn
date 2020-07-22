@@ -1,0 +1,192 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="GET_FILE Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, GET_FILE procedure, file repository, downloading files">
+      <meta name="keywords" content="APEX_UTIL, GET_FILE procedure, file repository, downloading files">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>GET_FILE Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="GET_FEEDBACK_FOLLOW_UP-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="GET_FILE_ID-Function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="GET_FEEDBACK_FOLLOW_UP-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="GET_FILE_ID-Function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">GET_FILE Procedure</li>
+            </ol>
+            <a id="GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB" name="GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB"></a><a id="AEAPI1632"></a><a id="AEAPI1633"></a><a id="AEAPI1634"></a><a id="AEAPI1635"></a><a id="AEAPI133"></a>
+            
+            <h2 id="AEAPI-GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB" class="sect2"><span class="enumeration_section">39.46 </span>GET_FILE Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure downloads files from the Oracle Application Express file repository. Please note if you are invoking this procedure during page processing, you must ensure that no page branch is invoked under the same condition, as it interferes with the file retrieval. This means that branches with any of the following conditions should not be set to fire:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Branches with a 'When Button Pressed' attribute equal to the button that invokes the procedure.</p>
+                     </li>
+                     <li>
+                        <p>Branches with conditional logic defined that would succeed during page processing when the procedure is being invoked.</p>
+                     </li>
+                     <li>
+                        <p>As unconditional.</p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB__GUID-FF77BD31-8559-41E7-92AA-A6332E82A15A">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.GET_FILE (
+    p_file_id    IN   VARCHAR2,
+    p_inline     IN   VARCHAR2 DEFAULT 'NO');
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB__GUID-C11AC365-09B7-47F1-A715-C88A033D0E74">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB__GUID-0CC284D2-0BC2-47CB-BC42-84F25BC32752">
+                  <p class="titleintable">Table 39-40 GET_FILE Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="GET_FILE Parameters" summary="Parameter descriptions for the GET_FILE procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="20%" id="d187922e87">Parameter</th>
+                           <th align="left" valign="bottom" width="80%" id="d187922e90">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d187922e95" headers="d187922e87 ">
+                              <p><code class="codeph">p_file_id</code></p>
+                           </td>
+                           <td align="left" valign="top" width="80%" headers="d187922e95 d187922e90 ">
+                              <p>ID in <code class="codeph">APEX_APPLICATION_FILES</code> of the file to be downloaded. <code class="codeph">APEX_APPLICATION_FILES</code> is a view on all files uploaded to your workspace. The following example demonstrates how to use <code class="codeph">APEX_APPLICATION_FILES</code>:
+                              </p><pre class="oac_no_warn" dir="ltr">DECLARE
+    l_file_id NUMBER;
+BEGIN
+    SELECT id
+        INTO l_file_id
+        FROM APEX_APPLICATION_FILES
+        WHERE filename = 'myxml';
+        --
+        APEX_UTIL.GET_FILE(
+            p_file_id   =&gt; l_file_id, 
+            p_inline    =&gt; 'YES');  
+END;
+</pre></td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d187922e114" headers="d187922e87 ">
+                              <p><code class="codeph">p_inline</code></p>
+                           </td>
+                           <td align="left" valign="top" width="80%" headers="d187922e114 d187922e90 ">
+                              <p>Valid values include <code class="codeph">YES</code> and <code class="codeph">NO</code>. <code class="codeph">YES</code> to display inline in a browser. <code class="codeph">NO</code> to download as attachment.
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB__GUID-EA8896B5-C5A1-4A3C-9220-C2B40B87915D">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example shows how to use the <code class="codeph">GET_FILE</code> function to return the file identified by the ID 8675309. This is displayed inline in the browser.
+                  </p><pre class="pre codeblock"><code>BEGIN
+    APEX_UTIL.GET_FILE(
+        p_file_id   =&gt; '8675309',
+        p_inline    =&gt; 'YES');
+END;
+</code></pre><div class="infoboxnotealso" id="GUID-93CFF3B6-A3CF-4BD3-B935-1FE4E389BFCB__GUID-260C27B4-9849-412B-B473-7071CC957026">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="GET_FILE_ID-Function.html#GUID-52743094-E09D-47E3-83F8-8571093636A9">GET_FILE_ID Function</a>"</span></p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

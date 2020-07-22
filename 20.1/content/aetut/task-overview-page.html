@@ -1,0 +1,285 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Developing the Task Overview Page">
+      <meta name="abstract" content="Create a Faceted Search page based on the EBA_PROJECT_TASKS table that provides a broad, easily sortable overview of all project work tracked in the app.">
+      <meta name="description" content="Create a Faceted Search page based on the EBA_PROJECT_TASKS table that provides a broad, easily sortable overview of all project work tracked in the app.">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Shakeeb Rahman">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-2582897D-25AB-4491-89AB-DE7FE1BA00DF">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Create a Faceted Search page based on the EBA_PROJECT_TASKS table that provides a broad, easily sortable overview of all project work tracked in the app.">
+      <meta name="description" content="Create a Faceted Search page based on the EBA_PROJECT_TASKS table that provides a broad, easily sortable overview of all project work tracked in the app.">
+      <title>Developing the Task Overview Page</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Tutorial: Building an Application">
+      <meta property="og:description" content="Create a Faceted Search page based on the EBA_PROJECT_TASKS table that provides a broad, easily sortable overview of all project work tracked in the app.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Tutorial: Building an Application">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-tutorial-building-application.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-08T10:54:58-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24727-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="dashboard-page.html" title="Previous" type="text/html">
+      <link rel="next" href="book-index.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Tutorial: Building an Application">
+    <meta name="dcterms.isVersionOf" content="AETUT">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="dashboard-page.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="book-index.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Tutorial: Building an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Developing the Task Overview Page</li>
+            </ol>
+            <a id="GUID-2582897D-25AB-4491-89AB-DE7FE1BA00DF" name="GUID-2582897D-25AB-4491-89AB-DE7FE1BA00DF"></a>
+            
+            <h2 id="AETUT-GUID-2582897D-25AB-4491-89AB-DE7FE1BA00DF" class="sect2"><span class="enumeration_chapter">9 </span>Developing the Task Overview Page
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Create a Faceted Search page based on the <code class="codeph">EBA_PROJECT_TASKS</code> table that provides a broad, easily sortable overview of all project work tracked in the app.
+               </p>
+               <div class="section">
+                  <p class="subhead1" id="GUID-2582897D-25AB-4491-89AB-DE7FE1BA00DF__GUID-0DEA9FEB-16BD-4332-BC52-3AFB15424A33">About This Lesson</p>
+                  <p>In this lesson, you add the final page to your app: a <strong class="term">Faceted Search</strong> page. Faceted Search is a powerful tool for sorting through a large table.
+                  </p>
+                  <p>You use the Create Page Wizard to add the page, then use Page Designer to update the <strong class="term">search results region</strong>, which resembles a classic report, and the <strong class="term">search region</strong>, which contains the <strong class="term">facets</strong> users interact with to sort the results.
+                  </p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76" name="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76"></a><h3 id="AETUT-GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76" class="sect3"><span class="enumeration_section">9.1 </span>Creating a Faceted Search Page
+               </h3>
+               <div>
+                  <p>
+                     </p><p>To add a Faceted Search page to the application:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>In the Application home page, click <span class="uicontrol bold">Create Page</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Report</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Faceted Search</span>.</span></li>
+                     <li class="stepexpand"><span>For Page Attributes:</span><ol type="a" id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76__SUBSTEPS_Q42_STB_ZHB">
+                           <li><span>Report Page Number - enter <kbd class="userinput">8</kbd></span></li>
+                           <li><span>Report Page Name - enter <kbd class="userinput">Task Overview</kbd></span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Navigation Menu:</span><ol type="a" id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76__SUBSTEPS_UFX_3GF_2KB">
+                           <li><span>Select <span class="uicontrol bold">Create a new navigation menu entry</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Next</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>For Report Source:</span><ol type="a" id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76__SUBSTEPS_CFJ_PGF_2KB">
+                           <li class="substepexpand"><span>For Table / View Name, click the <span class="uicontrol bold">LOV</span> icon.</span></li>
+                           <li class="substepexpand"><span>Select <span class="uicontrol bold">EBA_PROJECT_TASKS (table)</span>.</span></li>
+                           <li class="substepexpand"><span>Wait for the list of facets to populate below before proceeding.</span><div>
+                                 <div class="figure" id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76__FIG_EWX_3MW_PKB"><br><div class="imageleft"><img class="imageleft" id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76__IMAGE_FWX_3MW_PKB" height="727" width="814" src="img/create_page_faceted_search_source.png" alt="Description of create_page_faceted_search_source.png follows" title="Description of create_page_faceted_search_source.png follows" longdesc="img_text/create_page_faceted_search_source.html"><br><a href="img_text/create_page_faceted_search_source.html">Description of the illustration create_page_faceted_search_source.png</a></div><br></div>
+                                 <!-- class="figure" -->
+                                 <div class="infoboxnote" id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76__GUID-C037837D-5260-45E3-9109-06C9A05C6CC3">
+                                    <p class="notep1">Note:</p>The Create Page Wizard uses the Data Dictionary Cache to discover valid facets. To learn more about this process, see <span class="q">"<a href="../htmdb/about-creating-facet-search-reports.html#HTMDB-GUID-2F3581A7-25CA-460B-AEDB-5396EC33D5AC" target="_blank">About Creating Facet Search Reports</a>"</span> in the <span><cite>Oracle Application Express App Builder User’s Guide</cite></span>.
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Create</span>.</span></li>
+                        </ol>
+                        <div>When the wizard completes, Application Express loads the Task Overview page in Page Designer automatically.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span> to view the page in the runtime.</span><div>
+                           <div class="figure" id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76__FIG_VCJ_RMW_PKB"><br><div class="imageleft"><img class="imageleft" id="GUID-B498DBD1-35F3-4F20-92F8-A186076FAB76__IMAGE_WCJ_RMW_PKB" height="739" width="1105" src="img/runtime_faceted_search.png" alt="Description of runtime_faceted_search.png follows" title="Description of runtime_faceted_search.png follows" longdesc="img_text/runtime_faceted_search.html"><br><a href="img_text/runtime_faceted_search.html">Description of the illustration runtime_faceted_search.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>When finished, click <span class="uicontrol bold">Edit Page 8</span> on the Runtime Developer toolbar to return to Page Designer.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736" name="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736"></a><h3 id="AETUT-GUID-7AAC543A-B084-48FB-A275-16E1A4B47736" class="sect3"><span class="enumeration_section">9.2 </span>Updating the Task Overview Search Results
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Perform some routine updates to improve the report area of the Task Overview page:</p>
+                     <ul style="list-style-type: disc;" id="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736__UL_OZ1_3LG_JKB">
+                        <li>Update the <code class="codeph">IS_COMPLETE</code> column.
+                        </li>
+                        <li>Apply a format mask to the <code class="codeph">COST</code> column.
+                        </li>
+                        <li>Update the Navigation Menu in Shared Components.</li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <p>To update the <code class="codeph">IS_COMPLETE_YN</code> column:
+                  </p>
+                  <ol>
+                     <li class="stepexpand"><span>In the Rendering tab, locate the Search Results region (not Search).</span></li>
+                     <li class="stepexpand"><span>Expand <span class="uicontrol bold">Columns</span> and select <span class="uicontrol bold">IS_COMPLETE_YN</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" class="single-step" id="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736__SUBSTEPS_VTG_ZBX_B3B">
+                           <li><span>Heading: Heading - enter <kbd class="userinput">Complete</kbd></span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In the Rendering tab, click <span class="uicontrol bold">Search Results</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736__SUBSTEPS_TDW_JDJ_PKB">
+                           <li class="substepexpand"><span>Source: Type - select <span class="uicontrol bold">SQL Query</span>.</span></li>
+                           <li class="substepexpand"><span>Source: SQL Query - delete the contents, then copy and paste the following code:</span><div><pre class="pre codeblock"><code>select ID,
+       PROJECT_ID,
+       MILESTONE_ID,
+       NAME,
+       DESCRIPTION,
+       ASSIGNEE,
+       START_DATE,
+       END_DATE,
+       COST,
+       decode(is_complete_yn, 'Y', 'Yes', 'No') IS_COMPLETE_YN,
+       CREATED,
+       CREATED_BY,
+       UPDATED,
+       UPDATED_BY
+  from EBA_PROJECT_TASKS</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>To apply a format mask to COST:</p>
+                  <ol start="6">
+                     <li class="stepexpand"><span>In the Rendering tab, select the <span class="uicontrol bold">COST</span> column.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736__SUBSTEPS_GPP_GDS_PKB">
+                           <li><span>Appearance: Format Mask - click the <span class="uicontrol bold">LOV</span> icon.</span></li>
+                           <li><span>Scroll down and select <span class="uicontrol bold">$5,234.10</span>.</span></li>
+                           <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <p>To update the Navigation Menu entry for the Task Overview page:</p>
+                  <ol start="8">
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Shared Components</span> icon.</span></li>
+                     <li class="stepexpand"><span>Under Navigation, click <span class="uicontrol bold">Navigation Menu</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Desktop Navigation Menu</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Task Overview</span>.</span><div>The List Entry screen displays.</div>
+                     </li>
+                     <li class="stepexpand"><span>Under Entry, for Sequence enter <code class="codeph">80</code></span></li>
+                     <li class="stepexpand"><span>For Image/Class, enter <code class="codeph">fa-table-pointer</code></span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Apply Changes</span>.</span></li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Run</span> icon (top-right) to run the page.</span></li>
+                     <li class="stepexpand"><span>In the runtime, click the <span class="uicontrol bold">menu</span> icon (top-left) to expand the navigation menu.</span><div>
+                           <div class="figure" id="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736__FIG_QF4_BKJ_YLB"><br><div class="imageleft"><img class="imageleft" id="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736__IMAGE_RF4_BKJ_YLB" height="739" width="1329" src="img/runtime_task_overview_results.png" alt="Description of runtime_task_overview_results.png follows" title="Description of runtime_task_overview_results.png follows" longdesc="img_text/runtime_task_overview_results.html"><br><a href="img_text/runtime_task_overview_results.html">Description of the illustration runtime_task_overview_results.png</a></div><br></div>
+                           <!-- class="figure" -->
+                        </div>
+                        <div>
+                           <p>The faceted search page is useful for quickly sorting through the contents of a table. Interact with the facets to learn how they affect the results:</p>
+                           <ul style="list-style-type: disc;" id="GUID-7AAC543A-B084-48FB-A275-16E1A4B47736__UL_XBH_YHG_JKB">
+                              <li>Select and deselect facets on the left to narrow the scope of the display.</li>
+                              <li>Select multiple facets in the same category.</li>
+                              <li>Click <span class="uicontrol bold">Clear</span> to deselect all facets in a category.
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>When finished, click <span class="uicontrol bold">Edit Page 8</span> on the Runtime Developer toolbar to return to Page Designer.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B" name="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B"></a><h3 id="AETUT-GUID-106E75E2-DFCB-48C5-93F6-1E208709097B" class="sect3"><span class="enumeration_section">9.3 </span>Updating the Task Overview Facets
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>With the results report region updated, you can improve the look and function of the search region with some basic tweaks:</p>
+                     <ul style="list-style-type: disc;" id="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B__UL_SGQ_VTK_XLB">
+                        <li>Change the order of facet items so that Milestones appear below Projects in the Search region.</li>
+                        <li>Apply a Cascading LOV (List of Values) to the <code class="codeph">MILESTONE_ID</code> column. A Cascading LOV creates a dependency where the Milestone facet group only displays when a Project facet is selected. This reduces clutter in the Search region.
+                        </li>
+                        <li>Add a search field to the Project facet group so that your users can quickly browse the Projects list with a search string.</li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <p>
+                     </p><p>To change the facet order in Page Designer:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>In the Rendering tab, under Search, click and hold <span class="uicontrol bold">P8_MILESTONE_ID</span> facet and drag it to display after P8_PROJECT_ID.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <p>To apply a Cascading LOV to the Milestone facet group: </p>
+                  <ol start="3">
+                     <li class="stepexpand"><span>With P8_MILESTONE_ID still selected, in Property Editor:</span><ol type="a" id="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B__SUBSTEPS_ISQ_PY5_XLB">
+                           <li><span>List Entries: Sort by Top Counts - click to <span class="uicontrol bold">disable</span>.</span></li>
+                           <li><span>Cascading List of Values: Parent Facet - enter <code class="codeph">P8_PROJECT_ID</code></span></li>
+                           <li><span>LOV Column - enter <code class="codeph">PROJECT_ID</code></span></li>
+                           <li><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span></li>
+                        </ol>
+                        <div>
+                           <p>The runtime displays. Note that the Milestone group has disappeared.</p><br><div class="imageleft"><img class="imageleft" id="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B__IMAGE_RQH_HKJ_YLB" height="697" width="490" src="img/runtime_task_overview_facets_cascading_lov.png" alt="Description of runtime_task_overview_facets_cascading_lov.png follows" title="Description of runtime_task_overview_facets_cascading_lov.png follows" longdesc="img_text/runtime_task_overview_facets_cascading_lov.html"><br><a href="img_text/runtime_task_overview_facets_cascading_lov.html">Description of the illustration runtime_task_overview_facets_cascading_lov.png</a></div><br></div>
+                     </li>
+                     <li class="stepexpand"><span>In the runtime, click a Project facet. The Milestone category appears.</span><div>
+                           <p>A Project filter displayed above the search results region.</p>
+                           <p>You can select multiple facets, and a filter displays for each one. Click the X icon to remove filters individually or click Clear All to deselect all facets.</p><br><div class="imageleft"><img class="imageleft" id="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B__IMAGE_SCP_MKJ_YLB" height="137" width="523" src="img/runtime_task_overview_facet_filters.png" alt="Description of runtime_task_overview_facet_filters.png follows" title="Description of runtime_task_overview_facet_filters.png follows" longdesc="img_text/runtime_task_overview_facet_filters.html"><br><a href="img_text/runtime_task_overview_facet_filters.html">Description of the illustration runtime_task_overview_facet_filters.png</a></div><br><p>If you select the Configure Web Environment project, the Milestone facet group does not display because this Project does not contain any Milestones.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>When finished, click <span class="uicontrol bold">Edit Page 8</span> on the Runtime Developer toolbar.</span></li>
+                  </ol>
+                  <p>To add a search field to the Project facet group:</p>
+                  <ol start="6">
+                     <li class="stepexpand"><span>In the Rendering tab, under Search, select <span class="uicontrol bold">P8_PROJECT_ID</span>.</span></li>
+                     <li class="stepexpand"><span>In Property Editor:</span><ol type="a" id="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B__SUBSTEPS_CXY_4HB_YLB">
+                           <li class="substepexpand"><span>List Entries: Zero Count Entries - select <span class="uicontrol bold">Show Last</span>.</span></li>
+                           <li class="substepexpand"><span>List Entries: Client-Side Filtering - click to <span class="uicontrol bold">enable</span>.</span><div>Enabling Client-Side Filtering adds the text search field to the region. <span class="q">"Zero Count Entries - Show Last"</span> moves facets with no results for the selected facets to the bottom of the list. They display as null.
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Save and Run Page</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="figure" id="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B__FIG_KKN_YMW_PKB"><br><div class="imageleft"><img class="imageleft" id="GUID-106E75E2-DFCB-48C5-93F6-1E208709097B__IMAGE_LKN_YMW_PKB" height="739" width="1330" src="img/runtime_faceted_search_final.png" alt="Description of runtime_faceted_search_final.png follows" title="Description of runtime_faceted_search_final.png follows" longdesc="img_text/runtime_faceted_search_final.html"><br><a href="img_text/runtime_faceted_search_final.html">Description of the illustration runtime_faceted_search_final.png</a></div><br></div>
+                     <!-- class="figure" -->
+                     <p>The faceted search page Task Overview is complete.</p>
+                     <p>Congratulations! Your application is complete.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

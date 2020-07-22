@@ -1,0 +1,207 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="COUNT_CLICK Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, COUNT_CLICK procedure, clicks, counting">
+      <meta name="keywords" content="APEX_UTIL, COUNT_CLICK procedure, clicks, counting">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-EAC385E4-B686-481C-B95E-2FD6BB997388">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>COUNT_CLICK Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="CLEAR_USER_CACHE-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="CREATE_USER-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="CLEAR_USER_CACHE-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="CREATE_USER-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">COUNT_CLICK Procedure</li>
+            </ol>
+            <a id="GUID-EAC385E4-B686-481C-B95E-2FD6BB997388" name="GUID-EAC385E4-B686-481C-B95E-2FD6BB997388"></a><a id="AEAPI1519"></a><a id="AEAPI1520"></a><a id="AEAPI1521"></a><a id="AEAPI1522"></a><a id="AEAPI112"></a>
+            
+            <h2 id="AEAPI-GUID-EAC385E4-B686-481C-B95E-2FD6BB997388" class="sect2"><span class="enumeration_section">39.12 </span>COUNT_CLICK Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure counts clicks from an application built in <span>App Builder</span> to an external site. You can also use the shorthand version, procedure <code class="codeph">Z</code>, in place of <code class="codeph">APEX_UTIL</code>.<code class="codeph">COUNT_CLICK</code>.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-EAC385E4-B686-481C-B95E-2FD6BB997388__GUID-4BB06334-493F-4EFF-BBBD-69BF50799D17">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.COUNT_CLICK (
+    p_url         IN    VARCHAR2,
+    p_cat         IN    VARCHAR2,
+    p_id          IN    VARCHAR2    DEFAULT NULL,
+    p_user        IN    VARCHAR2    DEFAULT NULL,
+    p_workspace   IN    VARCHAR2    DEFAULT NULL);</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-EAC385E4-B686-481C-B95E-2FD6BB997388__GUID-2234C47A-2700-4644-810F-8FF6AD2A94A8">Parameters</p>
+                  <div class="tblformal" id="GUID-EAC385E4-B686-481C-B95E-2FD6BB997388__GUID-6AECCC49-2DE7-4E16-8E82-CD6FD83A581E">
+                     <p class="titleintable">Table 39-10 COUNT_CLICK Parameters</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="COUNT_CLICK Parameters" summary="Parameter descriptions for the COUNT_CLICK procedure." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="41%" id="d175627e87">Parameter</th>
+                              <th align="left" valign="bottom" width="59%" id="d175627e90">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="41%" id="d175627e95" headers="d175627e87 ">
+                                 <p><code class="codeph">p_url</code></p>
+                              </td>
+                              <td align="left" valign="top" width="59%" headers="d175627e95 d175627e90 ">
+                                 <p>The URL to which to redirect</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="41%" id="d175627e103" headers="d175627e87 ">
+                                 <p><code class="codeph">p_cat</code></p>
+                              </td>
+                              <td align="left" valign="top" width="59%" headers="d175627e103 d175627e90 ">
+                                 <p>A category to classify the click</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="41%" id="d175627e111" headers="d175627e87 ">
+                                 <p><code class="codeph">p_id</code></p>
+                              </td>
+                              <td align="left" valign="top" width="59%" headers="d175627e111 d175627e90 ">
+                                 <p>Secondary ID to associate with the click (optional)</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="41%" id="d175627e119" headers="d175627e87 ">
+                                 <p><code class="codeph">p_user</code></p>
+                              </td>
+                              <td align="left" valign="top" width="59%" headers="d175627e119 d175627e90 ">
+                                 <p>The application user ID (optional)</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="41%" id="d175627e127" headers="d175627e87 ">
+                                 <p><code class="codeph">p_workspace</code></p>
+                              </td>
+                              <td align="left" valign="top" width="59%" headers="d175627e127 d175627e90 ">
+                                 <p>The workspace associated with the application (optional)</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-EAC385E4-B686-481C-B95E-2FD6BB997388__GUID-8FFA3ED6-BE08-4B18-A02E-3B1E41B7C223">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example demonstrates how to use the COUNT_CLICK procedure to log how many user's click on the <code class="codeph">http://yahoo.com</code> link specified. Note that once this information is logged, you can view it by using the APEX_WORKSPACE_CLICKS view and in the reports on this view available to workspace and site administrators.
+                  </p><pre class="pre codeblock"><code>DECLARE
+    l_url VARCHAR2(255);
+    l_cat VARCHAR2(30);
+    l_workspace_id VARCHAR2(30);
+BEGIN
+    l_url := 'http://yahoo.com';
+    l_cat := 'yahoo';
+    l_workspace_id := TO_CHAR(APEX_UTIL.FIND_SECURITY_GROUP_ID('MY_WORKSPACE'));
+ 
+    HTP.P('&lt;a href=APEX_UTIL.COUNT_CLICK?p_url=' || l_url || '&amp;p_cat=' || l_cat || '&amp;p_workspace=' || l_workspace_id || '&gt;Click&lt;/a&gt;');
+END;</code></pre><div class="infoboxnotealso" id="GUID-EAC385E4-B686-481C-B95E-2FD6BB997388__GUID-B1544CAF-B396-4304-BEE5-57F555277609">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="FIND_SECURITY_GROUP_ID-Function.html#GUID-F8532F5E-BB69-4E5F-8D7C-3115ED59323B">FIND_SECURITY_GROUP_ID Function</a>"</span>in this document and <a href="../aeadm/managing-logs-and-files.html#AEADM29199" target="_blank">"Deleting Click Counting Log Entries"</a> in <a href="../aeadm/workspace-and-application-administration.html#AEADM-GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14" target="_blank"><span><cite>Oracle Application Express Administration Guide</cite></span></a></p>
+                        </li>
+                        <li>
+                           <p><a href="../aeadm/configuring-security.html#AEADM292" target="_blank">"Managing Authorized URLs"</a> in <a href="../aeadm/workspace-and-application-administration.html#AEADM-GUID-853F40E1-F360-4CE9-8DC1-FC111A825D14" target="_blank"><span><cite>Oracle Application Express Administration Guide</cite></span></a></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

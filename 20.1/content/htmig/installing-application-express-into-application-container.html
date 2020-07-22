@@ -1,0 +1,392 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Installing Application Express into an Application Container">
+      <meta name="abstract" content="Learn about the application container that stores data and metadata for application back ends.">
+      <meta name="description" content="Learn about the application container that stores data and metadata for application back ends.">
+      <meta name="DC.subject" content="application container, about, CDB, application container, PDB, installing, Application Express in application container, upgrading, Application Express in application container, verifying, application container installation, creating, application seed, application PDB, application root seed, configure, HTTP access">
+      <meta name="keywords" content="application container, about, CDB, application container, PDB, installing, Application Express in application container, upgrading, Application Express in application container, verifying, application container installation, creating, application seed, application PDB, application root seed, configure, HTTP access">
+      <meta name="DC.Relation" scheme="URI" content="multitenant-architecture-in-Oracle-db-12c.html#GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F">
+      <meta name="DC.Relation" scheme="URI" content="installing-application-express-into-application-container.html#GUID-D14D88BC-2858-46B8-9013-37468161329E">
+      <meta name="DC.Relation" scheme="URI" content="installing-application-express-into-application-container.html#GUID-4D375CD3-9A66-476C-9F99-EB63BDCC2D1C">
+      <meta name="DC.Relation" scheme="URI" content="installing-application-express-into-application-container.html#GUID-C14AF3AD-EEC7-44E9-A696-DAE6EC9265B3">
+      <meta name="DC.Relation" scheme="URI" content="installing-application-express-into-application-container.html#GUID-727072CC-91D1-4014-A1A0-DB9138174FDB">
+      <meta name="DC.Relation" scheme="URI" content="installing-application-express-into-application-container.html#GUID-F81F8882-005E-4A4F-932D-27FA30F61DEB">
+      <meta name="DC.Relation" scheme="URI" content="installing-application-express-into-application-container.html#GUID-B292320A-DCAA-4DF9-B8C6-9F2D5B962860">
+      <meta name="DC.Relation" scheme="URI" content="installing-application-express-into-application-container.html#GUID-FB66CDB7-63F5-4B38-9041-040A4793ECB6">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="David Bliss">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vlad Uvarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about the application container that stores data and metadata for application back ends.">
+      <meta name="description" content="Learn about the application container that stores data and metadata for application back ends.">
+      <title>Installing Application Express into an Application Container</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about the application container that stores data and metadata for application back ends.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-installation-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-19T15:17:21-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24725-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="understanding-installation-choices.html" title="Previous" type="text/html">
+      <link rel="next" href="installing-AE-into-different-PDBs.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express 安装指南">
+    <meta name="dcterms.isVersionOf" content="HTMIG">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="understanding-installation-choices.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="installing-AE-into-different-PDBs.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="multitenant-architecture-in-Oracle-db-12c.html" property="item" typeof="WebPage"><span property="name">Utilizing the Multitenant Architecture in
+        Oracle Database 12c or Later</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Installing Application Express into an Application Container</li>
+            </ol>
+            <a id="GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" name="GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D"></a>
+            
+            <h2 id="HTMIG-GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" class="sect2"><span class="enumeration_section">4.2 </span>Installing Application Express into an Application Container
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn about the application container that stores data and metadata for
+        application back ends.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="installing-application-express-into-application-container.html#GUID-D14D88BC-2858-46B8-9013-37468161329E">About Application Containers</a><br>An application container is a CDB component that stores data and metadata for application backends.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-application-express-into-application-container.html#GUID-4D375CD3-9A66-476C-9F99-EB63BDCC2D1C">Creating Application Container</a><br>To create a PDB within a CDB as an application container, you use the <code class="codeph">AS APPLICATION CONTAINER</code> clause of the create PDB command.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-application-express-into-application-container.html#GUID-C14AF3AD-EEC7-44E9-A696-DAE6EC9265B3">Installing or Upgrading Application Express in an Application Container</a><br></li>
+                  <li class="ulchildlink"><a href="installing-application-express-into-application-container.html#GUID-727072CC-91D1-4014-A1A0-DB9138174FDB">Verifying the Application Container Installation</a><br></li>
+                  <li class="ulchildlink"><a href="installing-application-express-into-application-container.html#GUID-F81F8882-005E-4A4F-932D-27FA30F61DEB">Creating an Application Seed</a><br>An application seed is used to provision application PDBs with the application root's applications pre-installed.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-application-express-into-application-container.html#GUID-B292320A-DCAA-4DF9-B8C6-9F2D5B962860">Creating an Application PDB from the Application Root Seed</a><br>An application PDB is created by issuing the <code class="codeph">CREATE PLUGGABLE DATABASE</code> statement from the application root.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-application-express-into-application-container.html#GUID-FB66CDB7-63F5-4B38-9041-040A4793ECB6">Configure HTTP Access to the Application PDB</a><br>Configure a new application PDB for HTTP access.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="multitenant-architecture-in-Oracle-db-12c.html#GUID-972D1EC3-84AD-4C36-A4B1-167C3610BE7F" title="Learn about installation choices and different scenarios associated with copying and moving pluggable databases introduced by the Oracle Database 12c or later multitenant architecture with respect to Oracle Application Express (Application Express).">Utilizing the Multitenant Architecture in Oracle Database 12c or Later</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-D14D88BC-2858-46B8-9013-37468161329E" name="GUID-D14D88BC-2858-46B8-9013-37468161329E"></a><h3 id="HTMIG-GUID-D14D88BC-2858-46B8-9013-37468161329E" class="sect3"><span class="enumeration_section">4.2.1 </span> About Application Containers
+               </h3>
+               <div>
+                  <p>An application container is a CDB component that stores data and metadata for application backends.</p>
+                  <p>Oracle Application Express can be installed into an application container using the  <code class="codeph">apxappcon.sql</code> script. An application container consists of an application root where the application is defined and one or more PDBs that share data and metadata about the application from the application root. You can have multiple application containers within a CDB and each container can have a different version of Oracle Application Express.
+                  </p>
+                  <p>Patching or upgrading Oracle Application Express in an application container is simplified, because these actions are done against the application root. When an application PDB wishes to uptake the patch or upgraded version, it simply syncs with the application root. Oracle Application Express continues to run in the application PDB at the existing version until the application PDB syncs with the application root.</p>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" title="Learn about the application container that stores data and metadata for application back ends.">Installing Application Express into an Application Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-4D375CD3-9A66-476C-9F99-EB63BDCC2D1C" name="GUID-4D375CD3-9A66-476C-9F99-EB63BDCC2D1C"></a><h3 id="HTMIG-GUID-4D375CD3-9A66-476C-9F99-EB63BDCC2D1C" class="sect3"><span class="enumeration_section">4.2.2 </span>Creating Application Container
+               </h3>
+               <div>
+                  <p>To create a PDB within a CDB as an application container, you use the <code class="codeph">AS APPLICATION CONTAINER</code> clause of the create PDB command.
+                  </p>
+                  <div class="section">
+                     <p>To create Application Container: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol id="GUID-4D375CD3-9A66-476C-9F99-EB63BDCC2D1C__STEPS_FPV_QVY_BHB">
+                     <li class="stepexpand"><span>Use the <code class="codeph">AS APPLICATION CONTAINER</code> clause of the <code class="codeph">CREATE PLUGGABLE DATABASE</code> statement to create an application container.</span></li>
+                     <li class="stepexpand"><span>Open the application container.</span><div>
+                           <p>For Example:</p><pre class="pre codeblock"><code>CREATE PLUGGABLE DATABASE apex_approot1 AS APPLICATION CONTAINER admin user admin IDENTIFIED
+      BY &lt;admin_password&gt; FILE_NAME_CONVERT=('pdbseed','apex_approot1');
+ALTER PLUGGABLE DATABASE apex_approot1 open;
+</code></pre></div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-4D375CD3-9A66-476C-9F99-EB63BDCC2D1C__GUID-EB53889F-07D9-456D-ACCD-35BAB3E7140D">
+                        <p class="notep1">Note:</p>
+                        
+                        <p><code class="codeph">apex_approot1</code> and the <code class="codeph">admin
+                                    user</code> in the previous example can be any valid ORACLE
+                              identifier.
+                        </p>
+                        
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" title="Learn about the application container that stores data and metadata for application back ends.">Installing Application Express into an Application Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-C14AF3AD-EEC7-44E9-A696-DAE6EC9265B3" name="GUID-C14AF3AD-EEC7-44E9-A696-DAE6EC9265B3"></a><h3 id="HTMIG-GUID-C14AF3AD-EEC7-44E9-A696-DAE6EC9265B3" class="sect3"><span class="enumeration_section">4.2.3 </span>Installing or Upgrading Application Express in
+        an Application Container
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To install or upgrade Application Express in an Application Container:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol id="GUID-C14AF3AD-EEC7-44E9-A696-DAE6EC9265B3__STEPS_HCW_Y5C_BHB">
+                     <li class="stepexpand"><span>Connect to Application Container.</span></li>
+                     <li class="stepexpand"><span>Run <code class="codeph">apxappcon.sql</code>.</span><div>
+                           
+                           <p><code class="codeph">apxappcon.sql</code> installs Application Express as an
+                        application named <code class="codeph">APEX</code> into the application root.
+                           </p>
+                           
+                           <p>The script takes the exact same first four arguments as the
+                            <code class="codeph">apexins.sql script</code>, with the addition of a fifth
+                        parameter which is the password to use for the
+                            <code class="codeph">APEX_PUBLIC_USER</code> password. In an upgrade installation,
+                        the fifth argument is ignored because the <code class="codeph">APEX_PUBLIC_USER</code>
+                        database user will already exist.
+                           </p>
+                        </div>
+                        <div>
+                           <p>For example:</p><pre class="pre codeblock"><code>ALTER SESSION SET CONTAINER = apex_approot1;
+
+ @apxappcon.sql SYSAUX SYSAUX TEMP /i/ P@ssw0rd!</code></pre></div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" title="Learn about the application container that stores data and metadata for application back ends.">Installing Application Express into an Application Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-727072CC-91D1-4014-A1A0-DB9138174FDB" name="GUID-727072CC-91D1-4014-A1A0-DB9138174FDB"></a><h3 id="HTMIG-GUID-727072CC-91D1-4014-A1A0-DB9138174FDB" class="sect3"><span class="enumeration_section">4.2.4 </span>Verifying the Application Container Installation
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">
+                     <p>To verify the Application Container installation:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol id="GUID-727072CC-91D1-4014-A1A0-DB9138174FDB__STEPS_HCW_Y5C_BHB">
+                     <li class="stepexpand"><span>Manually inspect the log file of the installation for ORA- or PLS- errors.</span></li>
+                     <li class="stepexpand"><span>Compile invalid objects by running the following command:</span><div>
+                           <p>For example:</p><pre class="pre codeblock"><code>ALTER SESSION SET CONTAINER=apex_approot1;
+ 
+begin
+    sys.dbms_utility.compile_schema( 'APEX_200100', false );
+    sys.dbms_utility.compile_schema( 'FLOWS_FILES', false );
+end;
+/</code></pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Query <code class="codeph">dba_applications</code> and <code class="codeph">dba_app_errors</code>.</span><div><pre class="pre codeblock"><code>SQL&gt; select app_name, app_version, app_status from dba_applications where app_name = 'APEX';
+ 
+ 
+APP_NAME                       APP_VERSION                    APP_STATUS
+ 
+------------------------------ ------------------------------ ------------
+ 
+APEX                           20.1                           NORMAL
+ 
+SQL&gt; select app_name, app_statement, errornum, errormsg from dba_app_errors where app_name = 'APEX';
+ 
+ 
+no rows selected</code></pre></div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" title="Learn about the application container that stores data and metadata for application back ends.">Installing Application Express into an Application Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-F81F8882-005E-4A4F-932D-27FA30F61DEB" name="GUID-F81F8882-005E-4A4F-932D-27FA30F61DEB"></a><h3 id="HTMIG-GUID-F81F8882-005E-4A4F-932D-27FA30F61DEB" class="sect3"><span class="enumeration_section">4.2.5 </span>Creating an Application Seed
+               </h3>
+               <div>
+                  <p>An application seed is used to provision application PDBs with the application root's applications pre-installed.</p>
+                  <div class="section">
+                     <p>To create an Application Seed:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol id="GUID-F81F8882-005E-4A4F-932D-27FA30F61DEB__STEPS_HCW_Y5C_BHB">
+                     <li class="stepexpand"><span>Connect to <code class="codeph">CDB$ROOT</code> as <code class="codeph">sysdba</code>.</span></li>
+                     <li class="stepexpand"><span>Alter session and set container to the application root.</span></li>
+                     <li class="stepexpand"><span>Use the <code class="codeph">AS SEED</code> clause of the <code class="codeph">CREATE PLUGGABLE DATABASE</code> statement to create an application seed.</span></li>
+                     <li class="stepexpand"><span>Sync the APEX application with the application seed.</span></li>
+                     <li class="stepexpand"><span>Compile invalid objects.</span></li>
+                     <li class="stepexpand"><span>Open the application seed in read only mode.</span><div>
+                           <div class="infoboxnote" id="GUID-F81F8882-005E-4A4F-932D-27FA30F61DEB__GUID-508296CC-286C-49E7-A0BA-6A24DF32ED92">
+                              <p class="notep1">Note:</p>
+                              <p><code class="codeph">apex_approot1</code>, <code class="codeph">admin user</code>, and <code class="codeph">file_name_convert</code> can be variable.
+                              </p>
+                           </div>
+                        </div>
+                        <div>
+                           <p>For example:</p><pre class="pre codeblock"><code>ALTER SESSION SET CONTAINER=apex_approot1;
+ 
+CREATE PLUGGABLE DATABASE as seed admin user admin identified by &lt;admin_password&gt; file_name_convert=('pdbseed','apex_approot1_seed');
+ 
+ALTER PLUGGABLE DATABASE apex_approot1$seed open;
+ 
+ALTER SESSION SET CONTAINER=apex_approot1$seed;
+ 
+ALTER PLUGGABLE DATABASE application APEX sync;
+ 
+begin
+    sys.dbms_utility.compile_schema( 'APEX_200100', false );
+    sys.dbms_utility.compile_schema( 'FLOWS_FILES', false );
+end;
+/
+ 
+ALTER PLUGGABLE DATABASE close immediate;
+ 
+ALTER PLUGGABLE DATABASE open read only;</code></pre></div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" title="Learn about the application container that stores data and metadata for application back ends.">Installing Application Express into an Application Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-B292320A-DCAA-4DF9-B8C6-9F2D5B962860" name="GUID-B292320A-DCAA-4DF9-B8C6-9F2D5B962860"></a><h3 id="HTMIG-GUID-B292320A-DCAA-4DF9-B8C6-9F2D5B962860" class="sect3"><span class="enumeration_section">4.2.6 </span>Creating an Application PDB from the Application Root Seed
+               </h3>
+               <div>
+                  <p>An application PDB is created by issuing the <code class="codeph">CREATE PLUGGABLE DATABASE</code> statement from the application root.
+                  </p>
+                  <div class="section">
+                     <p>The <code class="codeph">PLUGGABLE DATABASE</code> is created from the application container seed so the APEX application is already installed and ready for configuration.
+                     </p>
+                     <p>To create an Application PDB from the Application Root Seed:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol id="GUID-B292320A-DCAA-4DF9-B8C6-9F2D5B962860__STEPS_HCW_Y5C_BHB">
+                     <li class="stepexpand"><span>Connect to <code class="codeph">CDB$ROOT</code> as <code class="codeph">sysdba</code>.</span></li>
+                     <li class="stepexpand"><span>Alter session and set container to the application root.</span></li>
+                     <li class="stepexpand"><span> Use the <code class="codeph">CREATE PLUGGABLE DATABASE</code> command to create a PDB from the application seed.</span><div>
+                           <div class="infoboxnote" id="GUID-B292320A-DCAA-4DF9-B8C6-9F2D5B962860__GUID-A3045156-75C3-4B94-960D-B8DB1596304F">
+                              <p class="notep1">Note:</p>
+                              <p><code class="codeph">apex_approot1</code>,<code class="codeph">admin user</code>, <code class="codeph">apex_pdb1</code>, and <code class="codeph">file_name_convert</code> can be variable.
+                              </p>
+                           </div>
+                        </div>
+                        <div>
+                           <p>For example:</p><pre class="pre codeblock"><code>ALTER SESSION SET CONTAINER=apex_approot1;
+ 
+CREATE PLUGGABLE DATABASE apex_pdb1 admin user admin identified by &lt;admin password&gt; file_name_convert=('apex_approot1_seed','apex_pdb1');
+ 
+ALTER PLUGGABLE DATABASE apex_pdb1 open;
+ 
+ 
+ALTER SESSION SET CONTAINER=apex_pdb1;
+ 
+SQL&gt; select app_name, app_version, app_status from dba_applications where app_name = 'APEX';
+ 
+ 
+APP_NAME                       APP_VERSION                    APP_STATUS
+ 
+------------------------------ ------------------------------ ------------
+ 
+APEX                           20.1                           NORMAL</code></pre></div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" title="Learn about the application container that stores data and metadata for application back ends.">Installing Application Express into an Application Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-FB66CDB7-63F5-4B38-9041-040A4793ECB6" name="GUID-FB66CDB7-63F5-4B38-9041-040A4793ECB6"></a><h3 id="HTMIG-GUID-FB66CDB7-63F5-4B38-9041-040A4793ECB6" class="sect3"><span class="enumeration_section">4.2.7 </span>Configure HTTP Access to the Application PDB
+               </h3>
+               <div>
+                  <p>Configure a new application PDB for HTTP access.</p>
+                  <div class="section">
+                     <p>Configure the new application PDB for HTTP access by following the instructions
+                starting with the section "<a href="downloading-installing-Oracle-REST-data-services.html#GUID-1F0064FB-7F00-4ACE-85BD-E9B2AF73A233" title="Learn about downloading and installing Oracle REST Data Services.">Downloading and Installing Oracle REST Data Services</a>." If you
+                are using legacy web listeners, follow the corresponding sections in <span class="q">"<a href="Installing-AE-and-configuring-PLSQL-gateway.html#GUID-DF176974-6ADB-44A0-B3E8-2A5D33321B91" title="Install or upgrade Oracle Application Express by downloading a ZIP file the Oracle Application Express download page and then configuring Embedded PL/SQL Gateway. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Web Listener - Embedded PL/SQL Gateway (Deprecated)</a>"</span> and <span class="q">"<a href="Installing-AE-and-configuring-LWL-Oracle-HTTP-Server.html#GUID-CDBBB7FD-B436-47F8-AA84-A996AECC8D81" title="Install or upgrade Oracle Application Express by downloading a ZIP file from the Oracle Application Express download page and then configuring legacy Web listener Oracle HTTP Server with mod_plsql. These instructions apply to both new and upgrade installations.">Installing Application Express and Configuring Legacy Web Listener &#x2013; Oracle HTTP Server (Deprecated)</a>"</span>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="installing-application-express-into-application-container.html#GUID-46CD6A47-05A5-4DA2-8204-F80FFB48371D" title="Learn about the application container that stores data and metadata for application back ends.">Installing Application Express into an Application Container</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

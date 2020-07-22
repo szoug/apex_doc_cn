@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: delayLinger</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.created" content="2020-03-24T20:11:56+00:00">
+    <meta name="dcterms.title" content="Oracle Application Express JavaScript API Reference">
+    <meta name="dcterms.category" content="database">
+    <meta name="dcterms.isVersionOf" content="AEXJS">
+    <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+    <meta name="dcterms.identifier" content="F24723-01">
+    <meta name="dcterms.release" content="Release 20.1">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}} </script>
+    </head>
+
+<body>
+<a href="#main-content" id="skipToContent">Skip to Main Content</a>
+
+<nav id="nav" data-current-item="nav_28">
+    <h2 id="navIndex"><a href="index.html">Index</a></h2><h3>Widgets</h3><ul><li id="nav_0"><a href="grid.html">grid</a></li><li id="nav_1"><a href="iconList.html">iconList</a></li><li id="nav_2"><a href="interactiveGrid.html">interactiveGrid</a></li><li id="nav_3"><a href="menu.html">menu</a></li><li id="nav_4"><a href="menuButton.html">menuButton</a></li><li id="nav_5"><a href="recordView.html">recordView</a></li><li id="nav_6"><a href="tableModelView.html">tableModelView</a></li><li id="nav_7"><a href="tableModelViewBase.html">tableModelViewBase</a></li><li id="nav_8"><a href="treeView.html">treeView</a></li></ul><h3>Namespaces</h3><ul><li id="nav_9"><a href="apex.html">apex</a></li><li id="nav_10"><a href="apex.actions.html">apex.actions</a></li><li id="nav_11"><a href="apex.da.html">apex.da</a></li><li id="nav_12"><a href="apex.debug.html">apex.debug</a></li><li id="nav_13"><a href="apex.event.html">apex.event</a></li><li id="nav_14"><a href="apex.item.html">apex.item</a></li><li id="nav_15"><a href="apex.lang.html">apex.lang</a></li><li id="nav_16"><a href="apex.locale.html">apex.locale</a></li><li id="nav_17"><a href="apex.message.html">apex.message</a></li><li id="nav_18"><a href="apex.model.html">apex.model</a></li><li id="nav_19"><a href="apex.navigation.html">apex.navigation</a></li><li id="nav_20"><a href="apex.navigation.dialog.html">apex.navigation.dialog</a></li><li id="nav_21"><a href="apex.navigation.popup.html">apex.navigation.popup</a></li><li id="nav_22"><a href="apex.page.html">apex.page</a></li><li id="nav_23"><a href="apex.region.html">apex.region</a></li><li id="nav_24"><a href="apex.server.html">apex.server</a></li><li id="nav_25"><a href="apex.storage.html">apex.storage</a></li><li id="nav_26"><a href="apex.theme.html">apex.theme</a></li><li id="nav_27"><a href="apex.util.html">apex.util</a></li><li id="nav_28"><a href="apex.util.delayLinger.html">apex.util.delayLinger</a></li><li id="nav_29"><a href="apex.widget.html">apex.widget</a></li></ul><h3>Interfaces</h3><ul><li id="nav_30"><a href="actions.html">actions</a></li><li id="nav_31"><a href="htmlBuilder.html">htmlBuilder</a></li><li id="nav_32"><a href="interactiveGridView.html">interactiveGridView</a></li><li id="nav_33"><a href="item.html">item</a></li><li id="nav_34"><a href="model.html">model</a></li><li id="nav_35"><a href="region.html">region</a></li><li id="nav_36"><a href="treeNodeAdapter.html">treeNodeAdapter</a></li></ul><h3><a href="global.html">Non-namespace APIs</a></h3>
+</nav>
+
+<div id="main">
+
+
+
+    <h1 class="page-title">Namespace: delayLinger</h1>
+
+    
+
+
+
+
+<section id="quick-nav">
+    <header><h2>QuickNav</h2></header>
+    
+    
+
+    
+    <div class="quick-nav-section">
+        <h3><a href="#methods-section">Functions</a></h3>
+        <ul class="subList">
+            
+                <li><a href="#.finish">finish</a></li>
+            
+                <li><a href="#.start">start</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+</section>
+
+
+<section id="main-content">
+
+<header>
+    
+    
+        <h2>
+            <span class="ancestors"><a href="apex.html">apex</a><a href="apex.util.html">.util</a>.</span>delayLinger</h2>
+        
+    
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>The delayLinger namespace solves the problem of flashing progress indicators (such as spinners).</p>
+
+<p>For processes such as an Ajax request (and subsequent user interface updates) that may take a while
+it is important to let the user know that something is happening.
+The problem is that if an async process is quick there is no need for a progress indicator. The user
+experiences the UI update as instantaneous. Showing and hiding a progress indicator around an async
+process that lasts a very short time causes a flash of content that the user may not have time to fully perceive.
+At best this can be a distraction and at worse the user wonders if something is wrong or if they missed something
+important. Simply delaying the progress indicator doesn't solve the problem because the process
+could finish a short time after the indicator is shown. The indicator must be shown for at least a short but
+perceivable amount of time even if the request is already finished.</p>
+
+<p>You can use this namespace to help manage the duration of a progress indication such as
+<a href="apex.util.html#.showSpinner">apex.util.showSpinner</a> or with any other progress implementation. Many of the Oracle
+Application Express asynchronous functions such as the ones in the <a href="apex.server.html">apex.server</a> namespace
+already use delayLinger internally so you only need this API for your own custom long running
+asynchronous processing.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+        <p class="code-caption">This example shows using <a href="apex.util.delayLinger.html#.start">apex.util.delayLinger.start</a> and
+    <a href="apex.util.delayLinger.html#.finish">apex.util.delayLinger.finish</a> along with <a href="apex.util.html#.showSpinner">apex.util.showSpinner</a> to show a
+    progress spinner, only when needed and for long enough to be seen, around a long running asynchronus process
+    started in function doLongProcess.</p>
+    
+        <pre class="prettyprint"><code>var lSpinner$, lPromise;
+lPromise = doLongProcess();
+apex.util.delayLinger.start( "main", function() {
+    lSpinner$ = apex.util.showSpinner( $( "#container_id" ) );
+} );
+lPromise.always( function() {
+    apex.util.delayLinger.finish( "main", function() {
+        lSpinner$.remove();
+    } );
+} );</code></pre>
+    
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+        <div class="hw">
+        <h3 id="methods-section" class="subsection-title">
+            Functions
+        </h3>
+        <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark Functions" href="#methods-section"></a>
+        </div>
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".finish"><span class="type-signature">(static) </span>finish<span class="signature">(pScopeName, pAction)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark finish(pScopeName, pAction)" href="#.finish"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Call this function when the potentially long running async process finishes. For each call to start with
+a given <code class="prettyprint">pScopeName</code> a corresponding call to finish with
+the same <code class="prettyprint">pScopeName</code> must be made.
+The <code class="prettyprint">pAction</code> is called exactly once if and only if the corresponding
+start <code class="prettyprint">pAction</code> was called.
+If there are multiple calls to finish the <code class="prettyprint">pAction</code> from the last one is called.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for finish">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pScopeName</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A unique name for each unique progress indicator.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pAction</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A no argument function to call to hide and/or remove the progress indicator.
+    This function is only called if the action passed to start was called.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <div class="hw">
+    <h4 class="name" id=".start"><span class="type-signature">(static) </span>start<span class="signature">(pScopeName, pAction)</span><span class="type-signature"></span></h4>
+    <a class="bookmarkable-link" title="Bookmarkable Link" aria-label="Bookmark start(pScopeName, pAction)" href="#.start"></a>
+    </div>
+
+
+    
+
+
+
+<div class="description">
+    <p>Call this function when a potentially long running async process starts. For each call to start with
+a given pScopeName a corresponding call to finish with the same <code class="prettyprint">pScopeName</code> must be made.
+Calls with different <code class="prettyprint">pScopeName</code> arguments will not interfere with each other.</p>
+
+<p>Multiple calls to start for the same <code class="prettyprint">pScopeName</code> before any calls to
+finish is allowed but only the <code class="prettyprint">pAction</code> from the first call is called at most once.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params" aria-label="Parameters for start">
+    <thead>
+    <tr>
+        
+        <th scope="col">Name</th>
+        
+
+        <th scope="col">Type</th>
+
+        
+
+        
+
+        <th scope="col" class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pScopeName</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A unique name for each unique progress indicator.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <th scope="row" class="name"><code>pAction</code></th>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A no argument function to call to display the progress indicator.
+    This function may or may not be called depending on how quickly finish is called.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+</article>
+
+</section>
+
+
+
+
+
+    <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Thu Feb 27 2020 23:50:22 GMT-0800 (Pacific Standard Time)
+      <br>
+      <span class="product-docs-footer">Oracle Application Express Release 20.1, JavaScript API Reference</span>
+      <br>
+      <span class="product-docs-footer">Copyright &copy; 2003, 2020, Oracle and/or its affiliates. All rights reserved.</span>
+    </footer>
+</div>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+<script>
+(function() {
+    // make skip link work for mobile browsers
+    document.getElementById("skipToContent").addEventListener("click", function(e) {
+        var target = document.getElementById("main-content");
+        e.preventDefault();
+        target.setAttribute("tabindex", "-1");
+        target.addEventListener("blur", function(e) {
+            target.removeAttribute("tabindex");
+        });
+        target.focus();
+    });
+
+    var nav = document.getElementById("nav");
+    var currentId = nav.getAttribute("data-current-item");
+    if (!currentId) {
+        return;
+    }
+    var link = document.getElementById(currentId);
+    if (!link) {
+        return;
+    }
+    link.className = link.className ? link.className + " current-nav-item" : "current-nav-item";
+    nav.scrollTop = link.offsetTop + (link.offsetHeight - nav.offsetHeight)/2;
+})();
+</script>
+
+</body>
+</html>

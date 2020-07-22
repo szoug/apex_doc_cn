@@ -1,0 +1,206 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="APEX_JSON">
+      <meta name="DC.subject" content="APEX_JSON, APIs">
+      <meta name="keywords" content="APEX_JSON, APIs">
+      <meta name="DC.Relation" scheme="URI" content="Package-Overview-and-Examples.html#GUID-59567A48-7F81-4748-8998-CF3081286EC8">
+      <meta name="DC.Relation" scheme="URI" content="APEX_JSON-Constants-and-Data-Types.html#GUID-83BF8800-E60D-4A7D-A32E-9FDC63ED4923">
+      <meta name="DC.Relation" scheme="URI" content="CLOSE_ALL-Procedure.html#GUID-42A69AF0-9853-4E4E-BFC4-38C2D20980C0">
+      <meta name="DC.Relation" scheme="URI" content="CLOSE_ARRAY-Procedure.html#GUID-308E76AB-627A-4F2E-B7AC-E6DD32A18E94">
+      <meta name="DC.Relation" scheme="URI" content="CLOSE_OBJECT-Procedure.html#GUID-98070930-044F-4230-B4DC-F0D43C014901">
+      <meta name="DC.Relation" scheme="URI" content="DOES_EXIST-Function.html#GUID-E19F683A-FF3F-41B3-AFD2-87FEAD5A843D">
+      <meta name="DC.Relation" scheme="URI" content="FIND_PATHS_LIKE-Function.html#GUID-9EAF9B91-DD2D-4DC2-ACBC-F039D54A4DFB">
+      <meta name="DC.Relation" scheme="URI" content="FREE_OUTPUT-Procedure.html#GUID-716748F9-A7CC-4BB4-898A-61215609525F">
+      <meta name="DC.Relation" scheme="URI" content="FLUSH-Procedure.html#GUID-A6DBBBFB-A6E9-4B7D-96E6-44DDBA7AD18E">
+      <meta name="DC.Relation" scheme="URI" content="GET_BOOLEAN-Function.html#GUID-16DDCCF8-CA67-4DE4-B3BC-8D52AE3DD0A3">
+      <meta name="DC.Relation" scheme="URI" content="GET_CLOB_OUTPUT-Function.html#GUID-DBF0A813-D22B-4C21-A455-3AF2E10EEE68">
+      <meta name="DC.Relation" scheme="URI" content="GET_COUNT-Function.html#GUID-00808027-C1E0-4FFF-8983-BCDFE44B7BD2">
+      <meta name="DC.Relation" scheme="URI" content="GET_DATE-Function.html#GUID-8635BAEB-97C9-4FC2-A199-15BE6605FAA8">
+      <meta name="DC.Relation" scheme="URI" content="GET_MEMBERS-Function.html#GUID-461C42D7-CE76-4A8A-9C71-1E5706084F51">
+      <meta name="DC.Relation" scheme="URI" content="GET_NUMBER-Function.html#GUID-272C06D5-17F8-474D-B1A3-6ED0675F89E2">
+      <meta name="DC.Relation" scheme="URI" content="GET_VALUE-Function.html#GUID-AA42ED2A-B8E1-48A3-A24C-904528B56BB9">
+      <meta name="DC.Relation" scheme="URI" content="GET_T_NUMBER-Function.html#GUID-4E16284C-7C85-42EE-8DD3-FD8B556200EE">
+      <meta name="DC.Relation" scheme="URI" content="GET_T_VARCHAR2-Function.html#GUID-D4EA7B1A-5F27-41D3-895F-D4C2F567A509">
+      <meta name="DC.Relation" scheme="URI" content="GET_VARCHAR2-Function.html#GUID-BC908E35-57DC-46B3-BFB2-EFF092855D25">
+      <meta name="DC.Relation" scheme="URI" content="GET_CLOB-Function.html#GUID-360982E5-800D-452A-A100-2FDB86075046">
+      <meta name="DC.Relation" scheme="URI" content="INITIALIZE_CLOB_OUTPUT-Procedure.html#GUID-F0269C54-A421-4185-AF06-AF71780EE7A4">
+      <meta name="DC.Relation" scheme="URI" content="INITIALIZE_OUTPUT-Procedure.html#GUID-F79A155E-7C62-432A-A0F9-C8B528ED476D">
+      <meta name="DC.Relation" scheme="URI" content="OPEN_ARRAY-Procedure.html#GUID-2B346A28-2FB5-4CEC-9B86-33B8B3FFD94B">
+      <meta name="DC.Relation" scheme="URI" content="OPEN_OBJECT-Procedure.html#GUID-652FE97B-B33C-4EC2-A8AB-9056E8B49477">
+      <meta name="DC.Relation" scheme="URI" content="PARSE-Procedure-Signature-1.html#GUID-2083D6CF-9B16-4770-BF3B-D1BF63B6AC2D">
+      <meta name="DC.Relation" scheme="URI" content="PARSE-Procedure-Signature-2.html#GUID-4CDBACA2-B124-4097-B06A-EC62FEFB7F81">
+      <meta name="DC.Relation" scheme="URI" content="STRINGIFY-Function-Signature-1.html#GUID-5F5197FC-EE7A-4555-A130-9115927872AD">
+      <meta name="DC.Relation" scheme="URI" content="STRINGIFY-Function-Signature-2.html#GUID-0920AFBD-60E5-40F7-BDFB-422F03712E54">
+      <meta name="DC.Relation" scheme="URI" content="STRINGIFY-Function-Signature-3.html#GUID-EC91F85E-2C12-471C-83BE-92CA0CE7C05E">
+      <meta name="DC.Relation" scheme="URI" content="STRINGIFY-Function-Signature-4.html#GUID-4BAB8902-824E-4BE7-BC8C-A9AFCF576DB6">
+      <meta name="DC.Relation" scheme="URI" content="To_MEMBER_NAME-Function.html#GUID-98EDFE64-EAB0-4D5D-BA73-AE7E3A649550">
+      <meta name="DC.Relation" scheme="URI" content="TO_XMLTYPE-Function.html#GUID-33E317C6-6FD5-42A5-9336-8D334CDBD256">
+      <meta name="DC.Relation" scheme="URI" content="TO_XMLTYPE_SQL-Function.html#GUID-383DC894-A99A-41EB-9699-53330B5E0B9C">
+      <meta name="DC.Relation" scheme="URI" content="WRITE_CONTEXT-Procedure.html#GUID-8C3BA2F1-36E0-45B1-B095-5B4492650838">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-1.html#GUID-58D8250D-F197-4A3F-8B07-BC2BFB8669C8">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-2.html#GUID-065C91C6-B7E5-44FE-8B90-493BB715A6F5">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-3.html#GUID-58B2916A-8900-4101-B6F7-DBABD86D3710">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-4.html#GUID-28FBF1A3-BF92-4246-86FF-3C2174DDB0A8">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-5.html#GUID-C7313A58-03A4-4E68-84D3-4018367D924E">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-6.html#GUID-BFA54B24-4B57-4837-9B1B-80EF67458164">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-7.html#GUID-24AE7B10-8A77-41E8-A7DC-505E6556DD22">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-8.html#GUID-E1BE2CD7-8300-4E1F-9B4E-2501A9D8F68A">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-9.html#GUID-BA89B9AF-F60D-43CB-8F03-71F993FC1861">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-10.html#GUID-32EA8889-C3B3-4003-AF22-2432258FC35F">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-11.html#GUID-80EFE40C-F9E4-43C5-8D39-0694248C0248">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-12.html#GUID-F1B594DF-1B2E-4BDA-804C-B16334135B96">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-13.html#GUID-B066CE5A-225D-4A79-ABD3-B1A341FB789D">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-14.html#GUID-78E9663F-1EFA-4793-A9ED-EB0F728D2B77">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-15.html#GUID-00D45BF0-17D5-4310-B822-6E9D9AC3AFF4">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-16.html#GUID-FA6E300C-0346-4D03-9DC5-2A83F8AA4D69">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-17.html#GUID-780CD430-5A8A-49B8-AD20-259B60E9798E">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-18.html#GUID-B01064B0-5072-4061-8B23-5680619F75BE">
+      <meta name="DC.Relation" scheme="URI" content="WRITE-Procedure-Signature-19.html#GUID-ED758CF5-C942-4B8B-8BA5-CF1A63B69EB2">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-11919ED6-CE3D-4497-8733-F56CD27B6BFF">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>APEX_JSON</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="Escape-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="Package-Overview-and-Examples.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="Escape-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="Package-Overview-and-Examples.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> APEX_JSON</li>
+            </ol>
+            <a id="GUID-11919ED6-CE3D-4497-8733-F56CD27B6BFF" name="GUID-11919ED6-CE3D-4497-8733-F56CD27B6BFF"></a><a id="AEAPI29635"></a>
+            
+            <h2 id="AEAPI-GUID-11919ED6-CE3D-4497-8733-F56CD27B6BFF" class="sect2"><span class="enumeration_chapter">23 </span> APEX_JSON
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This package includes utilities that parse and generate JSON.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="Package-Overview-and-Examples.html#GUID-59567A48-7F81-4748-8998-CF3081286EC8">Package Overview and Examples</a><br></li>
+                  <li class="ulchildlink"><a href="APEX_JSON-Constants-and-Data-Types.html#GUID-83BF8800-E60D-4A7D-A32E-9FDC63ED4923">Constants and Data Types</a><br></li>
+                  <li class="ulchildlink"><a href="CLOSE_ALL-Procedure.html#GUID-42A69AF0-9853-4E4E-BFC4-38C2D20980C0">CLOSE_ALL Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CLOSE_ARRAY-Procedure.html#GUID-308E76AB-627A-4F2E-B7AC-E6DD32A18E94">CLOSE_ARRAY Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="CLOSE_OBJECT-Procedure.html#GUID-98070930-044F-4230-B4DC-F0D43C014901">CLOSE_OBJECT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="DOES_EXIST-Function.html#GUID-E19F683A-FF3F-41B3-AFD2-87FEAD5A843D">DOES_EXIST Function</a><br></li>
+                  <li class="ulchildlink"><a href="FIND_PATHS_LIKE-Function.html#GUID-9EAF9B91-DD2D-4DC2-ACBC-F039D54A4DFB">FIND_PATHS_LIKE Function</a><br></li>
+                  <li class="ulchildlink"><a href="FREE_OUTPUT-Procedure.html#GUID-716748F9-A7CC-4BB4-898A-61215609525F">FREE_OUTPUT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="FLUSH-Procedure.html#GUID-A6DBBBFB-A6E9-4B7D-96E6-44DDBA7AD18E">FLUSH Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="GET_BOOLEAN-Function.html#GUID-16DDCCF8-CA67-4DE4-B3BC-8D52AE3DD0A3">GET_BOOLEAN Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_CLOB_OUTPUT-Function.html#GUID-DBF0A813-D22B-4C21-A455-3AF2E10EEE68">GET_CLOB_OUTPUT Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_COUNT-Function.html#GUID-00808027-C1E0-4FFF-8983-BCDFE44B7BD2">GET_COUNT Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_DATE-Function.html#GUID-8635BAEB-97C9-4FC2-A199-15BE6605FAA8">GET_DATE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_MEMBERS-Function.html#GUID-461C42D7-CE76-4A8A-9C71-1E5706084F51">GET_MEMBERS Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_NUMBER-Function.html#GUID-272C06D5-17F8-474D-B1A3-6ED0675F89E2">GET_NUMBER Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_VALUE-Function.html#GUID-AA42ED2A-B8E1-48A3-A24C-904528B56BB9">GET_VALUE Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_T_NUMBER-Function.html#GUID-4E16284C-7C85-42EE-8DD3-FD8B556200EE">GET_T_NUMBER Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_T_VARCHAR2-Function.html#GUID-D4EA7B1A-5F27-41D3-895F-D4C2F567A509">GET_T_VARCHAR2 Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_VARCHAR2-Function.html#GUID-BC908E35-57DC-46B3-BFB2-EFF092855D25">GET_VARCHAR2 Function</a><br></li>
+                  <li class="ulchildlink"><a href="GET_CLOB-Function.html#GUID-360982E5-800D-452A-A100-2FDB86075046">GET_CLOB Function</a><br></li>
+                  <li class="ulchildlink"><a href="INITIALIZE_CLOB_OUTPUT-Procedure.html#GUID-F0269C54-A421-4185-AF06-AF71780EE7A4">INITIALIZE_CLOB_OUTPUT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="INITIALIZE_OUTPUT-Procedure.html#GUID-F79A155E-7C62-432A-A0F9-C8B528ED476D">INITIALIZE_OUTPUT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="OPEN_ARRAY-Procedure.html#GUID-2B346A28-2FB5-4CEC-9B86-33B8B3FFD94B">OPEN_ARRAY Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="OPEN_OBJECT-Procedure.html#GUID-652FE97B-B33C-4EC2-A8AB-9056E8B49477">OPEN_OBJECT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="PARSE-Procedure-Signature-1.html#GUID-2083D6CF-9B16-4770-BF3B-D1BF63B6AC2D">PARSE Procedure Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="PARSE-Procedure-Signature-2.html#GUID-4CDBACA2-B124-4097-B06A-EC62FEFB7F81">PARSE Procedure Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="STRINGIFY-Function-Signature-1.html#GUID-5F5197FC-EE7A-4555-A130-9115927872AD">STRINGIFY Function Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="STRINGIFY-Function-Signature-2.html#GUID-0920AFBD-60E5-40F7-BDFB-422F03712E54">STRINGIFY Function Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="STRINGIFY-Function-Signature-3.html#GUID-EC91F85E-2C12-471C-83BE-92CA0CE7C05E">STRINGIFY Function Signature 3</a><br></li>
+                  <li class="ulchildlink"><a href="STRINGIFY-Function-Signature-4.html#GUID-4BAB8902-824E-4BE7-BC8C-A9AFCF576DB6">STRINGIFY Function Signature 4</a><br></li>
+                  <li class="ulchildlink"><a href="To_MEMBER_NAME-Function.html#GUID-98EDFE64-EAB0-4D5D-BA73-AE7E3A649550">TO_MEMBER_NAME Function</a><br></li>
+                  <li class="ulchildlink"><a href="TO_XMLTYPE-Function.html#GUID-33E317C6-6FD5-42A5-9336-8D334CDBD256">TO_XMLTYPE Function</a><br></li>
+                  <li class="ulchildlink"><a href="TO_XMLTYPE_SQL-Function.html#GUID-383DC894-A99A-41EB-9699-53330B5E0B9C">TO_XMLTYPE_SQL Function</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE_CONTEXT-Procedure.html#GUID-8C3BA2F1-36E0-45B1-B095-5B4492650838">WRITE_CONTEXT Procedure</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-1.html#GUID-58D8250D-F197-4A3F-8B07-BC2BFB8669C8">WRITE Procedure Signature 1</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-2.html#GUID-065C91C6-B7E5-44FE-8B90-493BB715A6F5">WRITE Procedure Signature 2</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-3.html#GUID-58B2916A-8900-4101-B6F7-DBABD86D3710">WRITE Procedure Signature 3</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-4.html#GUID-28FBF1A3-BF92-4246-86FF-3C2174DDB0A8">WRITE Procedure Signature 4</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-5.html#GUID-C7313A58-03A4-4E68-84D3-4018367D924E">WRITE Procedure Signature 5</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-6.html#GUID-BFA54B24-4B57-4837-9B1B-80EF67458164">WRITE Procedure Signature 6</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-7.html#GUID-24AE7B10-8A77-41E8-A7DC-505E6556DD22">WRITE Procedure Signature 7</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-8.html#GUID-E1BE2CD7-8300-4E1F-9B4E-2501A9D8F68A">WRITE Procedure Signature 8</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-9.html#GUID-BA89B9AF-F60D-43CB-8F03-71F993FC1861">WRITE Procedure Signature 9</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-10.html#GUID-32EA8889-C3B3-4003-AF22-2432258FC35F">WRITE Procedure Signature 10</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-11.html#GUID-80EFE40C-F9E4-43C5-8D39-0694248C0248">WRITE Procedure Signature 11</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-12.html#GUID-F1B594DF-1B2E-4BDA-804C-B16334135B96">WRITE Procedure Signature 12</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-13.html#GUID-B066CE5A-225D-4A79-ABD3-B1A341FB789D">WRITE Procedure Signature 13</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-14.html#GUID-78E9663F-1EFA-4793-A9ED-EB0F728D2B77">WRITE Procedure Signature 14</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-15.html#GUID-00D45BF0-17D5-4310-B822-6E9D9AC3AFF4">WRITE Procedure Signature 15</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-16.html#GUID-FA6E300C-0346-4D03-9DC5-2A83F8AA4D69">WRITE Procedure Signature 16</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-17.html#GUID-780CD430-5A8A-49B8-AD20-259B60E9798E">WRITE Procedure Signature 17</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-18.html#GUID-B01064B0-5072-4061-8B23-5680619F75BE">WRITE Procedure Signature 18</a><br></li>
+                  <li class="ulchildlink"><a href="WRITE-Procedure-Signature-19.html#GUID-ED758CF5-C942-4B8B-8BA5-CF1A63B69EB2">WRITE Procedure Signature 19</a><br></li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

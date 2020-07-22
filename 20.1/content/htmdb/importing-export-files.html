@@ -1,0 +1,666 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Importing Export Files">
+      <meta name="abstract" content="After you create Export files, you then import them into the target Oracle Application Express instance.">
+      <meta name="description" content="After you create Export files, you then import them into the target Oracle Application Express instance.">
+      <meta name="DC.subject" content="exported application, importing, importing, export files, deployment, importing files, importing export files, application, importing export file, application, page, import, Websheet, themes, importing, themes, plug-in, plug-ins, User Interface Defaults, User Interface Defaults, feedback">
+      <meta name="keywords" content="exported application, importing, importing, export files, deployment, importing files, importing export files, application, importing export file, application, page, import, Websheet, themes, importing, themes, plug-in, plug-ins, User Interface Defaults, User Interface Defaults, feedback">
+      <meta name="DC.Relation" scheme="URI" content="deploying-an-application.html#GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD">
+      <meta name="DC.Relation" scheme="URI" content="importing-export-files.html#GUID-EF12E2F2-8547-4E1A-A8E6-0EE927F01E59">
+      <meta name="DC.Relation" scheme="URI" content="importing-export-files.html#GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61">
+      <meta name="DC.Relation" scheme="URI" content="importing-export-files.html#GUID-930EE242-A0A7-4CEF-A588-8B435704449E">
+      <meta name="DC.Relation" scheme="URI" content="importing-export-files.html#GUID-0F5D5332-E4C9-4272-A2AC-518B4AFABF3B">
+      <meta name="DC.Relation" scheme="URI" content="importing-export-files.html#GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2">
+      <meta name="DC.Relation" scheme="URI" content="importing-export-files.html#GUID-93F1FD5F-D72A-42D4-B673-11F6EA1CF40E">
+      <meta name="DC.Relation" scheme="URI" content="importing-export-files.html#GUID-4029C40E-C138-4676-9D10-87D560352DB3">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-16650312-4E36-489E-8012-940924ADF2E9">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="After you create Export files, you then import them into the target Oracle Application Express instance.">
+      <meta name="description" content="After you create Export files, you then import them into the target Oracle Application Express instance.">
+      <title>Importing Export Files</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="After you create Export files, you then import them into the target Oracle Application Express instance.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="exporting-script-files-from-the-script-repository.html" title="Previous" type="text/html">
+      <link rel="next" href="installing-export-files.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="exporting-script-files-from-the-script-repository.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="installing-export-files.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="deploying-an-application.html" property="item" typeof="WebPage"><span property="name">Deploying an Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Importing Export Files</li>
+            </ol>
+            <a id="GUID-16650312-4E36-489E-8012-940924ADF2E9" name="GUID-16650312-4E36-489E-8012-940924ADF2E9"></a><a id="HTMDB11006"></a>
+            
+            <h2 id="HTMDB-GUID-16650312-4E36-489E-8012-940924ADF2E9" class="sect2"><span class="enumeration_section">25.9 </span>Importing Export Files
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>After you create Export files, you then import them into the target <span>Oracle Application
+                                        Express</span> instance.
+               </p>
+               <p>After you import the files, you have the option to install them. You can also
+            install them at a later time by navigating to the Export Repository.</p>
+               <p>Note that you cannot import an application created in a specific release into an earlier version. As a general rule, always import the application first and then the related files.</p>
+               <div class="infobox-tip" id="GUID-16650312-4E36-489E-8012-940924ADF2E9__GUID-65FF8B56-BFFC-4185-ADA3-FFF64DE8E458">
+                  <p class="notep1">Tip:</p>
+                  <p>You can simplify the steps needed to deploy an application by creating a custom application.</p>
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="importing-export-files.html#GUID-EF12E2F2-8547-4E1A-A8E6-0EE927F01E59">About Importing Applications and Application Groups</a><br>Application groups are exported with an application, Application Exports                         include an group ID, name, and comments. 
+                  </li>
+                  <li class="ulchildlink"><a href="importing-export-files.html#GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61">Importing an Application, Page or Component Export</a><br>Import the Application, Page or Component Export on the Import page.
+                  </li>
+                  <li class="ulchildlink"><a href="importing-export-files.html#GUID-930EE242-A0A7-4CEF-A588-8B435704449E">Importing a Websheet</a><br>Import the Websheet Export on the Import page.
+                  </li>
+                  <li class="ulchildlink"><a href="importing-export-files.html#GUID-0F5D5332-E4C9-4272-A2AC-518B4AFABF3B">Importing Themes</a><br>Import a Theme Export on the Import page.
+                  </li>
+                  <li class="ulchildlink"><a href="importing-export-files.html#GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2">Importing Plug-ins</a><br>Import the Plug-in Export on the Import page.
+                  </li>
+                  <li class="ulchildlink"><a href="importing-export-files.html#GUID-93F1FD5F-D72A-42D4-B673-11F6EA1CF40E">Importing User Interface Defaults</a><br>Import the User Interface Defaults Export on the Import         page.
+                  </li>
+                  <li class="ulchildlink"><a href="importing-export-files.html#GUID-4029C40E-C138-4676-9D10-87D560352DB3">Importing Team Development Feedback</a><br>Import a Team Development Feedback Export on the Import         page.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-16650312-4E36-489E-8012-940924ADF2E9__GUID-352AB054-F42A-4724-9D1B-31F99BCDA734">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        
+                        <p><span class="q">"<a href="installing-export-files.html#GUID-B552F865-2AD5-4CD7-ACEA-EB2E7EEC2AB1" title="After you create an Export File, you can install it directly after importing, install it from the Export Repository, or install it from SQL*Plus.">Installing Export Files</a>"</span></p>
+                        
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="how-to-create-a-custom-packaged-application.html#GUID-A50AB849-243B-4F50-BAB4-0D7FF386B926" title="Simplify the steps needed to deploy an application by creating a custom application using the Supporting Objects utility.">How to Create a Custom Application</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="how-to-move-an-application-to-another-instance.html#GUID-3C4EA54A-67F5-45C1-A8AD-90C7DE934964">How to Move an Application to Another Instance</a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="deploying-an-application.html#GUID-3EE94790-D67B-4CE0-8A8E-85B05305DEDD" title="Learn about best practices for deploying an application. Deployment is the process of moving an application from the testing phase to the production phase.">Deploying an Application</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB25834"></a><div class="props_rev_3"><a id="GUID-EF12E2F2-8547-4E1A-A8E6-0EE927F01E59" name="GUID-EF12E2F2-8547-4E1A-A8E6-0EE927F01E59"></a><h3 id="HTMDB-GUID-EF12E2F2-8547-4E1A-A8E6-0EE927F01E59" class="sect3"><span class="enumeration_section">25.9.1 </span>About Importing Applications  and Application
+                        Groups
+               </h3>
+               <div>
+                  <p>Application groups are exported with an application, Application Exports
+                        include an group ID, name, and comments. </p>
+                  <p>When importing an application, the application import follows these rules:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>On import, an application uses an existing group if the ID matches.</p>
+                     </li>
+                     <li>
+                        <p>If no application group exists with the same ID on the target system, then application import looks for another group ID with the same name. If a name match is found, the application is imported with the ID corresponding to this application group name. </p>
+                     </li>
+                     <li>
+                        <p>If no ID or name matches existing application groups on the target system then a new application group is created. The new application group uses the application group ID if that ID is not used in that Oracle Application Express instance. If the group ID is being used, then a new ID is generated.</p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="importing-export-files.html#GUID-16650312-4E36-489E-8012-940924ADF2E9" title="After you create Export files, you then import them into the target Oracle Application Express instance.">Importing Export Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25833"></a><div class="props_rev_3"><a id="GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61" name="GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61"></a><h3 id="HTMDB-GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61" class="sect3"><span class="enumeration_section">25.9.2 </span>Importing an Application, Page or Component Export
+               </h3>
+               <div>
+                  <p>Import the Application, Page or Component Export on the Import page.</p>
+                  <p>To import an Application, Page or Component
+                Export:</p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign into the <span>Application Express</span> instance.</span></li>
+                     <li class="stepexpand"><span>Navigate to the Import page:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>On the <span>App Builder</span> home page, click <span class="uicontrol bold">Import</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>On Import:</span><ol type="a">
+                           <li class="substepexpand"><span>Drag and drop, or navigate to the file.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Type</span> - Select <span class="uicontrol bold">Database
+                                Application, Page or Component Export</span>.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Character Set</span> - Verify that the File
+                            Character Set is correct.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span><div>
+                                 
+                                 <p>Once you import a file, you have the option to install
+                                it. You can also install this file at a later time by navigating to
+                                the Export Repository.</p>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To install the file, click <span class="uicontrol bold">Next</span>. </span><div>
+                           <p>The Install Application wizard appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Install wizard:</span><ol type="a">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Parsing Schema</span> - Select a schema.  After the
+                            installation finishes successfully, this will be used to set the owner
+                            of the application.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Build Status</span> - Set the build status of the
+                            application. Options include:</span><div>
+                                 
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Run Application Only</span> -
+                                        Users can only run an application.
+                                       </p>
+                                       
+                                       <p>Selecting <span class="uicontrol bold">Run Application
+                                            Only</span> is an effective way to protect an
+                                        application from modifications from other developers. 
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Run and Build Application</span>
+                                        - Users can run an application and developers can both run
+                                        and edit an application.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                              <div>
+                                 
+                                 <div class="infobox-tip" id="GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61__GUID-827EE5B8-1479-4BDC-B0E2-8B1D4BAFD33A">
+                                    <p class="notep1">Tip:</p>
+                                 </div>
+                                 
+                                 <p>If you select <span class="uicontrol bold">Run Application
+                                    Only</span>, you can only change this setting after you
+                                import the application by signing in to Administration Services.
+                                 </p>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">Install As Application</span> - Options include:</span><div>
+                                 
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Auto Assign New Application
+                                            ID</span>  - A new application ID will be created
+                                        for you.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Reuse Application ID From Export
+                                            File</span> - The existing application ID will be
+                                        used.
+                                       </p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Change Application ID</span>  -
+                                        Specify a new application ID.
+                                       </p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                              <div>
+                                 
+                                 <p>You must specify an application ID that is unique across
+                                all Application Express workspaces.</p>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Install Application</span>.</span></li>
+                        </ol>
+                        <div>The application installs.</div>
+                     </li>
+                     <li class="stepexpand"><span>Select the appropriate option:</span><ul id="GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61__CHOICES_M44_Y13_KKB">
+                           <li>Upgrade Applicatioin</li>
+                           <li>Edit Application</li>
+                           <li>Run Application</li>
+                        </ul>
+                     </li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D01CF7A6-A593-4ACD-A92C-C94CAC100D61__GUID-4AAD2E51-59E8-4397-A499-1F4AC2C68622">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><span class="q">"Changing Application Build Status Set During
+                        Deployment"</span> in <a href="../aeadm/changing-app-build-status-in-administration-services.html#AEADM289" target="_blank"><span class="italic">Oracle Application Express Administration
+                        Guide</span></a></p>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="importing-export-files.html#GUID-16650312-4E36-489E-8012-940924ADF2E9" title="After you create Export files, you then import them into the target Oracle Application Express instance.">Importing Export Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB26013"></a><div class="props_rev_3"><a id="GUID-930EE242-A0A7-4CEF-A588-8B435704449E" name="GUID-930EE242-A0A7-4CEF-A588-8B435704449E"></a><h3 id="HTMDB-GUID-930EE242-A0A7-4CEF-A588-8B435704449E" class="sect3"><span class="enumeration_section">25.9.3 </span>Importing a Websheet
+               </h3>
+               <div>
+                  <p>Import the Websheet Export on the Import page.</p>
+                  <p>To import a Websheet Export: </p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign into the <span>Application Express</span> instance.</span></li>
+                     <li class="stepexpand"><span>Navigate to the Import page:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>On the <span>App Builder</span> home page, click <span class="uicontrol bold">Import</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>On Import:</span><ol type="a">
+                           <li class="substepexpand"><span>Drag and drop, or navigate to the file.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Type</span> - Select <span class="uicontrol bold">Websheet
+                                Application Export</span>.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span><div>
+                                 
+                                 <p>Once you import a file, you have the option to install
+                                it. You can also install this file at a later time by navigating to
+                                the Export Repository.</p>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To install an imported file, click <span class="uicontrol bold">Next</span>. </span><div>
+                           <p>The Install Application wizard appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For the Install Application wizard:</span><ol type="a">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Install As Application</span> - Options include:</span><div>
+                                 
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Auto Assign New Application
+                                            ID</span></p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Reuse Application ID From Export
+                                            File</span></p>
+                                       
+                                    </li>
+                                    <li>
+                                       
+                                       <p><span class="uicontrol bold">Change Application ID</span></p>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </div>
+                              <div>
+                                 
+                                 <p>Use these options to avoid application ID conflicts. You
+                                must specify an application ID that is unique across all Application
+                                Express workspaces.</p>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Install</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="importing-export-files.html#GUID-16650312-4E36-489E-8012-940924ADF2E9" title="After you create Export files, you then import them into the target Oracle Application Express instance.">Importing Export Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25838"></a><div class="props_rev_3"><a id="GUID-0F5D5332-E4C9-4272-A2AC-518B4AFABF3B" name="GUID-0F5D5332-E4C9-4272-A2AC-518B4AFABF3B"></a><h3 id="HTMDB-GUID-0F5D5332-E4C9-4272-A2AC-518B4AFABF3B" class="sect3"><span class="enumeration_section">25.9.4 </span>Importing Themes
+               </h3>
+               <div>
+                  <p>Import a Theme Export on the Import page.</p>
+                  <p>To import a Theme Export: </p>
+                  <ol>
+                     <li class="stepexpand"><span>Sign into the <span>Application Express</span> instance.</span></li>
+                     <li class="stepexpand"><span>Navigate to the Import page:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>On the <span>App Builder</span> home page, click <span class="uicontrol bold">Import</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>On Import:</span><ol type="a">
+                           <li class="substepexpand"><span>Drag and drop, or navigate to the file.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Type</span> - Select <span class="uicontrol bold">Theme
+                                Export</span>.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Character Set</span> - Verify that File Character
+                            Set is correct.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span><div>
+                                 
+                                 <p>Once you import a file, you have the option to install
+                                it. You can also install this file at a later time by navigating to
+                                the Export Repository.</p>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>To install the file, click <span class="uicontrol bold">Next</span>. </span><div>
+                           
+                           <p>The Install Application wizard appears.</p>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Install Theme</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-0F5D5332-E4C9-4272-A2AC-518B4AFABF3B__GUID-8020440C-BCB7-409A-84AA-0C87CF0184D5">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="using-themes.html#GUID-4E92199A-A679-4DA9-8406-55390F80CAFA" title="Use themes and theme styles to increase your productivity when building an application.">Using Themes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="exporting-themes.html#GUID-4DBA1A41-BBF2-461F-BE61-AB6DF0D222BF" title="Move or copy a theme by exporting it.">Exporting Themes</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="importing-export-files.html#GUID-16650312-4E36-489E-8012-940924ADF2E9" title="After you create Export files, you then import them into the target Oracle Application Express instance.">Importing Export Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB26010"></a><div class="props_rev_3"><a id="GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2" name="GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2"></a><h3 id="HTMDB-GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2" class="sect3"><span class="enumeration_section">25.9.5 </span>Importing Plug-ins
+               </h3>
+               <div>
+                  <p>Import the Plug-in Export on the Import page.</p>
+                  <p>To import a Plug-in Export: </p>
+                  <ol>
+                     <li><span>Sign into the <span>Application Express</span> instance.</span></li>
+                     <li><span>Navigate to the Import page:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>On the <span>App Builder</span> home page, click <span class="uicontrol bold">Import</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>On Import:</span><ol type="a">
+                           <li class="substepexpand"><span>Drag and drop, or navigate to the file.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Type</span> - Select
+                                <span class="uicontrol bold">Plug-in</span>.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Character Set</span> - Verify that File Character
+                            Set is correct.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span><div>
+                                 
+                                 <p>Once you import a file, you have the option to install
+                                it. You can also install this file at a later time by navigating to
+                                the Export Repository.</p>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li><span>To install an imported file, click <span class="uicontrol bold">Next</span>. </span></li>
+                     <li><span>On Install:</span><ol type="a" id="GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2__SUBSTEPS_M5W_LDP_KKB">
+                           <li class="substepexpand"><span><span class="uicontrol bold">Install Into Application</span> - Select the target
+                            application. You can install the plug-in into the same application or
+                            into a different application.</span><div>
+                                 
+                                 <div class="infobox-tip" id="GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2__GUID-5BA51DCC-7E2F-4365-A3C0-642EBF27DFB9">
+                                    <p class="notep1">Tip:</p>When you
+                                install a plug-in into the current application, the new plug-in will
+                                overwrite an existing plug-in having the same plug-in name. If the
+                                installation succeeds, the installation of the plug-in becomes
+                                permanent. If any errors are encountered, the actions are rolled
+                                back, resulting in no permanent changes.
+                                 </div>
+                                 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Install Plug-in</span>.</span></li>
+                        </ol>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     
+                     <div class="infoboxnote" id="GUID-C35440FD-FE8A-4799-A63F-2DB7D34087A2__GUID-67620D4E-56CE-4826-83A4-CEE4175B588A">
+                        <p class="notep1">Note:</p>
+                        
+                        <p><span class="q">"<a href="implementing-plug-ins.html#GUID-026EF048-9FDD-49A1-B17E-BA8051967B86">Importing a Plug-in from the Plug-in Page</a>"</span></p>
+                        
+                     </div>
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="importing-export-files.html#GUID-16650312-4E36-489E-8012-940924ADF2E9" title="After you create Export files, you then import them into the target Oracle Application Express instance.">Importing Export Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB25839"></a><div class="props_rev_3"><a id="GUID-93F1FD5F-D72A-42D4-B673-11F6EA1CF40E" name="GUID-93F1FD5F-D72A-42D4-B673-11F6EA1CF40E"></a><h3 id="HTMDB-GUID-93F1FD5F-D72A-42D4-B673-11F6EA1CF40E" class="sect3"><span class="enumeration_section">25.9.6 </span>Importing User Interface Defaults
+               </h3>
+               <div>
+                  <p>Import the User Interface Defaults Export on the Import
+        page.</p>
+                  <div class="section">
+                     
+                     <p>You can install a User Interface Defaults Table Dictionary export into any schema
+                provisioned in the workspace. When you install a Table Dictionary export, the old
+                defaults will be overwritten. User Interface Defaults Attribute Dictionary imports
+                replace any matching attribute definitions that are found but will not remove any
+                existing attribute definitions that are not contained in the export. If the
+                installation succeeds, the installation of the user interface defaults becomes
+                permanent. If any errors are encountered, the actions are rolled back, resulting in
+                no permanent changes.</p>
+                     
+                  </div>
+                  <!-- class="section" -->
+                  <p>To import a User Interface Defaults Export: </p>
+                  <ol>
+                     <li><span>Sign into the <span>Application Express</span> instance.</span></li>
+                     <li><span>Navigate to the Import page:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>On the <span>App Builder</span> home page, click <span class="uicontrol bold">Import</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>On Import:</span><ol type="a" id="GUID-93F1FD5F-D72A-42D4-B673-11F6EA1CF40E__SUBSTEPS_QMZ_M2P_KKB">
+                           <li class="substepexpand"><span>Drag and drop, or navigate to the file.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Type</span> - Select <span class="uicontrol bold">User Interface
+                                Defaults</span>.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Character Set</span> - Verify that File Character
+                            Set is correct.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span><div>
+                                 
+                                 <p>Once you import a file, you have the option to install
+                                it. You can also install this file at a later time by navigating to
+                                the Export Repository.</p>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li><span>To install an imported file, click <span class="uicontrol bold">Next</span>. </span></li>
+                     <li><span>Click <span class="uicontrol bold">Install User Interface Defaults</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-93F1FD5F-D72A-42D4-B673-11F6EA1CF40E__GUID-E3C4B3C9-30E0-47EE-A29A-D98285C05E2D">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"Managing User Interface Defaults"</span> in <a href="../aeutl/managing-user-interface-defaults.html#AEUTL-GUID-320D73C0-F50E-4167-AA2E-89D2809AC416" target="_blank"><span class="italic">Oracle Application Express SQL Workshop Guide</span></a></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="exporting-user-interface-defaults.html#GUID-E4F817B0-EA3A-4606-9B21-71754685E3B4" title="Move or copy a User Interface Defaults by exporting them.">Exporting User Interface Defaults</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="importing-export-files.html#GUID-16650312-4E36-489E-8012-940924ADF2E9" title="After you create Export files, you then import them into the target Oracle Application Express instance.">Importing Export Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB26014"></a><div class="props_rev_3"><a id="GUID-4029C40E-C138-4676-9D10-87D560352DB3" name="GUID-4029C40E-C138-4676-9D10-87D560352DB3"></a><h3 id="HTMDB-GUID-4029C40E-C138-4676-9D10-87D560352DB3" class="sect3"><span class="enumeration_section">25.9.7 </span>Importing Team Development Feedback
+               </h3>
+               <div>
+                  <p>Import a Team Development Feedback Export on the Import
+        page.</p>
+                  <p>To import a Team Development Feedback Export: </p>
+                  <ol>
+                     <li><span>Sign into the <span>Application Express</span> instance.</span></li>
+                     <li><span>Navigate to the Import page:</span><ol type="a">
+                           <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li><span>On the <span>App Builder</span> home page, click <span class="uicontrol bold">Import</span>.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>On Import:</span><ol type="a" id="GUID-4029C40E-C138-4676-9D10-87D560352DB3__SUBSTEPS_BMQ_KFP_KKB">
+                           <li class="substepexpand"><span>Drag and drop, or navigate to the file.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Type</span> - Select <span class="uicontrol bold">Team Development
+                                Feedback</span>.</span></li>
+                           <li class="substepexpand"><span><span class="uicontrol bold">File Character Set</span> - Verify that File Character
+                            Set is correct.</span></li>
+                           <li class="substepexpand"><span>Click <span class="uicontrol bold">Next</span>.</span><div>
+                                 
+                                 <p>Once you import a file, you have the option to install
+                                it. You can also install this file at a later time by navigating to
+                                the Export Repository.</p>
+                                 
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li><span>To install an imported file, click <span class="uicontrol bold">Next</span>.</span></li>
+                     <li><span>Click <span class="uicontrol bold">Import Feedback</span>.</span></li>
+                  </ol>
+                  <div class="section">
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-4029C40E-C138-4676-9D10-87D560352DB3__GUID-13ADC713-260D-4555-A520-3A4AFBC60486">
+                     <p class="notep1">See Also:</p>
+                     
+                     <ul style="list-style-type: disc;" id="GUID-4029C40E-C138-4676-9D10-87D560352DB3__UL_EFN_VFP_KKB">
+                        <li>
+                           
+                           <p><span class="q">"<a href="managing-feedback.html#GUID-67337450-52D3-4341-B550-21C81605BC6D" title="Feedback provides a mechanism for end users to post general comments for application administrators and developers.">Managing Feedback</a>"</span></p>
+                           
+                        </li>
+                        <li>
+                           
+                           <p><span class="q">"<a href="exporting-team-development-feedback.html#GUID-6BF7C68B-728E-4935-B0A2-132765EA9D63" title="Move or copy user-provided feedback from the current Application Express instance.">Exporting Team Development Feedback</a>"</span></p>
+                           
+                        </li>
+                     </ul>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="importing-export-files.html#GUID-16650312-4E36-489E-8012-940924ADF2E9" title="After you create Export files, you then import them into the target Oracle Application Express instance.">Importing Export Files</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

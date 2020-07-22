@@ -1,0 +1,170 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="SET_SESSION_LIFETIME_SECONDS Procedure">
+      <meta name="DC.subject" content="APEX_UTIL, SET_SESSION_STATE procedure, session state, setting">
+      <meta name="keywords" content="APEX_UTIL, SET_SESSION_STATE procedure, session state, setting">
+      <meta name="DC.Relation" scheme="URI" content="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SET_SESSION_LIFETIME_SECONDS Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="SET_SESSION_LANG-Procedure.html" title="Previous" type="text/html">
+      <link rel="next" href="SET_SESSION_MAX_IDLE_SECONDS-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SET_SESSION_LANG-Procedure.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SET_SESSION_MAX_IDLE_SECONDS-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_UTIL.html" property="item" typeof="WebPage"><span property="name"> APEX_UTIL</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SET_SESSION_LIFETIME_SECONDS Procedure</li>
+            </ol>
+            <a id="GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E" name="GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E"></a><a id="AEAPI1850"></a><a id="AEAPI1851"></a><a id="AEAPI1852"></a><a id="AEAPI1853"></a><a id="AEAPI1854"></a><a id="AEAPI356"></a>
+            
+            <h2 id="AEAPI-GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E" class="sect2"><span class="enumeration_section">39.125 </span>SET_SESSION_LIFETIME_SECONDS Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure sets the current session's Maximum Session Length in Seconds value. overriding the corresponding application attribute. This allows developers to dynamically shorten or lengthen the session life based on criteria determined after the user authenticates.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E__GUID-810C0540-7788-41B7-88AB-FF0015C09A24">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_UTIL.SET_SESSION_LIFETIME_SECONDS (
+    p_seconds  IN    NUMEBER,
+    p_scope    IN    VARCHAR2 DEFAULT 'SESSION');
+</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E__GUID-140746EF-5684-4025-A4D3-3476A208CFA7">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E__GUID-0304AF97-7A8A-4BB3-BBE7-ACD129E1318C">
+                  <p class="titleintable">Table 39-107 SET_SESSION_LIFETIME_SECONDS Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="SET_SESSION_LIFETIME_SECONDS Parameters" summary="Parameter descriptions for the SET_SESSION_LIFETIME_SECONDS procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="41%" id="d204526e78">Parameter</th>
+                           <th align="left" valign="bottom" width="59%" id="d204526e81">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d204526e86" headers="d204526e78 ">
+                              <p><code class="codeph">p_seconds</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d204526e86 d204526e81 ">
+                              <p>A positive integer indicating the number of seconds the session used by this application is allowed to exist. </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="41%" id="d204526e94" headers="d204526e78 ">
+                              <p><code class="codeph">p_scope</code></p>
+                           </td>
+                           <td align="left" valign="top" width="59%" headers="d204526e94 d204526e81 ">
+                              <p>This parameter is obsolete. The procedure always sets the lifetime for the whole session.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E__GUID-DB504E2B-69F2-46EB-931F-B8FB0C54262A">Example 1</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example shows how to use the SET_SESSION_LIFETIME_SECONDS procedure to set the current application's Maximum Session Length in Seconds attribute to 7200 seconds (two hours). </p>
+                  <p>By allowing the p_scope input parameter to use the default value of 'SESSION', the following example would actually apply to all applications using the current session. This would be the most common use case when multiple Application Express applications use a common authentication scheme and are designed to operate as a suite in a common session.</p><pre class="pre codeblock"><code>BEGIN
+   APEX_UTIL.SET_SESSION_LIFETIME_SECONDS(p_seconds =&gt; 7200);
+END;</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-BEB0E3A9-5E87-476D-B670-9C62D4CFF19E__GUID-689230D3-3293-4EE5-AB5A-06A3C8D92046">Example 2</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example shows how to use the SET_SESSION_LIFETIME_SECONDS procedure to set the current application's Maximum Session Length in Seconds attribute to 3600 seconds (one hour).</p><pre class="pre codeblock"><code>BEGIN
+    APEX_UTIL.SET_SESSION_LIFETIME_SECONDS(p_seconds =&gt; 3600); 
+END;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_UTIL.html#GUID-5ECE5C10-1A88-4D37-8A7D-C51925ADB2B9">APEX_UTIL</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

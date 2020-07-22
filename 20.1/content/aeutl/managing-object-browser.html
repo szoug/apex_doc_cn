@@ -1,0 +1,295 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Managing Object Browser">
+      <meta name="abstract" content="Use Object Browser to review the database objects in your workspace.">
+      <meta name="description" content="Use Object Browser to review the database objects in your workspace.">
+      <meta name="DC.subject" content="Object Browser, filtering objects, hiding Object Selection pane, Hide Objects control, creating objects">
+      <meta name="keywords" content="Object Browser, filtering objects, hiding Object Selection pane, Hide Objects control, creating objects">
+      <meta name="DC.Relation" scheme="URI" content="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731">
+      <meta name="DC.Relation" scheme="URI" content="managing-object-browser.html#GUID-DA85CC70-98CC-4FF9-A209-8CA7641D62BC">
+      <meta name="DC.Relation" scheme="URI" content="managing-object-browser.html#GUID-EB1B927F-1BA6-4CAA-9990-8E280A3EA886">
+      <meta name="DC.Relation" scheme="URI" content="managing-object-browser.html#GUID-D2E928DB-B1E5-4F34-8879-7D0E7BF9ABC5">
+      <meta name="DC.Relation" scheme="URI" content="managing-object-browser.html#GUID-74CCCFDE-E73C-43AE-896F-D9F19CC1ED42">
+      <meta name="DC.Relation" scheme="URI" content="managing-object-browser.html#GUID-86DC4829-C6CD-40D5-9EE6-1DF5ECBEF576">
+      <meta name="DC.Relation" scheme="URI" content="managing-object-browser.html#GUID-B8426B42-53FC-4373-B654-B34C0B25776C">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-8505D114-4C47-4CA9-82D4-A4F930424152">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use Object Browser to review the database objects in your workspace.">
+      <meta name="description" content="Use Object Browser to review the database objects in your workspace.">
+      <title>Managing Object Browser</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Use Object Browser to review the database objects in your workspace.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="accessing-object-browser.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-tables.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="accessing-object-browser.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-tables.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-db-objects-with-object-browser.html" property="item" typeof="WebPage"><span property="name"> Managing Database Objects with Object Browser </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Object Browser</li>
+            </ol>
+            <a id="GUID-8505D114-4C47-4CA9-82D4-A4F930424152" name="GUID-8505D114-4C47-4CA9-82D4-A4F930424152"></a>
+            
+            <h2 id="AEUTL-GUID-8505D114-4C47-4CA9-82D4-A4F930424152" class="sect2"><span class="enumeration_section">3.2 </span>Managing Object Browser
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Use Object Browser to review the database objects in your workspace.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-object-browser.html#GUID-DA85CC70-98CC-4FF9-A209-8CA7641D62BC">About Object Browser</a><br>The Object Browser page is divided into two panes: Object Selection pane and Detail pane.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-object-browser.html#GUID-EB1B927F-1BA6-4CAA-9990-8E280A3EA886">Filtering by Object Type in Object Browser</a><br>Choose the type of database objects to view in Object Browser from the Object Type list.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-object-browser.html#GUID-D2E928DB-B1E5-4F34-8879-7D0E7BF9ABC5">Searching for Database Objects in Object Browser</a><br>Search for database objects in Object Browser with the Search Field.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-object-browser.html#GUID-74CCCFDE-E73C-43AE-896F-D9F19CC1ED42">Selecting Database Objects in Object Browser</a><br>Select a database object from the Object list to view or modify its details.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-object-browser.html#GUID-86DC4829-C6CD-40D5-9EE6-1DF5ECBEF576">Hiding the Object Selection Pane</a><br>You can hide the Object Selection pane by selecting the Collapse control which displays on the right side of the Object Selection pane.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-object-browser.html#GUID-B8426B42-53FC-4373-B654-B34C0B25776C">Creating Database Objects</a><br>You can create database objects using the Create Database Object Wizard.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-db-objects-with-object-browser.html#GUID-04321951-FD96-4930-8F44-0D8441E8B731" title="Object Browser enables developers to browse, create, and edit objects in a database.">Managing Database Objects with Object Browser</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL29151"></a><div class="props_rev_3"><a id="GUID-DA85CC70-98CC-4FF9-A209-8CA7641D62BC" name="GUID-DA85CC70-98CC-4FF9-A209-8CA7641D62BC"></a><h3 id="AEUTL-GUID-DA85CC70-98CC-4FF9-A209-8CA7641D62BC" class="sect3"><span class="enumeration_section">3.2.1 </span>About Object Browser
+               </h3>
+               <div>
+                  <p>The Object Browser page is divided into two panes: Object Selection pane and Detail pane.</p>
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>The <strong class="term">Object Selection pane</strong> displays on the left side of the Object Browser page and lists database objects of a selected type within the current schema. You can further narrow the results by filtering on the object name.
+                           </p>
+                        </li>
+                        <li>
+                           <p>The <strong class="term">Detail pane</strong> displays to the right of the page and displays detailed information about the selected object. To view object details, select an object in the Object Selection pane. Click the tabs at the top of the Detail pane to view additional details about the current object. To edit an object, click the appropriate button.
+                           </p>
+                        </li>
+                     </ul>
+                     <div class="figure" id="GUID-DA85CC70-98CC-4FF9-A209-8CA7641D62BC__GUID-A22C2D22-A419-4C0F-8C10-F6E4E6B4C4BE"><img height="444" width="1165" src="img/obj_b_pane.png" alt="Description of obj_b_pane.png follows" title="Description of obj_b_pane.png follows" longdesc="img_text/obj_b_pane.html"><br><a href="img_text/obj_b_pane.html">Description of the illustration obj_b_pane.png</a></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-object-browser.html#GUID-8505D114-4C47-4CA9-82D4-A4F930424152" title="Use Object Browser to review the database objects in your workspace.">Managing Object Browser</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-EB1B927F-1BA6-4CAA-9990-8E280A3EA886" name="GUID-EB1B927F-1BA6-4CAA-9990-8E280A3EA886"></a><h3 id="AEUTL-GUID-EB1B927F-1BA6-4CAA-9990-8E280A3EA886" class="sect3"><span class="enumeration_section">3.2.2 </span>Filtering by Object Type in Object Browser
+               </h3>
+               <div>
+                  <p>Choose the type of database objects to view in Object Browser from the Object Type list.</p>
+                  <div class="section">
+                     <p>The Object Selection pane displays on the left side of the Object Browser page and lists database objects by type with the current schema. You can filter the view by selecting an object type or entering a case insensitive search term.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-object-browser.html#GUID-8505D114-4C47-4CA9-82D4-A4F930424152" title="Use Object Browser to review the database objects in your workspace.">Managing Object Browser</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29153"></a><div class="props_rev_3"><a id="GUID-D2E928DB-B1E5-4F34-8879-7D0E7BF9ABC5" name="GUID-D2E928DB-B1E5-4F34-8879-7D0E7BF9ABC5"></a><h3 id="AEUTL-GUID-D2E928DB-B1E5-4F34-8879-7D0E7BF9ABC5" class="sect3"><span class="enumeration_section">3.2.3 </span>Searching for Database Objects in Object Browser
+               </h3>
+               <div>
+                  <p>Search for database objects in Object Browser with the Search Field.</p>
+                  <div class="section">
+                     <p>To search for a database object in the Object Selection pane:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>Object Browser appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Select the type of object to display (Tables is selected by default).</span><div>
+                           <div class="infoboxnote" id="GUID-D2E928DB-B1E5-4F34-8879-7D0E7BF9ABC5__GUID-0B9E6E7A-B73E-49B1-BD31-BAB228A06E4E">
+                              <p class="notep1">Note:</p>You cannot search across all database object types.
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Search Field, enter a case insensitive search term.</span><div>
+                           <div class="figure" id="GUID-D2E928DB-B1E5-4F34-8879-7D0E7BF9ABC5__GUID-AD4F3643-EBA6-4012-B64B-F0846BD594E7"><img height="371" width="292" src="img/obj_b_srch.png" alt="Description of obj_b_srch.png follows" title="Description of obj_b_srch.png follows" longdesc="img_text/obj_b_srch.html"><br><a href="img_text/obj_b_srch.html">Description of the illustration obj_b_srch.png</a></div>
+                           <!-- class="figure" -->
+                        </div>
+                        <div>
+                           <p>The list of objects that appears depends upon the available objects in the current schema.</p>
+                           <div class="infoboxnote" id="GUID-D2E928DB-B1E5-4F34-8879-7D0E7BF9ABC5__GUID-7004D200-0DA8-4C42-82A7-6832704C4E9E">
+                              <p class="notep1">Note:</p>
+                              <p>Any object with an adjacent red bar is invalid.</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>(Optional) To view all objects, leave the search field blank.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>Once you locate the database object you want to view, simply select it. The selected object displays in the Detail pane. If no object is selected, the Detail pane is blank.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-object-browser.html#GUID-8505D114-4C47-4CA9-82D4-A4F930424152" title="Use Object Browser to review the database objects in your workspace.">Managing Object Browser</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="props_rev_3"><a id="GUID-74CCCFDE-E73C-43AE-896F-D9F19CC1ED42" name="GUID-74CCCFDE-E73C-43AE-896F-D9F19CC1ED42"></a><h3 id="AEUTL-GUID-74CCCFDE-E73C-43AE-896F-D9F19CC1ED42" class="sect3"><span class="enumeration_section">3.2.4 </span>Selecting Database Objects in Object Browser
+               </h3>
+               <div>
+                  <p>Select a database object from the Object list to view or modify its details.</p>
+                  <p>
+                     </p><p>To select a database object in Object Browser:</p>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>Open Object Browser.</span></li>
+                     <li class="stepexpand"><span>In the Object Selection pane (left), select an object from the Object List.</span><div>
+                           <p>The list of objects that appears depends upon the available objects in the current schema.</p>
+                           <div class="infoboxnote" id="GUID-74CCCFDE-E73C-43AE-896F-D9F19CC1ED42__GUID-03BA45CA-672B-4552-9FF7-EB9718E8BE5A">
+                              <p class="notep1">Note:</p>
+                              <p>Any object with an adjacent red bar is invalid.</p>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <p>The selected object displays in the Detail pane. If no object is selected, the Detail pane is blank.</p>
+                     <p>The actions you can take for the selected object depend on the object. For example, if you select a table, you can modify the columns, edit the rows, view a sample SQL query, and more with the tabs in the Detail pane.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-object-browser.html#GUID-8505D114-4C47-4CA9-82D4-A4F930424152" title="Use Object Browser to review the database objects in your workspace.">Managing Object Browser</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29154"></a><div class="props_rev_3"><a id="GUID-86DC4829-C6CD-40D5-9EE6-1DF5ECBEF576" name="GUID-86DC4829-C6CD-40D5-9EE6-1DF5ECBEF576"></a><h3 id="AEUTL-GUID-86DC4829-C6CD-40D5-9EE6-1DF5ECBEF576" class="sect3"><span class="enumeration_section">3.2.5 </span>Hiding the Object Selection Pane
+               </h3>
+               <div>
+                  <p>You can hide the Object Selection pane by selecting the Collapse control which displays on the right side of the Object Selection pane.</p>
+                  <div class="section">
+                     <p> If the Object Selection pane appears, selecting this control hides it. Similarly, if the Object Selection pane is hidden, selecting this control causes the pane to reappear.</p>
+                     <div class="figure" id="GUID-86DC4829-C6CD-40D5-9EE6-1DF5ECBEF576__GUID-3854416A-2C6C-404A-BE38-02C52D3EFE60"><img height="376" width="983" src="img/obj_b_hide.png" alt="Description of obj_b_hide.png follows" title="Description of obj_b_hide.png follows" longdesc="img_text/obj_b_hide.html"><br><a href="img_text/obj_b_hide.html">Description of the illustration obj_b_hide.png</a></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-object-browser.html#GUID-8505D114-4C47-4CA9-82D4-A4F930424152" title="Use Object Browser to review the database objects in your workspace.">Managing Object Browser</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL108"></a><div class="props_rev_3"><a id="GUID-B8426B42-53FC-4373-B654-B34C0B25776C" name="GUID-B8426B42-53FC-4373-B654-B34C0B25776C"></a><h3 id="AEUTL-GUID-B8426B42-53FC-4373-B654-B34C0B25776C" class="sect3"><span class="enumeration_section">3.2.6 </span>Creating Database Objects
+               </h3>
+               <div>
+                  <p>You can create database objects using the Create Database Object Wizard.</p>
+                  <div class="section">
+                     <p> Once you select an object, a set of tabs and buttons appears at the top of the Detail pane. Use the tabs to view different aspects of the current items (for example, the indexes of the table). Use the buttons to modify the current object. </p>
+                     <p>To create an object:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">Object Browser</span>.</span><div>
+                           <p>Object Browser appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="uicontrol bold">Create</span> icon which displays as a plus (+) sign in the upper right corner of the Detail pane.</span></li>
+                     <li class="stepexpand"><span>From the list of object types, select the type of object you want to create.</span></li>
+                     <li class="stepexpand"><span>Follow the on-screen instructions.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="managing-object-browser.html#GUID-8505D114-4C47-4CA9-82D4-A4F930424152" title="Use Object Browser to review the database objects in your workspace.">Managing Object Browser</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

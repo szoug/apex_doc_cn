@@ -1,0 +1,301 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Developing Accessible Form Pages and Items">
+      <meta name="abstract" content="Ensure that your form pages and items provide sufficient information to users of assistive technology.">
+      <meta name="description" content="Ensure that your form pages and items provide sufficient information to users of assistive technology.">
+      <meta name="DC.subject" content="form pages, date pickers, select lists, radio groups, dynamic actions, check boxes, display image, alternative text">
+      <meta name="keywords" content="form pages, date pickers, select lists, radio groups, dynamic actions, check boxes, display image, alternative text">
+      <meta name="DC.Relation" scheme="URI" content="developing-accessible-apps.html#GUID-47223FBF-FE74-4E49-BE73-9E83B824D8C8">
+      <meta name="DC.Relation" scheme="URI" content="form-pages-and-items.html#GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC">
+      <meta name="DC.Relation" scheme="URI" content="form-pages-and-items.html#GUID-E8432B1B-86FE-45A8-9ED0-7BD55DAA2DA3">
+      <meta name="DC.Relation" scheme="URI" content="form-pages-and-items.html#GUID-4AE22F5F-B2EE-4D58-90FA-34FAEF30CDC0">
+      <meta name="DC.Relation" scheme="URI" content="form-pages-and-items.html#GUID-EE8CC8AE-52F1-4309-8EFE-F9A87C0FF962">
+      <meta name="DC.Relation" scheme="URI" content="form-pages-and-items.html#GUID-982B22DC-3992-4B58-A736-F047789BCC12">
+      <meta name="DC.Contributor" content="Anthony Rayner">
+      <meta name="DC.Contributor" content="Chaitanya Koratamaddi">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Ensure that your form pages and items provide sufficient information to users of assistive technology.">
+      <meta name="description" content="Ensure that your form pages and items provide sufficient information to users of assistive technology.">
+      <title>Developing Accessible Form Pages and Items</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Accessibility Guide">
+      <meta property="og:description" content="Ensure that your form pages and items provide sufficient information to users of assistive technology.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Accessibility Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-accessibility-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:33:15-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2017, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24717-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="regions.html" title="Previous" type="text/html">
+      <link rel="next" href="buttons.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express Accessibility Guide">
+    <meta name="dcterms.isVersionOf" content="AEACC">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="regions.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="buttons.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Accessibility Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="developing-accessible-apps.html" property="item" typeof="WebPage"><span property="name">Developing Accessible Apps</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Developing Accessible Form Pages and Items</li>
+            </ol>
+            <a id="GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44" name="GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44"></a>
+            
+            <h2 id="AEACC-GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44" class="sect2"><span class="enumeration_section">4.4 </span>Developing Accessible Form Pages and Items
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Ensure that your form pages and items provide sufficient information to users of assistive technology.</p>
+               <div class="infoboxnote" id="GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44__GUID-5268CD21-398B-4CF7-82F3-4EB02054BDEC">
+                  <p class="notep1">Note:</p>The following overview is not a comprehensive list of all item types in <span>Oracle Application
+                                        Express</span>. This section only cites items that have specific settings or issues related to accessibility.
+               </div>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="form-pages-and-items.html#GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC">Accessible Form Page Attributes</a><br></li>
+                  <li class="ulchildlink"><a href="form-pages-and-items.html#GUID-E8432B1B-86FE-45A8-9ED0-7BD55DAA2DA3">Accessible Date Pickers</a><br></li>
+                  <li class="ulchildlink"><a href="form-pages-and-items.html#GUID-4AE22F5F-B2EE-4D58-90FA-34FAEF30CDC0">Accessible Select Lists and Radio Groups</a><br></li>
+                  <li class="ulchildlink"><a href="form-pages-and-items.html#GUID-EE8CC8AE-52F1-4309-8EFE-F9A87C0FF962">Accessible Check Boxes</a><br></li>
+                  <li class="ulchildlink"><a href="form-pages-and-items.html#GUID-982B22DC-3992-4B58-A736-F047789BCC12">Accessible Display Image Alternative Text</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="developing-accessible-apps.html#GUID-47223FBF-FE74-4E49-BE73-9E83B824D8C8" title="This section provides guidelines for creating an accessible app with Oracle Application Express.">Developing Accessible Apps</a></p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC" name="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC"></a><h3 id="AEACC-GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC" class="sect3"><span class="enumeration_section">4.4.1 </span>Accessible Form Page Attributes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2" id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-7F20FF0B-2AFD-4F85-BAD5-4E8198AA6BE7">Item Labels</p>
+                     <p>Define meaningful labels for all items. Users of assistive technology require meaningful labels to understand and interact with a field.</p>
+                     <div class="infobox-tip" id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-FD218EC7-0277-4512-B70C-DBB0578AC784">
+                        <p class="notep1">Tip:</p>
+                        <p>You can review and update all item in an app with the Grid Edit of all Item Labels page. You should review all labels for accuracy and meaning, especially items with null labels and items with the same label on the same page.</p>
+                     </div>
+                     <div class="infoboxnotealso" id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-5A61D39E-3A4E-428D-B744-BE20C2ACD8B6">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"Viewing Item Utilities"</span> in the <a href="../htmdb/editing-page-level-items.html#HTMDB-GUID-0732DB11-A0F4-4859-9A73-B57478ACDC45" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-4F515CDF-082C-4260-B7AD-C9F2FEA21131">Value Placeholder</p>
+                     <p><span>Oracle</span> recommends against using just a value placeholder as the only label for an item because it is insufficient for accessibility.
+                     </p>
+                     <p>To hide a visible label from display for design reasons, <span>Oracle</span> recommends using a Hidden label template in conjunction with a label.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-568FD485-1C3E-4EC8-8213-984A0DBADDCA">Item Templates</p>
+                     <p>Universal Theme includes the following item templates to control how the label renders for the item:</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-F5C2C178-E7D7-4091-9A12-7B038D59FF50">
+                              <!-- --></a><span class="uicontrol bold">Hidden</span></dt>
+                        <dd>
+                           <p>Hides the label from display but preserves it in the markup for use by assistive technologies.</p>
+                           <p>Use this template to preserve accessibility rather than not providing a label.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-4682C32D-F17F-4EE2-A131-49E5131DE910">
+                              <!-- --></a><span class="uicontrol bold">Optional / Optional - Above</span></dt>
+                        <dd>
+                           <p>Labels the field optional without any further decoration.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-1570FECA-D396-4796-ACE5-22BC2816A8AE">
+                              <!-- --></a><span class="uicontrol bold">Required / Required - Above</span></dt>
+                        <dd>
+                           <p>Labels the field required and displays an asterisk adjacent to the label.</p>
+                           <p>For accessibility, <span>Oracle Application
+                                        Express</span> ignores the asterisk and appends hidden text <span class="q">"Value Required"</span> to the label. Assistive technology announces this label as <span class="q">"<span class="italic">Label</span> (Value Required)"</span> so that the user can immediately tell if the field is required.
+                           </p>
+                           <p>Additionally, <span>Oracle Application
+                                        Express</span> adds <span class="q">"Value Required"</span> to the end of the label rather than the beginning, so that screen readers users can still search for a specific field by label name.
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2" id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-511525BF-1CA3-4E02-9AEC-BED2FB832DFA">Value Required</p>
+                     <p><span>Oracle</span> does not recommend use of the Value Required attribute for accessibility purposes. If the Value Required attribute is set to <span class="uicontrol bold">Yes</span> and the item’s label template is <span class="uicontrol bold">Required</span>, <span>Application Express</span> duplicates reporting of the required state to Assistive Technologies (see the VPAT to learn more).
+                     </p>
+                     <p>If you have a simple required field, use a Not Null style validation on the page item.</p>
+                     <div class="infoboxnotealso" id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-EF181EEB-4978-4CC3-B39A-107C644EFBAC">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"Validating User Input in Forms"</span> in the <a href="../htmdb/validating-user-input-in-forms.html#HTMDB-GUID-8BA81FD5-E138-494D-9F8E-35D5A370E31A" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-2682F0D1-5288-4139-9BB6-774616B3E9AC__GUID-3256BE99-4549-47B2-8A97-8E199FF7F7D5">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="accessing-form-pages-using-jaws.html#GUID-2B3F9C23-4AD0-4570-9AEB-509F1705CEB4">Dealing with Validation Errors</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="form-pages-and-items.html#GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44" title="Ensure that your form pages and items provide sufficient information to users of assistive technology.">Developing Accessible Form Pages and Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-E8432B1B-86FE-45A8-9ED0-7BD55DAA2DA3" name="GUID-E8432B1B-86FE-45A8-9ED0-7BD55DAA2DA3"></a><h3 id="AEACC-GUID-E8432B1B-86FE-45A8-9ED0-7BD55DAA2DA3" class="sect3"><span class="enumeration_section">4.4.2 </span>Accessible Date Pickers
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Date pickers are not accessible by default, but you can help users to more easily enter a date manually. For example, <span>Oracle</span> recommends configuring date picker items to display a sample date to indicate the input format. You can include this sample information in the label, such as in the following example:
+                     </p><br><div class="imageleft"><img class="imageleft" height="68" width="261" src="img/date_picker_label.png" alt="Description of date_picker_label.png follows" title="Description of date_picker_label.png follows" longdesc="img_text/date_picker_label.html"><br><a href="img_text/date_picker_label.html">Description of the illustration date_picker_label.png</a></div><br></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E8432B1B-86FE-45A8-9ED0-7BD55DAA2DA3__GUID-1A9A5740-628A-4DC2-8406-C50925420369">
+                     <p class="notep1">See Also:</p>
+                     <p>Date Picker in the <span class="q">"Available Item Types"</span> appendix in the <a href="../htmdb/about-item-types.html#HTMDB-GUID-8CAA1BA5-DCA8-4DF0-A841-3DC40E67CA9C" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="form-pages-and-items.html#GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44" title="Ensure that your form pages and items provide sufficient information to users of assistive technology.">Developing Accessible Form Pages and Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-4AE22F5F-B2EE-4D58-90FA-34FAEF30CDC0" name="GUID-4AE22F5F-B2EE-4D58-90FA-34FAEF30CDC0"></a><h3 id="AEACC-GUID-4AE22F5F-B2EE-4D58-90FA-34FAEF30CDC0" class="sect3"><span class="enumeration_section">4.4.3 </span>Accessible Select Lists and Radio Groups
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can define select lists and radio groups to redirect or submit the page when the value of the control changes in the Page Action on Selection attribute. However, this behavior disrupts users of assistive technology, who do not expect a page reload and lose context. Instead, use dynamic actions or cascading LOVs to achieve similar functionality.</p>
+                     <p>Consider the following example. You have a select list on a page to filter a report region. You submit the page with this attribute in order to update the report to show the filtered results. Instead, use a Dynamic Action on <span class="q">"change"</span> of the select list, and then define an action to refresh the report region.
+                     </p>
+                     <p>For further examples, see the Sample Dynamic Action app in Packaged Applications.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-4AE22F5F-B2EE-4D58-90FA-34FAEF30CDC0__GUID-ABD0B846-6510-48C1-8A48-1914C14202DB">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"Utilizing Packaged Applications"</span> in the <a href="../htmdb/utilizing-packaged-applications.html#HTMDB-GUID-A850A48B-2AEC-42C9-9247-969129E52249" target="_blank"><span><cite>Oracle Application Express App Builder User’s Guide</cite></span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="form-pages-and-items.html#GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44" title="Ensure that your form pages and items provide sufficient information to users of assistive technology.">Developing Accessible Form Pages and Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-EE8CC8AE-52F1-4309-8EFE-F9A87C0FF962" name="GUID-EE8CC8AE-52F1-4309-8EFE-F9A87C0FF962"></a><h3 id="AEACC-GUID-EE8CC8AE-52F1-4309-8EFE-F9A87C0FF962" class="sect3"><span class="enumeration_section">4.4.4 </span>Accessible Check Boxes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>While the check box item type offers support for accessibility for groups of check boxes, <span>Oracle</span> recommends using the Simple Checkbox plug-in when you require only one check box. This plug-in offers cleaner markup and better accessibility for these single value check box use cases.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-EE8CC8AE-52F1-4309-8EFE-F9A87C0FF962__GUID-59490545-BECD-4107-9708-DD0B95278366">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="http://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-plug-ins-182042.html" target="_blank">Oracle Application Express Plug-Ins</a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="form-pages-and-items.html#GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44" title="Ensure that your form pages and items provide sufficient information to users of assistive technology.">Developing Accessible Form Pages and Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-982B22DC-3992-4B58-A736-F047789BCC12" name="GUID-982B22DC-3992-4B58-A736-F047789BCC12"></a><h3 id="AEACC-GUID-982B22DC-3992-4B58-A736-F047789BCC12" class="sect3"><span class="enumeration_section">4.4.5 </span>Accessible Display Image Alternative Text
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The display image item type enables you to display alternative text with an image on a form page, which is essential to users of assistive technology.</p>
+                     <p>Alternative text settings for the display image item type relevant to accessibility include:</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-982B22DC-3992-4B58-A736-F047789BCC12__GUID-73B84E2D-7B52-49AA-9A61-EA05B098FF4D">
+                              <!-- --></a>Alternative Text Column
+                        </dt>
+                        <dd>
+                           <p>Displayed when Based On is set to <span class="uicontrol bold">BLOB Column Specified in Item Source</span></p>
+                           <p>Defines the column that stores the alternative text for the image.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-982B22DC-3992-4B58-A736-F047789BCC12__GUID-00360994-BE26-4D13-A242-34003F4F8FCA">
+                              <!-- --></a>Alternative Text
+                        </dt>
+                        <dd>
+                           <p>Displayed when Based On is set to <span class="uicontrol bold">Image URL stored in Page Item Value</span></p>
+                           <p>Defines alternative text to describe the image. This can also be dynamic by using substitution syntax, such as <code class="codeph">&amp;P1_ALT_TEXT.</code> (ensure you include the period)
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="form-pages-and-items.html#GUID-BA2EDD63-2E60-4F2A-847E-C76283A5AF44" title="Ensure that your form pages and items provide sufficient information to users of assistive technology.">Developing Accessible Form Pages and Items</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

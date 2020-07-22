@@ -1,0 +1,203 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="了解会话状态管理">
+      <meta name="abstract" content="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">
+      <meta name="description" content="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">
+      <meta name="DC.subject" content="session state, management, session ID">
+      <meta name="keywords" content="session state, management, session ID">
+      <meta name="DC.Relation" scheme="URI" content="application-builder-concepts.html#GUID-6D22E307-6D48-49BC-9FDC-A7D8B037E46A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-session-state-management.html#GUID-CE2E9C4B-2779-4D0A-808C-B462E382CE1C">
+      <meta name="DC.Relation" scheme="URI" content="understanding-session-state-management.html#GUID-9806B1C3-ECC0-46AF-9823-EFE2CC2C474A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-session-state-management.html#GUID-5A3E558A-61BB-4495-ABB5-6611A6D04F46">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">
+      <meta name="description" content="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">
+      <title>了解会话状态管理</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="about-enabling-support-for-bookmarks.html" title="Previous" type="text/html">
+      <link rel="next" href="viewing-session-state.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-enabling-support-for-bookmarks.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="viewing-session-state.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="application-builder-concepts.html" property="item" typeof="WebPage"><span property="name"> 应用构建器（App Builder）概念</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">了解会话状态管理</li>
+            </ol>
+            <a id="GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9" name="GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9"></a><a id="HTMDB03007"></a>
+            
+            <h2 id="HTMDB-GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9" class="sect2"><span class="enumeration_section">3.5 </span>了解会话状态管理
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-session-state-management.html#GUID-CE2E9C4B-2779-4D0A-808C-B462E382CE1C">什么是会话状态</a><br><strong class="term">Session state</strong>&nbsp;enables developers to store and retrieve values for a user as the user navigates between different application pages.
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-session-state-management.html#GUID-9806B1C3-ECC0-46AF-9823-EFE2CC2C474A">关于会话ID</a><br>A&nbsp;<strong class="term">session ID</strong>&nbsp;is a unique number assigned a specific user for the duration of that user's visit (<strong class="term">session</strong>)
+                  </li>
+                  <li class="ulchildlink"><a href="understanding-session-state-management.html#GUID-5A3E558A-61BB-4495-ABB5-6611A6D04F46">什么是一个会话</a><br>A <span class="bold">session</span> is a logical construct that establishes persistence (or stateful behavior) across page views. Each session is assigned a unique identifier. The Application Express engine uses this identifier (or session ID) to store and retrieve an application's working set of data (or session state) before and after each page view.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="application-builder-concepts.html#GUID-6D22E307-6D48-49BC-9FDC-A7D8B037E46A" title="To efficiently use App Builder, developers must understand some key concepts including managing user interface design, viewing rendered application page, understanding page processing and rendering, managing session state, understanding URL syntax, managing session state values, and using built-in substitution strings.">应用构建器（App Builder）概念</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29186"></a><div class="props_rev_3"><a id="GUID-CE2E9C4B-2779-4D0A-808C-B462E382CE1C" name="GUID-CE2E9C4B-2779-4D0A-808C-B462E382CE1C"></a><h3 id="HTMDB-GUID-CE2E9C4B-2779-4D0A-808C-B462E382CE1C" class="sect3"><span class="enumeration_section">3.5.1 </span>什么是会话状态
+               </h3>
+               <div>
+                  <p><strong class="term">Session state</strong>&nbsp;enables developers to store and retrieve values for a user as the user navigates between different application pages.
+                  </p>
+                  <div class="section">
+                     <p>Hypertext Transfer Protocol (HTTP), the protocol over which HTML pages are most often delivered, is a stateless protocol. A web browser is only connected to the server for as long as it takes to download a complete page. Each page request is treated by the server as an independent event, unrelated to any page requests that happened previously or that may occur in the future. To access form values entered on one page on a subsequent page, the values must be stored as session state. Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-session-state-management.html#GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9" title="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">了解会话状态管理</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB03009"></a><div class="props_rev_3"><a id="GUID-9806B1C3-ECC0-46AF-9823-EFE2CC2C474A" name="GUID-9806B1C3-ECC0-46AF-9823-EFE2CC2C474A"></a><h3 id="HTMDB-GUID-9806B1C3-ECC0-46AF-9823-EFE2CC2C474A" class="sect3"><span class="enumeration_section">3.5.2 </span>关于会话ID
+               </h3>
+               <div>
+                  <p>A&nbsp;<strong class="term">session ID</strong>&nbsp;is a unique number assigned a specific user for the duration of that user's visit (<strong class="term">session</strong>)
+                  </p>
+                  <p>The Application Express engine establishes the identity of the user for each page
+            request and the session ID to fetch session state from the database. The most visible
+            location of the session ID is in the URL for a page request. The session ID displays as
+            the third parameter in the URL:</p>
+                  <ul style="list-style-type: disc;" id="GUID-9806B1C3-ECC0-46AF-9823-EFE2CC2C474A__UL_QNZ_ZLN_VKB">
+                     <li>
+                        
+                        <p>f?p URL Syntax:</p>
+                        <pre class="pre codeblock"><code>https://apex.example.com/ords/f?p=392:3:13766599855150</code></pre>
+                        </li>
+                     <li>
+                        
+                        <p>f?p URL Syntax:</p>
+                        <pre class="pre codeblock"><code>https://apex.example.com/ords/mycompany/r/hr-app/update-employees?session=13766599855150</code></pre>
+                        </li>
+                  </ul>
+                  <p>In both examples, the session ID is <code class="codeph">13766599855150</code>. 
+                  </p>
+                  <p>Another visible location is in the page's HTML POST data and indirectly in the contents of a session cookie. This cookie is sent by the Application Express engine during authentication and is maintained for the life of the application (or browser) session.</p>
+                  <p>Oracle Application Express assigns new session IDs during authentication processing, records the authenticated user's identity with the session ID, and continually checks the session ID in each page request's URL or POST data with the session cookie and the session record in the database. These checks provide users with flexibility and security.</p>
+                  <p>While the session ID is the key to session state, the session cookie and the session record safeguard the integrity of the session ID and the authentication status of the user.</p>
+                  <div class="section">
+                     
+                     
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-9806B1C3-ECC0-46AF-9823-EFE2CC2C474A__GUID-901F215B-96C1-4FFA-B176-8E1B388CFAB8">
+                     <p class="notep1">See Also:</p>
+                     
+                     <p><span class="q">"<a href="understanding-url-syntax.html#GUID-F9B81EAF-D33F-401D-8349-3952DEDA5460" title="Oracle Application Express applications support two types of URL syntax: Friendly URL Syntax and f?p Syntax.">了解URL格式</a>"</span></p>
+                     
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-session-state-management.html#GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9" title="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">了解会话状态管理</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB03008"></a><div class="props_rev_3"><a id="GUID-5A3E558A-61BB-4495-ABB5-6611A6D04F46" name="GUID-5A3E558A-61BB-4495-ABB5-6611A6D04F46"></a><h3 id="HTMDB-GUID-5A3E558A-61BB-4495-ABB5-6611A6D04F46" class="sect3"><span class="enumeration_section">3.5.3 </span>什么是一个会话
+               </h3>
+               <div>
+                  <p>A <span class="bold">session</span> is a logical construct that establishes persistence (or stateful behavior) across page views. Each session is assigned a unique identifier. The Application Express engine uses this identifier (or session ID) to store and retrieve an application's working set of data (or session state) before and after each page view.
+                  </p>
+                  <p>Because sessions are entirely independent of one another, any number of sessions can exist in the database at the same time. A user can also run multiple instances of an application simultaneously in different browser programs.</p>
+                  <p>Sessions are logically and physically distinct from Oracle database sessions used to service page requests. A user runs an application in a single Oracle Application Express session from sign in to sign out with a typical duration measured in minutes or hours. Each page requested during that session results in the Application Express engine creating or reusing an Oracle database session to access database resources. Often these database sessions last just a fraction of a second.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-5A3E558A-61BB-4495-ABB5-6611A6D04F46__GUID-AAAC5B13-92D9-468C-A231-98384572FBB9">
+                     <p class="notep1">See Also:</p>
+                     <p>"Viewing Active Sessions" in <a href="../aeadm/monitoring-activity-within-a-workspace.html#AEADM164" target="_blank"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-session-state-management.html#GUID-CE2A38B5-75B7-4C43-ACB0-685E16C6ACF9" title="Oracle Application Express transparently maintains session state and provides developers with the ability to get and set session state values from any page in the application.">了解会话状态管理</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

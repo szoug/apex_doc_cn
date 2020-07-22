@@ -1,0 +1,246 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="ENCODE Function">
+      <meta name="DC.subject" content="APEX_JWT, ENCODE function">
+      <meta name="keywords" content="APEX_JWT, ENCODE function">
+      <meta name="DC.Relation" scheme="URI" content="APEX_JWT.html#GUID-D44A3F15-75BE-41DC-A557-17FA70D466B9">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ENCODE Function</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="T_TOKEN.html" title="Previous" type="text/html">
+      <link rel="next" href="DECODE.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="T_TOKEN.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="DECODE.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_JWT.html" property="item" typeof="WebPage"><span property="name"> APEX_JWT</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">ENCODE Function</li>
+            </ol>
+            <a id="GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B" name="GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B"></a>
+            
+            <h2 id="AEAPI-GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B" class="sect2"><span class="enumeration_section">24.2 </span>ENCODE Function
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This function encodes and optionally encrypts payload.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B__GUID-7D059937-0EFA-44CA-87D5-04DE5A77578D">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>FUNCTION ENCODE (
+     p_iss           IN VARCHAR2                 DEFAULT NULL,
+     p_sub           IN VARCHAR2                 DEFAULT NULL,
+     p_aud           IN VARCHAR2                 DEFAULT NULL,
+     p_nbf_ts        IN TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+     p_iat_ts        IN TIMESTAMP WITH TIME ZONE DEFAULT SYSTIMESTAMP,
+     p_exp_sec       IN PLS_INTEGER              DEFAULT NULL,
+     p_jti           IN VARCHAR2                 DEFAULT NULL,
+     p_other_claims  IN VARCHAR2                 DEFAULT NULL,
+     p_signature_key IN RAW                      DEFAULT NULL )
+     RETURN VARCHAR2</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B__GUID-3EBBC9D1-C333-4310-8723-73295BA6232D">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B__GUID-72E58E1B-FAFE-4E34-A198-4D81D564EBD1">
+                  <p class="titleintable">Table 24-2 ENCODE Function Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="ENCODE Function Parameters" summary="Parameter descriptions for the ENCODE function." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d123464e68">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d123464e71">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e76" headers="d123464e68 ">
+                              <p><code class="codeph">p_iss</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e76 d123464e71 ">
+                              <p>Optional <code class="codeph">"iss"</code> (Issuer) claim.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e87" headers="d123464e68 ">
+                              <p><code class="codeph">p_sub</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e87 d123464e71 ">
+                              <p>Optional <code class="codeph">"sub" </code>(Subject) claim.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e98" headers="d123464e68 ">
+                              <p><code class="codeph">p_aud</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e98 d123464e71 ">
+                              <p>Optional <code class="codeph">"aud"</code> (Audience) claim.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e109" headers="d123464e68 ">
+                              <p><code class="codeph">p_nbf_ts</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e109 d123464e71 ">
+                              <p>Optional <code class="codeph">"nbf" </code>(Not Before) claim.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e120" headers="d123464e68 ">
+                              <p><code class="codeph">p_iat_ts</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e120 d123464e71 ">
+                              <p>Optional <code class="codeph">"iat"</code> (Issued At) claim (default systimestamp).
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e131" headers="d123464e68 ">
+                              <p><code class="codeph">p_exp_sec</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e131 d123464e71 ">
+                              <p>Optional <code class="codeph">"exp"</code> (Expiration Time) claim, in seconds. The start time is taken from <code class="codeph">"nbf"</code>, <code class="codeph">"iat"</code> or current time.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e148" headers="d123464e68 ">
+                              <p><code class="codeph">p_jti</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e148 d123464e71 ">
+                              <p>Optional <code class="codeph">"jti"</code> (JWT ID) Claim.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e159" headers="d123464e68 ">
+                              <p><code class="codeph">p_other_claims</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e159 d123464e71 ">
+                              <p>Optional raw JSON with additional claims.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d123464e167" headers="d123464e68 ">
+                              <p><code class="codeph">p_signature_key</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d123464e167 d123464e71 ">
+                              <p>Optional MAC key for the signature. If not null, a <code class="codeph">'HS256'</code> signature is added. This requires 12c or higher.
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B__GUID-A8C314FE-261D-4BB7-ABCD-2518BDAD6A10">Returns</p>
+                  <p>A varchar2, the encoded token value.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-3ACCE379-F193-485D-BA5F-2F4BBD03257B__GUID-3E5A3959-81A4-44CC-BE93-F82BF0EA5AC5">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>This example creates and prints a JWT value for Example User, intended to be used by Example JWT Recipient. The token is valid for 5 minutes.</p><pre class="pre codeblock"><code>declare
+    l_jwt_value varchar2(32767);
+begin
+    l_jwt_value := apex_jwt.encode (
+                       p_iss =&gt; 'Example Issuer',
+                       p_sub =&gt; 'Example User',
+                       p_aud =&gt; 'Example JWT Recipient',
+                       p_exp_sec =&gt; 60*5,
+                       p_other_claims =&gt; '"name1": '||apex_json.stringify('value1')||
+                                         ',"name2": '||apex_json.stringify('value2'),
+                       p_signature_key =&gt; ... encryption key ... );
+    sys.dbms_output.put_line(l_jwt_value);
+end;</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_JWT.html#GUID-D44A3F15-75BE-41DC-A557-17FA70D466B9">APEX_JWT</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="How to Create the ORDS Based RESTful Services Module Example">
+      <meta name="abstract" content="Learn how to create the ORDS Based RESTful Services module example.">
+      <meta name="description" content="Learn how to create the ORDS Based RESTful Services module example.">
+      <meta name="DC.subject" content="RESTful services, about oracle.example.hr, example">
+      <meta name="keywords" content="RESTful services, about oracle.example.hr, example">
+      <meta name="DC.Relation" scheme="URI" content="using-RESTful-services.html#GUID-9EF9F122-554D-40C3-B14D-70C3ACF1A48D">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-RESTful-service-module-example.html#GUID-F26D6029-9548-4C2B-B290-ABCDC69F4564">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-RESTful-service-module-example.html#GUID-0094FBF3-0141-4AFE-9C85-7B47834ECF7C">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-RESTful-service-module-example.html#GUID-2617C267-3D76-40C4-9994-F48ED7EEABAB">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-RESTful-service-module-example.html#GUID-E9619F2A-DA9C-4F9D-A7B4-88207AA27CF1">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-RESTful-service-module-example.html#GUID-0C81C254-8BAE-49BB-8182-1A644B8F9635">
+      <meta name="DC.Relation" scheme="URI" content="how-to-create-RESTful-service-module-example.html#GUID-32A996FC-5AA4-47FF-8061-E95F90E1D5E7">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Drue Swadener">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="John Godfrey">
+      <meta name="DC.Publisher" content="April2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-65379747-EC71-4745-8DE2-FB5198FFF21E">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn how to create the ORDS Based RESTful Services module example.">
+      <meta name="description" content="Learn how to create the ORDS Based RESTful Services module example.">
+      <title>How to Create the ORDS Based RESTful Services Module Example</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Workshop Guide">
+      <meta property="og:description" content="Learn how to create the ORDS Based RESTful Services module example.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Workshop Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-sql-workshop-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-04-08T08:34:30-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2008, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24722-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="accessing-RESTful-services.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-RESTful-service-modules.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express SQL Workshop Guide">
+    <meta name="dcterms.isVersionOf" content="AEUTL">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="accessing-RESTful-services.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-RESTful-service-modules.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Workshop Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-RESTful-services.html" property="item" typeof="WebPage"><span property="name">Enabling Data Exchange with RESTful Services </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">How to Create the ORDS Based RESTful Services Module Example</li>
+            </ol>
+            <a id="GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" name="GUID-65379747-EC71-4745-8DE2-FB5198FFF21E"></a><a id="AEUTL29134"></a>
+            
+            <h2 id="AEUTL-GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" class="sect2"><span class="enumeration_section">7.5 </span>How to Create the ORDS Based RESTful Services Module Example
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn how to create the ORDS Based RESTful Services module example.</p>
+               <p>Oracle Application Express workspace by default has an example RESTful Service Module, <code class="codeph">oracle.example.hr</code>. You can install the sample service while registering the schema with ORDS.
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="how-to-create-RESTful-service-module-example.html#GUID-F26D6029-9548-4C2B-B290-ABCDC69F4564">About the Example RESTful Service Module (oracle.example.hr)</a><br>In ORDS Based RESTful Services, you can choose to install the sample service <code class="codeph">oracle.example.hr</code>, when registering schema with ORDS.
+                  </li>
+                  <li class="ulchildlink"><a href="how-to-create-RESTful-service-module-example.html#GUID-0094FBF3-0141-4AFE-9C85-7B47834ECF7C">Returning the Result Set Based on a PL/SQL Block (empsecformat/:empname)</a><br>You can add and test your own resource template that uses a PL/SQL block to format results.
+                  </li>
+                  <li class="ulchildlink"><a href="how-to-create-RESTful-service-module-example.html#GUID-2617C267-3D76-40C4-9994-F48ED7EEABAB">Returning the Result Set in JSON Format with Pagination Set (employees/)</a><br>You can add and test your own resource template that retrieves data in JSON format and demonstrates pagination.
+                  </li>
+                  <li class="ulchildlink"><a href="how-to-create-RESTful-service-module-example.html#GUID-E9619F2A-DA9C-4F9D-A7B4-88207AA27CF1">Retrieving Data Based on a Parameter (employees/:id)</a><br>You can add and test your own resource template that retrieves employee data based on a parameter.
+                  </li>
+                  <li class="ulchildlink"><a href="how-to-create-RESTful-service-module-example.html#GUID-0C81C254-8BAE-49BB-8182-1A644B8F9635">Returning the Result Set in CSV Format (empinfo/)</a><br>You can build and test your own example RESTful Service Module that retrieves data in CSV format.
+                  </li>
+                  <li class="ulchildlink"><a href="how-to-create-RESTful-service-module-example.html#GUID-32A996FC-5AA4-47FF-8061-E95F90E1D5E7">Returning the Result Set as a Feed (employeesfeed/)</a><br>You can add and test your own resource template that displays return data as a feed.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="using-RESTful-services.html#GUID-9EF9F122-554D-40C3-B14D-70C3ACF1A48D" title="RESTful Services enable the declarative specification of RESTful services used to access the database.">Enabling Data Exchange with RESTful Services</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="AEUTL29172"></a><div class="props_rev_3"><a id="GUID-F26D6029-9548-4C2B-B290-ABCDC69F4564" name="GUID-F26D6029-9548-4C2B-B290-ABCDC69F4564"></a><h3 id="AEUTL-GUID-F26D6029-9548-4C2B-B290-ABCDC69F4564" class="sect3"><span class="enumeration_section">7.5.1 </span>About the Example RESTful Service Module (oracle.example.hr)
+               </h3>
+               <div>
+                  <p>In ORDS Based RESTful Services, you can choose to install the sample service <code class="codeph">oracle.example.hr</code>, when registering schema with ORDS.
+                  </p>
+                  <p> This module provides example resource templates and resource handlers that implement several different methods to retrieve and display employee information from the <code class="codeph">emp</code> table. To access the <code class="codeph">oracle.example.hr</code> module, see “ Accessing RESTful Services”.
+                  </p>
+                  <p>The <code class="codeph">oracle.example.hr </code>module consists of several resource templates. Each resource template demonstrates a different way of retrieving information and formatting the returned results.
+                  </p>
+                  <div class="figure" id="GUID-F26D6029-9548-4C2B-B290-ABCDC69F4564__GUID-7BDE3E53-24A1-4F92-8600-3CA681B1CE29"><img height="558" width="355" src="img/oracle_ex_temp.png" alt="Description of oracle_ex_temp.png follows" title="Description of oracle_ex_temp.png follows" longdesc="img_text/oracle_ex_temp.html"><br><a href="img_text/oracle_ex_temp.html">Description of the illustration oracle_ex_temp.png</a></div>
+                  <!-- class="figure" -->
+                  <p>The following results are expected for each <code class="codeph">oracle.example.hr</code> resource template when the respective GET resource handler is invoked:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">empsec/:empname</code> - Employee information for a specified employee name, <code class="codeph">empname</code>, is returned and displayed in JSON. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">empsecformat/:empname</code> - Employee information for a specified employee name, <code class="codeph">empname</code>, is returned and formatted based on the execution of a PL/SQL block. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">employees/</code> - Employee information from the employees <code class="codeph">emp</code> table is displayed in JSON format with Pagination Size set to 7. A first, previous and next link is provided to page through the results.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">version/</code>- Returns the version of the RESTful service module.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">employees/:id</code> - Employee information from the employees <code class="codeph">emp</code> table for a specified <code class="codeph">id</code> is returned. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">empinfo/</code> - Employee information from the employees <code class="codeph">emp</code> table is returned in CSV format. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">employeesfeed</code>/ - Employee information from the employees <code class="codeph">emp</code> table is returned as a JSON Feed. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">employeesfeed/:id</code> - Employee information from the employees <code class="codeph">emp</code> table for a specified <code class="codeph">id</code> is displayed in JSON format. 
+                        </p>
+                     </li>
+                  </ul>
+                  <p>The following result is expected for the <code class="codeph">employees/:id</code> resource template when the PUT resource handler is invoked:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">employees/:id</code> - Employee information from the employees <code class="codeph">emp</code> table for a specified id is updated. 
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-F26D6029-9548-4C2B-B290-ABCDC69F4564__GUID-44E605E1-949A-4994-B649-F76326D18317">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="accessing-RESTful-services.html#GUID-0D67C4ED-0491-48D9-B463-3930334D197C" title="Access RESTful Services from the Workspace home page by clicking SQL Workshop and then RESTful Services.">Accessing RESTful Services</a>"</span></p>
+                        </li>
+                        <li>
+                           <p>Oracle Learning Library for additional RESTful Service examples. Go to: <a href="http://www.oracle.com/oll/apex" target="_blank">http://www.oracle.com/oll/apex</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-RESTful-service-module-example.html#GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" title="Learn how to create the ORDS Based RESTful Services module example.">How to Create the ORDS Based RESTful Services Module Example</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29139"></a><div class="props_rev_3"><a id="GUID-0094FBF3-0141-4AFE-9C85-7B47834ECF7C" name="GUID-0094FBF3-0141-4AFE-9C85-7B47834ECF7C"></a><h3 id="AEUTL-GUID-0094FBF3-0141-4AFE-9C85-7B47834ECF7C" class="sect3"><span class="enumeration_section">7.5.2 </span>Returning the Result Set Based on a PL/SQL Block (<code class="codeph">empsecformat/:empname</code>)
+               </h3>
+               <div>
+                  <p>You can add and test your own resource template that uses a PL/SQL block to format results.</p>
+                  <div class="section">
+                     <p>The <code class="codeph">oracle.example.hr</code> module includes the <code class="codeph">empsecformat/:empname</code> resource template to demonstrate a RESTful Service that returns the results of an SQL Query formatted by a PL/SQL block. 
+                     </p>
+                     <p>To add and test your own resource template that uses a PL/SQL block to format results:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">RESTful Services</span>.</span><div>
+                           <p>The RESTful Services home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">ORDS Based RESTful Services</span>.</span><div>
+                           <p>The ORDS RESTful services page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the RESTful Service Module you want to add the resource template to.</span><div>
+                           <p>The Module Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Resource Templates block on the left panel, click <span class="uicontrol bold">Create Template</span>.</span><div>
+                           <p>The ORDS Template Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For URI Template, enter <code class="codeph">empsecformat/:empname</code>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Template</span>.</span></li>
+                     <li class="stepexpand"><span>Under the <code class="codeph">empsecformat/:empname</code> resource template, click <span class="bold">Create Handler</span>.</span><div>
+                           <p>The ORDS Handler Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Make the following selections and entries:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Method</strong> - Select <span class="uicontrol bold">GET</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source Type</strong> - Select <span class="uicontrol bold">PL/SQL</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source</strong> - enter the following:
+                                 </p><pre class="oac_no_warn" dir="ltr">DECLARE
+  prevdeptno     number;  
+  total_rows     number;
+  deptloc        varchar2(20);
+  deptname       varchar2(20);
+  CURSOR         getemps is select * from emp
+                             start with ename = :empname
+                            connect by prior empno = mgr
+                             order siblings by deptno, ename;
+BEGIN
+  sys.htp.htmlopen;
+  sys.htp.headopen;
+  sys.htp.title('Hierarchical Department Report for Employee '||:empname);
+  sys.htp.headclose;
+  sys.htp.bodyopen;
+ 
+  for emprecs in getemps
+  loop
+ 
+      if l_employee.deptno != prevdeptno or prevdeptno is null then
+          select dname, loc
+           into deptname, deptloc
+           from dept
+          where deptno = l_employee.deptno;
+
+         if prevdeptno is not null then
+             sys.htp.print('&lt;/ul&gt;');
+         end if; 
+        sys.htp.print('Department ' || apex_escape.html(deptname) || ' located in ' || apex_escape.html(deptloc) || '&lt;p/&gt;');
+        sys.htp.print('&lt;ul&gt;');
+      end if;
+ 
+      sys.htp.print('&lt;li&gt;' || apex_escape.html(l_employee.ename) || ', '  || apex_escape.html(l_employee.empno) || ', ' ||
+                        apex_escape.html(l_employee.job) || ', ' || apex_escape.html(l_employee.sal) || '&lt;/li&gt;'); 
+
+      prevdeptno := l_employee.deptno;
+      total_rows := getemps%ROWCOUNT;
+
+   end loop; 
+   if total_rows &gt; 0 then
+       sys.htp.print('&lt;/ul&gt;');
+   end if; 
+   sys.htp.bodyclose;
+   sys.htp.htmlclose;
+END;
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Handler</span>.</span><div>
+                           <p>The GET resource handler appears under the <code class="codeph">empsecformat/:empname</code> resource template on the left panel.
+                           </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-RESTful-service-module-example.html#GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" title="Learn how to create the ORDS Based RESTful Services module example.">How to Create the ORDS Based RESTful Services Module Example</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29137"></a><div class="props_rev_3"><a id="GUID-2617C267-3D76-40C4-9994-F48ED7EEABAB" name="GUID-2617C267-3D76-40C4-9994-F48ED7EEABAB"></a><h3 id="AEUTL-GUID-2617C267-3D76-40C4-9994-F48ED7EEABAB" class="sect3"><span class="enumeration_section">7.5.3 </span>Returning the Result Set in JSON Format with Pagination Set (<code class="codeph">employees/</code>)
+               </h3>
+               <div>
+                  <p>You can add and test your own resource template that retrieves data in JSON format and demonstrates pagination.</p>
+                  <div class="section">
+                     <p>The <code class="codeph">oracle.example.hr</code> module includes the <code class="codeph">employees/</code> resource template to demonstrate a RESTful Service that returns data in JSON format. This example is returning the Result Set in JSON Format with Pagination Set Using Pagination Bind Variables. The Pagination bind variables are<code class="codeph"> :row_offset</code> and <code class="codeph">:row_count</code>.
+                     </p>
+                     <p>For other example resource templates that return results in JSON format see the <code class="codeph">empsec/{empname}</code> resource template for the <code class="codeph">oracle.example.hr</code> Service Module.
+                     </p>
+                     <p>To add and test your own resource template that retrieves data in JSON format and demonstrates pagination:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">RESTful Services</span>.</span><div>
+                           <p>The RESTful Services home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">ORDS Based RESTful Services</span>.</span><div>
+                           <p>The ORDS RESTful services page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the RESTful Service Module you want to add the resource template to.</span><div>
+                           <p>The Module Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Resource Templates block on the left panel, click <span class="uicontrol bold">Create Template</span>.</span><div>
+                           <p>The ORDS Template Definition page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For URI Template, enter <code class="codeph">employees/</code>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="bold">Create Template</span>.</span><div>
+                           <p>The <code class="codeph">employees/</code> resource template displays on the left panel.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under the <code class="codeph">employees/</code> resource template, click <span class="uicontrol bold">Create Handler</span>.</span><div>
+                           <p>The ORDS Handler Definition page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Make the following selections and entries:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Method</strong> - Select <span class="uicontrol bold">GET</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source Type</strong> - Select <span class="uicontrol bold">Query</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Format</strong> - Select <span class="uicontrol bold">JSON</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source</strong> - Enter the following:
+                                 </p><pre class="pre codeblock"><code>select empno "$uri", rn, empno, ename, job, hiredate, mgr, sal, comm, deptno
+  from (
+       select emp.*
+            , row_number() over (order by empno) rn
+         from emp
+       ) tmp</code></pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Handler</span>.</span><div>
+                           <p>The GET Handler appears under the <code class="codeph">employees/</code> resource template on the left panel.
+                           </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-RESTful-service-module-example.html#GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" title="Learn how to create the ORDS Based RESTful Services module example.">How to Create the ORDS Based RESTful Services Module Example</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29136"></a><div class="props_rev_3"><a id="GUID-E9619F2A-DA9C-4F9D-A7B4-88207AA27CF1" name="GUID-E9619F2A-DA9C-4F9D-A7B4-88207AA27CF1"></a><h3 id="AEUTL-GUID-E9619F2A-DA9C-4F9D-A7B4-88207AA27CF1" class="sect3"><span class="enumeration_section">7.5.4 </span>Retrieving Data Based on a Parameter (<code class="codeph">employees/:id</code>)
+               </h3>
+               <div>
+                  <p>You can add and test your own resource template that retrieves employee data based on a parameter.</p>
+                  <div class="section">
+                     <p>The <code class="codeph">oracle.example.hr</code> module includes the <code class="codeph">employees/:id</code> resource template to demonstrate a RESTful Service that returns one row of data in JSON format based on the specified <code class="codeph">id</code>. 
+                     </p>
+                     <p>For other example resource templates that return results based on a specified parameter see the <code class="codeph">employeesfeed/:id</code>, <code class="codeph">empsec/:empname</code> and <code class="codeph">empsecformat/:empname</code> resource templates for the <code class="codeph">oracle.example.hr</code> Service Module.
+                     </p>
+                     <p>To add and test your own resource template that retrieves employee data based on a parameter:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">RESTful Services</span>.</span><div>
+                           <p>The RESTful Services home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">ORDS Based RESTful Services</span>.</span><div>
+                           <p>The ORDS RESTful services page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the RESTful Service Module you want to add the resource template to.</span><div>
+                           <p>The Module Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Resource Templates block on the left panel, click <span class="uicontrol bold">Create Template</span>.</span><div>
+                           <p>The ORDS Template Definition page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For URI Template, enter <code class="codeph">employees/:id</code>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="bold">Create Template</span>.</span><div>
+                           <p>The <code class="codeph">employees/:id</code> resource template displays on the left panel.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under the <code class="codeph">employees/:id</code> resource template, click <span class="uicontrol bold">Create Handler</span>.</span><div>
+                           <p>The ORDS Handler Definition page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Make the following selections and entries:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Method</strong> - select <span class="uicontrol bold">GET</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source Type</strong> - select <span class="uicontrol bold">Query One Row</span>. Executes a SQL Query returning one row of data into a JSON representation. This option is only available when the HTTP method GET has been selected
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Pagination Size - Leave blank. In this case, there's no need to set pagination since only one record is retrieved.</p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source</strong> - enter the following:
+                                 </p><pre class="oac_no_warn" dir="ltr">select * from emp  where empno = :id
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Handler</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-RESTful-service-module-example.html#GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" title="Learn how to create the ORDS Based RESTful Services module example.">How to Create the ORDS Based RESTful Services Module Example</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29135"></a><div class="props_rev_3"><a id="GUID-0C81C254-8BAE-49BB-8182-1A644B8F9635" name="GUID-0C81C254-8BAE-49BB-8182-1A644B8F9635"></a><h3 id="AEUTL-GUID-0C81C254-8BAE-49BB-8182-1A644B8F9635" class="sect3"><span class="enumeration_section">7.5.5 </span>Returning the Result Set in CSV Format (<code class="codeph">empinfo/</code>)
+               </h3>
+               <div>
+                  <p>You can build and test your own example RESTful Service Module that retrieves data in CSV format.</p>
+                  <div class="section">
+                     <p>The <code class="codeph">oracle.example.hr</code> module includes the <code class="codeph">empinfo/</code> resource template to demonstrate a RESTful Service that returns data in CSV format. In this example, all the employee data from the <code class="codeph">emp</code> table is returned by using a SQL Query. 
+                     </p>
+                     <p>To build and test your own example RESTful Service Module that retrieves data in CSV format:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">RESTful Services</span>.</span><div>
+                           <p>The RESTful Services home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click ORDS Based RESTful services.</span><div>
+                           <p>The ORDS RESTful services page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the RESTful Service Module you want to add the resource template to.</span><div>
+                           <p>The Module Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Resource Templates block on the left panel, Click <span class="uicontrol bold">Create Template</span>.</span><div>
+                           <p>The ORDS Template Definition page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For URI Template, enter <code class="codeph">empinfo/</code>. </span></li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Template</span>.</span><div>
+                           <p>The <code class="codeph">empinfo/</code> resource template displays on the left panel.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under the empinfo/ resource template, click <span class="uicontrol bold">Create Handler</span>.</span><div>
+                           <p></p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Make the following selections and entries:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Method</strong> - select <span class="uicontrol bold">GET</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source Type</strong> - Select <span class="uicontrol bold">Query</span>. Executes a SQL Query and transforms the result set into either a JavaScript Object Notation (JSON) or CSV representation, depending on the format selected. This option is only available when the HTTP method GET has been selected
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Format</strong> - Select <span class="uicontrol bold">CSV</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source</strong> - Enter the following:
+                                 </p><pre class="oac_no_warn" dir="ltr">select * from emp
+</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Handler</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-RESTful-service-module-example.html#GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" title="Learn how to create the ORDS Based RESTful Services module example.">How to Create the ORDS Based RESTful Services Module Example</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="AEUTL29138"></a><div class="props_rev_3"><a id="GUID-32A996FC-5AA4-47FF-8061-E95F90E1D5E7" name="GUID-32A996FC-5AA4-47FF-8061-E95F90E1D5E7"></a><h3 id="AEUTL-GUID-32A996FC-5AA4-47FF-8061-E95F90E1D5E7" class="sect3"><span class="enumeration_section">7.5.6 </span>Returning the Result Set as a Feed (<code class="codeph">employeesfeed</code>/)
+               </h3>
+               <div>
+                  <p>You can add and test your own resource template that displays return data as a feed.</p>
+                  <div class="section">
+                     <p>The <code class="codeph">oracle.example.hr</code> module includes the <code class="codeph">employeesfeed/</code> resource template to demonstrate a RESTful Service that returns <code class="codeph">empno</code> and <code class="codeph">ename</code> values from the <code class="codeph">emp</code> table and displays them as a feed. 
+                     </p>
+                     <p>A feed resource handler executes a SQL query and transforms the results into a JSON Feed representation. Each item in the feed contains a summary of a resource and a hyperlink to a full representation of the resource. The first column in each row in the result set must be a unique identifier for the row and is used to form a hyperlink of the form: path/to/feed/{id}, with the value of the first column being used as the value for {id}. The other columns in the row are assumed to summarize the resource and are included in the feed. A separate resource template for the full representation of the resource should also be defined.</p>
+                     <p>To add and test your own resource template that displays return data as a feed:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>On the Workspace home page, click <span class="uicontrol bold">SQL Workshop</span> and then <span class="uicontrol bold">RESTful Services</span>.</span><div>
+                           <p>The RESTful Services home page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click ORDS Based RESTful services.</span><div>
+                           <p>The ORDS RESTful services page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the RESTful Service Module you want to add the resource template to.</span><div>
+                           <p>The Module Definition page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Resource Templates block on the left panel, click <span class="uicontrol bold">Create Template</span>.</span><div>
+                           <p>The ORDS Template Definition page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>For URI Template, enter <code class="codeph">employeesfeed/</code>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="bold">Create Template</span>.</span></li>
+                     <li class="stepexpand"><span>Under the <code class="codeph">employeesfeed/</code> resource template, click <span class="uicontrol bold">Create Handler</span>.</span><div>
+                           <p>The ORDS Handler Definition page appear.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Make the following selections and entries:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><strong class="term">Method</strong> - select <span class="uicontrol bold">GET</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source Type</strong> - select <span class="uicontrol bold">Feed</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Pagination Size</strong> - enter <code class="codeph">25</code>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><strong class="term">Source</strong> - enter the following:
+                                 </p><pre class="oac_no_warn" dir="ltr">select empno, ename from emp  order by deptno, ename</pre></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Create Handler</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="how-to-create-RESTful-service-module-example.html#GUID-65379747-EC71-4745-8DE2-FB5198FFF21E" title="Learn how to create the ORDS Based RESTful Services module example.">How to Create the ORDS Based RESTful Services Module Example</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Locking and Unlocking a Page">
+      <meta name="abstract" content="Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.">
+      <meta name="description" content="Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.">
+      <meta name="DC.subject" content="database application page, locking, preventing conflicts, unlocking, locks, for database application page, determining lock status">
+      <meta name="keywords" content="database application page, locking, preventing conflicts, unlocking, locks, for database application page, determining lock status">
+      <meta name="DC.Relation" scheme="URI" content="managing-pages-in-a-database-application.html#GUID-83926801-6C69-4709-B6C3-C22C192B5A11">
+      <meta name="DC.Relation" scheme="URI" content="locking-and-unlocking-a-page.html#GUID-3AEFD4E6-5683-4227-8867-2F3BB7316719">
+      <meta name="DC.Relation" scheme="URI" content="locking-and-unlocking-a-page.html#GUID-6C3072D0-6C79-4717-A793-13869D3820E3">
+      <meta name="DC.Relation" scheme="URI" content="locking-and-unlocking-a-page.html#GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-8CB414DC-0092-4B8E-B25E-AFFF90841AF6">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.">
+      <meta name="description" content="Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.">
+      <title>Locking and Unlocking a Page</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="creating-page-groups.html" title="Previous" type="text/html">
+      <link rel="next" href="editing-pages-page-designer.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="creating-page-groups.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="editing-pages-page-designer.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-pages-in-a-database-application.html" property="item" typeof="WebPage"><span property="name">Managing Pages in a Database Application</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Locking and Unlocking a Page</li>
+            </ol>
+            <a id="GUID-8CB414DC-0092-4B8E-B25E-AFFF90841AF6" name="GUID-8CB414DC-0092-4B8E-B25E-AFFF90841AF6"></a><a id="HTMDB29555"></a>
+            
+            <h2 id="HTMDB-GUID-8CB414DC-0092-4B8E-B25E-AFFF90841AF6" class="sect2"><span class="enumeration_section">8.8 </span>Locking and Unlocking a Page
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-3AEFD4E6-5683-4227-8867-2F3BB7316719">Determining If a Page Is Locked</a><br></li>
+                  <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-6C3072D0-6C79-4717-A793-13869D3820E3">Locking a Page</a><br></li>
+                  <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A">Unlocking a Page</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-pages-in-a-database-application.html#GUID-83926801-6C69-4709-B6C3-C22C192B5A11" title="A page is the basic building block of an application. Developers add pages to an application by running the Create Page Wizard.">Managing Pages in a Database Application</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29556"></a><div class="props_rev_3"><a id="GUID-3AEFD4E6-5683-4227-8867-2F3BB7316719" name="GUID-3AEFD4E6-5683-4227-8867-2F3BB7316719"></a><h3 id="HTMDB-GUID-3AEFD4E6-5683-4227-8867-2F3BB7316719" class="sect3"><span class="enumeration_section">8.8.1 </span>Determining If a Page Is Locked
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>A lock icon indicates whether a page is currently locked. If a page is unlocked, the icon appears as an open padlock. If the page is locked, the icon appears as a locked padlock. A lock icon appears on the Application home page and on the page.</p>
+                     <p>To view the lock icon on the Application home page, click the <span class="bold">View Report</span> icon. A report appears. The lock icon appears on the right side of the page.
+                     </p>
+                     <div class="figure" id="GUID-3AEFD4E6-5683-4227-8867-2F3BB7316719__GUID-4848565E-C656-43BD-A34A-2E0AE977416D"><img height="410" width="847" src="img/lock_ico.png" alt="Description of lock_ico.png follows" title="Description of lock_ico.png follows" longdesc="img_text/lock_ico.html"><br><a href="img_text/lock_ico.html">Description of the illustration lock_ico.png</a></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-8CB414DC-0092-4B8E-B25E-AFFF90841AF6" title="Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.">Locking and Unlocking a Page</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29557"></a><div class="props_rev_3"><a id="GUID-6C3072D0-6C79-4717-A793-13869D3820E3" name="GUID-6C3072D0-6C79-4717-A793-13869D3820E3"></a><h3 id="HTMDB-GUID-6C3072D0-6C79-4717-A793-13869D3820E3" class="sect3"><span class="enumeration_section">8.8.2 </span>Locking a Page
+               </h3>
+               <div>
+                  <p>Developers can lock a page on the Application home page, Page Locks page, and in Page Designer. </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-DB063FE9-EBE9-4D3F-87DD-FD874D5CDC80">Locking a Page from the Application Home Page</a><br></li>
+                     <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-BDA1F91E-60A8-4A25-8CFE-B2EB32F7C121">Locking a Page from the Page Locks Page</a><br></li>
+                     <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-8E4AFC02-4CB1-49DF-ABB3-A5FB5B77E832">Locking a Page in Page Designer</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-8CB414DC-0092-4B8E-B25E-AFFF90841AF6" title="Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.">Locking and Unlocking a Page</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29558"></a><div class="props_rev_3"><a id="GUID-DB063FE9-EBE9-4D3F-87DD-FD874D5CDC80" name="GUID-DB063FE9-EBE9-4D3F-87DD-FD874D5CDC80"></a><h4 id="HTMDB-GUID-DB063FE9-EBE9-4D3F-87DD-FD874D5CDC80" class="sect4"><span class="enumeration_section">8.8.2.1 </span>Locking a Page from the Application Home Page
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To lock a page from the Application Home Page:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li><span>Select an application.</span></li>
+                        <li><span>On the search bar, click the <span class="bold">View Report or View Detail</span> icon.</span></li>
+                        <li><span>Click the <span class="bold">Lock</span> icon.</span></li>
+                        <li><span>Enter a comment in the Comment field.</span></li>
+                        <li><span>Click <span class="bold">Lock Page(s)</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-6C3072D0-6C79-4717-A793-13869D3820E3">Locking a Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29559"></a><div class="props_rev_3"><a id="GUID-BDA1F91E-60A8-4A25-8CFE-B2EB32F7C121" name="GUID-BDA1F91E-60A8-4A25-8CFE-B2EB32F7C121"></a><h4 id="HTMDB-GUID-BDA1F91E-60A8-4A25-8CFE-B2EB32F7C121" class="sect4"><span class="enumeration_section">8.8.2.2 </span>Locking a Page from the Page Locks Page
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To lock a page from the Page Locks Page:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li><span>Select an application. </span></li>
+                        <li><span>Click the <span class="bold">Utilities</span> icon.</span></li>
+                        <li><span>On the Page Specific Utilities list, click <span class="bold">Cross Page Utilities</span>.</span></li>
+                        <li><span>Click <span class="bold">Page Locks</span>.</span></li>
+                        <li><span>Select the appropriate pages and click <span class="bold">Lock Checked</span>.</span></li>
+                        <li><span>Enter a comment in the Comment field.</span></li>
+                        <li><span>Click <span class="bold">Lock Page(s).</span></span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-6C3072D0-6C79-4717-A793-13869D3820E3">Locking a Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29924"></a><div class="props_rev_3"><a id="GUID-8E4AFC02-4CB1-49DF-ABB3-A5FB5B77E832" name="GUID-8E4AFC02-4CB1-49DF-ABB3-A5FB5B77E832"></a><h4 id="HTMDB-GUID-8E4AFC02-4CB1-49DF-ABB3-A5FB5B77E832" class="sect4"><span class="enumeration_section">8.8.2.3 </span>Locking a Page in Page Designer
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The Page Lock button on the Page Designer toolbar indicates whether a page is locked. If the page is unlocked, the Page Lock button displays as an unlocked padlock. </p>
+                        <p>To lock a page in Page Designer:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the appropriate page in Page Designer. </span></li>
+                        <li class="stepexpand"><span>On the Page Designer toolbar, click the <span class="bold">Page Unlocked</span> button. </span></li>
+                        <li class="stepexpand"><span>Enter a comment in the Comment field.</span></li>
+                        <li class="stepexpand"><span>Click <span class="bold">Lock.</span> </span><div>
+                              <p>When a page is locked, the Page Lock button displays as a locked padlock.</p>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="infoboxnotealso" id="GUID-8E4AFC02-4CB1-49DF-ABB3-A5FB5B77E832__GUID-3D72C486-EC5A-4FBF-93AD-D006BF614B8C">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="using-page-designer.html#GUID-D96934D4-BDA6-40D9-9FCD-00573D158249">Viewing a Page in Page Designer</a>"</span></p>
+                     </div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-6C3072D0-6C79-4717-A793-13869D3820E3">Locking a Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="HTMDB29561"></a><div class="props_rev_3"><a id="GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A" name="GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A"></a><h3 id="HTMDB-GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A" class="sect3"><span class="enumeration_section">8.8.3 </span>Unlocking a Page
+               </h3>
+               <div>
+                  <p>Only the developer who locks a page can unlock it. However, a developer with administrative privileges can unlock pages locked by other developers. </p>
+                  <div class="infobox-tip" id="GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A__GUID-3A11028D-06EC-42CB-9E79-2A2C7F3E8338">
+                     <p class="notep1">Tip:</p>
+                     <p>To view information about an existing page lock, navigate to the Lock Details page and expand the Lock History region.</p>
+                  </div>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-220C3692-0B85-4A8E-B68F-831F57144192">Unlocking Pages from Utilities</a><br></li>
+                     <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-A268C9B9-8AC3-4B30-B785-469A0EA06924">Unlocking Pages from the Application Home Page</a><br></li>
+                     <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-774501B5-2D59-4DAE-BEEF-6F12227938C1">Unlocking a Page in Page Designer</a><br></li>
+                     <li class="ulchildlink"><a href="locking-and-unlocking-a-page.html#GUID-DB08BC8C-D6CA-412C-8FD3-4428A11E6904">Unlocking Pages As a Workspace Administrator</a><br></li>
+                  </ul>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-8CB414DC-0092-4B8E-B25E-AFFF90841AF6" title="Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it.">Locking and Unlocking a Page</a></p>
+                     </div>
+                  </div>
+               </div>
+               <a id="HTMDB29562"></a><div class="props_rev_3"><a id="GUID-220C3692-0B85-4A8E-B68F-831F57144192" name="GUID-220C3692-0B85-4A8E-B68F-831F57144192"></a><h4 id="HTMDB-GUID-220C3692-0B85-4A8E-B68F-831F57144192" class="sect4"><span class="enumeration_section">8.8.3.1 </span>Unlocking Pages from Utilities
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To unlock a page from the Page Locks page:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li><span>Select an application. </span></li>
+                        <li><span>Click the <span class="bold">Utilities</span> icon.</span></li>
+                        <li><span>On the Page Specific Utilities list, click <span class="bold">Cross Page Utilities</span>.</span></li>
+                        <li><span>Click <span class="bold">Page Locks</span>.</span></li>
+                        <li><span>Select the appropriate pages.</span></li>
+                        <li><span>Click <span class="bold">Unlock Checked</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A">Unlocking a Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29563"></a><div class="props_rev_3"><a id="GUID-A268C9B9-8AC3-4B30-B785-469A0EA06924" name="GUID-A268C9B9-8AC3-4B30-B785-469A0EA06924"></a><h4 id="HTMDB-GUID-A268C9B9-8AC3-4B30-B785-469A0EA06924" class="sect4"><span class="enumeration_section">8.8.3.2 </span>Unlocking Pages from the Application Home Page
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To unlock a page from the Application Home Page:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li class="stepexpand"><span>Select an application. </span></li>
+                        <li class="stepexpand"><span>On the search bar, click the <span class="bold">View Report</span> icon.</span></li>
+                        <li class="stepexpand"><span>Click the <span class="bold">Lock</span> icon.</span><div>
+                              <p>The Lock Details page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="bold">Unlock</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A">Unlocking a Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29564"></a><div class="props_rev_3"><a id="GUID-774501B5-2D59-4DAE-BEEF-6F12227938C1" name="GUID-774501B5-2D59-4DAE-BEEF-6F12227938C1"></a><h4 id="HTMDB-GUID-774501B5-2D59-4DAE-BEEF-6F12227938C1" class="sect4"><span class="enumeration_section">8.8.3.3 </span>Unlocking a Page in Page Designer
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The Page Lock button on the Page Designer toolbar indicates whether a page is locked. If the page is locked, the Page Lock button displays as a locked padlock. Passing your cursor over a locked Page Lock button displays a tooltip which indicated who locked it.</p>
+                        <p>To unlock a page in Page Designer:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigate to the appropriate page in Page Designer.</span><div>
+                              <p>If a page is locked, the Page Lock button displays as a locked padlock. </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>On the Page Designer toolbar, click the <span class="bold">Page locked by you</span> button. </span><div>
+                              <p>If the page has been locked by another user the Lock button appears in red. You cannot unlock a page locked by another user.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Click <span class="bold">Unlock</span>. </span><div>
+                              <p>When a page is unlocked, the Page Lock button displays as an unlocked padlock.</p>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <p><span class="q">"<a href="using-page-designer.html#GUID-D96934D4-BDA6-40D9-9FCD-00573D158249">Viewing a Page in Page Designer</a>"</span></p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A">Unlocking a Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div><a id="HTMDB29565"></a><div class="props_rev_3"><a id="GUID-DB08BC8C-D6CA-412C-8FD3-4428A11E6904" name="GUID-DB08BC8C-D6CA-412C-8FD3-4428A11E6904"></a><h4 id="HTMDB-GUID-DB08BC8C-D6CA-412C-8FD3-4428A11E6904" class="sect4"><span class="enumeration_section">8.8.3.4 </span>Unlocking Pages As a Workspace Administrator
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To unlock pages as a Workspace Administrator:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                        <li><span>Select an application. </span></li>
+                        <li><span>Click the <span class="bold">Utilities</span> icon.</span></li>
+                        <li><span>On the Page Specific Utilities list, click <span class="bold">Cross Page Utilities</span>.</span></li>
+                        <li><span>Click <span class="bold">Page Locks</span>.</span></li>
+                        <li><span>Click <span class="bold">Lock Administration</span>.</span></li>
+                        <li><span>Select the appropriate pages.</span></li>
+                        <li><span>Click <span class="bold">Unlock Page(s)</span>.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="familylinks">
+                        <div class="parentlink">
+                           <p><strong>Parent topic:</strong> <a href="locking-and-unlocking-a-page.html#GUID-132E5C68-6266-4FE8-B7E3-1AF1DD90BF5A">Unlocking a Page</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

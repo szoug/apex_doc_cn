@@ -1,0 +1,202 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="reference">
+      <meta name="DC.Title" content="INITIALIZE_CLOB_OUTPUT Procedure">
+      <meta name="DC.subject" content="APEX_JSON, INITIALIZE_OUTPUT procedure">
+      <meta name="keywords" content="APEX_JSON, INITIALIZE_OUTPUT procedure">
+      <meta name="DC.Relation" scheme="URI" content="APEX_JSON.html#GUID-11919ED6-CE3D-4497-8733-F56CD27B6BFF">
+      <meta name="DC.Creator" content="Harish Konakondla">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Christian Neumueller">
+      <meta name="DC.Creator" content="Anthony Raynor">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="John Snyders">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="Vladislav Unarov">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="May2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-F0269C54-A421-4185-AF06-AF71780EE7A4">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>INITIALIZE_CLOB_OUTPUT Procedure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Reference">
+      <meta property="og:description" content>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-api-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-05-22T13:42:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="GET_CLOB-Function.html" title="Previous" type="text/html">
+      <link rel="next" href="INITIALIZE_OUTPUT-Procedure.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express API Reference">
+    <meta name="dcterms.isVersionOf" content="AEAPI">
+    <meta name="dcterms.identifier" content="F24719-02">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="GET_CLOB-Function.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="INITIALIZE_OUTPUT-Procedure.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="APEX_JSON.html" property="item" typeof="WebPage"><span property="name"> APEX_JSON</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">INITIALIZE_CLOB_OUTPUT Procedure</li>
+            </ol>
+            <a id="GUID-F0269C54-A421-4185-AF06-AF71780EE7A4" name="GUID-F0269C54-A421-4185-AF06-AF71780EE7A4"></a><a id="AEAPI30244"></a><a id="AEAPI30245"></a><a id="AEAPI30246"></a><a id="AEAPI30247"></a><a id="AEAPI30243"></a>
+            
+            <h2 id="AEAPI-GUID-F0269C54-A421-4185-AF06-AF71780EE7A4" class="sect2"><span class="enumeration_section">23.21 </span>INITIALIZE_CLOB_OUTPUT Procedure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>This procedure initializes the output interface to write to a temporary CLOB. The default is to write to <code class="codeph">SYS.HTP</code>. If using CLOB output, you should call <code class="codeph">FREE_OUTPUT()</code> at the end to free the <code class="codeph">CLOB</code>.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-F0269C54-A421-4185-AF06-AF71780EE7A4__GUID-D95BE79A-3209-4018-8BCF-A893D20941B1">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section"><pre class="pre codeblock"><code>APEX_JSON.INITIALIZE_CLOB_OUTPUT (
+    p_dur         IN PLS_INTEGER DEFAULT sys.dbms_lob.call,
+    p_cache       IN BOOLEAN     DEFAULT TRUE,
+    p_indent      IN PLS_INTEGER DEFAULT NULL,
+    p_preserve    IN BOOLEAN     DEFAULT FALSE );</code></pre></div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-F0269C54-A421-4185-AF06-AF71780EE7A4__GUID-312B51ED-F5C1-447D-9056-071162D173A2">Parameters</p>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-F0269C54-A421-4185-AF06-AF71780EE7A4__GUID-05E1A415-6400-4EA3-A26D-4D9BCB0ABC6E">
+                  <p class="titleintable">Table 23-26 INITIALIZE_CLOB_OUTPUT Procedure Parameters</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="INITIALIZE_CLOB_OUTPUT Procedure Parameters" summary="Parameter descriptions for the INITIALIZE_CLOB_OUTPUT procedure." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="31%" id="d115388e82">Parameter</th>
+                           <th align="left" valign="bottom" width="69%" id="d115388e85">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d115388e90" headers="d115388e82 ">
+                              <p><code class="codeph">p_dur</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d115388e90 d115388e85 ">
+                              <p>Duration of the temporary <code class="codeph">CLOB</code>. this can be <code class="codeph">DBMS_LOB.SESSION</code> or <code class="codeph">DBMS_LOB.CALL</code> (the default).
+                              </p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d115388e107" headers="d115388e82 ">
+                              <p><code class="codeph">p_cache</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d115388e107 d115388e85 ">
+                              <p>Specifies if the lob should be read into buffer cache or not.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d115388e115" headers="d115388e82 ">
+                              <p><code class="codeph">p_indent</code></p>
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d115388e115 d115388e85 ">
+                              <p>Indent level. Defaults to 2 if debug is turned on, 0 otherwise.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="31%" id="d115388e123" headers="d115388e82 ">
+                              
+                              <p><code class="codeph">p_preserve</code></p>
+                              
+                           </td>
+                           <td align="left" valign="top" width="69%" headers="d115388e123 d115388e85 ">
+                              
+                              <p>Whether to preserve the currently active output object. After calling
+                  <code class="codeph">FREE_OUTPUT</code>, subsequent write calls will be executed on the
+                preserved output. Defaults to "false". If HTP output has already been initialized
+                and a CLOB needs to be created, use <code class="codeph">p_preserve =&gt; true</code>. After
+                  <code class="codeph">FREE_OUTPUT</code>, sunsequent output will be directed to the original
+                HTP output again. Note that <code class="codeph">FREE_OUTPUT</code>
+                                 <span class="bold">must</span> be called after JSON processing, if p_preserve was set to true.
+                              </p>
+                              
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p class="subhead1" id="GUID-F0269C54-A421-4185-AF06-AF71780EE7A4__GUID-B6F66125-C78F-4C87-9788-7210CC34C49B">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>This example configures <code class="codeph">APEX_JSON</code> for <code class="codeph">CLOB</code> output,
+        generates <code class="codeph">JSON</code>, prints the <code class="codeph">CLOB</code> with
+          <code class="codeph">DBMS_OUTPUT</code>, and finally frees the <code class="codeph">CLOB</code>.
+                  </p><pre class="pre codeblock"><code>BEGIN
+  apex_json.initialize_clob_output( p_preserve =&gt; true );
+
+  apex_json.open_object;
+  apex_json.write('hello', 'world');
+  apex_json.close_object;
+
+  dbms_output.put_line(apex_json.get_clob_output);
+
+  apex_json.free_output;
+END;
+/</code></pre></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="APEX_JSON.html#GUID-11919ED6-CE3D-4497-8733-F56CD27B6BFF">APEX_JSON</a></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

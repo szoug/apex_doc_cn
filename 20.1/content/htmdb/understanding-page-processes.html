@@ -1,0 +1,425 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Page Processes">
+      <meta name="abstract" content="Create page processes to perform an action at a specified point during the rendering or submission of the page.">
+      <meta name="description" content="Create page processes to perform an action at a specified point during the rendering or submission of the page.">
+      <meta name="DC.subject" content="page processes, creating, editing attributes, changing processing points, changing source, creating error message, error message, creating for a page process, creating success message, success message, creating for a page process, making conditional">
+      <meta name="keywords" content="page processes, creating, editing attributes, changing processing points, changing source, creating error message, error message, creating for a page process, creating success message, success message, creating for a page process, making conditional">
+      <meta name="DC.Relation" scheme="URI" content="managing-computations-validations-and-processes.html#GUID-ADF401B9-95A6-45E9-9971-5BC1751F151E">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-processes.html#GUID-A5B86889-BE27-4AEA-A5FF-D710A9556B69">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-processes.html#GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-processes.html#GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-processes.html#GUID-D08EA47D-1AB7-4459-9E20-BC77BEF56B5B">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-processes.html#GUID-BC2A62C5-D093-41C3-9BD6-B8F876A46DCA">
+      <meta name="DC.Relation" scheme="URI" content="understanding-page-processes.html#GUID-63D5B881-683E-4669-9E41-1DD86223630E">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Create page processes to perform an action at a specified point during the rendering or submission of the page.">
+      <meta name="description" content="Create page processes to perform an action at a specified point during the rendering or submission of the page.">
+      <title>Understanding Page Processes</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="Create page processes to perform an action at a specified point during the rendering or submission of the page.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="understanding-validations.html" title="Previous" type="text/html">
+      <link rel="next" href="about-branches.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="understanding-validations.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-branches.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-computations-validations-and-processes.html" property="item" typeof="WebPage"><span property="name">Managing Computations, Validations, and Processes</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Page Processes</li>
+            </ol>
+            <a id="GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" name="GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466"></a><a id="HTMDB29837"></a>
+            
+            <h2 id="HTMDB-GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" class="sect2"><span class="enumeration_section">17.3 </span>Understanding Page Processes
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Create <strong class="term">page processes</strong> to perform an action at a specified point during the rendering or submission of the page.
+            </p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-page-processes.html#GUID-A5B86889-BE27-4AEA-A5FF-D710A9556B69">About Page Processes</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-processes.html#GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947">Creating Page Processes</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-processes.html#GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1">Editing Page Process Attributes</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-processes.html#GUID-D08EA47D-1AB7-4459-9E20-BC77BEF56B5B">Controlling When a Page Process Executes</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-processes.html#GUID-BC2A62C5-D093-41C3-9BD6-B8F876A46DCA">Creating Page Process Success and Error Messages</a><br></li>
+                  <li class="ulchildlink"><a href="understanding-page-processes.html#GUID-63D5B881-683E-4669-9E41-1DD86223630E">Making a Page Process Conditional</a><br></li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-computations-validations-and-processes.html#GUID-ADF401B9-95A6-45E9-9971-5BC1751F151E" title="Enhance your application by including computations, validations, and processes.">Managing Computations, Validations, and Processes</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB29280"></a><div class="props_rev_3"><a id="GUID-A5B86889-BE27-4AEA-A5FF-D710A9556B69" name="GUID-A5B86889-BE27-4AEA-A5FF-D710A9556B69"></a><h3 id="HTMDB-GUID-A5B86889-BE27-4AEA-A5FF-D710A9556B69" class="sect3"><span class="enumeration_section">17.3.1 </span>About Page Processes
+               </h3>
+               <div>
+                  <p>A page process performs an action at a specified point during the rendering or submission of the page. For example, you can create a page process to execute logic or to make a call to the Application Express engine. A page process is a unit of logic that runs when a specific event occurs, such as loading or submitting a page. </p>
+                  <p>From a functional perspective, there is no difference between page-level and application-level processes. The difference between these two process types is where the process is defined, that is at the page-level or at the application level.</p>
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-A5B86889-BE27-4AEA-A5FF-D710A9556B69__GUID-45EDCF2B-9ACA-4512-BD5A-FA620E2642A3">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="understanding-application-processes.html#GUID-0102FED3-6093-4AC6-A073-D8D3A5A344B1" title="Create an application process to run a block of PL/SQL logic at a specific point from multiple pages of an application. By default, application processes execute at the same point for every page in the application. However, you can apply conditions for specific pages to control when the process executes.">Understanding Application Processes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="accessing-application-utilities.html#GUID-08369FB1-451F-4A53-8185-11C39B83BBEA" title="Use the links in the Page Specific Utilities region to access Cross Page Utilities and Page Groups as well as access handy utilities for regions, buttons, items, computations, validations, process, dynamic actions, and branches.">Accessing Page Specific Utilities</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" title="Create page processes to perform an action at a specified point during the rendering or submission of the page.">Understanding Page Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29839"></a><div class="props_rev_3"><a id="GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947" name="GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947"></a><h3 id="HTMDB-GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947" class="sect3"><span class="enumeration_section">17.3.2 </span>Creating Page Processes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To create a page process:<a id="d177209e237" class="indexterm-anchor"></a><a id="d177209e241" class="indexterm-anchor"></a><a id="d177209e245" class="indexterm-anchor"></a><a id="d177209e249" class="indexterm-anchor"></a><a id="d177209e253" class="indexterm-anchor"></a><a id="d177209e257" class="indexterm-anchor"></a><a id="d177209e261" class="indexterm-anchor"></a></p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer.</span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li class="substepexpand"><span>Select an application.</span></li>
+                           <li class="substepexpand"><span>Select a page.</span><div>
+                                 <p>Page Designer appears.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In either the Rendering or Processing tab, locate the node where the process will occur. Right-click and select <span class="uicontrol bold">Create Process</span>.</span><div>
+                           
+                           <p>Page Designer indicates what actions are required next. If there
+                        is an error, the <span class="uicontrol bold">Show Messages</span> icon displays next to
+                        the <span class="uicontrol bold">Save</span> button. Click the <span class="uicontrol bold">Show
+                            Messages</span> icon to view a dialog listing all the errors.
+                        Select an error to highlight the associated attribute in the Property
+                        Editor.
+                           </p>
+                           
+                           <div class="infobox-tip" id="GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947__GUID-6604E065-13AF-418B-BD32-CD959C5B3848">
+                              <p class="notep1">Tip:</p>
+                              
+                              <p>To learn more about an attribute, select the attribute in the
+                            Property Editor and click the <span class="uicontrol bold">Help</span> tab in the
+                            center pane.
+                              </p>
+                              
+                           </div>
+                           
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Under Identification:</span><ol type="a">
+                           <li><span>Name - Enter the name of the process.</span></li>
+                           <li><span>Type - Specify which process type to execute. The Type you select determines what Setting attributes display.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Settings, edit the appropriate attributes.</span></li>
+                     <li class="stepexpand"><span>Under Execution Options:</span><ol type="a">
+                           <li class="substepexpand"><span>Sequence - Specify the sequence for this computation. The sequence determines the order of execution.</span><div>
+                                 <p>If two components have the same sequence value, then they may be executed in a different order when the application is exported and imported into another environment.</p>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Point - Select the point at which this process is executed.</span></li>
+                           <li class="substepexpand"><span>Run Process - Select the frequency that this process is executed.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Success Message:</span><ol type="a" class="single-step">
+                           <li class="substepexpand"><span>Error Message - Enter the success message for this process. </span><div>
+                                 <p>If the process runs and does not generate an error, then this process success message displays in the notification section of the resulting page displayed.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Under Error:</span><ol type="a">
+                           <li class="substepexpand"><span>Error Message - Enter the error message for this process.</span><div>
+                                 <p>This message displays if an unhandled exception is raised. After any error processing stops, a rollback is issued and an error message displays.</p>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Display Location - Select where this process error message displays, when the process fails to complete successfully.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-E8BFFB8B-F80A-42BB-A9EE-1BBD5A4D4947__GUID-E4B132C0-EAF6-4F18-A503-CC75C408C947">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="using-page-designer.html#GUID-7D9EA456-F9AA-4722-A5FF-CA4C3671D0BF">Creating Pre-Rendering Branches, Computations, and Processes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="using-page-designer.html#GUID-6CA4911D-93CC-45DE-9C29-3F949994F2EF">Creating Page Submission Branches, Validations, Computations, and Processes</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" title="Create page processes to perform an action at a specified point during the rendering or submission of the page.">Understanding Page Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29844"></a><div class="props_rev_3"><a id="GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1" name="GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1"></a><h3 id="HTMDB-GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1" class="sect3"><span class="enumeration_section">17.3.3 </span>Editing Page Process Attributes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To edit an existing page process: </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>View the page in Page Designer. </span><ol type="a">
+                           <li class="substepexpand"><span>On the Workspace home page, click the <span><span class="uicontrol bold">App
+                                        Builder</span></span> icon.</span></li>
+                           <li class="substepexpand"><span>Select an application.</span></li>
+                           <li class="substepexpand"><span>Select a page.</span><div>
+                                 <p>Page Designer appears.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>In either the Rendering or Processing tab, expand the nodes to locate and select the process.</span><div>
+                           <p>Process attributes display in the Property Editor. Attributes are organized in groups.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To find a group or attribute:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Search for the group or attribute</span> -&nbsp;Enter keywords in the Filter Properties field.&nbsp;The Property Editor displays the group or attributes.&nbsp;To return to the default display, delete the keywords.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Use Go to Group</span>&nbsp;- Click <span class="uicontrol bold">Go to Group</span> &nbsp;and select the group. To return the default display, click<span class="uicontrol bold"> Go to Group</span> again and select<span class="uicontrol bold"> Expand</span> All.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Edit the appropriate attributes:</span><div>
+                           <div class="infobox-tip" id="GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1__GUID-E2FE5FC8-B323-4717-992D-0555738F27AB">
+                              <p class="notep1">Tip:</p>
+                              <p>To learn more about an attribute, select the attribute in the Property Editor and click the <span class="uicontrol bold">Help</span> tab in the central pane.
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" title="Create page processes to perform an action at a specified point during the rendering or submission of the page.">Understanding Page Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29845"></a><div class="props_rev_3"><a id="GUID-D08EA47D-1AB7-4459-9E20-BC77BEF56B5B" name="GUID-D08EA47D-1AB7-4459-9E20-BC77BEF56B5B"></a><h3 id="HTMDB-GUID-D08EA47D-1AB7-4459-9E20-BC77BEF56B5B" class="sect3"><span class="enumeration_section">17.3.4 </span>Controlling When a Page Process Executes
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To control when a process executes, edit the following attributes:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>View the process attributes in the Property Editor.</span></li>
+                     <li><span>Edit the following attributes:</span><ol type="a">
+                           <li><span>Execution Options, Sequence - Specify the sequence for this component. The sequence determines the order of execution.</span></li>
+                           <li><span>Execution Options, Point - Select the point in the processing at which this branch action is considered.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-D08EA47D-1AB7-4459-9E20-BC77BEF56B5B__GUID-3EE1E8B1-5EF0-48A4-8321-3B3A57A4F06F">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-page-processes.html#GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1">Editing Page Process Attributes</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" title="Create page processes to perform an action at a specified point during the rendering or submission of the page.">Understanding Page Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29846"></a><div class="props_rev_3"><a id="GUID-BC2A62C5-D093-41C3-9BD6-B8F876A46DCA" name="GUID-BC2A62C5-D093-41C3-9BD6-B8F876A46DCA"></a><h3 id="HTMDB-GUID-BC2A62C5-D093-41C3-9BD6-B8F876A46DCA" class="sect3"><span class="enumeration_section">17.3.5 </span>Creating Page Process Success and Error Messages
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>You can define both success and error messages that display when a process runs. How an error message displays depends upon the processing point. For processes with a processing point of <code class="codeph">On Submit - Before Computation and Validations</code> or <code class="codeph">On Submit - After Computations and Validations</code>, you can specify whether the error message displays inline on the current page (the default) or on a separate page. For all other page processes, error messages display on a separate error page.
+                     </p>
+                     <p>To create a page process error or success message:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>View the process attributes in the Property Editor.</span></li>
+                     <li><span>Edit the following attributes:</span><ol type="a">
+                           <li class="substepexpand"><span>Success Message, Success Message - Enter the success message for this process. If the process runs and does not generate an error, then this process success message displays in the notification section of the resulting page displayed. If you are branching to another page via a URL redirect, you may need to check the preserve success message attribute.</span></li>
+                           <li class="substepexpand"><span>Error, Error Message - Enter the error message for this process. This message displays if an unhandled exception is raised. After any error processing stops, a rollback is issued and an error message displays.</span></li>
+                           <li class="substepexpand"><span>Error, Display Location - Select where this process error message displays, when the process fails to complete successfully.</span><div>
+                                 <p>Option include:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">Inline in Notification</span> - The process error message displays in the Notification area (defined as part of the page template).
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">On Error Page</span> - Error displays on a separate error page.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-BC2A62C5-D093-41C3-9BD6-B8F876A46DCA__GUID-78E86BA6-7FD5-4CE8-9592-6EBB3635AD2C">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="understanding-page-processes.html#GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1">Editing Page Process Attributes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="page-templates.html#GUID-96077D1F-5838-4C6D-9B30-E62AEDEDBF11" title="Define the appearance of a page using page templates.">Page Templates</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" title="Create page processes to perform an action at a specified point during the rendering or submission of the page.">Understanding Page Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div><a id="HTMDB29847"></a><div class="props_rev_3"><a id="GUID-63D5B881-683E-4669-9E41-1DD86223630E" name="GUID-63D5B881-683E-4669-9E41-1DD86223630E"></a><h3 id="HTMDB-GUID-63D5B881-683E-4669-9E41-1DD86223630E" class="sect3"><span class="enumeration_section">17.3.6 </span>Making a Page Process Conditional
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To create a conditional page process, edit the following attributes:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>View the process attributes in the Property Editor.</span></li>
+                     <li><span>Under Server-side Condition, edit the following attributes:</span><ol type="a">
+                           <li class="substepexpand"><span>When Button Pressed - If you want this page processing component to execute only when the specified button is clicked, select a button from the list. You can incorporate this button condition with other conditions to further refine when this page processing component executes.</span></li>
+                           <li class="substepexpand"><span>Execution Scope - Applicable only to editable interactive grids. Specify the execution scope:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="uicontrol bold">For Created and Modified Rows</span> - The validation executes only for created and modified rows in your tabular form. 
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="uicontrol bold">All Submitted Rows</span> - The validation executes for every submitted row.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Condition Type - Select a condition type from the list that must be met in order for this component to be rendered or processed.</span></li>
+                        </ol>
+                     </li>
+                     <li><span>Click <span class="uicontrol bold">Save</span>.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="infoboxnotealso" id="GUID-63D5B881-683E-4669-9E41-1DD86223630E__GUID-B585E667-4946-4A63-89D1-17AAB000EC1A">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="understanding-page-processes.html#GUID-6FE9F7FB-E4AC-4020-9A0E-4FB1B80CB0D1">Editing Page Process Attributes</a>"</span></p>
+                  </div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466" title="Create page processes to perform an action at a specified point during the rendering or submission of the page.">Understanding Page Processes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

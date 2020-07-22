@@ -1,0 +1,2000 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="DC.Type" content="topic">
+      <meta name="DC.Title" content="Understanding Supported Globalization Codes">
+      <meta name="abstract" content="If you are building a multilingual application, it is important to understand how globalization codes affect the way in which your application runs. These codes are set automatically based on the application-level Globalization attributes you select.">
+      <meta name="description" content="If you are building a multilingual application, it is important to understand how globalization codes affect the way in which your application runs. These codes are set automatically based on the application-level Globalization attributes you select.">
+      <meta name="DC.Relation" scheme="URI" content="managing-application-globalization.html#GUID-19BD5CD3-596D-46A4-BEA7-3CB1411AC89A">
+      <meta name="DC.Relation" scheme="URI" content="understanding-supported-globalization-codes.html#GUID-D812EB84-BBC1-45FB-A8AC-1458206EC193">
+      <meta name="DC.Creator" content="Christina Cho">
+      <meta name="DC.Creator" content="Carsten Czarski">
+      <meta name="DC.Creator" content="Hilary Farrell">
+      <meta name="DC.Creator" content="Doug Gault">
+      <meta name="DC.Creator" content="Michael Hichwa">
+      <meta name="DC.Creator" content="Joel Kallman">
+      <meta name="DC.Creator" content="Sharon Kennedy">
+      <meta name="DC.Creator" content="Monica Godoy Millan">
+      <meta name="DC.Creator" content="David Peake">
+      <meta name="DC.Creator" content="Anthony Rayner">
+      <meta name="DC.Creator" content="Marc Sewtz">
+      <meta name="DC.Creator" content="Jason Straub">
+      <meta name="DC.Creator" content="John Synders">
+      <meta name="DC.Creator" content="Patrick Wolf">
+      <meta name="DC.Creator" content="Terri Jennings">
+      <meta name="DC.Publisher" content="June2020">
+      <meta name="DC.Format" content="XHTML">
+      <meta name="DC.Identifier" content="GUID-2D48D242-A5CA-449A-B2EF-86EBBF2B37CD">
+      <meta name="DC.Language" content="en-US">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="If you are building a multilingual application, it is important to understand how globalization codes affect the way in which your application runs. These codes are set automatically based on the application-level Globalization attributes you select.">
+      <meta name="description" content="If you are building a multilingual application, it is important to understand how globalization codes affect the way in which your application runs. These codes are set automatically based on the application-level Globalization attributes you select.">
+      <title>Understanding Supported Globalization Codes</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="App Builder User's Guide ">
+      <meta property="og:description" content="If you are building a multilingual application, it is important to understand how globalization codes affect the way in which your application runs. These codes are set automatically based on the application-level Globalization attributes you select.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="App Builder User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="oracle-application-express-app-builder-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2020-06-06T15:33:56-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2020">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="F24724-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/application-express/20.1">
+      
+      <link rel="prev" href="translating-data-that-supports-list-of-values.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-application-performance.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"application-express","element_name":"Application Express","display_in_url":true},"release":{"short_name":"20.1","element_name":"Release 20.1","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Oracle Application Express App Builder User's Guide">
+    <meta name="dcterms.isVersionOf" content="HTMDB">
+    <meta name="dcterms.release" content="Release 20.1">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="translating-data-that-supports-list-of-values.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-application-performance.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">App Builder User's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-application-globalization.html" property="item" typeof="WebPage"><span property="name">Managing Application Globalization</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Supported Globalization Codes</li>
+            </ol>
+            <a id="GUID-2D48D242-A5CA-449A-B2EF-86EBBF2B37CD" name="GUID-2D48D242-A5CA-449A-B2EF-86EBBF2B37CD"></a><a id="HTMDB14006"></a>
+            
+            <h2 id="HTMDB-GUID-2D48D242-A5CA-449A-B2EF-86EBBF2B37CD" class="sect2"><span class="enumeration_section">22.8 </span>Understanding Supported Globalization Codes
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>If you are building a multilingual application, it is important to understand how globalization codes affect the way in which your application runs. These codes are set automatically based on the application-level Globalization attributes you select.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="understanding-supported-globalization-codes.html#GUID-D812EB84-BBC1-45FB-A8AC-1458206EC193">Oracle Application Express Globalization Codes</a><br><code class="codeph">NLS_LANGUAGE</code> and <code class="codeph">NLS_TERRITORY</code> determine the default presentation of numbers, dates, and currencies. 
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-2D48D242-A5CA-449A-B2EF-86EBBF2B37CD__GUID-968ED5F4-BC74-44E2-814C-A119D8336A6B">
+                  <p class="notep1">See Also:</p>
+                  <p><span class="q">"<a href="specifying-the-primary-language-for-application.html#GUID-342FD509-66F7-4EED-99CA-26DD6C05FE2A" title="Globalization attributes specify how the Application Express engine determines the primary language of an application.">Specifying the Primary Language for an Application</a>"</span></p>
+               </div>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="managing-application-globalization.html#GUID-19BD5CD3-596D-46A4-BEA7-3CB1411AC89A" title="You can run applications built in App Builder concurrently in different languages.">Managing Application Globalization</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="HTMDB28624"></a><a id="HTMDB29478"></a><div class="props_rev_3"><a id="GUID-D812EB84-BBC1-45FB-A8AC-1458206EC193" name="GUID-D812EB84-BBC1-45FB-A8AC-1458206EC193"></a><h3 id="HTMDB-GUID-D812EB84-BBC1-45FB-A8AC-1458206EC193" class="sect3"><span class="enumeration_section">22.8.1 </span>Oracle Application Express Globalization Codes
+               </h3>
+               <div>
+                  <p><code class="codeph">NLS_LANGUAGE</code> and <code class="codeph">NLS_TERRITORY</code> determine the default presentation of numbers, dates, and currencies. 
+                  </p>
+                  <div class="section">
+                     <p><a href="understanding-supported-globalization-codes.html#GUID-D812EB84-BBC1-45FB-A8AC-1458206EC193__BABEIJCD" title="This table describes the globalization codes in Oracle Application Express.">Table 22-6</a> describes the globalization codes in Oracle Application Express. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformalwide" id="GUID-D812EB84-BBC1-45FB-A8AC-1458206EC193__BABEIJCD">
+                     <p class="titleintable">Table 22-6 Oracle Application Express Globalization Codes</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Oracle Application Express Globalization Codes" summary="This table describes the globalization codes in Oracle Application Express." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="27%" id="d277792e157">Language Name</th>
+                              <th align="left" valign="bottom" width="12%" id="d277792e160">Language Code</th>
+                              <th align="left" valign="bottom" width="30%" id="d277792e163">NLS_LANGUAGE</th>
+                              <th align="left" valign="bottom" width="31%" id="d277792e166">NLS_TERRITORY</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e171" headers="d277792e157 ">
+                                 <p>Afrikaans</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e171 d277792e160 ">
+                                 <p><code class="codeph">af</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e171 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e171 d277792e166 ">
+                                 <p> SOUTH AFRICA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e185" headers="d277792e157 ">
+                                 <p>Arabic</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e185 d277792e160 ">
+                                 <p><code class="codeph">ar</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e185 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e185 d277792e166 ">
+                                 <p>UNITED ARAB EMIRATES</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e199" headers="d277792e157 ">
+                                 <p>Arabic (Algeria)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e199 d277792e160 ">
+                                 <p><code class="codeph">ar-dz</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e199 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e199 d277792e166 ">
+                                 <p>ALGERIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e213" headers="d277792e157 ">
+                                 <p>Arabic (Bahrain)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e213 d277792e160 ">
+                                 <p><code class="codeph">ar-bh</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e213 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e213 d277792e166 ">
+                                 <p>BAHRAIN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e227" headers="d277792e157 ">
+                                 <p>Arabic (Egypt)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e227 d277792e160 ">
+                                 <p><code class="codeph">ar-eg</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e227 d277792e163 ">
+                                 <p>EGYPTIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e227 d277792e166 ">
+                                 <p>EGYPT</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e241" headers="d277792e157 ">
+                                 <p>Arabic (Iraq)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e241 d277792e160 ">
+                                 <p><code class="codeph">ar-iq</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e241 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e241 d277792e166 ">
+                                 <p>IRAQ</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e255" headers="d277792e157 ">
+                                 <p>Arabic (Jordan)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e255 d277792e160 ">
+                                 <p><code class="codeph">ar-jo</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e255 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e255 d277792e166 ">
+                                 <p>JORDAN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e269" headers="d277792e157 ">
+                                 <p>Arabic (Kuwait)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e269 d277792e160 ">
+                                 <p><code class="codeph">ar-kw</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e269 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e269 d277792e166 ">
+                                 <p>KUWAIT</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e283" headers="d277792e157 ">
+                                 <p>Arabic (Lebanon</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e283 d277792e160 ">
+                                 <p><code class="codeph">ar-lb</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e283 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e283 d277792e166 ">
+                                 <p>LEBANNON</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e297" headers="d277792e157 ">
+                                 <p>Arabic (Libya)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e297 d277792e160 ">
+                                 <p><code class="codeph">ar-ly</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e297 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e297 d277792e166 ">
+                                 <p>LIBYA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e311" headers="d277792e157 ">
+                                 <p>Arabic (Morocco)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e311 d277792e160 ">
+                                 <p><code class="codeph">ar-ma</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e311 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e311 d277792e166 ">
+                                 <p>MOROCCO</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e326" headers="d277792e157 ">
+                                 <p>Arabic (Oman)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e326 d277792e160 ">
+                                 <p><code class="codeph">ar-om</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e326 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e326 d277792e166 ">
+                                 <p>OMAN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e340" headers="d277792e157 ">
+                                 <p>Arabic (Qatar)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e340 d277792e160 ">
+                                 <p><code class="codeph">ar-qa</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e340 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e340 d277792e166 ">
+                                 <p>QATAR</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e354" headers="d277792e157 ">
+                                 <p>Arabic (Saudi Arabia)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e354 d277792e160 ">
+                                 <p><code class="codeph">ar-sa</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e354 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e354 d277792e166 ">
+                                 <p>SAUDI ARABIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e368" headers="d277792e157 ">
+                                 <p>Arabic (Syria)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e368 d277792e160 ">
+                                 <p><code class="codeph">ar-sy</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e368 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e368 d277792e166 ">
+                                 <p>SYRIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e382" headers="d277792e157 ">
+                                 <p>Arabic (Tunisia)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e382 d277792e160 ">
+                                 <p><code class="codeph">ar-tn</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e382 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e382 d277792e166 ">
+                                 <p>TUNISIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e396" headers="d277792e157 ">
+                                 <p>Arabic (U.A.E.)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e396 d277792e160 ">
+                                 <p><code class="codeph">ar-ae</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e396 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e396 d277792e166 ">
+                                 <p>UNITED ARAB EMIRATES</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e410" headers="d277792e157 ">
+                                 <p>Arabic (YEMEN)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e410 d277792e160 ">
+                                 <p><code class="codeph">ar-ye</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e410 d277792e163 ">
+                                 <p>ARABIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e410 d277792e166 ">
+                                 <p>YEMEN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e424" headers="d277792e157 ">
+                                 <p>Assamese</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e424 d277792e160 ">
+                                 <p><code class="codeph">as</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e424 d277792e163 ">
+                                 <p>ASSAMESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e424 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e438" headers="d277792e157 ">
+                                 <p>Basque</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e438 d277792e160 ">
+                                 <p><code class="codeph">eu</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e438 d277792e163 ">
+                                 <p>FRENCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e438 d277792e166 ">
+                                 <p>FRANCE</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e452" headers="d277792e157 ">
+                                 <p>Belarusian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e452 d277792e160 ">
+                                 <p><code class="codeph">be</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e452 d277792e163 ">
+                                 <p>RUSSIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e452 d277792e166 ">
+                                 <p>RUSSIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e466" headers="d277792e157 ">
+                                 <p>Bengali</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e466 d277792e160 ">
+                                 <p><code class="codeph">bn</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e466 d277792e163 ">
+                                 <p>BANGLA</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e466 d277792e166 ">
+                                 <p>BANGLADESH</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e481" headers="d277792e157 ">
+                                 <p>Bulgarian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e481 d277792e160 ">
+                                 <p><code class="codeph">bg</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e481 d277792e163 ">
+                                 <p>BULGARIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e481 d277792e166 ">
+                                 <p>BULGARIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e495" headers="d277792e157 ">
+                                 <p>Catalan</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e495 d277792e160 ">
+                                 <p><code class="codeph">ca</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e495 d277792e163 ">
+                                 <p>CATALAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e495 d277792e166 ">
+                                 <p>CATALONIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e509" headers="d277792e157 ">
+                                 <p>Chinese</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e509 d277792e160 ">
+                                 <p><code class="codeph">zh</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e509 d277792e163 ">
+                                 <p>SIMPLIFIED CHINESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e509 d277792e166 ">
+                                 <p>CHINA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e523" headers="d277792e157 ">
+                                 <p>Chinese (China)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e523 d277792e160 ">
+                                 <p><code class="codeph">zh-cn</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e523 d277792e163 ">
+                                 <p>SIMPLIFIED CHINESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e523 d277792e166 ">
+                                 <p>CHINA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e537" headers="d277792e157 ">
+                                 <p>Chinese (Hong Kong SAR)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e537 d277792e160 ">
+                                 <p><code class="codeph">zh-hk</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e537 d277792e163 ">
+                                 <p>TRADITIONAL CHINESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e537 d277792e166 ">
+                                 <p>HONG KONG</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e551" headers="d277792e157 ">
+                                 <p>Chinese (Macau SAR)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e551 d277792e160 ">
+                                 <p><code class="codeph">zh-mo</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e551 d277792e163 ">
+                                 <p>TRADITIONAL CHINESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e551 d277792e166 ">
+                                 <p>HONG KONG</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e565" headers="d277792e157 ">
+                                 <p>Chinese (Singapore)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e565 d277792e160 ">
+                                 <p><code class="codeph">zh-sg</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e565 d277792e163 ">
+                                 <p>SIMPLIFIED CHINESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e565 d277792e166 ">
+                                 <p>SINGAPORE</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e579" headers="d277792e157 ">
+                                 <p>Chinese (Taiwan)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e579 d277792e160 ">
+                                 <p><code class="codeph">zh-tw</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e579 d277792e163 ">
+                                 <p>TRADITIONAL CHINESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e579 d277792e166 ">
+                                 <p>TAIWAN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e593" headers="d277792e157 ">
+                                 <p>Croatian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e593 d277792e160 ">
+                                 <p><code class="codeph">hr</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e593 d277792e163 ">
+                                 <p>CROATIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e593 d277792e166 ">
+                                 <p>CROATIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e607" headers="d277792e157 ">
+                                 <p>Czech</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e607 d277792e160 ">
+                                 <p><code class="codeph">cs</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e607 d277792e163 ">
+                                 <p>CZECH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e607 d277792e166 ">
+                                 <p>CZECH REPUBLIC</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e621" headers="d277792e157 ">
+                                 <p>Danish</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e621 d277792e160 ">
+                                 <p><code class="codeph">da</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e621 d277792e163 ">
+                                 <p>DANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e621 d277792e166 ">
+                                 <p>DENMARK</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e636" headers="d277792e157 ">
+                                 <p>Dutch (Belgium)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e636 d277792e160 ">
+                                 <p><code class="codeph">nl-be</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e636 d277792e163 ">
+                                 <p>DUTCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e636 d277792e166 ">
+                                 <p>BELGIUM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e650" headers="d277792e157 ">
+                                 <p>Dutch (Netherlands)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e650 d277792e160 ">
+                                 <p><code class="codeph">nl</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e650 d277792e163 ">
+                                 <p>DUTCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e650 d277792e166 ">
+                                 <p>THE NETHERLANDS</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e664" headers="d277792e157 ">
+                                 <p>English</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e664 d277792e160 ">
+                                 <p><code class="codeph">en</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e664 d277792e163 ">
+                                 <p>AMERICAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e664 d277792e166 ">
+                                 <p>AMERICA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e678" headers="d277792e157 ">
+                                 <p>English (Australia)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e678 d277792e160 ">
+                                 <p><code class="codeph">en-au</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e678 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e678 d277792e166 ">
+                                 <p>AUSTRALIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e692" headers="d277792e157 ">
+                                 <p>English (Belize)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e692 d277792e160 ">
+                                 <p><code class="codeph">en-bz</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e692 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e692 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e706" headers="d277792e157 ">
+                                 <p>English (Canada)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e706 d277792e160 ">
+                                 <p><code class="codeph">en-ca</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e706 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e706 d277792e166 ">
+                                 <p>CANADA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e720" headers="d277792e157 ">
+                                 <p>English (Ireland)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e720 d277792e160 ">
+                                 <p><code class="codeph">en-ie</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e720 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e720 d277792e166 ">
+                                 <p>IRELAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e734" headers="d277792e157 ">
+                                 <p>English (Jamaica)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e734 d277792e160 ">
+                                 <p><code class="codeph">en-jm</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e734 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e734 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e748" headers="d277792e157 ">
+                                 <p>English (New Zealand)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e748 d277792e160 ">
+                                 <p><code class="codeph">en-nz</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e748 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e748 d277792e166 ">
+                                 <p>NEW ZEALAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e762" headers="d277792e157 ">
+                                 <p>English (Philippines) </p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e762 d277792e160 ">
+                                 <p><code class="codeph">en-ph</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e762 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e762 d277792e166 ">
+                                 <p>PHILIPPINES</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e776" headers="d277792e157 ">
+                                 <p>English (South Africa)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e776 d277792e160 ">
+                                 <p><code class="codeph">en-za</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e776 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e776 d277792e166 ">
+                                 <p>SOUTH AFRICA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e791" headers="d277792e157 ">
+                                 <p>English (Trinidad) </p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e791 d277792e160 ">
+                                 <p><code class="codeph">en-tt</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e791 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e791 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e805" headers="d277792e157 ">
+                                 <p>English (United Kingdom)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e805 d277792e160 ">
+                                 <p><code class="codeph">en-gb</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e805 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e805 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e819" headers="d277792e157 ">
+                                 <p>English (United States)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e819 d277792e160 ">
+                                 <p><code class="codeph">en-us</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e819 d277792e163 ">
+                                 <p>AMERICAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e819 d277792e166 ">
+                                 <p>AMERICA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e833" headers="d277792e157 ">
+                                 <p>English (Zimbabwe)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e833 d277792e160 ">
+                                 <p><code class="codeph">en-zw</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e833 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e833 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e847" headers="d277792e157 ">
+                                 <p>Estonian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e847 d277792e160 ">
+                                 <p><code class="codeph">et</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e847 d277792e163 ">
+                                 <p>ESTONIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e847 d277792e166 ">
+                                 <p>ESTONIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e861" headers="d277792e157 ">
+                                 <p>Faeroese</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e861 d277792e160 ">
+                                 <p><code class="codeph">fo</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e861 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e861 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e875" headers="d277792e157 ">
+                                 <p>Farsi</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e875 d277792e160 ">
+                                 <p><code class="codeph">fa</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e875 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e875 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e889" headers="d277792e157 ">
+                                 <p>Finnish</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e889 d277792e160 ">
+                                 <p><code class="codeph">fi</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e889 d277792e163 ">
+                                 <p>FINNISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e889 d277792e166 ">
+                                 <p>FINLAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e903" headers="d277792e157 ">
+                                 <p>French (Belgium)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e903 d277792e160 ">
+                                 <p><code class="codeph">fr-be</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e903 d277792e163 ">
+                                 <p>FRENCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e903 d277792e166 ">
+                                 <p>BELGIUM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e917" headers="d277792e157 ">
+                                 <p>French (Canada)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e917 d277792e160 ">
+                                 <p><code class="codeph">fr-ca</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e917 d277792e163 ">
+                                 <p>CANADIAN FRENCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e917 d277792e166 ">
+                                 <p>CANADA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e931" headers="d277792e157 ">
+                                 <p>French (France)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e931 d277792e160 ">
+                                 <p><code class="codeph">fr</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e931 d277792e163 ">
+                                 <p>FRENCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e931 d277792e166 ">
+                                 <p>FRANCE</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e946" headers="d277792e157 ">
+                                 <p>French (Luxembourg)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e946 d277792e160 ">
+                                 <p><code class="codeph">fr-lu</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e946 d277792e163 ">
+                                 <p>FRENCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e946 d277792e166 ">
+                                 <p>LUXEMBOURG</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e960" headers="d277792e157 ">
+                                 <p>French (Monaco)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e960 d277792e160 ">
+                                 <p><code class="codeph">fr-mc</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e960 d277792e163 ">
+                                 <p>FRENCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e960 d277792e166 ">
+                                 <p>FRANCE</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e974" headers="d277792e157 ">
+                                 <p>French (Switzerland)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e974 d277792e160 ">
+                                 <p><code class="codeph">fr-ch</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e974 d277792e163 ">
+                                 <p>FRANCH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e974 d277792e166 ">
+                                 <p>SWITZERLAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e988" headers="d277792e157 ">
+                                 <p>FYRO Macedonian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e988 d277792e160 ">
+                                 <p><code class="codeph">mk</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e988 d277792e163 ">
+                                 <p>MACEDONIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e988 d277792e166 ">
+                                 <p>FYR MACEDONIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1002" headers="d277792e157 ">
+                                 <p>Gaelic</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1002 d277792e160 ">
+                                 <p><code class="codeph">gd</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1002 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1002 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1016" headers="d277792e157 ">
+                                 <p>Galician</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1016 d277792e160 ">
+                                 <p><code class="codeph">gl</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1016 d277792e163 ">
+                                 <p>SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1016 d277792e166 ">
+                                 <p>SPAIN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1030" headers="d277792e157 ">
+                                 <p>German (Austria)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1030 d277792e160 ">
+                                 <p><code class="codeph">de-at</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1030 d277792e163 ">
+                                 <p>GERMAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1030 d277792e166 ">
+                                 <p>AUSTRIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1044" headers="d277792e157 ">
+                                 <p>German (Germany)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1044 d277792e160 ">
+                                 <p><code class="codeph">de</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1044 d277792e163 ">
+                                 <p>GERMAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1044 d277792e166 ">
+                                 <p>GERMANY</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1058" headers="d277792e157 ">
+                                 <p>German (Liechtenstein)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1058 d277792e160 ">
+                                 <p><code class="codeph">de-li</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1058 d277792e163 ">
+                                 <p>GERMAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1058 d277792e166 ">
+                                 <p>GERMANY</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1072" headers="d277792e157 ">
+                                 <p>German (Luxemgourg)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1072 d277792e160 ">
+                                 <p><code class="codeph">de-lu</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1072 d277792e163 ">
+                                 <p>GERMAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1072 d277792e166 ">
+                                 <p>LUXEMBOURG</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1086" headers="d277792e157 ">
+                                 <p>German (Switzerland)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1086 d277792e160 ">
+                                 <p><code class="codeph">de-ch</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1086 d277792e163 ">
+                                 <p>GERMAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1086 d277792e166 ">
+                                 <p>SWITZERLAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1101" headers="d277792e157 ">
+                                 <p>Greek</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1101 d277792e160 ">
+                                 <p><code class="codeph">el</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1101 d277792e163 ">
+                                 <p>GREEK</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1101 d277792e166 ">
+                                 <p>GREECE</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1115" headers="d277792e157 ">
+                                 <p>Gujarati</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1115 d277792e160 ">
+                                 <p><code class="codeph">gu</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1115 d277792e163 ">
+                                 <p>GUJARATI</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1115 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1129" headers="d277792e157 ">
+                                 <p>Hebrew</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1129 d277792e160 ">
+                                 <p><code class="codeph">he</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1129 d277792e163 ">
+                                 <p>HEBREW</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1129 d277792e166 ">
+                                 <p>ISRAEL</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1143" headers="d277792e157 ">
+                                 <p>Hindi</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1143 d277792e160 ">
+                                 <p><code class="codeph">hi</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1143 d277792e163 ">
+                                 <p>HINDI</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1143 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1157" headers="d277792e157 ">
+                                 <p>Hungarian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1157 d277792e160 ">
+                                 <p><code class="codeph">hu</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1157 d277792e163 ">
+                                 <p>HUNGARIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1157 d277792e166 ">
+                                 <p>HUNGARY</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1171" headers="d277792e157 ">
+                                 <p>Icelandic</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1171 d277792e160 ">
+                                 <p><code class="codeph">is</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1171 d277792e163 ">
+                                 <p>ICELANDIC</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1171 d277792e166 ">
+                                 <p>ICELAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1185" headers="d277792e157 ">
+                                 <p>Indonesian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1185 d277792e160 ">
+                                 <p><code class="codeph">id</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1185 d277792e163 ">
+                                 <p>INDONESIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1185 d277792e166 ">
+                                 <p>INDONESIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1199" headers="d277792e157 ">
+                                 <p>Italian (Italy)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1199 d277792e160 ">
+                                 <p><code class="codeph">it</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1199 d277792e163 ">
+                                 <p>ITALIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1199 d277792e166 ">
+                                 <p>ITALY</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1213" headers="d277792e157 ">
+                                 <p>Italian (Switzerland)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1213 d277792e160 ">
+                                 <p><code class="codeph">it-ch</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1213 d277792e163 ">
+                                 <p>ITALIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1213 d277792e166 ">
+                                 <p>SWITZERLAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1227" headers="d277792e157 ">
+                                 <p>Japanese</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1227 d277792e160 ">
+                                 <p><code class="codeph">ja</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1227 d277792e163 ">
+                                 <p>JAPANESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1227 d277792e166 ">
+                                 <p>JAPAN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1241" headers="d277792e157 ">
+                                 <p>Kannada</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1241 d277792e160 ">
+                                 <p><code class="codeph">kn</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1241 d277792e163 ">
+                                 <p>KANNADA</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1241 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1256" headers="d277792e157 ">
+                                 <p>Kazakh</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1256 d277792e160 ">
+                                 <p><code class="codeph">kk</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1256 d277792e163 ">
+                                 <p>CYRILLIC KAZAKH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1256 d277792e166 ">
+                                 <p>KAZAKHSTAN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1270" headers="d277792e157 ">
+                                 <p>Konkani</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1270 d277792e160 ">
+                                 <p><code class="codeph">kok</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1270 d277792e163 ">
+                                 <p>KOREAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1270 d277792e166 ">
+                                 <p>KOREA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1284" headers="d277792e157 ">
+                                 <p>Korean</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1284 d277792e160 ">
+                                 <p><code class="codeph">ko</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1284 d277792e163 ">
+                                 <p>KOREAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1284 d277792e166 ">
+                                 <p>KOREA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1298" headers="d277792e157 ">
+                                 <p>Kyrgyz</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1298 d277792e160 ">
+                                 <p><code class="codeph">kz</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1298 d277792e163 ">
+                                 <p>RUSSIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1298 d277792e166 ">
+                                 <p>RUSSIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1312" headers="d277792e157 ">
+                                 <p>Latvian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1312 d277792e160 ">
+                                 <p><code class="codeph">lv</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1312 d277792e163 ">
+                                 <p>LATVIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1312 d277792e166 ">
+                                 <p>LATVIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1326" headers="d277792e157 ">
+                                 <p>Lithuanian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1326 d277792e160 ">
+                                 <p><code class="codeph">lt</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1326 d277792e163 ">
+                                 <p>LITHUANIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1326 d277792e166 ">
+                                 <p>LITHUANIANA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1340" headers="d277792e157 ">
+                                 <p>Malay (Malaysia)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1340 d277792e160 ">
+                                 <p><code class="codeph">ms</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1340 d277792e163 ">
+                                 <p>MALAY</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1340 d277792e166 ">
+                                 <p>MALAYSIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1354" headers="d277792e157 ">
+                                 <p>Malayalam</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1354 d277792e160 ">
+                                 <p><code class="codeph">ml</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1354 d277792e163 ">
+                                 <p>MALAYALAM</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1354 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1368" headers="d277792e157 ">
+                                 <p>Maltese</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1368 d277792e160 ">
+                                 <p><code class="codeph">mt</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1368 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1368 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1382" headers="d277792e157 ">
+                                 <p>Marathi</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1382 d277792e160 ">
+                                 <p><code class="codeph">mr</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1382 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1382 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1396" headers="d277792e157 ">
+                                 <p>Nepali (India)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1396 d277792e160 ">
+                                 <p><code class="codeph">ne</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1396 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1396 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1411" headers="d277792e157 ">
+                                 <p>Norwegian (Bokmal)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1411 d277792e160 ">
+                                 <p><code class="codeph">nb-no</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1411 d277792e163 ">
+                                 <p>NORWEGIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1411 d277792e166 ">
+                                 <p>NORWAY</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1425" headers="d277792e157 ">
+                                 <p>Norwegian (Bokmal)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1425 d277792e160 ">
+                                 <p><code class="codeph">no</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1425 d277792e163 ">
+                                 <p>NORWEGIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1425 d277792e166 ">
+                                 <p>NORWAY</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1439" headers="d277792e157 ">
+                                 <p>Norwegian (Nynorsk)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1439 d277792e160 ">
+                                 <p><code class="codeph">nn-no</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1439 d277792e163 ">
+                                 <p>NORWEGIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1439 d277792e166 ">
+                                 <p>NORWAY</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1453" headers="d277792e157 ">
+                                 <p>Oriya</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1453 d277792e160 ">
+                                 <p><code class="codeph">or</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1453 d277792e163 ">
+                                 <p>ORIYA</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1453 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1467" headers="d277792e157 ">
+                                 <p>Polish</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1467 d277792e160 ">
+                                 <p><code class="codeph">pl</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1467 d277792e163 ">
+                                 <p>POLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1467 d277792e166 ">
+                                 <p>POLAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1481" headers="d277792e157 ">
+                                 <p>Portuguese (Brazil)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1481 d277792e160 ">
+                                 <p><code class="codeph">pt-br</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1481 d277792e163 ">
+                                 <p>BRAZILIAN PORTUGUESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1481 d277792e166 ">
+                                 <p>BRAZIL</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1495" headers="d277792e157 ">
+                                 <p>Portuguese (Portugal)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1495 d277792e160 ">
+                                 <p><code class="codeph">pt</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1495 d277792e163 ">
+                                 <p>PORTUGUESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1495 d277792e166 ">
+                                 <p>PORTUGAL</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1509" headers="d277792e157 ">
+                                 <p>Punjabi</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1509 d277792e160 ">
+                                 <p><code class="codeph">pa</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1509 d277792e163 ">
+                                 <p>PUNJABI</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1509 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1523" headers="d277792e157 ">
+                                 <p>Romanian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1523 d277792e160 ">
+                                 <p><code class="codeph">ro</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1523 d277792e163 ">
+                                 <p>ROMANIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1523 d277792e166 ">
+                                 <p>ROMANIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1537" headers="d277792e157 ">
+                                 <p>Russian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1537 d277792e160 ">
+                                 <p><code class="codeph">ru</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1537 d277792e163 ">
+                                 <p>RUSSIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1537 d277792e166 ">
+                                 <p>RUSSIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1551" headers="d277792e157 ">
+                                 <p>Russian (Moldova)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1551 d277792e160 ">
+                                 <p><code class="codeph">ru-md</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1551 d277792e163 ">
+                                 <p>RUSSIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1551 d277792e166 ">
+                                 <p>RUSSIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1566" headers="d277792e157 ">
+                                 <p>Serbia</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1566 d277792e160 ">
+                                 <p><code class="codeph">sr</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1566 d277792e163 ">
+                                 <p>CYRILLIC SERBIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1566 d277792e166 ">
+                                 <p>SERBIA AND MONTENEGRO</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1580" headers="d277792e157 ">
+                                 <p>Slovak</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1580 d277792e160 ">
+                                 <p><code class="codeph">sk</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1580 d277792e163 ">
+                                 <p>SLOVAK</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1580 d277792e166 ">
+                                 <p>SLOVAKIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1594" headers="d277792e157 ">
+                                 <p>Slovenian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1594 d277792e160 ">
+                                 <p><code class="codeph">sl</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1594 d277792e163 ">
+                                 <p>SLOVENIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1594 d277792e166 ">
+                                 <p>SLOVENIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1608" headers="d277792e157 ">
+                                 <p>Spanish (Argentina)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1608 d277792e160 ">
+                                 <p><code class="codeph">es-ar</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1608 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1608 d277792e166 ">
+                                 <p>ARGENTINA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1622" headers="d277792e157 ">
+                                 <p>Spanish (Bolivia)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1622 d277792e160 ">
+                                 <p><code class="codeph">es-bo</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1622 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1622 d277792e166 ">
+                                 <p>ARGENTINA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1636" headers="d277792e157 ">
+                                 <p>Spanish (Chile)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1636 d277792e160 ">
+                                 <p><code class="codeph">es-cl</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1636 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1636 d277792e166 ">
+                                 <p>CHILE</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1650" headers="d277792e157 ">
+                                 <p>Spanish (Colombia)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1650 d277792e160 ">
+                                 <p><code class="codeph">ec-co</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1650 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1650 d277792e166 ">
+                                 <p>COLOMBIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1664" headers="d277792e157 ">
+                                 <p>Spanish (Costa Rica)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1664 d277792e160 ">
+                                 <p><code class="codeph">es-cr</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1664 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1664 d277792e166 ">
+                                 <p>COSTA RICA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1678" headers="d277792e157 ">
+                                 <p>Spanish (Dominican Republic)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1678 d277792e160 ">
+                                 <p><code class="codeph">es-do</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1678 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1678 d277792e166 ">
+                                 <p>PUERTO RICO</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1692" headers="d277792e157 ">
+                                 <p>Spanish (Ecuador)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1692 d277792e160 ">
+                                 <p><code class="codeph">es-ec</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1692 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1692 d277792e166 ">
+                                 <p>ECUDOR</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1706" headers="d277792e157 ">
+                                 <p>Spanish (El Salvador)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1706 d277792e160 ">
+                                 <p><code class="codeph">es-sv</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1706 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1706 d277792e166 ">
+                                 <p>EL SALVADOR</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1721" headers="d277792e157 ">
+                                 <p>Spanish (Guatemala)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1721 d277792e160 ">
+                                 <p><code class="codeph">es-gt</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1721 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1721 d277792e166 ">
+                                 <p>GUATEMALA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1735" headers="d277792e157 ">
+                                 <p>Spanish (Honduras)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1735 d277792e160 ">
+                                 <p><code class="codeph">es-hn</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1735 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1735 d277792e166 ">
+                                 <p>GUATEMALA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1749" headers="d277792e157 ">
+                                 <p>Spanish (Mexico)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1749 d277792e160 ">
+                                 <p><code class="codeph">es-mx</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1749 d277792e163 ">
+                                 <p>MEXICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1749 d277792e166 ">
+                                 <p>MEXICO</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1763" headers="d277792e157 ">
+                                 <p>Spanish (Nicaragua)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1763 d277792e160 ">
+                                 <p><code class="codeph">es-ni</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1763 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1763 d277792e166 ">
+                                 <p>Nicaragua</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1777" headers="d277792e157 ">
+                                 <p>Spanish (Panama)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1777 d277792e160 ">
+                                 <p><code class="codeph">es-pa</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1777 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1777 d277792e166 ">
+                                 <p>Panama</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1791" headers="d277792e157 ">
+                                 <p>Spanish (Paraguay)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1791 d277792e160 ">
+                                 <p><code class="codeph">es-py</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1791 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1791 d277792e166 ">
+                                 <p>ARGENTINA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1805" headers="d277792e157 ">
+                                 <p>Spanish (Peru)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1805 d277792e160 ">
+                                 <p><code class="codeph">es-pe</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1805 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1805 d277792e166 ">
+                                 <p>PERU</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1819" headers="d277792e157 ">
+                                 <p>Spanish (Puerto Rico)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1819 d277792e160 ">
+                                 <p><code class="codeph">es-pr</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1819 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1819 d277792e166 ">
+                                 <p>PUERTO RICO</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1833" headers="d277792e157 ">
+                                 <p>Spanish (Traditional Sort)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1833 d277792e160 ">
+                                 <p><code class="codeph">es</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1833 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1833 d277792e166 ">
+                                 <p>SPAIN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1847" headers="d277792e157 ">
+                                 <p>Spanish (United States)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1847 d277792e160 ">
+                                 <p><code class="codeph">es-us</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1847 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1847 d277792e166 ">
+                                 <p>AMERICAN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1861" headers="d277792e157 ">
+                                 <p>Spanish (Uruguay)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1861 d277792e160 ">
+                                 <p><code class="codeph">es-uy</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1861 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1861 d277792e166 ">
+                                 <p>ARGENTINA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1876" headers="d277792e157 ">
+                                 <p>Spanish (Venezuela)</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1876 d277792e160 ">
+                                 <p><code class="codeph">es-ve</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1876 d277792e163 ">
+                                 <p>LATIN AMERICAN SPANISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1876 d277792e166 ">
+                                 <p>VENEZUELA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1890" headers="d277792e157 ">
+                                 <p>Swedish</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1890 d277792e160 ">
+                                 <p><code class="codeph">sv</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1890 d277792e163 ">
+                                 <p>SWEDISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1890 d277792e166 ">
+                                 <p>SWEDEN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1904" headers="d277792e157 ">
+                                 <p>Swedish</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1904 d277792e160 ">
+                                 <p><code class="codeph">sv-fi</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1904 d277792e163 ">
+                                 <p>SWEDISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1904 d277792e166 ">
+                                 <p>FINLAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1918" headers="d277792e157 ">
+                                 <p>Tamil</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1918 d277792e160 ">
+                                 <p><code class="codeph">ta</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1918 d277792e163 ">
+                                 <p>TAMIL</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1918 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1932" headers="d277792e157 ">
+                                 <p>Telugu</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1932 d277792e160 ">
+                                 <p><code class="codeph">te</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1932 d277792e163 ">
+                                 <p>TELUGU</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1932 d277792e166 ">
+                                 <p>INDIA</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1946" headers="d277792e157 ">
+                                 <p>Thai</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1946 d277792e160 ">
+                                 <p><code class="codeph">th</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1946 d277792e163 ">
+                                 <p>THAI</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1946 d277792e166 ">
+                                 <p>THAILAND</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1960" headers="d277792e157 ">
+                                 <p>Turkish</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1960 d277792e160 ">
+                                 <p><code class="codeph">tr</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1960 d277792e163 ">
+                                 <p>TURKISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1960 d277792e166 ">
+                                 <p>TURKEY</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1974" headers="d277792e157 ">
+                                 <p>Ukrainian</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1974 d277792e160 ">
+                                 <p><code class="codeph">uk</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1974 d277792e163 ">
+                                 <p>UKRAINIAN</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1974 d277792e166 ">
+                                 <p>UKRAINE</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e1988" headers="d277792e157 ">
+                                 <p>Urdu</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e1988 d277792e160 ">
+                                 <p><code class="codeph">ur</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e1988 d277792e163 ">
+                                 <p>ENGLISH</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e1988 d277792e166 ">
+                                 <p>UNITED KINGDOM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e2002" headers="d277792e157 ">
+                                 <p>Uzbek</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e2002 d277792e160 ">
+                                 <p><code class="codeph">uz</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e2002 d277792e163 ">
+                                 <p>LATIN UZBEK</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e2002 d277792e166 ">
+                                 <p>UZBEKISTAN</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="27%" id="d277792e2016" headers="d277792e157 ">
+                                 <p>Vietnamese</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d277792e2016 d277792e160 ">
+                                 <p><code class="codeph">vi</code></p>
+                              </td>
+                              <td align="left" valign="top" width="30%" headers="d277792e2016 d277792e163 ">
+                                 <p>VIETNAMESE</p>
+                              </td>
+                              <td align="left" valign="top" width="31%" headers="d277792e2016 d277792e166 ">
+                                 <p>VIETNAM</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <div class="familylinks">
+                     <div class="parentlink">
+                        <p><strong>Parent topic:</strong> <a href="understanding-supported-globalization-codes.html#GUID-2D48D242-A5CA-449A-B2EF-86EBBF2B37CD" title="If you are building a multilingual application, it is important to understand how globalization codes affect the way in which your application runs. These codes are set automatically based on the application-level Globalization attributes you select.">Understanding Supported Globalization Codes</a></p>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>
